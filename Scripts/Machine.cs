@@ -26,12 +26,12 @@ public class Machine : MonoBehaviour
 
     public void ActivateStartButton()
     {
-        startButton.GetComponent<Button>().interactable = true;
+        startButton.GetComponent<NonUIButton>().interactable = true;
     }
 
     public void DeactivateStartButton()
     {
-        startButton.GetComponent<Button>().interactable = false;
+        startButton.GetComponent<NonUIButton>().interactable = false;
         playerWheelHolder.GetComponent<Button>().interactable = false;
     }
 }

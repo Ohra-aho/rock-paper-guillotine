@@ -9,7 +9,7 @@ public class Deactivator : MonoBehaviour
 
     public void Deactivate(GameObject target)
     {
-        target.GetComponent<Button>().interactable = false;
+        target.GetComponent<NonUIButton>().interactable = false;
     }
 
     public void Activate(GameObject target)

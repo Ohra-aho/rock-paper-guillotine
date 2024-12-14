@@ -17,14 +17,14 @@ public class StartButton : MonoBehaviour
 
     public void Activate()
     {
-        GetComponent<Image>().sprite = active;
+        GetComponent<SpriteRenderer>().sprite = active;
         machine.GetComponent<Test>().PlayAnimation("CloseMachine");
         isActive = true;
     }
 
     public void Deactivate()
     {
-        GetComponent<Image>().sprite = inactive;
+        GetComponent<SpriteRenderer>().sprite = inactive;
         machine.GetComponent<Test>().PlayAnimation("OpenMachine");
         GameObject.Find("EventSystem").GetComponent<MainController>().GiveUp();
         isActive = false;
@@ -32,7 +32,7 @@ public class StartButton : MonoBehaviour
 
     public void EndRound()
     {
-        GetComponent<Image>().sprite = inactive;
+        GetComponent<SpriteRenderer>().sprite = inactive;
         machine.GetComponent<Test>().PlayAnimation("OpenMachine");
         isActive = false;
     }
@@ -52,7 +52,6 @@ public class StartButton : MonoBehaviour
     {
         MainController MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
         bool dead = player.transform.GetChild(2).GetComponent<HealthBar>().checkIfDead();
-        Debug.Log(dead);
         if (dead)
         {
             MC.dead = true;
