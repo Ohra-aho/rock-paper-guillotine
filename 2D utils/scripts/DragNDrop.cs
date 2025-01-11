@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DragNDrop : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class DragNDrop : MonoBehaviour
 
     public bool destroyOnDrop;
     public bool resetOnDrop;
+
+    public UnityEvent onBeginDrag;
+    public UnityEvent onEndDrag;
 
     private void Start()
     {
@@ -26,12 +30,16 @@ public class DragNDrop : MonoBehaviour
 
     private void OnMouseDrag()
     {
+        if(onBeginDrag != null) onBeginDrag.Invoke();
+
         // Update the object's position to follow the mouse, adjusted by the offset
         transform.position = GetMouseWorldPosition() + offset;
     }
 
     private void OnMouseUp()
     {
+        if(onEndDrag != null) onEndDrag.Invoke();
+
         if (destroyOnDrop)
         {
             Destroy(this.gameObject);

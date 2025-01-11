@@ -27,7 +27,7 @@ public class WeaponSprite : MonoBehaviour
     void OnMouseDown()
     {
         GameObject wheelHolder = transform.parent.parent.parent.gameObject;
-        if(wheelHolder.GetComponent<PlayerWheelHolder>().detached)
+        if(wheelHolder.GetComponent<PlayerWheelHolder>().detached && weapon != null)
         {
             GameObject.Find("ImventoryMenu(Clone)").GetComponent<InventoryMenu>().addWeapon(weapon);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().UnequipWeapon(weapon.GetComponent<Weapon>());
@@ -41,7 +41,7 @@ public class WeaponSprite : MonoBehaviour
     {
         GameObject wheelHolder = transform.parent.parent.parent.gameObject;
 
-        if (wheelHolder.GetComponent<PlayerWheelHolder>().detached)
+        if (wheelHolder.GetComponent<PlayerWheelHolder>().detached && weapon != null)
         {
             visibleInfo = Instantiate(Info, GameObject.Find("Canvas").transform);
             visibleInfo.transform.position =

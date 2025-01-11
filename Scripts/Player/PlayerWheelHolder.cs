@@ -28,16 +28,16 @@ public class PlayerWheelHolder : MonoBehaviour
         transform.GetChild(0).GetComponent<Test>().UnPauseAnimation();
         transform.GetChild(0).GetComponent<Test>().PlayAnimation("DetachWheel");
         detached = true;
-        startButton.GetComponent<Button>().interactable = false;
-        Instantiate(InventoryMenu, GameObject.Find("ImventoryMenuHolder").transform);
+        startButton.GetComponent<NonUIButton>().interactable = false;
+        //Instantiate(InventoryMenu, GameObject.Find("ImventoryMenuHolder").transform);
     }
 
     public void AttachWheel()
     {
         transform.GetChild(0).GetComponent<Test>().PlayAnimation("AttachWheel");
         detached = false;
-        GameObject.Find("ImventoryMenuHolder").GetComponent<Test>().PlayAnimation("CloseDrawer");
-        startButton.GetComponent<Button>().interactable = true;
+        //GameObject.Find("ImventoryMenuHolder").GetComponent<Test>().PlayAnimation("CloseDrawer");
+        startButton.GetComponent<NonUIButton>().interactable = true;
     }
 
     public void RemoveWeapon(GameObject weapon)

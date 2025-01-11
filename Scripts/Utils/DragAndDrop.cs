@@ -14,12 +14,10 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     Vector2 offset;
     public bool remove = false;
 
-    private void Awake()
-    {
-    }
-
     public void OnBeginDrag(PointerEventData eventData)
     {
+        Debug.Log("draggg");
+
         OGParent = transform.parent;
         Parent = transform.parent.parent.parent.parent.parent.gameObject;
         transform.SetParent(Parent.transform);

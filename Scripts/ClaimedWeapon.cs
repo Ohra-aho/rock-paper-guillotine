@@ -10,13 +10,29 @@ public class ClaimedWeapon : MonoBehaviour
     private GameObject visibleInfo;
     public GameObject Info;
 
+    public void OnBegingDrag()
+    {
+        DestroyInfo();
+        GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
+    }
+
+    public void OnEndDrag()
+    {
+        GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+    }
+
     public void DispalyWeapon()
     {
-        GetComponent<Image>().sprite = weapon.GetComponent<Weapon>().sprite;
+        GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
     }
 
     public void DisplayInfo()
     {
+        //if(!transform.parent.parent.GetComponent<NonUIScroll>().IsActive())
+        //{
+            transform.parent.parent.GetComponent<NonUIScroll>().Activate(); //Crude but works
+        //}
+
         visibleInfo = Instantiate(Info, GameObject.Find("Canvas").transform);
         visibleInfo.transform.position =
             Camera.main.ScreenToWorldPoint(

@@ -16,7 +16,7 @@ public class Machine : MonoBehaviour
         rightSide.transform.GetChild(2).GetComponent<EnemyController>().HandleEnemy();
         ActivateStartButton();
         startButton.GetComponent<StartButton>().sidesOutOfView = true;
-        playerWheelHolder.GetComponent<Button>().interactable = true;
+        playerWheelHolder.GetComponent<NonUIButton>().interactable = true;
     }
 
     public void AnimationEnd()
@@ -32,6 +32,6 @@ public class Machine : MonoBehaviour
     public void DeactivateStartButton()
     {
         startButton.GetComponent<NonUIButton>().interactable = false;
-        playerWheelHolder.GetComponent<Button>().interactable = false;
+        playerWheelHolder.GetComponent<NonUIButton>().interactable = false;
     }
 }

@@ -36,9 +36,9 @@ public class PlayerContoller : MonoBehaviour
     {
         for(int i = 0; i < 3; i++)
         {
-            transform.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().text = 
+            transform.GetChild(i).GetChild(0).GetComponent<TextMeshPro>().text = 
                 PlayerWheel.transform.GetChild(i).GetChild(0)
-                .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().name;
+                    .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().name;
         }
     }
 
@@ -122,7 +122,7 @@ public class PlayerContoller : MonoBehaviour
 
         if(chosenWeapon.GetComponent<Weapon>().takeDamage != null)
             chosenWeapon.GetComponent<Weapon>().takeDamage.Invoke();
-        bool dead = playerHealth.GetComponent<HealthBar>().checkIfDead();
+        bool dead = playerHealth.GetComponent<HealthBar>().CheckIfDead();
 
 
         if (dead) MC.Loose();

@@ -11,6 +11,10 @@ public class NonUIButton : MonoBehaviour
     public float hoverTint = 0.5f;
     public bool interactable = true;
 
+    private void Start()
+    {
+        gameObject.AddComponent<BoxCollider2D>();
+    }
     private void OnMouseDown()
     {
         if(press != null && interactable)

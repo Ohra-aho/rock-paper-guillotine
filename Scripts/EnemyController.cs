@@ -115,7 +115,7 @@ public class EnemyController : MonoBehaviour
         if (realDamage < 0) realDamage = 0;
 
         HB.GetComponent<HealthBar>().TakeDamage(realDamage);
-        dead = HB.GetComponent<HealthBar>().checkIfDead();
+        dead = HB.GetComponent<HealthBar>().CheckIfDead();
     }
 
     // Rock, Paper, scissors

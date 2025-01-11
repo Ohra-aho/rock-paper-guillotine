@@ -32,7 +32,7 @@ public class BasicEnemy : MonoBehaviour
         controller = GameObject.FindGameObjectWithTag("EnemyHolder");
         TransferInfo();
         controller.GetComponent<EnemyController>().Inisiate();
-        GetComponent<Image>().sprite = image;
+        GetComponent<SpriteRenderer>().sprite = image;
     }
 
     public void TransferInfo()

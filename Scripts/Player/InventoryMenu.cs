@@ -9,7 +9,7 @@ public class InventoryMenu : MonoBehaviour
     void Start()
     {
         displayWeapons();
-        transform.parent.GetComponent<Test>().PlayAnimation("OpenDrawer");
+        //transform.parent.GetComponent<Test>().PlayAnimation("OpenDrawer");
     }
 
     private void displayWeapons()
@@ -21,7 +21,7 @@ public class InventoryMenu : MonoBehaviour
         {
             if(items[i].GetComponent<Weapon>())
             {
-                GameObject temp = Instantiate(WeaponPref, transform.GetChild(0).GetChild(0).GetChild(i));
+                GameObject temp = Instantiate(WeaponPref, transform.GetChild(0).GetChild(1)/*.GetChild(i)*/);
                 temp.GetComponent<ClaimedWeapon>().weapon = items[i];
                 temp.GetComponent<ClaimedWeapon>().DispalyWeapon();
 

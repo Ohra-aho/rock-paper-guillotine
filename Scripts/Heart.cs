@@ -18,13 +18,13 @@ public class Heart : MonoBehaviour
 
     public void damage()
     {
-        this.GetComponent<Image>().color = empty;
+        this.GetComponent<SpriteRenderer>().color = empty;
         healthy = false;
     }
 
     public void heal()
     {
-        this.GetComponent<Image>().color = full;
+        this.GetComponent<SpriteRenderer>().color = full;
         healthy = true;
     }
 }

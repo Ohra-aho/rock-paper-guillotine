@@ -7,7 +7,7 @@ public class HealthBar : MonoBehaviour
     public List<GameObject> hearts;
     public GameObject heart;
 
-    public RectTransform healthBarRectTransform;
+    //public RectTransform healthBarRectTransform;
 
     public void TakeDamage(int damage)
     {
@@ -64,7 +64,7 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    public bool checkIfDead()
+    public bool CheckIfDead()
     {
         bool temp = true;
         for (int i = 0; i < transform.childCount; i++)

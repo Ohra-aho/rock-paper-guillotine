@@ -51,7 +51,7 @@ public class StartButton : MonoBehaviour
     public void CheckPlayerStatus()
     {
         MainController MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
-        bool dead = player.transform.GetChild(2).GetComponent<HealthBar>().checkIfDead();
+        bool dead = player.transform.GetChild(2).GetComponent<HealthBar>().CheckIfDead();
         if (dead)
         {
             MC.dead = true;

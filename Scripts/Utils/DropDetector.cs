@@ -11,6 +11,7 @@ public class DropDetector : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
+        Debug.Log("jfjjfjffjjfjf");
         eventData.pointerDrag.GetComponent<DragAndDrop>().remove = true;
         changeWeapon(eventData.pointerDrag.GetComponent<ClaimedWeapon>().weapon);
 
@@ -38,14 +39,14 @@ public class DropDetector : MonoBehaviour, IDropHandler
 
     void OnTriggerEnter2D(Collider2D other)
     {
-
+        Debug.Log(other.name);
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider2D other)
     {
     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider2D other)
     {
     }
 }

@@ -27,10 +27,8 @@ public class WeaponDetector : MonoBehaviour
                     weaponWheel.GetComponent<Test>().PauseAnimation();
                     TC.resultsVisible++;
                 }
-            }
-            
+            }   
         }
-
     }
 
     void OnTriggerStay(Collider other)
