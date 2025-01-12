@@ -57,6 +57,8 @@ public class ClaimedWeapon : MonoBehaviour
     public void DestroyInfo()
     {
         Destroy(visibleInfo);
+        transform.parent.parent.GetComponent<NonUIScroll>().Deactivate(); //Crude but works
+
     }
 
     private void OnMouseDown()

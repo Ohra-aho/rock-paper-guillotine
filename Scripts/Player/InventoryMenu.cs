@@ -9,7 +9,8 @@ public class InventoryMenu : MonoBehaviour
     void Start()
     {
         displayWeapons();
-        //transform.parent.GetComponent<Test>().PlayAnimation("OpenDrawer");
+        transform.GetChild(0).GetComponent<NonUIScroll>().CalculateHeight();
+        transform.parent.GetComponent<Test>().PlayAnimation("OpenDrawer");
     }
 
     private void displayWeapons()
@@ -24,7 +25,6 @@ public class InventoryMenu : MonoBehaviour
                 GameObject temp = Instantiate(WeaponPref, transform.GetChild(0).GetChild(1)/*.GetChild(i)*/);
                 temp.GetComponent<ClaimedWeapon>().weapon = items[i];
                 temp.GetComponent<ClaimedWeapon>().DispalyWeapon();
-
             }
         }
     }

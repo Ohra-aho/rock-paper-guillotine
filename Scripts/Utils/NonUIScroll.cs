@@ -13,8 +13,8 @@ public class NonUIScroll : MonoBehaviour
     private bool active = false;
 
     private Vector2 scroll_direction;
-    private Vector2 starting_position;
-    private Vector2 end_position;
+    private Vector2 starting_localPosition;
+    private Vector2 end_localPosition;
 
     private void OnEnable()
     {
@@ -41,7 +41,7 @@ public class NonUIScroll : MonoBehaviour
         return active;
     }
 
-    private void CalculateHeight()
+    public void CalculateHeight()
     {
         float child_height = 0;
         if (scrollable.transform.childCount > 0) {
@@ -53,23 +53,24 @@ public class NonUIScroll : MonoBehaviour
             child_height * ((scrollable.transform.childCount/2) + scrollable.transform.childCount % 2)
         );
 
-        scrollable.GetComponent<RectTransform>().position 
+        scrollable.GetComponent<RectTransform>().localPosition 
             = new Vector2(
-                scrollable.GetComponent<RectTransform>().position.x,
-                -scrollable.GetComponent<RectTransform>().sizeDelta.y / 2f + child_height
+                scrollable.GetComponent<RectTransform>().localPosition.x,
+                -scrollable.GetComponent<RectTransform>().sizeDelta.y / 2f + child_height*2
             );
 
-        starting_position = scrollable.GetComponent<RectTransform>().position;
-        end_position = new Vector2(
-            scrollable.GetComponent<RectTransform>().position.x,
-            -starting_position.y - GetComponent<RectTransform>().sizeDelta.y / 2
+        starting_localPosition = scrollable.GetComponent<RectTransform>().localPosition;
+
+        end_localPosition = new Vector2(
+            scrollable.GetComponent<RectTransform>().localPosition.x,
+            -starting_localPosition.y - GetComponent<RectTransform>().sizeDelta.y / 2 + child_height * 2
         );
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        CalculateHeight();
+        //CalculateHeight();
     }
 
     // Update is called once per frame
@@ -80,46 +81,48 @@ public class NonUIScroll : MonoBehaviour
         {
            
             scroll_direction = -scroll.ReadValue<Vector2>();
-            float current_y = scrollable.GetComponent<RectTransform>().position.y;
+            float current_y = scrollable.GetComponent<RectTransform>().localPosition.y;
 
-            if (current_y == starting_position.y)
+            if (current_y == starting_localPosition.y)
             {
+                
                 if(scroll_direction.y > 0)
                 {
-                    scrollable.GetComponent<RectTransform>().position
+                    scrollable.GetComponent<RectTransform>().localPosition
                         = new Vector2(
-                            scrollable.GetComponent<RectTransform>().position.x,
+                            scrollable.GetComponent<RectTransform>().localPosition.x,
                             current_y + scroll_direction.y * scroll_speed
                           );
+                    //Debug.Log(scrollable.GetComponent<RectTransform>().localPosition);
                 }
-            } else if(current_y == end_position.y)
+            } else if(current_y == end_localPosition.y)
             {
                 if(scroll_direction.y < 0)
                 {
-                    scrollable.GetComponent<RectTransform>().position
+                    scrollable.GetComponent<RectTransform>().localPosition
                         = new Vector2(
-                            scrollable.GetComponent<RectTransform>().position.x,
+                            scrollable.GetComponent<RectTransform>().localPosition.x,
                             current_y + scroll_direction.y * scroll_speed
                             );
                 }
             } else
             {
-                scrollable.GetComponent<RectTransform>().position
+                scrollable.GetComponent<RectTransform>().localPosition
                     = new Vector2(
-                        scrollable.GetComponent<RectTransform>().position.x,
+                        scrollable.GetComponent<RectTransform>().localPosition.x,
                         current_y + scroll_direction.y * scroll_speed
                         );
             }
 
             
         }
-        if (scrollable.GetComponent<RectTransform>().position.y > end_position.y)
+        if (scrollable.GetComponent<RectTransform>().localPosition.y > end_localPosition.y)
         {
-            scrollable.GetComponent<RectTransform>().position = end_position;
+            scrollable.GetComponent<RectTransform>().localPosition = end_localPosition;
         }
-        if (scrollable.GetComponent<RectTransform>().position.y < starting_position.y)
+        if (scrollable.GetComponent<RectTransform>().localPosition.y < starting_localPosition.y)
         {
-            scrollable.GetComponent<RectTransform>().position = starting_position;
+            scrollable.GetComponent<RectTransform>().localPosition = starting_localPosition;
         }
         
 

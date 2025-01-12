@@ -74,10 +74,6 @@ public class DragNDrop : MonoBehaviour
         }
     }
 
-    void OnTriggerStay2D(Collider2D other)
-    {
-    }
-
     private Vector3 GetMouseWorldPosition()
     {
         // Get the mouse position in world space

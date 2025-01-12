@@ -28,7 +28,5 @@ public class Hover : MonoBehaviour
         }
     }
 
-    private void OnMouseOver()
-    {
-    }
+    
 }
