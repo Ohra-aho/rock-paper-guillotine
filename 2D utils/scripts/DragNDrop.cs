@@ -16,6 +16,9 @@ public class DragNDrop : MonoBehaviour
     public UnityEvent onBeginDrag;
     public UnityEvent onEndDrag;
 
+    private bool over = false;
+    private GameObject objectOver;
+
     private void Start()
     {
         mainCamera = Camera.main;
@@ -39,6 +42,10 @@ public class DragNDrop : MonoBehaviour
     private void OnMouseUp()
     {
         if(onEndDrag != null) onEndDrag.Invoke();
+        if(objectOver != null)
+        {
+            objectOver.GetComponent<DropDetector>().OnDrop();
+        }
 
         if (destroyOnDrop)
         {
@@ -47,6 +54,28 @@ public class DragNDrop : MonoBehaviour
         {
             transform.position = originalPosition;
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.GetComponent<DropDetector>())
+        {
+            over = true;
+            objectOver = other.gameObject;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.GetComponent<DropDetector>())
+        {
+            over = true;
+            objectOver = other.gameObject;
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
     }
 
     private Vector3 GetMouseWorldPosition()

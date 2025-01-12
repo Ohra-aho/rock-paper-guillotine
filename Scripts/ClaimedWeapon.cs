@@ -28,10 +28,8 @@ public class ClaimedWeapon : MonoBehaviour
 
     public void DisplayInfo()
     {
-        //if(!transform.parent.parent.GetComponent<NonUIScroll>().IsActive())
-        //{
-            transform.parent.parent.GetComponent<NonUIScroll>().Activate(); //Crude but works
-        //}
+        
+        transform.parent.parent.GetComponent<NonUIScroll>().Activate(); //Crude but works
 
         visibleInfo = Instantiate(Info, GameObject.Find("Canvas").transform);
         visibleInfo.transform.position =

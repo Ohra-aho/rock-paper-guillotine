@@ -3143,7 +3143,6 @@ GameObject:
   - component: {fileID: 663824819}
   - component: {fileID: 663824818}
   - component: {fileID: 663824817}
-  - component: {fileID: 663824816}
   - component: {fileID: 663824815}
   - component: {fileID: 663824814}
   m_Layer: 0
@@ -3210,20 +3209,6 @@ MonoBehaviour:
   weapon: {fileID: 0}
   id: 2
   Info: {fileID: 3827492144287251575, guid: 41d786849bf95294db81c7960312bfc9, type: 3}
---- !u!114 &663824816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663824813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b17350f0f153d9e4794a9f1e2c4fca2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponHolder: {fileID: 1797842879}
-  player: {fileID: 0}
 --- !u!50 &663824817
 Rigidbody2D:
   serializedVersion: 4
@@ -5255,7 +5240,6 @@ GameObject:
   - component: {fileID: 1254859816}
   - component: {fileID: 1254859815}
   - component: {fileID: 1254859814}
-  - component: {fileID: 1254859813}
   - component: {fileID: 1254859812}
   m_Layer: 0
   m_Name: weaponSprite3
@@ -5306,20 +5290,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1254859813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254859811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b17350f0f153d9e4794a9f1e2c4fca2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponHolder: {fileID: 1254859811}
-  player: {fileID: 0}
 --- !u!114 &1254859814
 MonoBehaviour:
   m_ObjectHideFlags: 0

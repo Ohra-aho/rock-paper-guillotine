@@ -4,25 +4,26 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
-public class DropDetector : MonoBehaviour, IDropHandler
+public class DropDetector : MonoBehaviour
 {
     public GameObject weaponHolder;
     public GameObject player;
 
-    public void OnDrop(PointerEventData eventData)
-    {
-        Debug.Log("jfjjfjffjjfjf");
-        eventData.pointerDrag.GetComponent<DragAndDrop>().remove = true;
-        changeWeapon(eventData.pointerDrag.GetComponent<ClaimedWeapon>().weapon);
+    private bool over = false;
+    private GameObject objectOver;
 
+
+    public void OnDrop()
+    {
+        changeWeapon(objectOver.GetComponent<ClaimedWeapon>().weapon);
     }
 
     public void changeWeapon(GameObject newWeapon)
     {
         if(weaponHolder.GetComponent<WeaponSprite>().weapon != null)
         {
-            GameObject.Find("ImventoryMenu(Clone)").GetComponent<InventoryMenu>()
-                .addWeapon(weaponHolder.GetComponent<WeaponSprite>().weapon);
+            //GameObject.Find("InventoryMenu(Clone)").GetComponent<InventoryMenu>()
+            //    .addWeapon(weaponHolder.GetComponent<WeaponSprite>().weapon);
 
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>()
                 .UnequipWeapon(weaponHolder.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>());
@@ -39,14 +40,24 @@ public class DropDetector : MonoBehaviour, IDropHandler
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.name);
+        if(other.GetComponent<DragNDrop>())
+        {
+            over = true;
+            objectOver = other.gameObject;
+        }
     }
 
-    void OnTriggerStay(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
+        if (other.GetComponent<DragNDrop>())
+        {
+            over = false;
+            objectOver = null;
+        }
+
     }
 
-    void OnTriggerExit(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
     }
 }
