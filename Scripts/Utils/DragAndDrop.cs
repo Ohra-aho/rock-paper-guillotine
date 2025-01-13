@@ -16,7 +16,6 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("draggg");
 
         OGParent = transform.parent;
         Parent = transform.parent.parent.parent.parent.parent.gameObject;

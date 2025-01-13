@@ -15,20 +15,28 @@ public class DropDetector : MonoBehaviour
 
     public void OnDrop()
     {
-        changeWeapon(objectOver.GetComponent<ClaimedWeapon>().weapon);
+        if(objectOver != null)
+        {
+            changeWeapon(
+                objectOver.GetComponent<ClaimedWeapon>().weapon, 
+                objectOver.transform.GetSiblingIndex()
+            );
+        }
     }
 
-    public void changeWeapon(GameObject newWeapon)
+    public void changeWeapon(GameObject newWeapon, int index)
     {
         if(weaponHolder.GetComponent<WeaponSprite>().weapon != null)
         {
-            //GameObject.Find("InventoryMenu(Clone)").GetComponent<InventoryMenu>()
-            //    .addWeapon(weaponHolder.GetComponent<WeaponSprite>().weapon);
+            GameObject.Find("InventoryMenu(Clone)").GetComponent<InventoryMenu>()
+                .addWeapon(weaponHolder.GetComponent<WeaponSprite>().weapon);
 
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>()
                 .UnequipWeapon(weaponHolder.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>());
         }
         weaponHolder.GetComponent<WeaponSprite>().weapon = newWeapon;
+        GameObject.Find("InventoryMenu(Clone)").GetComponent<InventoryMenu>()
+                .removeWeapon(index);
 
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>()
                 .EquipWeapon(weaponHolder.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>());

@@ -10,6 +10,8 @@ public class InventoryMenu : MonoBehaviour
     {
         displayWeapons();
         transform.GetChild(0).GetComponent<NonUIScroll>().CalculateHeight();
+        transform.GetChild(0).GetComponent<NonUIScroll>().CalculateStartAndEndPoint();
+        transform.GetChild(0).GetComponent<NonUIScroll>().DetermineInitialLocation();
         transform.parent.GetComponent<Test>().PlayAnimation("OpenDrawer");
     }
 
@@ -35,6 +37,8 @@ public class InventoryMenu : MonoBehaviour
         player.GetComponent<PlayerInventory>().items.Add(weapon);
         clearInventory();
         displayWeapons();
+        transform.GetChild(0).GetComponent<NonUIScroll>().CalculateHeight();
+        transform.GetChild(0).GetComponent<NonUIScroll>().CalculateStartAndEndPoint();
     }
 
     public void removeWeapon(int weapon)
@@ -43,17 +47,26 @@ public class InventoryMenu : MonoBehaviour
         player.GetComponent<PlayerInventory>().items.RemoveAt(weapon);
         clearInventory();
         displayWeapons();
+        transform.GetChild(0).GetComponent<NonUIScroll>().CalculateHeight();
+        transform.GetChild(0).GetComponent<NonUIScroll>().CalculateStartAndEndPoint();
     }
 
     private void clearInventory()
     {
-        GameObject items = transform.GetChild(0).GetChild(0).gameObject;
+        GameObject items = transform.GetChild(0).GetChild(1).gameObject;
+
+        // Collect children to destroy
+        List<Transform> children = new List<Transform>();
         for (int i = 0; i < items.transform.childCount; i++)
         {
-            if(items.transform.GetChild(i).childCount > 0)
-            {
-                Destroy(items.transform.GetChild(i).GetChild(0).gameObject);
-            }
+            children.Add(items.transform.GetChild(i));
         }
+
+        // Destroy them
+        foreach (Transform child in children)
+        {
+            DestroyImmediate(child.gameObject);
+
+        }   
     }
 }

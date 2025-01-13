@@ -41,11 +41,7 @@ public class DragNDrop : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if(onEndDrag != null) onEndDrag.Invoke();
-        if(objectOver != null)
-        {
-            objectOver.GetComponent<DropDetector>().OnDrop();
-        }
+        
 
         if (destroyOnDrop)
         {
@@ -53,6 +49,12 @@ public class DragNDrop : MonoBehaviour
         } else if(resetOnDrop)
         {
             transform.position = originalPosition;
+        }
+
+        if (onEndDrag != null) onEndDrag.Invoke();
+        if (objectOver != null)
+        {
+            objectOver.GetComponent<DropDetector>().OnDrop();
         }
     }
 
@@ -66,6 +68,15 @@ public class DragNDrop : MonoBehaviour
     }
 
     void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.GetComponent<DropDetector>())
+        {
+            over = false;
+            objectOver = null;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.GetComponent<DropDetector>())
         {

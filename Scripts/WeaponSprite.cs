@@ -29,7 +29,7 @@ public class WeaponSprite : MonoBehaviour
         GameObject wheelHolder = transform.parent.parent.parent.gameObject;
         if(wheelHolder.GetComponent<PlayerWheelHolder>().detached && weapon != null)
         {
-            GameObject.Find("ImventoryMenu(Clone)").GetComponent<InventoryMenu>().addWeapon(weapon);
+            GameObject.Find("InventoryMenu(Clone)").GetComponent<InventoryMenu>().addWeapon(weapon);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().UnequipWeapon(weapon.GetComponent<Weapon>());
             weapon = null;
             displaySprite();

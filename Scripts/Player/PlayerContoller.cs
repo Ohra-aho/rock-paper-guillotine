@@ -36,9 +36,12 @@ public class PlayerContoller : MonoBehaviour
     {
         for(int i = 0; i < 3; i++)
         {
-            transform.GetChild(i).GetChild(0).GetComponent<TextMeshPro>().text = 
-                PlayerWheel.transform.GetChild(i).GetChild(0)
-                    .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().name;
+            if(PlayerWheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
+            {
+                transform.GetChild(i).GetChild(0).GetComponent<TextMeshPro>().text =
+                    PlayerWheel.transform.GetChild(i).GetChild(0)
+                        .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().name;
+            }
         }
     }
 
@@ -132,7 +135,6 @@ public class PlayerContoller : MonoBehaviour
     public void EquipWeapon(Weapon weapon)
     {
         weapon.equip.Invoke();
-        Debug.Log(maxHealth);
     }
 
     public void UnequipWeapon(Weapon weapon)
