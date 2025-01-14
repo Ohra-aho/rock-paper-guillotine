@@ -15,7 +15,8 @@ public class WeaponDetector : MonoBehaviour
     {
         if(!playerWheelHolder.GetComponent<PlayerWheelHolder>().detached)
         {
-            if(other.GetComponent<WeaponSprite>())
+
+            if (other.GetComponent<WeaponSprite>())
             {
                 if (other.GetComponent<WeaponSprite>().id == weaponToDetect)
                 {
@@ -23,8 +24,10 @@ public class WeaponDetector : MonoBehaviour
                 }
                 if (detectionCount == 2 && weaponToDetect != 0)
                 {
+
                     TC = GameObject.FindGameObjectWithTag("Table").GetComponent<TableController>();
                     weaponWheel.GetComponent<Test>().PauseAnimation();
+
                     TC.resultsVisible++;
                 }
             }   

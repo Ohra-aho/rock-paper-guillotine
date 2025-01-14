@@ -30,11 +30,14 @@ public class Test : MonoBehaviour
 
     public void PauseAnimation()
     {
+        Debug.Log("pause");
         GetComponent<Animator>().speed = 0;
     }
 
     public void UnPauseAnimation()
     {
+        Debug.Log("unpause");
+
         GetComponent<Animator>().speed = 1;
     }
 

@@ -38,9 +38,10 @@ public class PlayerContoller : MonoBehaviour
         {
             if(PlayerWheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
             {
-                transform.GetChild(i).GetChild(0).GetComponent<TextMeshPro>().text =
+                transform.GetChild(i).GetComponent<CHoisePanel>().weapon_name =
                     PlayerWheel.transform.GetChild(i).GetChild(0)
                         .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().name;
+                transform.GetChild(i).GetComponent<CHoisePanel>().DisplayName();
             }
         }
     }
