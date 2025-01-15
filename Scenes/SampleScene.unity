@@ -236,7 +236,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.017158031}
+  m_Offset: {x: 0, y: 0.0012797713}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -247,7 +247,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.77, y: 4.7459307}
+  m_Size: {x: 4.77, y: 2.983798}
   m_EdgeRadius: 0
 --- !u!212 &90268214
 SpriteRenderer:
@@ -2047,7 +2047,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.067248404}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2058,7 +2058,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 5}
+  m_Size: {x: 5, y: 3.037066}
   m_EdgeRadius: 0
 --- !u!212 &590252586
 SpriteRenderer:
@@ -2309,7 +2309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2374,7 +2374,7 @@ GameObject:
   - component: {fileID: 663824817}
   - component: {fileID: 663824815}
   - component: {fileID: 663824814}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: weaponSprite2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3201,7 +3201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de572a1b8351c354e84111c93d32c83e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1366762618}
   enemy: {fileID: 1362538240}
   resultsVisible: 0
 --- !u!1001 &990737916
@@ -3473,7 +3473,7 @@ MonoBehaviour:
   enemySide: {fileID: 1123036500}
   playerChoise: 0
   enemyChoise: 0
-  player: {fileID: 0}
+  player: {fileID: 1366762618}
   enemy: {fileID: 1362538240}
   enemyHolder: {fileID: 1362538240}
   startButton: {fileID: 401144636}
@@ -3586,7 +3586,7 @@ GameObject:
   - component: {fileID: 1114976922}
   - component: {fileID: 1114976921}
   - component: {fileID: 1114976920}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: weaponSprite1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4091,7 +4091,7 @@ GameObject:
   - component: {fileID: 1254859815}
   - component: {fileID: 1254859814}
   - component: {fileID: 1254859812}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: weaponSprite3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5129,7 +5129,7 @@ GameObject:
   - component: {fileID: 1366762622}
   m_Layer: 5
   m_Name: ChoisePanel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5174,7 +5174,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1027929692, guid: d52c17905dd67f44ab0b07548a561f3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6042,7 +6042,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.064083576, y: 0.019539833}
+  m_Offset: {x: -0.064083576, y: -0.0053013563}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6053,7 +6053,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.716943, y: 4.5830183}
+  m_Size: {x: 4.716943, y: 3.0429814}
   m_EdgeRadius: 0
 --- !u!212 &1641378582
 SpriteRenderer:

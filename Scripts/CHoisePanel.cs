@@ -5,10 +5,6 @@ using System;
 
 public class CHoisePanel : MonoBehaviour
 {
-    /*[HideInInspector] public char[] characters = {
-        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-        'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'å', 'ä', 'ö'
-    };*/
     [HideInInspector] public string weapon_name;
     [HideInInspector] public Sprite[] character_sheet;
 
@@ -37,15 +33,19 @@ public class CHoisePanel : MonoBehaviour
         {
             transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
         }
-        for(int i = 0; i < divided_name.Length; i++)
-        {
-            //Debug.Log(divided_name[i]);
-        }
         for (int i = 0; i < divided_name.Length; i++)
         {
-            int index = Array.IndexOf(characters, divided_name[i]);
-            transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = character_sheet[index];
-            transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 3;
+            try
+            {
+                int index = Array.IndexOf(characters, divided_name[i]);
+                transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = character_sheet[index];
+                transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 3;
+            } catch
+            {
+                transform.GetChild(i-1).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+                Debug.Log("Pitkä nimi");
+                break;
+            }
         }
     }
 }

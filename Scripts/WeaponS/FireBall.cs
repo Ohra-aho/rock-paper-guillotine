@@ -6,6 +6,6 @@ public class FireBall : MonoBehaviour
 {
     public void SelfDestruct()
     {
-        GameObject.Find("WheelHolder").GetComponent<PlayerWheelHolder>().RemoveWeapon(this.gameObject);
+        GameObject.Find("PlayerWheelHolder").GetComponent<PlayerWheelHolder>().RemoveWeapon(this.gameObject);
     }
 }
