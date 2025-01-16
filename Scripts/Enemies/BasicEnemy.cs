@@ -33,6 +33,7 @@ public class BasicEnemy : MonoBehaviour
         TransferInfo();
         controller.GetComponent<EnemyController>().Inisiate();
         GetComponent<SpriteRenderer>().sprite = image;
+        SpawnWeaponInfo();
     }
 
     public void TransferInfo()
@@ -40,6 +41,15 @@ public class BasicEnemy : MonoBehaviour
         controller.GetComponent<EnemyController>().maxHealth = maxHealth;
         controller.GetComponent<EnemyController>().weapons = weapons;
         controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
+    }
+
+    public void SpawnWeaponInfo()
+    {
+        GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
+        for(int i = 0; i < weapons.Count; i++)
+        {
+            infoHolder.GetComponent<WeaponInfoRack>().SpawnWeaponInfo(weapons[i].GetComponent<Weapon>());
+        }
     }
 
     private int MakeChoise(MainController.Choise playerChoise)

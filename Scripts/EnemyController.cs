@@ -90,6 +90,8 @@ public class EnemyController : MonoBehaviour
 
     public void HandleEnemy()
     {
+        GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
+        infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
         if (transform.childCount > 0) DestroyThis();
         else SpawnEnemy();
         
