@@ -5128,11 +5128,13 @@ MonoBehaviour:
   - {fileID: 6979226803842198351, guid: 7c52a4da872c64d4090795284ba89e1d, type: 3}
   - {fileID: 6979226803842198351, guid: 870ed2e832e03c24390913ab1fe726e7, type: 3}
   - {fileID: 6979226803842198351, guid: 2cce5fed51c0f454e800ac673cc52432, type: 3}
-  - {fileID: 6979226803842198351, guid: 8705371f5c6e303408e7ea00714d7e08, type: 3}
   firstEnemy: 1
+  HB: {fileID: 1238540699}
+  EnemyHB: {fileID: 370411301}
   maxHealth: 0
   damage: 0
   armor: 0
+  currentEnemy: {fileID: 0}
   weapons: []
   EnemyWheel: {fileID: 0}
   weaponDetector: {fileID: 0}

@@ -17,13 +17,13 @@ public class BasicEnemy : MonoBehaviour
     //Bluff,
     //Counter,
     //Counter counter
-    public List<float> actionIncreasePrefs; //Determines how likely each action preference is to change, if change is inisitaed
-    public List<float> actionPrefs; //Determines chances for each action to take.
 
     public List<int> plan;
     private int planIndex = 0;
 
     MainController.Choise lastPlayerChoise = MainController.Choise.kivi;
+
+    private bool nearDeath;
 
    
     // Start is called before the first frame update
@@ -41,6 +41,7 @@ public class BasicEnemy : MonoBehaviour
         controller.GetComponent<EnemyController>().maxHealth = maxHealth;
         controller.GetComponent<EnemyController>().weapons = weapons;
         controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
+        controller.GetComponent<EnemyController>().currentEnemy = this;
     }
 
     public void SpawnWeaponInfo()
@@ -52,18 +53,67 @@ public class BasicEnemy : MonoBehaviour
         }
     }
 
+    public void ReactToDamage()
+    {
+        Debug.Log("Taking damage!");
+    }
+
+    public void CheckUp(int currentHealth, int maxHealth, int enemyCurrentHealth, int enemyMaxHealth)
+    {
+        if(currentHealth <= maxHealth/3 || currentHealth == 1)
+        {
+            nearDeath = true;
+            Debug.Log("Near death");
+        }
+
+        /*if()
+        {
+
+        }*/
+    }
+
+    private Weapon GetStrongestWeapon()
+    {
+        Weapon strongest = weapons[0].GetComponent<Weapon>();
+
+        for(int i = 1; i < weapons.Count; i++)
+        {
+            if(weapons[i].GetComponent<Weapon>().damage > strongest.damage)
+            {
+                strongest = weapons[i].GetComponent<Weapon>();
+            }
+        }
+
+        return strongest;
+    }
+
+    private Weapon GetMostArmor()
+    {
+        Weapon strongest = weapons[0].GetComponent<Weapon>();
+
+        for (int i = 1; i < weapons.Count; i++)
+        {
+            if (weapons[i].GetComponent<Weapon>().armor > strongest.armor)
+            {
+                strongest = weapons[i].GetComponent<Weapon>();
+            }
+        }
+
+        return strongest;
+    }
+
     private int MakeChoise(MainController.Choise playerChoise)
     {
         float choise = Random.Range(0.01f, 1f);
         int choiseIndex = 0;
+        int step = 0;
 
-        //Chooses action according to actionPrefs
-        for(int i = 0; i < actionPrefs.Count; i++)
+        //To give some random element to AI's plan
+        if (choise <= 0.2f)
         {
-            if(choise <= actionPrefs[i]) choiseIndex = i;
+            choiseIndex = Random.Range(1, 3);
         }
 
-        int step = 0;
         //choiseIndex = 3;
 
         //Does the action
@@ -94,6 +144,7 @@ public class BasicEnemy : MonoBehaviour
     //Make the same action again as previously
     private int Bluff()
     {
+        Debug.Log("Bluff");
         if(planIndex > 0)
         {
             int step = plan[planIndex - 1];
@@ -109,6 +160,7 @@ public class BasicEnemy : MonoBehaviour
     //Antisipate the same action from opponent and counter that
     private int Counter()
     {
+        Debug.Log("Counter");
         int temp = 0;
         for(int i = 0; i < weapons.Count; i++)
         {
@@ -131,46 +183,13 @@ public class BasicEnemy : MonoBehaviour
     //Use opponents previous action
     private int CounterCounter()
     {
+        Debug.Log("CounterCounter");
         int temp = 0;
         for (int i = 0; i < weapons.Count; i++)
         {
             if (weapons[i].GetComponent<Weapon>().type == lastPlayerChoise) temp = i;
         }
         return temp;
-    }
-
-    public void MakeAdjustments(float kiviPref, float paperiPref, float saksetPref)
-    {
-        List<float> weaponPrefs = GetComponent<BasicEnemy>().actionPrefs;
-
-        if (kiviPref > 0)
-        {
-            weaponPrefs[1] -= kiviPref / 2;
-            weaponPrefs[2] -= kiviPref / 2;
-        }
-        if (paperiPref > 0)
-        {
-            weaponPrefs[1] += paperiPref / 2;
-            weaponPrefs[2] -= paperiPref / 2;
-        }
-        if (saksetPref > 0)
-        {
-            weaponPrefs[1] -= saksetPref / 2;
-            weaponPrefs[2] += saksetPref / 2;
-        }
-
-
-    }
-
-    private void CapWeaponPrefs()
-    {
-        for(int i = 0; i < actionPrefs.Count; i++)
-        {
-            if(actionPrefs[i] > 1)
-            {
-
-            }
-        }
     }
 
 }

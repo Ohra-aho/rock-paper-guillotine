@@ -8,10 +8,12 @@ public class EnemyController : MonoBehaviour
     public List<GameObject> enemies;
     public bool firstEnemy = true;
 
-    HealthBar HB;
+    public HealthBar HB;
+    public HealthBar EnemyHB;
     public int maxHealth;
     [HideInInspector] public int damage = 0;
     [HideInInspector] public int armor = 0;
+    [HideInInspector] public BasicEnemy currentEnemy;
 
     public List<GameObject> weapons;
 
@@ -34,7 +36,7 @@ public class EnemyController : MonoBehaviour
 
     public void Inisiate()
     {
-        HB = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>();
+        //HB = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>();
         HB.DisplayHealthBar(maxHealth);
         EnemyWheel = GameObject.FindGameObjectWithTag("EnemyWheel");
         weaponDetector = GameObject.FindGameObjectWithTag("EnemyWeaponDetector");
@@ -60,19 +62,19 @@ public class EnemyController : MonoBehaviour
 
     public void RecoverAllHealth()
     {
-        HB = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>();
+        //HB = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>();
         HB.HealToFull();
     }
 
     public void Die()
     {
-        HB = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>();
+        //HB = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>();
         HB.InstaKill();
     }
 
     public void DestroyThis()
     {
-        HB = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>();
+        //HB = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>();
         HB.DestroyHealthBar();
         Destroy(transform.GetChild(0).gameObject);
     }
@@ -111,13 +113,17 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        HB = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>();
+        //HB = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>();
 
         int realDamage = damage - armor;
         if (realDamage < 0) realDamage = 0;
 
         HB.GetComponent<HealthBar>().TakeDamage(realDamage);
         dead = HB.GetComponent<HealthBar>().CheckIfDead();
+        if(!dead)
+        {
+            currentEnemy.ReactToDamage();
+        }
     }
 
     // Rock, Paper, scissors
@@ -145,5 +151,12 @@ public class EnemyController : MonoBehaviour
         if (endEffect != null) endEffect();
 
         //Does things when round is over
+        currentEnemy.CheckUp(
+                HB.GiveCurrentHealth(),
+                maxHealth,
+                EnemyHB.GiveCurrentHealth(),
+                EnemyHB.GiveMaxHealth()
+            );
+
     }
 }

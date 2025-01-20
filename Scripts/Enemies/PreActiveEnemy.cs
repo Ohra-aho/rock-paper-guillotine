@@ -14,13 +14,11 @@ public class PreActiveEnemy : MonoBehaviour
     void Start()
     {
         AdjustToStrongestWeapon(
-            SortPlayerWeapons()
+                SortPlayerWeapons()
             );
         AdjustToMostCommonType(
-            GetWeaponTypes()
+                GetWeaponTypes()
             );
-        transform.parent.GetComponent<BasicEnemy>()
-            .MakeAdjustments(kiviPref, paperiPref, saksetPref);
 
         kiviPref = 0f;
         paperiPref = 0f;

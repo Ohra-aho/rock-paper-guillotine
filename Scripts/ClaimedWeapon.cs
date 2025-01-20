@@ -32,7 +32,7 @@ public class ClaimedWeapon : MonoBehaviour
         transform.parent.parent.GetComponent<NonUIScroll>().Activate(); //Crude but works
 
         visibleInfo = Instantiate(Info, GameObject.Find("Canvas").transform);
-        visibleInfo.transform.position =
+        visibleInfo.transform.position = 
             Camera.main.ScreenToWorldPoint(
                 new Vector3(
                     Input.mousePosition.x + 100,
