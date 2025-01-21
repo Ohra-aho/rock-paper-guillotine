@@ -11,8 +11,6 @@ public class HealthBar : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("Damage: "+damage);
-        
         for(int i = 0; i < damage; i++)
         {
             for(int j = 0; j < transform.childCount; j++)

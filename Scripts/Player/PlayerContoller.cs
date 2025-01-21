@@ -11,7 +11,8 @@ public class PlayerContoller : MonoBehaviour
 
     public GameObject healthBar;
 
-    [HideInInspector] public int maxHealth = 3;
+    //[HideInInspector] public int maxHealth = 1;
+    private int maxHealth = 3;
     [HideInInspector] public int damage = 0;
     [HideInInspector] public int armor = 0;
 
@@ -158,6 +159,12 @@ public class PlayerContoller : MonoBehaviour
     {
         HB = healthBar.GetComponent<HealthBar>();
         HB.InstaKill();
+    }
+
+    public int GiveCurrentHealth()
+    {
+        HB = healthBar.GetComponent<HealthBar>();
+        return HB.GetComponent<HealthBar>().GiveCurrentHealth();
     }
 
     // Rock, Paper, scissors

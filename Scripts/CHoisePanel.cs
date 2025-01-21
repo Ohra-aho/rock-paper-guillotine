@@ -7,11 +7,13 @@ public class CHoisePanel : MonoBehaviour
 {
     [HideInInspector] public string weapon_name;
     [HideInInspector] public Sprite[] character_sheet;
+    public GameObject character;
 
     // Start is called before the first frame update
     void Start()
     {
         //DisplayName();
+        
     }
 
     // Update is called once per frame
@@ -22,6 +24,14 @@ public class CHoisePanel : MonoBehaviour
 
     public void DisplayName()
     {
+        if(transform.childCount <= 0)
+        {
+            for (int i = 0; i < 16; i++)
+            {
+                GameObject chr = Instantiate(character, transform);
+                //chr.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 4;
+            }
+        }
         character_sheet = Resources.LoadAll<Sprite>("aakkosto");
 
         char[] characters = {
@@ -39,11 +49,10 @@ public class CHoisePanel : MonoBehaviour
             {
                 int index = Array.IndexOf(characters, divided_name[i]);
                 transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = character_sheet[index];
-                transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 3;
+                //transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 4;
             } catch
             {
                 transform.GetChild(i-1).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
-                Debug.Log("Pitkä nimi");
                 break;
             }
         }

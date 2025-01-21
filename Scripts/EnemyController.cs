@@ -159,4 +159,9 @@ public class EnemyController : MonoBehaviour
             );
 
     }
+
+    public int GiveCurrentHealth()
+    {
+        return HB.GetComponent<HealthBar>().GiveCurrentHealth();
+    }
 }
