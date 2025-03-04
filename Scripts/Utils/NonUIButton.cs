@@ -25,7 +25,7 @@ public class NonUIButton : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if(over != null)
+        if(over != null && interactable)
         {
             over.Invoke();
             GetComponent<SpriteRenderer>().color = new Color(hoverTint, hoverTint, hoverTint);
@@ -34,7 +34,7 @@ public class NonUIButton : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if(exit != null)
+        if(exit != null && interactable)
         {
             exit.Invoke();
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);

@@ -8,6 +8,7 @@ public class MainController : MonoBehaviour
     [HideInInspector] public bool? won;
     [HideInInspector] public bool dead;
     [HideInInspector] public bool endTriggered;
+    public bool stop;
 
 
     private TableController TC;
@@ -39,10 +40,6 @@ public class MainController : MonoBehaviour
         sakset
     }
 
-    private void Start()
-    {
-        
-    }
     private void Update()
     {
         if(dead)

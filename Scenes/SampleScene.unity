@@ -776,6 +776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 172741883}
+  - component: {fileID: 172741884}
   m_Layer: 0
   m_Name: Interactables
   m_TagString: Untagged
@@ -803,6 +804,18 @@ Transform:
   - {fileID: 1567146477}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &172741884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172741882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e03a2f2cd6611641992c1988e01ec20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &229211563
 GameObject:
   m_ObjectHideFlags: 0
@@ -3520,7 +3533,6 @@ GameObject:
   - component: {fileID: 1066024787}
   - component: {fileID: 1066024786}
   - component: {fileID: 1066024790}
-  - component: {fileID: 1066024791}
   - component: {fileID: 1066024792}
   m_Layer: 0
   m_Name: EventSystem
@@ -3543,6 +3555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dead: 0
   endTriggered: 0
+  stop: 0
   playerSide: {fileID: 1674057590}
   enemySide: {fileID: 1123036500}
   playerChoise: 0
@@ -3619,21 +3632,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   events:
   - {fileID: 3768069680275742937, guid: 72abe8b4c4790aa43a8825ba90c23b1f, type: 3}
---- !u!114 &1066024791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066024785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4adeb52bf69e5a94bb331a11e42400f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targets:
-  - {fileID: 401144636}
-  - {fileID: 138571107}
 --- !u!114 &1066024792
 MonoBehaviour:
   m_ObjectHideFlags: 0
