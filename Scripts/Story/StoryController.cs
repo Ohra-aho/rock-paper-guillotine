@@ -5,16 +5,15 @@ using UnityEngine;
 public class StoryController : MonoBehaviour
 {
     public List<GameObject> events;
+    public GameObject story_event_holder;
 
+    //ERROR//
+    //Needs to instanciate the event. Could make event management even easier..
     public void InvokeNextEvent()
     {
-        for(int i = 0; i < events.Count; i++)
+        if(story_event_holder.transform.childCount == 0 && events.Count > 0)
         {
-            if(!events[i].GetComponent<StoryEvent>().over)
-            {
-                events[i].GetComponent<StoryEvent>().Procceed();
-                break;
-            }
-        }
+            GameObject new_event = Instantiate(events[0], story_event_holder.transform);
+        } 
     }
 }

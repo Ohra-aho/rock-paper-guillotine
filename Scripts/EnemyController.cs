@@ -33,10 +33,11 @@ public class EnemyController : MonoBehaviour
     public Effect resultEffect;
     public Effect endEffect;
 
+    public GameObject story_event_holder;
+
 
     public void Inisiate()
     {
-        //HB = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>();
         HB.DisplayHealthBar(maxHealth);
         EnemyWheel = GameObject.FindGameObjectWithTag("EnemyWheel");
         weaponDetector = GameObject.FindGameObjectWithTag("EnemyWeaponDetector");
@@ -62,32 +63,39 @@ public class EnemyController : MonoBehaviour
 
     public void RecoverAllHealth()
     {
-        //HB = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>();
         HB.HealToFull();
     }
 
     public void Die()
     {
-        //HB = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>();
         HB.InstaKill();
     }
 
     public void DestroyThis()
     {
-        //HB = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>();
         HB.DestroyHealthBar();
         Destroy(transform.GetChild(0).gameObject);
     }
 
     public void SpawnEnemy()
     {
-        int index = Random.Range(0, enemies.Count);
-        if(firstEnemy)
+        /*if(firstEnemy)
         {
             index = 0;
             firstEnemy = false;
+        }*/
+        if(story_event_holder.transform.childCount > 0)
+        {
+            Encounter encounter = null;
+            if (story_event_holder.transform.GetChild(0).GetComponent<Encounter>()) 
+            {
+                encounter = story_event_holder.transform.GetChild(0).GetComponent<Encounter>();
+            }
+            if(encounter != null)
+            {
+                Instantiate(encounter.enemies[0], transform);
+            }
         }
-        Instantiate(enemies[index], transform);
     }
 
     public void HandleEnemy()

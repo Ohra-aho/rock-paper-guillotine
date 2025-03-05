@@ -40,6 +40,11 @@ public class MainController : MonoBehaviour
         sakset
     }
 
+    private void Start()
+    {
+        
+    }
+
     private void Update()
     {
         if(dead)
@@ -49,6 +54,9 @@ public class MainController : MonoBehaviour
                 endTriggered = true;
                 quilliotine.GetComponent<Test>().PlayAnimation("Lose");
             }
+        } else
+        {
+            GetComponent<StoryController>().InvokeNextEvent();
         }
     }
 
@@ -110,7 +118,6 @@ public class MainController : MonoBehaviour
     public void EndGame()
     {
         EndRound();
-        //ResetPlayer();
         dead = true;
     }
 
@@ -118,7 +125,7 @@ public class MainController : MonoBehaviour
     {
         EnableObject(startButton);
         startButton.GetComponent<StartButton>().EndRound();
-        GetComponent<StoryController>().InvokeNextEvent();
+        GameObject.Find("Story Event Holder").transform.GetChild(0).GetComponent<StoryEvent>().Procceed();
     }
 
     public void GiveUp()

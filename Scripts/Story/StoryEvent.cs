@@ -5,13 +5,16 @@ using UnityEngine.Events;
 
 public class StoryEvent : MonoBehaviour
 {
-    [HideInInspector] public bool over = false;
+    /*[HideInInspector]*/ public bool over = false;
     public UnityEvent eventFunction;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
+        if(over)
+        {
+            GameObject.Find("EventSystem").GetComponent<StoryController>().events.RemoveAt(0);
+            Destroy(this.gameObject);
+        }
     }
 
     public void Procceed()

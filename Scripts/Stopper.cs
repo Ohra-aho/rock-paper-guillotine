@@ -37,12 +37,10 @@ public class Stopper : MonoBehaviour
     {
         if (target.GetComponent<Button>())
         {
-            Debug.Log(target.name);
             target.GetComponent<Button>().interactable = stop;
         }
         if(target.GetComponent<NonUIButton>())
         {
-            Debug.Log(target.name);
             target.GetComponent<NonUIButton>().interactable = stop;
         }
         if(target.GetComponent<NonUIScroll>())
