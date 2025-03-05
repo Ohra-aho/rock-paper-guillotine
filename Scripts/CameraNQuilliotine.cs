@@ -16,4 +16,9 @@ public class CameraNQuilliotine : MonoBehaviour
     {
         eventSystem.GetComponent<MainController>().stop = true;
     }
+
+    public void PlayAudio(int clip)
+    {
+        transform.GetChild(2).GetChild(clip).GetComponent<AudioPlayer>().PlayClip();
+    }
 }

@@ -33,9 +33,14 @@ public class AudioPlayer : MonoBehaviour
         GetComponent<AudioSource>().Play();
     }
 
-    public void StopClip()
+    public void PauseClip()
     {
         GetComponent<AudioSource>().Pause();
+    }
+
+    public void StopClip()
+    {
+        GetComponent<AudioSource>().Stop();
     }
 
 

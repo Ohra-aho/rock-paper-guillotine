@@ -34,7 +34,7 @@ public class NonUIButton : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if(exit != null && interactable)
+        if(exit != null)
         {
             exit.Invoke();
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);

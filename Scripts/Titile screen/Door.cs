@@ -17,7 +17,7 @@ public class Door : MonoBehaviour
     {
         if(!opened)
         {
-            musicPlayer.GetComponent<AudioPlayer>().StopClip();
+            musicPlayer.GetComponent<AudioPlayer>().PauseClip();
             GetComponent<Image>().sprite = open;
             opened = true;
             man.GetComponent<Image>().color = new Color(1, 1, 1, 1);

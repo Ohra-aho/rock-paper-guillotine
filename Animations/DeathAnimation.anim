@@ -74,12 +74,12 @@ AnimationClip:
       - serializedVersion: 3
         time: 2.3333333
         value: {x: 0, y: 0, z: -37.744}
-        inSlope: {x: 0, y: 0, z: -68.28999}
-        outSlope: {x: 0, y: 0, z: -68.28999}
+        inSlope: {x: 0, y: 0, z: -139.93584}
+        outSlope: {x: 0, y: 0, z: -139.93584}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.24345863}
       - serializedVersion: 3
         time: 2.6666667
         value: {x: 0, y: 0, z: -89.422}
@@ -930,12 +930,12 @@ AnimationClip:
       - serializedVersion: 3
         time: 2.3333333
         value: -37.744
-        inSlope: -68.28999
-        outSlope: -68.28999
-        tangentMode: 136
+        inSlope: -139.93584
+        outSlope: -139.93584
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.24345863
       - serializedVersion: 3
         time: 2.6666667
         value: -89.422
@@ -1038,6 +1038,48 @@ AnimationClip:
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
+    messageOptions: 0
+  - time: 0
+    functionName: PlayAudio
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.033333335
+    functionName: PlayAudio
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 1
+    messageOptions: 0
+  - time: 0.75
+    functionName: PlayAudio
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 4
+    messageOptions: 0
+  - time: 1
+    functionName: PlayAudio
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 2
+    messageOptions: 0
+  - time: 1.1666666
+    functionName: PlayAudio
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 3
+    messageOptions: 0
+  - time: 2.5
+    functionName: PlayAudio
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 5
     messageOptions: 0
   - time: 2.75
     functionName: RevealDeathScreen
