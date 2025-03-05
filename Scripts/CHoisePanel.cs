@@ -9,19 +9,6 @@ public class CHoisePanel : MonoBehaviour
     [HideInInspector] public Sprite[] character_sheet;
     public GameObject character;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //DisplayName();
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void DisplayName()
     {
         if(transform.childCount <= 0)

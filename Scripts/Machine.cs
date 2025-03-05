@@ -11,6 +11,21 @@ public class Machine : MonoBehaviour
     public GameObject startButton;
     public GameObject playerWheelHolder;
 
+    private void Update()
+    {
+        AnimatorStateInfo stateInfo = GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
+        // Check if "machineClose" is playing
+        if (stateInfo.IsName("MachineClose"))
+        {
+            GetComponent<Test>().reverse = false;
+        }
+        // Check if "machineOpen" is playing
+        else if (stateInfo.IsName("MachineOpen"))
+        {
+            GetComponent<Test>().reverse = true;
+        }
+    }
+
     public void AnimationStart()
     {
         rightSide.transform.GetChild(2).GetComponent<EnemyController>().HandleEnemy();
@@ -33,5 +48,6 @@ public class Machine : MonoBehaviour
     {
         startButton.GetComponent<NonUIButton>().interactable = false;
         playerWheelHolder.GetComponent<NonUIButton>().interactable = false;
+
     }
 }

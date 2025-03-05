@@ -52,6 +52,7 @@ public class PlayerContoller : MonoBehaviour
         MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
         currentEnemy = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>();
         PlayerWheel.GetComponent<Test>().UnPauseAnimation();
+        PlayerWheel.GetComponent<Test>().PlayAudio(0);
 
         MainController.Choise weaponType = PlayerWheel.transform.GetChild(choise - 1)
             .GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().type;
@@ -72,7 +73,7 @@ public class PlayerContoller : MonoBehaviour
 
     public void DisplayWeapons()
     {
-        for(int i = 0; i < PlayerWheel.transform.childCount; i++)
+        for(int i = 0; i < PlayerWheel.transform.childCount-1; i++)
         {
             PlayerWheel.transform.GetChild(i).GetChild(0)
                         .GetComponent<WeaponSprite>().weapon = weapons[i];
@@ -90,7 +91,7 @@ public class PlayerContoller : MonoBehaviour
         GameObject wheel = transform.parent
             .GetChild(0).GetChild(0).gameObject;
 
-        for(int i = 0; i < wheel.transform.childCount; i++)
+        for(int i = 0; i < wheel.transform.childCount-1; i++)
         {
             temp.Add(
                 wheel.transform.GetChild(i).GetChild(0)

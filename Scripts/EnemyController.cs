@@ -55,6 +55,7 @@ public class EnemyController : MonoBehaviour
         weaponDetector.GetComponent<WeaponDetector>().weaponToDetect = choise+1;
 
         EnemyWheel.GetComponent<Test>().UnPauseAnimation();
+        EnemyWheel.GetComponent<Test>().PlayAudio(0);
 
         ChoisePhase();
 
@@ -109,7 +110,7 @@ public class EnemyController : MonoBehaviour
 
     public void DisplayWeapons()
     {
-        for (int i = 0; i < EnemyWheel.transform.childCount; i++)
+        for (int i = 0; i < EnemyWheel.transform.childCount-1; i++)
         {
             EnemyWheel.transform.GetChild(i).GetChild(0)
                 .GetComponent<WeaponSprite>().weapon = weapons[i];
