@@ -28,6 +28,8 @@ public class WeaponDetector : MonoBehaviour
                     TC = GameObject.FindGameObjectWithTag("Table").GetComponent<TableController>();
                     weaponWheel.GetComponent<Test>().PauseAnimation();
                     weaponWheel.GetComponent<Test>().StopAudio(0);
+                    weaponWheel.GetComponent<Test>().StopAudio(1);
+                    weaponWheel.GetComponent<Test>().PlayAudio(2);
 
                     TC.resultsVisible++;
                 }

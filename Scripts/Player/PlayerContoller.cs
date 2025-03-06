@@ -53,6 +53,7 @@ public class PlayerContoller : MonoBehaviour
         currentEnemy = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>();
         PlayerWheel.GetComponent<Test>().UnPauseAnimation();
         PlayerWheel.GetComponent<Test>().PlayAudio(0);
+        PlayerWheel.GetComponent<Test>().PlayAudio(1);
 
         MainController.Choise weaponType = PlayerWheel.transform.GetChild(choise - 1)
             .GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().type;

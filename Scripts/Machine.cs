@@ -13,13 +13,16 @@ public class Machine : MonoBehaviour
 
     private void Update()
     {
+        //CheckAnimation();
+    }
+
+    public void CheckAnimation()
+    {
         AnimatorStateInfo stateInfo = GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
-        // Check if "machineClose" is playing
         if (stateInfo.IsName("MachineClose"))
         {
             GetComponent<Test>().reverse = false;
         }
-        // Check if "machineOpen" is playing
         else if (stateInfo.IsName("MachineOpen"))
         {
             GetComponent<Test>().reverse = true;
@@ -48,6 +51,5 @@ public class Machine : MonoBehaviour
     {
         startButton.GetComponent<NonUIButton>().interactable = false;
         playerWheelHolder.GetComponent<NonUIButton>().interactable = false;
-
     }
 }

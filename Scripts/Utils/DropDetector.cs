@@ -26,6 +26,7 @@ public class DropDetector : MonoBehaviour
 
     public void changeWeapon(GameObject newWeapon, int index)
     {
+        PlayAudio(5);
         if(weaponHolder.GetComponent<WeaponSprite>().weapon != null)
         {
             GameObject.Find("InventoryMenu(Clone)").GetComponent<InventoryMenu>()
@@ -67,5 +68,24 @@ public class DropDetector : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
+    }
+
+    private int LastIndex()
+    {
+        int index = transform.parent.parent.childCount - 1;
+        if (index < 0) index = 0;
+        for (int i = 0; i < transform.parent.parent.childCount; i++)
+        {
+            if (transform.parent.parent.GetChild(i).GetComponent<Stupid>())
+            {
+                return i;
+            }
+        }
+        return index;
+    }
+
+    public void PlayAudio(int clip)
+    {
+        transform.parent.parent.GetChild(LastIndex()).GetChild(clip).GetComponent<AudioPlayer>().PlayClip();
     }
 }

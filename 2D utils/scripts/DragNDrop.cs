@@ -29,6 +29,7 @@ public class DragNDrop : MonoBehaviour
         // Calculate the offset between the mouse position and the object's position
         offset = transform.position - GetMouseWorldPosition();
         originalPosition = transform.position;
+        PlayAudio(0);
     }
 
     private void OnMouseDrag()
@@ -41,8 +42,6 @@ public class DragNDrop : MonoBehaviour
 
     private void OnMouseUp()
     {
-        
-
         if (destroyOnDrop)
         {
             Destroy(this.gameObject);
@@ -91,5 +90,24 @@ public class DragNDrop : MonoBehaviour
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = Mathf.Abs(mainCamera.transform.position.z); // Set Z to camera's distance
         return mainCamera.ScreenToWorldPoint(mousePosition);
+    }
+
+    private int LastIndex()
+    {
+        int index = transform.childCount - 1;
+        if (index < 0) index = 0;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).GetComponent<Stupid>())
+            {
+                return i;
+            }
+        }
+        return index;
+    }
+
+    public void PlayAudio(int clip)
+    {
+        transform.GetChild(LastIndex()).GetChild(clip).GetComponent<AudioPlayer>().PlayClip();
     }
 }

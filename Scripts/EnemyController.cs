@@ -56,6 +56,7 @@ public class EnemyController : MonoBehaviour
 
         EnemyWheel.GetComponent<Test>().UnPauseAnimation();
         EnemyWheel.GetComponent<Test>().PlayAudio(0);
+        EnemyWheel.GetComponent<Test>().PlayAudio(1);
 
         ChoisePhase();
 

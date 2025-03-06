@@ -1,1 +1,1 @@
-Assest folder of a Unity gae where you play deadly rock, paper, scissors games.
+Assest folder of a Unity game where you play deadly rock, paper, scissors games.

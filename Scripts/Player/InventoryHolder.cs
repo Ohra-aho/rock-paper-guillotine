@@ -10,6 +10,7 @@ public class InventoryHolder : MonoBehaviour
         if(!open)
         {
             open = true;
+            GetComponent<Test>().reverse = open;
         }
     }
 
@@ -17,8 +18,15 @@ public class InventoryHolder : MonoBehaviour
     {
         if(open)
         {
-            Destroy(transform.GetChild(0).gameObject);
             open = false;
+            GetComponent<Test>().reverse = open;
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                if(transform.GetChild(i).GetComponent<InventoryMenu>())
+                {
+                    Destroy(transform.GetChild(i).gameObject);
+                }
+            }
         }
     }
 }

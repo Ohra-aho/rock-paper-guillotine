@@ -61,6 +61,19 @@ public class StartButton : MonoBehaviour
         }
     }
 
-    
+    private int LastIndex()
+    {
+        int index = transform.childCount - 1;
+        if (index < 0) index = 0;
+        return index;
+    }
+
+    public void PlayAudio()
+    {
+        if (isActive) transform.GetChild(LastIndex()).GetChild(1).GetComponent<AudioPlayer>().PlayClip();
+        else transform.GetChild(LastIndex()).GetChild(0).GetComponent<AudioPlayer>().PlayClip();
+    }
+
+
 
 }

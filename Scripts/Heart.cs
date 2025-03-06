@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering.Universal;
 
 public class Heart : MonoBehaviour
 {
@@ -13,18 +14,16 @@ public class Heart : MonoBehaviour
     private void Start()
     {
         heal();
-        //damage();
     }
 
     public void damage()
     {
-        this.GetComponent<SpriteRenderer>().color = empty;
+        GetComponent<Test>().PlayAnimation("LoseLife");
         healthy = false;
     }
 
     public void heal()
     {
-        this.GetComponent<SpriteRenderer>().color = full;
         healthy = true;
     }
 }

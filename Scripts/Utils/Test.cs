@@ -13,6 +13,7 @@ public class Test : MonoBehaviour
     private void Start()
     {
         if (continious) GetComponent<Animator>().speed = 0;
+       
     }
 
     public void InvokeTrigger()
@@ -45,6 +46,11 @@ public class Test : MonoBehaviour
         return GetComponent<Animator>().speed == 0;
     }
 
+    public void ToggleReverse(int r)
+    {
+        reverse = r == 0;
+    }
+
     //Structure should be something like this:
     /*
      audioPlayer
@@ -57,6 +63,13 @@ public class Test : MonoBehaviour
     {
         int index = transform.childCount - 1;
         if (index < 0) index = 0;
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            if(transform.GetChild(i).GetComponent<Stupid>())
+            {
+                return i;
+            }
+        }
         return index;
     }
 
@@ -82,5 +95,15 @@ public class Test : MonoBehaviour
     public void LastLoop(int clip)
     {
         transform.GetChild(LastIndex()).GetChild(clip).GetComponent<AudioPlayer>().StopLoop();
+    }
+
+    public class OneWaySwitch
+    {
+        bool active;
+
+        public void ToggleSwitch()
+        {
+            active = !active;
+        }
     }
 }

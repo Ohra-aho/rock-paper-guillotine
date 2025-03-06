@@ -13,6 +13,7 @@ public class PlayerWheelHolder : MonoBehaviour
 
     public void press()
     {
+        //PlayAudio();
         if(detached)
         {
             AttachWheel();
@@ -51,5 +52,18 @@ public class PlayerWheelHolder : MonoBehaviour
                 weaponHolder.transform.GetChild(0).GetComponent<WeaponSprite>().displaySprite();
             }
         }
+    }
+
+    private int LastIndex()
+    {
+        int index = transform.childCount - 1;
+        if (index < 0) index = 0;
+        return index;
+    }
+
+    public void PlayAudio()
+    {
+        if (!detached) transform.GetChild(LastIndex()).GetChild(0).GetComponent<AudioPlayer>().PlayClip();
+        else transform.GetChild(LastIndex()).GetChild(1).GetComponent<AudioPlayer>().PlayClip();
     }
 }
