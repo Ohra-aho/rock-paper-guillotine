@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Message : MonoBehaviour
 {
-    [SerializeField] AudioClip clip;
-    [SerializeField] Animation animation;
+    public int id;
     GameObject man;
     private bool activated = false;
 
@@ -28,8 +27,7 @@ public class Message : MonoBehaviour
     public void PlayMessage()
     {
         man = GameObject.Find("man");
-        man.GetComponent<AudioSource>().clip = clip;
-        man.GetComponent<AudioSource>().Play();
+        man.GetComponent<ManAnimator>().ManMessage(id);
         activated = true;
     }
 }
