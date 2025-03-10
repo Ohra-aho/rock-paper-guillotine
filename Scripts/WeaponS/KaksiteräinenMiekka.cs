@@ -7,7 +7,19 @@ public class KaksiteräinenMiekka : MonoBehaviour
     public int damage;
     public void SelfDamage()
     {
-        //GameObject.FindGameObjectWithTag("Player")
-        //    .GetComponent<PlayerContoller>().TakeDamage(damage);
+        Debug.Log("Self damage");
+        if(GetComponent<Weapon>().player)
+        {
+            GetComponent<Weapon>().TakeDamage(
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB,
+                damage
+                );
+        } else
+        {
+            GetComponent<Weapon>().TakeDamage(
+                GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB,
+                damage
+                );
+        }
     }
 }

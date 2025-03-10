@@ -52,6 +52,17 @@ public class PlayerWheelHolder : MonoBehaviour
                 weaponHolder.transform.GetChild(0).GetComponent<WeaponSprite>().displaySprite();
             }
         }
+
+        GameObject ti = transform.parent.GetChild(1).GetComponent<PlayerContoller>().TrueInventory.gameObject;
+
+        for (int i = 0; i < ti.transform.childCount; i++)
+        {
+            if(ti.transform.GetChild(i).gameObject == weapon)
+            {
+                Destroy(ti.transform.GetChild(i).gameObject);
+                break;
+            }
+        }
     }
 
     private int LastIndex()

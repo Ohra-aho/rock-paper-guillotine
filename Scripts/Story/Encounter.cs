@@ -15,15 +15,22 @@ public class Encounter : MonoBehaviour
 
     public void MakeEnemyList()
     {
-        for(int i = 0; i < amount; i++)
+        if(possible_enemies.Count > 1)
         {
-            int index = Random.Range(0, possible_enemies.Count);
-            while(enemies.Contains(possible_enemies[index]))
+            for (int i = 0; i < amount; i++)
             {
-                index = Random.Range(0, possible_enemies.Count);
+                int index = Random.Range(0, possible_enemies.Count);
+                while (enemies.Contains(possible_enemies[index]))
+                {
+                    index = Random.Range(0, possible_enemies.Count);
+                }
+                enemies.Add(possible_enemies[index]);
             }
-            enemies.Add(possible_enemies[index]);
+        } else
+        {
+            enemies.Add(possible_enemies[0]);
         }
+        
     }
 
     public void Victory()

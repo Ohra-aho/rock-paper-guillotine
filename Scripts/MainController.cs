@@ -15,13 +15,10 @@ public class MainController : MonoBehaviour
     public Weapon playerChoise;
     public Weapon enemyChoise;
 
-
-
     public GameObject player;
     public GameObject enemy;
 
     public GameObject enemyHolder;
-
 
     public GameObject startButton;
     public GameObject rewardmenuHolder;
@@ -55,6 +52,7 @@ public class MainController : MonoBehaviour
 
     public void CompareChoises()
     {
+        SetWeaponOpponents();
         switch(playerChoise.type)
         {
             case Choise.kivi:
@@ -82,6 +80,12 @@ public class MainController : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    private void SetWeaponOpponents()
+    {
+        enemyChoise.opponent = playerChoise;
+        playerChoise.opponent = enemyChoise;
     }
 
     public void Resolve()

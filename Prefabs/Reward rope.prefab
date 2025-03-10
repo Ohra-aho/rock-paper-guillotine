@@ -150,6 +150,7 @@ MonoBehaviour:
   trigger:
     m_PersistentCalls:
       m_Calls: []
+  reverse: 0
 --- !u!1 &4438377863734659364
 GameObject:
   m_ObjectHideFlags: 0

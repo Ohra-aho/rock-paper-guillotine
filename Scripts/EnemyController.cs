@@ -125,6 +125,7 @@ public class EnemyController : MonoBehaviour
     {
         for (int i = 0; i < EnemyWheel.transform.childCount-1; i++)
         {
+            weapons[i].GetComponent<Weapon>().player = false;
             EnemyWheel.transform.GetChild(i).GetChild(0)
                 .GetComponent<WeaponSprite>().weapon = weapons[i];
 

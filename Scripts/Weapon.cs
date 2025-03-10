@@ -5,7 +5,8 @@ using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour
 {
-    [HideInInspector] public bool player;
+    public bool player;
+    [HideInInspector] public Weapon opponent;
     public MainController.Choise type;
     public int damage;
     public int armor;
@@ -43,7 +44,6 @@ public class Weapon : MonoBehaviour
 
     public void TakeDamage(HealthBar hb, int amount)
     {
-
         int realDamage = amount - armor;
         if (realDamage < 0) realDamage = 0;
 

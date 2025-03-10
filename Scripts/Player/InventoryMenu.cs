@@ -35,6 +35,7 @@ public class InventoryMenu : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player").gameObject;
         player.GetComponent<PlayerInventory>().items.Add(weapon);
+        
         clearInventory();
         displayWeapons();
         transform.GetChild(0).GetComponent<NonUIScroll>().CalculateHeight();

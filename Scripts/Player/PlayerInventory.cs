@@ -8,7 +8,9 @@ public class PlayerInventory : MonoBehaviour
 
     public void AddItem(GameObject newItem)
     {
-        items.Add(newItem);
+        GameObject the_item = Instantiate(newItem, GetComponent<PlayerContoller>().TrueInventory.transform);
+        items.Add(the_item);
+
         if(newItem.GetComponent<Weapon>())
         {
             //Debug.Log("New weapon: "+newItem.GetComponent<Weapon>().name);

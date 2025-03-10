@@ -22,6 +22,8 @@ public class PlayerContoller : MonoBehaviour
 
     public GameObject PlayerWheel;
     public GameObject weaponDetector;
+    public GameObject TrueWeaponHolder;
+    public GameObject TrueInventory;
 
     public bool defeat = false;
 
@@ -82,15 +84,41 @@ public class PlayerContoller : MonoBehaviour
 
     public void DisplayWeapons()
     {
-        for(int i = 0; i < PlayerWheel.transform.childCount-1; i++)
+        InstanciateRealWeapons();
+        for (int i = 0; i < PlayerWheel.transform.childCount-1; i++)
         {
             PlayerWheel.transform.GetChild(i).GetChild(0)
-                        .GetComponent<WeaponSprite>().weapon = weapons[i];
+                        .GetComponent<WeaponSprite>().weapon = TrueWeaponHolder.transform.GetChild(i).gameObject;
         
             PlayerWheel.transform.GetChild(i).GetChild(0)
                 .GetComponent<WeaponSprite>().displaySprite();
         }
         DisplayChoises();
+    }
+
+    public void InstanciateRealWeapons()
+    {
+        for(int i = 0; i < weapons.Count; i++)
+        {
+            Instantiate(weapons[i], TrueWeaponHolder.transform);
+        }
+        for (int i = 0; i < GetComponent<PlayerInventory>().items.Count; i++)
+        {
+            Instantiate(GetComponent<PlayerInventory>().items[i], TrueInventory.transform);
+        }
+        GetComponent<PlayerInventory>().items.Clear();
+        for (int i = 0; i < TrueInventory.transform.childCount; i++)
+        {
+            GetComponent<PlayerInventory>().items.Add(TrueInventory.transform.GetChild(i).gameObject);
+        }
+    }
+
+    public void ClearTrueWeaponHolder()
+    {
+        for(int i = TrueWeaponHolder.transform.childCount; i > 0; i--)
+        {
+            DestroyImmediate(TrueWeaponHolder.transform.GetChild(0).gameObject);
+        }
     }
 
     public List<Weapon> GetWeapons()
@@ -130,11 +158,13 @@ public class PlayerContoller : MonoBehaviour
     public void EquipWeapon(Weapon weapon)
     {
         weapon.equip.Invoke();
+        weapon.player = true;
     }
 
     public void UnequipWeapon(Weapon weapon)
     {
         weapon.unEquip.Invoke();
+        weapon.player = false;
     }
 
     public void Draw()
