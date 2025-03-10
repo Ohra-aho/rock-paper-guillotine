@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour
 {
+    [HideInInspector] public bool player;
     public MainController.Choise type;
     public int damage;
     public int armor;
@@ -38,5 +39,30 @@ public class Weapon : MonoBehaviour
     {
         //return GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().dead;
         return false;
+    }
+
+    public void TakeDamage(HealthBar hb, int amount)
+    {
+
+        int realDamage = amount - armor;
+        if (realDamage < 0) realDamage = 0;
+
+        hb.GetComponent<HealthBar>().TakeDamage(realDamage);
+
+        takeDamage.Invoke();
+
+        bool dead = hb.GetComponent<HealthBar>().CheckIfDead();
+    }
+
+    public void DealDamage(HealthBar hb, Weapon target, HealthBar opponent_hb)
+    {
+        target.TakeDamage(opponent_hb, damage);
+        dealDamage.Invoke();
+        bool dead = opponent_hb.GetComponent<HealthBar>().CheckIfDead();
+    }
+
+    public void HandleDraw()
+    {
+        //Do something propably
     }
 }

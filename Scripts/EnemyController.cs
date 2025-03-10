@@ -35,6 +35,17 @@ public class EnemyController : MonoBehaviour
 
     public GameObject story_event_holder;
 
+    public MainController MC;
+    public bool victory = false;
+
+    private void Update()
+    {
+        if(HB.dead)
+        {
+            MC.Win();
+            HB.dead = false;
+        }
+    }
 
     public void Inisiate()
     {
@@ -44,11 +55,11 @@ public class EnemyController : MonoBehaviour
         DisplayWeapons();
     }
 
-    public MainController.Choise EnemyChoise(MainController.Choise playerChoise)
+    public Weapon EnemyChoise(MainController.Choise playerChoise)
     {
         int choise = choiseMaker(playerChoise);
         //choise = 0;
-        MainController.Choise enemyChoise = weapons[choise].GetComponent<Weapon>().type;
+        Weapon enemyChoise = weapons[choise].GetComponent<Weapon>();
         chosenWeapon = weapons[choise];
 
         weaponDetector.GetComponent<WeaponDetector>().detectionCount = 0;
@@ -95,6 +106,7 @@ public class EnemyController : MonoBehaviour
             }
             if(encounter != null)
             {
+                victory = false;
                 Instantiate(encounter.enemies[0], transform);
             }
         }
@@ -121,14 +133,9 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage()
     {
-        //HB = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>();
 
-        int realDamage = damage - armor;
-        if (realDamage < 0) realDamage = 0;
-
-        HB.GetComponent<HealthBar>().TakeDamage(realDamage);
         dead = HB.GetComponent<HealthBar>().CheckIfDead();
         if(!dead)
         {
@@ -140,14 +147,10 @@ public class EnemyController : MonoBehaviour
 
     public void ChoisePhase()
     {
-        damage = 0;
-        armor = 0;
         //Does things when choise is made
         chosenWeapon.GetComponent<Weapon>().choisePhase.Invoke();
         if(choiseEffect != null) choiseEffect();
 
-        damage = chosenWeapon.GetComponent<Weapon>().damage;
-        armor = chosenWeapon.GetComponent<Weapon>().armor;
     }
 
     public void ResultPhase()

@@ -11,13 +11,13 @@ public class TableController : MonoBehaviour
     [HideInInspector] public int resultsVisible = 0;
     bool resulting = false;
     bool? result = false;
-    bool dead = false;
 
     MainController MC;
+    Coroutine table;
 
     private void Update()
     {
-        Coroutine? table = null;
+        table = null;
         if (resultsVisible > 0 && !resulting)
         {
             if(resultsVisible == 2)
@@ -51,5 +51,6 @@ public class TableController : MonoBehaviour
 
         player.GetComponent<PlayerContoller>().EndPhase();
         enemy.GetComponent<EnemyController>().EndPhase();
+        if(table != null) StopCoroutine(table);
     }
 }

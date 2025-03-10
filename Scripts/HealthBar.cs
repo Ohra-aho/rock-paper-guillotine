@@ -6,6 +6,7 @@ public class HealthBar : MonoBehaviour
 {
     public List<GameObject> hearts;
     public GameObject heart;
+    public bool dead;
 
     //public RectTransform healthBarRectTransform;
 
@@ -22,7 +23,6 @@ public class HealthBar : MonoBehaviour
                 }
             }
         }
-
     }
 
     public void HealDamage(int damage)
@@ -73,6 +73,7 @@ public class HealthBar : MonoBehaviour
                 break;
             }
         }
+        dead = temp;
         return temp;
     }
 

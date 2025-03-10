@@ -17,6 +17,8 @@ public class StartButton : MonoBehaviour
 
     public void Activate()
     {
+        GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().defeat = false;
+        GameObject.Find("EnemyHolder").GetComponent<EnemyController>().victory = false;
         GetComponent<SpriteRenderer>().sprite = active;
         machine.GetComponent<Test>().PlayAnimation("CloseMachine");
         isActive = true;

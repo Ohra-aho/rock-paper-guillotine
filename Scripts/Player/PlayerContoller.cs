@@ -7,9 +7,7 @@ public class PlayerContoller : MonoBehaviour
 {
     public MainController MC;
     private EnemyController currentEnemy;
-    private HealthBar HB;
-
-    public GameObject healthBar;
+    public HealthBar HB;
 
     //[HideInInspector] public int maxHealth = 1;
     private int maxHealth = 3;
@@ -25,12 +23,22 @@ public class PlayerContoller : MonoBehaviour
     public GameObject PlayerWheel;
     public GameObject weaponDetector;
 
+    public bool defeat = false;
+
 
     private void Start()
     {
-        HB = healthBar.GetComponent<HealthBar>();
         HB.DisplayHealthBar(maxHealth);
         DisplayWeapons(); //Should be moved somewhere else when implemented further
+    }
+
+    private void Update()
+    {
+        if (HB.dead && !defeat)
+        {
+            MC.Loose();
+            HB.dead = false;
+        }
     }
 
     public void DisplayChoises()
@@ -55,10 +63,10 @@ public class PlayerContoller : MonoBehaviour
         PlayerWheel.GetComponent<Test>().PlayAudio(0);
         PlayerWheel.GetComponent<Test>().PlayAudio(1);
 
-        MainController.Choise weaponType = PlayerWheel.transform.GetChild(choise - 1)
-            .GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().type;
+        Weapon weapon = PlayerWheel.transform.GetChild(choise - 1)
+            .GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>();
 
-        MC.playerChoise = weaponType;
+        MC.playerChoise = weapon;
         chosenWeapon = PlayerWheel.transform.GetChild(choise - 1)
             .GetChild(0).GetComponent<WeaponSprite>().weapon;
 
@@ -67,7 +75,7 @@ public class PlayerContoller : MonoBehaviour
 
         ChoisePhase();
 
-        MC.enemyChoise = currentEnemy.EnemyChoise(weaponType);
+        MC.enemyChoise = currentEnemy.EnemyChoise(weapon.type);
 
         MC.Resolve();
     }
@@ -104,33 +112,16 @@ public class PlayerContoller : MonoBehaviour
 
     //Combat functions
 
-    public void DealDamage(int damage)
+    public void DealDamage()
     {
         GameObject enemy = GameObject.FindGameObjectWithTag("EnemyHolder");
-
-        enemy.GetComponent<EnemyController>().TakeDamage(damage);
         bool dead = enemy.GetComponent<EnemyController>().dead;
-
-        if (chosenWeapon.GetComponent<Weapon>().dealDamage != null)
-            chosenWeapon.GetComponent<Weapon>().dealDamage.Invoke();
-
         if (dead) MC.Win();
-        
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage()
     {
-        GameObject playerHealth = GameObject.FindGameObjectWithTag("PlayerHealth");
-
-        int realDamage = damage - armor;
-        if (realDamage < 0) realDamage = 0;
-
-        playerHealth.GetComponent<HealthBar>().TakeDamage(realDamage);
-
-        if(chosenWeapon.GetComponent<Weapon>().takeDamage != null)
-            chosenWeapon.GetComponent<Weapon>().takeDamage.Invoke();
-        bool dead = playerHealth.GetComponent<HealthBar>().CheckIfDead();
-
+        bool dead = HB.GetComponent<HealthBar>().CheckIfDead();
 
         if (dead) MC.Loose();
     }
@@ -153,19 +144,16 @@ public class PlayerContoller : MonoBehaviour
 
     public void RecoverAllHealth()
     {
-        HB = healthBar.GetComponent<HealthBar>();
         HB.HealToFull();
     }
 
     public void Die()
     {
-        HB = healthBar.GetComponent<HealthBar>();
         HB.InstaKill();
     }
 
     public int GiveCurrentHealth()
     {
-        HB = healthBar.GetComponent<HealthBar>();
         return HB.GetComponent<HealthBar>().GiveCurrentHealth();
     }
 
@@ -179,7 +167,6 @@ public class PlayerContoller : MonoBehaviour
         chosenWeapon.GetComponent<Weapon>().choisePhase.Invoke();
         damage = chosenWeapon.GetComponent<Weapon>().damage;
         armor = chosenWeapon.GetComponent<Weapon>().armor;
-
     }
 
     public void ResultPhase()

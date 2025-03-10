@@ -10,14 +10,12 @@ public class MainController : MonoBehaviour
     [HideInInspector] public bool endTriggered;
     public bool stop;
 
+    public TableController TC;
 
-    private TableController TC;
+    public Weapon playerChoise;
+    public Weapon enemyChoise;
 
-    public GameObject playerSide;
-    public GameObject enemySide;
 
-    public Choise playerChoise;
-    public Choise enemyChoise;
 
     public GameObject player;
     public GameObject enemy;
@@ -40,11 +38,6 @@ public class MainController : MonoBehaviour
         sakset
     }
 
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
         if(dead)
@@ -62,10 +55,10 @@ public class MainController : MonoBehaviour
 
     public void CompareChoises()
     {
-        switch(playerChoise)
+        switch(playerChoise.type)
         {
             case Choise.kivi:
-                switch(enemyChoise)
+                switch(enemyChoise.type)
                 {
                     case Choise.kivi: won = null; break;
                     case Choise.paperi: won = false; break;
@@ -73,7 +66,7 @@ public class MainController : MonoBehaviour
                 }
                 break;
             case Choise.paperi:
-                switch (enemyChoise)
+                switch (enemyChoise.type)
                 {
                     case Choise.kivi: won = true; break;
                     case Choise.paperi: won = null; break;
@@ -81,7 +74,7 @@ public class MainController : MonoBehaviour
                 }
                 break;
             case Choise.sakset:
-                switch (enemyChoise)
+                switch (enemyChoise.type)
                 {
                     case Choise.kivi: won = false; break;
                     case Choise.paperi: won = true; break;
@@ -98,6 +91,7 @@ public class MainController : MonoBehaviour
         TC.ClearDisplay();
         TC.CallDisplay(won);
     }
+
 
 
     public void DisableObject(GameObject it)
@@ -117,15 +111,18 @@ public class MainController : MonoBehaviour
 
     public void EndGame()
     {
-        EndRound();
         dead = true;
+        EndRound();
     }
 
     public void EndRound()
     {
         EnableObject(startButton);
         startButton.GetComponent<StartButton>().EndRound();
-        GameObject.Find("Story Event Holder").transform.GetChild(0).GetComponent<StoryEvent>().Procceed();
+        if(!dead)
+        {
+            GameObject.Find("Story Event Holder").transform.GetChild(0).GetComponent<StoryEvent>().Procceed();
+        }
     }
 
     public void GiveUp()
@@ -157,19 +154,22 @@ public class MainController : MonoBehaviour
         switch (result)
         {
             case true:
-                player.GetComponent<PlayerContoller>()
-                    .DealDamage(
-                        player.GetComponent<PlayerContoller>().damage
-                     );
+                playerChoise.DealDamage(
+                    player.GetComponent<PlayerContoller>().HB, 
+                    enemyChoise, 
+                    enemy.GetComponent<EnemyController>().HB
+                    );
                 break;
             case false:
-                player.GetComponent<PlayerContoller>()
-                    .TakeDamage(
-                        enemy.GetComponent<EnemyController>().damage
+                enemyChoise.DealDamage(
+                    enemy.GetComponent<EnemyController>().HB,
+                    playerChoise,
+                    player.GetComponent<PlayerContoller>().HB
                     );
                 break;
             case null:
-                player.GetComponent<PlayerContoller>().Draw();
+                enemyChoise.HandleDraw();
+                playerChoise.HandleDraw();
                 break;
         }
     }

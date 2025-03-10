@@ -2012,6 +2012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hearts: []
   heart: {fileID: 7308045239515813869, guid: 19fd7e589cd54fd498459ca08acb21cb, type: 3}
+  dead: 0
 --- !u!114 &370411302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4413,10 +4414,9 @@ MonoBehaviour:
   dead: 0
   endTriggered: 0
   stop: 0
-  playerSide: {fileID: 1674057590}
-  enemySide: {fileID: 1123036500}
-  playerChoise: 0
-  enemyChoise: 0
+  TC: {fileID: 967173491}
+  playerChoise: {fileID: 0}
+  enemyChoise: {fileID: 0}
   player: {fileID: 1366762618}
   enemy: {fileID: 1362538240}
   enemyHolder: {fileID: 1362538240}
@@ -5140,6 +5140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hearts: []
   heart: {fileID: 7308045239515813869, guid: 19fd7e589cd54fd498459ca08acb21cb, type: 3}
+  dead: 0
 --- !u!114 &1238540700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6328,6 +6329,8 @@ MonoBehaviour:
   weaponDetector: {fileID: 0}
   dead: 0
   story_event_holder: {fileID: 710133546}
+  MC: {fileID: 1066024786}
+  victory: 0
 --- !u!212 &1362538243
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6486,7 +6489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MC: {fileID: 1066024786}
-  healthBar: {fileID: 370411299}
+  HB: {fileID: 370411301}
   damage: 0
   armor: 0
   weapons:
@@ -6496,6 +6499,7 @@ MonoBehaviour:
   chosenWeapon: {fileID: 0}
   PlayerWheel: {fileID: 1493376194}
   weaponDetector: {fileID: 659286821}
+  defeat: 0
 --- !u!114 &1366762622
 MonoBehaviour:
   m_ObjectHideFlags: 0

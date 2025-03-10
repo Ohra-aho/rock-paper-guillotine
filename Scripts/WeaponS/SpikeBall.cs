@@ -7,7 +7,7 @@ public class SpikeBall : MonoBehaviour
     public int damage;
     public void Retaliate()
     {
-        GameObject.FindGameObjectWithTag("Player")
-            .GetComponent<PlayerContoller>().DealDamage(damage);
+        //GameObject.FindGameObjectWithTag("Player")
+        //    .GetComponent<PlayerContoller>().DealDamage(damage);
     }
 }
