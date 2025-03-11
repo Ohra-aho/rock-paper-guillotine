@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 968026782294808457}
   - component: {fileID: 31751258655247445}
   - component: {fileID: 626574339369748426}
-  - component: {fileID: 1663819977986765526}
   - component: {fileID: 5287123566886258792}
+  - component: {fileID: 1663819977986765526}
   m_Layer: 0
   m_Name: Reward rope
   m_TagString: Untagged
@@ -113,6 +113,23 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: c02b21a307e0d544d8b3d96c998a4bcc, type: 3}
   chosenRewards: []
   rope: {fileID: 0}
+--- !u!114 &5287123566886258792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2431177580254377231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5776a22fb7835eb43b232f9ebc560b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  continious: 0
+  trigger:
+    m_PersistentCalls:
+      m_Calls: []
+  reverse: 0
 --- !u!95 &1663819977986765526
 Animator:
   serializedVersion: 5
@@ -134,23 +151,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5287123566886258792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2431177580254377231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5776a22fb7835eb43b232f9ebc560b31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  continious: 0
-  trigger:
-    m_PersistentCalls:
-      m_Calls: []
-  reverse: 0
 --- !u!1 &4438377863734659364
 GameObject:
   m_ObjectHideFlags: 0

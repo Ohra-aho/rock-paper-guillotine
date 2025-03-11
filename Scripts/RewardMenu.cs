@@ -9,17 +9,17 @@ public class RewardMenu : MonoBehaviour
 
     public GameObject rope;
 
-    void Start()
+    public GameObject real_inventory;
+
+
+    void Awake()
     {
+        real_inventory = GameObject.Find("Real inventory");
+        RemovePossibleRewards();
         makeRewardList();
         rope = GameObject.Find("Roope");
-        //if(!rope.GetComponent<Test>().Paused())
-        //{
-           rope.GetComponent<Test>().PlayAnimation("Move");
-        //} else
-        //{
-            GameObject.Find("Roope").GetComponent<Test>().UnPauseAnimation();
-        //}
+        rope.GetComponent<Test>().PlayAnimation("Move");
+        GameObject.Find("Roope").GetComponent<Test>().UnPauseAnimation();
     }
 
     private List<int> GetThreeUniqueRandomNumbers(int min, int max)
@@ -42,6 +42,21 @@ public class RewardMenu : MonoBehaviour
         {
             transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards1[choises[i]];
             transform.GetChild(i).GetChild(0).GetComponent<Revard>().Invoke();
+        }
+    }
+
+    public void RemovePossibleRewards()
+    {
+        for(int j = 0; j < real_inventory.transform.childCount; j++)
+        {
+            for (int i = 0; i < rewards1.Count; i++)
+            {
+                if (rewards1[i].GetComponent<Weapon>().name == real_inventory.transform.GetChild(j).GetComponent<Weapon>().name)
+                {
+                    rewards1.RemoveAt(i);
+                    break;
+                }
+            }
         }
     }
 

@@ -88,7 +88,7 @@ public class PlayerContoller : MonoBehaviour
         for (int i = 0; i < PlayerWheel.transform.childCount-1; i++)
         {
             PlayerWheel.transform.GetChild(i).GetChild(0)
-                        .GetComponent<WeaponSprite>().weapon = TrueWeaponHolder.transform.GetChild(i).gameObject;
+                        .GetComponent<WeaponSprite>().weapon = TrueWeaponHolder.transform.GetChild(TrueWeaponHolder.transform.childCount - 1-i).gameObject;
         
             PlayerWheel.transform.GetChild(i).GetChild(0)
                 .GetComponent<WeaponSprite>().displaySprite();
@@ -98,10 +98,6 @@ public class PlayerContoller : MonoBehaviour
 
     public void InstanciateRealWeapons()
     {
-        for(int i = 0; i < weapons.Count; i++)
-        {
-            Instantiate(weapons[i], TrueWeaponHolder.transform);
-        }
         for (int i = 0; i < GetComponent<PlayerInventory>().items.Count; i++)
         {
             Instantiate(GetComponent<PlayerInventory>().items[i], TrueInventory.transform);
@@ -110,6 +106,10 @@ public class PlayerContoller : MonoBehaviour
         for (int i = 0; i < TrueInventory.transform.childCount; i++)
         {
             GetComponent<PlayerInventory>().items.Add(TrueInventory.transform.GetChild(i).gameObject);
+        }
+        for (int i = 0; i < weapons.Count; i++)
+        {
+            Instantiate(weapons[i], TrueWeaponHolder.transform);
         }
     }
 
@@ -201,11 +201,11 @@ public class PlayerContoller : MonoBehaviour
 
     public void ResultPhase()
     {
-        chosenWeapon.GetComponent<Weapon>().resultPhase.Invoke();
+       if(chosenWeapon != null) chosenWeapon.GetComponent<Weapon>().resultPhase.Invoke();
     }
 
     public void EndPhase()
     {
-        chosenWeapon.GetComponent<Weapon>().endPhase.Invoke();
+        if (chosenWeapon != null) chosenWeapon.GetComponent<Weapon>().endPhase.Invoke();
     }
 }

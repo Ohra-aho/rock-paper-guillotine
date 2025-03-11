@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour
 {
-    public bool player;
+    [HideInInspector] public bool player;
     [HideInInspector] public Weapon opponent;
     public MainController.Choise type;
     public int damage;
@@ -13,6 +13,8 @@ public class Weapon : MonoBehaviour
     public string name;
     public string description;
     public Sprite sprite;
+    public int stacks;
+
 
     public UnityEvent choisePhase;
     public UnityEvent resultPhase;
@@ -20,11 +22,18 @@ public class Weapon : MonoBehaviour
 
     public UnityEvent takeDamage;
     public UnityEvent dealDamage;
+    public UnityEvent draw;
     public UnityEvent heal;
 
     public UnityEvent equip;
     public UnityEvent unEquip;
 
+    public UnityEvent constant;
+
+    private void Update()
+    {
+        if (constant != null) constant.Invoke();
+    }
 
     public void emptyFunction()
     {
@@ -63,6 +72,6 @@ public class Weapon : MonoBehaviour
 
     public void HandleDraw()
     {
-        //Do something propably
+        draw.Invoke();
     }
 }

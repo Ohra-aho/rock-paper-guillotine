@@ -28,16 +28,18 @@ public class Encounter : MonoBehaviour
             }
         } else
         {
-            enemies.Add(possible_enemies[0]);
+            for (int i = 0; i < amount; i++)
+            {
+                enemies.Add(possible_enemies[0]);
+            }
         }
         
     }
 
     public void Victory()
     {
-        amount--;
         enemies.RemoveAt(0);
-        if(amount <= 0)
+        if(enemies.Count <= 0)
         {
             GetComponent<StoryEvent>().over = true;
         }

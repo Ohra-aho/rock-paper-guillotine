@@ -46,14 +46,17 @@ public class PlayerWheelHolder : MonoBehaviour
         for(int i = 0; i < transform.GetChild(0).childCount; i++)
         {
             GameObject weaponHolder = transform.GetChild(0).GetChild(i).gameObject;
-            if (weaponHolder.transform.GetChild(0).GetComponent<WeaponSprite>().weapon == weapon)
+            if(weaponHolder.transform.GetChild(0).GetComponent<WeaponSprite>())
             {
-                weaponHolder.transform.GetChild(0).GetComponent<WeaponSprite>().weapon = null;
-                weaponHolder.transform.GetChild(0).GetComponent<WeaponSprite>().displaySprite();
+                if (weaponHolder.transform.GetChild(0).GetComponent<WeaponSprite>().weapon == weapon)
+                {
+                    DestroyImmediate(weaponHolder.transform.GetChild(0).GetComponent<WeaponSprite>().weapon);
+                    weaponHolder.transform.GetChild(0).GetComponent<WeaponSprite>().displaySprite();
+                }
             }
         }
 
-        GameObject ti = transform.parent.GetChild(1).GetComponent<PlayerContoller>().TrueInventory.gameObject;
+        /*GameObject ti = transform.parent.GetChild(1).GetComponent<PlayerContoller>().TrueInventory.gameObject;
 
         for (int i = 0; i < ti.transform.childCount; i++)
         {
@@ -62,7 +65,7 @@ public class PlayerWheelHolder : MonoBehaviour
                 Destroy(ti.transform.GetChild(i).gameObject);
                 break;
             }
-        }
+        }*/
     }
 
     private int LastIndex()

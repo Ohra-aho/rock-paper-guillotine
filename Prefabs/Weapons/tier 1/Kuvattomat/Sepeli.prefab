@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 8104029208489123361}
+  - component: {fileID: 5101497510755020665}
   m_Layer: 5
-  m_Name: Kirja
+  m_Name: Sepeli
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,65 +91,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: 0
   opponent: {fileID: 0}
-  type: 1
+  type: 0
   damage: 1
   armor: 0
-  name: Kirja
-  description: "Joka kerta kun teet vahinkoa, kirja saa yhden pisteen. Jokainen 3
-    psitett\xE4 kasvattaa vahinkoa."
-  sprite: {fileID: 21300000, guid: 85af1a3a7eddc41419da9ca836c1405c, type: 3}
+  name: Sepeli
+  description: +1 vahinkoon, per. jokainen "kivi", jonka omistat.
+  sprite: {fileID: 21300000, guid: 77c8f67adf3c9094ea3e21ba227b6dfa, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   resultPhase:
     m_PersistentCalls:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Kirja, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   takeDamage:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8104029208489123361}
-        m_TargetAssemblyTypeName: Kirja, Assembly-CSharp
-        m_MethodName: IncreaseStacks
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -159,7 +122,22 @@ MonoBehaviour:
   unEquip:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8104029208489123361
+  constant:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5101497510755020665}
+        m_TargetAssemblyTypeName: Sepeli, Assembly-CSharp
+        m_MethodName: CalculateDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5101497510755020665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,6 +146,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e300c453b9b1b748a56556b21a0a612, type: 3}
+  m_Script: {fileID: 11500000, guid: c307401127f9bbe4fb37b13d5ddbc336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

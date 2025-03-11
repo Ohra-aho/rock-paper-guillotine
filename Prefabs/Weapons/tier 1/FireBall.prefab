@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
+  opponent: {fileID: 0}
   type: 2
   damage: 5
   armor: 0

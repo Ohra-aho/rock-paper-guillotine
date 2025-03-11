@@ -6,8 +6,6 @@ using UnityEngine.Rendering.Universal;
 
 public class Heart : MonoBehaviour
 {
-    Color full = Color.red;
-    Color empty = Color.gray;
 
     public bool healthy = true;
 
@@ -24,6 +22,7 @@ public class Heart : MonoBehaviour
 
     public void heal()
     {
+        GetComponent<Test>().PlayAnimation("Heal");
         healthy = true;
     }
 }

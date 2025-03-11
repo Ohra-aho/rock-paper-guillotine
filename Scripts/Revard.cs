@@ -14,6 +14,7 @@ public class Revard : MonoBehaviour
 
     public bool disabled = false;
 
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");

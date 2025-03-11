@@ -9,7 +9,6 @@ public class SpikeBall : MonoBehaviour
     {
         if(GetComponent<Weapon>().player)
         {
-            Debug.Log("Täh?");
             GetComponent<Weapon>().opponent.TakeDamage(
                     GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB, damage
                 );

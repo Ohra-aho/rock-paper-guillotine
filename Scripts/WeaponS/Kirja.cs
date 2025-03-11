@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Kirja : MonoBehaviour
 {
-    private int stacks = 0;
 
     public void IncreaseStacks()
     {
-        bool? victory = GetComponent<Weapon>().GetVictory();
-        if (victory != null && victory == true) stacks++;
+        GetComponent<Weapon>().stacks++;
+        GetComponent<Weapon>().stacks = 5;
+        if (GetComponent<Weapon>().stacks >= 3)
+        {
+            GetComponent<Weapon>().damage = 1 + GetComponent<Weapon>().stacks / 3;
+        }
     }
     
 }
