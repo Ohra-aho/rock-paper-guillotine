@@ -138,8 +138,11 @@ public class BasicEnemy : MonoBehaviour
 
         if (dangerous.Count == 0 && lethal.Count == 0)
         {
-            step = BasicChoise();
-        } else if(lethal.Count > 0)
+            //step = BasicChoise();
+        }
+        step = BasicChoise();
+        //Might actually be better to just follow plan. Maybe could add couple of differetn plans or somehting
+        /*else if(lethal.Count > 0)
         {
             if(lethal.Count < weapons.Count)
             {
@@ -158,7 +161,7 @@ public class BasicEnemy : MonoBehaviour
             {
                 step = BasicChoise();
             }
-        }
+        }*/
 
         lastPlayerChoise = playerChoise;
 
@@ -174,7 +177,7 @@ public class BasicEnemy : MonoBehaviour
         //To give some random element to AI's plan
         if (choise <= 0.1f)
         {
-            choiseIndex = Random.Range(1, 3);
+            //choiseIndex = Random.Range(1, 3);
         }
 
         //choiseIndex = 3;
@@ -326,8 +329,7 @@ public class BasicEnemy : MonoBehaviour
         int currentHealth = controller.GetComponent<EnemyController>().GiveCurrentHealth();
 
         List<Weapon> playerWeapons = player.GetWeapons();
-
-        for (int i = 0; i < player.weapons.Count; i++)
+        for (int i = 0; i < playerWeapons.Count; i++)
         {
             Weapon w = playerWeapons[i];
             if(w.damage >= currentHealth)

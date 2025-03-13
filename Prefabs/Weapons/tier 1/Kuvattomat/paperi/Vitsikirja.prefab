@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5442967482381830314}
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
-  - component: {fileID: 4283388250428889217}
   - component: {fileID: 3098424137161797902}
+  - component: {fileID: 8678632753980180570}
   m_Layer: 5
-  m_Name: Kipsaus
+  m_Name: Vitsikirja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,19 +77,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4283388250428889217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a170afcecdfd814688dffc802d059cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heal: 2
 --- !u!114 &3098424137161797902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,11 +91,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: 0
   opponent: {fileID: 0}
-  type: 0
-  damage: 0
-  armor: 1
-  name: Kipsaus
-  description: Parantaa 2 HP ja tuhoutuu.
+  type: 1
+  damage: 1
+  armor: 0
+  name: Vitsikirja
+  description: 
   sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   stacks: 0
   choisePhase:
@@ -116,10 +103,16 @@ MonoBehaviour:
       m_Calls: []
   resultPhase:
     m_PersistentCalls:
+      m_Calls: []
+  endPhase:
+    m_PersistentCalls:
+      m_Calls: []
+  victory:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4283388250428889217}
-        m_TargetAssemblyTypeName: Kipsaus, Assembly-CSharp
-        m_MethodName: Heal
+      - m_Target: {fileID: 8678632753980180570}
+        m_TargetAssemblyTypeName: Vitsikirja, Assembly-CSharp
+        m_MethodName: ChooseAJoke
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -129,9 +122,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  endPhase:
-    m_PersistentCalls:
-      m_Calls: []
   takeDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -146,10 +136,46 @@ MonoBehaviour:
       m_Calls: []
   equip:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8678632753980180570}
+        m_TargetAssemblyTypeName: Vitsikirja, Assembly-CSharp
+        m_MethodName: ChooseAJoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unEquip:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8678632753980180570}
+        m_TargetAssemblyTypeName: Vitsikirja, Assembly-CSharp
+        m_MethodName: ChooseAJoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   constant:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8678632753980180570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22dcf42af48563c42a67c24564508dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

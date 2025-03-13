@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kipsaus : MonoBehaviour
+public class Laastari : MonoBehaviour
 {
     public int heal;
     public void Heal()

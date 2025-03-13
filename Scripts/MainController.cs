@@ -32,7 +32,9 @@ public class MainController : MonoBehaviour
     {
         kivi,
         paperi,
-        sakset
+        sakset,
+        voittamaton,
+        hyödytön
     }
 
     private void Update()
@@ -77,6 +79,25 @@ public class MainController : MonoBehaviour
                     case Choise.kivi: won = false; break;
                     case Choise.paperi: won = true; break;
                     case Choise.sakset: won = null; break;
+                }
+                break;
+            case Choise.voittamaton:
+                if(enemyChoise.type != Choise.voittamaton)
+                {
+                    won = true;
+                } else
+                {
+                    won = null;
+                }
+                break;
+            case Choise.hyödytön:
+                if (enemyChoise.type != Choise.hyödytön)
+                {
+                    won = false;
+                }
+                else
+                {
+                    won = null;
                 }
                 break;
         }
@@ -159,14 +180,12 @@ public class MainController : MonoBehaviour
         {
             case true:
                 playerChoise.DealDamage(
-                    player.GetComponent<PlayerContoller>().HB, 
                     enemyChoise, 
                     enemy.GetComponent<EnemyController>().HB
                     );
                 break;
             case false:
                 enemyChoise.DealDamage(
-                    enemy.GetComponent<EnemyController>().HB,
                     playerChoise,
                     player.GetComponent<PlayerContoller>().HB
                     );

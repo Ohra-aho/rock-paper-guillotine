@@ -61,25 +61,28 @@ public class PlayerContoller : MonoBehaviour
     {
         MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
         currentEnemy = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>();
-        PlayerWheel.GetComponent<Test>().UnPauseAnimation();
-        PlayerWheel.GetComponent<Test>().PlayAudio(0);
-        PlayerWheel.GetComponent<Test>().PlayAudio(1);
+        if(PlayerWheel.transform.GetChild(choise - 1).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
+        {
+            PlayerWheel.GetComponent<Test>().UnPauseAnimation();
+            PlayerWheel.GetComponent<Test>().PlayAudio(0);
+            PlayerWheel.GetComponent<Test>().PlayAudio(1);
 
-        Weapon weapon = PlayerWheel.transform.GetChild(choise - 1)
-            .GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>();
+            Weapon weapon = PlayerWheel.transform.GetChild(choise - 1)
+                .GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>();
 
-        MC.playerChoise = weapon;
-        chosenWeapon = PlayerWheel.transform.GetChild(choise - 1)
-            .GetChild(0).GetComponent<WeaponSprite>().weapon;
+            MC.playerChoise = weapon;
+            chosenWeapon = PlayerWheel.transform.GetChild(choise - 1)
+                .GetChild(0).GetComponent<WeaponSprite>().weapon;
 
-        weaponDetector.GetComponent<WeaponDetector>().detectionCount = 0;
-        weaponDetector.GetComponent<WeaponDetector>().weaponToDetect = choise;
+            weaponDetector.GetComponent<WeaponDetector>().detectionCount = 0;
+            weaponDetector.GetComponent<WeaponDetector>().weaponToDetect = choise;
 
-        ChoisePhase();
+            ChoisePhase();
 
-        MC.enemyChoise = currentEnemy.EnemyChoise(weapon.type);
+            MC.enemyChoise = currentEnemy.EnemyChoise(weapon.type);
 
-        MC.Resolve();
+            MC.Resolve();
+        }
     }
 
     public void DisplayWeapons()
@@ -130,10 +133,13 @@ public class PlayerContoller : MonoBehaviour
 
         for(int i = 0; i < wheel.transform.childCount-1; i++)
         {
-            temp.Add(
-                wheel.transform.GetChild(i).GetChild(0)
-                .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>()
-            );
+            if(wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
+            {
+                temp.Add(
+                    wheel.transform.GetChild(i).GetChild(0)
+                        .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>()
+                );
+            } 
         }
         return temp;
     }

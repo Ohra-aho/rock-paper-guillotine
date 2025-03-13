@@ -8,16 +8,10 @@ public class Kranaatti : MonoBehaviour
     public void DamageBoth()
     {
         GetComponent<Weapon>().opponent.TakeDamage(
-                GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB, damage
+                null, damage
             );
-        GetComponent<Weapon>().opponent.TakeDamage(
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB, damage
+        GetComponent<Weapon>().TakeDamage(
+                null, damage
             );
-        SelfDestruct();
-    }
-
-    public void SelfDestruct()
-    {
-        GameObject.Find("PlayerWheelHolder").GetComponent<PlayerWheelHolder>().RemoveWeapon(this.gameObject);
     }
 }

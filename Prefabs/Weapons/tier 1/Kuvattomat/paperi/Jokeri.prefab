@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 2599368974187006231}
+  - component: {fileID: 3603452539436064434}
   m_Layer: 5
-  m_Name: Meteorisade
+  m_Name: Jokeri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,11 +91,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: 0
   opponent: {fileID: 0}
-  type: 0
-  damage: 0
+  type: 3
+  damage: 1
   armor: 0
-  name: Meteorisade
-  description: "Tekee yhden pisteen vahinkoa per. kivi jonka omistat ja tuhoaa itsens\xE4.."
+  name: Jokeri
+  description: "Voittaa aina, mutta tuhoaa itsens\xE4, kun voittaa."
   sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   stacks: 0
   choisePhase:
@@ -103,10 +103,22 @@ MonoBehaviour:
       m_Calls: []
   resultPhase:
     m_PersistentCalls:
+      m_Calls: []
+  endPhase:
+    m_PersistentCalls:
+      m_Calls: []
+  victory:
+    m_PersistentCalls:
+      m_Calls: []
+  takeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  dealDamage:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2599368974187006231}
-        m_TargetAssemblyTypeName: MeteoriSade, Assembly-CSharp
-        m_MethodName: DealDamageToAmountOfStones
+      - m_Target: {fileID: 3603452539436064434}
+        m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
+        m_MethodName: Destruct
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -116,15 +128,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  endPhase:
-    m_PersistentCalls:
-      m_Calls: []
-  takeDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  dealDamage:
-    m_PersistentCalls:
-      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -140,7 +143,7 @@ MonoBehaviour:
   constant:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2599368974187006231
+--- !u!114 &3603452539436064434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,6 +152,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cba09d22923bcf42b173d45f7d68a34, type: 3}
+  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

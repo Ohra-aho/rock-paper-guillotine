@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KaksiteräinenMiekka : MonoBehaviour
+public class KuolonSopimus : MonoBehaviour
 {
     public int damage;
     public void SelfDamage()

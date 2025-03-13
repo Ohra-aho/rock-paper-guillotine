@@ -33,7 +33,6 @@ public class HealthBar : MonoBehaviour
             {
                 if (!transform.GetChild(j).GetComponent<Heart>().healthy)
                 {
-                    Debug.Log("Toimiiii");
                     transform.GetChild(j).GetComponent<Heart>().heal();
                     break;
                 }

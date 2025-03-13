@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 5442967482381830314}
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
-  - component: {fileID: 2238475475905463734}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 3174986441044653427}
+  - component: {fileID: 7225767104249451499}
   m_Layer: 5
-  m_Name: FireBall
+  m_Name: Hampaat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,18 +77,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2238475475905463734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4e087e1c005c58418cfe33a8b7eab38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3098424137161797902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,11 +92,11 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   type: 2
-  damage: 5
+  damage: 1
   armor: 0
-  name: Tulipallo
-  description: "Tuhoaa itsens\xE4, kun tekee vahinkoa"
-  sprite: {fileID: 21300000, guid: 807b5797707494845bf5eefef8bd251f, type: 3}
+  name: Hampaat
+  description: Kun teet vahinkoa, paranna 1 haava.
+  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:
@@ -129,9 +116,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3174986441044653427}
-        m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
-        m_MethodName: Destruct
+      - m_Target: {fileID: 7225767104249451499}
+        m_TargetAssemblyTypeName: Hanpaat, Assembly-CSharp
+        m_MethodName: DrainLife
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -156,7 +143,7 @@ MonoBehaviour:
   constant:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3174986441044653427
+--- !u!114 &7225767104249451499
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,6 +152,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
+  m_Script: {fileID: 11500000, guid: 779c6c1fb836483468695ec026ced291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heal: 1

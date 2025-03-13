@@ -24,11 +24,5 @@ public class MeteoriSade : MonoBehaviour
         GetComponent<Weapon>().opponent.TakeDamage(
                 GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB, damage
             );
-        SelfDestruct();
-    }
-
-    public void SelfDestruct()
-    {
-        GameObject.Find("PlayerWheelHolder").GetComponent<PlayerWheelHolder>().RemoveWeapon(this.gameObject);
     }
 }

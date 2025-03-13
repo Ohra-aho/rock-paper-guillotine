@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour
     public UnityEvent choisePhase;
     public UnityEvent resultPhase;
     public UnityEvent endPhase;
+    public UnityEvent victory;
 
     public UnityEvent takeDamage;
     public UnityEvent dealDamage;
@@ -51,23 +52,50 @@ public class Weapon : MonoBehaviour
         return false;
     }
 
-    public void TakeDamage(HealthBar hb, int amount)
+    public void TakeDamage(HealthBar HB, int amount)
     {
         int realDamage = amount - armor;
         if (realDamage < 0) realDamage = 0;
 
-        hb.GetComponent<HealthBar>().TakeDamage(realDamage);
+        if(realDamage > 0)
+        {
+            if (HB == null)
+            {
+                if (player)
+                {
+                    HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
+                    hb.TakeDamage(realDamage);
+                    takeDamage.Invoke();
+                    bool dead = hb.GetComponent<HealthBar>().CheckIfDead();
+                }
+                else
+                {
+                    HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
+                    hb.TakeDamage(realDamage);
+                    takeDamage.Invoke();
+                    bool dead = hb.GetComponent<HealthBar>().CheckIfDead();
+                }
+            }
+            else
+            {
+                HB.TakeDamage(realDamage);
+                takeDamage.Invoke();
+                bool dead = HB.GetComponent<HealthBar>().CheckIfDead();
+            }
+        }
 
-        takeDamage.Invoke();
-
-        bool dead = hb.GetComponent<HealthBar>().CheckIfDead();
+        
     }
 
-    public void DealDamage(HealthBar hb, Weapon target, HealthBar opponent_hb)
+    public void DealDamage(Weapon target, HealthBar opponent_hb)
     {
         target.TakeDamage(opponent_hb, damage);
         dealDamage.Invoke();
         bool dead = opponent_hb.GetComponent<HealthBar>().CheckIfDead();
+        if(dead)
+        {
+            victory.Invoke();
+        }
     }
 
     public void HandleDraw()
