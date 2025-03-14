@@ -10,25 +10,30 @@ public class BuffController : MonoBehaviour
     GameObject real_inventory;
     [HideInInspector] public int damage_bonus = 0;
     [HideInInspector] public int armor_bonus = 0;
-    [HideInInspector] public UnityEvent special;
+    //[HideInInspector] public UnityEvent special;
+    public delegate void Special(Weapon weapon);
+    public Special special;
+    public Special special_removal;
     public delegate bool Requirement(Weapon weapon);
     public Requirement buff_requirement;
 
     //To where put special
-    public bool choisePhase;
-    public bool resultPhase;
-    public bool endPhase;
-    public bool victory;
+    [HideInInspector] public bool choisePhase;
+    [HideInInspector] public bool resultPhase;
+    [HideInInspector] public bool endPhase;
+    [HideInInspector] public bool victory;
 
-    public bool takeDamage;
-    public bool dealDamage;
-    public bool draw;
-    public bool heal;
+    [HideInInspector] public bool takeDamage;
+    [HideInInspector] public bool dealDamage;
+    [HideInInspector] public bool draw;
+    [HideInInspector] public bool heal;
 
-    public bool equip;
-    public bool unEquip;
+    [HideInInspector] public bool equip;
+    [HideInInspector] public bool unEquip;
 
-    public bool constant;
+    [HideInInspector] public bool constant;
+    [HideInInspector] public bool onDestruction;
+    [HideInInspector] public bool awake;
 
     private void Awake()
     {
@@ -84,7 +89,10 @@ public class BuffController : MonoBehaviour
             new_buff.draw = draw;
             new_buff.heal = heal;
             new_buff.constant = constant;
+            new_buff.onDestruction = onDestruction;
+            new_buff.awake = awake;
             if(special != null) new_buff.GetComponent<Buff>().special = special;
+            if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
             new_buff.GetComponent<Buff>().AddBuff();
         }
     }

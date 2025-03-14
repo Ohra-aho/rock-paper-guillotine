@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -1488876996524214490}
-  - component: {fileID: -5332810274612760702}
+  - component: {fileID: 2715692804178075999}
   m_Layer: 5
-  m_Name: "Ter\xE4myrsky"
+  m_Name: "Kyn\xE4"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,9 +94,8 @@ MonoBehaviour:
   type: 2
   damage: 1
   armor: 0
-  name: "Ter\xE4myrsky"
-  description: "Jokainen aseesi saa +2 vahinkoa, mutta ne kaikki tuhoutuvat kun tekev\xE4t
-    vahinkoa."
+  name: "Kyn\xE4"
+  description: +1 vahinkoa aina kun aseesi tuhoutuu
   sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   stacks: 0
   choisePhase:
@@ -136,20 +134,7 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &-1488876996524214490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24ed19e408128d44bbd9726dc2a5f77c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage_bonus: 2
---- !u!114 &-5332810274612760702
+--- !u!114 &2715692804178075999
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,6 +149,9 @@ MonoBehaviour:
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
   damage_bonus: 0
   armor_bonus: 0
+  special:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
@@ -176,4 +164,3 @@ MonoBehaviour:
   unEquip: 0
   constant: 0
   onDestruction: 0
-  awake: 0

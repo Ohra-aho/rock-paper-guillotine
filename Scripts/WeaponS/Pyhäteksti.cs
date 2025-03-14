@@ -8,22 +8,22 @@ public class Pyhäteksti : MonoBehaviour
     private void Awake()
     {
         GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return true; };
-        GetComponent<BuffController>().special.AddListener(DamageOnHeal);
+        GetComponent<BuffController>().special = DamageOnHeal;
         GetComponent<BuffController>().heal = true;
     }
 
-    public void DamageOnHeal()
+    public void DamageOnHeal(Weapon weapon)
     {
-        if (GetComponent<Weapon>().player)
+        if (weapon.player)
         {
-            GetComponent<Weapon>().TakeDamage(
+            weapon.TakeDamage(
                  GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB,
                  damage
                  );
         }
         else
         {
-            GetComponent<Weapon>().TakeDamage(
+            weapon.TakeDamage(
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB,
                 damage
                 );

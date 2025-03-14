@@ -92,6 +92,10 @@ public class PlayerContoller : MonoBehaviour
         {
             PlayerWheel.transform.GetChild(i).GetChild(0)
                         .GetComponent<WeaponSprite>().weapon = TrueWeaponHolder.transform.GetChild(TrueWeaponHolder.transform.childCount - 1-i).gameObject;
+            EquipWeapon(
+                PlayerWheel.transform.GetChild(i).GetChild(0)
+                        .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>()
+                );
         
             PlayerWheel.transform.GetChild(i).GetChild(0)
                 .GetComponent<WeaponSprite>().displaySprite();

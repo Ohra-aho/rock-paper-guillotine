@@ -15,7 +15,6 @@ public class Weapon : MonoBehaviour
     public Sprite sprite;
     public int stacks;
 
-
     public UnityEvent choisePhase;
     public UnityEvent resultPhase;
     public UnityEvent endPhase;
@@ -30,15 +29,11 @@ public class Weapon : MonoBehaviour
     public UnityEvent unEquip;
 
     public UnityEvent constant;
+    public UnityEvent onDestruction;
 
     private void Update()
     {
         if (constant != null) constant.Invoke();
-    }
-
-    public void emptyFunction()
-    {
-        //Debug.Log("Ei tee mit‰‰n");
     }
 
     public bool? GetVictory()
@@ -101,5 +96,10 @@ public class Weapon : MonoBehaviour
     public void HandleDraw()
     {
         draw.Invoke();
+    }
+
+    private void OnDestroy()
+    {
+        onDestruction.Invoke();
     }
 }

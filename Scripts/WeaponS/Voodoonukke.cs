@@ -8,14 +8,15 @@ public class Voodoonukke : MonoBehaviour
 
     private void Awake()
     {
-        GetComponent<BuffController>().special.AddListener(Retaliate);
+        GetComponent<BuffController>().special = Retaliate;
         GetComponent<BuffController>().takeDamage = true;
         GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return true; };
     }
 
-    public void Retaliate()
+    public void Retaliate(Weapon weapon)
     {
-        if (GetComponent<Weapon>().player)
+        Debug.Log(weapon.name + " : " + weapon.player);
+        if (weapon.player)
         {
             GameObject.Find("EventSystem").GetComponent<MainController>().enemyChoise.TakeDamage(null, damage);
         }
