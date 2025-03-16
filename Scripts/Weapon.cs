@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
 {
     [HideInInspector] public bool player;
     [HideInInspector] public Weapon opponent;
+    [HideInInspector] public bool penetrating = false;
     public MainController.Choise type;
     public int damage;
     public int armor;
@@ -49,8 +50,16 @@ public class Weapon : MonoBehaviour
 
     public void TakeDamage(HealthBar HB, int amount)
     {
-        int realDamage = amount - armor;
-        if (realDamage < 0) realDamage = 0;
+        int realDamage;
+        if(!opponent.penetrating)
+        {
+            realDamage = amount - armor;
+            if (realDamage < 0) realDamage = 0;
+        } else
+        {
+            realDamage = amount;
+            if (realDamage < 0) realDamage = 0;
+        }
 
         if(realDamage > 0)
         {

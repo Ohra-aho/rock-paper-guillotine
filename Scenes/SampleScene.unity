@@ -6517,8 +6517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 1944698211339908181, guid: 1af90779594abf84da388624e706913a, type: 3}
-  - {fileID: 1944698211339908181, guid: 43d70232744f01c419ebc48c2a6e60c1, type: 3}
+  - {fileID: 1944698211339908181, guid: 5635276c70ff57c4aa8b2240b1d87ee7, type: 3}
 --- !u!1 &1380851354
 GameObject:
   m_ObjectHideFlags: 0

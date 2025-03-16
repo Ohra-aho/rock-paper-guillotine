@@ -201,12 +201,8 @@ public class PlayerContoller : MonoBehaviour
 
     public void ChoisePhase()
     {
-        damage = 0;
-        armor = 0;
         //Does things when choise is made
         chosenWeapon.GetComponent<Weapon>().choisePhase.Invoke();
-        damage = chosenWeapon.GetComponent<Weapon>().damage;
-        armor = chosenWeapon.GetComponent<Weapon>().armor;
     }
 
     public void ResultPhase()
