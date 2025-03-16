@@ -49,6 +49,8 @@ public class Buff : MonoBehaviour
         RemoveBuff();
     }
 
+
+
     public void AddBuff()
     {
         if (damage_buff != 0)
@@ -81,6 +83,9 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().constant.AddListener(() => special(weapon));
         if (onDestruction)
             transform.parent.GetComponent<Weapon>().onDestruction.AddListener(() => special(weapon));
+        if (awake)
+            special(weapon);
+        
     }
 
     public void RemoveBuff()
