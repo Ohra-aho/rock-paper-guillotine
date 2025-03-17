@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -1696649652281203580}
+  - component: {fileID: 5460494944857187336}
   m_Layer: 5
-  m_Name: "Veriter\xE4"
+  m_Name: Pyssy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,10 +93,10 @@ MonoBehaviour:
   opponent: {fileID: 0}
   penetrating: 0
   type: 2
-  damage: 1
+  damage: 6
   armor: 0
-  name: "Veriter\xE4"
-  description: "+1 vahinkoon per. menetetty el\xE4m\xE4."
+  name: Pyssy
+  description: "-1 vahinkoon aina k\xE4yt\xF6n j\xE4lkeen."
   sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   stacks: 0
   choisePhase:
@@ -104,7 +104,19 @@ MonoBehaviour:
       m_Calls: []
   resultPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5460494944857187336}
+        m_TargetAssemblyTypeName: Pyssy, Assembly-CSharp
+        m_MethodName: IncreaseStack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   endPhase:
     m_PersistentCalls:
       m_Calls: []
@@ -131,23 +143,11 @@ MonoBehaviour:
       m_Calls: []
   constant:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -1696649652281203580}
-        m_TargetAssemblyTypeName: "Veriter\xE4, Assembly-CSharp"
-        m_MethodName: CalculateDamage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &-1696649652281203580
+--- !u!114 &5460494944857187336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,6 +156,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bea01a80fbedc144d941a8c560488cf4, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cffef8fa34fece4cbc55c1cef3c886f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
