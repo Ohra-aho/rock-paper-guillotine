@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 77c08e8383708ec488d7aff183f683f2
+guid: a959d6595397389468e93c02f219ee75
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,91 +134,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: man sheet 1_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 426
-        width: 280
-        height: 274
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 267650f7221b11b4f9e9db0ac486b2c3
-      internalID: -2099509513
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: man sheet 1_1
-      rect:
-        serializedVersion: 2
-        x: 306
-        y: 426
-        width: 280
-        height: 274
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c7537e3d6d81144b8c647469f36bfb7
-      internalID: -1789302520
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: man sheet 1_2
-      rect:
-        serializedVersion: 2
-        x: 359
-        y: 403
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d21aac858b87f934ba25a44ebf8c9b5f
-      internalID: -67557531
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: man sheet 1_3
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 0
-        width: 499
-        height: 355
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a5cdd94c73f4664f8157f7452db0c4f
-      internalID: 2106535044
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -229,11 +145,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      man sheet 1_0: -2099509513
-      man sheet 1_1: -1789302520
-      man sheet 1_2: -67557531
-      man sheet 1_3: 2106535044
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
