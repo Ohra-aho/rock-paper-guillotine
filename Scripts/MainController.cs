@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class MainController : MonoBehaviour
 {
+    [HideInInspector] public bool first;
+
     [HideInInspector] public bool? won;
     [HideInInspector] public bool dead;
     [HideInInspector] public bool endTriggered;
@@ -28,6 +30,8 @@ public class MainController : MonoBehaviour
 
     [HideInInspector] public bool firstRewardMenu = false;
 
+    public List<GameObject> playthroughts;
+
     public enum Choise
     {
         kivi,
@@ -35,6 +39,14 @@ public class MainController : MonoBehaviour
         sakset,
         voittamaton,
         hyödytön
+    }
+
+    private void Start()
+    {
+        first = true;
+        if (first) {
+            GetComponent<StoryController>().events.AddRange(playthroughts[0].GetComponent<Story>().events); 
+        }
     }
 
     private void Update()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -3775906259973895794}
   - component: {fileID: 1705922441453647033}
   m_Layer: 0
-  m_Name: Instructions 3
+  m_Name: First greetin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed939c76aa0cf147bfc77bc68207605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 4
+  clip: {fileID: 8300000, guid: d31f49c45ee2f9a4ca2b013d055696fd, type: 3}
+  animation: {fileID: 0}
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -85,6 +85,10 @@ public class Weapon : MonoBehaviour
                 HB.TakeDamage(realDamage);
                 takeDamage.Invoke();
                 bool dead = HB.GetComponent<HealthBar>().CheckIfDead();
+                if(!player)
+                {
+                    GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().TakeDamage();
+                }
             }
         }
 

@@ -5,14 +5,9 @@ using UnityEngine.Events;
 
 public class EnemyController : MonoBehaviour
 {
-    public List<GameObject> enemies;
-    public bool firstEnemy = true;
-
     public HealthBar HB;
     public HealthBar EnemyHB;
     public int maxHealth;
-    [HideInInspector] public int damage = 0;
-    [HideInInspector] public int armor = 0;
     [HideInInspector] public BasicEnemy currentEnemy;
 
     public List<GameObject> weapons;
@@ -92,11 +87,6 @@ public class EnemyController : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        /*if(firstEnemy)
-        {
-            index = 0;
-            firstEnemy = false;
-        }*/
         if(story_event_holder.transform.childCount > 0)
         {
             Encounter encounter = null;

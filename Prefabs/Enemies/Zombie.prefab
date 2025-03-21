@@ -64,18 +64,11 @@ MonoBehaviour:
   weapons:
   - {fileID: 1944698211339908181, guid: 7f5d4deea30d86443a53905a5d8efdeb, type: 3}
   - {fileID: 1944698211339908181, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
-  - {fileID: 1944698211339908181, guid: ee57d6d131d1e97458e79deca9dcb588, type: 3}
-  actionIncreasePrefs:
-  - 1
-  - 0.3
-  - 0.15
-  - 0.5
-  actionPrefs:
-  - 1
-  - 0
-  - 0
-  - 0
-  plan: 01000000000000000200000001000000
+  - {fileID: 1944698211339908181, guid: 4b2986ae0163daf4abc60171723af083, type: 3}
+  plan: 0100000000000000
+  off_balance: 0
+  nearDeath: 0
+  off_balance_choises: 02000000
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0

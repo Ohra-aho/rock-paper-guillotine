@@ -12,7 +12,7 @@ public class StoryEvent : MonoBehaviour
     {
         if(over)
         {
-            GameObject.Find("EventSystem").GetComponent<StoryController>().events.RemoveAt(0);
+            //GameObject.Find("EventSystem").GetComponent<StoryController>().events.RemoveAt(0);
             Destroy(this.gameObject);
         }
     }

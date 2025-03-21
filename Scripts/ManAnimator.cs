@@ -12,6 +12,7 @@ public class ManAnimator : MonoBehaviour
     public AudioClip g2;
     public AudioClip g3;
 
+    public LanguageController LG;
 
     //0: All neutral
     //1: Head to right neutral
@@ -21,7 +22,9 @@ public class ManAnimator : MonoBehaviour
     //5: head tilt left neutral
     //6: left hand up fist
     public Sprite[] man_sheet;
-    private List<Frame> test_1;
+    private List<Frame> first_greeting_1;
+    private List<Frame> instructions_1;
+    private List<Frame> instructions_2;
 
     int clip;
 
@@ -29,11 +32,22 @@ public class ManAnimator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        test_1 = new List<Frame>()
+        first_greeting_1 = new List<Frame>()
         {
-            new Frame(man_sheet[1], null, "Jotain tässä pitäis sanoa"),
-            new Frame(man_sheet[4], null, "Mutta taasen sitten ei ole oikein mitään sanottavaa"),
-            new Frame(man_sheet[0], 0.09f, "Tiedätkö sen tunteen?"),
+            new Frame(man_sheet[2], null, LG.first_greeting[0]),
+            new Frame(man_sheet[0], null, LG.first_greeting[1]),
+            new Frame(man_sheet[1], null, LG.first_greeting[2]),
+            new Frame(man_sheet[3], null, LG.first_greeting[3]),
+            new Frame(man_sheet[4], null, LG.first_greeting[4]),
+        };
+        instructions_1 = new List<Frame>()
+        {
+            new Frame(man_sheet[6], null, LG.instructions[0]),
+            new Frame(man_sheet[0], null, LG.instructions[1])
+        };
+        instructions_2 = new List<Frame>()
+        {
+            new Frame(man_sheet[0], null, LG.instructions[2])
         };
     }
 
@@ -49,15 +63,9 @@ public class ManAnimator : MonoBehaviour
             }
             switch(clip)
             {
-                case 1:
-                    GetComponent<AudioSource>().clip = g1;
-                    break;
-                case 2:
-                    GetComponent<AudioSource>().clip = g2;
-                    break;
-                case 3:
-                    GetComponent<AudioSource>().clip = g3;
-                    break;
+                case 1: GetComponent<AudioSource>().clip = g1; break;
+                case 2: GetComponent<AudioSource>().clip = g2; break;
+                case 3: GetComponent<AudioSource>().clip = g3; break;
             }
             GetComponent<AudioSource>().Play();
         } else if(!dialog_box.GetComponent<DialogBox>().text_anim_playing && GetComponent<AudioSource>().isPlaying)
@@ -67,19 +75,25 @@ public class ManAnimator : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
-            if (!dialog_box.GetComponent<DialogBox>().text_anim_playing)
+            if(current_frames != null)
             {
-                current_frame++;
-                if(current_frame <= current_frames.Count-1)
+                if (!dialog_box.GetComponent<DialogBox>().text_anim_playing)
                 {
-                    PlayFrame(current_frames[current_frame]);
-                } else if(current_frame >= current_frames.Count)
-                {
-                    dialog_box.GetComponent<DialogBox>().StartAnimation(1);
+                    current_frame++;
+                    if (current_frame <= current_frames.Count - 1)
+                    {
+                        PlayFrame(current_frames[current_frame]);
+                    }
+                    else if (current_frame >= current_frames.Count)
+                    {
+                        dialog_box.GetComponent<DialogBox>().StartAnimation(1);
+                        ChangeSprite(man_sheet[0]);
+                    }
                 }
-            } else
-            {
-                dialog_box.GetComponent<DialogBox>().FinishTextAnimation();
+                else
+                {
+                    dialog_box.GetComponent<DialogBox>().FinishTextAnimation();
+                }
             }
         }
     }
@@ -100,12 +114,18 @@ public class ManAnimator : MonoBehaviour
         switch (id)
         {
             case 0:
-                current_frames = test_1;
-                current_frame = 0;
-                dialog_box.GetComponent<DialogBox>().StartAnimation(0);
-                PlayFrame(current_frames[current_frame]);
+                current_frames = first_greeting_1;
+                break;
+            case 1:
+                current_frames = instructions_1;
+                break;
+            case 2:
+                current_frames = instructions_2;
                 break;
         }
+        current_frame = 0;
+        dialog_box.GetComponent<DialogBox>().StartAnimation(0);
+        PlayFrame(current_frames[current_frame]);
     }
 
     //Animations
@@ -113,7 +133,7 @@ public class ManAnimator : MonoBehaviour
     public class Frame 
     {
         public Sprite sprite; //What sprite man is changed to
-        public float? text_speed; //How long that sprite appears
+        public float? text_speed; //How long is between each letter
         public string text;
 
         public Frame(Sprite sprite, float? text_speed, string text)

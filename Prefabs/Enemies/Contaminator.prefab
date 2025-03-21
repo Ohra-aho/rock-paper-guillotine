@@ -63,19 +63,12 @@ MonoBehaviour:
   maxHealth: 3
   weapons:
   - {fileID: 1944698211339908181, guid: 34203c0b656ec2e418a4e9684c3fe252, type: 3}
-  - {fileID: 1944698211339908181, guid: 00983909a0b300247abe179c1ceb79e9, type: 3}
+  - {fileID: 1944698211339908181, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   - {fileID: 1944698211339908181, guid: de1047f4737e01a45800c28cb183e804, type: 3}
-  actionIncreasePrefs:
-  - 1
-  - 0.3
-  - 0.15
-  - 0.5
-  actionPrefs:
-  - 1
-  - 0
-  - 0
-  - 0
-  plan: 00000000010000000100000002000000
+  plan: 01000000000000000000000002000000
+  off_balance: 0
+  nearDeath: 0
+  off_balance_choises: 0200000001000000
 --- !u!212 &3076687715594733710
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -7,13 +7,16 @@ public class StoryController : MonoBehaviour
     public List<GameObject> events;
     public GameObject story_event_holder;
 
-    //ERROR//
-    //Needs to instanciate the event. Could make event management even easier..
+    //public GameObject story;
+
+    int storyIndex = -1;
+
     public void InvokeNextEvent()
     {
-        if(story_event_holder.transform.childCount == 0 && events.Count > 0)
+        if(story_event_holder.transform.childCount == 0 && storyIndex < events.Count-1)
         {
-            GameObject new_event = Instantiate(events[0], story_event_holder.transform);
+            storyIndex++;
+            GameObject new_event = Instantiate(events[storyIndex], story_event_holder.transform);
         } 
     }
 }

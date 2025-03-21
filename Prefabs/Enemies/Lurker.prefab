@@ -65,17 +65,10 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 7f5d4deea30d86443a53905a5d8efdeb, type: 3}
   - {fileID: 1944698211339908181, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   - {fileID: 1944698211339908181, guid: de5a2b355ad92e44c9bce5d9af86b5b5, type: 3}
-  actionIncreasePrefs:
-  - 1
-  - 0.3
-  - 0.15
-  - 0.5
-  actionPrefs:
-  - 1
-  - 0
-  - 0
-  - 0
-  plan: 0200000001000000020000000200000000000000
+  plan: 0200000002000000010000000200000000000000
+  off_balance: 0
+  nearDeath: 0
+  off_balance_choises: 01000000
 --- !u!212 &8687217563175998695
 SpriteRenderer:
   m_ObjectHideFlags: 0

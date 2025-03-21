@@ -17,10 +17,7 @@ public class Message : MonoBehaviour
     {
         if(man != null && activated)
         {
-            if(!man.GetComponent<AudioSource>().isPlaying)
-            {
-                GetComponent<StoryEvent>().over = true;
-            }
+            GetComponent<StoryEvent>().over = true;   
         }
     }
 
