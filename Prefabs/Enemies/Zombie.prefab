@@ -65,7 +65,8 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 7f5d4deea30d86443a53905a5d8efdeb, type: 3}
   - {fileID: 1944698211339908181, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   - {fileID: 1944698211339908181, guid: 4b2986ae0163daf4abc60171723af083, type: 3}
-  plan: 0100000000000000
+  plan_1: 0000000001000000
+  plan_2: 00000000000000000200000001000000
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 02000000

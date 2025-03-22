@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3800092539451632345}
   - component: {fileID: 1705922441453647033}
   m_Layer: 0
-  m_Name: Encounter
+  m_Name: Boss_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,11 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possible_enemies:
-  - {fileID: 6979226803842198351, guid: 870ed2e832e03c24390913ab1fe726e7, type: 3}
-  - {fileID: 6979226803842198351, guid: 2cce5fed51c0f454e800ac673cc52432, type: 3}
-  - {fileID: 6979226803842198351, guid: 8705371f5c6e303408e7ea00714d7e08, type: 3}
+  - {fileID: 6979226803842198351, guid: 7c52a4da872c64d4090795284ba89e1d, type: 3}
   enemies: []
-  amount: 3
+  amount: 1
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0

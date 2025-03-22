@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ManAnimator : MonoBehaviour
 {
+    public GameObject event_holder;
     public GameObject dialog_box;
     List<Frame> current_frames;
     int current_frame = 0;
@@ -88,6 +89,18 @@ public class ManAnimator : MonoBehaviour
                     {
                         dialog_box.GetComponent<DialogBox>().StartAnimation(1);
                         ChangeSprite(man_sheet[0]);
+                        NonUIButton[] buttons = FindObjectsOfType<NonUIButton>();
+                        for (int i = 0; i < buttons.Length; i++)
+                        {
+                            buttons[i].interactable = true;
+                        }
+                        for(int i = 0; i < event_holder.transform.childCount; i++)
+                        {
+                            if(event_holder.transform.GetChild(i).GetComponent<Message>().activated)
+                            {
+                                event_holder.transform.GetChild(i).GetComponent<StoryEvent>().over = true;
+                            }
+                        }
                     }
                 }
                 else

@@ -6,20 +6,30 @@ public class Message : MonoBehaviour
 {
     public int id;
     GameObject man;
-    private bool activated = false;
+    [HideInInspector] public bool activated = false;
 
     private void Awake()
     {
+        DisableButtons();
         GetComponent<StoryEvent>().Procceed();   
     }
 
-    private void Update()
+    public void DisableButtons()
+    {
+        NonUIButton[] buttons = FindObjectsOfType<NonUIButton>();
+        for(int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].interactable = false;
+        }
+    }
+
+    /*private void Update()
     {
         if(man != null && activated)
         {
             GetComponent<StoryEvent>().over = true;   
         }
-    }
+    }*/
 
     public void PlayMessage()
     {

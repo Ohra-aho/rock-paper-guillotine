@@ -14,7 +14,10 @@ public class BasicEnemy : MonoBehaviour
 
     private GameObject controller;
 
-    public List<int> plan;
+    public List<int> plan_1;
+    public List<int> plan_2;
+
+    private List<int> chosen_plan;
     private int planIndex = 0;
 
     MainController.Choise lastPlayerChoise = MainController.Choise.kivi;
@@ -30,6 +33,13 @@ public class BasicEnemy : MonoBehaviour
         TransferInfo();
         controller.GetComponent<EnemyController>().Inisiate();
         GetComponent<SpriteRenderer>().sprite = image;
+        int plan = Random.Range(1, 3);
+        switch(plan)
+        {
+            case 1: chosen_plan.AddRange(plan_1); break;
+            case 2: chosen_plan.AddRange(plan_2); break;
+        }
+        
         SpawnWeaponInfo();
     }
 
@@ -70,8 +80,6 @@ public class BasicEnemy : MonoBehaviour
         {
             nearDeath = true;
         }
-        //Debug.Log(GetStrongestWeapon().name);
-        //Debug.Log(GetMostArmor().name);
 
         /*if(nearDeath)
         {
@@ -123,9 +131,9 @@ public class BasicEnemy : MonoBehaviour
 
     private int StikToPlan()
     {
-        int step = plan[planIndex];
+        int step = chosen_plan[planIndex];
         planIndex++;
-        if (planIndex == plan.Count)
+        if (planIndex == chosen_plan.Count)
         {
             planIndex = 0;
         }
@@ -137,11 +145,11 @@ public class BasicEnemy : MonoBehaviour
     {
         if(planIndex > 0)
         {
-            int step = plan[planIndex - 1];
+            int step = chosen_plan[planIndex - 1];
             return step;
         } else
         {
-            int step = plan[planIndex];
+            int step = chosen_plan[planIndex];
             return step;
         }
         

@@ -11,9 +11,34 @@ public class StartButton : MonoBehaviour
     public GameObject machine;
     public GameObject player;
 
+    public GameObject story_event_holder;
+
     public bool isActive;
 
     public bool sidesOutOfView = true;
+
+    private void Update()
+    {
+        FindEncounter();
+    }
+
+    public void FindEncounter()
+    {
+        bool found = false;
+        for (int i = 0; i < story_event_holder.transform.childCount; i++)
+        {
+            if (!story_event_holder.transform.GetChild(i).GetComponent<Encounter>())
+            {
+                found = false;
+            }
+            else
+            {
+                found = true;
+                break;
+            }
+        }
+        GetComponent<NonUIButton>().interactable = found;
+    }
 
     public void Activate()
     {
