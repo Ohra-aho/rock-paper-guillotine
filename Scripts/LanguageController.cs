@@ -6,8 +6,8 @@ public class LanguageController : MonoBehaviour
 {
     public bool suomi;
 
-    public string[] first_greeting = { "No päivää.", "Siitä onkin hetki kun tänne on viimeksi lähetetty joku.", "Pakko sanoa, sinun kohdallasi pidän tätä vähän ylilyöntinä,", "mutta enhän minä päätöksiä tee.", "Irrota ratas niin voimme aloittaa." };
-    public string[] instructions = { "Nyt on aikasi käydä viimeiseen taisteluun.", "Kiinnitä aseesi rattaaseen ja aseta ratas taas paikalleen.", "No niin. Vedä vivusta kun olet valmis." };
+    public string[] first_greeting = new string[5];
+    public string[] instructions = new string[4];
 
     private void Awake()
     {
@@ -30,5 +30,6 @@ public class LanguageController : MonoBehaviour
         instructions[0] = suomi ? "Nyt on aikasi käydä viimeiseen taisteluun." : "Now it's time fo your last battle.";
         instructions[1] = suomi ? "Kiinnitä aseesi rattaaseen ja aseta ratas taas paikalleen." : "Attach your weapons to the gear and put it back in it's place.";
         instructions[2] = suomi ? "No niin. Vedä vivusta, kun olet valmis." : "That's that. Pull the lever, when you are ready.";
+        instructions[3] = suomi ? "Minä tosiaan toivon, ettei minun tarvits selittää tätä osaa." : "I really hope, I don't have to explain this part.";
     }
 }

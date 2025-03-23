@@ -6,7 +6,9 @@ public class ManAnimator : MonoBehaviour
 {
     public GameObject event_holder;
     public GameObject dialog_box;
+    public GameObject bark_box;
     List<Frame> current_frames;
+    Frame current_bark;
     int current_frame = 0;
 
     public AudioClip g1;
@@ -23,11 +25,15 @@ public class ManAnimator : MonoBehaviour
     //5: head tilt left neutral
     //6: left hand up fist
     public Sprite[] man_sheet;
+    public Sprite[] bark_sheet;
     private List<Frame> first_greeting_1;
     private List<Frame> instructions_1;
     private List<Frame> instructions_2;
+    private List<Frame> instructions_3;
 
     int clip;
+
+    Coroutine bark_cr;
 
 
     // Start is called before the first frame update
@@ -50,33 +56,50 @@ public class ManAnimator : MonoBehaviour
         {
             new Frame(man_sheet[0], null, LG.instructions[2])
         };
+        instructions_3 = new List<Frame>()
+        {
+            new Frame(man_sheet[0], null, LG.instructions[3])
+        };
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(dialog_box.GetComponent<DialogBox>().text_anim_playing && !GetComponent<AudioSource>().isPlaying)
+        HandleDialog();
+    }
+
+    private void HandleAudio()
+    {
+        //Handle audio
+        if ((dialog_box.GetComponent<DialogBox>().text_anim_playing || bark_box.GetComponent<DialogBox>().text_anim_playing) && !GetComponent<AudioSource>().isPlaying)
         {
             int x = clip;
-            while(clip == x)
+            while (clip == x)
             {
                 clip = Random.Range(1, 4);
             }
-            switch(clip)
+            switch (clip)
             {
                 case 1: GetComponent<AudioSource>().clip = g1; break;
                 case 2: GetComponent<AudioSource>().clip = g2; break;
                 case 3: GetComponent<AudioSource>().clip = g3; break;
             }
             GetComponent<AudioSource>().Play();
-        } else if(!dialog_box.GetComponent<DialogBox>().text_anim_playing && GetComponent<AudioSource>().isPlaying)
+        }
+        else if ((!dialog_box.GetComponent<DialogBox>().text_anim_playing || !bark_box.GetComponent<DialogBox>().text_anim_playing) && GetComponent<AudioSource>().isPlaying)
         {
             GetComponent<AudioSource>().Stop();
         }
+    }
 
+    private void HandleDialog()
+    {
+        HandleAudio();
+
+        //Handle text
         if (Input.GetKeyDown("space"))
         {
-            if(current_frames != null)
+            if (current_frames != null)
             {
                 if (!dialog_box.GetComponent<DialogBox>().text_anim_playing)
                 {
@@ -87,6 +110,7 @@ public class ManAnimator : MonoBehaviour
                     }
                     else if (current_frame >= current_frames.Count)
                     {
+                        //If last part of animation played
                         dialog_box.GetComponent<DialogBox>().StartAnimation(1);
                         ChangeSprite(man_sheet[0]);
                         NonUIButton[] buttons = FindObjectsOfType<NonUIButton>();
@@ -94,9 +118,9 @@ public class ManAnimator : MonoBehaviour
                         {
                             buttons[i].interactable = true;
                         }
-                        for(int i = 0; i < event_holder.transform.childCount; i++)
+                        for (int i = 0; i < event_holder.transform.childCount; i++)
                         {
-                            if(event_holder.transform.GetChild(i).GetComponent<Message>().activated)
+                            if (event_holder.transform.GetChild(i).GetComponent<Message>().activated)
                             {
                                 event_holder.transform.GetChild(i).GetComponent<StoryEvent>().over = true;
                             }
@@ -109,6 +133,35 @@ public class ManAnimator : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void CreateABark(string bark)
+    {
+        if(current_bark == null)
+        {
+            current_bark =
+                new Frame(
+                    bark_sheet[Random.Range(0, bark_sheet.Length)],
+                    null,
+                    bark
+                );
+        }
+        bark_cr = StartCoroutine(HandleBarking());
+    }
+
+    IEnumerator HandleBarking()
+    {
+        if(current_bark != null)
+        {
+            bark_box.GetComponent<DialogBox>().StartAnimation(0);
+            bark_box.GetComponent<DialogBox>().StartTextAnimation(current_bark.text, null);
+            yield return new WaitWhile(() => bark_box.GetComponent<DialogBox>().text_anim_playing);
+            yield return new WaitForSeconds(2f);
+            bark_box.GetComponent<DialogBox>().StartAnimation(1);
+            yield return new WaitWhile(() => bark_box.GetComponent<DialogBox>().animation_playing);
+            StopCoroutine(bark_cr);
+        }
+
     }
 
     private void ChangeSprite(Sprite new_sprite)
@@ -134,6 +187,9 @@ public class ManAnimator : MonoBehaviour
                 break;
             case 2:
                 current_frames = instructions_2;
+                break;
+            case 3:
+                current_frames = instructions_3;
                 break;
         }
         current_frame = 0;

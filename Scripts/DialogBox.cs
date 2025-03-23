@@ -51,7 +51,7 @@ public class DialogBox : MonoBehaviour
             {
                 transform.GetChild(i).GetComponent<TextMeshProUGUI>().color = new Color(1, 1, 1, alpha);
             }
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.03f);
         }
         transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "";
         animation_playing = false;
@@ -70,7 +70,7 @@ public class DialogBox : MonoBehaviour
             {
                 transform.GetChild(i).GetComponent<TextMeshProUGUI>().color = new Color(1, 1, 1, alpha);
             }
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.03f);
         }
         animation_playing = false;
         if (animation != null) StopCoroutine(animation);
