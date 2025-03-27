@@ -1319,7 +1319,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fb9081a9cc43cee469d97dc247b914ec, type: 3}
   - {fileID: 21300000, guid: e4ba4d8a25c09804e81dcc3df2f75647, type: 3}
   - {fileID: 21300000, guid: 4616db4331cc1a2418056ce9eb6a9811, type: 3}
-  bark_sheet: []
+  bark_sheet:
+  - {fileID: 21300000, guid: fb9081a9cc43cee469d97dc247b914ec, type: 3}
+  - {fileID: 21300000, guid: 336438dc4175dd545a3de129d1b1f38d, type: 3}
 --- !u!114 &234517217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1332,7 +1334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc81198586a1bf4ba411ffad8f8eb33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LG: {fileID: 0}
 --- !u!1 &236672368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,6 +1419,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &286843531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 286843532}
+  m_Layer: 0
+  m_Name: BarkHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &286843532
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286843531}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2949675, y: 0.24295409, z: -0.04803837}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &302570826
 GameObject:
   m_ObjectHideFlags: 0
@@ -4554,6 +4586,12 @@ MonoBehaviour:
   - "Kiinnit\xE4 aseesi rattaaseen ja aseta ratas taas paikalleen."
   - "Kiinnit\xE4 aseesi rattaaseen ja aseta ratas taas paikalleen."
   - "Kiinnit\xE4 aseesi rattaaseen ja aseta ratas taas paikalleen."
+  - "Kiinnit\xE4 aseesi rattaaseen ja aseta ratas taas paikalleen."
+  - "Kiinnit\xE4 aseesi rattaaseen ja aseta ratas taas paikalleen."
+  boss_intros:
+  - 
+  - 
+  - 
 --- !u!1 &1107023816
 GameObject:
   m_ObjectHideFlags: 0
@@ -10763,3 +10801,4 @@ SceneRoots:
   - {fileID: 990737916}
   - {fileID: 1066024789}
   - {fileID: 710133547}
+  - {fileID: 286843532}

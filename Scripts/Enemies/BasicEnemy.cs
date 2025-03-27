@@ -17,7 +17,7 @@ public class BasicEnemy : MonoBehaviour
     public List<int> plan_1;
     public List<int> plan_2;
 
-    private List<int> chosen_plan;
+    private List<int> chosen_plan = new List<int>();
     private int planIndex = 0;
 
     MainController.Choise lastPlayerChoise = MainController.Choise.kivi;

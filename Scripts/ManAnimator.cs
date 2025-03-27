@@ -30,11 +30,13 @@ public class ManAnimator : MonoBehaviour
     private List<Frame> instructions_1;
     private List<Frame> instructions_2;
     private List<Frame> instructions_3;
+    private List<Frame> instructions_4;
+    private List<Frame> boss_intro_1;
+    private List<Frame> finished_game_1;
 
     int clip;
 
     Coroutine bark_cr;
-
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +61,23 @@ public class ManAnimator : MonoBehaviour
         instructions_3 = new List<Frame>()
         {
             new Frame(man_sheet[0], null, LG.instructions[3])
+        };
+        //First victory
+        instructions_4 = new List<Frame>()
+        {
+            new Frame(man_sheet[0], null, LG.instructions[5]),
+            new Frame(man_sheet[0], null, LG.instructions[6]),
+            new Frame(man_sheet[0], null, LG.instructions[7])
+        };
+        boss_intro_1 = new List<Frame>()
+        {
+            new Frame(man_sheet[0], null, LG.boss_intros[0]),
+            new Frame(man_sheet[0], null, LG.boss_intros[1]),
+            new Frame(man_sheet[0], null, LG.boss_intros[2])
+        };
+        finished_game_1 = new List<Frame>()
+        {
+
         };
     }
 
@@ -86,7 +105,7 @@ public class ManAnimator : MonoBehaviour
             }
             GetComponent<AudioSource>().Play();
         }
-        else if ((!dialog_box.GetComponent<DialogBox>().text_anim_playing || !bark_box.GetComponent<DialogBox>().text_anim_playing) && GetComponent<AudioSource>().isPlaying)
+        else if ((!dialog_box.GetComponent<DialogBox>().text_anim_playing && !bark_box.GetComponent<DialogBox>().text_anim_playing) && GetComponent<AudioSource>().isPlaying)
         {
             GetComponent<AudioSource>().Stop();
         }
@@ -120,9 +139,12 @@ public class ManAnimator : MonoBehaviour
                         }
                         for (int i = 0; i < event_holder.transform.childCount; i++)
                         {
-                            if (event_holder.transform.GetChild(i).GetComponent<Message>().activated)
+                            if(event_holder.transform.GetChild(i).GetComponent<Message>())
                             {
-                                event_holder.transform.GetChild(i).GetComponent<StoryEvent>().over = true;
+                                if (event_holder.transform.GetChild(i).GetComponent<Message>().activated)
+                                {
+                                    event_holder.transform.GetChild(i).GetComponent<StoryEvent>().over = true;
+                                }
                             }
                         }
                     }
@@ -156,9 +178,10 @@ public class ManAnimator : MonoBehaviour
             bark_box.GetComponent<DialogBox>().StartAnimation(0);
             bark_box.GetComponent<DialogBox>().StartTextAnimation(current_bark.text, null);
             yield return new WaitWhile(() => bark_box.GetComponent<DialogBox>().text_anim_playing);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(3f);
             bark_box.GetComponent<DialogBox>().StartAnimation(1);
             yield return new WaitWhile(() => bark_box.GetComponent<DialogBox>().animation_playing);
+            current_bark = null;
             StopCoroutine(bark_cr);
         }
 
@@ -179,18 +202,12 @@ public class ManAnimator : MonoBehaviour
     {
         switch (id)
         {
-            case 0:
-                current_frames = first_greeting_1;
-                break;
-            case 1:
-                current_frames = instructions_1;
-                break;
-            case 2:
-                current_frames = instructions_2;
-                break;
-            case 3:
-                current_frames = instructions_3;
-                break;
+            case 0: current_frames = first_greeting_1; break;
+            case 1: current_frames = instructions_1; break;
+            case 2: current_frames = instructions_2; break;
+            case 3: current_frames = instructions_3; break;
+            case 4: current_frames = instructions_4; break;
+            case 5: current_frames = boss_intro_1; break;
         }
         current_frame = 0;
         dialog_box.GetComponent<DialogBox>().StartAnimation(0);
