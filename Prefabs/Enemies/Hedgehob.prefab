@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Hedgehog
-  image: {fileID: 21300000, guid: 9057c925a416b7b45bfb28d5027ec86a, type: 3}
+  image: {fileID: 21300000, guid: afb47bd7d61b0924488c498fbcc1ce92, type: 3}
   maxHealth: 2
   weapons:
   - {fileID: 1944698211339908181, guid: 62c44b4a95956e64eb907a3de3ef560f, type: 3}

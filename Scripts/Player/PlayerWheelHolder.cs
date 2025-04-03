@@ -50,8 +50,8 @@ public class PlayerWheelHolder : MonoBehaviour
             {
                 if (weaponHolder.transform.GetChild(0).GetComponent<WeaponSprite>().weapon == weapon)
                 {
-                    DestroyImmediate(weaponHolder.transform.GetChild(0).GetComponent<WeaponSprite>().weapon);
-                    weaponHolder.transform.GetChild(0).GetComponent<WeaponSprite>().displaySprite();
+                    Destroy(weaponHolder.transform.GetChild(0).GetComponent<WeaponSprite>().weapon);
+                    weaponHolder.transform.GetChild(0).GetComponent<WeaponSprite>().RemoveSprite();
                 }
             }
         }

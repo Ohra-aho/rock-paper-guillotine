@@ -10,11 +10,25 @@ public class NonUIButton : MonoBehaviour
     public UnityEvent exit;
     public float hoverTint = 0.5f;
     public bool interactable = true;
+    private MainController MC;
 
     private void Start()
     {
         gameObject.AddComponent<BoxCollider2D>();
     }
+
+    private void Update()
+    {
+        if(MC == null)
+        {
+            MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+        }
+        if(interactable != MC.buttons_active)
+        {
+            interactable = MC.buttons_active;
+        }
+    }
+
     private void OnMouseDown()
     {
         if(press != null && interactable)

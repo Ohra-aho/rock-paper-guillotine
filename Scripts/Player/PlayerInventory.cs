@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public List<GameObject> items = new List<GameObject>();
+    
 
     public void AddItem(GameObject newItem)
     {
@@ -21,6 +22,5 @@ public class PlayerInventory : MonoBehaviour
         {
             //Debug.Log("Something");
         }
-        
     }
 }

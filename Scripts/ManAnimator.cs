@@ -7,6 +7,7 @@ public class ManAnimator : MonoBehaviour
     public GameObject event_holder;
     public GameObject dialog_box;
     public GameObject bark_box;
+    public MainController controller;
     List<Frame> current_frames;
     Frame current_bark;
     int current_frame = 0;
@@ -65,19 +66,24 @@ public class ManAnimator : MonoBehaviour
         //First victory
         instructions_4 = new List<Frame>()
         {
+            //Frames need to be added
             new Frame(man_sheet[0], null, LG.instructions[5]),
             new Frame(man_sheet[0], null, LG.instructions[6]),
             new Frame(man_sheet[0], null, LG.instructions[7])
         };
         boss_intro_1 = new List<Frame>()
         {
+            //Frames need to be added
             new Frame(man_sheet[0], null, LG.boss_intros[0]),
             new Frame(man_sheet[0], null, LG.boss_intros[1]),
             new Frame(man_sheet[0], null, LG.boss_intros[2])
         };
         finished_game_1 = new List<Frame>()
         {
-
+            new Frame(man_sheet[0], null, LG.finished_playthroughs[0]),
+            new Frame(man_sheet[0], null, LG.finished_playthroughs[1]),
+            new Frame(man_sheet[0], null, LG.finished_playthroughs[2]),
+            new Frame(man_sheet[0], null, LG.finished_playthroughs[3])
         };
     }
 
@@ -132,11 +138,8 @@ public class ManAnimator : MonoBehaviour
                         //If last part of animation played
                         dialog_box.GetComponent<DialogBox>().StartAnimation(1);
                         ChangeSprite(man_sheet[0]);
-                        NonUIButton[] buttons = FindObjectsOfType<NonUIButton>();
-                        for (int i = 0; i < buttons.Length; i++)
-                        {
-                            buttons[i].interactable = true;
-                        }
+
+                        controller.buttons_active = true;
                         for (int i = 0; i < event_holder.transform.childCount; i++)
                         {
                             if(event_holder.transform.GetChild(i).GetComponent<Message>())
@@ -147,6 +150,7 @@ public class ManAnimator : MonoBehaviour
                                 }
                             }
                         }
+                        current_frames = null;
                     }
                 }
                 else
@@ -208,6 +212,7 @@ public class ManAnimator : MonoBehaviour
             case 3: current_frames = instructions_3; break;
             case 4: current_frames = instructions_4; break;
             case 5: current_frames = boss_intro_1; break;
+            case 6: current_frames = finished_game_1; break;
         }
         current_frame = 0;
         dialog_box.GetComponent<DialogBox>().StartAnimation(0);

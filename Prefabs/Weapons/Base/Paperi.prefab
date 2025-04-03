@@ -90,12 +90,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: 0
   opponent: {fileID: 0}
+  penetrating: 0
   type: 1
   damage: 1
   armor: 0
   name: Paperi
   description: 
-  sprite: {fileID: 21300000, guid: 006e518d70298494f8291ec2abeed81c, type: 3}
+  sprite: {fileID: 21300000, guid: 1cb1e2e16af8cb446b4c407484e7cfd4, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:

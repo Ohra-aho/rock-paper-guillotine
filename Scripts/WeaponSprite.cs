@@ -24,6 +24,12 @@ public class WeaponSprite : MonoBehaviour
         }
     }
 
+    //Annoying, but nessessary
+    public void RemoveSprite()
+    {
+        GetComponent<SpriteRenderer>().sprite = null;
+    }
+
     void OnMouseDown()
     {
         GameObject wheelHolder = transform.parent.parent.parent.gameObject;

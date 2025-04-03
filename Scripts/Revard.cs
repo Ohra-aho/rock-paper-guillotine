@@ -13,11 +13,24 @@ public class Revard : MonoBehaviour
     private GameObject visibleInfo;
 
     public bool disabled = false;
+    private MainController MC;
 
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    private void Update()
+    {
+        if (MC == null)
+        {
+            MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+        }
+        if (disabled != MC.buttons_active)
+        {
+            disabled = MC.buttons_active;
+        }
     }
 
     public void Invoke()
@@ -84,8 +97,10 @@ public class Revard : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(!disabled) Chosen(); // T‰h‰n vois pist‰‰ jotain, ett‰ jos ottaa useamman kuin yhden niin kuolee
-        transform.parent.parent.GetComponent<RewardMenu>().DisableRewards();
+        if (disabled) { 
+            Chosen();
+            transform.parent.parent.GetComponent<RewardMenu>().DisableRewards();
+        }
     }
 
 

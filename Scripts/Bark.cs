@@ -32,10 +32,28 @@ public class Bark : MonoBehaviour
     {
         switch(bark)
         {
-            case 1: GameObject.Find(trigger).GetComponent<NonUIButton>().press.RemoveListener(TheBark); break;
-            case 2: GameObject.Find(trigger).GetComponent<NonUIButton>().press.RemoveListener(StartButtonDectivate); break;
+            case 1:
+                try
+                {
+                    GameObject.Find(trigger).GetComponent<NonUIButton>().press.RemoveListener(TheBark);
+                }
+                catch
+                {
+                    Debug.Log("No trigger or something");
+                }
+                break;
+            case 2:
+                try
+                {
+                    GameObject.Find(trigger).GetComponent<NonUIButton>().press.RemoveListener(StartButtonDectivate);
+                }
+                catch
+                {
+                    Debug.Log("No trigger or something");
+                }
+                break;
 
-        }
+                }
     }
 
     public void SetUpTrigger()

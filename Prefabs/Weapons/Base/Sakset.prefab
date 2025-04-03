@@ -89,13 +89,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: 0
-  opponent: {fileID: 0}
+  opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
+  penetrating: 0
   type: 2
   damage: 1
   armor: 0
   name: Sakset
   description: 
-  sprite: {fileID: 21300000, guid: 12f60c77fce7f6d408e7cfb249ade10e, type: 3}
+  sprite: {fileID: 21300000, guid: 450adc5cd317429448b2ba8ad209c42d, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:

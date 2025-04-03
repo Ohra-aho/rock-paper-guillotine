@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SelfDestruct : MonoBehaviour
 {
-    private bool used_ones = false;
+    public bool used_ones = false;
     public void Destruct()
     {
         Buff käyttöohje = FindCertainBuff("Käyttöohje");
@@ -14,14 +14,18 @@ public class SelfDestruct : MonoBehaviour
         }
         else if(käyttöohje != null && used_ones)
         {
-            GameObject.Find("PlayerWheelHolder").GetComponent<PlayerWheelHolder>()
-                .RemoveWeapon(this.gameObject);
+            GameObject.Find("Destruction hand").GetComponent<Test>().PlayAnimation("grab");
         }
         else
         {
-            GameObject.Find("PlayerWheelHolder").GetComponent<PlayerWheelHolder>()
-                .RemoveWeapon(this.gameObject);
+            GameObject.Find("Destruction hand").GetComponent<Test>().PlayAnimation("grab");
         }
+    }
+
+    public void TrueDestruct()
+    {
+        GameObject.Find("PlayerWheelHolder").GetComponent<PlayerWheelHolder>()
+                .RemoveWeapon(this.gameObject);
     }
 
     private Buff FindCertainBuff(string name)

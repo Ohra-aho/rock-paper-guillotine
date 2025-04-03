@@ -6,9 +6,9 @@ public class HealthBar : MonoBehaviour
 {
     public List<GameObject> hearts;
     public GameObject heart;
+    public GameObject heart_slot;
     public bool dead;
 
-    //public RectTransform healthBarRectTransform;
 
     public void TakeDamage(int damage)
     {
@@ -16,10 +16,13 @@ public class HealthBar : MonoBehaviour
         {
             for(int j = 0; j < transform.childCount; j++)
             {
-                if(transform.GetChild(j).GetComponent<Heart>().healthy)
+                if (transform.GetChild(j).GetComponent<Heart>())
                 {
-                    transform.GetChild(j).GetComponent<Heart>().damage();
-                    break;
+                    if (transform.GetChild(j).GetComponent<Heart>().healthy)
+                    {
+                        transform.GetChild(j).GetComponent<Heart>().damage();
+                        break;
+                    }
                 }
             }
         }
@@ -31,10 +34,13 @@ public class HealthBar : MonoBehaviour
         {
             for (int j = transform.childCount - 1; j >= 0; j--)
             {
-                if (!transform.GetChild(j).GetComponent<Heart>().healthy)
+                if (transform.GetChild(j).GetComponent<Heart>())
                 {
-                    transform.GetChild(j).GetComponent<Heart>().heal();
-                    break;
+                    if (!transform.GetChild(j).GetComponent<Heart>().healthy)
+                    {
+                        transform.GetChild(j).GetComponent<Heart>().heal();
+                        break;
+                    }
                 }
             }
         }
@@ -42,11 +48,14 @@ public class HealthBar : MonoBehaviour
 
     public void HealToFull()
     {
-        for (int j = transform.childCount - 1; j >= 0; j--)
+        for (int i = transform.childCount - 1; i >= 0; i--)
         {
-            if (!transform.GetChild(j).GetComponent<Heart>().healthy)
+            if (transform.GetChild(i).GetComponent<Heart>())
             {
-                transform.GetChild(j).GetComponent<Heart>().heal();
+                if (!transform.GetChild(i).GetComponent<Heart>().healthy)
+                {
+                    transform.GetChild(i).GetComponent<Heart>().heal();
+                }
             }
         }
     }
@@ -55,9 +64,12 @@ public class HealthBar : MonoBehaviour
     {
         for (int i = 0; i < transform.childCount; i++)
         {
-            if (transform.GetChild(i).GetComponent<Heart>().healthy)
+            if (transform.GetChild(i).GetComponent<Heart>())
             {
-                transform.GetChild(i).GetComponent<Heart>().damage();
+                if (transform.GetChild(i).GetComponent<Heart>().healthy)
+                {
+                    transform.GetChild(i).GetComponent<Heart>().damage();
+                }
             }
         }
     }
@@ -67,10 +79,13 @@ public class HealthBar : MonoBehaviour
         bool temp = true;
         for (int i = 0; i < transform.childCount; i++)
         {
-            if (transform.GetChild(i).GetComponent<Heart>().healthy)
+            if(transform.GetChild(i).GetComponent<Heart>())
             {
-                temp = false;
-                break;
+                if (transform.GetChild(i).GetComponent<Heart>().healthy)
+                {
+                    temp = false;
+                    break;
+                }
             }
         }
         dead = temp;
@@ -80,9 +95,15 @@ public class HealthBar : MonoBehaviour
     public void DisplayHealthBar(int maxHealth)
     {
         DestroyHealthBar();
+        if (maxHealth > 15) maxHealth = 15;
         for (int i = 0; i < maxHealth; i++)
         {
             Instantiate(heart, this.transform);
+        }
+        int children = 15 - transform.childCount;
+        for(int i = 0; i < children; i++)
+        {
+            Instantiate(heart_slot, transform);
         }
     }
 
@@ -123,9 +144,12 @@ public class HealthBar : MonoBehaviour
         int amount = 0;
         for (int i = 0; i < transform.childCount; i++)
         {
-            if (transform.GetChild(i).GetComponent<Heart>().healthy)
+            if (transform.GetChild(i).GetComponent<Heart>())
             {
-                amount++;
+                if (transform.GetChild(i).GetComponent<Heart>().healthy)
+                {
+                    amount++;
+                }
             }
         }
         return amount;
@@ -133,6 +157,14 @@ public class HealthBar : MonoBehaviour
 
     public int GiveMaxHealth()
     {
-        return transform.childCount;
+        int amount = 0;
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            if(!transform.GetChild(i).GetComponent<Heart>())
+            {
+                amount++;
+            }
+        }
+        return amount;
     }
 }

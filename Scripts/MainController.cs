@@ -32,6 +32,8 @@ public class MainController : MonoBehaviour
 
     public List<GameObject> playthroughts;
 
+    [HideInInspector] public bool buttons_active = true; 
+
     public enum Choise
     {
         kivi,

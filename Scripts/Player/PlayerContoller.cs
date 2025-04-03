@@ -10,7 +10,7 @@ public class PlayerContoller : MonoBehaviour
     public HealthBar HB;
 
     //[HideInInspector] public int maxHealth = 1;
-    private int maxHealth = 3;
+    private int maxHealth = 20;
     [HideInInspector] public int damage = 0;
     [HideInInspector] public int armor = 0;
 
@@ -31,7 +31,7 @@ public class PlayerContoller : MonoBehaviour
     private void Start()
     {
         HB.DisplayHealthBar(maxHealth);
-        DisplayWeapons(); //Should be moved somewhere else when implemented further
+        InstanciateRealWeapons();
     }
 
     private void Update()
@@ -87,7 +87,7 @@ public class PlayerContoller : MonoBehaviour
 
     public void DisplayWeapons()
     {
-        InstanciateRealWeapons();
+        //InstanciateRealWeapons();
         for (int i = 0; i < PlayerWheel.transform.childCount-1; i++)
         {
             PlayerWheel.transform.GetChild(i).GetChild(0)
@@ -105,7 +105,7 @@ public class PlayerContoller : MonoBehaviour
 
     public void InstanciateRealWeapons()
     {
-        for (int i = 0; i < GetComponent<PlayerInventory>().items.Count; i++)
+        for (int i = 0; i <GetComponent<PlayerInventory>().items.Count; i++)
         {
             Instantiate(GetComponent<PlayerInventory>().items[i], TrueInventory.transform);
         }
