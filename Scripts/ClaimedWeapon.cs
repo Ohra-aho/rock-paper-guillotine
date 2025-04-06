@@ -9,6 +9,7 @@ public class ClaimedWeapon : MonoBehaviour
     public GameObject weapon;
     private GameObject visibleInfo;
     public GameObject Info;
+    public List<Sprite> symbols;
 
     public void OnBegingDrag()
     {
@@ -51,7 +52,25 @@ public class ClaimedWeapon : MonoBehaviour
             .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().armor.ToString();
         visibleInfo.transform.GetChild(3)
             .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().description;
-        
+        switch (weapon.GetComponent<Weapon>().type)
+        {
+            case MainController.Choise.kivi:
+                visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[0];
+                break;
+            case MainController.Choise.paperi:
+                visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[1];
+                break;
+            case MainController.Choise.sakset:
+                visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[2];
+                break;
+            case MainController.Choise.hyödytön:
+                visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[3];
+                break;
+            case MainController.Choise.voittamaton:
+                visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[4];
+                break;
+        }
+
     }
 
     public void DestroyInfo()

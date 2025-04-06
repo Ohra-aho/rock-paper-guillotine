@@ -15,6 +15,8 @@ public class Revard : MonoBehaviour
     public bool disabled = false;
     private MainController MC;
 
+    public List<Sprite> symbols;
+
 
     private void Start()
     {
@@ -78,11 +80,29 @@ public class Revard : MonoBehaviour
             visibleInfo.transform.GetChild(0)
                 .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().name;
             visibleInfo.transform.GetChild(1)
-                .GetComponent<TextMeshProUGUI>().text = "V: "+actualReward.GetComponent<Weapon>().damage.ToString();
+                .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().damage.ToString();
             visibleInfo.transform.GetChild(2)
-                .GetComponent<TextMeshProUGUI>().text = "P: "+actualReward.GetComponent<Weapon>().armor.ToString();
+                .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().armor.ToString();
             visibleInfo.transform.GetChild(3)
                 .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().description;
+            switch (actualReward.GetComponent<Weapon>().type)
+            {
+                case MainController.Choise.kivi:
+                    visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[0];
+                    break;
+                case MainController.Choise.paperi:
+                    visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[1];
+                    break;
+                case MainController.Choise.sakset:
+                    visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[2];
+                    break;
+                case MainController.Choise.hyödytön:
+                    visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[3];
+                    break;
+                case MainController.Choise.voittamaton:
+                    visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[4];
+                    break;
+            }
         } else if(actualReward.GetComponent<Item>())
         {
             visibleInfo.transform.GetChild(0)
