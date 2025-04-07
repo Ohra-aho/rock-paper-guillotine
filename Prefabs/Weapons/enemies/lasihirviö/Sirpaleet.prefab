@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   m_Layer: 5
-  m_Name: Paperi
+  m_Name: Sirpaleet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,12 +91,12 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
-  type: 0
-  damage: 1
+  type: 2
+  damage: 4
   armor: 0
-  name: Paperi
+  name: Sirpaleet
   description: 
-  sprite: {fileID: 21300000, guid: 1cb1e2e16af8cb446b4c407484e7cfd4, type: 3}
+  sprite: {fileID: 21300000, guid: dedf7c77767828a45990b58e5b6159ce, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:

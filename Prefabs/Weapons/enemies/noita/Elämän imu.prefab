@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 5201385185178331687}
+  - component: {fileID: 7225767104249451499}
   m_Layer: 5
-  m_Name: SpikeBall
+  m_Name: "El\xE4m\xE4n imu"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,14 +90,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: 0
-  opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
+  opponent: {fileID: 0}
   penetrating: 0
-  type: 0
+  type: 2
   damage: 1
   armor: 0
-  name: Piikkipallo
-  description: Jos otat vahinkoa, vihollinen ottaa yhden vahingon.
-  sprite: {fileID: 21300000, guid: 5d98066317e2fa94cbe8f69fee01af35, type: 3}
+  name: "El\xE4m\xE4n imu"
+  description: Kun teet vahinkoa, paranna 1 haava.
+  sprite: {fileID: 21300000, guid: 58608f9860cf9a1439532a03ce823b4e, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:
@@ -113,10 +113,13 @@ MonoBehaviour:
       m_Calls: []
   takeDamage:
     m_PersistentCalls:
+      m_Calls: []
+  dealDamage:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5201385185178331687}
-        m_TargetAssemblyTypeName: SpikeBall, Assembly-CSharp
-        m_MethodName: Retaliate
+      - m_Target: {fileID: 7225767104249451499}
+        m_TargetAssemblyTypeName: Hanpaat, Assembly-CSharp
+        m_MethodName: DrainLife
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -126,9 +129,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  dealDamage:
-    m_PersistentCalls:
-      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -147,7 +147,7 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5201385185178331687
+--- !u!114 &7225767104249451499
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9231a72076307b448e0f9056fe98708, type: 3}
+  m_Script: {fileID: 11500000, guid: 779c6c1fb836483468695ec026ced291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  heal: 1

@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
+  - component: {fileID: 4253422903725897790}
   m_Layer: 5
-  m_Name: Paperi
+  m_Name: Kristalli
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,16 +95,28 @@ MonoBehaviour:
   type: 0
   damage: 1
   armor: 0
-  name: Paperi
-  description: 
-  sprite: {fileID: 21300000, guid: 1cb1e2e16af8cb446b4c407484e7cfd4, type: 3}
+  name: Kristalli
+  description: Tekee yhden pisteen vahinkoa molempiin.
+  sprite: {fileID: 21300000, guid: 915b1dba63e4b964fa76d79a418bea64, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
   resultPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4253422903725897790}
+        m_TargetAssemblyTypeName: Turmio, Assembly-CSharp
+        m_MethodName: DealDamageToBoth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   endPhase:
     m_PersistentCalls:
       m_Calls: []
@@ -134,3 +147,16 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4253422903725897790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f3c4d91a2b8c754b86a796d86789445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
