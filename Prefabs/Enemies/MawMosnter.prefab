@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6943869333779220170}
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
-  - component: {fileID: 9135753412353779111}
+  - component: {fileID: 9126511307194648938}
   m_Layer: 5
-  m_Name: Hedgehob
+  m_Name: MawMosnter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,19 +58,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Hedgehog
-  image: {fileID: 21300000, guid: afb47bd7d61b0924488c498fbcc1ce92, type: 3}
-  maxHealth: 2
+  name: MawMonster
+  image: {fileID: 21300000, guid: 93cb456b27e0a8d46893e4afb32a2eda, type: 3}
+  maxHealth: 3
   weapons:
-  - {fileID: 1944698211339908181, guid: f6d36dde60aedfa4c992d82fae72a8ab, type: 3}
-  - {fileID: 1944698211339908181, guid: d7b21f1dae144db40b19fabd78502c63, type: 3}
-  - {fileID: 1944698211339908181, guid: 06860cb033971f940add3fa511953795, type: 3}
-  plan_1: 0200000000000000010000000000000000000000
-  plan_2: 00000000000000000200000001000000
+  - {fileID: 1944698211339908181, guid: afd4f4f878c061b468bfc8d38e99e588, type: 3}
+  - {fileID: 1944698211339908181, guid: d4b190ce4a034834683f70897e9b487b, type: 3}
+  - {fileID: 1944698211339908181, guid: fcebe5f896ca7cf44ac69245fc011b3e, type: 3}
+  plan_1: 01000000020000000200000000000000
+  plan_2: 00000000010000000200000000000000
   off_balance: 0
   nearDeath: 0
-  off_balance_choises: 02000000
---- !u!212 &9135753412353779111
+  off_balance_choises: 00000000
+--- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

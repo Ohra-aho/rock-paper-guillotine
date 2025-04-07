@@ -62,9 +62,9 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 779baba707ba4d44999eeb2c24a16f2a, type: 3}
   maxHealth: 3
   weapons:
-  - {fileID: 1944698211339908181, guid: 7f5d4deea30d86443a53905a5d8efdeb, type: 3}
-  - {fileID: 1944698211339908181, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
-  - {fileID: 1944698211339908181, guid: 4b2986ae0163daf4abc60171723af083, type: 3}
+  - {fileID: 1944698211339908181, guid: b89766a05725a09478b14ea61e912ca3, type: 3}
+  - {fileID: 1944698211339908181, guid: fd387289c4af4f6449c10c8953222a52, type: 3}
+  - {fileID: 1944698211339908181, guid: d4c4cefe547ac7d45a819422aa2d6685, type: 3}
   plan_1: 0000000001000000
   plan_2: 00000000000000000200000001000000
   off_balance: 0

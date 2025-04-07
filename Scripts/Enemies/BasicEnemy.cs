@@ -32,7 +32,7 @@ public class BasicEnemy : MonoBehaviour
         controller = GameObject.FindGameObjectWithTag("EnemyHolder");
         TransferInfo();
         controller.GetComponent<EnemyController>().Inisiate();
-        GetComponent<SpriteRenderer>().sprite = image;
+        transform.parent.GetComponent<SpriteRenderer>().sprite = image;
         int plan = Random.Range(1, 3);
         switch(plan)
         {
@@ -60,18 +60,24 @@ public class BasicEnemy : MonoBehaviour
         }
     }
 
-    public void ReactToDamage()
+    public void ReactToDamage() //Nees indicator when off balance
     {
         float change_to_off_balance = Random.Range(0.01f, 1f);
-        if(change_to_off_balance <= 0.7f)
+        if(!off_balance)
         {
-            off_balance = true;
+            if (change_to_off_balance <= 0.7f)
+            {
+                off_balance = true;
+            }
+            else
+            {
+                off_balance = false;
+            }
         } else
         {
             off_balance = false;
         }
-        off_balance = true;
-
+        //off_balance = true;
     }
 
     public void CheckUp(int currentHealth, int maxHealth, int enemyCurrentHealth, int enemyMaxHealth)
