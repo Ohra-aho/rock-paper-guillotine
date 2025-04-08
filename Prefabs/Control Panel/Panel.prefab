@@ -37,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.02, y: 1.45}
-  m_SizeDelta: {x: 4.4, y: 1.38}
+  m_AnchoredPosition: {x: -0.02, y: 1.7385}
+  m_SizeDelta: {x: 4.4, y: 0.803}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &7607300870166191592
 SpriteRenderer:
@@ -81,12 +81,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -1025262452, guid: d52c17905dd67f44ab0b07548a561f3e, type: 3}
+  m_Sprite: {fileID: -1679483598, guid: d52c17905dd67f44ab0b07548a561f3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.4, y: 1.38}
+  m_Size: {x: 4.4, y: 0.76}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fa6a3db0607a04f83ff280ed3113aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon_name: KiVi
+  weapon_name: 
   character_sheet: []
   character: {fileID: 2216915182237609603, guid: 71768c6932f11e34b94616b775752381, type: 3}
 --- !u!114 &5735639658603951117
@@ -149,6 +149,18 @@ MonoBehaviour:
       - m_Target: {fileID: 9157431189539164541}
         m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
         m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5841295171782308684}
+        m_TargetAssemblyTypeName: CHoisePanel, Assembly-CSharp
+        m_MethodName: Choise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

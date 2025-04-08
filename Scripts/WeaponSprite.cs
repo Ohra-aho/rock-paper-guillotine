@@ -53,14 +53,25 @@ public class WeaponSprite : MonoBehaviour
     void OnMouseDown()
     {
         GameObject wheelHolder = transform.parent.parent.parent.gameObject;
-        if(wheelHolder.GetComponent<PlayerWheelHolder>().detached && weapon != null)
+        if (wheelHolder.GetComponent<PlayerWheelHolder>().detached && weapon != null)
+        {
+            Unequip();
+        }
+    }
+
+    public void Unequip()
+    {
+        if(GameObject.Find("InventoryMenu(Clone)"))
         {
             GameObject.Find("InventoryMenu(Clone)").GetComponent<InventoryMenu>().addWeapon(weapon);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().UnequipWeapon(weapon.GetComponent<Weapon>());
-            weapon = null;
-            displaySprite();
-            DestroyInfo();
+        } else
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapon);
         }
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().UnequipWeapon(weapon.GetComponent<Weapon>());
+        weapon = null;
+        displaySprite();
+        DestroyInfo();
     }
 
     public void DisplayInfo()
@@ -118,6 +129,6 @@ public class WeaponSprite : MonoBehaviour
 
     public void DestroyInfo()
     {
-        Destroy(visibleInfo);
+        if(visibleInfo != null) Destroy(visibleInfo);
     }
 }

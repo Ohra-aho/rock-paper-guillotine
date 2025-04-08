@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Machine : MonoBehaviour
 {
@@ -10,10 +9,18 @@ public class Machine : MonoBehaviour
 
     public GameObject startButton;
     public GameObject playerWheelHolder;
+    public GameObject StoryEventHolder;
+
+    public GameObject player;
 
     private void Update()
     {
         //CheckAnimation();
+    }
+
+    public void ChangeGear()
+    {
+        player.GetComponent<PlayerContoller>().ChangeWheel();
     }
 
     public void CheckAnimation()

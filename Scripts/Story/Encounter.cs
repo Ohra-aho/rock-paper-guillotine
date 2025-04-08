@@ -41,7 +41,7 @@ public class Encounter : MonoBehaviour
         enemies.RemoveAt(0);
         if(enemies.Count <= 0)
         {
-            GetComponent<StoryEvent>().over = true;
+            //GetComponent<StoryEvent>().over = true;
         }
     }
 }

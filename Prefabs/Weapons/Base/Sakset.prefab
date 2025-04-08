@@ -91,7 +91,7 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   penetrating: 0
-  type: 0
+  type: 2
   damage: 1
   armor: 0
   name: Sakset

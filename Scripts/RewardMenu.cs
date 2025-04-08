@@ -83,4 +83,19 @@ public class RewardMenu : MonoBehaviour
         Destroy(gameObject);
 
     }
+
+    public void AnimationEnd()
+    {
+        GameObject seh = GameObject.Find("Story Event Holder");
+        if (seh.transform.childCount > 0)
+        {
+            if (seh.transform.GetChild(0).GetComponent<Encounter>())
+            {
+                if (seh.transform.GetChild(0).GetComponent<Encounter>().enemies.Count <= 0)
+                {
+                    seh.transform.GetChild(0).GetComponent<StoryEvent>().over = true;
+                }
+            }
+        }
+    }
 }

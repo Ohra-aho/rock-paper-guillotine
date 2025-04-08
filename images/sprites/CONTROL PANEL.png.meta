@@ -142,7 +142,7 @@ TextureImporter:
         x: 0
         y: 0
         width: 484
-        height: 500
+        height: 530
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82e7e55213646ec49b6d281307f7aec1
-      internalID: 1027929692
+      spriteID: 7368e1c02b37b7a47b7bf8b0b76efabd
+      internalID: 1950393617
       vertices: []
       indices: 
       edges: []
@@ -161,9 +161,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 503
-        y: 192
+        y: 282
         width: 440
-        height: 138
+        height: 76
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 561e7b48a248cbd44bee6d343fdc7172
-      internalID: -1025262452
+      spriteID: 6a51b035987ba11419992e46090ddda4
+      internalID: -1679483598
       vertices: []
       indices: 
       edges: []
@@ -182,9 +182,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 501
-        y: 128
-        width: 53
-        height: 53
+        y: 135
+        width: 54
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e25a01f2806d8c43bd6f6a3b5471fbc
-      internalID: -1992905710
+      spriteID: c1ccd0e20e87f2e428cb4db09d4e12a4
+      internalID: 2087109087
       vertices: []
       indices: 
       edges: []
@@ -209,9 +209,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CONTROL PANEL_0: 1027929692
-      CONTROL PANEL_1: -1025262452
-      CONTROL PANEL_2: -1992905710
+      CONTROL PANEL_0: 1950393617
+      CONTROL PANEL_1: -1679483598
+      CONTROL PANEL_2: 2087109087
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

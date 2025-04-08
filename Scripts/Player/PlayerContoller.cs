@@ -20,10 +20,13 @@ public class PlayerContoller : MonoBehaviour
 
     public GameObject chosenWeapon;
 
-    public GameObject PlayerWheel;
+    public int unlocked_wheel = 0;
+    public List<GameObject> PlayerWheels;
     public GameObject weaponDetector;
     public GameObject TrueWeaponHolder;
     public GameObject TrueInventory;
+    public GameObject WheelHolder;
+    public GameObject choise_panel;
 
     public bool defeat = false;
 
@@ -32,6 +35,11 @@ public class PlayerContoller : MonoBehaviour
     {
         HB.DisplayHealthBar(maxHealth);
         InstanciateRealWeapons();
+        ChangeWheel();
+        for(int i = 0; i < 6; i++)
+        {
+            Instantiate(choise_panel, transform);
+        }
     }
 
     private void Update()
@@ -45,15 +53,20 @@ public class PlayerContoller : MonoBehaviour
 
     public void DisplayChoises()
     {
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < 6; i++)
         {
-            if(PlayerWheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
+            if(PlayerWheels[unlocked_wheel].transform.childCount-2 > i)
             {
-                transform.GetChild(i).GetComponent<CHoisePanel>().weapon_name =
-                    PlayerWheel.transform.GetChild(i).GetChild(0)
-                        .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().name;
-                transform.GetChild(i).GetComponent<CHoisePanel>().DisplayName();
+                if (PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
+                {
+                    transform.GetChild(i).GetComponent<CHoisePanel>().weapon_name =
+                        PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0)
+                            .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().name;
+                    transform.GetChild(i).GetComponent<CHoisePanel>().index = i;
+                }
             }
+            transform.GetChild(i).GetComponent<CHoisePanel>().DisplayName();
+            
         }
     }
 
@@ -61,17 +74,17 @@ public class PlayerContoller : MonoBehaviour
     {
         MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
         currentEnemy = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>();
-        if(PlayerWheel.transform.GetChild(choise - 1).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
+        if(PlayerWheels[unlocked_wheel].transform.GetChild(choise).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
         {
-            PlayerWheel.GetComponent<Test>().UnPauseAnimation();
-            PlayerWheel.GetComponent<Test>().PlayAudio(0);
-            PlayerWheel.GetComponent<Test>().PlayAudio(1);
+            PlayerWheels[unlocked_wheel].GetComponent<Test>().UnPauseAnimation();
+            PlayerWheels[unlocked_wheel].GetComponent<Test>().PlayAudio(0);
+            PlayerWheels[unlocked_wheel].GetComponent<Test>().PlayAudio(1);
 
-            Weapon weapon = PlayerWheel.transform.GetChild(choise - 1)
+            Weapon weapon = PlayerWheels[unlocked_wheel].transform.GetChild(choise)
                 .GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>();
 
             MC.playerChoise = weapon;
-            chosenWeapon = PlayerWheel.transform.GetChild(choise - 1)
+            chosenWeapon = PlayerWheels[unlocked_wheel].transform.GetChild(choise)
                 .GetChild(0).GetComponent<WeaponSprite>().weapon;
 
             weaponDetector.GetComponent<WeaponDetector>().detectionCount = 0;
@@ -88,16 +101,17 @@ public class PlayerContoller : MonoBehaviour
     public void DisplayWeapons()
     {
         //InstanciateRealWeapons();
-        for (int i = 0; i < PlayerWheel.transform.childCount-1; i++)
+        for (int i = 0; i < PlayerWheels[unlocked_wheel].transform.childCount-1; i++)
         {
-            PlayerWheel.transform.GetChild(i).GetChild(0)
+            PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0)
                         .GetComponent<WeaponSprite>().weapon = TrueWeaponHolder.transform.GetChild(TrueWeaponHolder.transform.childCount - 1-i).gameObject;
+
             EquipWeapon(
-                PlayerWheel.transform.GetChild(i).GetChild(0)
+                PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0)
                         .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>()
                 );
         
-            PlayerWheel.transform.GetChild(i).GetChild(0)
+            PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0)
                 .GetComponent<WeaponSprite>().displaySprite();
         }
         DisplayChoises();
@@ -146,6 +160,37 @@ public class PlayerContoller : MonoBehaviour
             } 
         }
         return temp;
+    }
+
+    public void ChangeWheel()
+    {
+        DisableAllWheels();
+        PlayerWheels[unlocked_wheel].SetActive(true);
+        PlayerWheels[unlocked_wheel].transform.SetAsFirstSibling();
+        GameObject.Find("PlayerWeaponDetector").GetComponent<WeaponDetector>().weaponWheel = PlayerWheels[unlocked_wheel];
+    }
+
+    private void DisableAllWheels()
+    {
+        for(int i = 0; i < PlayerWheels.Count; i++)
+        {
+            UnequipAllWeaponsFromGear(PlayerWheels[i]);
+            PlayerWheels[i].SetActive(false);
+        }
+    }
+
+    private void UnequipAllWeaponsFromGear(GameObject gear)
+    {
+        for(int i = 0; i < gear.transform.childCount; i++)
+        {
+            if (gear.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>())
+            {
+                if(gear.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
+                {
+                    gear.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().Unequip();
+                }
+            }
+        }
     }
 
     //Combat functions
