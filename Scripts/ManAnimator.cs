@@ -122,7 +122,7 @@ public class ManAnimator : MonoBehaviour
         HandleAudio();
 
         //Handle text
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") || Input.GetMouseButtonDown(0))
         {
             if (current_frames != null)
             {

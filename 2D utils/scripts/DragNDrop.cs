@@ -18,42 +18,65 @@ public class DragNDrop : MonoBehaviour
 
     private bool over = false;
     private GameObject objectOver;
+    MainController MC;
+    bool drag_begin = false;
 
     private void Start()
     {
         mainCamera = Camera.main;
+        MC = GameObject.Find("EventSystem").GetComponent<MainController>();
     }
 
     private void OnMouseDown()
     {
         // Calculate the offset between the mouse position and the object's position
-        offset = transform.position - GetMouseWorldPosition();
-        originalPosition = transform.position;
-        PlayAudio(0);
+        if(MC.buttons_active && !drag_begin)
+        {
+            if (GetComponent<Hover>())
+            {
+                GetComponent<Hover>().disabled = true;
+            }
+            if (onBeginDrag != null) onBeginDrag.Invoke();
+            offset = transform.position - GetMouseWorldPosition();
+            originalPosition = transform.position;
+            PlayAudio(0);
+            drag_begin = true;
+        }
     }
 
     private void OnMouseDrag()
     {
-        if(onBeginDrag != null) onBeginDrag.Invoke();
-
-        // Update the object's position to follow the mouse, adjusted by the offset
-        transform.position = GetMouseWorldPosition() + offset;
+        if(MC.buttons_active && drag_begin)
+        {
+            // Update the object's position to follow the mouse, adjusted by the offset
+            transform.position = GetMouseWorldPosition() + offset;
+        }
     }
 
     private void OnMouseUp()
     {
-        if (destroyOnDrop)
+        if (MC.buttons_active && drag_begin)
         {
-            Destroy(this.gameObject);
-        } else if(resetOnDrop)
-        {
-            transform.position = originalPosition;
-        }
+            if (GetComponent<Hover>())
+            {
+                GetComponent<Hover>().disabled = false;
+            }
+            if (destroyOnDrop)
+            {
+                Destroy(this.gameObject);
+            }
+            else if (resetOnDrop)
+            {
+                transform.position = originalPosition;
+            }
 
-        if (onEndDrag != null) onEndDrag.Invoke();
-        if (objectOver != null)
-        {
-            objectOver.GetComponent<DropDetector>().OnDrop();
+            if (onEndDrag != null) onEndDrag.Invoke();
+            if (objectOver != null)
+            {
+                objectOver.GetComponent<DropDetector>().OnDrop();
+            }
+            drag_begin = false;
+            
         }
     }
 

@@ -38,7 +38,7 @@ public class Machine : MonoBehaviour
 
     public void AnimationStart()
     {
-        rightSide.transform.GetChild(2).GetComponent<EnemyController>().HandleEnemy();
+        rightSide.transform.GetChild(3).GetComponent<EnemyController>().HandleEnemy();
         ActivateStartButton();
         startButton.GetComponent<StartButton>().sidesOutOfView = true;
         playerWheelHolder.GetComponent<NonUIButton>().interactable = true;

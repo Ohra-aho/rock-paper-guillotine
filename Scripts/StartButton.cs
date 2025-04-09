@@ -16,6 +16,7 @@ public class StartButton : MonoBehaviour
     public bool isActive;
 
     public bool sidesOutOfView = true;
+    public bool deactivated; //If start button needs to be deactivated individually
 
     private void Update()
     {
@@ -38,6 +39,12 @@ public class StartButton : MonoBehaviour
             }
         }
         GetComponent<NonUIButton>().interactable = found;
+        
+        if(deactivated)
+        {
+            GetComponent<NonUIButton>().interactable = false;
+        }
+
     }
 
     public void Activate()

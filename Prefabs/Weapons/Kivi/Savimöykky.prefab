@@ -93,7 +93,7 @@ MonoBehaviour:
   opponent: {fileID: 0}
   penetrating: 0
   type: 0
-  damage: 0
+  damage: 1
   armor: 0
   name: "Savim\xF6ykky"
   description: Aina kun otat vahinkoa -1 vahinkoon ja +1 panssariin ja kun teet vahinkoa

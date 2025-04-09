@@ -69,6 +69,7 @@ public class Weapon : MonoBehaviour
                 {
                     HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
                     hb.TakeDamage(realDamage);
+                    opponent.dealDamage.Invoke();
                     takeDamage.Invoke();
                     bool dead = hb.GetComponent<HealthBar>().CheckIfDead();
                 }
@@ -76,6 +77,7 @@ public class Weapon : MonoBehaviour
                 {
                     HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
                     hb.TakeDamage(realDamage);
+                    opponent.dealDamage.Invoke();
                     takeDamage.Invoke();
                     bool dead = hb.GetComponent<HealthBar>().CheckIfDead();
                 }
@@ -83,6 +85,7 @@ public class Weapon : MonoBehaviour
             else
             {
                 HB.TakeDamage(realDamage);
+                opponent.dealDamage.Invoke();
                 takeDamage.Invoke();
                 bool dead = HB.GetComponent<HealthBar>().CheckIfDead();
                 if(!player)
@@ -98,7 +101,7 @@ public class Weapon : MonoBehaviour
     public void DealDamage(Weapon target, HealthBar opponent_hb)
     {
         target.TakeDamage(opponent_hb, damage);
-        dealDamage.Invoke();
+        //dealDamage.Invoke();
         bool dead = opponent_hb.GetComponent<HealthBar>().CheckIfDead();
         if(dead)
         {

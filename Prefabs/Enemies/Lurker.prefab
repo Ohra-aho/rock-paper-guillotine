@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Lurker
-  image: {fileID: 21300000, guid: b3ad99ae35f7cd740b2448e2f0c883ce, type: 3}
+  image: {fileID: 21300000, guid: f3cb4e7602ab48746b6ccc03e76de588, type: 3}
   maxHealth: 2
   weapons:
   - {fileID: 1944698211339908181, guid: 8df209879b8327343b6df07fbcc4efe4, type: 3}

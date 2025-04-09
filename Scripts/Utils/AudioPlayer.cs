@@ -8,7 +8,7 @@ public class AudioPlayer : MonoBehaviour
     public bool loop = false;
     public bool ongoing = false;
     public bool mute = false;
-    [HideInInspector] public float volume = 1f;
+    public float volume = 1f;
     public float volume_modifier = 1f;
     public float pitch = 1;
     public float stereo_pan;

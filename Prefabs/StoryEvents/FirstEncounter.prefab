@@ -49,6 +49,7 @@ MonoBehaviour:
   - {fileID: 6979226803842198351, guid: ce296caf6d061c149a9177df86a8db11, type: 3}
   enemies: []
   amount: 1
+  immideate_over: 1
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class PlayerWheelHolder : MonoBehaviour
         transform.GetChild(0).GetComponent<Test>().UnPauseAnimation();
         transform.GetChild(0).GetComponent<Test>().PlayAnimation("DetachWheel");
         detached = true;
-        startButton.GetComponent<NonUIButton>().interactable = false;
+        startButton.GetComponent<StartButton>().deactivated = true;
         Instantiate(InventoryMenu, GameObject.Find("InventoryMenuHolder").transform);
     }
 
@@ -38,7 +38,7 @@ public class PlayerWheelHolder : MonoBehaviour
         transform.GetChild(0).GetComponent<Test>().PlayAnimation("AttachWheel");
         detached = false;
         GameObject.Find("InventoryMenuHolder").GetComponent<Test>().PlayAnimation("CloseDrawer");
-        startButton.GetComponent<NonUIButton>().interactable = true;
+        startButton.GetComponent<StartButton>().deactivated = false;
     }
 
     public void RemoveWeapon(GameObject weapon)

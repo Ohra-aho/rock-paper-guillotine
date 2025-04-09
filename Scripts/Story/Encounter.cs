@@ -7,6 +7,7 @@ public class Encounter : MonoBehaviour
     public List<GameObject> possible_enemies;
     public List<GameObject> enemies;
     public int amount;
+    public bool immideate_over;
 
     private void Awake()
     {
@@ -41,7 +42,7 @@ public class Encounter : MonoBehaviour
         enemies.RemoveAt(0);
         if(enemies.Count <= 0)
         {
-            //GetComponent<StoryEvent>().over = true;
+            if(immideate_over) GetComponent<StoryEvent>().over = true;
         }
     }
 }

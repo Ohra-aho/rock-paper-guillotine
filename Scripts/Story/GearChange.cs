@@ -8,5 +8,6 @@ public class GearChange : MonoBehaviour
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().unlocked_wheel++;
         GameObject.Find("Machine").GetComponent<Test>().PlayAnimation("gearChange");
+        GetComponent<StoryEvent>().over = true;
     }
 }

@@ -23,19 +23,11 @@ public class Staller : MonoBehaviour
 
     public void DisableButtons()
     {
-        NonUIButton[] buttons = FindObjectsOfType<NonUIButton>();
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            buttons[i].interactable = false;
-        }
+        GameObject.Find("EventSystem").GetComponent<MainController>().buttons_active = false;
     }
 
     public void EnableButtons()
     {
-        NonUIButton[] buttons = FindObjectsOfType<NonUIButton>();
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            buttons[i].interactable = true;
-        }
+        GameObject.Find("EventSystem").GetComponent<MainController>().buttons_active = true;
     }
 }

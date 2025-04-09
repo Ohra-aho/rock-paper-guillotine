@@ -49,64 +49,71 @@ public class Revard : MonoBehaviour
 
     public void Chosen()
     {
-        player.GetComponent<PlayerInventory>().AddItem(actualReward);
-        //Get rid of info
-        if(visibleInfo != null) DestroyInfo();
-        
-        if(actualReward.GetComponent<Item>())
+        if(MC.buttons_active)
         {
-            actualReward.GetComponent<Item>().ImmediateEffect.Invoke();
+            player.GetComponent<PlayerInventory>().AddItem(actualReward);
+            //Get rid of info
+            if (visibleInfo != null) DestroyInfo();
+
+            if (actualReward.GetComponent<Item>())
+            {
+                actualReward.GetComponent<Item>().ImmediateEffect.Invoke();
+            }
+            transform.parent.parent.GetComponent<Test>().UnPauseAnimation();
+            Destroy(gameObject);
+            GameObject.Find("Roope").GetComponent<Test>().UnPauseAnimation();
         }
-        transform.parent.parent.GetComponent<Test>().UnPauseAnimation();
-        Destroy(gameObject);
-        GameObject.Find("Roope").GetComponent<Test>().UnPauseAnimation();
     }
 
     public void DisplayInfo()
     {
-        visibleInfo = Instantiate(Info, GameObject.Find("Canvas").transform);
-        visibleInfo.transform.position = 
-            Camera.main.ScreenToWorldPoint(
-                new Vector3(
-                    Input.mousePosition.x+100, 
-                    Input.mousePosition.y, 
-                    Camera.main.nearClipPlane
-                )
-            );
+        if (MC.buttons_active)
+        {
+            visibleInfo = Instantiate(Info, GameObject.Find("Canvas").transform);
+            visibleInfo.transform.position =
+                Camera.main.ScreenToWorldPoint(
+                    new Vector3(
+                        Input.mousePosition.x + 100,
+                        Input.mousePosition.y,
+                        Camera.main.nearClipPlane
+                    )
+                );
 
-        //Display actual info into the popup
-        if(actualReward.GetComponent<Weapon>())
-        {
-            visibleInfo.transform.GetChild(0)
-                .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().name;
-            visibleInfo.transform.GetChild(1)
-                .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().damage.ToString();
-            visibleInfo.transform.GetChild(2)
-                .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().armor.ToString();
-            visibleInfo.transform.GetChild(3)
-                .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().description;
-            switch (actualReward.GetComponent<Weapon>().type)
+            //Display actual info into the popup
+            if (actualReward.GetComponent<Weapon>())
             {
-                case MainController.Choise.kivi:
-                    visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[0];
-                    break;
-                case MainController.Choise.paperi:
-                    visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[1];
-                    break;
-                case MainController.Choise.sakset:
-                    visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[2];
-                    break;
-                case MainController.Choise.hyödytön:
-                    visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[3];
-                    break;
-                case MainController.Choise.voittamaton:
-                    visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[4];
-                    break;
+                visibleInfo.transform.GetChild(0)
+                    .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().name;
+                visibleInfo.transform.GetChild(1)
+                    .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().damage.ToString();
+                visibleInfo.transform.GetChild(2)
+                    .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().armor.ToString();
+                visibleInfo.transform.GetChild(3)
+                    .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().description;
+                switch (actualReward.GetComponent<Weapon>().type)
+                {
+                    case MainController.Choise.kivi:
+                        visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[0];
+                        break;
+                    case MainController.Choise.paperi:
+                        visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[1];
+                        break;
+                    case MainController.Choise.sakset:
+                        visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[2];
+                        break;
+                    case MainController.Choise.hyödytön:
+                        visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[3];
+                        break;
+                    case MainController.Choise.voittamaton:
+                        visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[4];
+                        break;
+                }
             }
-        } else if(actualReward.GetComponent<Item>())
-        {
-            visibleInfo.transform.GetChild(0)
-                .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Item>().name;
+            else if (actualReward.GetComponent<Item>())
+            {
+                visibleInfo.transform.GetChild(0)
+                    .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Item>().name;
+            }
         }
     }
 

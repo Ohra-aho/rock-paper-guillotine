@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 626574339369748426}
   - component: {fileID: 5287123566886258792}
   - component: {fileID: 1663819977986765526}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Reward rope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 363967985
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 14c4ef2168df229489a0f4d5e9186024, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -204,7 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5919462944620648886}
   - component: {fileID: 332490732103664273}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,9 +269,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 176564213
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: 363967985
+  m_SortingLayer: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9e330617863e48e4bb5cd681e6df1a7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -293,7 +293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7037741081374738735}
   - component: {fileID: 6030655787941301629}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,9 +354,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 176564213
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: 363967985
+  m_SortingLayer: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9e330617863e48e4bb5cd681e6df1a7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -378,7 +378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7969011639901289106}
   - component: {fileID: 5566243453701454150}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,9 +439,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 176564213
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: 363967985
+  m_SortingLayer: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9e330617863e48e4bb5cd681e6df1a7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -509,9 +509,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -99.784
       objectReference: {fileID: 0}
+    - target: {fileID: 3146055761166103662, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146055761166103662, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146055761166103662, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 363967985
+      objectReference: {fileID: 0}
     - target: {fileID: 4787691903558563149, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
       propertyPath: m_Name
       value: Revard template
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787691903558563149, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -579,9 +595,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -99.784
       objectReference: {fileID: 0}
+    - target: {fileID: 3146055761166103662, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146055761166103662, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146055761166103662, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 363967985
+      objectReference: {fileID: 0}
     - target: {fileID: 4787691903558563149, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
       propertyPath: m_Name
       value: Revard template
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787691903558563149, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 36985129395244446, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
@@ -650,9 +682,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -99.784
       objectReference: {fileID: 0}
+    - target: {fileID: 3146055761166103662, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146055761166103662, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146055761166103662, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 363967985
+      objectReference: {fileID: 0}
     - target: {fileID: 4787691903558563149, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
       propertyPath: m_Name
       value: Revard template
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787691903558563149, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

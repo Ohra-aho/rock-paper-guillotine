@@ -10,7 +10,7 @@ public class PlayerContoller : MonoBehaviour
     public HealthBar HB;
 
     //[HideInInspector] public int maxHealth = 1;
-    private int maxHealth = 20;
+    private int maxHealth = 3;
     [HideInInspector] public int damage = 0;
     [HideInInspector] public int armor = 0;
 
@@ -55,13 +55,18 @@ public class PlayerContoller : MonoBehaviour
     {
         for(int i = 0; i < 6; i++)
         {
-            if(PlayerWheels[unlocked_wheel].transform.childCount-2 > i)
+            if(PlayerWheels[unlocked_wheel].transform.childCount-1 > i)
             {
                 if (PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
                 {
+                    transform.GetChild(i).GetComponent<CHoisePanel>().weapon =
+                        PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0)
+                            .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>();
+
                     transform.GetChild(i).GetComponent<CHoisePanel>().weapon_name =
                         PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0)
                             .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().name;
+
                     transform.GetChild(i).GetComponent<CHoisePanel>().index = i;
                 }
             }
@@ -88,7 +93,7 @@ public class PlayerContoller : MonoBehaviour
                 .GetChild(0).GetComponent<WeaponSprite>().weapon;
 
             weaponDetector.GetComponent<WeaponDetector>().detectionCount = 0;
-            weaponDetector.GetComponent<WeaponDetector>().weaponToDetect = choise;
+            weaponDetector.GetComponent<WeaponDetector>().weaponToDetect = choise+1;
 
             ChoisePhase();
 

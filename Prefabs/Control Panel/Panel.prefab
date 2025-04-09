@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8296702057624212776}
   - component: {fileID: 5841295171782308684}
   - component: {fileID: 5735639658603951117}
+  - component: {fileID: 2225247331957963098}
   - component: {fileID: 9157431189539164541}
   m_Layer: 5
   m_Name: Panel
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: -1679483598, guid: d52c17905dd67f44ab0b07548a561f3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -129,8 +130,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon_name: 
+  index: 0
   character_sheet: []
   character: {fileID: 2216915182237609603, guid: 71768c6932f11e34b94616b775752381, type: 3}
+  weapon: {fileID: 0}
 --- !u!114 &5735639658603951117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +181,49 @@ MonoBehaviour:
       m_Calls: []
   hoverTint: 0.5
   interactable: 1
+--- !u!114 &2225247331957963098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3739126361549298607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896e64e4610f72d42a8ae08cc4ac8d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabled: 0
+  hoverEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5841295171782308684}
+        m_TargetAssemblyTypeName: CHoisePanel, Assembly-CSharp
+        m_MethodName: DisplayInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  hoverExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5841295171782308684}
+        m_TargetAssemblyTypeName: CHoisePanel, Assembly-CSharp
+        m_MethodName: DissapearInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9157431189539164541
 MonoBehaviour:
   m_ObjectHideFlags: 0

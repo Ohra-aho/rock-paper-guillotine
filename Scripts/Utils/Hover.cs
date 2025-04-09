@@ -5,26 +5,42 @@ using UnityEngine.Events;
 
 public class Hover : MonoBehaviour
 {
+    public bool disabled = false;
     public UnityEvent hoverEnter;
     public UnityEvent hoverExit;
 
     private bool hovering;
 
+    private void Update()
+    {
+        if(disabled && hovering)
+        {
+            hoverExit.Invoke();
+            hovering = false;
+        }
+    }
+
     private void OnMouseEnter()
     {
-        if(!hovering)
+        if(!disabled)
         {
-            hovering = true;
-            hoverEnter.Invoke();
+            if (!hovering)
+            {
+                hovering = true;
+                hoverEnter.Invoke();
+            }
         }
     }
 
     private void OnMouseExit()
     {
-        if (hovering)
+        if (!disabled)
         {
-            hovering = false;
-            hoverExit.Invoke();
+            if (hovering)
+            {
+                hovering = false;
+                hoverExit.Invoke();
+            }
         }
     }
 

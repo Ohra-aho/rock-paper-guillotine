@@ -445,9 +445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b917d1adf09b474cac55515f2568da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closed: {fileID: 21300000, guid: e6dccca1436fd63448882bd232573fe1, type: 3}
-  open: {fileID: 21300000, guid: 10b41db45ccdccc4bb8e979d204c61a6, type: 3}
-  man: {fileID: 0}
   musicPlayer: {fileID: 2080508267}
 --- !u!114 &202890127
 MonoBehaviour:
@@ -465,7 +462,7 @@ MonoBehaviour:
   loop: 0
   ongoing: 0
   mute: 0
-  volume: 0
+  volume: 1
   volume_modifier: 1
   pitch: 1
   stereo_pan: 0

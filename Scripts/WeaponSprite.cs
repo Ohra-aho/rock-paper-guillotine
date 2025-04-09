@@ -66,7 +66,7 @@ public class WeaponSprite : MonoBehaviour
             GameObject.Find("InventoryMenu(Clone)").GetComponent<InventoryMenu>().addWeapon(weapon);
         } else
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapon);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().items.Add(weapon);
         }
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().UnequipWeapon(weapon.GetComponent<Weapon>());
         weapon = null;
