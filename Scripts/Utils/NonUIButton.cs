@@ -10,11 +10,13 @@ public class NonUIButton : MonoBehaviour
     public UnityEvent exit;
     public float hoverTint = 0.5f;
     public bool interactable = true;
+    public bool individual_interactable = true;
     private MainController MC;
 
     private void Start()
     {
         gameObject.AddComponent<BoxCollider2D>();
+        individual_interactable = true;
     }
 
     private void Update()
@@ -26,6 +28,10 @@ public class NonUIButton : MonoBehaviour
         if(interactable != MC.buttons_active)
         {
             interactable = MC.buttons_active;
+        }
+        if(!individual_interactable)
+        {
+            interactable = false;
         }
     }
 

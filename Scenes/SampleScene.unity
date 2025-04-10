@@ -800,6 +800,7 @@ MonoBehaviour:
       m_Calls: []
   hoverTint: 0.5
   interactable: 1
+  individual_interactable: 1
 --- !u!1 &141479407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2511,6 +2512,7 @@ MonoBehaviour:
       m_Calls: []
   hoverTint: 0.5
   interactable: 1
+  individual_interactable: 1
 --- !u!114 &401144639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5787,7 +5789,7 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   - {fileID: 1944698211339908181, guid: ee57d6d131d1e97458e79deca9dcb588, type: 3}
   - {fileID: 1944698211339908181, guid: ff78883ac9a81e546a14fb2a9a413a7a, type: 3}
-  - {fileID: 1944698211339908181, guid: 02faeedc78bf44e408a7b9177f5fe424, type: 3}
+  - {fileID: 1944698211339908181, guid: 078db46d1732a0744a627368a8fd7f6f, type: 3}
 --- !u!114 &1366762623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7499,6 +7501,7 @@ MonoBehaviour:
   playerWheelHolder: {fileID: 138571107}
   StoryEventHolder: {fileID: 710133546}
   player: {fileID: 1366762618}
+  choise_panel_active: 0
 --- !u!1 &1817942851
 GameObject:
   m_ObjectHideFlags: 0

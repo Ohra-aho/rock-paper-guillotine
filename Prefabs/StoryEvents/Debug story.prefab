@@ -46,5 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   events:
   - {fileID: 3768069680275742937, guid: defb4a23fd99989458b11c8e434abf8e, type: 3}
+  - {fileID: 3768069680275742937, guid: defb4a23fd99989458b11c8e434abf8e, type: 3}
   - {fileID: 3768069680275742937, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
   - {fileID: 2090958671281753362, guid: 10894f81daa3116438400bac77c78a34, type: 3}

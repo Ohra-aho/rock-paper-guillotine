@@ -12,6 +12,12 @@ public class CHoisePanel : MonoBehaviour
     public GameObject character;
     public Weapon weapon;
 
+    private void Update()
+    {
+        GetComponent<NonUIButton>().individual_interactable 
+            = transform.parent.parent.parent.GetComponent<Machine>().choise_panel_active;
+    }
+
     public void DisplayName()
     {
         if(weapon_name != null && weapon_name != "")
@@ -59,6 +65,14 @@ public class CHoisePanel : MonoBehaviour
                     transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
                 }
             }
+        }
+    }
+
+    public void ClearName()
+    {
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
         }
     }
 

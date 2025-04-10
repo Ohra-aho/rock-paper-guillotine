@@ -13,6 +13,8 @@ public class Machine : MonoBehaviour
 
     public GameObject player;
 
+    public bool choise_panel_active = false;
+
     private void Update()
     {
         //CheckAnimation();
@@ -47,6 +49,8 @@ public class Machine : MonoBehaviour
     public void AnimationEnd()
     {
         startButton.GetComponent<StartButton>().sidesOutOfView = false;
+        choise_panel_active = !choise_panel_active;
+        Debug.Log(choise_panel_active);
     }
 
     public void ActivateStartButton()

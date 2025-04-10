@@ -445,15 +445,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2
-    functionName: ActivateStartButton
+  - time: 1.9833333
+    functionName: AnimationEnd
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 2
-    functionName: AnimationEnd
+    functionName: ActivateStartButton
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

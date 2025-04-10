@@ -56,6 +56,18 @@ public class PlayerWheelHolder : MonoBehaviour
             }
         }
 
+        //Remove name
+        GameObject choise_panel = transform.parent.GetChild(1).gameObject;
+        for(int i = 0; i < choise_panel.transform.childCount; i++)
+        {
+            if(choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon == weapon.GetComponent<Weapon>())
+            {
+                choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().ClearName();
+                choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon = null;
+                choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon_name = "";
+            }
+        }
+
         /*GameObject ti = transform.parent.GetChild(1).GetComponent<PlayerContoller>().TrueInventory.gameObject;
 
         for (int i = 0; i < ti.transform.childCount; i++)
