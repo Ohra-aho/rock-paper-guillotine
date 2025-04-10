@@ -8,6 +8,7 @@ public class Encounter : MonoBehaviour
     public List<GameObject> enemies;
     public int amount;
     public bool immideate_over;
+    public bool last; //Needs immideate over to work
 
     private void Awake()
     {

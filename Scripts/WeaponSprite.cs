@@ -48,6 +48,7 @@ public class WeaponSprite : MonoBehaviour
     public void RemoveSprite()
     {
         GetComponent<SpriteRenderer>().sprite = null;
+        transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
     }
 
     void OnMouseDown()

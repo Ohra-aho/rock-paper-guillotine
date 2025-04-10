@@ -27,12 +27,15 @@ public class MainController : MonoBehaviour
     public GameObject rewardMenu;
 
     public GameObject quilliotine;
+    public GameObject story_event_holder;
 
     [HideInInspector] public bool firstRewardMenu = false;
 
     public List<GameObject> playthroughts;
 
-    [HideInInspector] public bool buttons_active = true; 
+    [HideInInspector] public bool buttons_active = true;
+
+    public int reward_tier = 1;
 
     public enum Choise
     {
@@ -183,7 +186,7 @@ public class MainController : MonoBehaviour
         TC = GameObject.FindGameObjectWithTag("Table").GetComponent<TableController>();
         TC.ClearDisplay();
         EndRound();
-        SpawnRewardMenu();
+        if(!story_event_holder.transform.GetChild(0).GetComponent<Encounter>().last) SpawnRewardMenu();
     }
 
     

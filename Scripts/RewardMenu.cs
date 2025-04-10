@@ -5,21 +5,31 @@ using UnityEngine;
 public class RewardMenu : MonoBehaviour
 {
     public List<GameObject> rewards1;
+    public List<GameObject> rewards2;
+    public List<GameObject> rewards3;
+    public List<GameObject> healing;
+
     public List<GameObject> chosenRewards;
 
     public GameObject rope;
 
     public GameObject real_inventory;
 
+    MainController MC;
+
+    //Might need some sort of connection to what player already has
 
     void Awake()
     {
+        MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+        rewards3.AddRange(rewards2);
+        rewards2.AddRange(rewards1);
         real_inventory = GameObject.Find("Real inventory");
         RemovePossibleRewards();
         makeRewardList();
         rope = GameObject.Find("Roope");
         rope.GetComponent<Test>().PlayAnimation("Move");
-        GameObject.Find("Roope").GetComponent<Test>().UnPauseAnimation();
+        rope.GetComponent<Test>().UnPauseAnimation();
     }
 
     private List<int> GetThreeUniqueRandomNumbers(int min, int max)
@@ -37,11 +47,56 @@ public class RewardMenu : MonoBehaviour
 
     private void makeRewardList()
     {
-        List<int> choises = GetThreeUniqueRandomNumbers(0, rewards1.Count);
-        for(int i = 0; i < choises.Count; i++)
+        List<int> choises = new List<int>();
+        switch(MC.reward_tier)
         {
-            transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards1[choises[i]];
-            transform.GetChild(i).GetChild(0).GetComponent<Revard>().Invoke();
+            case 1: choises = GetThreeUniqueRandomNumbers(0, rewards1.Count); break;
+            case 2: choises = GetThreeUniqueRandomNumbers(0, rewards2.Count); break;
+            case 3: choises = GetThreeUniqueRandomNumbers(0, rewards3.Count); break;
+        }
+
+        int heal_chance = Random.Range(1, 4);
+        //heal_chance = 3;
+        if(heal_chance == 3)
+        {
+            choises[2] = Random.Range(0, 3);
+            for (int i = 0; i < choises.Count-1; i++)
+            {
+                switch (MC.reward_tier)
+                {
+                    case 1:
+                        transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards1[choises[i]];
+                        break;
+                    case 2:
+                        transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards2[choises[i]];
+                        break;
+                    case 3:
+                        transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards3[choises[i]];
+                        break;
+                }
+                transform.GetChild(i).GetChild(0).GetComponent<Revard>().Invoke();
+            }
+            transform.GetChild(choises.Count - 1).GetChild(0).GetComponent<Revard>().actualReward = healing[choises[choises.Count-1]];
+            transform.GetChild(choises.Count - 1).GetChild(0).GetComponent<Revard>().Invoke();
+        }
+        else
+        {
+            for (int i = 0; i < choises.Count; i++)
+            {
+                switch (MC.reward_tier)
+                {
+                    case 1:
+                        transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards1[choises[i]];
+                        break;
+                    case 2:
+                        transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards2[choises[i]];
+                        break;
+                    case 3:
+                        transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards3[choises[i]];
+                        break;
+                }
+                transform.GetChild(i).GetChild(0).GetComponent<Revard>().Invoke();
+            }
         }
     }
 
@@ -54,6 +109,22 @@ public class RewardMenu : MonoBehaviour
                 if (rewards1[i].GetComponent<Weapon>().name == real_inventory.transform.GetChild(j).GetComponent<Weapon>().name)
                 {
                     rewards1.RemoveAt(i);
+                    break;
+                }
+            }
+            for (int i = 0; i < rewards2.Count; i++)
+            {
+                if (rewards2[i].GetComponent<Weapon>().name == real_inventory.transform.GetChild(j).GetComponent<Weapon>().name)
+                {
+                    rewards2.RemoveAt(i);
+                    break;
+                }
+            }
+            for (int i = 0; i < rewards3.Count; i++)
+            {
+                if (rewards3[i].GetComponent<Weapon>().name == real_inventory.transform.GetChild(j).GetComponent<Weapon>().name)
+                {
+                    rewards3.RemoveAt(i);
                     break;
                 }
             }
@@ -80,8 +151,8 @@ public class RewardMenu : MonoBehaviour
 
     public void ObliterateThis()
     {
+        rope.transform.GetChild(rope.transform.childCount - 1).GetChild(0).GetComponent<AudioPlayer>().StopClip();
         Destroy(gameObject);
-
     }
 
     public void AnimationEnd()

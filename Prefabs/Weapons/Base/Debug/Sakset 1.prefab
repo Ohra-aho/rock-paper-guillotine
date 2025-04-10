@@ -88,12 +88,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  damage: 1
+  player: 0
+  opponent: {fileID: 0}
+  penetrating: 0
+  type: 3
+  damage: 10
   armor: 10
-  name: Sakset
-  description: 
-  sprite: {fileID: 21300000, guid: 12f60c77fce7f6d408e7cfb249ade10e, type: 3}
+  name: Voittamaton
+  description: Voittamaton
+  sprite: {fileID: 21300000, guid: 77c8f67adf3c9094ea3e21ba227b6dfa, type: 3}
+  stacks: 0
   choisePhase:
     m_PersistentCalls:
       m_Calls:
@@ -139,3 +143,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  victory:
+    m_PersistentCalls:
+      m_Calls: []
+  takeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  draw:
+    m_PersistentCalls:
+      m_Calls: []
+  heal:
+    m_PersistentCalls:
+      m_Calls: []
+  equip:
+    m_PersistentCalls:
+      m_Calls: []
+  unEquip:
+    m_PersistentCalls:
+      m_Calls: []
+  constant:
+    m_PersistentCalls:
+      m_Calls: []
+  onDestruction:
+    m_PersistentCalls:
+      m_Calls: []

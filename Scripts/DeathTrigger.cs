@@ -6,7 +6,7 @@ public class DeathTrigger : MonoBehaviour
 {
     private void Awake()
     {
-        GameObject.Find("EventSystem").GetComponent<MainController>().GiveUp();
+        GameObject.Find("The Q").GetComponent<Test>().PlayAnimation("Lose");
         GetComponent<StoryEvent>().over = true;
     }
 }
