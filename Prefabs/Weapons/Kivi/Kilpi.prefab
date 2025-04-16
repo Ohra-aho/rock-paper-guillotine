@@ -95,7 +95,7 @@ MonoBehaviour:
   damage: 1
   armor: 1
   name: Kilpi
-  description: Ei ominaisuutta
+  description: 
   sprite: {fileID: 21300000, guid: 83ce175834cfac342a6329a0f314f526, type: 3}
   stacks: 0
   choisePhase:

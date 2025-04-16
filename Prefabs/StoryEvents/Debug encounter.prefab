@@ -50,7 +50,7 @@ MonoBehaviour:
   enemies: []
   amount: 1
   immideate_over: 1
-  last: 1
+  last: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0

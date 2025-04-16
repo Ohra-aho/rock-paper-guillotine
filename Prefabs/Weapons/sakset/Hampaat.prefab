@@ -147,6 +147,13 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  self_destructive: 0
+  healing: 1
+  health: 0
+  kivi_synegry: 0
+  paperi_synergy: 0
+  sakset_synergy: 0
+  points: 0
 --- !u!114 &7225767104249451499
 MonoBehaviour:
   m_ObjectHideFlags: 0

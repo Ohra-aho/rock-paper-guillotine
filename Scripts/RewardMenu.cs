@@ -10,6 +10,7 @@ public class RewardMenu : MonoBehaviour
     public List<GameObject> healing;
 
     public List<GameObject> chosenRewards;
+    private List<GameObject> rewards;
 
     public GameObject rope;
 
@@ -17,15 +18,27 @@ public class RewardMenu : MonoBehaviour
 
     MainController MC;
 
+    private int self_destructive = 0; //Weapons which synergize with self destruction
+    private int heal = 0; //Weapons which heal or synergice with it
+    private int health = 0; //Weapons which give health or care about it
+    private int kivi_synegry = 0; //Weapons which synergize with other stones
+    private int paperi_synergy = 0;
+    private int sakset_synergy = 0;
+    private int points = 0; //Weapons which collect points or synergize with them.
+
+
     //Might need some sort of connection to what player already has
 
     void Awake()
     {
         MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+        rewards = new List<GameObject>();
         rewards3.AddRange(rewards2);
         rewards2.AddRange(rewards1);
         real_inventory = GameObject.Find("Real inventory");
         RemovePossibleRewards();
+        CollectTypePreference();
+        CollectEquippedWeaponPreferences();
         makeRewardList();
         rope = GameObject.Find("Roope");
         rope.GetComponent<Test>().PlayAnimation("Move");
@@ -47,56 +60,80 @@ public class RewardMenu : MonoBehaviour
 
     private void makeRewardList()
     {
-        List<int> choises = new List<int>();
-        switch(MC.reward_tier)
-        {
-            case 1: choises = GetThreeUniqueRandomNumbers(0, rewards1.Count); break;
-            case 2: choises = GetThreeUniqueRandomNumbers(0, rewards2.Count); break;
-            case 3: choises = GetThreeUniqueRandomNumbers(0, rewards3.Count); break;
-        }
+        //Get at least one random reward
+        rewards.Add(GetRandomReward());
 
+        //Change to get at least one healing weapon
         int heal_chance = Random.Range(1, 4);
         //heal_chance = 3;
         if(heal_chance == 3)
         {
-            choises[2] = Random.Range(0, 3);
-            for (int i = 0; i < choises.Count-1; i++)
-            {
-                switch (MC.reward_tier)
-                {
-                    case 1:
-                        transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards1[choises[i]];
-                        break;
-                    case 2:
-                        transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards2[choises[i]];
-                        break;
-                    case 3:
-                        transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards3[choises[i]];
-                        break;
-                }
-                transform.GetChild(i).GetChild(0).GetComponent<Revard>().Invoke();
-            }
-            transform.GetChild(choises.Count - 1).GetChild(0).GetComponent<Revard>().actualReward = healing[choises[choises.Count-1]];
-            transform.GetChild(choises.Count - 1).GetChild(0).GetComponent<Revard>().Invoke();
+            Debug.Log("Getting healing");
+            rewards.Add(SubChooseRandomWeapon(healing));   
         }
         else
         {
-            for (int i = 0; i < choises.Count; i++)
+            rewards.Add(GetRandomReward());
+        }
+
+        //Get preffered weapon
+        int preffered_type = PickFavouriteType();
+        //If there is a preffered type of weapons, pick weapons of that type
+        if(Chanse(0.7f))
+        {
+            if (preffered_type > 0)
             {
-                switch (MC.reward_tier)
+                switch (preffered_type)
                 {
-                    case 1:
-                        transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards1[choises[i]];
+                    //If type synergizes with certain main type of weapon, there is a change to just get that type of weapon
+                    case 4:
+                        if (Chanse(0.4f))
+                        {
+                            rewards.Add(SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type)));
+                        }
+                        else
+                        {
+                            rewards.Add(SubChooseRandomWeapon(ExtractTypeOFWeapons(MainController.Choise.kivi)));
+                        }
                         break;
-                    case 2:
-                        transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards2[choises[i]];
+                    case 5:
+                        if (Chanse(0.4f))
+                        {
+                            rewards.Add(SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type)));
+                        }
+                        else
+                        {
+                            rewards.Add(SubChooseRandomWeapon(ExtractTypeOFWeapons(MainController.Choise.paperi)));
+                        }
                         break;
-                    case 3:
-                        transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards3[choises[i]];
+                    case 6:
+                        if (Chanse(0.4f))
+                        {
+                            rewards.Add(SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type)));
+                        }
+                        else
+                        {
+                            rewards.Add(SubChooseRandomWeapon(ExtractTypeOFWeapons(MainController.Choise.sakset)));
+                        }
+                        break;
+                    default:
+                        Debug.Log("Getting preffered weapon");
+                        rewards.Add(
+                            SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type))
+                        );
                         break;
                 }
-                transform.GetChild(i).GetChild(0).GetComponent<Revard>().Invoke();
             }
+        } else
+        {
+            rewards.Add(GetRandomReward());
+        }
+
+
+        for (int i = 0; i < rewards.Count; i++)
+        {
+            transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards[i];
+            transform.GetChild(i).GetChild(0).GetComponent<Revard>().Invoke();
         }
     }
 
@@ -104,31 +141,199 @@ public class RewardMenu : MonoBehaviour
     {
         for(int j = 0; j < real_inventory.transform.childCount; j++)
         {
-            for (int i = 0; i < rewards1.Count; i++)
+            SubWeaponRemoval(real_inventory.transform.GetChild(j).GetComponent<Weapon>().name, rewards1);
+            SubWeaponRemoval(real_inventory.transform.GetChild(j).GetComponent<Weapon>().name, rewards2);
+            SubWeaponRemoval(real_inventory.transform.GetChild(j).GetComponent<Weapon>().name, rewards3);
+        }
+    }
+    //Used in function above
+    private void SubWeaponRemoval(string name, List<GameObject> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            if (list[i].GetComponent<Weapon>().name == name)
             {
-                if (rewards1[i].GetComponent<Weapon>().name == real_inventory.transform.GetChild(j).GetComponent<Weapon>().name)
-                {
-                    rewards1.RemoveAt(i);
-                    break;
-                }
+                list.RemoveAt(i);
+                break;
             }
-            for (int i = 0; i < rewards2.Count; i++)
+        }
+    }
+
+    private GameObject GetRandomReward()
+    {
+        switch (MC.reward_tier)
+        {
+            case 1:
+                return SubChooseRandomWeapon(rewards1); 
+            case 2:
+                return SubChooseRandomWeapon(rewards2);
+            case 3:
+                return SubChooseRandomWeapon(rewards3);
+        }
+        return null;
+    }
+    //Used in function above
+    private GameObject SubChooseRandomWeapon(List<GameObject> list)
+    {
+        //Get random reward which is not alrady chosen
+        GameObject temp = list[Random.Range(0, list.Count)];
+        int safe = 0;
+        while (rewards.Contains(temp) && safe < 500)
+        {
+            temp = list[Random.Range(0, list.Count)];
+            safe++;
+        }
+        if (safe >= 500) Debug.Log("Safe");
+        return temp;
+    }
+
+
+    //Collect types and alter rewards to keter to players build. More player collects certain weapons, more they get that type of weapons
+
+    private void CollectEquippedWeaponPreferences()
+    {
+        List<Weapon> equippend_weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
+        for(int i = 0; i < equippend_weapons.Count; i++)
+        {
+            if (equippend_weapons[i].self_destructive) self_destructive += 2;
+            if (equippend_weapons[i].healing) heal += 2;
+            if (equippend_weapons[i].health) health += 2;
+            if (equippend_weapons[i].kivi_synegry) kivi_synegry += 2;
+            if (equippend_weapons[i].paperi_synergy) paperi_synergy += 2;
+            if (equippend_weapons[i].sakset_synergy) sakset_synergy += 2;
+            if (equippend_weapons[i].points) points += 2;
+        }
+    }
+
+    private void CollectTypePreference()
+    {
+        for(int i = 0; i < real_inventory.transform.childCount; i++)
+        {
+            Weapon weapon = real_inventory.transform.GetChild(i).gameObject.GetComponent<Weapon>();
+            if (weapon.self_destructive) self_destructive++;
+            if (weapon.healing) heal++;
+            if (weapon.health) health++;
+            if (weapon.kivi_synegry) kivi_synegry++;
+            if (weapon.paperi_synergy) paperi_synergy++;
+            if (weapon.sakset_synergy) sakset_synergy++;
+            if (weapon.points) points++;
+        }
+        //Debug.Log(self_destructive + " " + heal + " " + health + " " + kivi_synegry + " " + paperi_synergy + " " + sakset_synergy + " " + points);
+    }
+
+    private int PickFavouriteType()
+    {
+        int temp = 0;
+
+        List<int> preferences = new List<int>();
+        preferences.Add(self_destructive);
+        preferences.Add(heal);
+        preferences.Add(health);
+        preferences.Add(kivi_synegry);
+        preferences.Add(paperi_synergy);
+        preferences.Add(sakset_synergy);
+        preferences.Add(points);
+
+        int biggest = 0;
+        for(int i = 0; i < preferences.Count; i++)
+        {
+            if(preferences[i] > 0)
             {
-                if (rewards2[i].GetComponent<Weapon>().name == real_inventory.transform.GetChild(j).GetComponent<Weapon>().name)
+                if (preferences[i] > biggest)
                 {
-                    rewards2.RemoveAt(i);
-                    break;
+                    biggest = preferences[i];
+                    temp = i + 1;
                 }
-            }
-            for (int i = 0; i < rewards3.Count; i++)
-            {
-                if (rewards3[i].GetComponent<Weapon>().name == real_inventory.transform.GetChild(j).GetComponent<Weapon>().name)
+                if (preferences[i] == biggest)
                 {
-                    rewards3.RemoveAt(i);
-                    break;
+                    int change = Random.Range(0, 2);
+                    if (change == 1)
+                    {
+                        biggest = preferences[i];
+                        temp = i + 1;
+                    }
                 }
             }
         }
+        Debug.Log(temp);
+        return temp;
+    }
+
+    //Extracts all weapons of certain type
+    private List<GameObject> ExtractSubtypeOfWeapons(int type)
+    {
+        List<GameObject> temp = new List<GameObject>();
+        List<GameObject> weapons = GiveCurrentRewardTier();
+        switch (type)
+        {
+            case 1:
+                for (int i = 0; i < weapons.Count; i++)
+                    if(weapons[i].GetComponent<Weapon>().self_destructive)
+                        temp.Add(weapons[i]);
+                break;
+            case 2:
+                for (int i = 0; i < weapons.Count; i++)
+                    if (weapons[i].GetComponent<Weapon>().healing)
+                        temp.Add(weapons[i]);
+                break;
+            case 3:
+                for (int i = 0; i < weapons.Count; i++)
+                    if (weapons[i].GetComponent<Weapon>().health)
+                        temp.Add(weapons[i]);
+                break;
+            case 4:
+                for (int i = 0; i < weapons.Count; i++)
+                    if (weapons[i].GetComponent<Weapon>().kivi_synegry)
+                        temp.Add(weapons[i]);
+                break;
+            case 5:
+                for (int i = 0; i < weapons.Count; i++)
+                    if (weapons[i].GetComponent<Weapon>().paperi_synergy)
+                        temp.Add(weapons[i]);
+                break;
+            case 6:
+                for (int i = 0; i < weapons.Count; i++)
+                    if (weapons[i].GetComponent<Weapon>().sakset_synergy)
+                        temp.Add(weapons[i]);
+                break;
+            case 7:
+                for (int i = 0; i < weapons.Count; i++)
+                    if (weapons[i].GetComponent<Weapon>().points)
+                        temp.Add(weapons[i]);
+                break;
+        }
+        return temp;
+    }
+
+    //Extracts weapons of main type
+    private List<GameObject> ExtractTypeOFWeapons(MainController.Choise type)
+    {
+        List<GameObject> temp = new List<GameObject>();
+        List<GameObject> weapons = GiveCurrentRewardTier();
+        for (int i = 0; i < weapons.Count; i++)
+        {
+            if(weapons[i].GetComponent<Weapon>().type == type)
+            {
+                temp.Add(weapons[i]);
+            }
+        }
+        return temp;
+    }
+
+    private List<GameObject> GiveCurrentRewardTier()
+    {
+        switch (MC.reward_tier)
+        {
+            case 1: return rewards1;
+            case 2: return rewards2;
+            case 3: return rewards3;
+        }
+        return null;
+    }
+
+    private bool Chanse(float chance)
+    {
+        return Random.Range(0f, 1f) <= chance;
     }
 
     public void DisableRewards()

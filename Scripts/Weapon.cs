@@ -32,6 +32,14 @@ public class Weapon : MonoBehaviour
     public UnityEvent constant;
     public UnityEvent onDestruction;
 
+    //Types
+    public bool self_destructive; //Weapons which synergize with self destruction
+    public bool healing; //Weapons which heal or synergice with it
+    public bool health; //Weapons which give health or care about it
+    public bool kivi_synegry; //Weapons which synergize with other stones
+    public bool paperi_synergy;
+    public bool sakset_synergy;
+    public bool points; //Weapons which collect points or synergize with them.
     private void Update()
     {
         if (constant != null) constant.Invoke();

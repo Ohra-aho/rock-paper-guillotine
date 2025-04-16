@@ -173,6 +173,13 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  self_destructive: 1
+  healing: 1
+  health: 0
+  kivi_synegry: 0
+  paperi_synergy: 0
+  sakset_synergy: 0
+  points: 0
 --- !u!114 &8443349561577102891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,3 +192,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  used_ones: 0

@@ -50,7 +50,6 @@ public class Machine : MonoBehaviour
     {
         startButton.GetComponent<StartButton>().sidesOutOfView = false;
         choise_panel_active = !choise_panel_active;
-        Debug.Log(choise_panel_active);
     }
 
     public void ActivateStartButton()
