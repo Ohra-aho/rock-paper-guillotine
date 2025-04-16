@@ -8,24 +8,40 @@ public class SelfDestruct : MonoBehaviour
     public void Destruct()
     {
         Buff käyttöohje = FindCertainBuff("Käyttöohje");
-        if (käyttöohje != null && !used_ones)
+        
+        if(GetComponent<Weapon>().player)
         {
-            used_ones = true;
-        }
-        else if(käyttöohje != null && used_ones)
+            if (käyttöohje != null && !used_ones)
+            {
+                used_ones = true;
+            }
+            else if (käyttöohje != null && used_ones)
+            {
+                GameObject.Find("Destruction hand").GetComponent<Test>().PlayAnimation("grab");
+            }
+            else
+            {
+                GameObject.Find("Destruction hand").GetComponent<Test>().PlayAnimation("grab");
+            }
+        } else
         {
-            GameObject.Find("Destruction hand").GetComponent<Test>().PlayAnimation("grab");
-        }
-        else
-        {
-            GameObject.Find("Destruction hand").GetComponent<Test>().PlayAnimation("grab");
+            if(!GameObject.Find("EnemyHolder").GetComponent<EnemyController>().dead)
+            {
+                GameObject.Find("Destruction hand e").GetComponent<Test>().PlayAnimation("grab2");
+            }
         }
     }
 
     public void TrueDestruct()
     {
-        GameObject.Find("PlayerWheelHolder").GetComponent<PlayerWheelHolder>()
+        if(GetComponent<Weapon>().player)
+        {
+            GameObject.Find("PlayerWheelHolder").GetComponent<PlayerWheelHolder>()
                 .RemoveWeapon(this.gameObject);
+        } else
+        {
+            
+        }
     }
 
     private Buff FindCertainBuff(string name)

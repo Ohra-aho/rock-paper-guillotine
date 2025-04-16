@@ -34,14 +34,13 @@ public class Hover : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (!disabled)
+        
+        if (hovering)
         {
-            if (hovering)
-            {
-                hovering = false;
-                hoverExit.Invoke();
-            }
+            hovering = false;
+            hoverExit.Invoke();
         }
+        
     }
 
     

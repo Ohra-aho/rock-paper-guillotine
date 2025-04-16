@@ -91,9 +91,9 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
-  type: 1
-  damage: 1
-  armor: 0
+  type: 0
+  damage: 2
+  armor: 1
   name: Verkko
   description: 
   sprite: {fileID: 21300000, guid: 92324259aa0ac0c4eb15506d3b1e3c0b, type: 3}
@@ -134,3 +134,10 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  self_destructive: 0
+  healing: 0
+  health: 0
+  kivi_synegry: 0
+  paperi_synergy: 0
+  sakset_synergy: 0
+  points: 0

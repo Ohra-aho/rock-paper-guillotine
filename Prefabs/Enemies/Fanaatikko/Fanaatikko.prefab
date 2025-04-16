@@ -59,17 +59,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Fanaatikko
-  image: {fileID: 21300000, guid: 779baba707ba4d44999eeb2c24a16f2a, type: 3}
+  image: {fileID: 21300000, guid: 2c91d713742269f4094eb1886f279e17, type: 3}
   maxHealth: 2
   weapons:
   - {fileID: 1944698211339908181, guid: 276c4073638e62b44be99117a6594fce, type: 3}
   - {fileID: 1944698211339908181, guid: 02645376508861b46a13df03159ea590, type: 3}
   - {fileID: 1944698211339908181, guid: 02645376508861b46a13df03159ea590, type: 3}
   plan_1: 0100000000000000
-  plan_2: 00000000
+  plan_2: 010000000100000000000000
   off_balance: 0
   nearDeath: 0
-  off_balance_choises: 02000000
+  off_balance_choises: 00000000
+  advanced: 0
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0

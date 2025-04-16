@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     public HealthBar HB;
     public HealthBar EnemyHB;
     public int maxHealth;
-    [HideInInspector] public BasicEnemy currentEnemy;
+    [HideInInspector] public GameObject currentEnemy;
 
     public List<GameObject> weapons;
 
@@ -27,16 +27,20 @@ public class EnemyController : MonoBehaviour
     public Effect choiseEffect;
     public Effect resultEffect;
     public Effect endEffect;
+    public Effect damageEffect;
 
     public GameObject story_event_holder;
 
     public MainController MC;
     public bool victory = false;
 
+    public GameObject true_weapon_holder;
+
     private void Update()
     {
         if(HB.dead)
         {
+            dead = true;
             MC.Win();
             HB.dead = false;
         }
@@ -115,22 +119,34 @@ public class EnemyController : MonoBehaviour
     {
         for (int i = 0; i < EnemyWheel.transform.childCount-1; i++)
         {
-            weapons[i].GetComponent<Weapon>().player = false;
+            GameObject new_weapon = Instantiate(weapons[i], true_weapon_holder.transform);
+            new_weapon.GetComponent<Weapon>().player = false;
             EnemyWheel.transform.GetChild(i).GetChild(0)
-                .GetComponent<WeaponSprite>().weapon = weapons[i];
+                .GetComponent<WeaponSprite>().weapon = new_weapon;
+            weapons[i] = new_weapon;
 
             EnemyWheel.transform.GetChild(i).GetChild(0)
                 .GetComponent<WeaponSprite>().displaySprite();
+        }
+        SpawnWeaponInfo();
+    }
+
+    public void SpawnWeaponInfo()
+    {
+        GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
+        for (int i = 0; i < true_weapon_holder.transform.childCount; i++)
+        {
+            infoHolder.GetComponent<WeaponInfoRack>().SpawnWeaponInfo(true_weapon_holder.transform.GetChild(i).GetComponent<Weapon>());
         }
     }
 
     public void TakeDamage()
     {
-
         dead = HB.GetComponent<HealthBar>().CheckIfDead();
         if(!dead)
         {
-            currentEnemy.ReactToDamage();
+            if(damageEffect != null) damageEffect.Invoke();
+            currentEnemy.GetComponent<BasicEnemy>().ReactToDamage();
         }
     }
 
@@ -147,6 +163,7 @@ public class EnemyController : MonoBehaviour
     public void ResultPhase()
     {
         if (resultEffect != null) resultEffect();
+        chosenWeapon.GetComponent<Weapon>().resultPhase.Invoke();
         //Does things when result is determined
     }
 
@@ -154,8 +171,10 @@ public class EnemyController : MonoBehaviour
     {
         if (endEffect != null) endEffect();
 
+        chosenWeapon.GetComponent<Weapon>().endPhase.Invoke();
+
         //Does things when round is over
-        currentEnemy.CheckUp(
+        currentEnemy.GetComponent<BasicEnemy>().CheckUp(
                 HB.GiveCurrentHealth(),
                 maxHealth,
                 EnemyHB.GiveCurrentHealth(),

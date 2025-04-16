@@ -97,7 +97,7 @@ MonoBehaviour:
   damage: 1
   armor: 0
   name: "Kyn\xE4"
-  description: +1 vahinkoa ja panssaria kaikkiin "papereihin".
+  description: +1 vahinkoa kaikkiin "papereihin".
   sprite: {fileID: 21300000, guid: 2326b63d1ed968143a7f7a2b38709830, type: 3}
   stacks: 0
   choisePhase:
@@ -184,4 +184,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_buff: 1
-  armor_buff: 1
+  armor_buff: 0

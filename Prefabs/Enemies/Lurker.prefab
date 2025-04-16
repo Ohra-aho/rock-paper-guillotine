@@ -69,7 +69,7 @@ MonoBehaviour:
   plan_2: 01000000020000000000000001000000
   off_balance: 0
   nearDeath: 0
-  off_balance_choises: 01000000
+  off_balance_choises: 00000000
 --- !u!212 &8687217563175998695
 SpriteRenderer:
   m_ObjectHideFlags: 0

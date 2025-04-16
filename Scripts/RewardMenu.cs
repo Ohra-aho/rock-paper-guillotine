@@ -255,7 +255,6 @@ public class RewardMenu : MonoBehaviour
                 }
             }
         }
-        Debug.Log(temp);
         return temp;
     }
 

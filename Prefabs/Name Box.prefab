@@ -876,6 +876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896e64e4610f72d42a8ae08cc4ac8d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disabled: 0
   hoverEnter:
     m_PersistentCalls:
       m_Calls:

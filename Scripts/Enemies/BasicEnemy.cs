@@ -27,6 +27,8 @@ public class BasicEnemy : MonoBehaviour
 
     public List<int> off_balance_choises;
 
+    public bool advanced = false;
+
     private void Awake()
     {
         controller = GameObject.FindGameObjectWithTag("EnemyHolder");
@@ -40,25 +42,25 @@ public class BasicEnemy : MonoBehaviour
             case 2: chosen_plan.AddRange(plan_2); break;
         }
         
-        SpawnWeaponInfo();
+        //SpawnWeaponInfo();
     }
 
     public void TransferInfo()
     {
         controller.GetComponent<EnemyController>().maxHealth = maxHealth;
         controller.GetComponent<EnemyController>().weapons = weapons;
-        controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
-        controller.GetComponent<EnemyController>().currentEnemy = this;
+        if(!advanced) controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
+        controller.GetComponent<EnemyController>().currentEnemy = this.gameObject;
     }
 
-    public void SpawnWeaponInfo()
+    /*public void SpawnWeaponInfo()
     {
         GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
         for(int i = 0; i < weapons.Count; i++)
         {
             infoHolder.GetComponent<WeaponInfoRack>().SpawnWeaponInfo(weapons[i].GetComponent<Weapon>());
         }
-    }
+    }*/
 
     public void ReactToDamage() //Nees indicator when off balance
     {
@@ -122,9 +124,6 @@ public class BasicEnemy : MonoBehaviour
         switch (choiseIndex)
         {
             case 0: step = StikToPlan(); break;
-            case 1: step = Bluff(); break;
-            case 2: step = Counter(); break;
-            case 3: step = CounterCounter(); break;
         }
 
         return step;
@@ -145,101 +144,4 @@ public class BasicEnemy : MonoBehaviour
         }
         return step;
     }
-
-    //Make the same action again as previously
-    private int Bluff()
-    {
-        if(planIndex > 0)
-        {
-            int step = chosen_plan[planIndex - 1];
-            return step;
-        } else
-        {
-            int step = chosen_plan[planIndex];
-            return step;
-        }
-        
-    }
-
-    //Antisipate the same action from opponent and counter that
-    private int Counter()
-    {
-        int temp = 0;
-        for(int i = 0; i < weapons.Count; i++)
-        {
-            switch(lastPlayerChoise)
-            {
-                case MainController.Choise.kivi:
-                    if (weapons[i].GetComponent<Weapon>().type == MainController.Choise.paperi) temp = i;
-                    break;
-                case MainController.Choise.paperi:
-                    if (weapons[i].GetComponent<Weapon>().type == MainController.Choise.sakset) temp = i;
-                    break;
-                case MainController.Choise.sakset:
-                    if (weapons[i].GetComponent<Weapon>().type == MainController.Choise.kivi) temp = i;
-                    break;
-            }
-        }
-        return temp;
-    }
-
-    //Use opponents previous action
-    private int CounterCounter()
-    {
-        int temp = 0;
-        for (int i = 0; i < weapons.Count; i++)
-        {
-            if (weapons[i].GetComponent<Weapon>().type == lastPlayerChoise) temp = i;
-        }
-        return temp;
-    }
-
-    //Finds all available counters to selected weapon
-    private List<Weapon> FindCountersTo(Weapon weapon)
-    {
-        List<Weapon> temp = new List<Weapon>();
-
-        switch (weapon.type)
-        {
-            case MainController.Choise.kivi:
-                for (int i = 0; i < weapons.Count; i++)
-                {
-                    if (weapons[i].GetComponent<Weapon>().type == MainController.Choise.paperi)
-                    {
-                        temp.Add(weapons[i].GetComponent<Weapon>());
-                    }
-                }
-                break;
-            case MainController.Choise.paperi:
-                for (int i = 0; i < weapons.Count; i++)
-                {
-                    if (weapons[i].GetComponent<Weapon>().type == MainController.Choise.sakset)
-                    {
-                        temp.Add(weapons[i].GetComponent<Weapon>());
-                    }
-                }
-                break;
-            case MainController.Choise.sakset:
-                for (int i = 0; i < weapons.Count; i++)
-                {
-                    if (weapons[i].GetComponent<Weapon>().type == MainController.Choise.kivi)
-                    {
-                        temp.Add(weapons[i].GetComponent<Weapon>());
-                    }
-                }
-                break;
-            case MainController.Choise.hyödytön:
-                for (int i = 0; i < weapons.Count; i++)
-                {
-                    temp.Add(weapons[i].GetComponent<Weapon>());
-                }
-                break;
-            case MainController.Choise.voittamaton:
-                //No can do...
-                break;
-        }
-
-        return temp;
-    }
-
 }
