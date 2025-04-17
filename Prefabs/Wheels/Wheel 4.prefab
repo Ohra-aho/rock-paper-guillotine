@@ -414,6 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896e64e4610f72d42a8ae08cc4ac8d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disabled: 0
   hoverEnter:
     m_PersistentCalls:
       m_Calls:
@@ -476,8 +477,8 @@ Transform:
   m_LocalScale: {x: 0.55, y: 0.55, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8371105723000790764}
   - {fileID: 3775017791248879650}
+  - {fileID: 8371105723000790764}
   - {fileID: 4205538571767066070}
   - {fileID: 9004163639805635459}
   - {fileID: 1134842402701334281}
@@ -1113,6 +1114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896e64e4610f72d42a8ae08cc4ac8d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disabled: 0
   hoverEnter:
     m_PersistentCalls:
       m_Calls:
@@ -1786,6 +1788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896e64e4610f72d42a8ae08cc4ac8d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disabled: 0
   hoverEnter:
     m_PersistentCalls:
       m_Calls:
@@ -2318,6 +2321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896e64e4610f72d42a8ae08cc4ac8d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disabled: 0
   hoverEnter:
     m_PersistentCalls:
       m_Calls:

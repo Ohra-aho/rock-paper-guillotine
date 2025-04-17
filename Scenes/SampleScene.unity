@@ -4150,7 +4150,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5, y: 3}
@@ -5491,6 +5491,7 @@ GameObject:
   - component: {fileID: 1284423199}
   - component: {fileID: 1284423201}
   - component: {fileID: 1284423200}
+  - component: {fileID: 1284423202}
   m_Layer: 5
   m_Name: Wheel holder
   m_TagString: Untagged
@@ -5578,6 +5579,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284423198}
   m_CullTransparentMesh: 1
+--- !u!114 &1284423202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284423198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7824b77e1f3f74f81ee7e9d7ec7f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1314088976 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1371170088414111626, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
@@ -5975,7 +5988,7 @@ MonoBehaviour:
   weaponDetector: {fileID: 659286821}
   TrueWeaponHolder: {fileID: 1837123231}
   TrueInventory: {fileID: 1837123231}
-  WheelHolder: {fileID: 0}
+  WheelHolder: {fileID: 138571107}
   choise_panel: {fileID: 3739126361549298607, guid: fe990e7900a5c3643a118c58020d6a1c, type: 3}
   defeat: 0
 --- !u!114 &1366762622
@@ -5995,6 +6008,10 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   - {fileID: 1944698211339908181, guid: ee57d6d131d1e97458e79deca9dcb588, type: 3}
   - {fileID: 1944698211339908181, guid: 078db46d1732a0744a627368a8fd7f6f, type: 3}
+  - {fileID: 1944698211339908181, guid: 048dd4a1f920edd42bb2f11dcc121a96, type: 3}
+  - {fileID: 1944698211339908181, guid: 8823c37d5eb8e0d46b1bf72e95b12280, type: 3}
+  - {fileID: 1944698211339908181, guid: 1af90779594abf84da388624e706913a, type: 3}
+  - {fileID: 1944698211339908181, guid: 34203c0b656ec2e418a4e9684c3fe252, type: 3}
   - {fileID: 1944698211339908181, guid: bade532ba40076345a0820c94b31c93e, type: 3}
 --- !u!114 &1366762623
 MonoBehaviour:

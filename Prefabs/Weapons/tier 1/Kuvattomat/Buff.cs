@@ -49,8 +49,6 @@ public class Buff : MonoBehaviour
         RemoveBuff();
     }
 
-
-
     public void AddBuff()
     {
         if (damage_buff != 0)

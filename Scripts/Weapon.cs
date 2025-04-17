@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
     [HideInInspector] public bool player;
     [HideInInspector] public Weapon opponent;
     [HideInInspector] public bool penetrating = false;
+    [HideInInspector] public bool dead;
     public MainController.Choise type;
     public int damage;
     public int armor;
@@ -79,7 +80,7 @@ public class Weapon : MonoBehaviour
                     hb.TakeDamage(realDamage);
                     opponent.dealDamage.Invoke();
                     takeDamage.Invoke();
-                    bool dead = hb.GetComponent<HealthBar>().CheckIfDead();
+                    dead = hb.GetComponent<HealthBar>().CheckIfDead();
                 }
                 else
                 {
@@ -87,7 +88,7 @@ public class Weapon : MonoBehaviour
                     hb.TakeDamage(realDamage);
                     opponent.dealDamage.Invoke();
                     takeDamage.Invoke();
-                    bool dead = hb.GetComponent<HealthBar>().CheckIfDead();
+                    dead = hb.GetComponent<HealthBar>().CheckIfDead();
                 }
             }
             else
@@ -95,7 +96,7 @@ public class Weapon : MonoBehaviour
                 HB.TakeDamage(realDamage);
                 opponent.dealDamage.Invoke();
                 takeDamage.Invoke();
-                bool dead = HB.GetComponent<HealthBar>().CheckIfDead();
+                dead = HB.GetComponent<HealthBar>().CheckIfDead();
                 if(!player)
                 {
                     GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().TakeDamage();

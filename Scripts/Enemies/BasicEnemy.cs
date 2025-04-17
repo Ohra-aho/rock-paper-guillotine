@@ -138,10 +138,27 @@ public class BasicEnemy : MonoBehaviour
     {
         int step = chosen_plan[planIndex];
         planIndex++;
-        if (planIndex == chosen_plan.Count)
+        if (planIndex >= chosen_plan.Count)
         {
             planIndex = 0;
         }
+
+        //If weapon is destroyed, skip it in plan
+        while (!CheckIfWeaponExists(step))
+        {
+            step = chosen_plan[planIndex];
+            planIndex++;
+            if (planIndex >= chosen_plan.Count)
+            {
+                planIndex = 0;
+            }
+        }
+
         return step;
+    }
+
+    private bool CheckIfWeaponExists(int index)
+    {
+        return weapons[index] != null;
     }
 }

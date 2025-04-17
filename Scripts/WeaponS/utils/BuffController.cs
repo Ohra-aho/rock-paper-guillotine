@@ -40,17 +40,18 @@ public class BuffController : MonoBehaviour
         real_inventory = GameObject.FindGameObjectWithTag("RI");
         GetComponent<Weapon>().equip.AddListener(Equip);
         GetComponent<Weapon>().unEquip.AddListener(Unequip);
-        GetComponent<Weapon>().constant.AddListener(AddBuffs);
     }
 
     public void Equip()
     {
         buff_on = true;
+        AddBuffs();
     }
 
     public void Unequip()
     {
         buff_on = false;
+        AddBuffs();
     }
 
     public void AddBuffs()

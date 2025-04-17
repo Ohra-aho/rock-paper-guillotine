@@ -214,6 +214,21 @@ public class PlayerContoller : MonoBehaviour
         if (dead) MC.Loose();
     }
 
+    public void Draw()
+    {
+
+    }
+
+    public void RecoverAllHealth()
+    {
+        HB.HealToFull();
+    }
+
+    public void Die()
+    {
+        HB.InstaKill();
+    }
+
     //Equipping
     public void EquipWeapon(Weapon weapon)
     {
@@ -227,20 +242,6 @@ public class PlayerContoller : MonoBehaviour
         weapon.player = false;
     }
 
-    public void Draw()
-    {
-        
-    }
-
-    public void RecoverAllHealth()
-    {
-        HB.HealToFull();
-    }
-
-    public void Die()
-    {
-        HB.InstaKill();
-    }
 
     public int GiveCurrentHealth()
     {

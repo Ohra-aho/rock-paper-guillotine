@@ -25,7 +25,7 @@ public class SelfDestruct : MonoBehaviour
             }
         } else
         {
-            if(!GameObject.Find("EnemyHolder").GetComponent<EnemyController>().dead)
+            if(!GetComponent<Weapon>().dead)
             {
                 GameObject.Find("Destruction hand e").GetComponent<Test>().PlayAnimation("grab2");
             }
@@ -40,7 +40,8 @@ public class SelfDestruct : MonoBehaviour
                 .RemoveWeapon(this.gameObject);
         } else
         {
-            
+            GameObject.Find("Wheel holder").GetComponent<EnemyWheelHolder>()
+                .RemoveWeapon(this.gameObject);
         }
     }
 

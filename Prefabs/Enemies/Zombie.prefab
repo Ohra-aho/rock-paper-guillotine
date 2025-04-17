@@ -70,6 +70,7 @@ MonoBehaviour:
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 02000000
+  advanced: 0
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0
