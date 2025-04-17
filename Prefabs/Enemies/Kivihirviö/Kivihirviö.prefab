@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: "Kivihirvi\xF6"
-  image: {fileID: 21300000, guid: 779baba707ba4d44999eeb2c24a16f2a, type: 3}
+  image: {fileID: 21300000, guid: 16e672719159dc14cafb86308f21baab, type: 3}
   maxHealth: 6
   weapons:
   - {fileID: 1944698211339908181, guid: 69d285147b1ac5a4d8fbdb7d0ca6d99d, type: 3}
@@ -70,6 +70,7 @@ MonoBehaviour:
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 02000000
+  advanced: 0
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0

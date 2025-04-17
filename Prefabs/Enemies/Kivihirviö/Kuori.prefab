@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 5201385185178331687}
+  - component: {fileID: 7351462452355468670}
   m_Layer: 5
-  m_Name: Piikit
+  m_Name: Kuori
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,14 +90,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: 0
-  opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
+  opponent: {fileID: 0}
   penetrating: 0
-  type: 0
+  dead: 0
+  type: 1
   damage: 1
-  armor: 0
-  name: Piikit
-  description: Jos ottaa vahinkoa, otat yhden vahingon.
-  sprite: {fileID: 21300000, guid: 5d98066317e2fa94cbe8f69fee01af35, type: 3}
+  armor: 3
+  name: Kuori
+  description: 
+  sprite: {fileID: 21300000, guid: 01e4d3eca5fe6e142952a2cb4bec5630, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:
@@ -113,10 +114,16 @@ MonoBehaviour:
       m_Calls: []
   takeDamage:
     m_PersistentCalls:
+      m_Calls: []
+  dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  draw:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5201385185178331687}
-        m_TargetAssemblyTypeName: SpikeBall, Assembly-CSharp
-        m_MethodName: Retaliate
+      - m_Target: {fileID: 7351462452355468670}
+        m_TargetAssemblyTypeName: Leka, Assembly-CSharp
+        m_MethodName: WinDraws
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -126,12 +133,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  dealDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  draw:
-    m_PersistentCalls:
-      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -147,7 +148,14 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5201385185178331687
+  self_destructive: 0
+  healing: 0
+  health: 0
+  kivi_synegry: 0
+  paperi_synergy: 0
+  sakset_synergy: 0
+  points: 0
+--- !u!114 &7351462452355468670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,7 +164,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9231a72076307b448e0f9056fe98708, type: 3}
+  m_Script: {fileID: 11500000, guid: 796828dd79e4a2042829fccf9aebd00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
