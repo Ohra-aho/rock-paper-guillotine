@@ -91,7 +91,8 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
-  type: 2
+  dead: 0
+  type: 0
   damage: 1
   armor: 1
   name: Naamio

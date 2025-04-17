@@ -91,7 +91,8 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
-  type: 0
+  dead: 0
+  type: 1
   damage: 2
   armor: 1
   name: Verkko

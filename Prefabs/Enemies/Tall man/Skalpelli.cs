@@ -12,7 +12,6 @@ public class Skalpelli : MonoBehaviour
 
     public void CheckForBuff()
     {
-        Debug.Log("gjggkgmgmkg");
         EnemyController ec = GameObject.Find("EnemyHolder").GetComponent<EnemyController>();
         int ch = ec.GiveCurrentHealth();
         if(ch < ec.currentEnemy.GetComponent<BasicEnemy>().maxHealth)

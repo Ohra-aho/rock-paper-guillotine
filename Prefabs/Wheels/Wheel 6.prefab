@@ -438,7 +438,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f0e41909c0d6d6a48a5d4b8e19513d8b, type: 3}
   - {fileID: 21300000, guid: 7a63350e1538e1e4eb79323b1d08d629, type: 3}
   weapon: {fileID: 0}
-  id: 1
+  id: 2
   Info: {fileID: 3827492144287251575, guid: 41d786849bf95294db81c7960312bfc9, type: 3}
 --- !u!114 &5858404037675105170
 MonoBehaviour:
@@ -1724,7 +1724,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f0e41909c0d6d6a48a5d4b8e19513d8b, type: 3}
   - {fileID: 21300000, guid: 7a63350e1538e1e4eb79323b1d08d629, type: 3}
   weapon: {fileID: 0}
-  id: 2
+  id: 1
   Info: {fileID: 3827492144287251575, guid: 41d786849bf95294db81c7960312bfc9, type: 3}
 --- !u!114 &1014114868290219
 MonoBehaviour:

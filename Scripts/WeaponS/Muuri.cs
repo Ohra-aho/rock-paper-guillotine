@@ -5,14 +5,14 @@ using UnityEngine;
 public class Muuri : MonoBehaviour
 {
     GameObject ri;
+    int HP_bonus = 0;
 
     private void Awake()
     {
         ri = GameObject.Find("Real inventory");
     }
 
-    //might need some altering when passive buffs come to play
-    public void CalculateArmor()
+    public void CalculateHP()
     {
         int amount = 0;
         for (int i = 0; i < ri.transform.childCount; i++)
@@ -22,6 +22,20 @@ public class Muuri : MonoBehaviour
                 amount++;
             }
         }
-        GetComponent<Weapon>().armor = amount / 3;
+        if(amount >= 3) HP_bonus = amount / 3;
+    }
+
+    public void Equip()
+    {
+        CalculateHP();
+        HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
+        HB.IncreaseHealthBar(HP_bonus);
+    }
+
+    public void Unequip()
+    {
+        CalculateHP();
+        HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
+        HB.DecreaseHealthBar(HP_bonus);
     }
 }

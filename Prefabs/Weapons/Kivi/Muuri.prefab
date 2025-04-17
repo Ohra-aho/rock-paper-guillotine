@@ -92,11 +92,12 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  dead: 0
   type: 0
   damage: 1
   armor: 0
   name: Muuri
-  description: +1 panssariin, per. joka kolmas "kivi" jonka omistat
+  description: +1 HP, per. joka kolmas "kivi" jonka omistat
   sprite: {fileID: 21300000, guid: 407c2ecb77ae7604e9f59f92cb5b0298, type: 3}
   stacks: 0
   choisePhase:
@@ -125,10 +126,34 @@ MonoBehaviour:
       m_Calls: []
   equip:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2278583403661379804}
+        m_TargetAssemblyTypeName: Muuri, Assembly-CSharp
+        m_MethodName: Equip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unEquip:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2278583403661379804}
+        m_TargetAssemblyTypeName: Muuri, Assembly-CSharp
+        m_MethodName: Unequip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   constant:
     m_PersistentCalls:
       m_Calls:
