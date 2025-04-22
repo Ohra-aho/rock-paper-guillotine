@@ -59,17 +59,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Noita
-  image: {fileID: 21300000, guid: 779baba707ba4d44999eeb2c24a16f2a, type: 3}
+  image: {fileID: 21300000, guid: 4e0d92a050c6dab46a727829ebf3bc0d, type: 3}
   maxHealth: 4
   weapons:
   - {fileID: 1944698211339908181, guid: 06721afb418fc0347a654c5f842c418b, type: 3}
   - {fileID: 1944698211339908181, guid: f3169684ad81cb14ca5e6009e0c3a33b, type: 3}
   - {fileID: 1944698211339908181, guid: 1cbd7a9ad16806f48b695e8ef6b70575, type: 3}
-  plan_1: 0100000002000000010000000200000002000000
-  plan_2: 00000000000000000100000002000000
+  plan_1: 0200000001000000020000000000000000000000
+  plan_2: 00000000000000000200000001000000
   off_balance: 0
   nearDeath: 0
-  off_balance_choises: 00000000
+  off_balance_choises: 02000000
+  advanced: 0
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0

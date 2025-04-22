@@ -117,6 +117,7 @@ public class EnemyController : MonoBehaviour
 
     public void DisplayWeapons()
     {
+        ClearRealInventory();
         for (int i = 0; i < EnemyWheel.transform.childCount-1; i++)
         {
             GameObject new_weapon = Instantiate(weapons[i], true_weapon_holder.transform);
@@ -128,7 +129,25 @@ public class EnemyController : MonoBehaviour
             EnemyWheel.transform.GetChild(i).GetChild(0)
                 .GetComponent<WeaponSprite>().displaySprite();
         }
+        for(int i = 0; i < true_weapon_holder.transform.childCount; i++)
+        {
+            if(true_weapon_holder.transform.GetChild(i).GetComponent<BuffController>())
+            {
+                true_weapon_holder.transform.GetChild(i).GetComponent<BuffController>().Equip();
+            }
+        }
         SpawnWeaponInfo();
+    }
+
+    private void ClearRealInventory()
+    {
+        if(true_weapon_holder.transform.childCount > 0)
+        {
+            for (int i = true_weapon_holder.transform.childCount; i > 0; i--)
+            {
+                Destroy(true_weapon_holder.transform.GetChild(i).gameObject);
+            }
+        }
     }
 
     public void SpawnWeaponInfo()
