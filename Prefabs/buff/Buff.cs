@@ -24,6 +24,8 @@ public class Buff : MonoBehaviour
     public bool takeDamage;
     public bool dealDamage;
     public bool draw;
+    public bool win;
+    public bool lose;
     public bool heal;
 
     public bool equip;
@@ -83,7 +85,12 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().onDestruction.AddListener(() => special(weapon));
         if (awake)
             special(weapon);
-        
+        if(win)
+            transform.parent.GetComponent<Weapon>().win.AddListener(() => special(weapon));
+        if (lose)
+            transform.parent.GetComponent<Weapon>().lose.AddListener(() => special(weapon));
+
+
     }
 
     public void RemoveBuff()
@@ -118,6 +125,10 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().constant.RemoveListener(() => special(weapon));
         if (onDestruction)
             transform.parent.GetComponent<Weapon>().onDestruction.RemoveListener(() => special(weapon));
+        if (win)
+            transform.parent.GetComponent<Weapon>().win.RemoveListener(() => special(weapon));
+        if (lose)
+            transform.parent.GetComponent<Weapon>().lose.RemoveListener(() => special(weapon));
 
         if (special_removal != null) special_removal(weapon);
     }

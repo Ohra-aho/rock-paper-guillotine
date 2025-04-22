@@ -5,7 +5,6 @@ using UnityEngine;
 public class Voodoonukke : MonoBehaviour
 {
     public int damage;
-
     private void Awake()
     {
         GetComponent<BuffController>().special = Retaliate;

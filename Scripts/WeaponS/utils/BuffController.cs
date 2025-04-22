@@ -26,6 +26,8 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public bool takeDamage;
     [HideInInspector] public bool dealDamage;
     [HideInInspector] public bool draw;
+    [HideInInspector] public bool win;
+    [HideInInspector] public bool lose;
     [HideInInspector] public bool heal;
 
     [HideInInspector] public bool equip;
@@ -98,6 +100,8 @@ public class BuffController : MonoBehaviour
             new_buff.constant = constant;
             new_buff.onDestruction = onDestruction;
             new_buff.awake = awake;
+            new_buff.win = win;
+            new_buff.lose = lose;
             if(special != null) new_buff.GetComponent<Buff>().special = special;
             if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
             new_buff.GetComponent<Buff>().AddBuff();

@@ -187,7 +187,7 @@ public class HealthBar : MonoBehaviour
         int amount = 0;
         for(int i = 0; i < transform.childCount; i++)
         {
-            if(!transform.GetChild(i).GetComponent<Heart>())
+            if(transform.GetChild(i).GetComponent<Heart>())
             {
                 amount++;
             }

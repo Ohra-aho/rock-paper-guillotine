@@ -80,6 +80,8 @@ public class MainController : MonoBehaviour
                     case Choise.kivi: won = null; break;
                     case Choise.paperi: won = false; break;
                     case Choise.sakset: won = true; break;
+                    case Choise.hyödytön: won = true; break;
+                    case Choise.voittamaton: won = false; break;
                 }
                 break;
             case Choise.paperi:
@@ -88,6 +90,8 @@ public class MainController : MonoBehaviour
                     case Choise.kivi: won = true; break;
                     case Choise.paperi: won = null; break;
                     case Choise.sakset: won = false; break;
+                    case Choise.hyödytön: won = true; break;
+                    case Choise.voittamaton: won = false; break;
                 }
                 break;
             case Choise.sakset:
@@ -96,6 +100,8 @@ public class MainController : MonoBehaviour
                     case Choise.kivi: won = false; break;
                     case Choise.paperi: won = true; break;
                     case Choise.sakset: won = null; break;
+                    case Choise.hyödytön: won = true; break;
+                    case Choise.voittamaton: won = false; break;
                 }
                 break;
             case Choise.voittamaton:
@@ -196,12 +202,14 @@ public class MainController : MonoBehaviour
         switch (result)
         {
             case true:
+                enemyChoise.lose.Invoke();
                 playerChoise.DealDamage(
                     enemyChoise, 
                     enemy.GetComponent<EnemyController>().HB
                     );
                 break;
             case false:
+                enemyChoise.win.Invoke();
                 enemyChoise.DealDamage(
                     playerChoise,
                     player.GetComponent<PlayerContoller>().HB
