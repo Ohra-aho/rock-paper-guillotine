@@ -57,7 +57,7 @@ public class Weapon : MonoBehaviour
         return false;
     }
 
-    public void TakeDamage(HealthBar HB, int amount)
+    public void TakeDamage(int amount)
     {
         int realDamage;
         if(!opponent.penetrating)
@@ -72,47 +72,63 @@ public class Weapon : MonoBehaviour
 
         if(realDamage > 0)
         {
-            if (HB == null)
+            if (player)
             {
-                if (player)
-                {
-                    HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
-                    hb.TakeDamage(realDamage);
-                    opponent.dealDamage.Invoke();
-                    takeDamage.Invoke();
-                    dead = hb.GetComponent<HealthBar>().CheckIfDead();
-                }
-                else
-                {
-                    HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
-                    hb.TakeDamage(realDamage);
-                    opponent.dealDamage.Invoke();
-                    takeDamage.Invoke();
-                    dead = hb.GetComponent<HealthBar>().CheckIfDead();
-                }
+                HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
+                hb.TakeDamage(realDamage);
+                opponent.dealDamage.Invoke();
+                takeDamage.Invoke();
+                dead = hb.GetComponent<HealthBar>().CheckIfDead();
             }
             else
             {
-                HB.TakeDamage(realDamage);
+                HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
+                hb.TakeDamage(realDamage);
                 opponent.dealDamage.Invoke();
                 takeDamage.Invoke();
-                dead = HB.GetComponent<HealthBar>().CheckIfDead();
-                if(!player)
-                {
-                    GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().TakeDamage();
-                }
+                dead = hb.GetComponent<HealthBar>().CheckIfDead();
+                GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().TakeDamage();
+
             }
         }
-
-        
     }
 
     public void DealDamage(Weapon target, HealthBar opponent_hb)
     {
-        target.TakeDamage(opponent_hb, damage);
+        target.TakeDamage(damage);
         //dealDamage.Invoke();
-        bool dead = opponent_hb.GetComponent<HealthBar>().CheckIfDead();
-        if(dead)
+        bool dead = false;
+        if (player)
+        {
+            HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
+            dead = hb.GetComponent<HealthBar>().CheckIfDead();
+        }
+        else
+        {
+            HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
+            dead = hb.GetComponent<HealthBar>().CheckIfDead();
+        }
+        if (dead)
+        {
+            victory.Invoke();
+        }
+    }
+
+    public void EffectDamage(int amount)
+    {
+        opponent.TakeDamage(amount);
+        bool dead = false;
+        if (player)
+        {
+            HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
+            dead = hb.GetComponent<HealthBar>().CheckIfDead();
+        }
+        else
+        {
+            HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
+            dead = hb.GetComponent<HealthBar>().CheckIfDead();
+        }
+        if (dead)
         {
             victory.Invoke();
         }

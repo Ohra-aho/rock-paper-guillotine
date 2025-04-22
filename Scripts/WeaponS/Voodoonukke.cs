@@ -15,14 +15,13 @@ public class Voodoonukke : MonoBehaviour
 
     public void Retaliate(Weapon weapon)
     {
-        Debug.Log(weapon.name + " : " + weapon.player);
         if (weapon.player)
         {
-            GameObject.Find("EventSystem").GetComponent<MainController>().enemyChoise.TakeDamage(null, damage);
+            GameObject.Find("EventSystem").GetComponent<MainController>().enemyChoise.TakeDamage(damage);
         }
         else
         {
-            GameObject.Find("EventSystem").GetComponent<MainController>().playerChoise.TakeDamage(null, damage);
+            GameObject.Find("EventSystem").GetComponent<MainController>().playerChoise.TakeDamage(damage);
         }
     }
 }

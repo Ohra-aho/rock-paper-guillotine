@@ -14,19 +14,6 @@ public class Pyhäteksti : MonoBehaviour
 
     public void DamageOnHeal(Weapon weapon)
     {
-        if (weapon.player)
-        {
-            weapon.TakeDamage(
-                 GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB,
-                 damage
-                 );
-        }
-        else
-        {
-            weapon.TakeDamage(
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB,
-                damage
-                );
-        }
+        weapon.opponent.TakeDamage(damage);   
     }
 }

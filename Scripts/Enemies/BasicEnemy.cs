@@ -95,7 +95,7 @@ public class BasicEnemy : MonoBehaviour
         }*/
     }
 
-    private int MakeChoise(MainController.Choise playerChoise)
+    public int MakeChoise(MainController.Choise playerChoise)
     {
         int step = 0;
 

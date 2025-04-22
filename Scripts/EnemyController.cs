@@ -162,11 +162,11 @@ public class EnemyController : MonoBehaviour
     public void TakeDamage()
     {
         dead = HB.GetComponent<HealthBar>().CheckIfDead();
-        if(!dead)
-        {
+        //if(!dead)
+        //{
             if(damageEffect != null) damageEffect.Invoke();
-            currentEnemy.GetComponent<BasicEnemy>().ReactToDamage();
-        }
+            if(!dead) currentEnemy.GetComponent<BasicEnemy>().ReactToDamage();
+        //}
     }
 
     // Rock, Paper, scissors

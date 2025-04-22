@@ -7,6 +7,6 @@ public class KuolonSopimus : MonoBehaviour
     public int damage;
     public void SelfDamage()
     {
-        GetComponent<Weapon>().TakeDamage(null, damage);
+        GetComponent<Weapon>().TakeDamage(damage);
     }
 }

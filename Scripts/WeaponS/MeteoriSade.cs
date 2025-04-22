@@ -22,7 +22,7 @@ public class MeteoriSade : MonoBehaviour
             }
         }
         GetComponent<Weapon>().opponent.TakeDamage(
-                GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB, damage
+                damage
             );
     }
 }

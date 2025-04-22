@@ -6,6 +6,6 @@ public class Liekinheitin : MonoBehaviour
 {
     public void DealDamageFromArmor()
     {
-        GetComponent<Weapon>().opponent.TakeDamage(null, GetComponent<Weapon>().opponent.armor*2);
+        GetComponent<Weapon>().opponent.TakeDamage(GetComponent<Weapon>().opponent.armor*2);
     }
 }

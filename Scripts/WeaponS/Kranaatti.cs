@@ -8,10 +8,10 @@ public class Kranaatti : MonoBehaviour
     public void DamageBoth()
     {
         GetComponent<Weapon>().opponent.TakeDamage(
-                null, damage
+                damage
             );
         GetComponent<Weapon>().TakeDamage(
-                null, damage
+                damage
             );
     }
 }
