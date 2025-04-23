@@ -100,6 +100,7 @@ public class EnemyController : MonoBehaviour
             }
             if(encounter != null)
             {
+                ClearEffects();
                 victory = false;
                 Instantiate(encounter.enemies[0], transform);
             }
@@ -148,6 +149,14 @@ public class EnemyController : MonoBehaviour
                 Destroy(true_weapon_holder.transform.GetChild(i).gameObject);
             }
         }
+    }
+
+    private void ClearEffects()
+    {
+        choiseEffect = null;
+        resultEffect = null;
+        endEffect = null;
+        damageEffect = null;
     }
 
     public void SpawnWeaponInfo()

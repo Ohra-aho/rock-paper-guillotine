@@ -100,6 +100,8 @@ MonoBehaviour:
   takeDamage: 0
   dealDamage: 0
   draw: 0
+  win: 0
+  lose: 0
   heal: 0
   equip: 0
   unEquip: 0
@@ -134,11 +136,12 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  dead: 0
   type: 1
   damage: 1
   armor: 0
   name: "Pyh\xE4 teksti"
-  description: AIna kun parannat haavan, tekee yhden vahingon viholliseen.
+  description: Aina kun parannat haavan, tekee yhden vahingon viholliseen.
   sprite: {fileID: 21300000, guid: cb5421596bf1f7242accc24cbb23b466, type: 3}
   stacks: 0
   choisePhase:
@@ -157,6 +160,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
     m_PersistentCalls:
       m_Calls: []
   draw:
