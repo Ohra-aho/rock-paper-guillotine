@@ -98,7 +98,7 @@ MonoBehaviour:
   armor: 0
   name: Smite
   description: 
-  sprite: {fileID: 21300000, guid: 8bfa3ea6e8fa7ad41bbcada09e83ca6a, type: 3}
+  sprite: {fileID: 21300000, guid: 2f44c6333b0dc7a42b809081cdad793a, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:

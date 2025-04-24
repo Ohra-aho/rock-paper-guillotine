@@ -98,7 +98,7 @@ MonoBehaviour:
   armor: 0
   name: Rituaali
   description: Kun teet vahinkoa, paranna 2 haava.
-  sprite: {fileID: 21300000, guid: 58608f9860cf9a1439532a03ce823b4e, type: 3}
+  sprite: {fileID: 21300000, guid: f88de4c37ff92ef40a020304d6dad7db, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:
@@ -130,6 +130,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []

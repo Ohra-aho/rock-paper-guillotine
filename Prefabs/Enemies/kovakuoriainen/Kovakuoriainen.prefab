@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Kovakuoriainen
-  image: {fileID: 21300000, guid: 16e672719159dc14cafb86308f21baab, type: 3}
+  image: {fileID: 21300000, guid: a5f89942a4080f54aae3f34b1876c376, type: 3}
   maxHealth: 3
   weapons:
   - {fileID: 1944698211339908181, guid: e6f5dacd513cf4949b52db9ae88cf4f5, type: 3}

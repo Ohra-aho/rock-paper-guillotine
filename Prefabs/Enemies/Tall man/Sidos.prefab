@@ -98,7 +98,7 @@ MonoBehaviour:
   armor: 2
   name: Seerumi
   description: "Parantaa kaksi haavaa aina kun k\xE4ytet\xE4\xE4n."
-  sprite: {fileID: 21300000, guid: 8bfa3ea6e8fa7ad41bbcada09e83ca6a, type: 3}
+  sprite: {fileID: 21300000, guid: ecca68dc6e69f5d47915b4d615ce8033, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:

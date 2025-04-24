@@ -15,6 +15,8 @@ public class Machine : MonoBehaviour
 
     public bool choise_panel_active = false;
 
+    public List<GameObject> sparks;
+
     private void Update()
     {
         //CheckAnimation();
@@ -61,5 +63,18 @@ public class Machine : MonoBehaviour
     {
         startButton.GetComponent<NonUIButton>().interactable = false;
         playerWheelHolder.GetComponent<NonUIButton>().interactable = false;
+    }
+
+    //Look some time if there is better way
+    public void ActivateParticle(int index)
+    {
+        sparks[index].GetComponent<ParticleSystem>().Play();
+    }
+
+    bool smoke3 = true;
+    public void ActivateSmoke3()
+    {
+        if(smoke3) sparks[4].GetComponent<ParticleSystem>().Play();
+        smoke3 = !smoke3;
     }
 }

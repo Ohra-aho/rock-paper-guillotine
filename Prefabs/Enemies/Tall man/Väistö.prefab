@@ -92,12 +92,12 @@ MonoBehaviour:
   opponent: {fileID: 0}
   penetrating: 0
   dead: 0
-  type: 0
+  type: 1
   damage: 2
   armor: 1
   name: "V\xE4ist\xF6"
   description: 
-  sprite: {fileID: 21300000, guid: 8bfa3ea6e8fa7ad41bbcada09e83ca6a, type: 3}
+  sprite: {fileID: 21300000, guid: 1ca580e0f3215044fb2301b30b5fe037, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:
@@ -115,6 +115,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
     m_PersistentCalls:
       m_Calls: []
   draw:

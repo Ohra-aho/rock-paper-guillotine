@@ -97,7 +97,7 @@ MonoBehaviour:
   armor: 1
   name: Kuori
   description: -1 panssariin jos on ottanut vahinkoa.
-  sprite: {fileID: 21300000, guid: aabdc3433be264348b8acd6b984db551, type: 3}
+  sprite: {fileID: 21300000, guid: 3ae688cfd58a32a47a3ffc55dc3ea8bb, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:

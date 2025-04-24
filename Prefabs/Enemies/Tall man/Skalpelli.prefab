@@ -93,12 +93,12 @@ MonoBehaviour:
   opponent: {fileID: 0}
   penetrating: 0
   dead: 0
-  type: 0
+  type: 2
   damage: 2
   armor: 0
   name: Skalpelli
   description: "Jos t\xE4ysiss\xE4 el\xE4miss\xE4, +2 vahinkoon."
-  sprite: {fileID: 21300000, guid: 8bfa3ea6e8fa7ad41bbcada09e83ca6a, type: 3}
+  sprite: {fileID: 21300000, guid: 39b4b3214e4a51c478cacfa516800034, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:

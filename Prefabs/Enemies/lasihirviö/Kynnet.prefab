@@ -97,7 +97,7 @@ MonoBehaviour:
   armor: 0
   name: Sirpaleet
   description: 
-  sprite: {fileID: 21300000, guid: dedf7c77767828a45990b58e5b6159ce, type: 3}
+  sprite: {fileID: 21300000, guid: 98465ac3ca4401e4c81f6623caedaca7, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:
@@ -115,6 +115,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
     m_PersistentCalls:
       m_Calls: []
   draw:

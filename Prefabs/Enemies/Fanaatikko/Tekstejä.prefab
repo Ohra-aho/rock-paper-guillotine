@@ -91,12 +91,13 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  dead: 0
   type: 2
   damage: 1
   armor: 0
   name: Mutinaa
   description: 
-  sprite: {fileID: 21300000, guid: 1cb1e2e16af8cb446b4c407484e7cfd4, type: 3}
+  sprite: {fileID: 21300000, guid: c82e7b27756c7ba498ed066a3df37f35, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:
@@ -114,6 +115,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
     m_PersistentCalls:
       m_Calls: []
   draw:
