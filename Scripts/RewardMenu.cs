@@ -45,19 +45,6 @@ public class RewardMenu : MonoBehaviour
         rope.GetComponent<Test>().UnPauseAnimation();
     }
 
-    private List<int> GetThreeUniqueRandomNumbers(int min, int max)
-    {
-        HashSet<int> uniqueNumbers = new HashSet<int>();
-
-        while (uniqueNumbers.Count < 3)
-        {
-            int randomNumber = Random.Range(min, max); // Generate a random number in the range
-            uniqueNumbers.Add(randomNumber); // Add to the set (duplicates will be ignored)
-        }
-
-        return new List<int>(uniqueNumbers); // Convert to a list and return
-    }
-
     private void makeRewardList()
     {
         //Get at least one random reward
@@ -68,7 +55,6 @@ public class RewardMenu : MonoBehaviour
         //heal_chance = 3;
         if(heal_chance == 3)
         {
-            Debug.Log("Getting healing");
             rewards.Add(SubChooseRandomWeapon(healing));   
         }
         else
@@ -117,7 +103,6 @@ public class RewardMenu : MonoBehaviour
                         }
                         break;
                     default:
-                        Debug.Log("Getting preffered weapon");
                         rewards.Add(
                             SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type))
                         );
@@ -129,6 +114,11 @@ public class RewardMenu : MonoBehaviour
             rewards.Add(GetRandomReward());
         }
 
+        //Correction
+        if(rewards.Count < 3)
+        {
+            rewards.Add(GetRandomReward());
+        }
 
         for (int i = 0; i < rewards.Count; i++)
         {
@@ -176,15 +166,23 @@ public class RewardMenu : MonoBehaviour
     private GameObject SubChooseRandomWeapon(List<GameObject> list)
     {
         //Get random reward which is not alrady chosen
-        GameObject temp = list[Random.Range(0, list.Count)];
-        int safe = 0;
-        while (rewards.Contains(temp) && safe < 500)
+        //
+        if(list.Count == 0)
         {
-            temp = list[Random.Range(0, list.Count)];
-            safe++;
+            return GetRandomReward();
+        } else
+        {
+            GameObject temp = list[Random.Range(0, list.Count)];
+            int safe = 0;
+            while (rewards.Contains(temp) && safe < 500)
+            {
+                temp = list[Random.Range(0, list.Count)];
+                safe++;
+            }
+            if (safe >= 500) Debug.Log("Safe");
+            return temp;
         }
-        if (safe >= 500) Debug.Log("Safe");
-        return temp;
+
     }
 
 

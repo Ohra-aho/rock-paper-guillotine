@@ -27,4 +27,15 @@ public class Hand : MonoBehaviour
             }
         }
     }
+
+    public void PlayGrabAudio()
+    {
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            if(transform.GetChild(i).GetComponent<Stupid>())
+            {
+                transform.GetChild(i).GetChild(0).GetComponent<AudioPlayer>().PlayClip();
+            }
+        }
+    }
 }

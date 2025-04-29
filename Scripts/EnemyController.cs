@@ -86,6 +86,9 @@ public class EnemyController : MonoBehaviour
     public void DestroyThis()
     {
         HB.DestroyHealthBar();
+        ClearRealInventory();
+        GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
+        infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
         Destroy(transform.GetChild(0).gameObject);
     }
 
@@ -109,8 +112,6 @@ public class EnemyController : MonoBehaviour
 
     public void HandleEnemy()
     {
-        GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
-        infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
         if (transform.childCount > 0) DestroyThis();
         else SpawnEnemy();
         
@@ -118,7 +119,6 @@ public class EnemyController : MonoBehaviour
 
     public void DisplayWeapons()
     {
-        ClearRealInventory();
         for (int i = 0; i < EnemyWheel.transform.childCount-1; i++)
         {
             GameObject new_weapon = Instantiate(weapons[i], true_weapon_holder.transform);
@@ -144,7 +144,7 @@ public class EnemyController : MonoBehaviour
     {
         if(true_weapon_holder.transform.childCount > 0)
         {
-            for (int i = true_weapon_holder.transform.childCount; i > 0; i--)
+            for (int i = true_weapon_holder.transform.childCount-1; i >= 0; i--)
             {
                 Destroy(true_weapon_holder.transform.GetChild(i).gameObject);
             }

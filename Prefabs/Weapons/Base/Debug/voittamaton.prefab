@@ -91,11 +91,12 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  dead: 0
   type: 3
   damage: 10
   armor: 10
   name: Voittamaton
-  description: Voittamaton
+  description: Testitarkoitukseen
   sprite: {fileID: 21300000, guid: 77c8f67adf3c9094ea3e21ba227b6dfa, type: 3}
   stacks: 0
   choisePhase:
@@ -116,6 +117,12 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -134,3 +141,10 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  self_destructive: 0
+  healing: 0
+  health: 0
+  kivi_synegry: 0
+  paperi_synergy: 0
+  sakset_synergy: 0
+  points: 0

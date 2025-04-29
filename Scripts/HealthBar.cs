@@ -117,8 +117,8 @@ public class HealthBar : MonoBehaviour
 
     private void AddHeartSlots()
     {
-        int children = 15 - transform.childCount;
-        for (int i = 0; i < children; i++)
+        int children = 15 - GiveMaxHealth();
+        for(int i = 0; i < 15 - GiveMaxHealth(); i++)
         {
             Instantiate(heart_slot, transform);
         }
@@ -133,7 +133,7 @@ public class HealthBar : MonoBehaviour
             {
                 if(!transform.GetChild(i).GetComponent<Heart>())
                 {
-                    DestroyImmediate(transform.GetChild(i).gameObject);
+                    Destroy(transform.GetChild(i).gameObject);
                 }
             }
         }
@@ -142,13 +142,13 @@ public class HealthBar : MonoBehaviour
     public void IncreaseHealthBar(int amount)
     {
         ClearHeartSlots();
-        if (this.transform.childCount < 15)
-        {
+        //if (this.transform.childCount < 15)
+        //{
             for (int i = 0; i < amount; i++)
             {
                 Instantiate(heart, this.transform);
             }
-        }
+        //}
         AddHeartSlots();
     }
 

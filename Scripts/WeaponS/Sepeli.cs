@@ -21,6 +21,6 @@ public class Sepeli : MonoBehaviour
                 amount++;
             }
         }
-        if(amount >= 3) GetComponent<Weapon>().damage = 1 + amount / 3;
+        if(amount >= 2) GetComponent<Weapon>().damage = 1 + amount / 2;
     }
 }

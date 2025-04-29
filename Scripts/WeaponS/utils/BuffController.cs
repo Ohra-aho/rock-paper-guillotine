@@ -39,12 +39,18 @@ public class BuffController : MonoBehaviour
 
     private void Awake()
     {
-        if(GetComponent<Weapon>().player)
+        Inisiate();
+    }
+
+    public void Inisiate() 
+    {
+        if (GetComponent<Weapon>().player)
         {
             real_inventory = GameObject.FindGameObjectWithTag("RI");
             GetComponent<Weapon>().equip.AddListener(Equip);
             GetComponent<Weapon>().unEquip.AddListener(Unequip);
-        } else
+        }
+        else
         {
             real_inventory = GameObject.FindGameObjectWithTag("RIE");
         }

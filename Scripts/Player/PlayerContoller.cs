@@ -10,7 +10,7 @@ public class PlayerContoller : MonoBehaviour
     public HealthBar HB;
 
     //[HideInInspector] public int maxHealth = 1;
-    private int maxHealth = 30;
+    private int maxHealth = 2;
     [HideInInspector] public int damage = 0;
     [HideInInspector] public int armor = 0;
 
@@ -124,9 +124,15 @@ public class PlayerContoller : MonoBehaviour
 
     public void InstanciateRealWeapons()
     {
+        GetComponent<PlayerInventory>().AddAllWeapons();
         for (int i = 0; i <GetComponent<PlayerInventory>().items.Count; i++)
         {
-            Instantiate(GetComponent<PlayerInventory>().items[i], TrueInventory.transform);
+            GameObject weapon = Instantiate(GetComponent<PlayerInventory>().items[i], TrueInventory.transform);
+            weapon.GetComponent<Weapon>().player = true;
+            if (weapon.GetComponent<BuffController>())
+            {
+                weapon.GetComponent<BuffController>().Inisiate();
+            }
         }
         GetComponent<PlayerInventory>().items.Clear();
         for (int i = 0; i < TrueInventory.transform.childCount; i++)
@@ -135,7 +141,7 @@ public class PlayerContoller : MonoBehaviour
         }
         for (int i = 0; i < weapons.Count; i++)
         {
-            Instantiate(weapons[i], TrueWeaponHolder.transform);
+            Instantiate(weapons[i], TrueInventory.transform);
         }
     }
 
@@ -173,6 +179,9 @@ public class PlayerContoller : MonoBehaviour
         PlayerWheels[unlocked_wheel].SetActive(true);
         PlayerWheels[unlocked_wheel].transform.SetAsFirstSibling();
         GameObject.Find("PlayerWeaponDetector").GetComponent<WeaponDetector>().weaponWheel = PlayerWheels[unlocked_wheel];
+        maxHealth = unlocked_wheel + 1;
+        HB.IncreaseHealthBar(1);
+        HB.HealToFull();
     }
 
     private void DisableAllWheels()
