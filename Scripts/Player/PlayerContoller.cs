@@ -149,7 +149,7 @@ public class PlayerContoller : MonoBehaviour
     {
         for(int i = TrueWeaponHolder.transform.childCount; i > 0; i--)
         {
-            DestroyImmediate(TrueWeaponHolder.transform.GetChild(0).gameObject);
+            Destroy(TrueWeaponHolder.transform.GetChild(0).gameObject);
         }
     }
 

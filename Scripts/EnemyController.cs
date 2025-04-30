@@ -41,6 +41,8 @@ public class EnemyController : MonoBehaviour
         if(HB.dead)
         {
             dead = true;
+            GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
+            infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
             MC.Win();
             HB.dead = false;
         }
@@ -94,7 +96,7 @@ public class EnemyController : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        if(story_event_holder.transform.childCount > 0)
+        if (story_event_holder.transform.childCount > 0)
         {
             Encounter encounter = null;
             if (story_event_holder.transform.GetChild(0).GetComponent<Encounter>()) 

@@ -155,14 +155,14 @@ public class HealthBar : MonoBehaviour
     public void DecreaseHealthBar(int amount)
     {
         ClearHeartSlots();
-        int x = transform.childCount-1;
-        if (x > 0)
-        {
+        int x = GiveMaxHealth()-1;
+        //if (x > 0)
+        //{
             for (int i = 0; i < amount; i++)
             {
-                DestroyImmediate(transform.GetChild(x-i).gameObject);
+                Destroy(transform.GetChild(x-i).gameObject);
             }
-        }
+        //}
         AddHeartSlots();
     }
 
