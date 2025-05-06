@@ -36,6 +36,8 @@ public class Buff : MonoBehaviour
     public bool awake;
     public bool onDestruction;
 
+    public bool temporary;
+    public int timer;
 
     private void Awake()
     {
@@ -89,8 +91,6 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().win.AddListener(() => special(weapon));
         if (lose)
             transform.parent.GetComponent<Weapon>().lose.AddListener(() => special(weapon));
-
-
     }
 
     public void RemoveBuff()
@@ -131,5 +131,15 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().lose.RemoveListener(() => special(weapon));
 
         if (special_removal != null) special_removal(weapon);
+    }
+
+    public void TickDown()
+    {
+        timer--;
+        if(timer <= 0)
+        {
+            RemoveBuff();
+            Destroy(this.gameObject);
+        }
     }
 }

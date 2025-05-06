@@ -22,6 +22,7 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public bool resultPhase;
     [HideInInspector] public bool endPhase;
     [HideInInspector] public bool victory;
+    [HideInInspector] public bool special_apply;
 
     [HideInInspector] public bool takeDamage;
     [HideInInspector] public bool dealDamage;
@@ -36,6 +37,8 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public bool constant;
     [HideInInspector] public bool onDestruction;
     [HideInInspector] public bool awake;
+    [HideInInspector] public bool temporary;
+    [HideInInspector] public int timer; //used for temporary buffs
 
     private void Awake()
     {
@@ -52,6 +55,7 @@ public class BuffController : MonoBehaviour
         }
         else
         {
+            Debug.Log("WTF");
             real_inventory = GameObject.FindGameObjectWithTag("RIE");
         }
     }
@@ -108,6 +112,8 @@ public class BuffController : MonoBehaviour
             new_buff.awake = awake;
             new_buff.win = win;
             new_buff.lose = lose;
+            new_buff.temporary = temporary;
+            new_buff.timer = timer;
             if(special != null) new_buff.GetComponent<Buff>().special = special;
             if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
             new_buff.GetComponent<Buff>().AddBuff();

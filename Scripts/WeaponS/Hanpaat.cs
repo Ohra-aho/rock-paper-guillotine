@@ -10,13 +10,19 @@ public class Hanpaat : MonoBehaviour
         if(GetComponent<Weapon>().player)
         {
             HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
-            hb.HealDamage(heal);
-            if(GetComponent<Weapon>().heal != null) GetComponent<Weapon>().heal.Invoke();
+            if(!hb.CheckIfDead())
+            {
+                hb.HealDamage(heal);
+                if (GetComponent<Weapon>().heal != null) GetComponent<Weapon>().heal.Invoke();
+            }
         } else
         {
             HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
-            hb.HealDamage(heal);
-            if (GetComponent<Weapon>().heal != null) GetComponent<Weapon>().heal.Invoke();
+            if (!hb.CheckIfDead())
+            {
+                hb.HealDamage(heal);
+                if (GetComponent<Weapon>().heal != null) GetComponent<Weapon>().heal.Invoke();
+            }
         }
     }
 }

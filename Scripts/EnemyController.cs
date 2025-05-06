@@ -136,7 +136,10 @@ public class EnemyController : MonoBehaviour
         {
             if(true_weapon_holder.transform.GetChild(i).GetComponent<BuffController>())
             {
-                true_weapon_holder.transform.GetChild(i).GetComponent<BuffController>().Equip();
+                if(!true_weapon_holder.transform.GetChild(i).GetComponent<BuffController>().special_apply)
+                {
+                    true_weapon_holder.transform.GetChild(i).GetComponent<BuffController>().Equip();
+                }
             }
         }
         SpawnWeaponInfo();
@@ -199,6 +202,7 @@ public class EnemyController : MonoBehaviour
 
     public void EndPhase()
     {
+        Debug.Log("Enemy endphase");
         if (endEffect != null) endEffect();
 
         chosenWeapon.GetComponent<Weapon>().endPhase.Invoke();
@@ -210,6 +214,27 @@ public class EnemyController : MonoBehaviour
                 EnemyHB.GiveCurrentHealth(),
                 EnemyHB.GiveMaxHealth()
             );
+
+        //Advance temporary buffs
+        GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+        for(int i = 0; i < RIE.transform.childCount; i++)
+        {
+            Transform child = RIE.transform.GetChild(i);
+            if (child.childCount > 0)
+            {
+                for(int j = 0; j < child.childCount; j++) 
+                {
+                    if(child.GetChild(j).GetComponent<Buff>())
+                    {
+                        if (child.GetChild(j).GetComponent<Buff>().temporary)
+                        {
+                            Debug.Log("Should be buff");
+                            child.GetChild(j).GetComponent<Buff>().TickDown();
+                        }
+                    }
+                }
+            }
+        }
 
     }
 

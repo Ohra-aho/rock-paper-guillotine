@@ -118,7 +118,6 @@ public class Weapon : MonoBehaviour
 
     public void EffectDamage(int amount)
     {
-        Debug.Log(opponent);
         opponent.TakeDamage(amount);
         bool dead = false;
         if (player)

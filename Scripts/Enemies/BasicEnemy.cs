@@ -79,7 +79,7 @@ public class BasicEnemy : MonoBehaviour
         {
             off_balance = false;
         }
-        //off_balance = true;
+        off_balance = false; //Try without off balance
     }
 
     public void CheckUp(int currentHealth, int maxHealth, int enemyCurrentHealth, int enemyMaxHealth)
