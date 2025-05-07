@@ -34,6 +34,7 @@ public class Weapon : MonoBehaviour
 
     public UnityEvent constant;
     public UnityEvent onDestruction;
+    public UnityEvent eachTurn;
 
     //Types
     public bool self_destructive; //Weapons which synergize with self destruction

@@ -202,7 +202,6 @@ public class EnemyController : MonoBehaviour
 
     public void EndPhase()
     {
-        Debug.Log("Enemy endphase");
         if (endEffect != null) endEffect();
 
         chosenWeapon.GetComponent<Weapon>().endPhase.Invoke();
@@ -228,7 +227,6 @@ public class EnemyController : MonoBehaviour
                     {
                         if (child.GetChild(j).GetComponent<Buff>().temporary)
                         {
-                            Debug.Log("Should be buff");
                             child.GetChild(j).GetComponent<Buff>().TickDown();
                         }
                     }

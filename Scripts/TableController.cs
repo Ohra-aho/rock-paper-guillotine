@@ -51,6 +51,21 @@ public class TableController : MonoBehaviour
 
         player.GetComponent<PlayerContoller>().EndPhase();
         enemy.GetComponent<EnemyController>().EndPhase();
-        if(table != null) StopCoroutine(table);
+
+        ActivateEachTurnEffects(GameObject.FindGameObjectWithTag("RI"));
+        ActivateEachTurnEffects(GameObject.FindGameObjectWithTag("RIE"));
+
+        if (table != null) StopCoroutine(table);
+    }
+
+    private void ActivateEachTurnEffects(GameObject weapon_holder)
+    {
+        for(int i = 0; i < weapon_holder.transform.childCount; i++)
+        {
+            if(weapon_holder.transform.GetChild(i).GetComponent<Weapon>().eachTurn != null)
+            {
+                weapon_holder.transform.GetChild(i).GetComponent<Weapon>().eachTurn.Invoke();
+            }
+        }
     }
 }

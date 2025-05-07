@@ -138,7 +138,7 @@ public class Buff : MonoBehaviour
         timer--;
         if(timer <= 0)
         {
-            RemoveBuff();
+            //RemoveBuff();
             Destroy(this.gameObject);
         }
     }

@@ -12,30 +12,38 @@ public class Raivo : MonoBehaviour
         //GetComponent<BuffController>().special_removal = Remove;
         GetComponent<BuffController>().special = Empower;
         GetComponent<BuffController>().takeDamage = true;
-        GetComponent<BuffController>().damage_bonus = 2;
-        GetComponent<BuffController>().temporary = true;
-        GetComponent<BuffController>().timer = 2;
-        //GetComponent<BuffController>().special_apply = true;
         GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return true; };
     }
 
     public void Empower(Weapon weapon)
     {
-        Debug.Log("Empower");
-        //GetComponent<BuffController>().Equip();
+        if(time < 2)
+        {
+            if(time <= 0)
+            {
+                GameObject true_weapon_holder = GameObject.FindGameObjectWithTag("RIE");
+                for (int i = 0; i < true_weapon_holder.transform.childCount; i++)
+                {
+                    true_weapon_holder.transform.GetChild(i).GetComponent<Weapon>().damage += damage_bonus;
+                }
+            }
+            time = 2;
+        }
     }
 
-    public void Remove()
+    public void PowerDown()
     {
-        Debug.Log("Jotai jännää");
-        if(applied)
+        if(time > 0)
         {
-            GameObject true_weapon_holder = GameObject.FindGameObjectWithTag("RIE");
-            for (int i = 0; i < true_weapon_holder.transform.childCount; i++)
+            time--;
+            if(time <= 0)
             {
-                true_weapon_holder.transform.GetChild(i).GetComponent<Weapon>().damage -= damage_bonus;
+                GameObject true_weapon_holder = GameObject.FindGameObjectWithTag("RIE");
+                for (int i = 0; i < true_weapon_holder.transform.childCount; i++)
+                {
+                    true_weapon_holder.transform.GetChild(i).GetComponent<Weapon>().damage -= damage_bonus;
+                }
             }
-            applied = false;
         }
     }
 }
