@@ -55,7 +55,6 @@ public class BuffController : MonoBehaviour
         }
         else
         {
-            Debug.Log("WTF");
             real_inventory = GameObject.FindGameObjectWithTag("RIE");
         }
     }
@@ -156,5 +155,10 @@ public class BuffController : MonoBehaviour
             }
         }
         return null;
+    }
+
+    private void OnDestroy()
+    {
+        RemoveBuffs();
     }
 }
