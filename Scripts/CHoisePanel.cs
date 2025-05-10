@@ -81,6 +81,7 @@ public class CHoisePanel : MonoBehaviour
         if(weapon_name != "" && weapon_name != null)
         {
             transform.parent.GetComponent<PlayerContoller>().MakeAChoise(index);
+            GetComponent<Hover>().hoverExit.Invoke();
         }
     }
 

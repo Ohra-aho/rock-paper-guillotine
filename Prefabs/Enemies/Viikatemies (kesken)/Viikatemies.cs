@@ -50,7 +50,22 @@ public class Viikatemies : MonoBehaviour
         GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
         for(int i = 0; i < RIE.transform.childCount; i++)
         {
-            RIE.transform.GetChild(i).GetComponent<Weapon>().lose.AddListener(() => KalmaFunction(RIE.transform.GetChild(i).GetComponent<Weapon>()));
+            if(i < RIE.transform.childCount)
+            {
+                RIE.transform.GetChild(i).GetComponent<Weapon>().lose.AddListener(() => KalmaFunction(RIE.transform.GetChild(i).GetComponent<Weapon>().name));
+                RIE.transform.GetChild(i).GetComponent<Weapon>().draw.AddListener(() => {
+                    try
+                    {
+                        //If there is no object in i index this doesn't work. This needs a work around
+                        string temp = RIE.transform.GetChild(i).GetComponent<Weapon>().name;
+                        KalmaFunction(temp);
+                    }
+                    catch
+                    {
+                        Debug.Log("Don't know");
+                    }
+                });
+            }
         }
     }
 
@@ -59,14 +74,29 @@ public class Viikatemies : MonoBehaviour
         GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
         for (int i = 0; i < RIE.transform.childCount; i++)
         {
-            RIE.transform.GetChild(i).GetComponent<Weapon>().lose.RemoveListener(() => KalmaFunction(RIE.transform.GetChild(i).GetComponent<Weapon>()));
+            if (i < RIE.transform.childCount)
+            {
+                RIE.transform.GetChild(i).GetComponent<Weapon>().lose.RemoveListener(() => KalmaFunction(RIE.transform.GetChild(i).GetComponent<Weapon>().name));
+                RIE.transform.GetChild(i).GetComponent<Weapon>().draw.RemoveListener(() => KalmaFunction(RIE.transform.GetChild(i).GetComponent<Weapon>().name));
+            }
         }
     }
 
-    public void KalmaFunction(Weapon weapon)
+    public void KalmaFunction(string weapon)
     {
-        weapon.EffectDamage(weapon.damage / 2);
-        RemoveKalma();
+        GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+
+        for (int i = 0; i < RIE.transform.childCount; i++)
+        {
+            if(RIE.transform.GetChild(i).GetComponent<Weapon>().name == weapon)
+            {
+                RIE.transform.GetChild(i).GetComponent<Weapon>().EffectDamage(
+                        RIE.transform.GetChild(i).GetComponent<Weapon>().damage / 2
+                    );
+                RemoveKalma();
+            }
+        }
+        
     }
 
     public void AddKatse()
@@ -75,7 +105,10 @@ public class Viikatemies : MonoBehaviour
         GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
         for (int i = 0; i < RIE.transform.childCount; i++)
         {
-            RIE.transform.GetChild(i).GetComponent<Weapon>().dealDamage.AddListener(() => KatseFunction());
+            if(i < RIE.transform.childCount)
+            {
+                RIE.transform.GetChild(i).GetComponent<Weapon>().dealDamage.AddListener(() => KatseFunction());
+            }
         }
     }
 
@@ -90,7 +123,10 @@ public class Viikatemies : MonoBehaviour
         GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
         for (int i = 0; i < RIE.transform.childCount; i++)
         {
-            RIE.transform.GetChild(i).GetComponent<Weapon>().lose.RemoveListener(() => KatseFunction());
+            if (i < RIE.transform.childCount)
+            {
+                RIE.transform.GetChild(i).GetComponent<Weapon>().dealDamage.RemoveListener(() => KatseFunction());
+            }
         }
     }
 }

@@ -181,6 +181,7 @@ MonoBehaviour:
       m_Calls: []
   hoverTint: 0.5
   interactable: 1
+  individual_interactable: 1
 --- !u!114 &2225247331957963098
 MonoBehaviour:
   m_ObjectHideFlags: 0

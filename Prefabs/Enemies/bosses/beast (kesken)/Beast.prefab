@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6943869333779220170}
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
-  - component: {fileID: 9126511307194648938}
+  - component: {fileID: 3076687715594733710}
   m_Layer: 5
-  m_Name: Zombie
+  m_Name: Beast
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,20 +58,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Zombie
-  image: {fileID: 21300000, guid: 779baba707ba4d44999eeb2c24a16f2a, type: 3}
-  maxHealth: 3
+  name: Beast
+  image: {fileID: 21300000, guid: e44d2504d0adacd49839a92a112337a8, type: 3}
+  maxHealth: 10
   weapons:
-  - {fileID: 1944698211339908181, guid: b89766a05725a09478b14ea61e912ca3, type: 3}
-  - {fileID: 1944698211339908181, guid: fd387289c4af4f6449c10c8953222a52, type: 3}
-  - {fileID: 1944698211339908181, guid: d4c4cefe547ac7d45a819422aa2d6685, type: 3}
-  plan_1: 010000000200000000000000
-  plan_2: 010000000000000002000000
+  - {fileID: 1944698211339908181, guid: c4a1b4b5570fa1e4cb33ce1763f736b2, type: 3}
+  - {fileID: 1944698211339908181, guid: 7d3bd39789f8cc741bae98212439d819, type: 3}
+  - {fileID: 1944698211339908181, guid: ba0a339aa0a3f7945b89825b254240fb, type: 3}
+  plan_1: 000000000000000001000000020000000200000002000000
+  plan_2: 000000000100000002000000
   off_balance: 0
   nearDeath: 0
-  off_balance_choises: 02000000
+  off_balance_choises: 0200000001000000
   advanced: 0
---- !u!212 &9126511307194648938
+--- !u!212 &3076687715594733710
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
