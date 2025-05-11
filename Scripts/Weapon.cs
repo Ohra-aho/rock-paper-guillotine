@@ -12,6 +12,8 @@ public class Weapon : MonoBehaviour
     public MainController.Choise type;
     public int damage;
     public int armor;
+    [HideInInspector] public int real_damage;
+    [HideInInspector] public int real_armor;
     public string name;
     public string description;
     public Sprite sprite;
@@ -24,6 +26,7 @@ public class Weapon : MonoBehaviour
 
     public UnityEvent takeDamage;
     public UnityEvent dealDamage;
+    public UnityEvent takeNoDamage;
     public UnityEvent win;
     public UnityEvent lose;
     public UnityEvent draw;
@@ -44,6 +47,13 @@ public class Weapon : MonoBehaviour
     public bool paperi_synergy;
     public bool sakset_synergy;
     public bool points; //Weapons which collect points or synergize with them.
+
+    private void Awake()
+    {
+        real_armor = armor;
+        real_damage = damage;
+    }
+
     private void Update()
     {
         if (constant != null) constant.Invoke();
@@ -93,6 +103,9 @@ public class Weapon : MonoBehaviour
                 GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().TakeDamage();
 
             }
+        } else
+        {
+            takeNoDamage.Invoke();
         }
     }
 
@@ -145,5 +158,12 @@ public class Weapon : MonoBehaviour
     private void OnDestroy()
     {
         onDestruction.Invoke();
+    }
+
+    //Could be useful
+    public void ResetStats()
+    {
+        armor = real_armor;
+        damage = real_damage;
     }
 }

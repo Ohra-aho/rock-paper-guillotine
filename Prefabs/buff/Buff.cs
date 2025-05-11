@@ -22,6 +22,7 @@ public class Buff : MonoBehaviour
     public bool victory;
 
     public bool takeDamage;
+    public bool takeNoDamage;
     public bool dealDamage;
     public bool draw;
     public bool win;
@@ -50,6 +51,7 @@ public class Buff : MonoBehaviour
 
     private void OnDestroy()
     {
+        //Needs to be put somewhere else
         RemoveBuff();
     }
 
@@ -57,11 +59,20 @@ public class Buff : MonoBehaviour
     {
         if (damage_buff != 0)
         {
+            if(damage_buff < 0 && -damage_buff > transform.parent.GetComponent<Weapon>().damage)
+            {
+                damage_buff = -transform.parent.GetComponent<Weapon>().damage;
+            }
             transform.parent.GetComponent<Weapon>().damage += damage_buff;
+
         }
 
         if (armor_buff != 0)
         {
+            if (armor_buff < 0 && -armor_buff > transform.parent.GetComponent<Weapon>().armor)
+            {
+                armor_buff = -transform.parent.GetComponent<Weapon>().armor;
+            }
             transform.parent.GetComponent<Weapon>().armor += armor_buff;
         }
 
@@ -75,6 +86,8 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().victory.AddListener(() => special(weapon));
         if (takeDamage)
             transform.parent.GetComponent<Weapon>().takeDamage.AddListener(() => special(weapon));
+        if (takeNoDamage)
+            transform.parent.GetComponent<Weapon>().takeNoDamage.AddListener(() => special(weapon));
         if (dealDamage)
             transform.parent.GetComponent<Weapon>().dealDamage.AddListener(() => special(weapon));
         if (draw)
@@ -97,11 +110,20 @@ public class Buff : MonoBehaviour
     {
         if (damage_buff != 0)
         {
+            if(transform.parent.GetComponent<Weapon>().damage < damage_buff)
+            {
+                damage_buff = transform.parent.GetComponent<Weapon>().damage;
+            }
             transform.parent.GetComponent<Weapon>().damage -= damage_buff;
+
         }
 
         if (armor_buff != 0)
         {
+            if(transform.parent.GetComponent<Weapon>().armor < armor_buff)
+            {
+                armor_buff = transform.parent.GetComponent<Weapon>().armor;
+            }
             transform.parent.GetComponent<Weapon>().armor -= armor_buff;
         }
 
@@ -115,6 +137,8 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().victory.RemoveListener(() => special(weapon));
         if (takeDamage)
             transform.parent.GetComponent<Weapon>().takeDamage.RemoveListener(() => special(weapon));
+        if (takeNoDamage)
+            transform.parent.GetComponent<Weapon>().takeNoDamage.RemoveListener(() => special(weapon));
         if (dealDamage)
             transform.parent.GetComponent<Weapon>().dealDamage.RemoveListener(() => special(weapon));
         if (draw)

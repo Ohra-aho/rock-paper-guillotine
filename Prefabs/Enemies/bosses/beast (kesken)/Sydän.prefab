@@ -96,7 +96,7 @@ MonoBehaviour:
   type: 0
   damage: 2
   armor: 0
-  name: "Syd\xE4n"
+  name: Tahto
   description: Parantaa 2 haavaa
   sprite: {fileID: 21300000, guid: 81c2a24ea51bd974b9b62503f2e6eb74, type: 3}
   stacks: 0

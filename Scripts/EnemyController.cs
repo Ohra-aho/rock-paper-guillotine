@@ -206,26 +206,16 @@ public class EnemyController : MonoBehaviour
     {
         if (endEffect != null) endEffect();
 
-        chosenWeapon.GetComponent<Weapon>().endPhase.Invoke();
-
-        //Does things when round is over
-        currentEnemy.GetComponent<BasicEnemy>().CheckUp(
-                HB.GiveCurrentHealth(),
-                maxHealth,
-                EnemyHB.GiveCurrentHealth(),
-                EnemyHB.GiveMaxHealth()
-            );
-
         //Advance temporary buffs
         GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
-        for(int i = 0; i < RIE.transform.childCount; i++)
+        for (int i = 0; i < RIE.transform.childCount; i++)
         {
             Transform child = RIE.transform.GetChild(i);
             if (child.childCount > 0)
             {
-                for(int j = 0; j < child.childCount; j++) 
+                for (int j = 0; j < child.childCount; j++)
                 {
-                    if(child.GetChild(j).GetComponent<Buff>())
+                    if (child.GetChild(j).GetComponent<Buff>())
                     {
                         if (child.GetChild(j).GetComponent<Buff>().temporary)
                         {
@@ -236,6 +226,15 @@ public class EnemyController : MonoBehaviour
             }
         }
 
+        chosenWeapon.GetComponent<Weapon>().endPhase.Invoke();
+
+        //Does things when round is over
+        currentEnemy.GetComponent<BasicEnemy>().CheckUp(
+                HB.GiveCurrentHealth(),
+                maxHealth,
+                EnemyHB.GiveCurrentHealth(),
+                EnemyHB.GiveMaxHealth()
+            );
     }
 
     public int GiveCurrentHealth()

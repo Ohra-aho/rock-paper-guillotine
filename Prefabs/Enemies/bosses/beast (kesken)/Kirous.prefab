@@ -96,7 +96,7 @@ MonoBehaviour:
   type: 2
   damage: 2
   armor: 1
-  name: Kirous
+  name: Silpoja
   description: "+1 vahinkoon aina k\xE4yt\xF6n j\xE4lkeen."
   sprite: {fileID: 21300000, guid: a6ae98e6da90d874fb911b6e227b8516, type: 3}
   stacks: 0

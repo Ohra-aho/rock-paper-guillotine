@@ -10,6 +10,9 @@ public class BuffController : MonoBehaviour
     GameObject real_inventory;
     [HideInInspector] public int damage_bonus = 0;
     [HideInInspector] public int armor_bonus = 0;
+    [HideInInspector] public bool set_a_to_zero = false;
+    [HideInInspector] public bool set_d_to_zero = false;
+
     //[HideInInspector] public UnityEvent special;
     public delegate void Special(Weapon weapon);
     public Special special;
@@ -25,6 +28,7 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public bool special_apply;
 
     [HideInInspector] public bool takeDamage;
+    [HideInInspector] public bool takeNoDamage;
     [HideInInspector] public bool dealDamage;
     [HideInInspector] public bool draw;
     [HideInInspector] public bool win;
@@ -94,6 +98,9 @@ public class BuffController : MonoBehaviour
     {
         if (!IfOwnBuffExists(weapon))
         {
+            if (set_a_to_zero) armor_bonus = -weapon.GetComponent<Weapon>().armor;
+            if (set_d_to_zero) damage_bonus = -weapon.GetComponent<Weapon>().damage;
+
             Buff new_buff = Instantiate(buff, weapon).GetComponent<Buff>();
             new_buff.GetComponent<Buff>().id = GetComponent<Weapon>().name;
             new_buff.GetComponent<Buff>().damage_buff = damage_bonus;
@@ -103,6 +110,7 @@ public class BuffController : MonoBehaviour
             new_buff.endPhase = endPhase;
             new_buff.victory = victory;
             new_buff.takeDamage = takeDamage;
+            new_buff.takeNoDamage = takeNoDamage;
             new_buff.dealDamage = dealDamage;
             new_buff.draw = draw;
             new_buff.heal = heal;

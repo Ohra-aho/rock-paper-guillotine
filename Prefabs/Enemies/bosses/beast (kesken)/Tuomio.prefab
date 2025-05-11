@@ -96,7 +96,7 @@ MonoBehaviour:
   type: 1
   damage: 1
   armor: 2
-  name: Tuomio
+  name: Ulvonta
   description: "Jos t\xE4m\xE4 ase ei tee vahinkoa, tee 3 vahinkoa vastustajaan."
   sprite: {fileID: 21300000, guid: 92324259aa0ac0c4eb15506d3b1e3c0b, type: 3}
   stacks: 0
