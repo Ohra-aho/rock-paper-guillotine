@@ -52,7 +52,7 @@ public class Buff : MonoBehaviour
     private void OnDestroy()
     {
         //Needs to be put somewhere else
-        RemoveBuff();
+        //RemoveBuff();
     }
 
     public void AddBuff()
@@ -162,7 +162,7 @@ public class Buff : MonoBehaviour
         timer--;
         if(timer <= 0)
         {
-            //RemoveBuff();
+            RemoveBuff();
             Destroy(this.gameObject);
         }
     }

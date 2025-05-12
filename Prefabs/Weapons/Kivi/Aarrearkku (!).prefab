@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 6485294407745175847}
+  - component: {fileID: 7082173587880954376}
   m_Layer: 5
-  m_Name: Vuori
+  m_Name: Aarrearkku (!)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,17 +94,30 @@ MonoBehaviour:
   penetrating: 0
   dead: 0
   type: 0
-  damage: 1
+  damage: 0
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Vuori
-  description: +6 HP
-  sprite: {fileID: 21300000, guid: 2676b53b5e768a04c8ee94af143243b5, type: 3}
+  name: Aarrearkku
+  description: "Aina kun k\xE4yt\xE4t t\xE4t\xE4 asetta, kaikki varustetut aseesi,
+    jotka ker\xE4\xE4v\xE4t pisteit\xE4 saavat pisteen."
+  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7082173587880954376}
+        m_TargetAssemblyTypeName: TreasureChest, Assembly-CSharp
+        m_MethodName: IncreaseAllPoints
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   resultPhase:
     m_PersistentCalls:
       m_Calls: []
@@ -137,34 +150,10 @@ MonoBehaviour:
       m_Calls: []
   equip:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6485294407745175847}
-        m_TargetAssemblyTypeName: Vuori, Assembly-CSharp
-        m_MethodName: Equip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   unEquip:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6485294407745175847}
-        m_TargetAssemblyTypeName: Vuori, Assembly-CSharp
-        m_MethodName: Unequip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   constant:
     m_PersistentCalls:
       m_Calls: []
@@ -176,12 +165,12 @@ MonoBehaviour:
       m_Calls: []
   self_destructive: 0
   healing: 0
-  health: 1
+  health: 0
   kivi_synegry: 0
   paperi_synergy: 0
   sakset_synergy: 0
-  points: 0
---- !u!114 &6485294407745175847
+  points: 1
+--- !u!114 &7082173587880954376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,7 +179,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5239e09532d8da24ea5d5ddc970645ec, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fbbf963dc45ff044a224bf2aad6ae81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HPbonus: 6

@@ -122,3 +122,4 @@ MonoBehaviour:
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 00000000
+  advanced: 0

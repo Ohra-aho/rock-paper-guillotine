@@ -116,12 +116,12 @@ public class Weapon : MonoBehaviour
         bool dead = false;
         if (player)
         {
-            HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
+            HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
             dead = hb.GetComponent<HealthBar>().CheckIfDead();
         }
         else
         {
-            HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
+            HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
             dead = hb.GetComponent<HealthBar>().CheckIfDead();
         }
         if (dead)
