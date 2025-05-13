@@ -10,7 +10,7 @@ public class PlayerContoller : MonoBehaviour
     public HealthBar HB;
 
     //[HideInInspector] public int maxHealth = 1;
-    private int maxHealth = 20;
+    private int maxHealth = 2;
     [HideInInspector] public int damage = 0;
     [HideInInspector] public int armor = 0;
 

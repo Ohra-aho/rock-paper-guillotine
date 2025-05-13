@@ -10,6 +10,9 @@ public class Paperihaarniska : MonoBehaviour
         {
             GetComponent<Weapon>().stacks++;
             GetComponent<Weapon>().armor = 4 - GetComponent<Weapon>().stacks;
+        } else
+        {
+            GetComponent<SelfDestruct>().Destruct();
         }
     }
 }

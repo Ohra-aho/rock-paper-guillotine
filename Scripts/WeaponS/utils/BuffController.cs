@@ -135,8 +135,8 @@ public class BuffController : MonoBehaviour
             {
                 Transform weapon = real_inventory.transform.GetChild(i);
                 GameObject own_buff = FindOwnBuff(weapon);
-                own_buff.GetComponent<Buff>().RemoveBuff();
-                Destroy(own_buff);
+                if(own_buff != null) own_buff.GetComponent<Buff>().RemoveBuff();
+                if (own_buff != null) Destroy(own_buff);
             }
         }
     }

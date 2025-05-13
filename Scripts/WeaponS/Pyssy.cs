@@ -14,6 +14,10 @@ public class Pyssy : MonoBehaviour
             {
                 GetComponent<Weapon>().damage = 0;
             }
+            if(GetComponent<Weapon>().damage == 0)
+            {
+                GetComponent<SelfDestruct>().Destruct();
+            }
         }
     }
 }
