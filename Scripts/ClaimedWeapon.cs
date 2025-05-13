@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class ClaimedWeapon : MonoBehaviour
 {
@@ -10,6 +11,17 @@ public class ClaimedWeapon : MonoBehaviour
     private GameObject visibleInfo;
     public GameObject Info;
     public List<Sprite> symbols;
+
+    GameObject wheel;
+
+    float clicked = 0;
+    float clicktime = 0;
+    float clickdelay = 0.5f;
+
+    private void Awake()
+    {
+        wheel = GameObject.Find("PlayerWheelHolder").transform.GetChild(0).gameObject;
+    }
 
     public void OnBegingDrag()
     {
@@ -112,11 +124,36 @@ public class ClaimedWeapon : MonoBehaviour
     {
         Destroy(visibleInfo);
         transform.parent.parent.GetComponent<NonUIScroll>().Deactivate(); //Crude but works
-
     }
+
+    //Double click
 
     private void OnMouseDown()
     {
-        DestroyInfo();
+        if (Time.time - clicktime >= clickdelay)
+        {
+            clicked = 0;
+        }
+
+        clicked++;
+        if (clicked == 1)
+        {
+            clicktime = Time.time;
+        }
+        
+        if(clicked >= 2 && Time.time-clicktime <= clickdelay)
+        {
+            for(int i = 0; i < wheel.transform.childCount-1; i++)
+            {
+                if(wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon == null)
+                {
+                    wheel.transform.GetChild(i).GetChild(1).GetComponent<DropDetector>().changeWeapon(weapon, transform.GetSiblingIndex());
+                    break;
+                }
+            }
+            clicked = 0;
+        }
+        
+        //DestroyInfo();
     }
 }
