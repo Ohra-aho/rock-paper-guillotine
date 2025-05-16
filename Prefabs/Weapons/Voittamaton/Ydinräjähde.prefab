@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
+  - component: {fileID: -2465708660933000878}
+  - component: {fileID: -1728097341046125200}
   m_Layer: 5
-  m_Name: Miekka
+  m_Name: "Ydinr\xE4j\xE4hde"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 294128dfb788c9c4399e1a140b8cf2cc, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -92,51 +94,39 @@ MonoBehaviour:
   opponent: {fileID: 0}
   penetrating: 0
   dead: 0
-  type: 2
-  damage: 2
+  type: 3
+  damage: 15
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Miekka
-  description: 
-  sprite: {fileID: 21300000, guid: 9f9b0bd2e9f8f774a94b01740e117aa5, type: 3}
+  name: "Ydinr\xE4j\xE4hde"
+  description: "HP:si putoaa yhteen. Tuhoaa itsens\xE4"
+  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3098424137161797902}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: emptyFunction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   resultPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3098424137161797902}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: emptyFunction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3098424137161797902}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: emptyFunction
+      - m_Target: {fileID: -2465708660933000878}
+        m_TargetAssemblyTypeName: NuclearBomb, Assembly-CSharp
+        m_MethodName: Explosion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -1728097341046125200}
+        m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
+        m_MethodName: Destruct
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -185,10 +175,35 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
+  self_destructive: 1
   healing: 0
   health: 0
   kivi_synegry: 0
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+--- !u!114 &-2465708660933000878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc3fb9f2ee36968418176ddd92378c25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1728097341046125200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  used_ones: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   m_Layer: 5
-  m_Name: Miekka
+  m_Name: paperi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 294128dfb788c9c4399e1a140b8cf2cc, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -92,60 +92,24 @@ MonoBehaviour:
   opponent: {fileID: 0}
   penetrating: 0
   dead: 0
-  type: 2
-  damage: 2
+  type: 1
+  damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Miekka
+  name: Paperi (Debug)
   description: 
-  sprite: {fileID: 21300000, guid: 9f9b0bd2e9f8f774a94b01740e117aa5, type: 3}
+  sprite: {fileID: 21300000, guid: 1cb1e2e16af8cb446b4c407484e7cfd4, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3098424137161797902}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: emptyFunction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   resultPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3098424137161797902}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: emptyFunction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3098424137161797902}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: emptyFunction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Sepeli : MonoBehaviour
 {
     GameObject ri;
+    int damage_bonus=0;
 
     private void Awake()
     {
@@ -13,7 +14,10 @@ public class Sepeli : MonoBehaviour
 
     public void CalculateDamage()
     {
+        if(damage_bonus > 0) GetComponent<Weapon>().damage -= damage_bonus;
+        damage_bonus = 0;
         int amount = 0;
+
         for(int i = 0; i < ri.transform.childCount; i++)
         {
             if(ri.transform.GetChild(i).GetComponent<Weapon>().type == MainController.Choise.kivi)
@@ -21,6 +25,8 @@ public class Sepeli : MonoBehaviour
                 amount++;
             }
         }
-        if(amount >= 2) GetComponent<Weapon>().damage = 1 + amount / 2;
+
+        if(amount >= 2) damage_bonus = amount / 2;
+        if(damage_bonus > 0) GetComponent<Weapon>().damage += damage_bonus;
     }
 }

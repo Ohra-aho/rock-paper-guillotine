@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   m_Layer: 5
-  m_Name: Miekka
+  m_Name: Kirves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,13 +93,13 @@ MonoBehaviour:
   penetrating: 0
   dead: 0
   type: 2
-  damage: 2
+  damage: 3
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Miekka
+  name: Kirves
   description: 
-  sprite: {fileID: 21300000, guid: 9f9b0bd2e9f8f774a94b01740e117aa5, type: 3}
+  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:

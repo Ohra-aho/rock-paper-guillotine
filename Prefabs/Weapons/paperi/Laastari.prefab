@@ -97,8 +97,10 @@ MonoBehaviour:
   type: 1
   damage: 0
   armor: 1
+  real_damage: 0
+  real_armor: 0
   name: Laastari
-  description: Parantaa 2 haavaa
+  description: "Parantaa 2 haavaa ja tuhoaa itsens\xE4."
   sprite: {fileID: 21300000, guid: 8bfa3ea6e8fa7ad41bbcada09e83ca6a, type: 3}
   stacks: 0
   choisePhase:
@@ -143,6 +145,15 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -159,6 +170,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onDestruction:
+    m_PersistentCalls:
+      m_Calls: []
+  eachTurn:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 1

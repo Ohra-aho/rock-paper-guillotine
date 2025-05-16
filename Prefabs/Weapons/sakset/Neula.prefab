@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
+  - component: {fileID: -4155978701443049850}
+  - component: {fileID: -5576181622998021734}
   m_Layer: 5
-  m_Name: Miekka
+  m_Name: Neula
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 294128dfb788c9c4399e1a140b8cf2cc, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -93,50 +95,26 @@ MonoBehaviour:
   penetrating: 0
   dead: 0
   type: 2
-  damage: 2
+  damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Miekka
-  description: 
-  sprite: {fileID: 21300000, guid: 9f9b0bd2e9f8f774a94b01740e117aa5, type: 3}
+  name: Neula
+  description: "Parantaa yhden haavan k\xE4yt\xF6n j\xE4lkeen."
+  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3098424137161797902}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: emptyFunction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   resultPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3098424137161797902}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: emptyFunction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3098424137161797902}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: emptyFunction
+      - m_Target: {fileID: -4155978701443049850}
+        m_TargetAssemblyTypeName: Healing, Assembly-CSharp
+        m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -186,9 +164,34 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0
-  healing: 0
+  healing: 1
   health: 0
   kivi_synegry: 0
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+--- !u!114 &-4155978701443049850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 0
+--- !u!114 &-5576181622998021734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6acf9d9234916c649a6962758b3dfa1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

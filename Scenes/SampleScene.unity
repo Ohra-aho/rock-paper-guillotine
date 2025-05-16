@@ -15904,10 +15904,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: 1944698211339908181, guid: 7f5d4deea30d86443a53905a5d8efdeb, type: 3}
-  - {fileID: 1944698211339908181, guid: b2235ab009fd64847ad2fe17059ad84a, type: 3}
+  - {fileID: 1944698211339908181, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   - {fileID: 1944698211339908181, guid: ee57d6d131d1e97458e79deca9dcb588, type: 3}
-  - {fileID: 1944698211339908181, guid: 18767ea2d03164d44a27fe023a57edeb, type: 3}
-  - {fileID: 1944698211339908181, guid: b3f39cc3d4fc55c41b1e8558f33255af, type: 3}
+  - {fileID: 1944698211339908181, guid: 8d2aad5811252ff45a00a77cd4cceb1c, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
