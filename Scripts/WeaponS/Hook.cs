@@ -14,7 +14,6 @@ public class Hook : MonoBehaviour
 
     public void SelfDamage(Weapon weapon)
     {
-        GetComponent<Weapon>().opponent = this.GetComponent<Weapon>();
-        GetComponent<Weapon>().TakeDamage(1);
+        GetComponent<EffectDamage>().SelfDamage(null);
     }
 }

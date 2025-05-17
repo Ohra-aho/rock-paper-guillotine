@@ -11,6 +11,6 @@ public class Halberg : MonoBehaviour
 
     public void DamageOnDraw()
     {
-        GetComponent<EffectDamage>().DealDamage();
+        GetComponent<EffectDamage>().DealDamage(null);
     }
 }

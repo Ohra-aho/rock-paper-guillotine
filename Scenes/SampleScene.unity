@@ -15906,7 +15906,8 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 7f5d4deea30d86443a53905a5d8efdeb, type: 3}
   - {fileID: 1944698211339908181, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   - {fileID: 1944698211339908181, guid: ee57d6d131d1e97458e79deca9dcb588, type: 3}
-  - {fileID: 1944698211339908181, guid: 8d2aad5811252ff45a00a77cd4cceb1c, type: 3}
+  - {fileID: 1944698211339908181, guid: 43e127a04b3d8bf43a258562b33148be, type: 3}
+  - {fileID: 1944698211339908181, guid: 0a4a5ff597bec654191f8c37f31df438, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623

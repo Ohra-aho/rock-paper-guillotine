@@ -7,6 +7,7 @@ public class NuclearBomb : MonoBehaviour
     public void Explosion()
     {
         HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
-        HB.TakeDamage(HB.GiveCurrentHealth() - 1);
+        GetComponent<EffectDamage>().amount = HB.GiveCurrentHealth() - 1;
+        GetComponent<EffectDamage>().SelfDamage(null);
     }
 }

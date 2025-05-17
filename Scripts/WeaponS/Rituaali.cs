@@ -14,6 +14,6 @@ public class Rituaali : MonoBehaviour
 
     public void DealDamage(Weapon weapon)
     {
-        weapon.EffectDamage(damage);
+        GetComponent<EffectDamage>().DealDamage(weapon);
     }
 }

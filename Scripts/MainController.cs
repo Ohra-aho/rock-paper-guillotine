@@ -204,15 +204,13 @@ public class MainController : MonoBehaviour
             case true:
                 enemyChoise.lose.Invoke();
                 playerChoise.DealDamage(
-                    enemyChoise, 
-                    enemy.GetComponent<EnemyController>().HB
+                    enemyChoise
                     );
                 break;
             case false:
                 enemyChoise.win.Invoke();
                 enemyChoise.DealDamage(
-                    playerChoise,
-                    player.GetComponent<PlayerContoller>().HB
+                    playerChoise
                     );
                 break;
             case null:

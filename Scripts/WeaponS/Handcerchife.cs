@@ -17,7 +17,7 @@ public class Handcerchife : MonoBehaviour
         GetComponent<Weapon>().stacks++;
         if(GetComponent<Weapon>().stacks == 3)
         {
-            weapon.EffectDamage(1);
+            GetComponent<EffectDamage>().DealDamage(weapon);
             GetComponent<Weapon>().stacks = 0;
         }
     }

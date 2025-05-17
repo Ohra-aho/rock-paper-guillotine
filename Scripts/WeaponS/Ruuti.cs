@@ -8,11 +8,12 @@ public class Ruuti : MonoBehaviour
     {
         GetComponent<BuffController>().special = DealDamage;
         GetComponent<BuffController>().onDestruction = true;
-        GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return true; };
+        GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return weapon.gameObject.GetComponent<SelfDestruct>(); };
     }
 
     public void DealDamage(Weapon weapon)
     {
-        weapon.EffectDamage(2);
+        GetComponent<EffectDamage>().DealDamage(weapon);
+        //weapon.EffectDamage(2);
     }
 }

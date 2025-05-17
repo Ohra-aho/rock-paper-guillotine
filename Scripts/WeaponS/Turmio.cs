@@ -7,7 +7,7 @@ public class Turmio : MonoBehaviour
     public int damage;
     public void DealDamageToBoth()
     {
-        GetComponent<Weapon>().opponent.TakeDamage(damage);
-        GetComponent<Weapon>().TakeDamage(damage);
+        GetComponent<EffectDamage>().DealDamage(null);
+        GetComponent<EffectDamage>().SelfDamage(null);
     }
 }

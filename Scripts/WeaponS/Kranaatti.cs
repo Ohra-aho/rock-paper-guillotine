@@ -7,11 +7,7 @@ public class Kranaatti : MonoBehaviour
     public int damage;
     public void DamageBoth()
     {
-        GetComponent<Weapon>().opponent.TakeDamage(
-                damage
-            );
-        GetComponent<Weapon>().TakeDamage(
-                damage
-            );
+        GetComponent<EffectDamage>().DealDamage(null);
+        GetComponent<EffectDamage>().SelfDamage(null);
     }
 }

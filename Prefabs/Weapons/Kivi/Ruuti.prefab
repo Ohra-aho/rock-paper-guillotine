@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -7783867195882298360}
   - component: {fileID: 1820794659969030995}
+  - component: {fileID: 7789464747019772537}
   m_Layer: 5
   m_Name: Ruuti
   m_TagString: Untagged
@@ -206,3 +207,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc50134c8d85ba4a8fbd10106593d46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7789464747019772537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 2

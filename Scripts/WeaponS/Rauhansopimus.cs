@@ -24,13 +24,11 @@ public class Rauhansopimus : MonoBehaviour
         {
             if(GetComponent<Weapon>().player)
             {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.HealDamage(heal);
-                GetComponent<Weapon>().heal.Invoke();
+                GetComponent<Healing>().Heal();
             }
             else
             {
-                GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB.HealDamage(heal);
-                GetComponent<Weapon>().heal.Invoke();
+                GetComponent<Healing>().Heal();
             }
         }
         GetCurrentHPs();

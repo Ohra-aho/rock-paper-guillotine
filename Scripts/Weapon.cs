@@ -83,13 +83,49 @@ public class Weapon : MonoBehaviour
             if (realDamage < 0) realDamage = 0;
         }
 
-        if(realDamage > 0)
+        HandleDamageTaking(realDamage, true);
+    }
+
+    public void DealDamage(Weapon target)
+    {
+        target.TakeDamage(damage);
+        CheckUp();
+    }
+
+    public void EffectDamage(int amount)
+    {
+        opponent.TakeDamage(amount);
+        CheckUp();
+    }
+
+    //Used in effects. Doesn't trigger enemies damage effects
+    public void SelfDamage(int amount)
+    {
+        int realDamage;
+        if (penetrating)
+        {
+            realDamage = amount - armor;
+            if (realDamage < 0) realDamage = 0;
+        }
+        else
+        {
+            realDamage = amount;
+            if (realDamage < 0) realDamage = 0;
+        }
+
+        HandleDamageTaking(realDamage, false);
+        
+    }
+
+    public void HandleDamageTaking(int realDamage, bool effect)
+    {
+        if (realDamage > 0)
         {
             if (player)
             {
                 HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
                 hb.TakeDamage(realDamage);
-                opponent.dealDamage.Invoke();
+                if(effect) opponent.dealDamage.Invoke();
                 takeDamage.Invoke();
                 dead = hb.GetComponent<HealthBar>().CheckIfDead();
             }
@@ -97,51 +133,31 @@ public class Weapon : MonoBehaviour
             {
                 HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
                 hb.TakeDamage(realDamage);
-                opponent.dealDamage.Invoke();
+                if(effect) opponent.dealDamage.Invoke();
                 takeDamage.Invoke();
                 dead = hb.GetComponent<HealthBar>().CheckIfDead();
                 GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().TakeDamage();
 
             }
-        } else
+        }
+        else
         {
             takeNoDamage.Invoke();
         }
     }
 
-    public void DealDamage(Weapon target, HealthBar opponent_hb)
-    {
-        target.TakeDamage(damage);
-        //dealDamage.Invoke();
-        bool dead = false;
-        if (player)
-        {
-            HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
-            dead = hb.GetComponent<HealthBar>().CheckIfDead();
-        }
-        else
-        {
-            HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
-            dead = hb.GetComponent<HealthBar>().CheckIfDead();
-        }
-        if (dead)
-        {
-            victory.Invoke();
-        }
-    }
 
-    public void EffectDamage(int amount)
+    public void CheckUp()
     {
-        opponent.TakeDamage(amount);
         bool dead = false;
         if (player)
         {
-            HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
+            HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
             dead = hb.GetComponent<HealthBar>().CheckIfDead();
         }
         else
         {
-            HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
+            HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
             dead = hb.GetComponent<HealthBar>().CheckIfDead();
         }
         if (dead)
@@ -157,7 +173,7 @@ public class Weapon : MonoBehaviour
 
     private void OnDestroy()
     {
-        onDestruction.Invoke();
+        
     }
 
     //Could be useful

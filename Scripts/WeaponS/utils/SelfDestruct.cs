@@ -8,7 +8,8 @@ public class SelfDestruct : MonoBehaviour
     public void Destruct()
     {
         Buff käyttöohje = FindCertainBuff("Käyttöohje");
-        
+        GetComponent<Weapon>().onDestruction.Invoke();
+
         if(GetComponent<Weapon>().player)
         {
             if (käyttöohje != null && !used_ones)

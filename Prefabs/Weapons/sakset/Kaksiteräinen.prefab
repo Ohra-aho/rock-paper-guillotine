@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 7066133070963563329}
+  - component: {fileID: 1841428768365020520}
   m_Layer: 5
   m_Name: "Kaksiter\xE4inen"
   m_TagString: Untagged
@@ -92,9 +93,12 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  dead: 0
   type: 2
   damage: 3
   armor: 0
+  real_damage: 0
+  real_armor: 0
   name: "Kaksiter\xE4inen miekka"
   description: Kun teet vahinkoa, otat vahinkoa
   sprite: {fileID: 21300000, guid: 6cf6ad5ab5f88eb438fd50f94437c6f2, type: 3}
@@ -117,18 +121,27 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7066133070963563329}
-        m_TargetAssemblyTypeName: "Kaksiter\xE4inenMiekka, Assembly-CSharp"
+      - m_Target: {fileID: 1841428768365020520}
+        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
         m_MethodName: SelfDamage
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 3098424137161797902}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -145,6 +158,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onDestruction:
+    m_PersistentCalls:
+      m_Calls: []
+  eachTurn:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0
@@ -167,3 +183,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!114 &1841428768365020520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 1

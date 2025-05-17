@@ -10,11 +10,12 @@ public class Pyhäteksti : MonoBehaviour
         GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return true; };
         GetComponent<BuffController>().special = DamageOnHeal;
         GetComponent<BuffController>().heal = true;
-        if (!GetComponent<Weapon>().player) GetComponent<BuffController>().Equip();
+        //if (!GetComponent<Weapon>().player) GetComponent<BuffController>().Equip();
     }
 
     public void DamageOnHeal(Weapon weapon)
     {
-        weapon.EffectDamage(damage);   
+        GetComponent<EffectDamage>().DealDamage(weapon);
+        //weapon.EffectDamage(damage);
     }
 }

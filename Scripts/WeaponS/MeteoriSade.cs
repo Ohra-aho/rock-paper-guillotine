@@ -5,6 +5,7 @@ using UnityEngine;
 public class MeteoriSade : MonoBehaviour
 {
     GameObject RI;
+    int damage;
 
     private void Awake()
     {
@@ -13,7 +14,8 @@ public class MeteoriSade : MonoBehaviour
 
     public void DealDamageToAmountOfStones()
     {
-        int damage = 0;
+        GetComponent<EffectDamage>().amount -= damage;
+        damage = 0;
         for(int i = 0; i < RI.transform.childCount; i++)
         {
             if(RI.transform.GetChild(i).GetComponent<Weapon>().type == MainController.Choise.kivi)
@@ -21,8 +23,7 @@ public class MeteoriSade : MonoBehaviour
                 damage++;
             }
         }
-        GetComponent<Weapon>().opponent.TakeDamage(
-                damage
-            );
+        GetComponent<EffectDamage>().amount += damage;
+        GetComponent<EffectDamage>().DealDamage(null);
     }
 }

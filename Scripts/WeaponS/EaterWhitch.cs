@@ -13,7 +13,6 @@ public class EaterWhitch : MonoBehaviour
 
     public void Heal(Weapon weapon)
     {
-        PlayerContoller PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
-        PC.HB.HealDamage(1);
+        GetComponent<Healing>().Heal();
     }
 }
