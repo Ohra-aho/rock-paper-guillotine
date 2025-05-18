@@ -102,7 +102,7 @@ MonoBehaviour:
   real_armor: 0
   name: Koukku
   description: "Otat yhden vahingon joka vuoro. L\xE4vist\xE4\xE4 panssarin."
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 2ee79b7c164a29948adc776b8eb22d4a, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:

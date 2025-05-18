@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class HealthIncrease : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int amount;
+
+    public void Increase()
     {
-        
+        HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
+        HB.IncreaseHealthBar(amount);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Decrease()
     {
-        
+        HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
+        HB.DecreaseHealthBar(amount);
     }
 }

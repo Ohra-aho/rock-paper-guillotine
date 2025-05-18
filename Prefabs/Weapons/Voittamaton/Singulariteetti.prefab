@@ -101,7 +101,7 @@ MonoBehaviour:
   real_armor: 0
   name: Singulariteetti
   description: "Aina kun k\xE4yt\xE4t, ota yksi vahinko."
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: b031cfc5fc508fa499586b798b40d8d1, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:

@@ -96,9 +96,11 @@ MonoBehaviour:
   type: 1
   damage: 2
   armor: 0
+  real_damage: 0
+  real_armor: 0
   name: Sanomalehti
   description: 
-  sprite: {fileID: 21300000, guid: 359fb2764748cb048a898e0a35a1298b, type: 3}
+  sprite: {fileID: 21300000, guid: 02e9d229332af7341952b474e221310c, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:
@@ -116,6 +118,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
   win:
@@ -140,6 +145,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onDestruction:
+    m_PersistentCalls:
+      m_Calls: []
+  eachTurn:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0

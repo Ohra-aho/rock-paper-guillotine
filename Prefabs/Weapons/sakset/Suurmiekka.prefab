@@ -100,7 +100,7 @@ MonoBehaviour:
   real_armor: 0
   name: Suurmiekka
   description: +1 vahinkoon, per joka kolmas max HP.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 4e45eb24f1a53834596f00abeeb4e31b, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:

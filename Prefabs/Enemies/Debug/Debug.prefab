@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Wanderer
   image: {fileID: 21300000, guid: 5ada3f2c1142ab4429915fd576b41b15, type: 3}
-  maxHealth: 15
+  maxHealth: 1
   weapons:
   - {fileID: 1944698211339908181, guid: ef4ab9c83f4491b4488a06932b7af704, type: 3}
   - {fileID: 1944698211339908181, guid: f0daec46fed64824ea6a12f4731e8ed8, type: 3}

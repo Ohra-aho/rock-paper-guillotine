@@ -102,7 +102,7 @@ MonoBehaviour:
   real_armor: 0
   name: Rituaali
   description: Tekee yhden pisteen vahinkoa vastustajaan joka vuoron lopussa.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 293175e3c0b383f498f9b7c1d649c0fc, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:

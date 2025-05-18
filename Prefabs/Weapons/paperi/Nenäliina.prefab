@@ -103,7 +103,7 @@ MonoBehaviour:
   name: "Nen\xE4liina"
   description: "Aina kun otat tai teet vahinkoa, +1 piste. Aina kun saat 3 pistett\xE4,
     tee yksi vahinko vastustajaan."
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 1ca9bc8b5371dcf48b50c8dc17938594, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:

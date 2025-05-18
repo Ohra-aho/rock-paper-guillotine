@@ -102,7 +102,7 @@ MonoBehaviour:
   real_armor: 0
   name: "Ydinr\xE4j\xE4hde"
   description: "HP:si putoaa yhteen. Tuhoaa itsens\xE4"
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 22f9a105c005b1a438462a96ba742ba3, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:

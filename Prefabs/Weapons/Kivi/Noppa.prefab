@@ -100,7 +100,7 @@ MonoBehaviour:
   real_armor: 0
   name: Noppa
   description: "T\xE4m\xE4n aseen vahinko on 0-4. Vaihtuu joka k\xE4ytt\xF6kerralla."
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: a6d3375a871b3e143bec2f35ec895a32, type: 3}
   stacks: 0
   choisePhase:
     m_PersistentCalls:

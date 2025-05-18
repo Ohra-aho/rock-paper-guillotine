@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Muuri : MonoBehaviour
 {
+    //Might need some alteration. Maybe something that activated when reward is collected
+
     GameObject ri;
     int HP_bonus = 0;
 
@@ -22,20 +24,18 @@ public class Muuri : MonoBehaviour
                 amount++;
             }
         }
-        if(amount >= 3) HP_bonus = amount / 3;
+        if(amount >= 2) GetComponent<HealthIncrease>().amount = amount / 2;
     }
 
     public void Equip()
     {
         CalculateHP();
-        HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
-        HB.IncreaseHealthBar(HP_bonus);
+        GetComponent<HealthIncrease>().Increase();
     }
 
     public void Unequip()
     {
         CalculateHP();
-        HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
-        HB.DecreaseHealthBar(HP_bonus);
+        GetComponent<HealthIncrease>().Decrease();
     }
 }
