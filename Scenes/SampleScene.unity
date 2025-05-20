@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: 4a313475d59e2944fb4c581fb215faf8, type: 3}
   loop: 0
   ongoing: 0
@@ -339,6 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: 58861ba7c0ff0cc4085b98b014bc861f, type: 3}
   loop: 0
   ongoing: 0
@@ -5845,6 +5847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: 317be5c5d8685ae4eb62f189ad2e34ef, type: 3}
   loop: 0
   ongoing: 0
@@ -6634,6 +6637,7 @@ MonoBehaviour:
   bark_sheet:
   - {fileID: 21300000, guid: fb9081a9cc43cee469d97dc247b914ec, type: 3}
   - {fileID: 21300000, guid: 336438dc4175dd545a3de129d1b1f38d, type: 3}
+  paused: 0
 --- !u!114 &234517217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7207,6 +7211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: af7586c150f39084a8cecf7925ca4cf9, type: 3}
   loop: 0
   ongoing: 0
@@ -7336,6 +7341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: 58861ba7c0ff0cc4085b98b014bc861f, type: 3}
   loop: 0
   ongoing: 0
@@ -7627,6 +7633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: 7bfed94648d400647939a43895648065, type: 3}
   loop: 0
   ongoing: 0
@@ -7635,6 +7642,140 @@ MonoBehaviour:
   volume_modifier: 1
   pitch: 1
   stereo_pan: 0
+--- !u!1 &499914208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 499914209}
+  - component: {fileID: 499914211}
+  - component: {fileID: 499914210}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &499914209
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499914208}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1817942855}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -500.76, y: 275}
+  m_SizeDelta: {x: 74.43, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &499914210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499914208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Esc
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 2345323210
+  m_fontColor: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 0.54509807}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 20
+  m_fontSizeBase: 20
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 16
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &499914211
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499914208}
+  m_CullTransparentMesh: 1
 --- !u!1 &512731147
 GameObject:
   m_ObjectHideFlags: 0
@@ -7864,6 +8005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: 7ce88aa001fe38d41a54a6be00a1d95e, type: 3}
   loop: 0
   ongoing: 0
@@ -8271,6 +8413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: f9a70775fbd603f42880d2ed4a9fbb17, type: 3}
   loop: 0
   ongoing: 0
@@ -8535,6 +8678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: f56277c2c68cbaf4c9a31d6bf0b975b3, type: 3}
   loop: 0
   ongoing: 0
@@ -8754,6 +8898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: eeb121a21c166ba40930413f8ad9f51e, type: 3}
   loop: 0
   ongoing: 0
@@ -9667,6 +9812,7 @@ GameObject:
   - component: {fileID: 1066024790}
   - component: {fileID: 1066024792}
   - component: {fileID: 1066024793}
+  - component: {fileID: 1066024794}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: GameController
@@ -9703,7 +9849,7 @@ MonoBehaviour:
   story_event_holder: {fileID: 710133546}
   firstRewardMenu: 0
   playthroughts:
-  - {fileID: 4163066812587896230, guid: 0db93014473a88d4a884a2acf424b7dd, type: 3}
+  - {fileID: 4163066812587896230, guid: f1384c3850ea4334e87db7b6ea3b06e4, type: 3}
   buttons_active: 1
   reward_tier: 1
 --- !u!114 &1066024787
@@ -9782,6 +9928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f1b421e16f5cb42bce3cd485777e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: 0
 --- !u!114 &1066024793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9819,6 +9966,19 @@ MonoBehaviour:
   - 
   - 
   - 
+--- !u!114 &1066024794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066024785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3622ab28be79b2144a534d6ad00600a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 5061135645696944559, guid: dd974eec2ced749478df23f9e2cc8ac3, type: 3}
 --- !u!1 &1086918255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1371170088414111626, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
@@ -9960,6 +10120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: d4835e308a6d1f144b58aa944ac34dc4, type: 3}
   loop: 0
   ongoing: 0
@@ -10101,6 +10262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: 0d5affd0679305e44a1b095e7e23191a, type: 3}
   loop: 0
   ongoing: 0
@@ -15106,6 +15268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: 3cfb2e2cd09fa2f42abfe8296522e2da, type: 3}
   loop: 0
   ongoing: 0
@@ -15319,6 +15482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: 6bdce148afd2b00489ff49b708165897, type: 3}
   loop: 1
   ongoing: 0
@@ -15482,6 +15646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: 7ce88aa001fe38d41a54a6be00a1d95e, type: 3}
   loop: 0
   ongoing: 0
@@ -16146,6 +16311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: 7c7121b9640842d48b42a4371220c714, type: 3}
   loop: 0
   ongoing: 0
@@ -21654,6 +21820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 
   clip: {fileID: 8300000, guid: 7bfed94648d400647939a43895648065, type: 3}
   loop: 0
   ongoing: 0
@@ -22470,6 +22637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: 66b4298201bfb22459f619f8d4192482, type: 3}
   loop: 0
   ongoing: 0
@@ -22522,6 +22690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: 62c53d922cb786a4dbf7997b8f2a60d7, type: 3}
   loop: 0
   ongoing: 0
@@ -27803,7 +27972,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 1379648961
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &1817942855
 RectTransform:
@@ -27827,6 +27996,7 @@ RectTransform:
   - {fileID: 2113757335}
   - {fileID: 950168361}
   - {fileID: 7502288}
+  - {fileID: 499914209}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -27878,6 +28048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: 2d6b1b805458ac24b8e92461544550d5, type: 3}
   loop: 0
   ongoing: 0
@@ -33479,6 +33650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 
   clip: {fileID: 8300000, guid: c3ee762051101a94fb90b760cfdba453, type: 3}
   loop: 1
   ongoing: 0

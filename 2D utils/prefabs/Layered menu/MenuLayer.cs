@@ -11,5 +11,10 @@ public class MenuLayer : MonoBehaviour
         Destroy(LM.currentLayer);
         LM.currentLayer = Instantiate(LM.layers[index], this.transform.parent);
     }
+
+    public void CloseMenu()
+    {
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<PauseController>().Resume();
+    }
 }
 

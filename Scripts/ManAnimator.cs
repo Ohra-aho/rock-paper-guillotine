@@ -39,9 +39,15 @@ public class ManAnimator : MonoBehaviour
 
     Coroutine bark_cr;
 
+    SoundSettings settings;
+
+    public bool paused = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        settings = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundSettings>();
+
         first_greeting_1 = new List<Frame>()
         {
             new Frame(man_sheet[2], null, LG.first_greeting[0]),
@@ -90,7 +96,29 @@ public class ManAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleDialog();
+        if(!paused) HandleDialog();
+        Upkeep();
+    }
+
+
+    bool mute;
+    float volume = 0f;
+    string type = "Man";
+
+    public void Upkeep()
+    {
+        //Get sound targets from settings and adapt to them
+        List<SoundTarget> soundTargets = settings.soundTargets;
+        for (int i = 0; i < soundTargets.Count; i++)
+        {
+            if (soundTargets[i].name == type)
+            {
+                mute = soundTargets[i].mute;
+                volume = soundTargets[i].volume;
+            }
+        }
+        if (GetComponent<AudioSource>().mute != mute) GetComponent<AudioSource>().mute = mute;
+        if (GetComponent<AudioSource>().volume != volume) GetComponent<AudioSource>().volume = volume;
     }
 
     private void HandleAudio()

@@ -8,8 +8,23 @@ public class LayeredMenu : MonoBehaviour
     public List<GameObject> layers;
     [HideInInspector] public GameObject currentLayer;
 
-    void Start()
+    private void Awake()
     {
         currentLayer = Instantiate(layers[0], this.transform);
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        controller.GetComponent<SoundSettings>().pause = true;
+        controller.GetComponent<MainController>().buttons_active = false;
+        GameObject.Find("StartButton").GetComponent<StartButton>().deactivated = true;
+        GameObject.Find("man").GetComponent<ManAnimator>().paused = true;
+
+    }
+
+    private void OnDestroy()
+    {
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        controller.GetComponent<SoundSettings>().pause = false;
+        controller.GetComponent<MainController>().buttons_active = true;
+        GameObject.Find("StartButton").GetComponent<StartButton>().deactivated = false;
+        GameObject.Find("man").GetComponent<ManAnimator>().paused = false;
     }
 }

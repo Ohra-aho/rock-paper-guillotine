@@ -7,12 +7,14 @@ public class SoundSettings : MonoBehaviour
     //Place to games EventSystem or similar gameobject
 
     public List<SoundTarget> soundTargets = new List<SoundTarget>();
+    public bool pause = false;
     // Start is called before the first frame update
     void Start()
     {
         soundTargets.Add(new SoundTarget("Music", false, 1));
         soundTargets.Add(new SoundTarget("Ambience", false, 1));
-        soundTargets.Add(new SoundTarget("Sound Effects", false, 1));
+        soundTargets.Add(new SoundTarget("Sound Effect", false, 0.4f));
+        soundTargets.Add(new SoundTarget("Man", false, 1));
     }
 
     //Changes values of sound targets

@@ -53,6 +53,7 @@ public class StartButton : MonoBehaviour
         GameObject.Find("EnemyHolder").GetComponent<EnemyController>().victory = false;
         GetComponent<SpriteRenderer>().sprite = active;
         machine.GetComponent<Test>().PlayAnimation("CloseMachine");
+        GameObject.Find("PlayerWheelHolder").GetComponent<NonUIButton>().individual_interactable = false;
         isActive = true;
     }
 
@@ -68,6 +69,7 @@ public class StartButton : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = inactive;
         machine.GetComponent<Test>().PlayAnimation("OpenMachine");
+        GameObject.Find("PlayerWheelHolder").GetComponent<NonUIButton>().individual_interactable = true;
         isActive = false;
     }
 
