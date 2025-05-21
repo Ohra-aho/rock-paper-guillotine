@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 5201385185178331687}
+  - component: {fileID: 2743707517338383382}
   m_Layer: 5
   m_Name: Piikit
   m_TagString: Untagged
@@ -96,8 +96,10 @@ MonoBehaviour:
   type: 2
   damage: 2
   armor: 1
+  real_damage: 0
+  real_armor: 0
   name: Piikit
-  description: Jos ottaa vahinkoa, otat yhden vahingon.
+  description: Jos ottaa vahinkoa, otat 2 vahinkoa.
   sprite: {fileID: 21300000, guid: 752e48c352eee3149a39c9f07f636e12, type: 3}
   stacks: 0
   choisePhase:
@@ -115,19 +117,28 @@ MonoBehaviour:
   takeDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5201385185178331687}
-        m_TargetAssemblyTypeName: SpikeBall, Assembly-CSharp
-        m_MethodName: Retaliate
-        m_Mode: 1
+      - m_Target: {fileID: 2743707517338383382}
+        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
+        m_MethodName: DealDamage
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 3098424137161797902}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
     m_PersistentCalls:
       m_Calls: []
   draw:
@@ -148,6 +159,9 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -155,7 +169,7 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
---- !u!114 &5201385185178331687
+--- !u!114 &2743707517338383382
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,7 +178,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9231a72076307b448e0f9056fe98708, type: 3}
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  amount: 2

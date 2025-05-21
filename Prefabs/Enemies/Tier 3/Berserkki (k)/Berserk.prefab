@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Berserk
   image: {fileID: 21300000, guid: 1d43eacead7ef3849b9501f0b879f344, type: 3}
-  maxHealth: 6
+  maxHealth: 8
   weapons:
   - {fileID: 1944698211339908181, guid: f166918cbb12a284e866e41031df0da6, type: 3}
   - {fileID: 1944698211339908181, guid: b747fb4c5fe2bed42b7b297d83f83029, type: 3}
