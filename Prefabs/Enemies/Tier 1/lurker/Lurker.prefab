@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
   - component: {fileID: 8687217563175998695}
+  - component: {fileID: -4662255334357816252}
   m_Layer: 5
   m_Name: Lurker
   m_TagString: Enemy
@@ -70,6 +71,7 @@ MonoBehaviour:
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 00000000
+  advanced: 1
 --- !u!212 &8687217563175998695
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -122,3 +124,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-4662255334357816252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979226803842198351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc9a5a3def99df4e8ff168d3d8bd243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taken_damage: 0
+  tail_hit: 0

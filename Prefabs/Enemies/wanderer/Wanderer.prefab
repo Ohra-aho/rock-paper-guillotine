@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 1165865232959651390}
   - component: {fileID: 4809575014415415317}
+  - component: {fileID: 4638538761962290413}
   m_Layer: 5
   m_Name: Wanderer
   m_TagString: Enemy
@@ -122,4 +123,17 @@ MonoBehaviour:
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 00000000
-  advanced: 0
+  advanced: 1
+--- !u!114 &4638538761962290413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979226803842198351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e6bc5c449d70d4a822c584509303f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stick_missed: 0

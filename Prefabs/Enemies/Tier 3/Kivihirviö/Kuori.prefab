@@ -96,6 +96,8 @@ MonoBehaviour:
   type: 1
   damage: 1
   armor: 3
+  real_damage: 0
+  real_armor: 0
   name: Kuori
   description: 
   sprite: {fileID: 21300000, guid: 01e4d3eca5fe6e142952a2cb4bec5630, type: 3}
@@ -116,6 +118,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
     m_PersistentCalls:
       m_Calls: []
   draw:
@@ -146,6 +157,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onDestruction:
+    m_PersistentCalls:
+      m_Calls: []
+  eachTurn:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
+  - component: {fileID: 6626411731093533241}
+  - component: {fileID: -545768694458548370}
   m_Layer: 5
   m_Name: Mato
   m_TagString: Untagged
@@ -91,11 +93,14 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  dead: 0
   type: 1
   damage: 1
   armor: 0
+  real_damage: 0
+  real_armor: 0
   name: Mato
-  description: 
+  description: "Parantaa yhden haavan ja tuhoaa itsens\xE4."
   sprite: {fileID: 21300000, guid: 561ec2212eeb2654ca4db35c7a00ad24, type: 3}
   stacks: 0
   choisePhase:
@@ -106,7 +111,31 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6626411731093533241}
+        m_TargetAssemblyTypeName: Healing, Assembly-CSharp
+        m_MethodName: Heal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -545768694458548370}
+        m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
+        m_MethodName: Destruct
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -114,6 +143,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
     m_PersistentCalls:
       m_Calls: []
   draw:
@@ -134,3 +172,39 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  self_destructive: 0
+  healing: 0
+  health: 0
+  kivi_synegry: 0
+  paperi_synergy: 0
+  sakset_synergy: 0
+  points: 0
+--- !u!114 &6626411731093533241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 1
+--- !u!114 &-545768694458548370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  used_ones: 0

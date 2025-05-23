@@ -95,7 +95,9 @@ MonoBehaviour:
   dead: 0
   type: 0
   damage: 1
-  armor: 1
+  armor: 0
+  real_damage: 0
+  real_armor: 0
   name: Juuret
   description: Ansa ja lehti saavat +1 vahinkoon.
   sprite: {fileID: 21300000, guid: fdc4c3731ffe1cb44af8cc70970b2ede, type: 3}
@@ -128,6 +130,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
   win:

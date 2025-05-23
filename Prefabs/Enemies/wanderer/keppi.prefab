@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
+  - component: {fileID: -1982862768278979025}
   m_Layer: 5
   m_Name: keppi
   m_TagString: Untagged
@@ -91,9 +92,12 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   penetrating: 0
+  dead: 0
   type: 2
   damage: 1
   armor: 0
+  real_damage: 0
+  real_armor: 0
   name: Keppi
   description: 
   sprite: {fileID: 21300000, guid: e00ac6bfe97f48c4bb71c6df8e45d66f, type: 3}
@@ -116,9 +120,42 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
-  draw:
+  takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1982862768278979025}
+        m_TargetAssemblyTypeName: Keppi, Assembly-CSharp
+        m_MethodName: Missed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  draw:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1982862768278979025}
+        m_TargetAssemblyTypeName: Keppi, Assembly-CSharp
+        m_MethodName: Missed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -134,6 +171,9 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -141,3 +181,15 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+--- !u!114 &-1982862768278979025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81cb56c7bf87dff44acadc308532f9a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

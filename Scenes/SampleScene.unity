@@ -9849,7 +9849,7 @@ MonoBehaviour:
   story_event_holder: {fileID: 710133546}
   firstRewardMenu: 0
   playthroughts:
-  - {fileID: 4163066812587896230, guid: f1384c3850ea4334e87db7b6ea3b06e4, type: 3}
+  - {fileID: 4163066812587896230, guid: 0db93014473a88d4a884a2acf424b7dd, type: 3}
   buttons_active: 1
   reward_tier: 1
 --- !u!114 &1066024787
@@ -33650,7 +33650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 
+  type: Sound Effect
   clip: {fileID: 8300000, guid: c3ee762051101a94fb90b760cfdba453, type: 3}
   loop: 1
   ongoing: 0

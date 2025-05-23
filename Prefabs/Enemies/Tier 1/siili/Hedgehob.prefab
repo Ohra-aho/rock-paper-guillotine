@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
   - component: {fileID: 9135753412353779111}
+  - component: {fileID: -6868955580325059846}
   m_Layer: 5
   m_Name: Hedgehob
   m_TagString: Enemy
@@ -65,12 +66,12 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: f6d36dde60aedfa4c992d82fae72a8ab, type: 3}
   - {fileID: 1944698211339908181, guid: d7b21f1dae144db40b19fabd78502c63, type: 3}
   - {fileID: 1944698211339908181, guid: 06860cb033971f940add3fa511953795, type: 3}
-  plan_1: 010000000000000002000000
-  plan_2: 000000000100000002000000
+  plan_1: 0000000002000000
+  plan_2: 0000000002000000
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 02000000
-  advanced: 0
+  advanced: 1
 --- !u!212 &9135753412353779111
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -123,3 +124,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-6868955580325059846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979226803842198351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1933dbe2e72a91343a3ed68f63f5e432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage_taken: 0
