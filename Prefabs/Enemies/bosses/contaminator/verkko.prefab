@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
+  - component: {fileID: 2467561525901918921}
   m_Layer: 5
   m_Name: verkko
   m_TagString: Untagged
@@ -95,6 +96,8 @@ MonoBehaviour:
   type: 1
   damage: 2
   armor: 1
+  real_damage: 0
+  real_armor: 0
   name: Verkko
   description: 
   sprite: {fileID: 21300000, guid: 92324259aa0ac0c4eb15506d3b1e3c0b, type: 3}
@@ -117,6 +120,27 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2467561525901918921}
+        m_TargetAssemblyTypeName: Mask, Assembly-CSharp
+        m_MethodName: NetHit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -135,6 +159,9 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -142,3 +169,15 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+--- !u!114 &2467561525901918921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def19445eb45dc841b29d89d90699394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

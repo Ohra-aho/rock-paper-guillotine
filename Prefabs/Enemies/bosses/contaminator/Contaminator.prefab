@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
   - component: {fileID: 3076687715594733710}
+  - component: {fileID: -4888050665072950399}
   m_Layer: 5
   m_Name: Contaminator
   m_TagString: Enemy
@@ -70,6 +71,7 @@ MonoBehaviour:
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 0200000001000000
+  advanced: 1
 --- !u!212 &3076687715594733710
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -122,3 +124,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-4888050665072950399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979226803842198351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34da6cd04c51c38448aee9f9204012e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  net: 0
+  net_timer: 0
+  flip: 1
+  netted_burst: 0
