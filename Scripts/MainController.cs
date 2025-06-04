@@ -160,6 +160,7 @@ public class MainController : MonoBehaviour
     public void EndGame()
     {
         dead = true;
+        GetComponent<StoryController>().playthroughts++;
         EndRound();
     }
 

@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2786056973077763733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3410319663291208791}
+  - component: {fileID: 5296195073172914956}
+  m_Layer: 0
+  m_Name: Game_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3410319663291208791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2786056973077763733}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1699658, y: 0.6587138, z: 0.003412338}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5296195073172914956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2786056973077763733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5002395d90aa1b04596e2894763c3dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  before_first_encounter:
+  - {fileID: 503840598905201475, guid: 0263b2b182f9d0b419999914aab8d22f, type: 3}
+  - {fileID: 503840598905201475, guid: 71bd6d45af1a61b4e8234dc8955810d9, type: 3}
+  first_victory: []
+  boss_introduxtions:
+  - {fileID: 3768069680275742937, guid: 48c6dc499525cb44e911c62c470c45f8, type: 3}
+  - {fileID: 3768069680275742937, guid: 48c6dc499525cb44e911c62c470c45f8, type: 3}
+  - {fileID: 3768069680275742937, guid: 48c6dc499525cb44e911c62c470c45f8, type: 3}
+  - {fileID: 3768069680275742937, guid: 48c6dc499525cb44e911c62c470c45f8, type: 3}
+  boss_victories:
+  - {fileID: 3768069680275742937, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
+  - {fileID: 3768069680275742937, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
+  - {fileID: 3768069680275742937, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
+  - {fileID: 3768069680275742937, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
+  gear_changes: []
+  end: []

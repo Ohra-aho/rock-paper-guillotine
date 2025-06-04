@@ -10,10 +10,16 @@ public class CameraNQuilliotine : MonoBehaviour
     public void RevealDeathScreen()
     {
         deathScreen.GetComponent<Test>().PlayAnimation("DeathADone");
+        SaveGame();
     }
 
     public void DisableAllInteractavles()
     {
         eventSystem.GetComponent<MainController>().stop = true;
+    }
+
+    public void SaveGame()
+    {
+        SaveSystem.SaveStoryData(GameObject.FindGameObjectWithTag("GameController").GetComponent<StoryController>());
     }
 }
