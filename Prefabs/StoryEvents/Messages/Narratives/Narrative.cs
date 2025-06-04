@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Narrative : MonoBehaviour
 {
-    public List<Message> before_first_encounter;
-    public List<Message> first_victory;
-    public List<Message> boss_introduxtions;
-    public List<Message> boss_victories;
-    public List<Message> gear_changes;
-    public List<Message> end;
+    public List<GameObject> before_first_encounter;
+    public List<GameObject> first_victory;
+    public List<GameObject> boss_introduxtions;
+    public List<GameObject> boss_victories;
+    public List<GameObject> gear_changes;
+    public List<GameObject> end;
 
 }

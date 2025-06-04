@@ -16,6 +16,7 @@ public class StoryController : MonoBehaviour
     {
         story = Instantiate(GetComponent<MainController>().playthroughts[0], transform);
         story.GetComponent<Story>().AddBossSpeetches();
+        story.GetComponent<Story>().AddIntroSpeeches();
         events.AddRange(story.GetComponent<Story>().events);
     }
 

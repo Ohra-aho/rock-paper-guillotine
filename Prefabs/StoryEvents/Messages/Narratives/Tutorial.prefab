@@ -44,17 +44,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5002395d90aa1b04596e2894763c3dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  before_first_encounter: []
+  before_first_encounter:
+  - {fileID: 3768069680275742937, guid: 9d288646989498142a1a742376887c9d, type: 3}
+  - {fileID: 503840598905201475, guid: 98948caa7d9070243bff93c7194f7b5c, type: 3}
+  - {fileID: 3768069680275742937, guid: 709beb3810c7e1b4ab5ca3f36b4198d4, type: 3}
+  - {fileID: 503840598905201475, guid: 98948caa7d9070243bff93c7194f7b5c, type: 3}
+  - {fileID: 3768069680275742937, guid: 1538014c1a584a647ae75befab5c32f0, type: 3}
+  - {fileID: 503840598905201475, guid: 0263b2b182f9d0b419999914aab8d22f, type: 3}
+  - {fileID: 503840598905201475, guid: 71bd6d45af1a61b4e8234dc8955810d9, type: 3}
   first_victory: []
   boss_introduxtions:
-  - {fileID: -3775906259973895794, guid: 48c6dc499525cb44e911c62c470c45f8, type: 3}
-  - {fileID: -3775906259973895794, guid: 48c6dc499525cb44e911c62c470c45f8, type: 3}
-  - {fileID: -3775906259973895794, guid: 48c6dc499525cb44e911c62c470c45f8, type: 3}
-  - {fileID: -3775906259973895794, guid: 48c6dc499525cb44e911c62c470c45f8, type: 3}
+  - {fileID: 3768069680275742937, guid: 48c6dc499525cb44e911c62c470c45f8, type: 3}
+  - {fileID: 3768069680275742937, guid: 48c6dc499525cb44e911c62c470c45f8, type: 3}
+  - {fileID: 3768069680275742937, guid: 48c6dc499525cb44e911c62c470c45f8, type: 3}
+  - {fileID: 3768069680275742937, guid: 48c6dc499525cb44e911c62c470c45f8, type: 3}
   boss_victories:
-  - {fileID: -3775906259973895794, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
-  - {fileID: -3775906259973895794, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
-  - {fileID: -3775906259973895794, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
-  - {fileID: -3775906259973895794, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
+  - {fileID: 3768069680275742937, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
+  - {fileID: 3768069680275742937, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
+  - {fileID: 3768069680275742937, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
+  - {fileID: 3768069680275742937, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
   gear_changes: []
   end: []

@@ -27,7 +27,27 @@ public class Story : MonoBehaviour
         }
     }
 
-    
+    public void AddIntroSpeeches()
+    {
+        int intro_index = 0;
+        //Adds all events in the list before the first encounter
+        if(narrative.before_first_encounter != null && narrative.before_first_encounter.Count > 0)
+        {
+            for(int i = 0; i < events.Count; i++)
+            {
+                if(events[i].name.Contains("FirstEncounter"))
+                {
+                    InsertEvent(narrative.before_first_encounter[intro_index].gameObject, i-1);
+                    intro_index++;
+                    if(intro_index >= narrative.before_first_encounter.Count)
+                    {
+                        i++;
+                    }
+                }
+            }
+        }
+    }
+
     //Adds event to set index in events list
     private void InsertEvent(GameObject new_event, int index)
     {
