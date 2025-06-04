@@ -84,8 +84,8 @@ public class Bark : MonoBehaviour
     {
         switch(bark)
         {
-            case 1: true_bark = LG.instructions[3]; break;
-            case 2: true_bark = LG.instructions[4]; break;
+            case 1: true_bark = LG.dialog[8]; break;
+            case 2: true_bark = LG.dialog[9]; break;
         }
     }
 }

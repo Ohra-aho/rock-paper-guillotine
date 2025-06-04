@@ -48,49 +48,14 @@ public class ManAnimator : MonoBehaviour
     {
         settings = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundSettings>();
 
-        first_greeting_1 = new List<Frame>()
-        {
-            new Frame(man_sheet[2], null, LG.first_greeting[0]),
-            new Frame(man_sheet[0], null, LG.first_greeting[1]),
-            new Frame(man_sheet[1], null, LG.first_greeting[2]),
-            new Frame(man_sheet[3], null, LG.first_greeting[3]),
-            new Frame(man_sheet[4], null, LG.first_greeting[4]),
-        };
-        instructions_1 = new List<Frame>()
-        {
-            new Frame(man_sheet[6], null, LG.instructions[0]),
-            new Frame(man_sheet[0], null, LG.instructions[1])
-        };
-        instructions_2 = new List<Frame>()
-        {
-            new Frame(man_sheet[0], null, LG.instructions[2])
-        };
+        /*
+         * 
         instructions_3 = new List<Frame>()
         {
-            new Frame(man_sheet[0], null, LG.instructions[3])
+            new Frame(man_sheet[0], null, LG.instructions[8])
         };
-        //First victory
-        instructions_4 = new List<Frame>()
-        {
-            //Frames need to be added
-            new Frame(man_sheet[0], null, LG.instructions[5]),
-            new Frame(man_sheet[0], null, LG.instructions[6]),
-            new Frame(man_sheet[0], null, LG.instructions[7])
-        };
-        boss_intro_1 = new List<Frame>()
-        {
-            //Frames need to be added
-            new Frame(man_sheet[0], null, LG.boss_intros[0]),
-            new Frame(man_sheet[0], null, LG.boss_intros[1]),
-            new Frame(man_sheet[0], null, LG.boss_intros[2])
-        };
-        finished_game_1 = new List<Frame>()
-        {
-            new Frame(man_sheet[0], null, LG.finished_playthroughs[0]),
-            new Frame(man_sheet[0], null, LG.finished_playthroughs[1]),
-            new Frame(man_sheet[0], null, LG.finished_playthroughs[2]),
-            new Frame(man_sheet[0], null, LG.finished_playthroughs[3])
-        };
+
+        */
     }
 
     // Update is called once per frame
@@ -230,18 +195,9 @@ public class ManAnimator : MonoBehaviour
         dialog_box.GetComponent<DialogBox>().StartTextAnimation(frame.text, null);
     }
 
-    public void ManMessage(int id)
+    public void ManMessage(List<Frame> frames)
     {
-        switch (id)
-        {
-            case 0: current_frames = first_greeting_1; break;
-            case 1: current_frames = instructions_1; break;
-            case 2: current_frames = instructions_2; break;
-            case 3: current_frames = instructions_3; break;
-            case 4: current_frames = instructions_4; break;
-            case 5: current_frames = boss_intro_1; break;
-            case 6: current_frames = finished_game_1; break;
-        }
+        current_frames = frames;
         current_frame = 0;
         dialog_box.GetComponent<DialogBox>().StartAnimation(0);
         PlayFrame(current_frames[current_frame]);

@@ -50,7 +50,7 @@ public class MainController : MonoBehaviour
     {
         first = true;
         if (first) {
-            GetComponent<StoryController>().events.AddRange(playthroughts[0].GetComponent<Story>().events); 
+           // GetComponent<StoryController>().events.AddRange(playthroughts[0].GetComponent<Story>().events); 
         }
     }
 

@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed939c76aa0cf147bfc77bc68207605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 6
+  sprite_frames: 00000000000000000000000000000000
+  dialog_frames: 10000000110000001200000013000000
   activated: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:

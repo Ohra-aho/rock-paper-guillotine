@@ -9849,7 +9849,7 @@ MonoBehaviour:
   story_event_holder: {fileID: 710133546}
   firstRewardMenu: 0
   playthroughts:
-  - {fileID: 4163066812587896230, guid: 0db93014473a88d4a884a2acf424b7dd, type: 3}
+  - {fileID: 4163066812587896230, guid: 815fa85bc2b2f534faa2e5ae2c1c5333, type: 3}
   buttons_active: 1
   reward_tier: 1
 --- !u!114 &1066024787
@@ -9942,26 +9942,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   suomi: 0
-  first_greeting:
-  - "No p\xE4iv\xE4\xE4."
-  - "Siit\xE4 onkin hetki kun t\xE4nne on viimeksi l\xE4hetetty joku."
-  - "Pakko sanoa, sinun kohdallasi pid\xE4n t\xE4t\xE4 v\xE4h\xE4n ylily\xF6ntin\xE4,"
-  - "mutta enh\xE4n min\xE4 p\xE4\xE4t\xF6ksi\xE4 tee."
-  - Irrota ratas niin voimme aloittaa.
-  instructions:
-  - "Nyt on aikasi k\xE4yd\xE4 viimeiseen taisteluun."
-  - "Kiinnit\xE4 aseesi rattaaseen ja aseta ratas taas paikalleen."
-  - "Kiinnit\xE4 aseesi rattaaseen ja aseta ratas taas paikalleen."
-  - "Kiinnit\xE4 aseesi rattaaseen ja aseta ratas taas paikalleen."
-  - "Kiinnit\xE4 aseesi rattaaseen ja aseta ratas taas paikalleen."
-  - "Kiinnit\xE4 aseesi rattaaseen ja aseta ratas taas paikalleen."
-  - "Kiinnit\xE4 aseesi rattaaseen ja aseta ratas taas paikalleen."
-  - "Kiinnit\xE4 aseesi rattaaseen ja aseta ratas taas paikalleen."
-  boss_intros:
+  dialog:
   - 
   - 
   - 
-  finished_playthroughs:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -16072,7 +16069,7 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   - {fileID: 1944698211339908181, guid: ee57d6d131d1e97458e79deca9dcb588, type: 3}
   - {fileID: 1944698211339908181, guid: 823ab9cdc0f213447a71f73311dafe74, type: 3}
-  - {fileID: 1944698211339908181, guid: 3cc24bd43cd78af478822fb8f5ff3d0d, type: 3}
+  - {fileID: 1944698211339908181, guid: 078db46d1732a0744a627368a8fd7f6f, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
