@@ -22,7 +22,9 @@ public class StoryController : MonoBehaviour
             playthroughts = story_data.playthroughs;
         }
 
+        //Set base for the playthrough
         story = Instantiate(GetComponent<MainController>().playthroughts[0], transform);
+        //If its the first playthrough, set the tutorial
         if(playthroughts == 0)
         {
             story.GetComponent<Story>().narrative = Resources.Load<GameObject>("Story/Narratives/Tutorial").GetComponent<Narrative>();
