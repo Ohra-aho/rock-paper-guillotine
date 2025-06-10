@@ -2,23 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LanguageController : MonoBehaviour
+public static class LanguageController
 {
-    public bool suomi;
+    public static bool suomi;
 
-    public string[] dialog = new string[20];
-
-    private void Awake()
+    public static string[] dialog = new string[20] 
     {
-        ChangeLanguage();
-    }
+        "Good day to you.",
+        "It has been a long time, since someone was sent here.",
+        "I have to say, this is a little bit too harsh for you",
+        "but I don't make decisions.",
+        "Detach the gear and we can begin.",
 
-    private void Update()
-    {
-        ChangeLanguage();
-    }
+        "Now it's time fo your last battle.",
+        "Attach your weapons to the gear and put it back in it's place.",
+        "That's that. Pull the lever, when you are ready.",
+        "I really hope, I don't have to explain this part.",
+        "Oh... I propably should have warned you.",
 
-    public void ChangeLanguage()
+        //First victory
+        "Congradulations. You won the first encounter.",
+        "But more is comming, and you will need something more powerfull against them.",
+        "Choose one of these.",
+
+        //Boss 1
+        "You have fought well.",
+        "But the next foe will be more dangerous than anyhting you have faced this far.",
+        "Wish you luck.",
+
+        //End of first play through
+        "That's how it is done!",
+        "You are not bad at this",
+        "This has been fun, but execution is an execution...",
+        "Until we meet again."
+    };
+
+
+    public static void ChangeLanguage()
     {
         //First instructions
         dialog[0] = suomi ? "No p‰iv‰‰." : "Good day to you.";

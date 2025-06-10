@@ -16,7 +16,6 @@ public class ManAnimator : MonoBehaviour
     public AudioClip g2;
     public AudioClip g3;
 
-    public LanguageController LG;
 
     //0: All neutral
     //1: Head to right neutral

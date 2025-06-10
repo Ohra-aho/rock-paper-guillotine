@@ -6,9 +6,13 @@ using UnityEngine;
 public class StoryData
 {
     public int playthroughs;
+    public int encounter_index;
+    public int narrative_index;
 
-    public StoryData(StoryController stroy_controller)
+    public StoryData(StoryController story_controller)
     {
-        playthroughs = stroy_controller.playthroughts;
+        playthroughs = story_controller.playthroughts;
+        encounter_index = story_controller.storyIndex;
+        narrative_index = story_controller.narrative_index;
     }
 }

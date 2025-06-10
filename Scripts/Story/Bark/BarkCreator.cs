@@ -8,7 +8,8 @@ public class BarkCreator : MonoBehaviour
 
     private void Awake()
     {
-        Instantiate(bark, GameObject.Find("BarkHolder").transform);
+        GameObject new_bark = Instantiate(bark, GameObject.Find("BarkHolder").transform);
+        new_bark.GetComponent<Bark>().Inisiate();
         GetComponent<StoryEvent>().over = true;
     }
 }

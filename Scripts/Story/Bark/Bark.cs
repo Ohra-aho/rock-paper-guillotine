@@ -11,12 +11,15 @@ public class Bark : MonoBehaviour
 
     string true_bark;
 
-    LanguageController LG;
 
     private void Awake()
     {
-        LG = GameObject.Find("EventSystem").GetComponent<LanguageController>();
-        SetTrueBark();
+       
+    }
+
+    public void Inisiate()
+    {
+        TrueBark();
         SetUpTrigger();
     }
 
@@ -67,6 +70,7 @@ public class Bark : MonoBehaviour
 
     public void TheBark()
     {
+        Debug.Log(true_bark);
         GameObject.Find("man").GetComponent<ManAnimator>().CreateABark(true_bark);
         triggered = true;
     }
@@ -80,12 +84,23 @@ public class Bark : MonoBehaviour
         }
     }
 
-    private void SetTrueBark()
+    private void TrueBark()
     {
         switch(bark)
         {
-            case 1: true_bark = LG.dialog[8]; break;
-            case 2: true_bark = LG.dialog[9]; break;
+            case 1: true_bark = LanguageController.dialog[8]; break;
+            case 2: true_bark = LanguageController.dialog[9]; break;
         }
+    }
+
+    public string GiveTrueBark()
+    {
+        if (true_bark != null) return true_bark;
+        else return "";
+    }
+
+    public void SetTrueBark(string new_true_bark)
+    {
+        true_bark = new_true_bark;
     }
 }

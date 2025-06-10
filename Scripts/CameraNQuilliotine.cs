@@ -20,6 +20,13 @@ public class CameraNQuilliotine : MonoBehaviour
 
     public void SaveGame()
     {
-        SaveSystem.SaveStoryData(GameObject.FindGameObjectWithTag("GameController").GetComponent<StoryController>());
+        SaveSystem.DeathDeletion();
+        SaveSystem.SaveStoryData(eventSystem.GetComponent<StoryController>(), eventSystem.GetComponent<MainController>().dead);
+    }
+
+    public void DeleteSaveFile()
+    {
+        SaveSystem.DeleteFile(SaveSystem.story_data);
+        SaveSystem.DeleteFile(SaveSystem.bark_data);
     }
 }

@@ -7,7 +7,7 @@ public class TriggerWaiter : MonoBehaviour
     // Find button by name and attaches a ItsOver event to it.
 
     public string name;
-    void Start()
+    void Awake()
     {
         GameObject.Find(name).GetComponent<NonUIButton>().press.AddListener(ItsOver);
     }

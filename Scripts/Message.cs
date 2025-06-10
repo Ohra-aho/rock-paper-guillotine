@@ -11,12 +11,10 @@ public class Message : MonoBehaviour
     [HideInInspector] public bool activated = false;
     public List<ManAnimator.Frame> frames;
     ManAnimator MA;
-    LanguageController LG;
 
     private void Awake()
     {
         MA = GameObject.Find("man").GetComponent<ManAnimator>();
-        LG = GameObject.Find("EventSystem").GetComponent<LanguageController>();
 
         frames = new List<ManAnimator.Frame>();
         for(int i = 0; i < sprite_frames.Count; i++)
@@ -25,7 +23,7 @@ public class Message : MonoBehaviour
                 new ManAnimator.Frame(
                     MA.man_sheet[sprite_frames[i]], 
                     null, 
-                    LG.dialog[dialog_frames[i]]
+                    LanguageController.dialog[dialog_frames[i]]
                 )
             );
         }
