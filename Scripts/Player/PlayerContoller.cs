@@ -33,8 +33,8 @@ public class PlayerContoller : MonoBehaviour
 
     private void Start()
     {
-        LoadPlayerData();
         InstanciateRealWeapons();
+        LoadPlayerData();
         for(int i = 0; i < 6; i++)
         {
             Instantiate(choise_panel, transform);
@@ -302,19 +302,64 @@ public class PlayerContoller : MonoBehaviour
     public void LoadPlayerData()
     {
         PlayerData data = SaveSystem.LoadPlayerData();
-        
-        if(data != null)
+
+        if (data != null)
         {
             unlocked_wheel = data.gear;
             maxHealth = data.max_health;
             HB.SetMaxHealth(data.max_health);
             HB.SetCurrentHealth(data.current_health);
-            Debug.Log(data.max_health);
+            //Set correct wheel
+            PlayerWheels[0].SetActive(false);
+            PlayerWheels[unlocked_wheel].SetActive(true);
+            PlayerWheels[unlocked_wheel].transform.SetAsFirstSibling();
+            GameObject.Find("PlayerWeaponDetector").GetComponent<WeaponDetector>().weaponWheel = PlayerWheels[unlocked_wheel];
+
+            //Get equippend wapons from real inventory
+            for(int i = 0; i < data.equippend_weapons.Length; i++)
+            {
+                if(data.equippend_weapons[i] != null)
+                {
+                    GameObject weapon = FindWeaponFromIntentory(data.equippend_weapons[i]);
+                    
+                    if (weapon != null)
+                    {
+                        PlayerWheels[0].transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon = weapon;
+                        PlayerWheels[0].transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().displaySprite();
+                        EquipWeapon(PlayerWheels[0].transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>());
+                        RemoveWeaponByName(data.equippend_weapons[i]);
+                    }
+                }
+            }
         }
         else
         {
             HB.DisplayHealthBar(maxHealth);
             ChangeWheel();
+        }
+    }
+
+    public GameObject FindWeaponFromIntentory(string name)
+    {
+        for(int i = 0; i < TrueInventory.transform.childCount; i++)
+        {
+            if(TrueInventory.transform.GetChild(i).GetComponent<Weapon>().name == name)
+            {
+                return TrueInventory.transform.GetChild(i).gameObject;
+            }
+        }
+        return null;
+    }
+
+    public void RemoveWeaponByName(string name)
+    {
+        for (int i = 0; i < GetComponent<PlayerInventory>().items.Count; i++)
+        {
+            if (GetComponent<PlayerInventory>().items[i].GetComponent<Weapon>().name == name)
+            {
+                GetComponent<PlayerInventory>().items.RemoveAt(i);
+                break;
+            }
         }
     }
 }
