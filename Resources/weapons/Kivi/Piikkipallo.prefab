@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 5201385185178331687}
+  - component: {fileID: 2865161422314870810}
   m_Layer: 5
   m_Name: Piikkipallo
   m_TagString: Untagged
@@ -96,6 +96,8 @@ MonoBehaviour:
   type: 0
   damage: 1
   armor: 0
+  real_damage: 0
+  real_armor: 0
   name: Piikkipallo
   description: Jos otat vahinkoa, vastustaja ottaa yhden vahingon
   sprite: {fileID: 21300000, guid: 5d98066317e2fa94cbe8f69fee01af35, type: 3}
@@ -115,19 +117,22 @@ MonoBehaviour:
   takeDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5201385185178331687}
-        m_TargetAssemblyTypeName: SpikeBall, Assembly-CSharp
-        m_MethodName: Retaliate
-        m_Mode: 1
+      - m_Target: {fileID: 2865161422314870810}
+        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
+        m_MethodName: DealDamage
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 3098424137161797902}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
   win:
@@ -164,7 +169,7 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
---- !u!114 &5201385185178331687
+--- !u!114 &2865161422314870810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,7 +178,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9231a72076307b448e0f9056fe98708, type: 3}
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  amount: 1

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 6485294407745175847}
+  - component: {fileID: 8317546583071739834}
   m_Layer: 5
   m_Name: Vuori
   m_TagString: Untagged
@@ -92,9 +92,12 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  dead: 0
   type: 0
   damage: 1
   armor: 0
+  real_damage: 0
+  real_armor: 0
   name: Vuori
   description: +6 HP
   sprite: {fileID: 21300000, guid: 2676b53b5e768a04c8ee94af143243b5, type: 3}
@@ -117,6 +120,15 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -126,9 +138,9 @@ MonoBehaviour:
   equip:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6485294407745175847}
-        m_TargetAssemblyTypeName: Vuori, Assembly-CSharp
-        m_MethodName: Equip
+      - m_Target: {fileID: 8317546583071739834}
+        m_TargetAssemblyTypeName: HealthIncrease, Assembly-CSharp
+        m_MethodName: Increase
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -141,9 +153,9 @@ MonoBehaviour:
   unEquip:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6485294407745175847}
-        m_TargetAssemblyTypeName: Vuori, Assembly-CSharp
-        m_MethodName: Unequip
+      - m_Target: {fileID: 8317546583071739834}
+        m_TargetAssemblyTypeName: HealthIncrease, Assembly-CSharp
+        m_MethodName: Decrease
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -159,6 +171,9 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 1
@@ -166,7 +181,7 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
---- !u!114 &6485294407745175847
+--- !u!114 &8317546583071739834
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,7 +190,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5239e09532d8da24ea5d5ddc970645ec, type: 3}
+  m_Script: {fileID: 11500000, guid: b528c9add8506e74192aac87c7001b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HPbonus: 6
+  amount: 6

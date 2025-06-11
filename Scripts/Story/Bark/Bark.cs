@@ -70,7 +70,6 @@ public class Bark : MonoBehaviour
 
     public void TheBark()
     {
-        Debug.Log(true_bark);
         GameObject.Find("man").GetComponent<ManAnimator>().CreateABark(true_bark);
         triggered = true;
     }

@@ -91,11 +91,14 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  dead: 0
   type: 2
   damage: 2
   armor: 0
+  real_damage: 0
+  real_armor: 0
   name: Miekka
-  description: Ei ominaisuutta
+  description: 
   sprite: {fileID: 21300000, guid: 9f9b0bd2e9f8f774a94b01740e117aa5, type: 3}
   stacks: 0
   choisePhase:
@@ -152,6 +155,15 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -170,3 +182,13 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  self_destructive: 0
+  healing: 0
+  health: 0
+  kivi_synegry: 0
+  paperi_synergy: 0
+  sakset_synergy: 0
+  points: 0

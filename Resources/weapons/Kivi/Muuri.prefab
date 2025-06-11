@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 2278583403661379804}
+  - component: {fileID: 7710786801712310586}
   m_Layer: 5
   m_Name: Muuri
   m_TagString: Untagged
@@ -96,8 +97,10 @@ MonoBehaviour:
   type: 0
   damage: 1
   armor: 0
+  real_damage: 0
+  real_armor: 0
   name: Muuri
-  description: +1 HP, per. joka kolmas "kivi" jonka omistat
+  description: +1 HP, per. joka toinen "kivi" jonka omistat
   sprite: {fileID: 21300000, guid: 407c2ecb77ae7604e9f59f92cb5b0298, type: 3}
   stacks: 0
   choisePhase:
@@ -116,6 +119,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
     m_PersistentCalls:
       m_Calls: []
   draw:
@@ -159,7 +171,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2278583403661379804}
         m_TargetAssemblyTypeName: Muuri, Assembly-CSharp
-        m_MethodName: CalculateArmor
+        m_MethodName: CalculateHP
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -172,12 +184,15 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
-  health: 0
+  health: 1
   kivi_synegry: 1
   paperi_synergy: 0
-  sakset_synergy: 0
+  sakset_synergy: 1
   points: 0
 --- !u!114 &2278583403661379804
 MonoBehaviour:
@@ -191,3 +206,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 007ee048b46cd0646b696f67ec7e3016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7710786801712310586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b528c9add8506e74192aac87c7001b8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 0

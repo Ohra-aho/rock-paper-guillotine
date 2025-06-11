@@ -6,6 +6,8 @@ public static class SaveSystem
 {
     public static string story_data = "story_data";
     public static string bark_data = "bark_data";
+    public static string player_weapon_data = "player_weapon_data";
+    public static string player_data = "player_data";
 
     //Utilities
     private static string MainPath(string file)
@@ -54,7 +56,6 @@ public static class SaveSystem
         stream.Close();
     } 
     
-
     public static StoryData LoadStoryData()
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -70,7 +71,6 @@ public static class SaveSystem
     }
 
     //Barks
-
     public static void SaveBarks(Bark[] barks)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -100,6 +100,59 @@ public static class SaveSystem
         if (stream != null)
         {
             data = formatter.Deserialize(stream) as BarkData[];
+            stream.Close();
+            return data;
+        }
+        return null;
+    }
+
+    //Player weapons
+    public static void SavePlayerWeapons(WeaponData[] weapons, bool dead)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = OpenFileStream(player_weapon_data, FileMode.Create);
+
+        if (dead)
+        {
+            //Some sort of rogue lite shit
+        }
+
+        formatter.Serialize(stream, weapons);
+        stream.Close();
+    }
+
+    public static WeaponData[] LoadPlayerWeapons()
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = OpenFileStream(player_weapon_data, FileMode.Open);
+
+        if(stream != null)
+        {
+            WeaponData[] data = formatter.Deserialize(stream) as WeaponData[];
+            stream.Close();
+            return data;
+        }
+        return null;
+    }
+
+    //Player data
+    public static void SavePlayerData(PlayerData player)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = OpenFileStream(player_data, FileMode.Create);
+
+        formatter.Serialize(stream, player);
+        stream.Close();
+    } 
+    
+    public static PlayerData LoadPlayerData()
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = OpenFileStream(player_data, FileMode.Open);
+
+        if(stream != null)
+        {
+            PlayerData data = formatter.Deserialize(stream) as PlayerData;
             stream.Close();
             return data;
         }

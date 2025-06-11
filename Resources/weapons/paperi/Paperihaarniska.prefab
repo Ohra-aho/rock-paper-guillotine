@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 8578841849468338333}
+  - component: {fileID: -1253519416060159144}
   m_Layer: 5
   m_Name: Paperihaarniska
   m_TagString: Untagged
@@ -92,11 +93,15 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  dead: 0
   type: 1
   damage: 1
   armor: 4
+  real_damage: 0
+  real_armor: 0
   name: Paperihaarniska
-  description: "Panssari pienenee jokaisesta kerrasta, kun t\xE4t\xE4 asetta k\xE4ytet\xE4\xE4n."
+  description: "Panssari pienenee jokaisesta kerrasta, kun t\xE4t\xE4 asetta k\xE4ytet\xE4\xE4n.
+    Tuhoutuu kun panssari on 0."
   sprite: {fileID: 21300000, guid: e5020026f633a1143b7935acb1ff5f8d, type: 3}
   stacks: 0
   choisePhase:
@@ -129,6 +134,15 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -147,7 +161,10 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  self_destructive: 1
   healing: 0
   health: 0
   kivi_synegry: 0
@@ -166,3 +183,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27f4aa6440f5f448b1be98efe9662c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1253519416060159144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  used_ones: 0

@@ -98,7 +98,8 @@ public class HealthBar : MonoBehaviour
         if (maxHealth > 15) maxHealth = 15;
         for (int i = 0; i < maxHealth; i++)
         {
-            Instantiate(heart, this.transform);
+            GameObject new_heart = Instantiate(heart, this.transform);
+            new_heart.GetComponent<Heart>().heal();
         }
         AddHeartSlots();
     }
@@ -146,7 +147,8 @@ public class HealthBar : MonoBehaviour
         //{
             for (int i = 0; i < amount; i++)
             {
-                Instantiate(heart, this.transform);
+                GameObject new_heart = Instantiate(heart, this.transform);
+                new_heart.GetComponent<Heart>().heal();
             }
         //}
         AddHeartSlots();
@@ -193,5 +195,36 @@ public class HealthBar : MonoBehaviour
             }
         }
         return amount;
+    }
+
+    public void SetMaxHealth(int amount)
+    {
+        DestroyHealthBar();
+        for(int i = 0; i < amount; i++)
+        {
+            GameObject new_heart = Instantiate(heart, transform);
+            new_heart.GetComponent<Heart>().UtilEmpty();
+        }
+        AddHeartSlots();
+    }
+
+    public void SetCurrentHealth(int amount)
+    {
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            if(i < amount)
+            {
+                if(transform.GetChild(i).GetComponent<Heart>())
+                {
+                    transform.GetChild(i).GetComponent<Heart>().heal();
+                }
+            } else
+            {
+                if (transform.GetChild(i).GetComponent<Heart>())
+                {
+                    transform.GetChild(i).GetComponent<Heart>().UtilEmpty();
+                }
+            }
+        }
     }
 }

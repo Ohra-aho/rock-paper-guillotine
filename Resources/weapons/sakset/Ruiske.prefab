@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -186217803599990264}
   - component: {fileID: 5153217829464244253}
+  - component: {fileID: 9178696264602828713}
   m_Layer: 5
   m_Name: Ruiske
   m_TagString: Untagged
@@ -93,11 +94,14 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  dead: 0
   type: 2
   damage: 1
   armor: 0
+  real_damage: 0
+  real_armor: 0
   name: Ruiske
-  description: 'Parantaa 2 vahinkoa ja '
+  description: "Parantaa 2 vahinkoa ja tuhoaa itsens\xE4."
   sprite: {fileID: 21300000, guid: 0fc2116db9d52bb4594be4517edc9f38, type: 3}
   stacks: 0
   choisePhase:
@@ -106,8 +110,8 @@ MonoBehaviour:
   resultPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5153217829464244253}
-        m_TargetAssemblyTypeName: Ruiske, Assembly-CSharp
+      - m_Target: {fileID: 9178696264602828713}
+        m_TargetAssemblyTypeName: Healing, Assembly-CSharp
         m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
@@ -142,6 +146,15 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -158,6 +171,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onDestruction:
+    m_PersistentCalls:
+      m_Calls: []
+  eachTurn:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 1
@@ -193,3 +209,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heal: 2
+--- !u!114 &9178696264602828713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 2

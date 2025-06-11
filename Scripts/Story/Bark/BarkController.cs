@@ -15,7 +15,6 @@ public class BarkController : MonoBehaviour
     {
         int amount = transform.childCount;
         Bark[] barks = new Bark[10];
-        Debug.Log(amount);
         for(int i = 0; i < amount; i++)
         {
             barks[i] = transform.GetChild(i).GetComponent<Bark>();

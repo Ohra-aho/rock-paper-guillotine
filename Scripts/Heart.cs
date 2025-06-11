@@ -9,9 +9,9 @@ public class Heart : MonoBehaviour
 
     public bool healthy = true;
 
-    private void Start()
+    private void Awake()
     {
-        heal();
+        //heal();
     }
 
     public void damage()
@@ -23,6 +23,20 @@ public class Heart : MonoBehaviour
     public void heal()
     {
         GetComponent<Test>().PlayAnimation("Heal");
+        healthy = true;
+    }
+
+    public void UtilEmpty()
+    {
+        GetComponent<SpriteRenderer>().color = new Color(0.39f, 0.39f, 0.39f);
+        transform.GetChild(0).GetComponent<Light2D>().intensity = 0;
+        healthy = false;
+    }
+
+    public void UtilFull()
+    {
+        GetComponent<SpriteRenderer>().color = new Color(1f, 0f, 0f);
+        transform.GetChild(0).GetComponent<Light2D>().intensity = 2;
         healthy = true;
     }
 }

@@ -10,7 +10,7 @@ public class PlayerContoller : MonoBehaviour
     public HealthBar HB;
 
     //[HideInInspector] public int maxHealth = 1;
-    private int maxHealth = 20;
+    private int maxHealth = 2;
     [HideInInspector] public int damage = 0;
     [HideInInspector] public int armor = 0;
 
@@ -33,9 +33,8 @@ public class PlayerContoller : MonoBehaviour
 
     private void Start()
     {
-        HB.DisplayHealthBar(maxHealth);
+        LoadPlayerData();
         InstanciateRealWeapons();
-        ChangeWheel();
         for(int i = 0; i < 6; i++)
         {
             Instantiate(choise_panel, transform);
@@ -125,7 +124,9 @@ public class PlayerContoller : MonoBehaviour
     public void InstanciateRealWeapons()
     {
         GetComponent<PlayerInventory>().AddAllWeapons();
-        for (int i = 0; i <GetComponent<PlayerInventory>().items.Count; i++)
+        TrueInventory.GetComponent<WeaponController>().LoadPlayerWeapons();
+
+        for (int i = 0; i < GetComponent<PlayerInventory>().items.Count; i++)
         {
             GameObject weapon = Instantiate(GetComponent<PlayerInventory>().items[i], TrueInventory.transform);
             weapon.GetComponent<Weapon>().player = true;
@@ -286,6 +287,34 @@ public class PlayerContoller : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+
+    //Save functions
+
+    public void SavePlayerData()
+    {
+        PlayerData data = new PlayerData(this);
+        SaveSystem.SavePlayerData(data);
+    }
+
+    public void LoadPlayerData()
+    {
+        PlayerData data = SaveSystem.LoadPlayerData();
+        
+        if(data != null)
+        {
+            unlocked_wheel = data.gear;
+            maxHealth = data.max_health;
+            HB.SetMaxHealth(data.max_health);
+            HB.SetCurrentHealth(data.current_health);
+            Debug.Log(data.max_health);
+        }
+        else
+        {
+            HB.DisplayHealthBar(maxHealth);
+            ChangeWheel();
         }
     }
 }

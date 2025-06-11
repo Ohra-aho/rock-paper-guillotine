@@ -146,7 +146,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.2028302, b: 0.2028302, a: 1}
-  m_Intensity: 2
+  m_Intensity: 0
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 9d49786a00000000e5372d11f527860ac1c53b52
@@ -271,7 +271,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 838aa1e8a9eeb33498244229184381bb, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
