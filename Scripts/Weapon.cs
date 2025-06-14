@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour
 {
+    public BuffData[] buff_data; //Used in buff loading
+
     [HideInInspector] public bool player;
     [HideInInspector] public Weapon opponent;
     [HideInInspector] public bool penetrating = false;

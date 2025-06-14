@@ -37,7 +37,7 @@ public class Buff : MonoBehaviour
     public bool awake;
     public bool onDestruction;
 
-    public bool temporary;
+    //public bool temporary;
     public int timer;
 
     private void Awake()

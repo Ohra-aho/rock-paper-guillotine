@@ -47,6 +47,23 @@ public class DropDetector : MonoBehaviour
         player.GetComponent<PlayerContoller>().DisplayChoises();
     }
 
+    public void DisplayLoadedWeapon(GameObject newWeapon)
+    {
+        if (weaponHolder.GetComponent<WeaponSprite>().weapon != null)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>()
+                .UnequipWeapon(weaponHolder.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>());
+        }
+        weaponHolder.GetComponent<WeaponSprite>().weapon = newWeapon;
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>()
+                .EquipWeapon(weaponHolder.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>());
+
+        weaponHolder.GetComponent<WeaponSprite>().displaySprite();
+        GameObject player = GameObject.FindGameObjectWithTag("Player").gameObject;
+        player.GetComponent<PlayerContoller>().DisplayChoises();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.GetComponent<DragNDrop>())

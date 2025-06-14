@@ -33,12 +33,12 @@ public class PlayerContoller : MonoBehaviour
 
     private void Start()
     {
-        InstanciateRealWeapons();
-        LoadPlayerData();
-        for(int i = 0; i < 6; i++)
+        for (int i = 0; i < 6; i++)
         {
             Instantiate(choise_panel, transform);
         }
+        InstanciateRealWeapons();
+        LoadPlayerData();
     }
 
     private void Update()
@@ -281,7 +281,7 @@ public class PlayerContoller : MonoBehaviour
             {
                 for(int j = 0; j < weapon.transform.childCount; j++)
                 {
-                    if(weapon.transform.GetChild(j).GetComponent<Buff>().temporary)
+                    if(weapon.transform.GetChild(j).GetComponent<Buff>().timer > 0)
                     {
                         weapon.transform.GetChild(j).GetComponent<Buff>().TickDown();
                     }
@@ -305,10 +305,12 @@ public class PlayerContoller : MonoBehaviour
 
         if (data != null)
         {
+            //Set health
             unlocked_wheel = data.gear;
             maxHealth = data.max_health;
             HB.SetMaxHealth(data.max_health);
             HB.SetCurrentHealth(data.current_health);
+
             //Set correct wheel
             PlayerWheels[0].SetActive(false);
             PlayerWheels[unlocked_wheel].SetActive(true);
@@ -324,19 +326,61 @@ public class PlayerContoller : MonoBehaviour
                     
                     if (weapon != null)
                     {
-                        PlayerWheels[0].transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon = weapon;
-                        PlayerWheels[0].transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().displaySprite();
-                        EquipWeapon(PlayerWheels[0].transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>());
+                        WeaponSprite ws = PlayerWheels[0].transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>();
+                        DropDetector dd = PlayerWheels[0].transform.GetChild(i).GetChild(1).GetComponent<DropDetector>();
+                        dd.DisplayLoadedWeapon(weapon);
+                        //ws.weapon = weapon;
+                        //ws.displaySprite();
+                        ws.weapon.GetComponent<Weapon>().player = true;
+                        if (ws.weapon.GetComponent<BuffController>())
+                        {
+                            ws.weapon.GetComponent<BuffController>().Inisiate();
+                        }
+                        EquipWeapon(ws.weapon.GetComponent<Weapon>());
+                        
                         RemoveWeaponByName(data.equippend_weapons[i]);
                     }
                 }
             }
+
+            LoadBuffData();
         }
         else
         {
             HB.DisplayHealthBar(maxHealth);
             ChangeWheel();
         }
+    }
+
+    private void LoadBuffData()
+    {
+        for(int i = 0; i < TrueInventory.transform.childCount; i++)
+        {
+            Weapon weapon = TrueInventory.transform.GetChild(i).GetComponent<Weapon>();
+            if(weapon.buff_data.Length > 0)
+            {
+                for(int j = 0; j < weapon.buff_data.Length; j++)
+                {
+                    Buff target_buff = FindBuffById(weapon.buff_data[j].id, weapon.gameObject);
+                    target_buff.used = weapon.buff_data[j].used;
+                    target_buff.timer = weapon.buff_data[j].timer;
+                }
+            }
+        }
+    }
+
+    private Buff FindBuffById(string id, GameObject target_weapon)
+    {
+        for(int i = 0; i < target_weapon.transform.childCount; i++)
+        {
+            Buff buff = target_weapon.transform.GetChild(i).GetComponent<Buff>();
+            if(buff.id == id)
+            {
+                return buff;
+            }
+        }
+        Debug.Log("Correct buff not found");
+        return null;
     }
 
     public GameObject FindWeaponFromIntentory(string name)

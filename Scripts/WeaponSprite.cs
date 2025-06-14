@@ -123,9 +123,6 @@ public class WeaponSprite : MonoBehaviour
                 }
             }
         }
-
-        
-
     }
 
     public void DestroyInfo()

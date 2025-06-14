@@ -217,7 +217,7 @@ public class EnemyController : MonoBehaviour
                 {
                     if (child.GetChild(j).GetComponent<Buff>())
                     {
-                        if (child.GetChild(j).GetComponent<Buff>().temporary)
+                        if (child.GetChild(j).GetComponent<Buff>().timer > 0)
                         {
                             child.GetChild(j).GetComponent<Buff>().TickDown();
                         }

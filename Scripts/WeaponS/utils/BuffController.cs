@@ -65,14 +65,20 @@ public class BuffController : MonoBehaviour
 
     public void Equip()
     {
-        buff_on = true;
-        AddBuffs();
+        if(!buff_on)
+        {
+            buff_on = true;
+            AddBuffs();
+        }
     }
 
     public void Unequip()
     {
-        buff_on = false;
-        AddBuffs();
+        if(buff_on)
+        {
+            buff_on = false;
+            AddBuffs();
+        }
     }
 
     public void AddBuffs()
@@ -119,7 +125,6 @@ public class BuffController : MonoBehaviour
             new_buff.awake = awake;
             new_buff.win = win;
             new_buff.lose = lose;
-            new_buff.temporary = temporary;
             new_buff.timer = timer;
             if(special != null) new_buff.GetComponent<Buff>().special = special;
             if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
