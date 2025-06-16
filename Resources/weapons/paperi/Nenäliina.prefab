@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5419796846845610242}
   - component: {fileID: 6873274728737089563}
   - component: {fileID: 7393566699563639282}
+  - component: {fileID: 4649406059305924212}
   m_Layer: 5
   m_Name: "Nen\xE4liina"
   m_TagString: Untagged
@@ -91,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -221,3 +223,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 1
+--- !u!114 &4649406059305924212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stacks: 0
+  stack_limit: 0

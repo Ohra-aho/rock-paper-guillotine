@@ -7,11 +7,11 @@ public class Tykistö : MonoBehaviour
     public int damage;
     public void DealDamage()
     {
-        if(GetComponent<Weapon>().stacks <= 3)
+        if(GetComponent<Stacking>().stacks <= 3)
         {
-            GetComponent<Weapon>().stacks++;
+            GetComponent<Stacking>().IncreaseStacks(1);
             GetComponent<Weapon>().EffectDamage(damage);
-            damage = 3 - GetComponent<Weapon>().stacks;
+            damage = 3 - GetComponent<Stacking>().stacks;
         }
     }
 }

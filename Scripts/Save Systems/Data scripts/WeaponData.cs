@@ -22,7 +22,7 @@ public class WeaponData
             case MainController.Choise.hyödytön: type = "hyödytön"; break;
             case MainController.Choise.voittamaton: type = "voittamaton"; break;
         }
-        stacks = weapon.stacks;
+        if(weapon.GetComponent<Stacking>()) stacks = weapon.GetComponent<Stacking>().stacks;
 
         buffs = ExtractBuffInfo(weapon);
 

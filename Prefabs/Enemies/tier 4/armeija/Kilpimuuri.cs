@@ -26,10 +26,10 @@ public class Kilpimuuri : MonoBehaviour
 
     public void IncreaseStack()
     {
-        if (GetComponent<Weapon>().stacks <= 4)
+        if (GetComponent<Stacking>().stacks <= 4)
         {
-            GetComponent<Weapon>().stacks++;
-            GetComponent<Weapon>().armor = 4 - GetComponent<Weapon>().stacks;
+            GetComponent<Stacking>().IncreaseStacks(1);
+            GetComponent<Weapon>().armor = 4 - GetComponent<Stacking>().stacks;
             if (GetComponent<Weapon>().armor < 0)
             {
                 GetComponent<Weapon>().armor = 0;

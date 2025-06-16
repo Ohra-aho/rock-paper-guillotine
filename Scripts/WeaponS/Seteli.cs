@@ -10,7 +10,10 @@ public class Seteli : MonoBehaviour
         Transform RI = GameObject.FindGameObjectWithTag("RI").transform;
         for(int i = 0; i < RI.childCount; i++)
         {
-            RI.GetChild(i).GetComponent<Weapon>().stacks += 1;
+            if(RI.GetChild(i).GetComponent<Stacking>())
+            {
+                RI.GetChild(i).GetComponent<Stacking>().IncreaseStacks(1);
+            }
         }
     }
 
@@ -19,7 +22,10 @@ public class Seteli : MonoBehaviour
         Transform RI = GameObject.FindGameObjectWithTag("RI").transform;
         for (int i = 0; i < RI.childCount; i++)
         {
-            RI.GetChild(i).GetComponent<Weapon>().stacks -= 1;
+            if (RI.GetChild(i).GetComponent<Stacking>())
+            {
+                RI.GetChild(i).GetComponent<Stacking>().DecreaseStacks(1);
+            }
         }
     }
 }

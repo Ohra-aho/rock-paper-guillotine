@@ -13,11 +13,11 @@ public class Myrkky : MonoBehaviour
 
     public void IncreaseStacks(Weapon weapon)
     {
-        GetComponent<Weapon>().stacks++;
+        GetComponent<Stacking>().IncreaseStacks(1);
     }
 
     public void PoisonDamage()
     {
-        GetComponent<Weapon>().EffectDamage(GetComponent<Weapon>().stacks);
+        GetComponent<Weapon>().EffectDamage(GetComponent<Stacking>().stacks);
     }
 }

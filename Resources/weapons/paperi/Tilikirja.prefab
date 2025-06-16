@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -7071840105541284439}
+  - component: {fileID: 6805063357800551933}
   m_Layer: 5
   m_Name: Tilikirja
   m_TagString: Untagged
@@ -89,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -102,7 +104,6 @@ MonoBehaviour:
   description: "+1 piste per jokainen piste aseissasi. Joka 10 pistett\xE4 antaa
     +1 vahinkoon."
   sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
-  stacks: 0
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -182,3 +183,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f13c0497fa4e34dae45708a4ad544f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6805063357800551933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stacks: 0
+  stack_limit: 0
+  LoadFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7071840105541284439}
+        m_TargetAssemblyTypeName: Tilikirja, Assembly-CSharp
+        m_MethodName: CalculateDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

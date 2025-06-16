@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 5460494944857187336}
   - component: {fileID: -2545923008516002973}
+  - component: {fileID: -8165146615769782829}
   m_Layer: 5
   m_Name: Pyssy
   m_TagString: Untagged
@@ -90,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -103,7 +105,6 @@ MonoBehaviour:
   description: "-1 vahinkoon aina k\xE4yt\xF6n j\xE4lkeen. Tuhoutuu, kun vahinko
     on 0."
   sprite: {fileID: 21300000, guid: fb3f64a9df7a0f244bcde7be6bfafdeb, type: 3}
-  stacks: 0
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -196,3 +197,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   used_ones: 0
+--- !u!114 &-8165146615769782829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stacks: 0
+  stack_limit: 0
+  LoadFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5460494944857187336}
+        m_TargetAssemblyTypeName: Pyssy, Assembly-CSharp
+        m_MethodName: CalculateDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

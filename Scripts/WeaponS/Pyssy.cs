@@ -4,20 +4,34 @@ using UnityEngine;
 
 public class Pyssy : MonoBehaviour
 {
+    private void Awake()
+    {
+        GetComponent<Stacking>().stack_limit = 6;
+    }
     public void IncreaseStack()
     {
-        if(GetComponent<Weapon>().stacks <= 6)
-        {
-            GetComponent<Weapon>().stacks++;
-            GetComponent<Weapon>().damage = 6 - GetComponent<Weapon>().stacks;
-            if (GetComponent<Weapon>().damage < 0)
+        //if(GetComponent<Stacking>().stacks <= 6)
+        //{
+            GetComponent<Stacking>().IncreaseStacks(1);
+            CalculateDamage();
+            /*if (GetComponent<Weapon>().damage < 0)
             {
                 GetComponent<Weapon>().damage = 0;
-            }
-            if(GetComponent<Weapon>().damage == 0)
+            }*/
+
+            if(GetComponent<Weapon>().player)
             {
-                GetComponent<SelfDestruct>().Destruct();
+                if (GetComponent<Weapon>().damage == 0)
+                {
+                    GetComponent<SelfDestruct>().Destruct();
+                }
             }
-        }
+            
+        //}
+    }
+
+    public void CalculateDamage()
+    {
+        GetComponent<Weapon>().damage = 6 - GetComponent<Stacking>().stacks;
     }
 }

@@ -7,8 +7,8 @@ public class BloodTank : MonoBehaviour
     int current_health_bonus = 0;
     public void IncreaseStacks()
     {
-        GetComponent<Weapon>().stacks++;
-        if(GetComponent<Weapon>().stacks > 0 && GetComponent<Weapon>().stacks % 3 == 0)
+        GetComponent<Stacking>().IncreaseStacks(1);
+        if(GetComponent<Stacking>().stacks > 0 && GetComponent<Stacking>().stacks % 1 == 0)
         {
             current_health_bonus++;
             IncreaseHealth(1);
@@ -35,5 +35,10 @@ public class BloodTank : MonoBehaviour
     public void UnEquip()
     {
         DecreaseHealth(current_health_bonus);
+    }
+
+    public void LoadHealth()
+    {
+        current_health_bonus = GetComponent<Stacking>().GiveAmountOfStackDividedBy(3);
     }
 }

@@ -36,17 +36,24 @@ public class WeaponController : MonoBehaviour
             for(int i = 0; i < weapons.Length; i++)
             {
                 string weapon_path = "weapons/"+weapons[i].type+"/"+weapons[i].name; // needs soem sort of ID system. Names are too fluid for this
-
                 GameObject loaded_weapon = Resources.Load<GameObject>(weapon_path);
                 if (loaded_weapon != null) 
                 { 
                     GameObject weapon = Instantiate(loaded_weapon, transform);
-                    weapon.GetComponent<Weapon>().stacks = weapons[i].stacks;
+
+                    if (weapon.GetComponent<Stacking>()) { 
+                        weapon.GetComponent<Stacking>().stacks = weapons[i].stacks;
+                        if(weapon.GetComponent<Stacking>().LoadFunction != null)
+                        {
+                            weapon.GetComponent<Stacking>().LoadFunction.Invoke();
+                        }
+                    }
                     weapon.GetComponent<Weapon>().buff_data = ExtractRelevantBuffs(weapons[i].buffs);
                     if(weapon.GetComponent<SelfDestruct>())
                     {
                         weapon.GetComponent<SelfDestruct>().used_ones = weapons[i].self_destruct_used;
                     }
+
                 }
                 else Debug.Log(weapons[i].name + " not found");
             }

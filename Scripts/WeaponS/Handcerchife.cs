@@ -6,6 +6,7 @@ public class Handcerchife : MonoBehaviour
 {
     private void Awake()
     {
+        GetComponent<Stacking>().stack_limit = 3;
         GetComponent<BuffController>().special = IncreaseStack;
         GetComponent<BuffController>().takeDamage = true;
         GetComponent<BuffController>().dealDamage = true;
@@ -14,11 +15,11 @@ public class Handcerchife : MonoBehaviour
 
     public void IncreaseStack(Weapon weapon)
     {
-        GetComponent<Weapon>().stacks++;
-        if(GetComponent<Weapon>().stacks == 3)
+        GetComponent<Stacking>().IncreaseStacks(1);
+        if(GetComponent<Stacking>().stacks == 3)
         {
             GetComponent<EffectDamage>().DealDamage(weapon);
-            GetComponent<Weapon>().stacks = 0;
+            GetComponent<Stacking>().stacks = 0;
         }
     }
 }

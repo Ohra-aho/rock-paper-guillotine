@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 8947393005657488649}
+  - component: {fileID: -8520241702268771662}
   m_Layer: 5
   m_Name: Veritankki
   m_TagString: Untagged
@@ -89,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -101,7 +103,6 @@ MonoBehaviour:
   name: Veritankki
   description: Aina kun tekee vahinkoa. +1 piste. Joka kolmas piste +1 HP.
   sprite: {fileID: 21300000, guid: 0adba0232cb922b41ba2834340a6f645, type: 3}
-  stacks: 0
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -205,3 +206,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebba13a96142f142986ab1b98dd155a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8520241702268771662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stacks: 0
+  stack_limit: 0
+  LoadFunction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8947393005657488649}
+        m_TargetAssemblyTypeName: BloodTank, Assembly-CSharp
+        m_MethodName: LoadHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

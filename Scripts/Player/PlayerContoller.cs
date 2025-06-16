@@ -320,6 +320,7 @@ public class PlayerContoller : MonoBehaviour
             //Get equippend wapons from real inventory
             for(int i = 0; i < data.equippend_weapons.Length; i++)
             {
+                Debug.Log("wtf");
                 if(data.equippend_weapons[i] != null)
                 {
                     GameObject weapon = FindWeaponFromIntentory(data.equippend_weapons[i]);

@@ -8,11 +8,13 @@ public class Kirja : MonoBehaviour
 
     public void IncreaseStacks()
     {
-        GetComponent<Weapon>().stacks++;
-        if (GetComponent<Weapon>().stacks >= 2)
-        {
-            GetComponent<Weapon>().damage = 1 + GetComponent<Weapon>().stacks / 2;
-        }
+        GetComponent<Stacking>().IncreaseStacks(1);
+        CalculateDamage();
     }
-    
+
+    public void CalculateDamage()
+    {
+        GetComponent<Weapon>().damage = 1 + GetComponent<Stacking>().GiveAmountOfStackDividedBy(2);
+    }
+
 }

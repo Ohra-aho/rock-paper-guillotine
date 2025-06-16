@@ -12,9 +12,9 @@ public class TreasureChest : MonoBehaviour
         for(int i = 0; i < wheel.transform.childCount-1; i++)
         {
             GameObject weapon = wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon;
-            if (weapon.GetComponent<Weapon>().points)
+            if (weapon.GetComponent<Stacking>())
             {
-                weapon.GetComponent<Weapon>().stacks++;
+                weapon.GetComponent<Stacking>().IncreaseStacks(1);
             }
         }
     }

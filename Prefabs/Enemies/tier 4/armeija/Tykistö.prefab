@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -5355994565532053554}
+  - component: {fileID: -4263594918213079095}
   m_Layer: 5
   m_Name: "Tykist\xF6"
   m_TagString: Untagged
@@ -89,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -96,6 +98,8 @@ MonoBehaviour:
   type: 0
   damage: 0
   armor: 0
+  real_damage: 0
+  real_armor: 0
   name: "Tykist\xF6"
   description: "Tekee 3 vahinkoa k\xE4yt\xF6n j\xE4lkeen. T\xE4m\xE4 vahinko pienenee
     joka kerta."
@@ -131,6 +135,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
   win:
     m_PersistentCalls:
       m_Calls: []
@@ -155,6 +162,9 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -175,3 +185,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
+--- !u!114 &-4263594918213079095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stacks: 0
+  stack_limit: 3
