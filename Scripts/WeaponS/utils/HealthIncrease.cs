@@ -8,12 +8,15 @@ public class HealthIncrease : MonoBehaviour
 
     public void Increase()
     {
+        Debug.Log("Increasing" +
+            "");
         HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
         HB.IncreaseHealthBar(amount);
     }
 
     public void Decrease()
     {
+        Debug.Log("Decreasing");
         HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
         HB.DecreaseHealthBar(amount);
     }

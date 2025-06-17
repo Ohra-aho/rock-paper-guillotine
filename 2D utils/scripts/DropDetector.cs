@@ -56,8 +56,8 @@ public class DropDetector : MonoBehaviour
         }
         weaponHolder.GetComponent<WeaponSprite>().weapon = newWeapon;
 
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>()
-                .EquipWeapon(weaponHolder.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>());
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>()
+        //        .EquipWeapon(weaponHolder.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>());
 
         weaponHolder.GetComponent<WeaponSprite>().displaySprite();
         GameObject player = GameObject.FindGameObjectWithTag("Player").gameObject;

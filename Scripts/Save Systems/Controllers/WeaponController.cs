@@ -37,6 +37,7 @@ public class WeaponController : MonoBehaviour
             {
                 string weapon_path = "weapons/"+weapons[i].type+"/"+weapons[i].name; // needs soem sort of ID system. Names are too fluid for this
                 GameObject loaded_weapon = Resources.Load<GameObject>(weapon_path);
+
                 if (loaded_weapon != null) 
                 { 
                     GameObject weapon = Instantiate(loaded_weapon, transform);

@@ -320,7 +320,6 @@ public class PlayerContoller : MonoBehaviour
             //Get equippend wapons from real inventory
             for(int i = 0; i < data.equippend_weapons.Length; i++)
             {
-                Debug.Log("wtf");
                 if(data.equippend_weapons[i] != null)
                 {
                     GameObject weapon = FindWeaponFromIntentory(data.equippend_weapons[i]);
@@ -330,15 +329,17 @@ public class PlayerContoller : MonoBehaviour
                         WeaponSprite ws = PlayerWheels[0].transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>();
                         DropDetector dd = PlayerWheels[0].transform.GetChild(i).GetChild(1).GetComponent<DropDetector>();
                         dd.DisplayLoadedWeapon(weapon);
-                        //ws.weapon = weapon;
-                        //ws.displaySprite();
+
                         ws.weapon.GetComponent<Weapon>().player = true;
                         if (ws.weapon.GetComponent<BuffController>())
                         {
                             ws.weapon.GetComponent<BuffController>().Inisiate();
                         }
-                        EquipWeapon(ws.weapon.GetComponent<Weapon>());
-                        
+
+                        if (!ws.weapon.GetComponent<HealthIncrease>()) ws.weapon.GetComponent<Weapon>().equip.Invoke();
+                        ws.weapon.GetComponent<Weapon>().player = true;
+
+
                         RemoveWeaponByName(data.equippend_weapons[i]);
                     }
                 }
