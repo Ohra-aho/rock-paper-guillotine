@@ -326,8 +326,8 @@ public class PlayerContoller : MonoBehaviour
                     
                     if (weapon != null)
                     {
-                        WeaponSprite ws = PlayerWheels[0].transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>();
-                        DropDetector dd = PlayerWheels[0].transform.GetChild(i).GetChild(1).GetComponent<DropDetector>();
+                        WeaponSprite ws = PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>();
+                        DropDetector dd = PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(1).GetComponent<DropDetector>();
                         dd.DisplayLoadedWeapon(weapon);
 
                         ws.weapon.GetComponent<Weapon>().player = true;
