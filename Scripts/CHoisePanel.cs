@@ -14,8 +14,9 @@ public class CHoisePanel : MonoBehaviour
 
     private void Update()
     {
-        GetComponent<NonUIButton>().individual_interactable 
-            = transform.parent.parent.parent.GetComponent<Machine>().choise_panel_active;
+        GetComponent<NonUIButton>().individual_interactable
+            = GameObject.Find("EnemyHolder").GetComponent<EnemyController>().in_battle;
+            //= transform.parent.parent.parent.GetComponent<Machine>().choise_panel_active;
     }
 
     public void DisplayName()

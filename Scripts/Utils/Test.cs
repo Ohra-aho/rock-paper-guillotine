@@ -96,14 +96,4 @@ public class Test : MonoBehaviour
     {
         transform.GetChild(LastIndex()).GetChild(clip).GetComponent<AudioPlayer>().StopLoop();
     }
-
-    public class OneWaySwitch
-    {
-        bool active;
-
-        public void ToggleSwitch()
-        {
-            active = !active;
-        }
-    }
 }

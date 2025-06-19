@@ -33,7 +33,7 @@ public class MainController : MonoBehaviour
 
     public List<GameObject> playthroughts;
 
-    [HideInInspector] public bool buttons_active = true;
+     public bool buttons_active = true;
 
     public int reward_tier = 1;
 
@@ -56,17 +56,7 @@ public class MainController : MonoBehaviour
 
     private void Update()
     {
-        if(dead)
-        {
-            if(startButton.GetComponent<StartButton>().sidesOutOfView && !endTriggered)
-            {
-                endTriggered = true;
-                quilliotine.GetComponent<Test>().PlayAnimation("Lose");
-            }
-        } else
-        {
-            GetComponent<StoryController>().InvokeNextEvent();
-        }
+        GetComponent<StoryController>().InvokeNextEvent();
     }
 
     public void CompareChoises()

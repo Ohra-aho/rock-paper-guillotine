@@ -40,6 +40,9 @@ public class NonUIButton : MonoBehaviour
         if(press != null && interactable)
         {
             press.Invoke();
+        } else if(!individual_interactable)
+        {
+            Debug.Log("Uninteractable");
         }
     }
 
@@ -49,6 +52,9 @@ public class NonUIButton : MonoBehaviour
         {
             over.Invoke();
             GetComponent<SpriteRenderer>().color = new Color(hoverTint, hoverTint, hoverTint);
+        } else
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
         }
     }
 

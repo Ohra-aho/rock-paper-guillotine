@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
     private GameObject chosenWeapon;
 
     public bool dead;
+    public bool in_battle = false;
 
     public delegate int ChoiseMaker(MainController.Choise palyerChoise);
     public ChoiseMaker choiseMaker;

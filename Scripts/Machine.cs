@@ -10,17 +10,14 @@ public class Machine : MonoBehaviour
     public GameObject startButton;
     public GameObject playerWheelHolder;
     public GameObject StoryEventHolder;
+    public GameObject Guilliotine;
+    public GameObject MC;
 
     public GameObject player;
 
-    public bool choise_panel_active = false;
+    public bool choise_panel_active = true;
 
     public List<GameObject> sparks;
-
-    private void Update()
-    {
-        //CheckAnimation();
-    }
 
     public void ChangeGear()
     {
@@ -43,26 +40,21 @@ public class Machine : MonoBehaviour
     public void AnimationStart()
     {
         rightSide.transform.GetChild(3).GetComponent<EnemyController>().HandleEnemy();
-        ActivateStartButton();
-        startButton.GetComponent<StartButton>().sidesOutOfView = true;
-        playerWheelHolder.GetComponent<NonUIButton>().interactable = true;
+        EndTheGame(); //Currently the only way to lose
     }
 
-    public void AnimationEnd()
+    public void ToggleInBattle()
     {
-        startButton.GetComponent<StartButton>().sidesOutOfView = false;
-        choise_panel_active = !choise_panel_active;
+        EnemyController EC = GameObject.Find("EnemyHolder").GetComponent<EnemyController>();
+        EC.in_battle = !EC.in_battle;
     }
 
-    public void ActivateStartButton()
+    public void EndTheGame()
     {
-        startButton.GetComponent<NonUIButton>().interactable = true;
-    }
-
-    public void DeactivateStartButton()
-    {
-        startButton.GetComponent<NonUIButton>().interactable = false;
-        playerWheelHolder.GetComponent<NonUIButton>().interactable = false;
+        if(MC.GetComponent<MainController>().dead)
+        {
+            Guilliotine.GetComponent<Test>().PlayAnimation("Lose");
+        }
     }
 
     //Look some time if there is better way

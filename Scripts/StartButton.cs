@@ -15,7 +15,6 @@ public class StartButton : MonoBehaviour
 
     public bool isActive;
 
-    public bool sidesOutOfView = true;
     public bool deactivated; //If start button needs to be deactivated individually
 
     private void Update()

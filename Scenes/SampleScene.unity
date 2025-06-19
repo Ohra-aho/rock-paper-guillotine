@@ -7815,7 +7815,6 @@ MonoBehaviour:
   player: {fileID: 1674057590}
   story_event_holder: {fileID: 710133546}
   isActive: 0
-  sidesOutOfView: 1
   deactivated: 0
 --- !u!212 &401144640
 SpriteRenderer:
@@ -16327,6 +16326,7 @@ MonoBehaviour:
   EnemyWheel: {fileID: 0}
   weaponDetector: {fileID: 0}
   dead: 0
+  in_battle: 0
   story_event_holder: {fileID: 710133546}
   MC: {fileID: 1066024786}
   victory: 0
@@ -28388,6 +28388,7 @@ GameObject:
   - component: {fileID: 1812507808}
   - component: {fileID: 1812507809}
   - component: {fileID: 1812507810}
+  - component: {fileID: 1812507811}
   m_Layer: 0
   m_Name: Machine
   m_TagString: Untagged
@@ -28468,14 +28469,32 @@ MonoBehaviour:
   startButton: {fileID: 401144636}
   playerWheelHolder: {fileID: 138571107}
   StoryEventHolder: {fileID: 710133546}
+  Guilliotine: {fileID: 1891357473}
+  MC: {fileID: 1066024785}
   player: {fileID: 1366762618}
-  choise_panel_active: 0
+  choise_panel_active: 1
   sparks:
   - {fileID: 1856837256}
   - {fileID: 1791210889}
   - {fileID: 1440330485}
   - {fileID: 75129972}
   - {fileID: 1143608542}
+--- !u!114 &1812507811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812507806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bfc4f4edc1375468645d5efd459710, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  names:
+  - MachineOpen
+  - MachineClose
+  - changeGear
 --- !u!1 &1817942851
 GameObject:
   m_ObjectHideFlags: 0
