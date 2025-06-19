@@ -17,6 +17,13 @@ public class StartButton : MonoBehaviour
 
     public bool deactivated; //If start button needs to be deactivated individually
 
+    MainController MC;
+
+    private void Awake()
+    {
+        MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+    }
+
     private void Update()
     {
         FindEncounter();
@@ -24,22 +31,27 @@ public class StartButton : MonoBehaviour
 
     public void FindEncounter()
     {
-        bool found = false;
-        for (int i = 0; i < story_event_holder.transform.childCount; i++)
+        if(MC.CompareState(MainController.State.idle))
         {
-            if (!story_event_holder.transform.GetChild(i).GetComponent<Encounter>())
+            bool found = false;
+            for (int i = 0; i < story_event_holder.transform.childCount; i++)
             {
-                found = false;
+                if (!story_event_holder.transform.GetChild(i).GetComponent<Encounter>())
+                {
+                    found = false;
+                }
+                else
+                {
+                    found = true;
+                    break;
+                }
             }
-            else
-            {
-                found = true;
-                break;
-            }
-        }
-        GetComponent<NonUIButton>().interactable = found;
-        
-        if(deactivated)
+            GetComponent<NonUIButton>().interactable = found;
+
+        } else if(MC.CompareState(MainController.State.in_battle))
+        {
+            GetComponent<NonUIButton>().interactable = true;
+        } else
         {
             GetComponent<NonUIButton>().interactable = false;
         }
@@ -52,7 +64,6 @@ public class StartButton : MonoBehaviour
         GameObject.Find("EnemyHolder").GetComponent<EnemyController>().victory = false;
         GetComponent<SpriteRenderer>().sprite = active;
         machine.GetComponent<Test>().PlayAnimation("CloseMachine");
-        GameObject.Find("PlayerWheelHolder").GetComponent<NonUIButton>().individual_interactable = false;
         isActive = true;
     }
 
@@ -89,7 +100,7 @@ public class StartButton : MonoBehaviour
         bool dead = player.transform.GetChild(2).GetComponent<HealthBar>().CheckIfDead();
         if (dead)
         {
-            MC.dead = true;
+            MC.SetNewState(MainController.State.dead);
         } else
         {
             Activate();

@@ -25,14 +25,15 @@ public class NonUIButton : MonoBehaviour
         {
             MC = GameObject.Find("EventSystem").GetComponent<MainController>();
         }
-        if(interactable != MC.buttons_active)
+        /*if(interactable != MC.buttons_active)
         {
+            Debug.Log("Que");
             interactable = MC.buttons_active;
-        }
-        if(!individual_interactable)
+        }*/
+        /*if(!individual_interactable)
         {
             interactable = false;
-        }
+        }*/
     }
 
     private void OnMouseDown()

@@ -45,6 +45,31 @@ public class RewardMenu : MonoBehaviour
         rope.GetComponent<Test>().UnPauseAnimation();
     }
 
+    private void Update()
+    {
+        if (!MC.CompareState(MainController.State.reward))
+        {
+            MC.SetNewState(MainController.State.reward);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (!MC.CompareState(MainController.State.idle))
+        {
+            MC.SetNewState(MainController.State.idle);
+        }
+    }
+
+    public void EnableRewards()
+    {
+        Debug.Log("fjvsldfbnvlskbdfvkl");
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).GetChild(0).GetComponent<Revard>().disabled = false;
+        }
+    }
+
     private void makeRewardList()
     {
         //Get at least one random reward

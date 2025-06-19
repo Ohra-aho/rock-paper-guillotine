@@ -10,6 +10,29 @@ public class PlayerWheelHolder : MonoBehaviour
     public GameObject weaponDetector;
     public GameObject startButton;
     [SerializeField] private GameObject InventoryMenu;
+    MainController MC;
+
+    private void Awake()
+    {
+        MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+    }
+
+    private void Update()
+    {
+        if(MC.CompareState(MainController.State.idle) || MC.CompareState(MainController.State.re_arming))
+        {
+            if(!GetComponent<NonUIButton>().interactable)
+            {
+                GetComponent<NonUIButton>().interactable = true;
+            }
+        } else
+        {
+            if(GetComponent<NonUIButton>().interactable)
+            {
+                GetComponent<NonUIButton>().interactable = false;
+            }
+        }
+    }
 
     public void press()
     {
@@ -29,7 +52,6 @@ public class PlayerWheelHolder : MonoBehaviour
         transform.GetChild(0).GetComponent<Test>().UnPauseAnimation();
         transform.GetChild(0).GetComponent<Test>().PlayAnimation("DetachWheel");
         detached = true;
-        startButton.GetComponent<StartButton>().deactivated = true;
         Instantiate(InventoryMenu, GameObject.Find("InventoryMenuHolder").transform);
     }
 
@@ -38,7 +60,6 @@ public class PlayerWheelHolder : MonoBehaviour
         transform.GetChild(0).GetComponent<Test>().PlayAnimation("AttachWheel");
         detached = false;
         GameObject.Find("InventoryMenuHolder").GetComponent<Test>().PlayAnimation("CloseDrawer");
-        startButton.GetComponent<StartButton>().deactivated = false;
     }
 
     public void RemoveWeapon(GameObject weapon)

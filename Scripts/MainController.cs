@@ -8,7 +8,7 @@ public class MainController : MonoBehaviour
     [HideInInspector] public bool first;
 
     [HideInInspector] public bool? won;
-    [HideInInspector] public bool dead;
+    //[HideInInspector] public bool dead;
     [HideInInspector] public bool endTriggered;
     public bool stop;
 
@@ -46,6 +46,20 @@ public class MainController : MonoBehaviour
         hyödytön
     }
 
+    public enum State
+    {
+        in_battle,
+        re_arming,
+        transition,
+        reward,
+        idle,
+        dialog,
+        dead,
+        stalling
+    }
+
+    public State game_state = State.idle;
+
     private void Start()
     {
         first = true;
@@ -57,6 +71,20 @@ public class MainController : MonoBehaviour
     private void Update()
     {
         GetComponent<StoryController>().InvokeNextEvent();
+    }
+
+    public void SetNewState(State new_state)
+    {
+        if(game_state != State.dead)
+        {
+            game_state = new_state;
+            Debug.Log(game_state);
+        }
+    }
+
+    public bool CompareState(State state)
+    {
+        return game_state == state;
     }
 
     public void CompareChoises()
@@ -149,7 +177,7 @@ public class MainController : MonoBehaviour
 
     public void EndGame()
     {
-        dead = true;
+        SetNewState(State.dead);
         GetComponent<StoryController>().playthroughts++;
         EndRound();
     }
@@ -158,7 +186,7 @@ public class MainController : MonoBehaviour
     {
         EnableObject(startButton);
         startButton.GetComponent<StartButton>().EndRound();
-        if(!dead)
+        if(game_state != State.dead)
         {
             GameObject.Find("Story Event Holder").transform.GetChild(0).GetComponent<StoryEvent>().Procceed();
         }

@@ -11,12 +11,24 @@ public class CHoisePanel : MonoBehaviour
     [HideInInspector] public Sprite[] character_sheet;
     public GameObject character;
     public Weapon weapon;
+    MainController MC;
+
+    private void Awake()
+    {
+        MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+    }
 
     private void Update()
     {
-        GetComponent<NonUIButton>().individual_interactable
-            = GameObject.Find("EnemyHolder").GetComponent<EnemyController>().in_battle;
-            //= transform.parent.parent.parent.GetComponent<Machine>().choise_panel_active;
+        switch(MC.game_state)
+        {
+            case MainController.State.in_battle:
+                GetComponent<NonUIButton>().interactable = true;
+                break;
+            default:
+                GetComponent<NonUIButton>().interactable = false;
+                break;
+        }
     }
 
     public void DisplayName()
@@ -79,10 +91,14 @@ public class CHoisePanel : MonoBehaviour
 
     public void Choise()
     {
-        if(weapon_name != "" && weapon_name != null)
+        if(!transform.parent.gameObject.GetComponent<PlayerContoller>().spinning)
         {
-            transform.parent.GetComponent<PlayerContoller>().MakeAChoise(index);
-            GetComponent<Hover>().hoverExit.Invoke();
+            if (weapon_name != "" && weapon_name != null)
+            {
+                transform.parent.GetComponent<PlayerContoller>().MakeAChoise(index);
+                GetComponent<Hover>().hoverExit.Invoke();
+                transform.parent.gameObject.GetComponent<PlayerContoller>().spinning = true;
+            }
         }
     }
 

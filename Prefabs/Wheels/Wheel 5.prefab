@@ -458,6 +458,7 @@ GameObject:
   - component: {fileID: 7896529079942749523}
   - component: {fileID: 3381632711552690108}
   - component: {fileID: 712072892537418735}
+  - component: {fileID: -3143248517755188182}
   m_Layer: 5
   m_Name: Wheel 5
   m_TagString: Untagged
@@ -576,6 +577,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3143248517755188182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371170088414111626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6329a1574317f1c4baf4b41444b830c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1440074746713924027
 GameObject:
   m_ObjectHideFlags: 0

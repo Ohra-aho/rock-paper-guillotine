@@ -32,9 +32,17 @@ public class Message : MonoBehaviour
         GetComponent<StoryEvent>().Procceed();   
     }
 
+    private void OnDestroy()
+    {
+        MainController MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+        MC.SetNewState(MainController.State.idle);
+    }
+
     public void DisableButtons()
     {
-        GameObject.Find("EventSystem").GetComponent<MainController>().buttons_active = false;
+        MainController MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+        MC.buttons_active = false;
+        MC.SetNewState(MainController.State.dialog);
     }
 
     public void PlayMessage()

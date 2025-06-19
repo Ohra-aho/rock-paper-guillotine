@@ -12,7 +12,7 @@ public class Revard : MonoBehaviour
 
     private GameObject visibleInfo;
 
-    public bool disabled = false;
+    public bool disabled = true;
     private MainController MC;
 
     public List<Sprite> symbols;
@@ -28,10 +28,6 @@ public class Revard : MonoBehaviour
         if (MC == null)
         {
             MC = GameObject.Find("EventSystem").GetComponent<MainController>();
-        }
-        if (disabled != MC.buttons_active)
-        {
-            disabled = MC.buttons_active;
         }
     }
 
@@ -124,7 +120,8 @@ public class Revard : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (disabled) { 
+        Debug.Log(disabled);
+        if (!disabled) { 
             Chosen();
             transform.parent.parent.GetComponent<RewardMenu>().DisableRewards();
         }

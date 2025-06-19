@@ -30,6 +30,7 @@ public class PlayerContoller : MonoBehaviour
 
     public bool defeat = false;
 
+    public bool spinning; //used to disable choise panels during wheelspin
 
     private void Start()
     {

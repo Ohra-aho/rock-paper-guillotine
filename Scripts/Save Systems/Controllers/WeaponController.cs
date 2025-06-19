@@ -23,7 +23,7 @@ public class WeaponController : MonoBehaviour
 
         MainController MC = GameObject.Find("EventSystem").GetComponent<MainController>();
 
-        SaveSystem.SavePlayerWeapons(weapons, MC.dead);
+        SaveSystem.SavePlayerWeapons(weapons, MC.game_state == MainController.State.dead);
     }
 
     public void LoadPlayerWeapons()

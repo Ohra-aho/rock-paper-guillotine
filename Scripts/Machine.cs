@@ -40,18 +40,35 @@ public class Machine : MonoBehaviour
     public void AnimationStart()
     {
         rightSide.transform.GetChild(3).GetComponent<EnemyController>().HandleEnemy();
+        ToggleIdle();
         EndTheGame(); //Currently the only way to lose
     }
 
     public void ToggleInBattle()
     {
-        EnemyController EC = GameObject.Find("EnemyHolder").GetComponent<EnemyController>();
-        EC.in_battle = !EC.in_battle;
+        if(!MC.GetComponent<MainController>().CompareState(MainController.State.in_battle))
+        {
+            MC.GetComponent<MainController>().SetNewState(MainController.State.in_battle);
+        } else
+        {
+            MC.GetComponent<MainController>().SetNewState(MainController.State.transition);
+        }
+    }
+
+    public void ToggleIdle()
+    {
+        if(!MC.GetComponent<MainController>().CompareState(MainController.State.idle))
+        {
+            MC.GetComponent<MainController>().SetNewState(MainController.State.idle);
+        } else
+        {
+            MC.GetComponent<MainController>().SetNewState(MainController.State.transition);
+        }
     }
 
     public void EndTheGame()
     {
-        if(MC.GetComponent<MainController>().dead)
+        if(MC.GetComponent<MainController>().game_state == MainController.State.dead)
         {
             Guilliotine.GetComponent<Test>().PlayAnimation("Lose");
         }

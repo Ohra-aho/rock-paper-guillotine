@@ -32,6 +32,10 @@ public class WeaponDetector : MonoBehaviour
                     weaponWheel.GetComponent<Test>().PlayAudio(2);
 
                     TC.resultsVisible++;
+                    if(TC.resultsVisible >= 2)
+                    {
+                        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().spinning = false;
+                    }
                 }
             }   
         }
