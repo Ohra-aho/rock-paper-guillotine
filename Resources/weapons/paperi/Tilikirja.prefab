@@ -103,7 +103,7 @@ MonoBehaviour:
   name: Tilikirja
   description: "+1 piste per jokainen piste aseissasi. Joka 10 pistett\xE4 antaa
     +1 vahinkoon."
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 5e1bbf3625b9f29469b9720fc3e80fb1, type: 3}
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

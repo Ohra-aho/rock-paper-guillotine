@@ -92,30 +92,21 @@ public class ClaimedWeapon : MonoBehaviour
 
             visibleInfo.transform.GetChild(0)
                 .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().name;
-            visibleInfo.transform.GetChild(1)
+
+            visibleInfo.transform.GetChild(1).GetChild(0)
                 .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().damage.ToString();
-            visibleInfo.transform.GetChild(2)
+            visibleInfo.transform.GetChild(1).GetChild(1)
                 .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().armor.ToString();
-            visibleInfo.transform.GetChild(3)
-                .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().description;
-            switch (weapon.GetComponent<Weapon>().type)
+            if(weapon.GetComponent<Stacking>())
             {
-                case MainController.Choise.kivi:
-                    visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[0];
-                    break;
-                case MainController.Choise.paperi:
-                    visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[1];
-                    break;
-                case MainController.Choise.sakset:
-                    visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[2];
-                    break;
-                case MainController.Choise.hyödytön:
-                    visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[3];
-                    break;
-                case MainController.Choise.voittamaton:
-                    visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[4];
-                    break;
+                visibleInfo.transform.GetChild(1).GetChild(2).gameObject.SetActive(true);
+                visibleInfo.GetComponent<RectTransform>().GetChild(1).localScale = new Vector2(0.9f, 0.9f);
+                visibleInfo.transform.GetChild(1).GetChild(2)
+                    .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Stacking>().stacks.ToString();
             }
+
+            visibleInfo.transform.GetChild(2)
+                .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().description;
         }
 
     }

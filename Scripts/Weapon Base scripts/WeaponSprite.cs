@@ -97,13 +97,23 @@ public class WeaponSprite : MonoBehaviour
             {
                 visibleInfo.transform.GetChild(0)
                     .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().name;
-                visibleInfo.transform.GetChild(1)
+                visibleInfo.transform.GetChild(1).GetChild(0)
                     .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().damage.ToString();
-                visibleInfo.transform.GetChild(2)
+                visibleInfo.transform.GetChild(1).GetChild(1)
                     .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().armor.ToString();
-                visibleInfo.transform.GetChild(3)
+
+                if (weapon.GetComponent<Stacking>())
+                {
+                    visibleInfo.transform.GetChild(1).GetChild(2).gameObject.SetActive(true);
+                    visibleInfo.GetComponent<RectTransform>().GetChild(1).localScale = new Vector2(0.9f, 0.9f);
+                    visibleInfo.transform.GetChild(1).GetChild(2)
+                        .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Stacking>().stacks.ToString();
+                }
+
+                visibleInfo.transform.GetChild(2)
                     .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().description;
-                switch (weapon.GetComponent<Weapon>().type)
+                
+                /*switch (weapon.GetComponent<Weapon>().type)
                 {
                     case MainController.Choise.kivi:
                         visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[0];
@@ -120,7 +130,7 @@ public class WeaponSprite : MonoBehaviour
                     case MainController.Choise.voittamaton:
                         visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[4];
                         break;
-                }
+                }*/
             }
         }
     }

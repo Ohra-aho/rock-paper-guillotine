@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -100,8 +101,7 @@ MonoBehaviour:
   real_armor: 0
   name: "P\xE4\xE4sykoodi"
   description: "Kaikki aseesi l\xE4vist\xE4v\xE4t panssarin,"
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
-  stacks: 0
+  sprite: {fileID: 21300000, guid: 54cb32d6859e3e644b13fa71e8c42a70, type: 3}
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -177,9 +177,9 @@ MonoBehaviour:
   self_destructive: 0
   healing: 0
   health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
+  kivi_synegry: 1
+  paperi_synergy: 1
+  sakset_synergy: 1
   points: 0
 --- !u!114 &3410846685529990821
 MonoBehaviour:

@@ -78,32 +78,46 @@ public class Revard : MonoBehaviour
             //Display actual info into the popup
             if (actualReward.GetComponent<Weapon>())
             {
+                visibleInfo.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(68, 26);
+                visibleInfo.transform.GetChild(0).GetComponent<RectTransform>().localPosition = new Vector2(-11f, 57.3f);
+
                 visibleInfo.transform.GetChild(0)
                     .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().name;
-                visibleInfo.transform.GetChild(1)
+                visibleInfo.transform.GetChild(1).GetChild(0)
                     .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().damage.ToString();
-                visibleInfo.transform.GetChild(2)
+                visibleInfo.transform.GetChild(1).GetChild(1)
                     .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().armor.ToString();
-                visibleInfo.transform.GetChild(3)
+
+                if (actualReward.GetComponent<Stacking>())
+                {
+                    visibleInfo.transform.GetChild(1).GetChild(2).gameObject.SetActive(true);
+                    visibleInfo.GetComponent<RectTransform>().GetChild(1).localScale = new Vector2(0.9f, 0.9f);
+                    visibleInfo.transform.GetChild(1).GetChild(2)
+                        .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Stacking>().stacks.ToString();
+                }
+
+                visibleInfo.transform.GetChild(2)
                     .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().description;
-                switch (actualReward.GetComponent<Weapon>().type)
+
+                visibleInfo.transform.GetChild(3).gameObject.SetActive(true);
+                switch(actualReward.GetComponent<Weapon>().type)
                 {
                     case MainController.Choise.kivi:
-                        visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[0];
+                        visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[0];
                         break;
                     case MainController.Choise.paperi:
-                        visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[1];
+                        visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[1];
                         break;
                     case MainController.Choise.sakset:
-                        visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[2];
+                        visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[2];
                         break;
                     case MainController.Choise.hyödytön:
-                        visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[3];
+                        visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[3];
                         break;
                     case MainController.Choise.voittamaton:
-                        visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[4];
+                        visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[4];
                         break;
-                }
+                }                
             }
             else if (actualReward.GetComponent<Item>())
             {
