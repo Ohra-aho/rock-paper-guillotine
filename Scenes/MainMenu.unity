@@ -372,7 +372,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 202890127}
-        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_TargetAssemblyTypeName: SoundPlayer, Assembly-CSharp
         m_MethodName: PlayClip
         m_Mode: 1
         m_Arguments:
@@ -455,17 +455,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 202890120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 96e765f5c3a358b47be9f9ca679443fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: a877ee3d560f06f45869ba8dde5cc3ed, type: 3}
-  loop: 0
+  clips:
+  - {fileID: 8300000, guid: a877ee3d560f06f45869ba8dde5cc3ed, type: 3}
   ongoing: 0
-  mute: 0
+  instant: 0
   volume: 1
-  volume_modifier: 1
-  pitch: 1
-  stereo_pan: 0
+  mute: 0
+  type: sound effect
+  settings: EventSystem
 --- !u!1 &425801847
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +567,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 925280229}
-  - component: {fileID: 925280228}
   m_Layer: 0
   m_Name: AmbiencePlayer
   m_TagString: Untagged
@@ -575,26 +574,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &925280228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925280227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: afae2828448d34449870e104b9b71935, type: 3}
-  loop: 1
-  ongoing: 1
-  mute: 0
-  volume: 1
-  volume_modifier: 1
-  pitch: 1
-  stereo_pan: 0
 --- !u!4 &925280229
 Transform:
   m_ObjectHideFlags: 0
@@ -723,9 +702,11 @@ GameObject:
   - component: {fileID: 1967937290}
   - component: {fileID: 1967937289}
   - component: {fileID: 1967937288}
+  - component: {fileID: 1967937291}
+  - component: {fileID: 1967937292}
   m_Layer: 0
   m_Name: EventSystem
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -780,6 +761,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 425801848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1967937291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967937287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f1b421e16f5cb42bce3cd485777e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pause: 0
+--- !u!114 &1967937292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967937287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3622ab28be79b2144a534d6ad00600a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 5061135645696944559, guid: dd974eec2ced749478df23f9e2cc8ac3, type: 3}
 --- !u!1 &2080508267
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,7 +796,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2080508269}
-  - component: {fileID: 2080508268}
+  - component: {fileID: 2080508270}
   m_Layer: 0
   m_Name: Music Player
   m_TagString: Untagged
@@ -797,26 +804,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2080508268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080508267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 9f79b39d44aa7294b99dbccf6a032420, type: 3}
-  loop: 1
-  ongoing: 1
-  mute: 0
-  volume: 1
-  volume_modifier: 1
-  pitch: 1
-  stereo_pan: 0
 --- !u!4 &2080508269
 Transform:
   m_ObjectHideFlags: 0
@@ -832,6 +819,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 425801848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2080508270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080508267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e765f5c3a358b47be9f9ca679443fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 9f79b39d44aa7294b99dbccf6a032420, type: 3}
+  ongoing: 1
+  instant: 1
+  volume: 1
+  mute: 0
+  type: Music
+  settings: EventSystem
 --- !u!1 &2124258260
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,9 @@ public class Bark : MonoBehaviour
 
     string true_bark;
 
+    public bool on_startbutton_activate;
+    public bool on_startbutton_de_activate;
+
 
     private void Awake()
     {
@@ -33,47 +36,50 @@ public class Bark : MonoBehaviour
 
     private void OnDestroy()
     {
-        switch(bark)
+        if(on_startbutton_activate)
         {
-            case 1:
-                try
-                {
-                    GameObject.Find(trigger).GetComponent<NonUIButton>().press.RemoveListener(TheBark);
-                }
-                catch
-                {
-                    Debug.Log("No trigger or something");
-                }
-                break;
-            case 2:
-                try
-                {
-                    GameObject.Find(trigger).GetComponent<NonUIButton>().press.RemoveListener(StartButtonDectivate);
-                }
-                catch
-                {
-                    Debug.Log("No trigger or something");
-                }
-                break;
-
-                }
+            try
+            {
+                GameObject.Find(trigger).GetComponent<NonUIButton>().press.RemoveListener(TheBark);
+            }
+            catch
+            {
+                Debug.Log("No trigger or something");
+            }
+        }
+        if(on_startbutton_de_activate)
+        {
+            try
+            {
+                GameObject.Find(trigger).GetComponent<NonUIButton>().press.RemoveListener(StartButtonDectivate);
+            }
+            catch
+            {
+                Debug.Log("No trigger or something");
+            }
+        }
     }
 
     public void SetUpTrigger()
     {
-        switch (bark)
+        if(on_startbutton_activate)
         {
-            case 1: GameObject.Find(trigger).GetComponent<NonUIButton>().press.AddListener(TheBark); break;
-            case 2: GameObject.Find(trigger).GetComponent<NonUIButton>().press.AddListener(StartButtonDectivate); break;
+            GameObject.Find(trigger).GetComponent<NonUIButton>().press.AddListener(TheBark);
+        }
+        if(on_startbutton_de_activate)
+        {
+            GameObject.Find(trigger).GetComponent<NonUIButton>().press.AddListener(StartButtonDectivate);
         }
     }
 
+    //Plays the bark without conditions
     public void TheBark()
     {
         GameObject.Find("man").GetComponent<ManAnimator>().CreateABark(true_bark);
         triggered = true;
     }
 
+    //Activates if start button deactivates
     public void StartButtonDectivate()
     {
         if(!GameObject.Find("StartButton").GetComponent<StartButton>().isActive)
@@ -83,13 +89,10 @@ public class Bark : MonoBehaviour
         }
     }
 
+    //Remenant of worse days
     private void TrueBark()
     {
-        switch(bark)
-        {
-            case 1: true_bark = LanguageController.dialog[8]; break;
-            case 2: true_bark = LanguageController.dialog[9]; break;
-        }
+        true_bark = LanguageController.barks[bark];
     }
 
     public string GiveTrueBark()

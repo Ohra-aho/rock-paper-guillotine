@@ -78,7 +78,7 @@ public class MainController : MonoBehaviour
         if(game_state != State.dead)
         {
             game_state = new_state;
-            Debug.Log(game_state);
+            //Debug.Log(game_state);
         }
     }
 

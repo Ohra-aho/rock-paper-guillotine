@@ -12,8 +12,8 @@ public static class SaveSystem
     //Utilities
     private static string MainPath(string file)
     {
-        //return Application.persistentDataPath+file+".rpg";
-        return "C:/Tiedostoja/KiviPaperiGiljotiini/save files/" + file + ".rpg"; //Debug
+        return Application.persistentDataPath+file+".rpg";
+        //return "C:/Tiedostoja/KiviPaperiGiljotiini/save files/" + file + ".rpg"; //Debug
     }
     public static FileStream OpenFileStream(string file, FileMode mode)
     {

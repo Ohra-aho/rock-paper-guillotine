@@ -21,7 +21,8 @@ public class AudioPlayer : MonoBehaviour
     {
         //Add audio source
         gameObject.AddComponent<AudioSource>();
-        settings = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundSettings>();
+        settings = GameObject.Find("EventSystem").GetComponent<SoundSettings>();
+
         //Set parameters
         GetComponent<AudioSource>().clip = clip;
         GetComponent<AudioSource>().playOnAwake = false;
@@ -38,8 +39,6 @@ public class AudioPlayer : MonoBehaviour
         else if (!settings.pause && !GetComponent<AudioSource>().isPlaying) GetComponent<AudioSource>().UnPause();
 
         Upkeep();
-
-
     }
 
     public void Upkeep()

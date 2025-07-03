@@ -38,4 +38,11 @@ public class Hand : MonoBehaviour
             }
         }
     }
+
+    public void ClearWeapon()
+    {
+        weapon_sprite = null;
+        transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon_sprite;
+        transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+    }
 }

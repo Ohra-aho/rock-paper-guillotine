@@ -27,5 +27,7 @@ public class CameraNQuilliotine : MonoBehaviour
     {
         SaveSystem.DeleteFile(SaveSystem.story_data);
         SaveSystem.DeleteFile(SaveSystem.bark_data);
+        SaveSystem.DeleteFile(SaveSystem.player_weapon_data);
+        SaveSystem.DeleteFile(SaveSystem.player_data);
     }
 }

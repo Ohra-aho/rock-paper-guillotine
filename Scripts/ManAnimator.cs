@@ -26,13 +26,6 @@ public class ManAnimator : MonoBehaviour
     //6: left hand up fist
     public Sprite[] man_sheet;
     public Sprite[] bark_sheet;
-    private List<Frame> first_greeting_1;
-    private List<Frame> instructions_1;
-    private List<Frame> instructions_2;
-    private List<Frame> instructions_3;
-    private List<Frame> instructions_4;
-    private List<Frame> boss_intro_1;
-    private List<Frame> finished_game_1;
 
     int clip;
 
@@ -46,15 +39,6 @@ public class ManAnimator : MonoBehaviour
     void Start()
     {
         settings = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundSettings>();
-
-        /*
-         * 
-        instructions_3 = new List<Frame>()
-        {
-            new Frame(man_sheet[0], null, LG.instructions[8])
-        };
-
-        */
     }
 
     // Update is called once per frame

@@ -10202,7 +10202,7 @@ MonoBehaviour:
   story_event_holder: {fileID: 710133546}
   firstRewardMenu: 0
   playthroughts:
-  - {fileID: 4163066812587896230, guid: 0db93014473a88d4a884a2acf424b7dd, type: 3}
+  - {fileID: 4163066812587896230, guid: 815fa85bc2b2f534faa2e5ae2c1c5333, type: 3}
   buttons_active: 1
   reward_tier: 1
   game_state: 4
@@ -16595,9 +16595,7 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 7f5d4deea30d86443a53905a5d8efdeb, type: 3}
   - {fileID: 1944698211339908181, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   - {fileID: 1944698211339908181, guid: ee57d6d131d1e97458e79deca9dcb588, type: 3}
-  - {fileID: 1944698211339908181, guid: 8be8e93862fd0b14c87726d8c588169f, type: 3}
-  - {fileID: 1944698211339908181, guid: dc1ef5819bdc39f49b92496cf806f33b, type: 3}
-  - {fileID: 1944698211339908181, guid: b2235ab009fd64847ad2fe17059ad84a, type: 3}
+  - {fileID: 1944698211339908181, guid: 078db46d1732a0744a627368a8fd7f6f, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623

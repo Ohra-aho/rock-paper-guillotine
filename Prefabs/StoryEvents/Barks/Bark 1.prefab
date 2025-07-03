@@ -46,4 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: StartButton
   triggered: 0
-  bark: 1
+  bark: 0
+  on_startbutton_activate: 1
+  on_startbutton_de_activate: 0

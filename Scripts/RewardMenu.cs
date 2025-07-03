@@ -63,7 +63,6 @@ public class RewardMenu : MonoBehaviour
 
     public void EnableRewards()
     {
-        Debug.Log("fjvsldfbnvlskbdfvkl");
         for(int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).GetChild(0).GetComponent<Revard>().disabled = false;
