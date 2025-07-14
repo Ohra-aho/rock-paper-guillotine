@@ -18,8 +18,8 @@ public class Handcerchife : MonoBehaviour
         GetComponent<Stacking>().IncreaseStacks(1);
         if(GetComponent<Stacking>().stacks == 3)
         {
-            GetComponent<EffectDamage>().DealDamage(weapon);
             GetComponent<Stacking>().stacks = 0;
+            GetComponent<EffectDamage>().DealDamage(weapon);
         }
     }
 }
