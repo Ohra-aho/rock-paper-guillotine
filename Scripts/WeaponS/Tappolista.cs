@@ -12,6 +12,6 @@ public class Tappolista : MonoBehaviour
 
     public void CalculateDamage()
     {
-        GetComponent<Weapon>().damage = 1 + GetComponent<Stacking>().GiveAmountOfStackDividedBy(3);
+        GetComponent<Weapon>().damage = 1 + GetComponent<Stacking>().GiveAmountOfStackDividedBy(1);
     }
 }

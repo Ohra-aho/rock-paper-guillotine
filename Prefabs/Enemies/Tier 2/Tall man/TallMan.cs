@@ -31,16 +31,17 @@ public class TallMan : MonoBehaviour
             return 2;
         } else if(!dodged)
         {
-            if(GetComponent<BasicEnemy>().off_balance)
-            {
+            //if(hurt)
+            //{
                 dodged = true;
+                hurt = false;
                 return 0;
-            } else
+           /* } else
             {
                 hurt = false;
                 dodged = false;
                 return 1;
-            }
+            }*/
             
         } else
         {

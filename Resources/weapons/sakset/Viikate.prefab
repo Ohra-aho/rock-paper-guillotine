@@ -102,7 +102,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Viikate
-  description: +2 vahinkoa aina kun aseesi tuhoutuu
+  description: +1 vahinkoa aina kun aseesi tuhoutuu
   sprite: {fileID: 21300000, guid: 0d43db1ff69bff943a7c40c74c9fd6a6, type: 3}
   choisePhase:
     m_PersistentCalls:

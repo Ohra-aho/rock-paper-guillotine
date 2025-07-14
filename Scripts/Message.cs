@@ -20,9 +20,18 @@ public class Message : MonoBehaviour
     public List<ManAnimator.Frame> frames;
     ManAnimator MA;
 
+    MainController MC;
+
+
+    private void Update()
+    {
+        if (MC.game_state != MainController.State.dialog) MC.game_state = MainController.State.dialog;
+    }
+
     private void Awake()
     {
         MA = GameObject.Find("man").GetComponent<ManAnimator>();
+        MC = GameObject.Find("EventSystem").GetComponent<MainController>();
 
         frames = new List<ManAnimator.Frame>();
 
@@ -89,7 +98,10 @@ public class Message : MonoBehaviour
     private void OnDestroy()
     {
         MainController MC = GameObject.Find("EventSystem").GetComponent<MainController>();
-        MC.SetNewState(MainController.State.idle);
+        if(MC != null)
+        {
+            MC.SetNewState(MainController.State.idle);
+        }
     }
 
     public void DisableButtons()

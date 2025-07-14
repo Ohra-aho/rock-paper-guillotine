@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9120474432396615974}
   - component: {fileID: 2846629991233037638}
   - component: {fileID: 8605747940879338674}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 2317518320789849317}
   - component: {fileID: 3240310803886890641}
   - component: {fileID: 8078977417312071010}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 2559695434492238917}
   - component: {fileID: 1301386693040098554}
   - component: {fileID: 8066100257438767549}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: symboli
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 7588984676776279562}
   - component: {fileID: 7393527869066248901}
   - component: {fileID: 4826733066877368285}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: InfoBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 5005140693447281905}
   - component: {fileID: 4029064528169368986}
   - component: {fileID: 112869689728944677}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 4486380054692235598}
   - component: {fileID: 684152379245031807}
   - component: {fileID: 8745555559747361902}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 4142153265975075571}
   - component: {fileID: 8447728106840900431}
   - component: {fileID: 7015413792254843854}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -720,7 +720,7 @@ GameObject:
   - component: {fileID: 917463429710942351}
   - component: {fileID: 6291719365337356458}
   - component: {fileID: 5975201770304675296}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

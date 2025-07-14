@@ -20,7 +20,7 @@ public class Sepeli : MonoBehaviour
 
         for(int i = 0; i < ri.transform.childCount; i++)
         {
-            if(ri.transform.GetChild(i).GetComponent<Weapon>().type == MainController.Choise.kivi)
+            if(ri.transform.GetChild(i).GetComponent<Weapon>().type == MainController.Choise.sakset)
             {
                 amount++;
             }

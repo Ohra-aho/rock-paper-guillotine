@@ -100,7 +100,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: "J\xE4rk\xE4le"
-  description: +3 HP
+  description: +2 HP
   sprite: {fileID: 21300000, guid: cf4114a86ca2dc64d8f8c3377bdb6415, type: 3}
   choisePhase:
     m_PersistentCalls:
@@ -193,4 +193,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b528c9add8506e74192aac87c7001b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 3
+  amount: 2

@@ -98,7 +98,7 @@ MonoBehaviour:
   dead: 0
   type: 2
   damage: 2
-  armor: 1
+  armor: 0
   real_damage: 0
   real_armor: 0
   name: "Sy\xF6j\xE4t\xE4r"

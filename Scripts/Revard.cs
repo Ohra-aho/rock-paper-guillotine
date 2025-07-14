@@ -134,7 +134,6 @@ public class Revard : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log(disabled);
         if (!disabled) { 
             Chosen();
             transform.parent.parent.GetComponent<RewardMenu>().DisableRewards();

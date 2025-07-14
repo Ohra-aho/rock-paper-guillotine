@@ -9,6 +9,7 @@ public class PlayerWheelHolder : MonoBehaviour
 
     public GameObject weaponDetector;
     public GameObject startButton;
+    public GameObject inventory_button;
     [SerializeField] private GameObject InventoryMenu;
     MainController MC;
 
@@ -36,7 +37,6 @@ public class PlayerWheelHolder : MonoBehaviour
 
     public void press()
     {
-        //PlayAudio();
         if(detached)
         {
             AttachWheel();
@@ -52,14 +52,24 @@ public class PlayerWheelHolder : MonoBehaviour
         transform.GetChild(0).GetComponent<Test>().UnPauseAnimation();
         transform.GetChild(0).GetComponent<Test>().PlayAnimation("DetachWheel");
         detached = true;
+        if (GameObject.Find("InventoryMenu(Clone)") == null) inventory_button.GetComponent<InventoryButton>().Press();
+    }
+
+    public void OpenDrawer()
+    {
         Instantiate(InventoryMenu, GameObject.Find("InventoryMenuHolder").transform);
+    }
+
+    public void CloseDrawer()
+    {
+        GameObject.Find("InventoryMenuHolder").GetComponent<Test>().PlayAnimation("CloseDrawer");
     }
 
     public void AttachWheel()
     {
         transform.GetChild(0).GetComponent<Test>().PlayAnimation("AttachWheel");
         detached = false;
-        GameObject.Find("InventoryMenuHolder").GetComponent<Test>().PlayAnimation("CloseDrawer");
+        if (GameObject.Find("InventoryMenu(Clone)") != null) inventory_button.GetComponent<InventoryButton>().Press(); //CloseDrawer();
     }
 
     public void RemoveWeapon(GameObject weapon)

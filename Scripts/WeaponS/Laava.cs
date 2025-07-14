@@ -63,6 +63,7 @@ public class Laava : MonoBehaviour
             {
                 Transform weapon = real_inventory.transform.GetChild(i);
                 GameObject own_buff = FindOwnBuff(weapon);
+                own_buff.GetComponent<Buff>().RemoveBuff();
                 Destroy(own_buff);
             }
         }

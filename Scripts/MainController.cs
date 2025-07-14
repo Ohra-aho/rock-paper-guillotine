@@ -71,6 +71,7 @@ public class MainController : MonoBehaviour
     private void Update()
     {
         GetComponent<StoryController>().InvokeNextEvent();
+        //Debug.Log(game_state);
     }
 
     public void SetNewState(State new_state)

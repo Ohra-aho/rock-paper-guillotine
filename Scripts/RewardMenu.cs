@@ -69,86 +69,135 @@ public class RewardMenu : MonoBehaviour
         }
     }
 
+    public void EndThis()
+    {
+        Destroy(transform.GetChild(0).gameObject);
+        Destroy(transform.GetChild(1).gameObject);
+        Destroy(transform.GetChild(2).gameObject);
+    }
+
+    public void EndAudio()
+    {
+        rope.transform.GetChild(rope.transform.childCount - 1).GetChild(0).GetComponent<AudioPlayer>().StopClip();
+    }
+
+    public void ObliterateThis()
+    {
+        //rope.transform.GetChild(rope.transform.childCount - 1).GetChild(0).GetComponent<AudioPlayer>().StopClip();
+        EndAudio();
+        Destroy(gameObject);
+    }
+
+    public void AnimationEnd()
+    {
+        GameObject seh = GameObject.Find("Story Event Holder");
+        if (seh.transform.childCount > 0)
+        {
+            if (seh.transform.GetChild(0).GetComponent<Encounter>())
+            {
+                if (seh.transform.GetChild(0).GetComponent<Encounter>().enemies.Count <= 0)
+                {
+                    seh.transform.GetChild(0).GetComponent<StoryEvent>().over = true;
+                }
+            }
+        }
+    }
+
     private void makeRewardList()
     {
         //Get at least one random reward
         rewards.Add(GetRandomReward());
+        rewards.Add(GetRandomReward());
 
         //Change to get at least one healing weapon
-        int heal_chance = Random.Range(1, 4);
-        //heal_chance = 3;
-        if(heal_chance == 3)
+        if(CheckIfPlayerIsHurt())
         {
-            rewards.Add(SubChooseRandomWeapon(healing));   
-        }
-        else
-        {
-            rewards.Add(GetRandomReward());
-        }
-
-        //Get preffered weapon
-        int preffered_type = PickFavouriteType();
-        //If there is a preffered type of weapons, pick weapons of that type
-        if(Chanse(0.7f))
-        {
-            if (preffered_type > 0)
+            int heal_chance = Random.Range(1, 4);
+            //heal_chance = 3;
+            if (heal_chance == 3)
             {
-                switch (preffered_type)
-                {
-                    //If type synergizes with certain main type of weapon, there is a change to just get that type of weapon
-                    case 4:
-                        if (Chanse(0.4f))
-                        {
-                            rewards.Add(SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type)));
-                        }
-                        else
-                        {
-                            rewards.Add(SubChooseRandomWeapon(ExtractTypeOFWeapons(MainController.Choise.kivi)));
-                        }
-                        break;
-                    case 5:
-                        if (Chanse(0.4f))
-                        {
-                            rewards.Add(SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type)));
-                        }
-                        else
-                        {
-                            rewards.Add(SubChooseRandomWeapon(ExtractTypeOFWeapons(MainController.Choise.paperi)));
-                        }
-                        break;
-                    case 6:
-                        if (Chanse(0.4f))
-                        {
-                            rewards.Add(SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type)));
-                        }
-                        else
-                        {
-                            rewards.Add(SubChooseRandomWeapon(ExtractTypeOFWeapons(MainController.Choise.sakset)));
-                        }
-                        break;
-                    default:
-                        rewards.Add(
-                            SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type))
-                        );
-                        break;
-                }
+                rewards.Add(SubChooseRandomWeapon(healing));
+            }
+            else
+            {
+                rewards.Add(GetRandomReward());
             }
         } else
         {
             rewards.Add(GetRandomReward());
         }
 
-        //Correction
-        if(rewards.Count < 3)
-        {
-            rewards.Add(GetRandomReward());
-        }
+        //Get preffered weapon
+        /* int preffered_type = PickFavouriteType();
+         //If there is a preffered type of weapons, pick weapons of that type
+         if(Chanse(0.7f))
+         {
+             if (preffered_type > 0)
+             {
+                 switch (preffered_type)
+                 {
+                     //If type synergizes with certain main type of weapon, there is a change to just get that type of weapon
+                     case 4:
+                         if (Chanse(0.4f))
+                         {
+                             rewards.Add(SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type)));
+                         }
+                         else
+                         {
+                             rewards.Add(SubChooseRandomWeapon(ExtractTypeOFWeapons(MainController.Choise.kivi)));
+                         }
+                         break;
+                     case 5:
+                         if (Chanse(0.4f))
+                         {
+                             rewards.Add(SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type)));
+                         }
+                         else
+                         {
+                             rewards.Add(SubChooseRandomWeapon(ExtractTypeOFWeapons(MainController.Choise.paperi)));
+                         }
+                         break;
+                     case 6:
+                         if (Chanse(0.4f))
+                         {
+                             rewards.Add(SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type)));
+                         }
+                         else
+                         {
+                             rewards.Add(SubChooseRandomWeapon(ExtractTypeOFWeapons(MainController.Choise.sakset)));
+                         }
+                         break;
+                     default:
+                         rewards.Add(
+                             SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type))
+                         );
+                         break;
+                 }
+             }
+         } else
+         {
+             rewards.Add(GetRandomReward());
+         }
+
+         //Correction
+         if(rewards.Count < 3)
+         {
+             rewards.Add(GetRandomReward());
+         }
+        */
 
         for (int i = 0; i < rewards.Count; i++)
         {
             transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards[i];
             transform.GetChild(i).GetChild(0).GetComponent<Revard>().Invoke();
         }
+    }
+
+    private bool CheckIfPlayerIsHurt()
+    {
+        int current_health = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>().GiveCurrentHealth();
+        int max_health = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>().GiveMaxHealth();
+        return current_health <= max_health - max_health / 3;
     }
 
     public void RemovePossibleRewards()
@@ -368,31 +417,5 @@ public class RewardMenu : MonoBehaviour
         }
     }
 
-    public void EndThis()
-    {
-        Destroy(transform.GetChild(0).gameObject);
-        Destroy(transform.GetChild(1).gameObject);
-        Destroy(transform.GetChild(2).gameObject);
-    }
-
-    public void ObliterateThis()
-    {
-        rope.transform.GetChild(rope.transform.childCount - 1).GetChild(0).GetComponent<AudioPlayer>().StopClip();
-        Destroy(gameObject);
-    }
-
-    public void AnimationEnd()
-    {
-        GameObject seh = GameObject.Find("Story Event Holder");
-        if (seh.transform.childCount > 0)
-        {
-            if (seh.transform.GetChild(0).GetComponent<Encounter>())
-            {
-                if (seh.transform.GetChild(0).GetComponent<Encounter>().enemies.Count <= 0)
-                {
-                    seh.transform.GetChild(0).GetComponent<StoryEvent>().over = true;
-                }
-            }
-        }
-    }
+   
 }

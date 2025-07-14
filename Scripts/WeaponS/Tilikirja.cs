@@ -13,9 +13,12 @@ public class Tilikirja : MonoBehaviour
         Transform RI = GameObject.FindGameObjectWithTag("RI").transform;
         for(int i = 0; i < RI.childCount; i++)
         {
-            if(RI.GetChild(i).GetComponent<Stacking>().stacks > 0)
+            if(RI.GetChild(i).GetComponent<Stacking>())
             {
-                GetComponent<Stacking>().IncreaseStacks(RI.GetChild(i).GetComponent<Stacking>().stacks);
+                if (RI.GetChild(i).GetComponent<Stacking>().stacks > 0)
+                {
+                    GetComponent<Stacking>().IncreaseStacks(RI.GetChild(i).GetComponent<Stacking>().stacks);
+                }
             }
         }
         CalculateDamage();

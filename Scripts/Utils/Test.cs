@@ -89,11 +89,18 @@ public class Test : MonoBehaviour
     //Might need some sort of fade out of something
     public void StopAudio(int clip)
     {
+        /*for(int i = 0; i < transform.childCount; i++)
+        {
+            if()
+            {
+
+            }
+        }*/
         transform.GetChild(LastIndex()).GetChild(clip).GetComponent<AudioPlayer>().StopClip();
     }
 
     public void LastLoop(int clip)
     {
-        transform.GetChild(LastIndex()).GetChild(clip).GetComponent<AudioPlayer>().StopLoop();
+        //transform.GetChild(LastIndex()).GetChild(clip).GetComponent<AudioPlayer>().StopLoop();
     }
 }

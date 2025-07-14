@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 5101497510755020665}
   m_Layer: 5
-  m_Name: Sepeli
+  m_Name: Hitsipilli
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,17 +89,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   dead: 0
-  type: 0
+  type: 2
   damage: 0
   armor: 0
+  real_damage: 0
+  real_armor: 0
   name: Sepeli
-  description: +1 vahinkoon, per. joka toinen "kivi", jonka omistat.
+  description: +1 vahinkoon, per. joka toinen "saksi", jonka omistat.
   sprite: {fileID: 21300000, guid: 99182d2474a679549b18d3e22fb8f0e3, type: 3}
-  stacks: 0
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -116,6 +118,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
   win:
@@ -152,6 +157,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   onDestruction:
+    m_PersistentCalls:
+      m_Calls: []
+  eachTurn:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0

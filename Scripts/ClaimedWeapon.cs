@@ -18,9 +18,16 @@ public class ClaimedWeapon : MonoBehaviour
     float clicktime = 0;
     float clickdelay = 0.5f;
 
+    public bool disabled;
+
     private void Awake()
     {
         wheel = GameObject.Find("PlayerWheelHolder").transform.GetChild(0).gameObject;
+    }
+
+    private void Update()
+    {
+        disabled = !GameObject.Find("PlayerWheelHolder").GetComponent<PlayerWheelHolder>().detached;
     }
 
     public void OnBegingDrag()
@@ -121,30 +128,33 @@ public class ClaimedWeapon : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (Time.time - clicktime >= clickdelay)
+        if(!disabled)
         {
-            clicked = 0;
-        }
-
-        clicked++;
-        if (clicked == 1)
-        {
-            clicktime = Time.time;
-        }
-        
-        if(clicked >= 2 && Time.time-clicktime <= clickdelay)
-        {
-            for(int i = 0; i < wheel.transform.childCount-1; i++)
+            if (Time.time - clicktime >= clickdelay)
             {
-                if(wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon == null)
-                {
-                    wheel.transform.GetChild(i).GetChild(1).GetComponent<DropDetector>().changeWeapon(weapon, transform.GetSiblingIndex());
-                    break;
-                }
+                clicked = 0;
             }
-            clicked = 0;
+
+            clicked++;
+            if (clicked == 1)
+            {
+                clicktime = Time.time;
+            }
+
+            if (clicked >= 2 && Time.time - clicktime <= clickdelay)
+            {
+                for (int i = 0; i < wheel.transform.childCount - 1; i++)
+                {
+                    if (wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon == null)
+                    {
+                        DestroyInfo();
+                        wheel.transform.GetChild(i).GetChild(1).GetComponent<DropDetector>().changeWeapon(weapon, transform.GetSiblingIndex());
+                        break;
+                    }
+                }
+                clicked = 0;
+            }
         }
         
-        //DestroyInfo();
     }
 }

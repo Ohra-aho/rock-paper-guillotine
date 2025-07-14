@@ -71,7 +71,7 @@ MonoBehaviour:
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 
-  advanced: 0
+  advanced: 1
 --- !u!114 &4110409653828241436
 MonoBehaviour:
   m_ObjectHideFlags: 0

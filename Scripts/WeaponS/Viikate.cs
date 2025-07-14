@@ -14,7 +14,7 @@ public class Viikate : MonoBehaviour
     public void IncreaseStack(Weapon weapon)
     {
         Debug.Log("Stacking");
-        GetComponent<Stacking>().IncreaseStacks(2);
+        GetComponent<Stacking>().IncreaseStacks(1);
         CalculateDamage();
     }
 

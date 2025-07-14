@@ -175,15 +175,15 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0
+  - time: 0.016666668
     functionName: PlayAudio
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.9833333
-    functionName: LastLoop
+  - time: 1.9666667
+    functionName: StopAudio
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
