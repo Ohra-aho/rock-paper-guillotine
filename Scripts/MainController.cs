@@ -212,7 +212,7 @@ public class MainController : MonoBehaviour
         TC = GameObject.FindGameObjectWithTag("Table").GetComponent<TableController>();
         TC.ClearDisplay();
         EndRound();
-        if(!story_event_holder.transform.GetChild(0).GetComponent<Encounter>().last) SpawnRewardMenu();
+        if(!story_event_holder.transform.GetChild(0).GetComponent<Encounter>().last && !player.GetComponent<PlayerContoller>().HB.dead) SpawnRewardMenu();
     }
 
     

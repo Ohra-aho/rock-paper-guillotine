@@ -48,5 +48,31 @@ public class PlayerInventory : MonoBehaviour
         {
             //Debug.Log("Something");
         }
+        AddBuffToNewWeapon(newItem);
+    }
+
+    private void AddBuffToNewWeapon(GameObject weapon)
+    {
+        for(int i = 0; i < GetComponent<PlayerContoller>().TrueInventory.transform.childCount; i++)
+        {
+            GameObject child = GetComponent<PlayerContoller>().TrueInventory.transform.GetChild(i).gameObject;
+            if(child.GetComponent<Weapon>().player)
+            {
+                if (child.GetComponent<BuffController>())
+                {
+                    child.GetComponent<BuffController>().Equip();
+                }
+
+                if (child.GetComponent<Laava>())
+                {
+                    child.GetComponent<Laava>().Equip();
+                }
+
+                if (child.GetComponent<AccessCode>())
+                {
+                    child.GetComponent<AccessCode>().Equip();
+                }
+            }
+        }
     }
 }

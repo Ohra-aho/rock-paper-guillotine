@@ -16755,11 +16755,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 1944698211339908181, guid: 7f5d4deea30d86443a53905a5d8efdeb, type: 3}
+  - {fileID: 1944698211339908181, guid: 8823c37d5eb8e0d46b1bf72e95b12280, type: 3}
   - {fileID: 1944698211339908181, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
-  - {fileID: 1944698211339908181, guid: ee57d6d131d1e97458e79deca9dcb588, type: 3}
+  - {fileID: 1944698211339908181, guid: 3f4b50e5c1b5fbf478f8a98e11392810, type: 3}
+  - {fileID: 1944698211339908181, guid: 048dd4a1f920edd42bb2f11dcc121a96, type: 3}
+  - {fileID: 1944698211339908181, guid: 52fd68d82be3597479e9c0af4a6bbbbe, type: 3}
   all: []
-  all_weapons: 1
+  all_weapons: 0
 --- !u!114 &1366762623
 MonoBehaviour:
   m_ObjectHideFlags: 0

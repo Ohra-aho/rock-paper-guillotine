@@ -149,6 +149,14 @@ public class BuffController : MonoBehaviour
         }
     }
 
+    public void AddBuffToOneWeapon(Transform weapon)
+    {
+        if (buff_requirement(weapon.GetComponent<Weapon>()))
+        {
+            AddBuff(weapon);
+        }
+    }
+
     private bool IfOwnBuffExists(Transform weapon)
     {
         bool found = false;
