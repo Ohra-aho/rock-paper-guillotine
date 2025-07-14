@@ -16759,7 +16759,7 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   - {fileID: 1944698211339908181, guid: ee57d6d131d1e97458e79deca9dcb588, type: 3}
   all: []
-  all_weapons: 0
+  all_weapons: 1
 --- !u!114 &1366762623
 MonoBehaviour:
   m_ObjectHideFlags: 0

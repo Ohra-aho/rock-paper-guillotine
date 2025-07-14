@@ -15,6 +15,7 @@ public class Cape : MonoBehaviour
 
     public void ApplyBuff()
     {
-        GetComponent<BuffController>().AddBuffs();
+        //Debug.Log("Que");
+        GetComponent<BuffController>().Equip(); //.AddBuffs();
     }
 }

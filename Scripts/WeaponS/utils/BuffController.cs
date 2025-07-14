@@ -54,8 +54,11 @@ public class BuffController : MonoBehaviour
         if (GetComponent<Weapon>().player)
         {
             real_inventory = GameObject.FindGameObjectWithTag("RI");
-            GetComponent<Weapon>().equip.AddListener(Equip);
-            GetComponent<Weapon>().unEquip.AddListener(Unequip);
+            if (!special_apply)
+            {
+                GetComponent<Weapon>().equip.AddListener(Equip);
+                GetComponent<Weapon>().unEquip.AddListener(Unequip);
+            }
         }
         else
         {
@@ -65,20 +68,20 @@ public class BuffController : MonoBehaviour
 
     public void Equip()
     {
-        if(!buff_on)
-        {
+        //if(!buff_on)
+        //{
             buff_on = true;
             AddBuffs();
-        }
+        //}
     }
 
     public void Unequip()
     {
-        if(buff_on)
-        {
+        //if(buff_on)
+        //{
             buff_on = false;
             AddBuffs();
-        }
+        //}
     }
 
     public void AddBuffs()
