@@ -33,9 +33,10 @@ public class MainController : MonoBehaviour
 
     public List<GameObject> playthroughts;
 
-     public bool buttons_active = true;
+    public bool buttons_active = true;
 
     public int reward_tier = 1;
+    public bool rewards_disabled = false;
 
     public enum Choise
     {
@@ -71,7 +72,6 @@ public class MainController : MonoBehaviour
     private void Update()
     {
         GetComponent<StoryController>().InvokeNextEvent();
-        //Debug.Log(game_state);
     }
 
     public void SetNewState(State new_state)
@@ -212,7 +212,11 @@ public class MainController : MonoBehaviour
         TC = GameObject.FindGameObjectWithTag("Table").GetComponent<TableController>();
         TC.ClearDisplay();
         EndRound();
-        if(!story_event_holder.transform.GetChild(0).GetComponent<Encounter>().last && !player.GetComponent<PlayerContoller>().HB.dead) SpawnRewardMenu();
+        if(
+            !story_event_holder.transform.GetChild(0).GetComponent<Encounter>().last && 
+            !player.GetComponent<PlayerContoller>().HB.dead && 
+            !rewards_disabled
+            ) SpawnRewardMenu();
     }
 
     
@@ -223,12 +227,14 @@ public class MainController : MonoBehaviour
         {
             case true:
                 enemyChoise.lose.Invoke();
+                playerChoise.win.Invoke();
                 playerChoise.DealDamage(
                     enemyChoise
                     );
                 break;
             case false:
                 enemyChoise.win.Invoke();
+                playerChoise.lose.Invoke();
                 enemyChoise.DealDamage(
                     playerChoise
                     );

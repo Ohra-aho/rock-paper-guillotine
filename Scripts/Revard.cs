@@ -127,6 +127,18 @@ public class Revard : MonoBehaviour
         }
     }
 
+    private void DestroyAllInfo()
+    {
+        GameObject[] info = GameObject.FindGameObjectsWithTag("reward_info");
+        if(info.Length > 0)
+        {
+            for (int i = info.Length-1; i >= 0; i--)
+            {
+                Destroy(info[i]);
+            }
+        }
+    }
+
     public void DestroyInfo()
     {
         Destroy(visibleInfo);
@@ -138,6 +150,7 @@ public class Revard : MonoBehaviour
             Chosen();
             transform.parent.parent.GetComponent<RewardMenu>().DisableRewards();
         }
+        DestroyAllInfo();
     }
 
 

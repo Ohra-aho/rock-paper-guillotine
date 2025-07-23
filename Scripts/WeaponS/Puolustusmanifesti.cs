@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Puolustusmanifesti : MonoBehaviour
 {
+    int armor_found = 0;
     public void CalculateDamage()
     {
         int damage = 0;
@@ -13,6 +14,18 @@ public class Puolustusmanifesti : MonoBehaviour
         {
             damage += weapons[i].armor;
         }
-        GetComponent<Weapon>().damage = damage;
+
+        if(armor_found < damage)
+        {
+            GetComponent<Weapon>().damage -= armor_found;
+            armor_found = damage;
+            GetComponent<Weapon>().damage += armor_found;
+        }
+        if(damage < armor_found)
+        {
+            GetComponent<Weapon>().damage -= armor_found;
+            armor_found = damage;
+            GetComponent<Weapon>().damage += armor_found;
+        }
     }
 }

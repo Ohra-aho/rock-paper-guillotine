@@ -89,16 +89,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  dead: 0
   type: 3
   damage: 1
   armor: 0
+  real_damage: 0
+  real_armor: 0
   name: Jokeri
   description: "Voittaa aina, mutta tuhoaa itsens\xE4, kun voittaa."
   sprite: {fileID: 21300000, guid: 96e547a411406a44c82e558aa65e439d, type: 3}
-  stacks: 0
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -116,6 +119,12 @@ MonoBehaviour:
       m_Calls: []
   dealDamage:
     m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3603452539436064434}
         m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
@@ -129,6 +138,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -147,6 +159,16 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  self_destructive: 0
+  healing: 0
+  health: 0
+  kivi_synegry: 0
+  paperi_synergy: 0
+  sakset_synergy: 0
+  points: 0
 --- !u!114 &3603452539436064434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,3 +181,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  used_ones: 0

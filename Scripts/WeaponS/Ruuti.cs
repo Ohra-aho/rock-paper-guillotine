@@ -13,7 +13,8 @@ public class Ruuti : MonoBehaviour
 
     public void DealDamage(Weapon weapon)
     {
+        Debug.Log(weapon.name);
         GetComponent<EffectDamage>().DealDamage(weapon);
-        //weapon.EffectDamage(2);
+        //weapon.EffectDamage(1);
     }
 }

@@ -41,7 +41,9 @@ public class Weapon : MonoBehaviour
     public UnityEvent onDestruction;
     public UnityEvent eachTurn;
 
-    //Types
+    private bool loop_stopper = false; //Helps counteract infinite loops 
+
+    //Types iguess
     public bool self_destructive; //Weapons which synergize with self destruction
     public bool healing; //Weapons which heal or synergice with it
     public bool health; //Weapons which give health or care about it
@@ -54,6 +56,7 @@ public class Weapon : MonoBehaviour
     {
         real_armor = armor;
         real_damage = damage;
+        endPhase.AddListener(ToggleLoopStropper);
     }
 
     private void Update()
@@ -127,27 +130,42 @@ public class Weapon : MonoBehaviour
             {
                 HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
                 hb.TakeDamage(realDamage);
-                if(effect) opponent.dealDamage.Invoke();
-                takeDamage.Invoke();
+                if(!loop_stopper)
+                {
+                    if (effect) opponent.dealDamage.Invoke();
+                    takeDamage.Invoke();
+                }
                 dead = hb.GetComponent<HealthBar>().CheckIfDead();
             }
             else
             {
                 HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
                 hb.TakeDamage(realDamage);
-                if(effect) opponent.dealDamage.Invoke();
-                takeDamage.Invoke();
+                if(!loop_stopper)
+                {
+                    if (effect) opponent.dealDamage.Invoke();
+                    takeDamage.Invoke();
+                }
                 dead = hb.GetComponent<HealthBar>().CheckIfDead();
                 GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().TakeDamage();
 
             }
+            loop_stopper = true;
         }
         else
         {
-            takeNoDamage.Invoke();
+            if(!loop_stopper)
+            {
+                takeNoDamage.Invoke();
+            }
+            loop_stopper = true;
         }
     }
 
+    public void ToggleLoopStropper()
+    {
+        loop_stopper = false;
+    } 
 
     public void CheckUp()
     {
