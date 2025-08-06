@@ -56,7 +56,8 @@ public class MainController : MonoBehaviour
         idle,
         dialog,
         dead,
-        stalling
+        stalling,
+        pause
     }
 
     public State game_state = State.idle;

@@ -101,8 +101,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Kirja
-  description: "Joka kerta kun teet vahinkoa, kirja saa yhden pisteen. Jokainen 2
-    psitett\xE4 kasvattaa vahinkoa."
+  description: "Joka kerta kun tekee vahinkoa, saa yhden pisteen. Jokainen 2 psitett\xE4
+    kasvattaa vahinkoa."
   sprite: {fileID: 21300000, guid: 359fb2764748cb048a898e0a35a1298b, type: 3}
   choisePhase:
     m_PersistentCalls:

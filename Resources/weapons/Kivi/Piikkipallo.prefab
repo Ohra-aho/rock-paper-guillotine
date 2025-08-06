@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   penetrating: 0
@@ -99,9 +100,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Piikkipallo
-  description: Jos otat vahinkoa, vastustaja ottaa yhden vahingon
+  description: Jos ottaa vahinkoa, vastustaja ottaa yhden vahingon
   sprite: {fileID: 21300000, guid: 5d98066317e2fa94cbe8f69fee01af35, type: 3}
-  stacks: 0
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

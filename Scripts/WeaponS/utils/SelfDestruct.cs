@@ -18,16 +18,19 @@ public class SelfDestruct : MonoBehaviour
             }
             else if (käyttöohje != null && used_ones)
             {
+                GameObject.Find("Destruction hand").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
                 GameObject.Find("Destruction hand").GetComponent<Test>().PlayAnimation("grab");
             }
             else
             {
+                GameObject.Find("Destruction hand").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
                 GameObject.Find("Destruction hand").GetComponent<Test>().PlayAnimation("grab");
             }
         } else
         {
             if(!GetComponent<Weapon>().dead)
             {
+                GameObject.Find("Destruction hand e").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
                 GameObject.Find("Destruction hand e").GetComponent<Test>().PlayAnimation("grab2");
             }
         }

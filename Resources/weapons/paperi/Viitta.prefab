@@ -101,7 +101,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Viitta
-  description: "Seuraava hy\xF6kk\xE4yksesi saa +2 vahinkoon."
+  description: "Seuraava hy\xF6kk\xE4yksesi, toisella aseella saa +2 vahinkoon."
   sprite: {fileID: 21300000, guid: b339ef54dda7d144785582c064e5330f, type: 3}
   choisePhase:
     m_PersistentCalls:

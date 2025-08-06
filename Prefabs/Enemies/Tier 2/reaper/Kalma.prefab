@@ -11,11 +11,13 @@ GameObject:
   - component: {fileID: 5442967482381830314}
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
-  - component: {fileID: 2238475475905463734}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 3174986441044653427}
+  - component: {fileID: -1127579225726501749}
+  - component: {fileID: 2117982030291049483}
+  - component: {fileID: 164226764080989055}
+  - component: {fileID: -6877386502921992183}
   m_Layer: 5
-  m_Name: FireBall
+  m_Name: Kalma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,18 +80,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2238475475905463734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4e087e1c005c58418cfe33a8b7eab38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3098424137161797902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,14 +97,15 @@ MonoBehaviour:
   opponent: {fileID: 0}
   penetrating: 0
   dead: 0
-  type: 2
-  damage: 5
+  type: 1
+  damage: 2
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Tulipallo
-  description: "Tuhoaa itsens\xE4, jos voittaa vuoron."
-  sprite: {fileID: 21300000, guid: 4f0b59fe0f430a646b3a561c73ca8ccc, type: 3}
+  name: Kalma
+  description: "Jos ottaa vahinkoa t\xE4st\xE4 aseesta, otat saman verran vahinkoa.
+    Tuhoaa itsens\xE4"
+  sprite: {fileID: 21300000, guid: cec0166c1fe7aa047900d60b355e1284, type: 3}
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -123,7 +114,31 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -6877386502921992183}
+        m_TargetAssemblyTypeName: DeathCold, Assembly-CSharp
+        m_MethodName: Retaliate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -1127579225726501749}
+        m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
+        m_MethodName: Destruct
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -138,19 +153,7 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3174986441044653427}
-        m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
-        m_MethodName: Destruct
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   lose:
     m_PersistentCalls:
       m_Calls: []
@@ -175,14 +178,14 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 1
+  self_destructive: 0
   healing: 0
   health: 0
   kivi_synegry: 0
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
---- !u!114 &3174986441044653427
+--- !u!114 &-1127579225726501749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,3 +198,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   used_ones: 0
+--- !u!114 &2117982030291049483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5665f5f93a7f649bffbb97d7b763bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &164226764080989055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 0
+--- !u!114 &-6877386502921992183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afd0a2c4ea3d6f4aaf9dd8d076fc26a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class BuffController : MonoBehaviour
 {
+    public MainController.Choise? type_change = null;
+
     private bool buff_on = false;
     [SerializeField] private GameObject buff;
     GameObject real_inventory;
@@ -41,6 +43,7 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public bool constant;
     [HideInInspector] public bool onDestruction;
     [HideInInspector] public bool awake;
+
     [HideInInspector] public bool temporary;
     [HideInInspector] public int timer; //used for temporary buffs
 
@@ -129,6 +132,7 @@ public class BuffController : MonoBehaviour
             new_buff.win = win;
             new_buff.lose = lose;
             new_buff.timer = timer;
+            new_buff.type_change = type_change;
             if(special != null) new_buff.GetComponent<Buff>().special = special;
             if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
             new_buff.GetComponent<Buff>().AddBuff();

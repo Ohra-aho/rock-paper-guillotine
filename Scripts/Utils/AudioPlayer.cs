@@ -34,7 +34,6 @@ public class AudioPlayer : MonoBehaviour
 
     private void Update()
     {
-        //if(GetComponent<AudioSource>().volume != volume) 
         if (settings.pause) GetComponent<AudioSource>().Pause();
         else if (!settings.pause && !GetComponent<AudioSource>().isPlaying) GetComponent<AudioSource>().UnPause();
 

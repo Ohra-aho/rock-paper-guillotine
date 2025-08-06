@@ -99,7 +99,7 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Sepeli
+  name: Hitsipilli
   description: +1 vahinkoon, per. joka toinen "saksi", jonka omistat.
   sprite: {fileID: 21300000, guid: 99182d2474a679549b18d3e22fb8f0e3, type: 3}
   choisePhase:

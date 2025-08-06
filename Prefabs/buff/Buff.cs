@@ -40,6 +40,9 @@ public class Buff : MonoBehaviour
     //public bool temporary;
     public int timer;
 
+    public MainController.Choise og_type;
+    public MainController.Choise? type_change;
+
     private void Awake()
     {
         weapon = transform.parent.GetComponent<Weapon>();
@@ -47,12 +50,6 @@ public class Buff : MonoBehaviour
         {
             special(weapon);
         }
-    }
-
-    private void OnDestroy()
-    {
-        //Needs to be put somewhere else
-        //RemoveBuff();
     }
 
     public void AddBuff()
@@ -64,7 +61,6 @@ public class Buff : MonoBehaviour
                 damage_buff = -transform.parent.GetComponent<Weapon>().damage;
             }
             transform.parent.GetComponent<Weapon>().damage += damage_buff;
-
         }
 
         if (armor_buff != 0)
@@ -104,6 +100,12 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().win.AddListener(() => special(weapon));
         if (lose)
             transform.parent.GetComponent<Weapon>().lose.AddListener(() => special(weapon));
+        if(type_change != null)
+        {
+            og_type = transform.parent.GetComponent<Weapon>().type;
+            transform.parent.GetComponent<Weapon>().type = type_change ?? og_type;
+        }
+
     }
 
     public void RemoveBuff()
@@ -153,7 +155,9 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().win.RemoveListener(() => special(weapon));
         if (lose)
             transform.parent.GetComponent<Weapon>().lose.RemoveListener(() => special(weapon));
-
+        if (type_change != null)
+            transform.parent.GetComponent<Weapon>().type = og_type;
+        
         if (special_removal != null) special_removal(weapon);
     }
 

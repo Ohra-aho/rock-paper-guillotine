@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Viikate : MonoBehaviour
 {
+    public int amount = 1;
     private void Awake()
     {
         GetComponent<BuffController>().special = IncreaseStack;
@@ -13,8 +14,7 @@ public class Viikate : MonoBehaviour
 
     public void IncreaseStack(Weapon weapon)
     {
-        Debug.Log("Stacking");
-        GetComponent<Stacking>().IncreaseStacks(1);
+        GetComponent<Stacking>().IncreaseStacks(amount);
         CalculateDamage();
     }
 

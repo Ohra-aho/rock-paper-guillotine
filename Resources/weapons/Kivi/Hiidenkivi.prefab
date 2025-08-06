@@ -102,16 +102,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  dead: 0
   type: 0
   damage: 3
   armor: 2
+  real_damage: 0
+  real_armor: 0
   name: Hiidenkivi
-  description: "Tuhoaa itsens\xE4, kun tekee vahinkoa"
+  description: "Jos voittaa vuoron, tuhoaa itsens\xE4."
   sprite: {fileID: 21300000, guid: adbdbe63e04c14e4f86c3265b66a6f58, type: 3}
-  stacks: 0
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -129,6 +132,12 @@ MonoBehaviour:
       m_Calls: []
   dealDamage:
     m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2821382414112198119}
         m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
@@ -142,6 +151,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -158,6 +170,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onDestruction:
+    m_PersistentCalls:
+      m_Calls: []
+  eachTurn:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 1

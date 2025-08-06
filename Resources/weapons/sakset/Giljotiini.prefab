@@ -89,11 +89,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
+  player: 0
+  opponent: {fileID: 0}
+  penetrating: 0
+  dead: 0
   type: 2
   damage: 100
   armor: 0
+  real_damage: 0
+  real_armor: 0
   name: Giljotiini
-  description: "Jos voitat, tapat vastustajan. Jos h\xE4vit\xE4, kuolet"
+  description: "Jos h\xE4vi\xE4\xE4 vuoron, kuolet"
   sprite: {fileID: 21300000, guid: 41df8518cdfdb0a40a53583927b0f308, type: 3}
   choisePhase:
     m_PersistentCalls:
@@ -102,6 +109,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   endPhase:
+    m_PersistentCalls:
+      m_Calls: []
+  victory:
     m_PersistentCalls:
       m_Calls: []
   takeDamage:
@@ -134,6 +144,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
+  draw:
+    m_PersistentCalls:
+      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -143,6 +165,22 @@ MonoBehaviour:
   unEquip:
     m_PersistentCalls:
       m_Calls: []
+  constant:
+    m_PersistentCalls:
+      m_Calls: []
+  onDestruction:
+    m_PersistentCalls:
+      m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  self_destructive: 0
+  healing: 0
+  health: 0
+  kivi_synegry: 0
+  paperi_synergy: 0
+  sakset_synergy: 0
+  points: 0
 --- !u!114 &2529801539375396388
 MonoBehaviour:
   m_ObjectHideFlags: 0
