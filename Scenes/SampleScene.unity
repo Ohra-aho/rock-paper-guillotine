@@ -16761,6 +16761,7 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
   - {fileID: 1944698211339908181, guid: dc1ef5819bdc39f49b92496cf806f33b, type: 3}
+  - {fileID: 1944698211339908181, guid: 4255b77c33033ae4fb66d0697f10adc0, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623

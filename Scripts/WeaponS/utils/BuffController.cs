@@ -136,6 +136,10 @@ public class BuffController : MonoBehaviour
             if(special != null) new_buff.GetComponent<Buff>().special = special;
             if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
             new_buff.GetComponent<Buff>().AddBuff();
+        } else
+        {
+            Buff buff = FindBuffByName(GetComponent<Weapon>().name, weapon);
+            if(timer != 0) buff.timer = timer;
         }
     }
 
@@ -172,6 +176,18 @@ public class BuffController : MonoBehaviour
             }
         }
         return found;
+    }
+
+    private Buff? FindBuffByName(string name, Transform weapon)
+    {
+        for (int i = 0; i < weapon.childCount; i++)
+        {
+            if (weapon.GetChild(i).GetComponent<Buff>().id == name)
+            {
+                return weapon.GetChild(i).GetComponent<Buff>();
+            }
+        }
+        return null;
     }
 
     private GameObject FindOwnBuff(Transform weapon)
