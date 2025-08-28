@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
   - component: {fileID: 9126511307194648938}
-  - component: {fileID: -974149184124634853}
   m_Layer: 5
-  m_Name: Revolverisankari
+  m_Name: armeija
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,19 +58,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Revolverisankari
-  image: {fileID: 21300000, guid: 1d43eacead7ef3849b9501f0b879f344, type: 3}
-  maxHealth: 5
+  name: Armeija
+  image: {fileID: 21300000, guid: 6c513e271cb9eac41b069419ed768d8f, type: 3}
+  maxHealth: 4
   weapons:
-  - {fileID: 1944698211339908181, guid: e403524b741594d4abc0191511c7da8e, type: 3}
-  - {fileID: 1944698211339908181, guid: c0d64846e2d505c44b64dbdd2bd695bb, type: 3}
-  - {fileID: 1944698211339908181, guid: a98789521a695fd47ae66fd90757e192, type: 3}
-  plan_1: 02000000000000000100000000000000
-  plan_2: 00000000020000000100000000000000
+  - {fileID: 1944698211339908181, guid: 019f3a3c2572e704eb849a98cf4c8792, type: 3}
+  - {fileID: 1944698211339908181, guid: 2be65f55595685d41a16b5043c2e7fd6, type: 3}
+  - {fileID: 1944698211339908181, guid: b01cd12941fc90f4cb6e2f268ad58bdb, type: 3}
+  plan_1: 02000000010000000000000000000000
+  plan_2: 02000000000000000100000001000000
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 01000000
-  advanced: 1
+  advanced: 0
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -124,15 +123,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-974149184124634853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2d9f795ff1fc424a85d3cdab679956e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

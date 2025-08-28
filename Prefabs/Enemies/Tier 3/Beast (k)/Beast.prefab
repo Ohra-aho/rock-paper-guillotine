@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4809575014415415317}
   - component: {fileID: 9126511307194648938}
   m_Layer: 5
-  m_Name: armeija
+  m_Name: Beast
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,15 +58,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Armeija
-  image: {fileID: 21300000, guid: 6c513e271cb9eac41b069419ed768d8f, type: 3}
-  maxHealth: 4
+  name: Beast
+  image: {fileID: 21300000, guid: 1d43eacead7ef3849b9501f0b879f344, type: 3}
+  maxHealth: 8
   weapons:
-  - {fileID: 1944698211339908181, guid: 019f3a3c2572e704eb849a98cf4c8792, type: 3}
-  - {fileID: 1944698211339908181, guid: 2be65f55595685d41a16b5043c2e7fd6, type: 3}
-  - {fileID: 1944698211339908181, guid: b01cd12941fc90f4cb6e2f268ad58bdb, type: 3}
-  plan_1: 010000000200000000000000
-  plan_2: 020000000000000001000000
+  - {fileID: 1944698211339908181, guid: 34cd79fcaba0d914bba22b6212bbfa80, type: 3}
+  - {fileID: 1944698211339908181, guid: 9da0f5bab91743042bb198ee573012c6, type: 3}
+  - {fileID: 1944698211339908181, guid: 867905b84f0c7ee488f3f2047663f136, type: 3}
+  plan_1: 01000000000000000000000000000000
+  plan_2: 01000000000000000000000000000000
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 01000000

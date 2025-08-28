@@ -47,6 +47,12 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public bool temporary;
     [HideInInspector] public int timer; //used for temporary buffs
 
+    [HideInInspector] public bool penetrating;
+    [HideInInspector] public bool draw_winner;
+
+    //Debuffs
+    [HideInInspector] public bool destructive;
+
     private void Awake()
     {
         Inisiate();
@@ -71,20 +77,14 @@ public class BuffController : MonoBehaviour
 
     public void Equip()
     {
-        //if(!buff_on)
-        //{
-            buff_on = true;
-            AddBuffs();
-        //}
+        buff_on = true;
+        AddBuffs();
     }
 
     public void Unequip()
     {
-        //if(buff_on)
-        //{
-            buff_on = false;
-            AddBuffs();
-        //}
+        buff_on = false;
+        AddBuffs();
     }
 
     public void AddBuffs()
@@ -133,6 +133,9 @@ public class BuffController : MonoBehaviour
             new_buff.lose = lose;
             new_buff.timer = timer;
             new_buff.type_change = type_change;
+            new_buff.draw_winner = draw_winner;
+            new_buff.penetrating = penetrating;
+            new_buff.destructive = destructive;
             if(special != null) new_buff.GetComponent<Buff>().special = special;
             if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
             new_buff.GetComponent<Buff>().AddBuff();

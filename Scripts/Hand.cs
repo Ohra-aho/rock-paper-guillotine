@@ -7,26 +7,42 @@ public class Hand : MonoBehaviour
     public GameObject weapon_to_destroy;
     Sprite weapon_sprite;
     public List<Sprite> icons;
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.GetComponent<WeaponSprite>())
         {
-            if(collision.GetComponent<WeaponSprite>().weapon.GetComponent<SelfDestruct>())
+            if(collision.GetComponent<WeaponSprite>().weapon == weapon_to_destroy)
             {
-                if(collision.GetComponent<WeaponSprite>().weapon == weapon_to_destroy)
+                weapon_sprite = collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().sprite;
+                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon_sprite;
+                switch (collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().type)
                 {
-                    weapon_sprite = collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().sprite;
-                    transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon_sprite;
-                    switch (collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().type)
-                    {
-                        case MainController.Choise.kivi: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[0]; break;
-                        case MainController.Choise.paperi: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[1]; break;
-                        case MainController.Choise.sakset: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[2]; break;
-                        case MainController.Choise.hyödytön: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[3]; break;
-                        case MainController.Choise.voittamaton: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[4]; break;
-                    }
-
+                    case MainController.Choise.kivi: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[0]; break;
+                    case MainController.Choise.paperi: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[1]; break;
+                    case MainController.Choise.sakset: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[2]; break;
+                    case MainController.Choise.hyödytön: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[3]; break;
+                    case MainController.Choise.voittamaton: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[4]; break;
+                }
+                
+                //Required if weapon to destroy doesn't have SelfDestruct (Possible with debuffs)
+                if(collision.GetComponent<WeaponSprite>().weapon.GetComponent<SelfDestruct>())
+                {
                     collision.GetComponent<WeaponSprite>().weapon.GetComponent<SelfDestruct>().TrueDestruct();
+                }
+                else
+                {
+                    if (collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().player)
+                    {
+                        GameObject.Find("PlayerWheelHolder").GetComponent<PlayerWheelHolder>()
+                            .RemoveWeapon(collision.GetComponent<WeaponSprite>().weapon);
+                    }
+                    else
+                    {
+                        GameObject.Find("Wheel holder").GetComponent<EnemyWheelHolder>()
+                            .RemoveWeapon(collision.GetComponent<WeaponSprite>().weapon);
+                    }
                 }
             }
         }

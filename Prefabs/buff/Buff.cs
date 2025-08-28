@@ -40,16 +40,23 @@ public class Buff : MonoBehaviour
     //public bool temporary;
     public int timer;
 
+    public bool penetrating;
+    public bool draw_winner;
+
+    private bool og_pen;
+    private bool og_draw_winner;
+    private bool og_destructive;
+
+    //Debuffs
+    public bool destructive;
+
     public MainController.Choise og_type;
     public MainController.Choise? type_change;
 
     private void Awake()
     {
         weapon = transform.parent.GetComponent<Weapon>();
-        if(awake)
-        {
-            special(weapon);
-        }
+        if(awake) special(weapon);
     }
 
     public void AddBuff()
@@ -71,6 +78,8 @@ public class Buff : MonoBehaviour
             }
             transform.parent.GetComponent<Weapon>().armor += armor_buff;
         }
+
+        GetOGs();
 
         if(choisePhase)
             transform.parent.GetComponent<Weapon>().choisePhase.AddListener(() => special(weapon));
@@ -101,11 +110,17 @@ public class Buff : MonoBehaviour
         if (lose)
             transform.parent.GetComponent<Weapon>().lose.AddListener(() => special(weapon));
         if(type_change != null)
+            transform.parent.GetComponent<Weapon>().type = type_change ?? og_type;   
+        if (penetrating)
+            transform.parent.GetComponent<Weapon>().penetrating = true;
+        if (draw_winner)
+            transform.parent.GetComponent<Weapon>().draw_winner = true;
+        if (destructive)
         {
-            og_type = transform.parent.GetComponent<Weapon>().type;
-            transform.parent.GetComponent<Weapon>().type = type_change ?? og_type;
+            transform.parent.gameObject.AddComponent<SelfDestruct>();
+            transform.parent.GetComponent<Weapon>().endPhase.AddListener(transform.parent.GetComponent<SelfDestruct>().Destruct);
         }
-
+            
     }
 
     public void RemoveBuff()
@@ -157,7 +172,17 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().lose.RemoveListener(() => special(weapon));
         if (type_change != null)
             transform.parent.GetComponent<Weapon>().type = og_type;
-        
+        if (penetrating)
+            transform.parent.GetComponent<Weapon>().penetrating = og_pen;
+        if (draw_winner)
+            transform.parent.GetComponent<Weapon>().draw_winner = og_draw_winner;
+        if (destructive && !og_destructive)
+        {
+            transform.parent.GetComponent<Weapon>().endPhase.RemoveListener(transform.parent.GetComponent<SelfDestruct>().Destruct);
+            Destroy(transform.parent.gameObject.GetComponent<SelfDestruct>());
+        }
+
+
         if (special_removal != null) special_removal(weapon);
     }
 
@@ -169,5 +194,13 @@ public class Buff : MonoBehaviour
             RemoveBuff();
             Destroy(this.gameObject);
         }
+    }
+
+    private void GetOGs()
+    {
+        og_type = transform.parent.GetComponent<Weapon>().type;
+        og_draw_winner = transform.parent.GetComponent<Weapon>().draw_winner;
+        og_pen = transform.parent.GetComponent<Weapon>().penetrating;
+        if (transform.parent.GetComponent<SelfDestruct>()) og_destructive = true;
     }
 }

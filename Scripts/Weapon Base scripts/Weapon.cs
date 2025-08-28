@@ -9,7 +9,8 @@ public class Weapon : MonoBehaviour
 
     [HideInInspector] public bool player;
     [HideInInspector] public Weapon opponent;
-    [HideInInspector] public bool penetrating = false;
+    public bool penetrating = false;
+    public bool draw_winner = false;
     [HideInInspector] public bool dead;
     public MainController.Choise type;
     public int damage;

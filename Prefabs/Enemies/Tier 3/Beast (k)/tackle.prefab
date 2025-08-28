@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 2372124340257124076}
+  - component: {fileID: 8600953092652137520}
+  - component: {fileID: -2158723062123651784}
   m_Layer: 5
-  m_Name: Hattu
+  m_Name: tackle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,17 +90,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
-  penetrating: 0
+  penetrating: 1
+  draw_winner: 1
   dead: 0
-  type: 1
+  type: 0
   damage: 2
-  armor: 3
-  name: Hattu
-  description: 
-  sprite: {fileID: 21300000, guid: dedf7c77767828a45990b58e5b6159ce, type: 3}
-  stacks: 0
+  armor: 0
+  real_damage: 0
+  real_armor: 0
+  name: Tackle
+  description: Pierces armor and wins draws. Next attack pierces armor and wins draws.
+  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -108,16 +112,10 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
-  victory:
-    m_PersistentCalls:
-      m_Calls: []
-  takeDamage:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2372124340257124076}
-        m_TargetAssemblyTypeName: Hattu, Assembly-CSharp
-        m_MethodName: DetectScissors
+      - m_Target: {fileID: -2158723062123651784}
+        m_TargetAssemblyTypeName: Tackle, Assembly-CSharp
+        m_MethodName: ApplyBuffs
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -127,7 +125,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  victory:
+    m_PersistentCalls:
+      m_Calls: []
+  takeDamage:
+    m_PersistentCalls:
+      m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
   win:
@@ -164,7 +171,7 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
---- !u!114 &2372124340257124076
+--- !u!114 &8600953092652137520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,6 +180,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d781a19bf2517843b2a1a1aaa957238, type: 3}
+  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+  damage_bonus: 0
+  armor_bonus: 0
+  set_a_to_zero: 0
+  set_d_to_zero: 0
+  choisePhase: 0
+  resultPhase: 0
+  endPhase: 0
+  victory: 0
+  special_apply: 0
+  takeDamage: 0
+  takeNoDamage: 0
+  dealDamage: 0
+  draw: 0
+  win: 0
+  lose: 0
+  heal: 0
+  equip: 0
+  unEquip: 0
+  constant: 0
+  onDestruction: 0
+  awake: 0
+  temporary: 0
+  timer: 0
+  penetrating: 0
+  draw_winner: 0
+  destructive: 0
+--- !u!114 &-2158723062123651784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d2c7b9236fb5c64aaa6bac01f51c5c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

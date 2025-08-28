@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 5460494944857187336}
-  - component: {fileID: 6059291314600961213}
+  - component: {fileID: -5355994565532053554}
+  - component: {fileID: -4263594918213079095}
+  - component: {fileID: 1561530986855741878}
   m_Layer: 5
-  m_Name: "Rynn\xE4kk\xF6"
+  m_Name: "Tykist\xF6"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,24 +96,27 @@ MonoBehaviour:
   opponent: {fileID: 0}
   penetrating: 0
   dead: 0
-  type: 2
-  damage: 6
-  armor: 0
+  type: 0
+  damage: 3
+  armor: 4
   real_damage: 0
   real_armor: 0
-  name: "Rynn\xE4kk\xF6"
-  description: "-1 vahinkoon aina k\xE4yt\xF6n j\xE4lkeen."
-  sprite: {fileID: 21300000, guid: 13861850f7a44ff49bf19b7ef69a4117, type: 3}
-  stacks: 0
+  name: Cannons
+  description: Deals 1 damage after using. Gains one point. When 3 points gained,
+    dealf no effect damage.
+  sprite: {fileID: 21300000, guid: 59aaaca44ac65224da39434a15e374e2, type: 3}
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
   resultPhase:
     m_PersistentCalls:
+      m_Calls: []
+  endPhase:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5460494944857187336}
-        m_TargetAssemblyTypeName: Pyssy, Assembly-CSharp
-        m_MethodName: IncreaseStack
+      - m_Target: {fileID: -5355994565532053554}
+        m_TargetAssemblyTypeName: "Tykist\xF6, Assembly-CSharp"
+        m_MethodName: DealDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -122,9 +126,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  endPhase:
-    m_PersistentCalls:
-      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -170,8 +171,8 @@ MonoBehaviour:
   kivi_synegry: 0
   paperi_synergy: 0
   sakset_synergy: 0
-  points: 1
---- !u!114 &5460494944857187336
+  points: 0
+--- !u!114 &-5355994565532053554
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,10 +181,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cffef8fa34fece4cbc55c1cef3c886f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1bdc0acad15510e4e9d89c41833b1efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6059291314600961213
+--- !u!114 &-4263594918213079095
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,4 +197,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stacks: 0
-  stack_limit: 6
+  stack_limit: 3
+  LoadFunction:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1561530986855741878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 1

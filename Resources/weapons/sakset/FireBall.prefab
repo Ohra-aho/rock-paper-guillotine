@@ -106,6 +106,7 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 2
   damage: 5

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 7116148662641668220}
   m_Layer: 5
   m_Name: Pora
   m_TagString: Untagged
@@ -89,16 +88,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
-  penetrating: 0
+  penetrating: 1
+  draw_winner: 0
+  dead: 0
   type: 2
   damage: 1
   armor: 0
+  real_damage: 0
+  real_armor: 0
   name: Pora
   description: "L\xE4vist\xE4\xE4 panssarin"
   sprite: {fileID: 21300000, guid: 9771147d1e0ae3241a8cffaa12410636, type: 3}
-  stacks: 0
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -115,6 +118,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
     m_PersistentCalls:
       m_Calls: []
   draw:
@@ -135,15 +147,13 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7116148662641668220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc12909ea7b53964f9161f0412f24d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  self_destructive: 0
+  healing: 0
+  health: 0
+  kivi_synegry: 0
+  paperi_synergy: 0
+  sakset_synergy: 0
+  points: 0

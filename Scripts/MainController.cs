@@ -97,7 +97,7 @@ public class MainController : MonoBehaviour
             case Choise.kivi:
                 switch(enemyChoise.type)
                 {
-                    case Choise.kivi: won = null; break;
+                    case Choise.kivi: won = ChechDrawWinners(playerChoise, enemyChoise); break;
                     case Choise.paperi: won = false; break;
                     case Choise.sakset: won = true; break;
                     case Choise.hyödytön: won = true; break;
@@ -108,7 +108,7 @@ public class MainController : MonoBehaviour
                 switch (enemyChoise.type)
                 {
                     case Choise.kivi: won = true; break;
-                    case Choise.paperi: won = null; break;
+                    case Choise.paperi: won = ChechDrawWinners(playerChoise, enemyChoise); break;
                     case Choise.sakset: won = false; break;
                     case Choise.hyödytön: won = true; break;
                     case Choise.voittamaton: won = false; break;
@@ -119,7 +119,7 @@ public class MainController : MonoBehaviour
                 {
                     case Choise.kivi: won = false; break;
                     case Choise.paperi: won = true; break;
-                    case Choise.sakset: won = null; break;
+                    case Choise.sakset: won = ChechDrawWinners(playerChoise, enemyChoise); break;
                     case Choise.hyödytön: won = true; break;
                     case Choise.voittamaton: won = false; break;
                 }
@@ -130,7 +130,7 @@ public class MainController : MonoBehaviour
                     won = true;
                 } else
                 {
-                    won = null;
+                    won = ChechDrawWinners(playerChoise, enemyChoise);
                 }
                 break;
             case Choise.hyödytön:
@@ -140,7 +140,7 @@ public class MainController : MonoBehaviour
                 }
                 else
                 {
-                    won = null;
+                    won = ChechDrawWinners(playerChoise, enemyChoise);
                 }
                 break;
         }
@@ -160,6 +160,22 @@ public class MainController : MonoBehaviour
         TC.CallDisplay(won);
     }
 
+    private bool? ChechDrawWinners(Weapon player, Weapon enemy)
+    {
+        if((player.draw_winner && enemy.draw_winner) || (!player.draw_winner && !enemy.draw_winner))
+        {
+            return null;
+        }
+        if(player.draw_winner)
+        {
+            return true;
+        }
+        if(enemy.draw_winner)
+        {
+            return false;
+        }
+        return null;
+    }
 
 
     public void DisableObject(GameObject it)
