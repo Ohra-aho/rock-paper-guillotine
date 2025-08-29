@@ -7,8 +7,6 @@ public class TallMan : MonoBehaviour
     GameObject controller;
 
     bool hurt;
-    bool dodged;
-    int not_working = 0;
 
     private void Awake()
     {
@@ -21,32 +19,10 @@ public class TallMan : MonoBehaviour
     {
         if(!hurt)
         {
-            dodged = false;
-            not_working++;
-            if (not_working >= 3)
-            {
-                hurt = true;
-                not_working = 0;
-            }
-            return 2;
-        } else if(!dodged)
-        {
-            //if(hurt)
-            //{
-                dodged = true;
-                hurt = false;
-                return 0;
-           /* } else
-            {
-                hurt = false;
-                dodged = false;
-                return 1;
-            }*/
-            
+            return GetComponent<BasicEnemy>().MakeChoise(MainController.Choise.kivi);
         } else
         {
             hurt = false;
-            dodged = false;
             return 1;
         }
     }

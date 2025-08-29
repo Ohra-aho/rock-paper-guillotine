@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 6943869333779220170}
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
-  - component: {fileID: 4110409653828241436}
   - component: {fileID: 9126511307194648938}
   m_Layer: 5
-  m_Name: Tall man
+  m_Name: Anglerfish
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,31 +58,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Tall man
-  image: {fileID: 21300000, guid: a444243143c26a24f96180c223354045, type: 3}
-  maxHealth: 4
+  name: Anglerfish
+  image: {fileID: 21300000, guid: 1d43eacead7ef3849b9501f0b879f344, type: 3}
+  maxHealth: 5
   weapons:
-  - {fileID: 1944698211339908181, guid: d7c3ddcc363e6bd4bb4f4389e69b1aac, type: 3}
-  - {fileID: 1944698211339908181, guid: 63332b36f15b6474e80d4e3468ec1dfb, type: 3}
-  - {fileID: 1944698211339908181, guid: e87979058bf87bf409669a093ceab9f5, type: 3}
-  plan_1: 0200000000000000
-  plan_2: 000000000200000002000000
+  - {fileID: 1944698211339908181, guid: 63a459f2bd4e6024e9acb89c191f843f, type: 3}
+  - {fileID: 1944698211339908181, guid: b594565368df1be4ab7fdcc415e14ab1, type: 3}
+  - {fileID: 1944698211339908181, guid: 974665150ad77ab4bb4c824f73375299, type: 3}
+  plan_1: 020000000200000002000000
+  plan_2: 020000000200000002000000
   off_balance: 0
   nearDeath: 0
-  off_balance_choises: 
-  advanced: 1
---- !u!114 &4110409653828241436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0403a78261fc3df47ba53067a91354c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  off_balance_choises: 01000000
+  advanced: 0
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0

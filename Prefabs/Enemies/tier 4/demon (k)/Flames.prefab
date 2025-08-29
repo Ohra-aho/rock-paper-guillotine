@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 6858826538501687163}
-  - component: {fileID: 3691298339475263114}
+  - component: {fileID: -1837958900619506871}
   m_Layer: 5
-  m_Name: Kalma
+  m_Name: Flames
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,42 +89,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
-  type: 1
+  type: 2
   damage: 4
   armor: 0
-  name: Kalma
-  description: "Seuraava hy\xF6kk\xE4ys tekee v\xE4hint\xE4\xE4n puolet vahingostaan
-    vahinkoa. Tuhoaa itsens\xE4."
-  sprite: {fileID: 21300000, guid: dedf7c77767828a45990b58e5b6159ce, type: 3}
-  stacks: 0
+  real_damage: 0
+  real_armor: 0
+  name: Flames
+  description: If weapon used against this is used during the next turn, it deals
+    1 damage to you.
+  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
   resultPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3691298339475263114}
-        m_TargetAssemblyTypeName: Kalma, Assembly-CSharp
-        m_MethodName: AddEffect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6858826538501687163}
-        m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
-        m_MethodName: Destruct
+      - m_Target: {fileID: -1837958900619506871}
+        m_TargetAssemblyTypeName: Flames, Assembly-CSharp
+        m_MethodName: DebuffOpposingWeapon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -142,6 +132,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
   win:
@@ -178,7 +171,7 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
---- !u!114 &6858826538501687163
+--- !u!114 &-1837958900619506871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,19 +180,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a40c01b569b5524ab5d449103d143a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used_ones: 0
---- !u!114 &3691298339475263114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4126941e6d9f724e9b5074bdc4442ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
