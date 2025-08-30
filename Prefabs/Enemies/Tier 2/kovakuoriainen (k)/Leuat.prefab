@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
+  - component: {fileID: 3601139505978016097}
   m_Layer: 5
   m_Name: Leuat
   m_TagString: Untagged
@@ -88,17 +89,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 2
   damage: 2
   armor: 1
-  name: Leuat
-  description: -1 panssariin, jos on ottanut vahinkoa.
+  real_damage: 0
+  real_armor: 0
+  name: Mandibles
+  description: 
   sprite: {fileID: 21300000, guid: 1500540f3c3cfd24784b72b9add86420, type: 3}
-  stacks: 0
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -115,6 +119,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
   win:
@@ -141,6 +148,9 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -148,3 +158,15 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+--- !u!114 &3601139505978016097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98561385c4bd245438e24d050ddb8aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

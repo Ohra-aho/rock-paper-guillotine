@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -1557287006312864216}
+  - component: {fileID: -7458322146957719203}
+  - component: {fileID: 4171768396775819594}
   m_Layer: 5
   m_Name: Smite
   m_TagString: Untagged
@@ -89,17 +90,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 2
   damage: 3
   armor: 0
+  real_damage: 0
+  real_armor: 0
   name: Smite
-  description: 
+  description: If does not deal damage, deals 1 damage to self.
   sprite: {fileID: 21300000, guid: 2f44c6333b0dc7a42b809081cdad793a, type: 3}
-  stacks: 0
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -109,9 +113,9 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -1557287006312864216}
-        m_TargetAssemblyTypeName: Skalpelli, Assembly-CSharp
-        m_MethodName: CheckForBuff
+      - m_Target: {fileID: -7458322146957719203}
+        m_TargetAssemblyTypeName: Smite, Assembly-CSharp
+        m_MethodName: Flagelation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -128,6 +132,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7458322146957719203}
+        m_TargetAssemblyTypeName: Smite, Assembly-CSharp
+        m_MethodName: DealingDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
   win:
@@ -154,6 +173,9 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -161,7 +183,7 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
---- !u!114 &-1557287006312864216
+--- !u!114 &-7458322146957719203
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,6 +192,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3929bc59bc21504e82197610ed87f63, type: 3}
+  m_Script: {fileID: 11500000, guid: cc52e3378fa70d349917ea845103d715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4171768396775819594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 1

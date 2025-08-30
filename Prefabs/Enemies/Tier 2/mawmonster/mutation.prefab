@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 7225767104249451499}
+  - component: {fileID: -7289125193417213194}
+  - component: {fileID: -7023939810274262516}
+  - component: {fileID: 3545483467775676389}
   m_Layer: 5
-  m_Name: hide
+  m_Name: mutation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,16 +91,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
+  dead: 0
   type: 0
   damage: 1
   armor: 1
-  name: Nahka
-  description: Parantaa yhden haavan.
+  real_damage: 0
+  real_armor: 0
+  name: Mutation
+  description: Deals 1 damage to self. Then either heals 2 or one random weapon gains
+    either +1 to damage or armor.
   sprite: {fileID: 21300000, guid: 25b9fcaeacf5063478c57be7c660eb47, type: 3}
-  stacks: 0
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -107,19 +114,10 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
-  victory:
-    m_PersistentCalls:
-      m_Calls: []
-  takeDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  dealDamage:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7225767104249451499}
-        m_TargetAssemblyTypeName: Hanpaat, Assembly-CSharp
-        m_MethodName: DrainLife
+      - m_Target: {fileID: 3545483467775676389}
+        m_TargetAssemblyTypeName: Mutation, Assembly-CSharp
+        m_MethodName: Mutate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -129,6 +127,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  victory:
+    m_PersistentCalls:
+      m_Calls: []
+  takeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -147,7 +163,17 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7225767104249451499
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  self_destructive: 0
+  healing: 0
+  health: 0
+  kivi_synegry: 0
+  paperi_synergy: 0
+  sakset_synergy: 0
+  points: 0
+--- !u!114 &-7289125193417213194
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,7 +182,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 779c6c1fb836483468695ec026ced291, type: 3}
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heal: 1
+  amount: 1
+--- !u!114 &-7023939810274262516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 2
+--- !u!114 &3545483467775676389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda3d387ecc752c49b3ca4301142425f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

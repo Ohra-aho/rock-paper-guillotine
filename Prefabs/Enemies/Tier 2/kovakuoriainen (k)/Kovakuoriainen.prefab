@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6943869333779220170}
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
-  - component: {fileID: 8718582777317775678}
   - component: {fileID: 9126511307194648938}
   m_Layer: 5
   m_Name: Kovakuoriainen
@@ -66,24 +65,12 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: e6f5dacd513cf4949b52db9ae88cf4f5, type: 3}
   - {fileID: 1944698211339908181, guid: 49489f57f67496948b2aa55953450bbb, type: 3}
   - {fileID: 1944698211339908181, guid: 431167f948e211743a8be33abd7d9f34, type: 3}
-  plan_1: 02000000000000000200000001000000
-  plan_2: 000000000200000001000000
+  plan_1: 000000000100000002000000
+  plan_2: 000000000100000002000000
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 01000000
   advanced: 0
---- !u!114 &8718582777317775678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78d68595e1839bb468f960d08df05c0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0

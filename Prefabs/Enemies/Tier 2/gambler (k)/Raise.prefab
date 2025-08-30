@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
+  - component: {fileID: -7928718496815920504}
+  - component: {fileID: 5501050124353481544}
+  - component: {fileID: 9119766527384774574}
   m_Layer: 5
-  m_Name: Fist
+  m_Name: Raise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,17 +91,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
-  type: 1
+  type: 2
   damage: 2
   armor: 0
-  name: Koura
-  description: 
-  sprite: {fileID: 21300000, guid: 2303fa37f28b47442bd19b2e25d8b24a, type: 3}
-  stacks: 0
+  real_damage: 0
+  real_armor: 0
+  name: Raise
+  description: +2 to all damage during the next turn.
+  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -107,7 +113,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7928718496815920504}
+        m_TargetAssemblyTypeName: Raise, Assembly-CSharp
+        m_MethodName: ApplyBuffs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -115,6 +133,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9119766527384774574}
+        m_TargetAssemblyTypeName: VictroyTrigger, Assembly-CSharp
+        m_MethodName: VictoryTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  lose:
     m_PersistentCalls:
       m_Calls: []
   draw:
@@ -135,6 +174,9 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -142,3 +184,67 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+--- !u!114 &-7928718496815920504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 127f2afd91fadcc409433846d3fae1c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+--- !u!114 &5501050124353481544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+  damage_bonus: 0
+  armor_bonus: 0
+  set_a_to_zero: 0
+  set_d_to_zero: 0
+  choisePhase: 0
+  resultPhase: 0
+  endPhase: 0
+  victory: 0
+  special_apply: 0
+  takeDamage: 0
+  takeNoDamage: 0
+  dealDamage: 0
+  draw: 0
+  win: 0
+  lose: 0
+  heal: 0
+  equip: 0
+  unEquip: 0
+  constant: 0
+  onDestruction: 0
+  awake: 0
+  temporary: 0
+  timer: 0
+  penetrating: 0
+  draw_winner: 0
+  destructive: 0
+--- !u!114 &9119766527384774574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6caf9c72f1b50b429a2f810d082f26f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

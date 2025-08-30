@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: "Lasihirvi\xF6"
+  name: Glass monster
   image: {fileID: 21300000, guid: 95005bcf8ff467b4abfa74c0b3444a97, type: 3}
-  maxHealth: 2
+  maxHealth: 3
   weapons:
   - {fileID: 1944698211339908181, guid: c01f4e6b829b4a24b93fc8bd2325bbfc, type: 3}
   - {fileID: 1944698211339908181, guid: 6d156c078ce5d1746acf9a7f6c7dee5d, type: 3}

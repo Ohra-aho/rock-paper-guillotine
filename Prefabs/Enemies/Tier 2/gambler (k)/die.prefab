@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -1557287006312864216}
+  - component: {fileID: -1679567186575668264}
+  - component: {fileID: 8594040579424551377}
   m_Layer: 5
-  m_Name: Skalpelli
+  m_Name: die
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,29 +90,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
-  type: 2
-  damage: 2
+  type: 0
+  damage: 0
   armor: 0
-  name: Skalpelli
-  description: "Jos t\xE4ysiss\xE4 el\xE4miss\xE4, +2 vahinkoon."
-  sprite: {fileID: 21300000, guid: 39b4b3214e4a51c478cacfa516800034, type: 3}
-  stacks: 0
+  real_damage: 0
+  real_armor: 0
+  name: Die
+  description: This weapons damage is anything from 0 to 4.
+  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   choisePhase:
     m_PersistentCalls:
-      m_Calls: []
-  resultPhase:
-    m_PersistentCalls:
-      m_Calls: []
-  endPhase:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -1557287006312864216}
-        m_TargetAssemblyTypeName: Skalpelli, Assembly-CSharp
-        m_MethodName: CheckForBuff
+      - m_Target: {fileID: -1679567186575668264}
+        m_TargetAssemblyTypeName: Die, Assembly-CSharp
+        m_MethodName: RandomiceDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -121,6 +119,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  resultPhase:
+    m_PersistentCalls:
+      m_Calls: []
+  endPhase:
+    m_PersistentCalls:
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -130,9 +134,24 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
-  win:
+  takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8594040579424551377}
+        m_TargetAssemblyTypeName: VictroyTrigger, Assembly-CSharp
+        m_MethodName: VictoryTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   lose:
     m_PersistentCalls:
       m_Calls: []
@@ -154,6 +173,9 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -161,7 +183,7 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
---- !u!114 &-1557287006312864216
+--- !u!114 &-1679567186575668264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,6 +192,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3929bc59bc21504e82197610ed87f63, type: 3}
+  m_Script: {fileID: 11500000, guid: c2eff897cac63d3478ba6b83c9f4f946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max: 5
+--- !u!114 &8594040579424551377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6caf9c72f1b50b429a2f810d082f26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

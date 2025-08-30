@@ -11,9 +11,9 @@ public class Nunna : MonoBehaviour
 
     private void Awake()
     {
-        //controller = GameObject.FindGameObjectWithTag("EnemyHolder");
-        //controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
-        //controller.GetComponent<EnemyController>().damageEffect = TakeDamage;
+        controller = GameObject.FindGameObjectWithTag("EnemyHolder");
+        controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
+        controller.GetComponent<EnemyController>().damageEffect = TakeDamage;
     }
 
     private int MakeChoise(MainController.Choise playerChoise)

@@ -31,8 +31,6 @@ public class DamageInteractions : MonoBehaviour
     public int CalculateTakenDamage()
     {
         GetCurrentHealth();
-        Debug.Log("previous health: "+previous_health);
-        Debug.Log("current health: "+current_health);
         int taken_damage = previous_health - current_health;
         return taken_damage;
     }

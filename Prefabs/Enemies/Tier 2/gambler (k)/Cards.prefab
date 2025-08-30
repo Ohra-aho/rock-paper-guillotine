@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 6744115800140502110}
-  - component: {fileID: 5301279354688942790}
+  - component: {fileID: -7435022788689838809}
+  - component: {fileID: 8418805688385600082}
   m_Layer: 5
-  m_Name: Raivo
+  m_Name: Cards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,15 +98,27 @@ MonoBehaviour:
   dead: 0
   type: 1
   damage: 2
-  armor: 2
+  armor: 0
   real_damage: 0
   real_armor: 0
-  name: Rage
-  description: +2 to damage each time takes damage. (Continuous)
+  name: Cards
+  description: This weapons type is ether paper, useless or undeatable.
   sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   choisePhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7435022788689838809}
+        m_TargetAssemblyTypeName: Cards, Assembly-CSharp
+        m_MethodName: ChangeType
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   resultPhase:
     m_PersistentCalls:
       m_Calls: []
@@ -127,7 +139,19 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8418805688385600082}
+        m_TargetAssemblyTypeName: VictroyTrigger, Assembly-CSharp
+        m_MethodName: VictoryTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   lose:
     m_PersistentCalls:
       m_Calls: []
@@ -151,19 +175,7 @@ MonoBehaviour:
       m_Calls: []
   eachTurn:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5301279354688942790}
-        m_TargetAssemblyTypeName: Raivo, Assembly-CSharp
-        m_MethodName: PowerDown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -171,7 +183,7 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
---- !u!114 &6744115800140502110
+--- !u!114 &-7435022788689838809
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,37 +192,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
+  m_Script: {fileID: 11500000, guid: ad6307d53eda32d449bf3b02e4db8ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
-  damage_bonus: 0
-  armor_bonus: 0
-  set_a_to_zero: 0
-  set_d_to_zero: 0
-  choisePhase: 0
-  resultPhase: 0
-  endPhase: 0
-  victory: 0
-  special_apply: 0
-  takeDamage: 0
-  takeNoDamage: 0
-  dealDamage: 0
-  draw: 0
-  win: 0
-  lose: 0
-  heal: 0
-  equip: 0
-  unEquip: 0
-  constant: 0
-  onDestruction: 0
-  awake: 0
-  temporary: 0
-  timer: 0
-  penetrating: 0
-  draw_winner: 0
-  destructive: 0
---- !u!114 &5301279354688942790
+--- !u!114 &8418805688385600082
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,7 +204,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 472e521bb8a394943949fcd2f8980dd1, type: 3}
+  m_Script: {fileID: 11500000, guid: c6caf9c72f1b50b429a2f810d082f26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage_bonus: 2
