@@ -108,7 +108,7 @@ public class Weapon : MonoBehaviour
     public void SelfDamage(int amount)
     {
         int realDamage;
-        if (penetrating)
+        if (!penetrating)
         {
             realDamage = amount - armor;
             if (realDamage < 0) realDamage = 0;

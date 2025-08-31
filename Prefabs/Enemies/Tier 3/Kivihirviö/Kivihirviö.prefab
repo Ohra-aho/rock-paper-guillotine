@@ -58,15 +58,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: "Kivihirvi\xF6"
+  name: Golem
   image: {fileID: 21300000, guid: 16e672719159dc14cafb86308f21baab, type: 3}
-  maxHealth: 6
+  maxHealth: 15
   weapons:
   - {fileID: 1944698211339908181, guid: 69d285147b1ac5a4d8fbdb7d0ca6d99d, type: 3}
   - {fileID: 1944698211339908181, guid: 62c44b4a95956e64eb907a3de3ef560f, type: 3}
   - {fileID: 1944698211339908181, guid: 36b8c76309a9453429a6d6b25250a787, type: 3}
-  plan_1: 020000000000000001000000
-  plan_2: 0100000000000000020000000200000001000000
+  plan_1: 010000000000000002000000010000000200000000000000
+  plan_2: 020000000100000000000000020000000200000001000000
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 02000000
