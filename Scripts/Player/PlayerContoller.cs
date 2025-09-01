@@ -209,6 +209,18 @@ public class PlayerContoller : MonoBehaviour
         }
     }
 
+    public void ActivateFirstTurnEffects()
+    {
+        List<Weapon> equipped_weapons = GetWeapons();
+        for(int i = 0; i < equipped_weapons.Count; i++)
+        {
+            if (equipped_weapons[i].first_turn != null)
+            {
+                equipped_weapons[i].first_turn.Invoke();
+            }
+        }
+    }
+
     //Combat functions
 
     public void DealDamage()

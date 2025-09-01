@@ -64,6 +64,7 @@ public class StartButton : MonoBehaviour
         GameObject.Find("EnemyHolder").GetComponent<EnemyController>().victory = false;
         GetComponent<SpriteRenderer>().sprite = active;
         machine.GetComponent<Test>().PlayAnimation("CloseMachine");
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().ActivateFirstTurnEffects(); //Maybe should be somewhere else
         isActive = true;
     }
 
