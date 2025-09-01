@@ -7,8 +7,8 @@ public class Myrkky : MonoBehaviour
     private void Awake()
     {
         GetComponent<BuffController>().special = IncreaseStacks;
-        GetComponent<BuffController>().heal = true;
-        GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return weapon.name == "Tee"; };
+        GetComponent<BuffController>().endPhase = true;
+        GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return weapon.name != GetComponent<Weapon>().name; };
     }
 
     public void IncreaseStacks(Weapon weapon)
@@ -18,6 +18,7 @@ public class Myrkky : MonoBehaviour
 
     public void PoisonDamage()
     {
-        GetComponent<Weapon>().EffectDamage(GetComponent<Stacking>().stacks);
+        GetComponent<EffectDamage>().amount = GetComponent<Stacking>().stacks;
+        GetComponent<EffectDamage>().DealDamage(null);
     }
 }

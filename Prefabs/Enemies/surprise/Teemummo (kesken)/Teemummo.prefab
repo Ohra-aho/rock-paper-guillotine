@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 1165865232959651390}
   - component: {fileID: 4809575014415415317}
+  - component: {fileID: -3500947503595100851}
   m_Layer: 5
   m_Name: Teemummo
   m_TagString: Enemy
@@ -110,16 +111,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Wanderer
+  name: Granny
   image: {fileID: 21300000, guid: 5ada3f2c1142ab4429915fd576b41b15, type: 3}
-  maxHealth: 6
+  maxHealth: 3
   weapons:
+  - {fileID: 1944698211339908181, guid: bcca7a0cc18c98b44b16291766482b4d, type: 3}
   - {fileID: 1944698211339908181, guid: 6595016fe4ac7124bb3309ec62f96cf7, type: 3}
   - {fileID: 1944698211339908181, guid: ef901a64116067f48a153cf17318ca2e, type: 3}
-  - {fileID: 1944698211339908181, guid: bcca7a0cc18c98b44b16291766482b4d, type: 3}
-  plan_1: 020000000000000001000000
-  plan_2: 020000000000000001000000
+  plan_1: 0000000001000000010000000000000001000000
+  plan_2: 01000000000000000100000001000000000000000100000000000000
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 00000000
-  advanced: 0
+  advanced: 1
+--- !u!114 &-3500947503595100851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979226803842198351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f837d3092f7c74484de365f5f5afff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

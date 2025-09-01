@@ -13,4 +13,10 @@ public class Tee : MonoBehaviour
         PC.GetComponent<PlayerContoller>().HB.HealDamage(1);
         GetComponent<Weapon>().heal.Invoke();
     }
+
+    public void BuffPlayerWeapon()
+    {
+        MainController MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
+        MC.playerChoise.damage++;
+    }
 }
