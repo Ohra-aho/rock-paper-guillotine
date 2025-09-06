@@ -51,10 +51,6 @@ public class Revard : MonoBehaviour
             //Get rid of info
             if (visibleInfo != null) DestroyInfo();
 
-            if (actualReward.GetComponent<Item>())
-            {
-                actualReward.GetComponent<Item>().ImmediateEffect.Invoke();
-            }
             transform.parent.parent.GetComponent<Test>().UnPauseAnimation();
             Destroy(gameObject);
             GameObject.Find("Roope").GetComponent<Test>().UnPauseAnimation();

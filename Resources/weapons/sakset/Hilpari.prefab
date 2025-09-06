@@ -94,6 +94,7 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 2
   damage: 1
@@ -102,7 +103,10 @@ MonoBehaviour:
   real_armor: 0
   name: Hilpari
   description: Tasapelitilanteessa tekee yhden vahingon vastustajaan.
-  sprite: {fileID: 21300000, guid: 035288c71ff2fb64593a88d0974dadc7, type: 3}
+  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

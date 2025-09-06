@@ -64,14 +64,17 @@ public class StartButton : MonoBehaviour
         GameObject.Find("EnemyHolder").GetComponent<EnemyController>().victory = false;
         GetComponent<SpriteRenderer>().sprite = active;
         machine.GetComponent<Test>().PlayAnimation("CloseMachine");
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().ActivateFirstTurnEffects(); //Maybe should be somewhere else
         isActive = true;
+        GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarUp();
+        machine.GetComponent<Machine>().round_started = true;
     }
 
     public void Deactivate()
     {
         GetComponent<SpriteRenderer>().sprite = inactive;
         machine.GetComponent<Test>().PlayAnimation("OpenMachine");
+        GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarDown();
+        GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.PowerHealthBarDown();
         GameObject.Find("EventSystem").GetComponent<MainController>().GiveUp();
         isActive = false;
     }
@@ -80,6 +83,8 @@ public class StartButton : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = inactive;
         machine.GetComponent<Test>().PlayAnimation("OpenMachine");
+        GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarDown();
+        GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.PowerHealthBarDown();
         GameObject.Find("PlayerWheelHolder").GetComponent<NonUIButton>().individual_interactable = true;
         isActive = false;
     }

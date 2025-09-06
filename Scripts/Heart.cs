@@ -9,10 +9,6 @@ public class Heart : MonoBehaviour
 
     public bool healthy = true;
 
-    private void Awake()
-    {
-        //heal();
-    }
 
     public void damage()
     {

@@ -19,6 +19,17 @@ public class Machine : MonoBehaviour
 
     public List<GameObject> sparks;
 
+    public bool round_started = false;
+
+    public void FirstTurn()
+    {
+        if(round_started)
+        {
+            round_started = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().ActivateFirstTurnEffects();
+        }
+    }
+
     public void ChangeGear()
     {
         player.GetComponent<PlayerContoller>().ChangeWheel();

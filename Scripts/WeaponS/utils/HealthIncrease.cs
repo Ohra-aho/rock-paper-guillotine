@@ -5,19 +5,18 @@ using UnityEngine;
 public class HealthIncrease : MonoBehaviour
 {
     public int amount;
+    public bool in_view;
 
     public void Increase()
     {
-        Debug.Log("Increasing" +
-            "");
         HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
-        HB.IncreaseHealthBar(amount);
+        HB.IncreaseHealthBar(amount, in_view);
+        
     }
 
     public void Decrease()
     {
-        Debug.Log("Decreasing");
         HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
-        HB.DecreaseHealthBar(amount);
+        HB.DecreaseHealthBar(amount, in_view);
     }
 }

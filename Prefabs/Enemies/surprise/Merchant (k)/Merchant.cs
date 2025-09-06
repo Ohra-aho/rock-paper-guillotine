@@ -28,7 +28,7 @@ public class Merchant : MonoBehaviour
     public void Supplies()
     {
         HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
-        HB.IncreaseHealthBar(1);
+        HB.IncreaseHealthBar(1, true);
         DestroyPlayerWeapon();
     }
 

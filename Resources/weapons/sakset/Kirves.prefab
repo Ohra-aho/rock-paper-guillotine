@@ -92,6 +92,7 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 2
   damage: 3
@@ -101,51 +102,18 @@ MonoBehaviour:
   name: Kirves
   description: 
   sprite: {fileID: 21300000, guid: c034fbac73eabdc4691b6bb112957e33, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3098424137161797902}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: emptyFunction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   resultPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3098424137161797902}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: emptyFunction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3098424137161797902}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: emptyFunction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []

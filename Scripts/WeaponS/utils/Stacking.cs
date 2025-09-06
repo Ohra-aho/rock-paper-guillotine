@@ -17,10 +17,10 @@ public class Stacking : MonoBehaviour
             {
                 stacks += amount;
             }
-            /*if (stacks > stack_limit)
+            if (stacks > stack_limit)
             {
                 stacks = stack_limit;
-            }*/
+            }
         } else
         {
             stacks += amount;

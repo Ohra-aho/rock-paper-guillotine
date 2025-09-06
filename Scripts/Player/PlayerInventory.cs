@@ -53,24 +53,24 @@ public class PlayerInventory : MonoBehaviour
 
     private void AddBuffToNewWeapon(GameObject weapon)
     {
-        for(int i = 0; i < GetComponent<PlayerContoller>().TrueInventory.transform.childCount; i++)
+        List<Weapon> equipped_weapons = GetComponent<PlayerContoller>().GetWeapons();
+        for(int i = 0; i < equipped_weapons.Count; i++)
         {
-            GameObject child = GetComponent<PlayerContoller>().TrueInventory.transform.GetChild(i).gameObject;
-            if(child.GetComponent<Weapon>().player)
+            if(equipped_weapons[i].player)
             {
-                if (child.GetComponent<BuffController>())
+                if (equipped_weapons[i].GetComponent<BuffController>())
                 {
-                    child.GetComponent<BuffController>().Equip();
+                    equipped_weapons[i].GetComponent<BuffController>().Equip();
                 }
 
-                if (child.GetComponent<Laava>())
+                if (equipped_weapons[i].GetComponent<Laava>())
                 {
-                    child.GetComponent<Laava>().Equip();
+                    equipped_weapons[i].GetComponent<Laava>().Equip();
                 }
 
-                if (child.GetComponent<AccessCode>())
+                if (equipped_weapons[i].GetComponent<AccessCode>())
                 {
-                    child.GetComponent<AccessCode>().Equip();
+                    equipped_weapons[i].GetComponent<AccessCode>().Equip();
                 }
             }
         }

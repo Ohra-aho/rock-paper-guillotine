@@ -8,13 +8,19 @@ public class HealthBar : MonoBehaviour
     public GameObject heart;
     public GameObject heart_slot;
     public bool dead;
+    public int HP_gap = 15;
+    private int slots = 15;
+    private int max_health = 2;
+    private int current_health;
 
 
     public void TakeDamage(int damage)
     {
+        current_health -= damage;
+        if (current_health < 0) current_health = 0;
         for(int i = 0; i < damage; i++)
         {
-            for(int j = 0; j < transform.childCount; j++)
+            for(int j = transform.childCount-1; j >= 0; j--)
             {
                 if (transform.GetChild(j).GetComponent<Heart>())
                 {
@@ -26,13 +32,16 @@ public class HealthBar : MonoBehaviour
                 }
             }
         }
+        dead = CheckIfDead();
     }
 
     public void HealDamage(int damage)
     {
+        current_health += damage;
+        if (current_health > max_health) current_health = max_health;
         for (int i = 0; i < damage; i++)
         {
-            for (int j = transform.childCount - 1; j >= 0; j--)
+            for (int j = 0; j < transform.childCount; j++)
             {
                 if (transform.GetChild(j).GetComponent<Heart>())
                 {
@@ -44,10 +53,12 @@ public class HealthBar : MonoBehaviour
                 }
             }
         }
+        dead = CheckIfDead();
     }
 
     public void HealToFull()
     {
+        current_health = max_health;
         for (int i = transform.childCount - 1; i >= 0; i--)
         {
             if (transform.GetChild(i).GetComponent<Heart>())
@@ -62,6 +73,7 @@ public class HealthBar : MonoBehaviour
 
     public void InstaKill()
     {
+        current_health = 0;
         for (int i = 0; i < transform.childCount; i++)
         {
             if (transform.GetChild(i).GetComponent<Heart>())
@@ -76,32 +88,27 @@ public class HealthBar : MonoBehaviour
 
     public bool CheckIfDead()
     {
-        bool temp = true;
+        bool found = true;
         for (int i = 0; i < transform.childCount; i++)
         {
-            if(transform.GetChild(i).GetComponent<Heart>())
+            if (transform.GetChild(i).GetComponent<Heart>())
             {
                 if (transform.GetChild(i).GetComponent<Heart>().healthy)
                 {
-                    temp = false;
+                    found = false;
                     break;
                 }
             }
         }
-        dead = temp;
-        return temp;
+        return found;
     }
 
-    public void DisplayHealthBar(int maxHealth)
+    public void DisplayHealthBar(int? maxHealth)
     {
+        max_health = maxHealth ?? max_health;
+        current_health = max_health;
         DestroyHealthBar();
-        if (maxHealth > 15) maxHealth = 15;
-        for (int i = 0; i < maxHealth; i++)
-        {
-            GameObject new_heart = Instantiate(heart, this.transform);
-            new_heart.GetComponent<Heart>().heal();
-        }
-        AddHeartSlots();
+        RecostructHealthBar(max_health, max_health, false);
     }
 
     public void DestroyHealthBar()
@@ -116,89 +123,82 @@ public class HealthBar : MonoBehaviour
         }
     }
 
+    public void RecostructHealthBar(int max, int current, bool in_view)
+    {
+        int temp_current = current;
+        if (temp_current < 0) temp_current = 0;
+        for (int i = 0; i < temp_current; i++)
+        {
+            GameObject new_heart = Instantiate(heart, transform);
+            if(in_view) new_heart.GetComponent<Heart>().heal();
+        }
+
+        for (int i = temp_current; i < max; i++)
+        {
+            GameObject new_heart = Instantiate(heart, transform);
+            new_heart.GetComponent<Heart>().healthy = false;
+        }
+
+        AddHeartSlots();
+    }
+
     private void AddHeartSlots()
     {
-        int children = 15 - GiveMaxHealth();
-        for(int i = 0; i < 15 - GiveMaxHealth(); i++)
+        int x = max_health;
+        if (x > HP_gap) x = HP_gap;
+
+        int children = slots - x;
+        for(int i = 0; i < children; i++)
         {
             Instantiate(heart_slot, transform);
         }
     }
 
-    public void ClearHeartSlots()
+    public void IncreaseHealthBar(int amount, bool in_view)
     {
-        int x = transform.childCount-1;
-        if (x > 0)
+        max_health += amount;
+        current_health += amount;
+        int damage_taken = max_health - current_health;
+        int x = max_health;
+        int y = current_health;
+        if (x > HP_gap) x = HP_gap;
+        if (y > HP_gap) y = HP_gap;
+
+        if (!FullHealthBar())
         {
-            for (int i = x; i > 0; i--)
-            {
-                if(!transform.GetChild(i).GetComponent<Heart>())
-                {
-                    Destroy(transform.GetChild(i).gameObject);
-                }
-            }
+            DestroyHealthBar();
+            RecostructHealthBar(x, y, in_view);
         }
     }
 
-    public void IncreaseHealthBar(int amount)
+    public void DecreaseHealthBar(int amount, bool in_view)
     {
-        ClearHeartSlots();
-        //if (this.transform.childCount < 15)
-        //{
-            for (int i = 0; i < amount; i++)
-            {
-                GameObject new_heart = Instantiate(heart, this.transform);
-                new_heart.GetComponent<Heart>().heal();
-            }
-        //}
-        AddHeartSlots();
+        max_health -= amount;
+        current_health -= amount;
+        Debug.Log("Current health: "+current_health);
+        int x = max_health;
+        int y = current_health;
+        if (x > HP_gap) x = HP_gap;
+        if (y > HP_gap) y = HP_gap;
+
+        DestroyHealthBar();
+        RecostructHealthBar(x, y, in_view);
     }
 
-    public void DecreaseHealthBar(int amount)
-    {
-        ClearHeartSlots();
-        int x = GiveMaxHealth()-1;
-        //if (x > 0)
-        //{
-            for (int i = 0; i < amount; i++)
-            {
-                Destroy(transform.GetChild(x-i).gameObject);
-            }
-        //}
-        AddHeartSlots();
-    }
 
     public int GiveCurrentHealth()
     {
-        int amount = 0;
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            if (transform.GetChild(i).GetComponent<Heart>())
-            {
-                if (transform.GetChild(i).GetComponent<Heart>().healthy)
-                {
-                    amount++;
-                }
-            }
-        }
-        return amount;
+        return current_health;
     }
 
     public int GiveMaxHealth()
     {
-        int amount = 0;
-        for(int i = 0; i < transform.childCount; i++)
-        {
-            if(transform.GetChild(i).GetComponent<Heart>())
-            {
-                amount++;
-            }
-        }
-        return amount;
+        return max_health;
     }
 
     public void SetMaxHealth(int amount)
     {
+        max_health = amount;
         DestroyHealthBar();
         for(int i = 0; i < amount; i++)
         {
@@ -210,13 +210,14 @@ public class HealthBar : MonoBehaviour
 
     public void SetCurrentHealth(int amount)
     {
-        for(int i = 0; i < transform.childCount; i++)
+        current_health = amount;
+        for (int i = 0; i < transform.childCount; i++)
         {
             if(i < amount)
             {
                 if(transform.GetChild(i).GetComponent<Heart>())
                 {
-                    transform.GetChild(i).GetComponent<Heart>().heal();
+                    transform.GetChild(i).GetComponent<Heart>().UtilFull();
                 }
             } else
             {
@@ -226,5 +227,60 @@ public class HealthBar : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void PowerHealthBarDown()
+    {
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            if(transform.GetChild(i).GetComponent<Heart>())
+            {
+                if(transform.GetChild(i).GetComponent<Heart>().healthy)
+                {
+                    transform.GetChild(i).GetComponent<Test>().PlayAnimation("PowerDown");
+                }
+            }
+        }
+    }
+
+    public void PowerHealthBarUp()
+    {
+
+        for (int i = 0; i < current_health; i++)
+        {
+            if (transform.GetChild(i).GetComponent<Heart>())
+            {
+                if(transform.GetChild(i).GetComponent<Heart>().healthy)
+                {
+                    transform.GetChild(i).GetComponent<Test>().PlayAnimation("Heal");
+                }
+            }
+        }
+    }
+
+    public bool FullHealthBar()
+    {
+        int amount_of_bulbs = 0;
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            if(transform.GetChild(i).GetComponent<Heart>())
+            {
+                amount_of_bulbs++;
+            }
+        }
+        return amount_of_bulbs == HP_gap;
+    }
+
+    public int HealthBarSize()
+    {
+        int amount_of_bulbs = 0;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).GetComponent<Heart>())
+            {
+                amount_of_bulbs++;
+            }
+        }
+        return amount_of_bulbs;
     }
 }

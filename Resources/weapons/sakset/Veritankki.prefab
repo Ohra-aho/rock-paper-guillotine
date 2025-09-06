@@ -94,6 +94,7 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 2
   damage: 1
@@ -103,6 +104,9 @@ MonoBehaviour:
   name: Veritankki
   description: Aina kun tekee vahinkoa. +1 piste. Joka kolmas piste +1 HP.
   sprite: {fileID: 21300000, guid: 0adba0232cb922b41ba2834340a6f645, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

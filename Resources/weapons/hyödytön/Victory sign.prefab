@@ -104,6 +104,9 @@ MonoBehaviour:
   name: Victory sign
   description: All your other weapons are unbeatable during the next turn after use.
   sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

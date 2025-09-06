@@ -52,6 +52,7 @@ public class EnemyController : MonoBehaviour
     public void Inisiate()
     {
         HB.DisplayHealthBar(maxHealth);
+        HB.PowerHealthBarUp();
         EnemyWheel = GameObject.FindGameObjectWithTag("EnemyWheel");
         weaponDetector = GameObject.FindGameObjectWithTag("EnemyWeaponDetector");
         DisplayWeapons();

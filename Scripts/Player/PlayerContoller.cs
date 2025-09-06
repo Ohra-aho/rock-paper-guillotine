@@ -10,7 +10,7 @@ public class PlayerContoller : MonoBehaviour
     public HealthBar HB;
 
     //[HideInInspector] public int maxHealth = 1;
-    private int maxHealth = 12;
+    private int maxHealth = 2;
     [HideInInspector] public int damage = 0;
     [HideInInspector] public int armor = 0;
 
@@ -182,7 +182,7 @@ public class PlayerContoller : MonoBehaviour
         PlayerWheels[unlocked_wheel].transform.SetAsFirstSibling();
         GameObject.Find("PlayerWeaponDetector").GetComponent<WeaponDetector>().weaponWheel = PlayerWheels[unlocked_wheel];
         maxHealth = unlocked_wheel + 1;
-        HB.IncreaseHealthBar(1);
+        HB.IncreaseHealthBar(1, false);
         HB.HealToFull();
     }
 
@@ -232,6 +232,7 @@ public class PlayerContoller : MonoBehaviour
 
     public void TakeDamage()
     {
+        Debug.Log("Takeing damage");
         bool dead = HB.GetComponent<HealthBar>().CheckIfDead();
 
         if (dead) MC.Loose();
@@ -362,7 +363,9 @@ public class PlayerContoller : MonoBehaviour
         }
         else
         {
-            HB.DisplayHealthBar(maxHealth);
+            //HB.DisplayHealthBar(maxHealth);
+            HB.SetMaxHealth(maxHealth);
+            HB.SetCurrentHealth(maxHealth);
             ChangeWheel();
         }
     }

@@ -7555,6 +7555,7 @@ MonoBehaviour:
   heart: {fileID: 7308045239515813869, guid: 19fd7e589cd54fd498459ca08acb21cb, type: 3}
   heart_slot: {fileID: 7308045239515813869, guid: 8c6270a2ce8210e47a4fb4d4e899d6c1, type: 3}
   dead: 0
+  HP_gap: 15
 --- !u!114 &370411302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15885,6 +15886,7 @@ MonoBehaviour:
   heart: {fileID: 7308045239515813869, guid: 19fd7e589cd54fd498459ca08acb21cb, type: 3}
   heart_slot: {fileID: 7308045239515813869, guid: 8c6270a2ce8210e47a4fb4d4e899d6c1, type: 3}
   dead: 0
+  HP_gap: 15
 --- !u!114 &1238540700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16760,10 +16762,11 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: dc1ef5819bdc39f49b92496cf806f33b, type: 3}
-  - {fileID: 1944698211339908181, guid: 4255b77c33033ae4fb66d0697f10adc0, type: 3}
-  - {fileID: 1944698211339908181, guid: 0bc3cf7862c3c8340b5117fcf17d7139, type: 3}
-  - {fileID: 1944698211339908181, guid: 0bc55c5445f7ca44f8e69a5fe568e8c7, type: 3}
+  - {fileID: 1944698211339908181, guid: 1274c4cceb05b20469053e959abffbe5, type: 3}
+  - {fileID: 1944698211339908181, guid: bca010ccd370bcf45b7de105c3c30c13, type: 3}
+  - {fileID: 1944698211339908181, guid: 404895a729ca9784ea429b7c184ebd1b, type: 3}
+  - {fileID: 1944698211339908181, guid: 404895a729ca9784ea429b7c184ebd1b, type: 3}
+  - {fileID: 1944698211339908181, guid: 3cc24bd43cd78af478822fb8f5ff3d0d, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
@@ -29049,6 +29052,7 @@ MonoBehaviour:
   - {fileID: 1440330485}
   - {fileID: 75129972}
   - {fileID: 1143608542}
+  round_started: 0
 --- !u!114 &1812507811
 MonoBehaviour:
   m_ObjectHideFlags: 0
