@@ -175,7 +175,6 @@ public class HealthBar : MonoBehaviour
     {
         max_health -= amount;
         current_health -= amount;
-        Debug.Log("Current health: "+current_health);
         int x = max_health;
         int y = current_health;
         if (x > HP_gap) x = HP_gap;

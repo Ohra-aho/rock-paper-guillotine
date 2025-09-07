@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 2715692804178075999}
-  - component: {fileID: -318434311468146500}
-  - component: {fileID: 9152760472186079779}
+  - component: {fileID: -2366777321143017962}
+  - component: {fileID: -8080920715227008180}
   m_Layer: 5
-  m_Name: "Sy\xF6j\xE4t\xE4r"
+  m_Name: Adrenaline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,15 +94,20 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
-  type: 2
-  damage: 2
+  type: 0
+  damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: "Sy\xF6j\xE4t\xE4r"
-  description: Aina kun tapat. paranna yksi haava.
-  sprite: {fileID: 21300000, guid: ce52a3cbed2201b4ca51121ce488c64c, type: 3}
+  name: Adrenaline
+  description: Whenever you take damage, all your weapons gain +1 damage during the
+    next turn. (Continuous)
+  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -159,7 +163,7 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
---- !u!114 &2715692804178075999
+--- !u!114 &-2366777321143017962
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,7 +199,10 @@ MonoBehaviour:
   awake: 0
   temporary: 0
   timer: 0
---- !u!114 &-318434311468146500
+  penetrating: 0
+  draw_winner: 0
+  destructive: 0
+--- !u!114 &-8080920715227008180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,19 +211,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6a54212570e90d4db6e9487421b7f02, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ab018d1c19c8c7489de20467fe0532e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9152760472186079779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 1

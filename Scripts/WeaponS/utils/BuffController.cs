@@ -8,10 +8,11 @@ public class BuffController : MonoBehaviour
     public MainController.Choise? type_change = null;
 
     private bool buff_on = false;
-    [SerializeField] private GameObject buff;
+    [SerializeField] public GameObject buff;
     GameObject real_inventory;
     [HideInInspector] public int damage_bonus = 0;
     [HideInInspector] public int armor_bonus = 0;
+    [HideInInspector] public int effect_damage_bonus = 0;
     [HideInInspector] public bool set_a_to_zero = false;
     [HideInInspector] public bool set_d_to_zero = false;
 
@@ -114,9 +115,10 @@ public class BuffController : MonoBehaviour
             if (set_d_to_zero) damage_bonus = -weapon.GetComponent<Weapon>().damage;
 
             Buff new_buff = Instantiate(buff, weapon).GetComponent<Buff>();
-            new_buff.GetComponent<Buff>().id = GetComponent<Weapon>().name;
-            new_buff.GetComponent<Buff>().damage_buff = damage_bonus;
-            new_buff.GetComponent<Buff>().armor_buff = armor_bonus;
+            new_buff.id = GetComponent<Weapon>().name;
+            new_buff.damage_buff = damage_bonus;
+            new_buff.armor_buff = armor_bonus;
+            new_buff.effect_damage_buff = effect_damage_bonus;
             new_buff.choisePhase = choisePhase;
             new_buff.resultPhase = resultPhase;
             new_buff.endPhase = endPhase;
@@ -132,6 +134,7 @@ public class BuffController : MonoBehaviour
             new_buff.win = win;
             new_buff.lose = lose;
             new_buff.timer = timer;
+            new_buff.temporary = temporary;
             new_buff.type_change = type_change;
             new_buff.draw_winner = draw_winner;
             new_buff.penetrating = penetrating;

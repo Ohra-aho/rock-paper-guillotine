@@ -95,6 +95,7 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 0
   damage: 1
@@ -102,8 +103,11 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Ruuti
-  description: AIna kun ase tuhoutuu, tee 2 vahinkoa vastustajaan.
+  description: AIna kun ase tuhoutuu, tee 1 vahinkoa vastustajaan.
   sprite: {fileID: 21300000, guid: 41d16a9c9614d144e9851b6ea2e759aa, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -174,6 +178,7 @@ MonoBehaviour:
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
   damage_bonus: 0
   armor_bonus: 0
+  effect_damage_bonus: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
   choisePhase: 0
@@ -195,6 +200,9 @@ MonoBehaviour:
   awake: 0
   temporary: 0
   timer: 0
+  penetrating: 0
+  draw_winner: 0
+  destructive: 0
 --- !u!114 &1820794659969030995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,4 +227,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 2
+  amount: 1

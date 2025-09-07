@@ -10,6 +10,7 @@ public class Buff : MonoBehaviour
 
     public int damage_buff;
     public int armor_buff;
+    public int effect_damage_buff;
     public bool used = false;
 
     public BuffController.Special special;
@@ -37,7 +38,7 @@ public class Buff : MonoBehaviour
     public bool awake;
     public bool onDestruction;
 
-    //public bool temporary;
+    public bool temporary;
     public int timer;
 
     public bool penetrating;
@@ -77,6 +78,15 @@ public class Buff : MonoBehaviour
                 armor_buff = -transform.parent.GetComponent<Weapon>().armor;
             }
             transform.parent.GetComponent<Weapon>().armor += armor_buff;
+        }
+
+        if (effect_damage_buff != 0)
+        {
+            if (effect_damage_buff < 0 && -effect_damage_buff > transform.parent.GetComponent<EffectDamage>().amount)
+            {
+                effect_damage_buff = -transform.parent.GetComponent<EffectDamage>().amount;
+            }
+            transform.parent.GetComponent<EffectDamage>().amount += effect_damage_buff;
         }
 
         GetOGs();
@@ -144,6 +154,15 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().armor -= armor_buff;
         }
 
+        if (effect_damage_buff != 0)
+        {
+            if (transform.parent.GetComponent<EffectDamage>().amount < effect_damage_buff)
+            {
+                effect_damage_buff = transform.parent.GetComponent<EffectDamage>().amount;
+            }
+            transform.parent.GetComponent<EffectDamage>().amount -= effect_damage_buff;
+        }
+
         if (choisePhase)
             transform.parent.GetComponent<Weapon>().choisePhase.RemoveListener(() => special(weapon));
         if (resultPhase)
@@ -188,11 +207,14 @@ public class Buff : MonoBehaviour
 
     public void TickDown()
     {
-        timer--;
-        if(timer <= 0)
+        if(temporary)
         {
-            RemoveBuff();
-            Destroy(this.gameObject);
+            timer--;
+            if (timer <= 0)
+            {
+                RemoveBuff();
+                Destroy(this.gameObject);
+            }
         }
     }
 

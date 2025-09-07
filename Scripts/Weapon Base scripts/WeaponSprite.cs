@@ -62,15 +62,17 @@ public class WeaponSprite : MonoBehaviour
 
     public void Unequip()
     {
-        if(GameObject.Find("InventoryMenu(Clone)"))
+        PlayerContoller player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
+        if (GameObject.Find("InventoryMenu(Clone)"))
         {
             GameObject.Find("InventoryMenu(Clone)").GetComponent<InventoryMenu>().addWeapon(weapon);
         } else
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().items.Add(weapon);
         }
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().UnequipWeapon(weapon.GetComponent<Weapon>());
+        player.UnequipWeapon(weapon.GetComponent<Weapon>());
         weapon = null;
+        player.DisplayChoises();
         displaySprite();
         DestroyInfo();
     }
@@ -112,25 +114,6 @@ public class WeaponSprite : MonoBehaviour
 
                 visibleInfo.transform.GetChild(2)
                     .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().description;
-                
-                /*switch (weapon.GetComponent<Weapon>().type)
-                {
-                    case MainController.Choise.kivi:
-                        visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[0];
-                        break;
-                    case MainController.Choise.paperi:
-                        visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[1];
-                        break;
-                    case MainController.Choise.sakset:
-                        visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[2];
-                        break;
-                    case MainController.Choise.hyödytön:
-                        visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[3];
-                        break;
-                    case MainController.Choise.voittamaton:
-                        visibleInfo.transform.GetChild(4).GetComponent<Image>().sprite = symbols[4];
-                        break;
-                }*/
             }
         }
     }

@@ -36,6 +36,11 @@ public class CHoisePanel : MonoBehaviour
 
     public void DisplayName()
     {
+        if (weapon == null)
+        {
+            weapon_name = "";
+        }
+
         if(weapon_name != null && weapon_name != "")
         {
             if (transform.childCount <= 0)
@@ -80,6 +85,9 @@ public class CHoisePanel : MonoBehaviour
                     GameObject chr = Instantiate(character, transform);
                     transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
                 }
+            } else
+            {
+                ClearName();
             }
         }
     }

@@ -101,8 +101,25 @@ public class Weapon : MonoBehaviour
 
     public void EffectDamage(int amount)
     {
-        opponent.TakeDamage(amount);
-        CheckUp();
+        if(opponent != null)
+        {
+            opponent.TakeDamage(amount);
+            CheckUp();
+        } else
+        {
+            if(player)
+            {
+                //Add bark to point this aout if happens
+                //If not opponent, choose one at random
+                GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+                int index = Random.Range(0, RIE.transform.childCount);
+                opponent = RIE.transform.GetChild(index).GetComponent<Weapon>();
+                RIE.transform.GetChild(index).GetComponent<Weapon>().opponent = this;
+
+                opponent.TakeDamage(amount);
+                CheckUp();
+            }
+        }
     }
 
     //Used in effects. Doesn't trigger enemies damage effects

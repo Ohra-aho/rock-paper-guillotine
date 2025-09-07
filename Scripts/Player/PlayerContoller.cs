@@ -68,10 +68,12 @@ public class PlayerContoller : MonoBehaviour
                             .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().name;
 
                     transform.GetChild(i).GetComponent<CHoisePanel>().index = i;
+                } else
+                {
+                    transform.GetChild(i).GetComponent<CHoisePanel>().weapon = null;
                 }
             }
             transform.GetChild(i).GetComponent<CHoisePanel>().DisplayName();
-            
         }
     }
 
@@ -105,8 +107,7 @@ public class PlayerContoller : MonoBehaviour
 
     public void DisplayWeapons()
     {
-        //InstanciateRealWeapons();
-        for (int i = 0; i < PlayerWheels[unlocked_wheel].transform.childCount-1; i++)
+        /*for (int i = 0; i < PlayerWheels[unlocked_wheel].transform.childCount-1; i++)
         {
             PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0)
                         .GetComponent<WeaponSprite>().weapon = TrueWeaponHolder.transform.GetChild(TrueWeaponHolder.transform.childCount - 1-i).gameObject;
@@ -119,7 +120,7 @@ public class PlayerContoller : MonoBehaviour
             PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0)
                 .GetComponent<WeaponSprite>().displaySprite();
         }
-        DisplayChoises();
+        DisplayChoises();*/
     }
 
     public void InstanciateRealWeapons()
