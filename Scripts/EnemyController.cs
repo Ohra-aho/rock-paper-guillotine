@@ -123,7 +123,9 @@ public class EnemyController : MonoBehaviour
 
     public void DisplayWeapons()
     {
-        for (int i = 0; i < EnemyWheel.transform.childCount-1; i++)
+        EnemyWheel = GameObject.Find("RightSide").transform.GetChild(0).GetChild(0).gameObject;
+        GameObject.FindGameObjectWithTag("EnemyWeaponDetector").GetComponent<WeaponDetector>().weaponWheel = EnemyWheel;
+        for(int i = 0; i < weapons.Count; i++)
         {
             GameObject new_weapon = Instantiate(weapons[i], true_weapon_holder.transform);
             new_weapon.GetComponent<Weapon>().player = false;

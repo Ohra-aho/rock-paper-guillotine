@@ -153,7 +153,6 @@ public class BasicEnemy : MonoBehaviour
                 planIndex = 0;
             }
         }
-
         return step;
     }
 

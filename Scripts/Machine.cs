@@ -9,6 +9,7 @@ public class Machine : MonoBehaviour
 
     public GameObject startButton;
     public GameObject playerWheelHolder;
+    public GameObject enemyWheelHolder;
     public GameObject StoryEventHolder;
     public GameObject Guilliotine;
     public GameObject MC;
@@ -96,5 +97,27 @@ public class Machine : MonoBehaviour
     {
         if(smoke3) sparks[4].GetComponent<ParticleSystem>().Play();
         smoke3 = !smoke3;
+    }
+
+    public void InvokeBossGearChange()
+    {
+        if (StoryEventHolder.transform.GetChild(0).GetComponent<BossBattle>())
+        {
+            //Debug.Log("Gear update");
+            StoryEventHolder.transform.GetChild(0).GetComponent<BossBattle>().UpdateGear();
+        } else if(enemyWheelHolder.transform.GetChild(0).name != "Enemy Wheel")
+        {
+            GameObject active_gear = enemyWheelHolder.transform.GetChild(0).gameObject;
+            enemyWheelHolder.transform.GetChild(1).SetAsFirstSibling();
+            enemyWheelHolder.transform.GetChild(0).gameObject.SetActive(true);
+
+            switch (active_gear.name)
+            {
+                case "Wheel 4": active_gear.transform.SetSiblingIndex(1); break;
+                case "Wheel 5": active_gear.transform.SetSiblingIndex(2); break;
+                case "Wheel 6": active_gear.transform.SetSiblingIndex(3); break;
+            }
+            active_gear.SetActive(false);
+        }
     }
 }

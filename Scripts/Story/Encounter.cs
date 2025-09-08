@@ -46,4 +46,31 @@ public class Encounter : MonoBehaviour
             if(immideate_over) GetComponent<StoryEvent>().over = true;
         }
     }
+
+    public void ChangeGear(int index)
+    {
+        GameObject wheel_holder = GameObject.Find("RightSide").transform.GetChild(0).gameObject;
+        if(wheel_holder.transform.GetChild(0).name == "Enemy Wheel")
+        {
+            wheel_holder.transform.GetChild(index).gameObject.SetActive(true);
+            wheel_holder.transform.GetChild(0).gameObject.SetActive(false);
+            wheel_holder.transform.GetChild(index).SetAsFirstSibling();
+        }
+    }
+
+    public void ResetGear()
+    {
+        GameObject wheel_holder = GameObject.Find("RightSide").transform.GetChild(0).gameObject;
+        GameObject active_gear = wheel_holder.transform.GetChild(0).gameObject;
+        wheel_holder.transform.GetChild(1).SetAsFirstSibling();
+        wheel_holder.transform.GetChild(0).gameObject.SetActive(true);
+
+        switch (active_gear.name)
+        {
+            case "Wheel 4": active_gear.transform.SetSiblingIndex(1); break;
+            case "Wheel 5": active_gear.transform.SetSiblingIndex(2); break;
+            case "Wheel 6": active_gear.transform.SetSiblingIndex(3); break;
+        }
+        active_gear.SetActive(false);
+    }
 }

@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7010574343782720544}
   - component: {fileID: 3800092539451632345}
   - component: {fileID: 1705922441453647033}
+  - component: {fileID: 6579391441425394134}
   m_Layer: 0
-  m_Name: Debug encounter
+  m_Name: Final_boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,10 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possible_enemies:
-  - {fileID: 6979226803842198351, guid: ce296caf6d061c149a9177df86a8db11, type: 3}
+  - {fileID: 6979226803842198351, guid: 7c52a4da872c64d4090795284ba89e1d, type: 3}
   enemies: []
   amount: 1
-  immideate_over: 1
+  immideate_over: 0
   last: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:
@@ -79,3 +80,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6579391441425394134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3768069680275742937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8aced1cd02a4324daac37546927eca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tier: 3

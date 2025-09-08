@@ -18,36 +18,37 @@ public class Contaminator : MonoBehaviour
 
     private int MakeChoise(MainController.Choise choise)
     {
-        if (!net)
-        {
-            net_timer--;
-            if(net_timer <= 0)
-            {
-                net_timer = 3;
-                return 1;
-            }
-            if(flip)
-            {
-                flip = !flip;
-                return 0;
-            } else
-            {
-                flip = !flip;
-                return 2;
-            }
-        }
-        else
-        {
-            netted_burst--;
-            if(netted_burst <= 0)
-            {
-                net = false;
-                flip = false;
-                return 0;
-            } else
-            {
-                return 2;
-            }
-        }
+        /* if (!net)
+         {
+             net_timer--;
+             if(net_timer <= 0)
+             {
+                 net_timer = 3;
+                 return 1;
+             }
+             if(flip)
+             {
+                 flip = !flip;
+                 return 0;
+             } else
+             {
+                 flip = !flip;
+                 return 2;
+             }
+         }
+         else
+         {
+             netted_burst--;
+             if(netted_burst <= 0)
+             {
+                 net = false;
+                 flip = false;
+                 return 0;
+             } else
+             {
+                 return 2;
+             }
+         }*/
+        return GetComponent<BasicEnemy>().MakeChoise(choise);
     }
 }
