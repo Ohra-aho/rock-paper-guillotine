@@ -244,8 +244,9 @@ public class HealthBar : MonoBehaviour
 
     public void PowerHealthBarUp()
     {
-
-        for (int i = 0; i < current_health; i++)
+        int x = current_health;
+        if (x > HP_gap) x = HP_gap;
+        for (int i = 0; i < x; i++)
         {
             if (transform.GetChild(i).GetComponent<Heart>())
             {

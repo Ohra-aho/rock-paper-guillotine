@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kranaatti : MonoBehaviour
+public class GasGranade : MonoBehaviour
 {
+    public bool self_damage_nullified = false;
     public void DamageBoth()
     {
         GetComponent<EffectDamage>().DealDamage(null);
-        GetComponent<EffectDamage>().SelfDamage(null);
+        if(!self_damage_nullified) GetComponent<EffectDamage>().SelfDamage(null);
     }
 }

@@ -6,9 +6,9 @@ public class Contaminator : MonoBehaviour
 {
     EnemyController controller;
     public bool net;
-    public int net_timer = 0;
-    public bool flip = true;
     public int netted_burst = 0;
+    bool granade_used = false;
+    public bool mask_active = false;
 
     private void Awake()
     {
@@ -18,37 +18,34 @@ public class Contaminator : MonoBehaviour
 
     private int MakeChoise(MainController.Choise choise)
     {
-        /* if (!net)
-         {
-             net_timer--;
-             if(net_timer <= 0)
-             {
-                 net_timer = 3;
-                 return 1;
-             }
-             if(flip)
-             {
-                 flip = !flip;
-                 return 0;
-             } else
-             {
-                 flip = !flip;
-                 return 2;
-             }
-         }
-         else
-         {
-             netted_burst--;
-             if(netted_burst <= 0)
-             {
-                 net = false;
-                 flip = false;
-                 return 0;
-             } else
-             {
-                 return 2;
-             }
-         }*/
-        return GetComponent<BasicEnemy>().MakeChoise(choise);
+        if(controller.HB.GiveCurrentHealth() <= 3 && !granade_used && mask_active)
+        {
+            granade_used = true;
+            return 3;
+        } 
+        else if(controller.HB.GiveCurrentHealth() <= 3 && !granade_used && !mask_active)
+        {
+            return 0;
+        }
+        else
+        {
+            if (!net)
+            {
+                return GetComponent<BasicEnemy>().MakeChoise(choise);
+            }
+            else
+            {
+                netted_burst--;
+                if (netted_burst <= 0)
+                {
+                    net = false;
+                    return GetComponent<BasicEnemy>().MakeChoise(choise);
+                }
+                else
+                {
+                    return 2;
+                }
+            }
+        }  
     }
 }

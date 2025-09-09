@@ -115,7 +115,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 5ada3f2c1142ab4429915fd576b41b15, type: 3}
   maxHealth: 1
   weapons:
-  - {fileID: 1944698211339908181, guid: b24b279d010d53e40beb5b4c604dd7a1, type: 3}
+  - {fileID: 1944698211339908181, guid: dc1ef5819bdc39f49b92496cf806f33b, type: 3}
   - {fileID: 1944698211339908181, guid: 5dfcb6cef6cdff94ba707c7027b52324, type: 3}
   - {fileID: 1944698211339908181, guid: d973b6fde138fa3479172f532aae631b, type: 3}
   plan_1: 000000000200000001000000

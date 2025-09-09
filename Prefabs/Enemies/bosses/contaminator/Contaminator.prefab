@@ -61,17 +61,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Contaminator
   image: {fileID: 21300000, guid: e44d2504d0adacd49839a92a112337a8, type: 3}
-  maxHealth: 5
+  maxHealth: 6
   weapons:
   - {fileID: 1944698211339908181, guid: 723220bd136aee648a9b31ca85e6d83a, type: 3}
   - {fileID: 1944698211339908181, guid: fdc529904a7b6c649bf2158ebc248f84, type: 3}
   - {fileID: 1944698211339908181, guid: b53b1c135a674e04693ff5c90a0fdd8b, type: 3}
   - {fileID: 1944698211339908181, guid: 202f466333267f948a939456b66292af, type: 3}
-  plan_1: 0300000000000000020000000100000002000000
-  plan_2: 03000000010000000200000000000000
+  plan_1: 00000000020000000100000002000000
+  plan_2: 01000000020000000000000002000000
   off_balance: 0
   nearDeath: 0
-  off_balance_choises: 0200000001000000
+  off_balance_choises: 
   advanced: 1
 --- !u!212 &3076687715594733710
 SpriteRenderer:
@@ -138,6 +138,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   net: 0
-  net_timer: 0
-  flip: 1
   netted_burst: 0
+  mask_active: 0

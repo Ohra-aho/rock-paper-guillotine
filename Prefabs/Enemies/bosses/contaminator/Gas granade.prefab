@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 5755444230686218645}
   - component: {fileID: -4740210523757410787}
-  - component: {fileID: 6058843053934212404}
+  - component: {fileID: 3690012749122869885}
   m_Layer: 5
   m_Name: Gas granade
   m_TagString: Untagged
@@ -114,8 +114,8 @@ MonoBehaviour:
   resultPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6058843053934212404}
-        m_TargetAssemblyTypeName: Kranaatti, Assembly-CSharp
+      - m_Target: {fileID: 3690012749122869885}
+        m_TargetAssemblyTypeName: GasGranade, Assembly-CSharp
         m_MethodName: DamageBoth
         m_Mode: 1
         m_Arguments:
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 1
---- !u!114 &6058843053934212404
+--- !u!114 &3690012749122869885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08de111b31cbdee4fbf8db127c591e92, type: 3}
+  m_Script: {fileID: 11500000, guid: a169b42e1297ba64ea26df730227cae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  self_damage_nullified: 0
