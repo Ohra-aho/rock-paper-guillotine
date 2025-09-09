@@ -94,15 +94,19 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 2
-  damage: 5
+  damage: 4
   armor: 4
   real_damage: 0
   real_armor: 0
   name: Charge
   description: -1 to armor to all weapons after using.
   sprite: {fileID: 21300000, guid: 13861850f7a44ff49bf19b7ef69a4117, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
