@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 1165865232959651390}
   - component: {fileID: 4809575014415415317}
-  - component: {fileID: 4638538761962290413}
+  - component: {fileID: -5354147664273966625}
   m_Layer: 5
-  m_Name: Wanderer
+  m_Name: Spirit
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,20 +111,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Wanderer
+  name: Spirit
   image: {fileID: 21300000, guid: 5ada3f2c1142ab4429915fd576b41b15, type: 3}
-  maxHealth: 1
+  maxHealth: 12
   weapons:
-  - {fileID: 1944698211339908181, guid: b24b279d010d53e40beb5b4c604dd7a1, type: 3}
-  - {fileID: 1944698211339908181, guid: 5dfcb6cef6cdff94ba707c7027b52324, type: 3}
-  - {fileID: 1944698211339908181, guid: d973b6fde138fa3479172f532aae631b, type: 3}
-  plan_1: 000000000200000001000000
-  plan_2: 000000000100000002000000
+  - {fileID: 1944698211339908181, guid: dbff7b47a184fb541a2fde7b687b1539, type: 3}
+  - {fileID: 1944698211339908181, guid: 267a080433af2de408a79c5c49b89da6, type: 3}
+  - {fileID: 1944698211339908181, guid: 5c9a9f67ab2ed7445bbdf1c0cf7cba20, type: 3}
+  - {fileID: 1944698211339908181, guid: 971812e4dd1d816439d780f117d9711d, type: 3}
+  - {fileID: 1944698211339908181, guid: 34284e9a13ac27140b35a43ad24246de, type: 3}
+  - {fileID: 1944698211339908181, guid: 7b6392ce5a2cb6a4cbdc1cead10b287f, type: 3}
+  plan_1: 000000000300000001000000040000000200000005000000
+  plan_2: 000000000300000001000000040000000200000005000000
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 00000000
-  advanced: 1
---- !u!114 &4638538761962290413
+  advanced: 0
+--- !u!114 &-5354147664273966625
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,7 +136,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6979226803842198351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96e6bc5c449d70d4a822c584509303f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c7ff5562ab19bd43b23e82dc9eb17af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stick_missed: 0
+  debuff_active: 0
+  debuffed_type: 0

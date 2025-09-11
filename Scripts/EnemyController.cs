@@ -245,4 +245,16 @@ public class EnemyController : MonoBehaviour
     {
         return HB.GetComponent<HealthBar>().GiveCurrentHealth();
     }
+
+    public void ActivateFirstTurnEffects()
+    {
+        GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+        for(int i = 0; i < RIE.transform.childCount; i++)
+        {
+            if(RIE.transform.GetChild(i).GetComponent<Weapon>().first_turn != null)
+            {
+                RIE.transform.GetChild(i).GetComponent<Weapon>().first_turn.Invoke();
+            }
+        }
+    }
 }

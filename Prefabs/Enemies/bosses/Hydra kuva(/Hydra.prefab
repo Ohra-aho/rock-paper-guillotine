@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6943869333779220170}
   - component: {fileID: 6291404997652609654}
-  - component: {fileID: 1165865232959651390}
   - component: {fileID: 4809575014415415317}
-  - component: {fileID: 4638538761962290413}
+  - component: {fileID: 3076687715594733710}
   m_Layer: 5
-  m_Name: Wanderer
+  m_Name: Hydra
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +46,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6979226803842198351}
   m_CullTransparentMesh: 1
---- !u!212 &1165865232959651390
+--- !u!114 &4809575014415415317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979226803842198351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Hydra
+  image: {fileID: 21300000, guid: e44d2504d0adacd49839a92a112337a8, type: 3}
+  maxHealth: 10
+  weapons:
+  - {fileID: 1944698211339908181, guid: db69e2c45e1fce94399e8629e1c93d30, type: 3}
+  - {fileID: 1944698211339908181, guid: 97561741cc5c494498d8d815aedb79bd, type: 3}
+  - {fileID: 1944698211339908181, guid: 97561741cc5c494498d8d815aedb79bd, type: 3}
+  - {fileID: 1944698211339908181, guid: 484135f8cb574b24daec012ff97b2326, type: 3}
+  - {fileID: 1944698211339908181, guid: 97561741cc5c494498d8d815aedb79bd, type: 3}
+  plan_1: 0000000001000000020000000300000004000000
+  plan_2: 0000000001000000020000000300000004000000
+  off_balance: 0
+  nearDeath: 0
+  off_balance_choises: 
+  advanced: 0
+--- !u!212 &3076687715594733710
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,41 +125,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4809575014415415317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Wanderer
-  image: {fileID: 21300000, guid: 5ada3f2c1142ab4429915fd576b41b15, type: 3}
-  maxHealth: 1
-  weapons:
-  - {fileID: 1944698211339908181, guid: b24b279d010d53e40beb5b4c604dd7a1, type: 3}
-  - {fileID: 1944698211339908181, guid: 5dfcb6cef6cdff94ba707c7027b52324, type: 3}
-  - {fileID: 1944698211339908181, guid: d973b6fde138fa3479172f532aae631b, type: 3}
-  plan_1: 000000000200000001000000
-  plan_2: 000000000100000002000000
-  off_balance: 0
-  nearDeath: 0
-  off_balance_choises: 00000000
-  advanced: 1
---- !u!114 &4638538761962290413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96e6bc5c449d70d4a822c584509303f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stick_missed: 0

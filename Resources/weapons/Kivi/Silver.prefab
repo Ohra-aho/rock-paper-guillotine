@@ -103,7 +103,7 @@ MonoBehaviour:
   real_armor: 0
   name: Silver
   description: +1 to all effect danage.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: bd1ea3b2aa54db549a9921b3aa544384, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

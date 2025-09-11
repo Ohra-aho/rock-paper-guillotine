@@ -103,7 +103,7 @@ MonoBehaviour:
   real_armor: 0
   name: Victory sign
   description: All your other weapons are unbeatable during the next turn after use.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: fced6f8bbe42bc44cbd12b479285c17e, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -201,6 +201,7 @@ MonoBehaviour:
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
   damage_bonus: 0
   armor_bonus: 0
+  effect_damage_bonus: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
   choisePhase: 0

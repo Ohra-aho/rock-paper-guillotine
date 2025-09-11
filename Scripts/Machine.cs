@@ -28,6 +28,7 @@ public class Machine : MonoBehaviour
         {
             round_started = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().ActivateFirstTurnEffects();
+            GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().ActivateFirstTurnEffects();
         }
     }
 
