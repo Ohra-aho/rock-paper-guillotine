@@ -6,17 +6,21 @@ public class Lantern : MonoBehaviour
 {
     public void DealDamage()
     {
-        GetComponent<Stacking>().IncreaseStacks(1);
-        if(GetComponent<Stacking>().stacks ==  3)
+        if(GetComponent<DamageInteractions>().CalculateDealtDamage() > 0 || GetComponent<DamageInteractions>().CalculateTakenDamage() > 0)
         {
-            GetComponent<EffectDamage>().DealDamage(null);
-            GetComponent<Stacking>().stacks = 0;
-        }
+            GetComponent<Stacking>().IncreaseStacks(1);
+            if (GetComponent<Stacking>().stacks == 3)
+            {
+                GetComponent<EffectDamage>().DealDamage(null);
+                GetComponent<Stacking>().stacks = 0;
+            }
+        } 
+        
     }
 
     public void TakesDamage()
     {
-        GetComponent<Stacking>().DecreaseStacks(1);
+        //GetComponent<Stacking>().DecreaseStacks(1);
     }
 
 }

@@ -156,9 +156,12 @@ public class BuffController : MonoBehaviour
             for (int i = 0; i < real_inventory.transform.childCount; i++)
             {
                 Transform weapon = real_inventory.transform.GetChild(i);
-                GameObject own_buff = FindOwnBuff(weapon);
-                if(own_buff != null) own_buff.GetComponent<Buff>().RemoveBuff();
-                if (own_buff != null) Destroy(own_buff);
+                List<GameObject> own_buffs = FindOwnBuff(weapon);
+                for(int j = own_buffs.Count-1; j >= 0; j--)
+                {
+                    own_buffs[j].GetComponent<Buff>().RemoveBuff();
+                    Destroy(own_buffs[j]);
+                }
             }
         }
     }
@@ -196,16 +199,18 @@ public class BuffController : MonoBehaviour
         return null;
     }
 
-    private GameObject FindOwnBuff(Transform weapon)
+    public List<GameObject> FindOwnBuff(Transform weapon)
     {
+        List<GameObject> temp = new List<GameObject>();
         for (int i = 0; i < weapon.childCount; i++)
         {
             if (weapon.GetChild(i).GetComponent<Buff>().id == GetComponent<Weapon>().name)
             {
-                return weapon.GetChild(i).gameObject;
+                temp.Add(weapon.GetChild(i).gameObject);
             }
         }
-        return null;
+        return temp;
+        //return null;
     }
 
     private void OnDestroy()

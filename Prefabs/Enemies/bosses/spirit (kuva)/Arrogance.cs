@@ -19,6 +19,9 @@ public class Arrogance : MonoBehaviour
         if(GetComponent<DamageInteractions>().CalculateTakenDamage() <= 0)
         {
             GetComponent<EffectDamage>().DealDamage(null);
+        } else
+        {
+            GetComponent<EffectDamage>().SelfDamage(null);
         }
     }
 }

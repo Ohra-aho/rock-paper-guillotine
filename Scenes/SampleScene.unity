@@ -607,6 +607,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5874367584535041045, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
   m_PrefabInstance: {fileID: 74755590}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &74969966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 74969967}
+  m_Layer: 0
+  m_Name: RewardBarks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &74969967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74969966}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.15511757, y: 1.8324821, z: -0.03019027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &75129972
 GameObject:
   m_ObjectHideFlags: 0
@@ -10800,6 +10831,7 @@ GameObject:
   - component: {fileID: 1066024792}
   - component: {fileID: 1066024794}
   - component: {fileID: 1066024795}
+  - component: {fileID: 1066024796}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: GameController
@@ -11003,6 +11035,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1066024796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066024785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bfab093c42c20d418fbdec2ae8a4ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward_barks:
+  - {fileID: 1228160335464627313, guid: e9e98f6e7b1f9e84b87cf21559400b47, type: 3}
+  - {fileID: 1228160335464627313, guid: b1d16d6230cc0fc48983332d306303b7, type: 3}
+  - {fileID: 1228160335464627313, guid: 1b80de840b8bfda479449d0d1fac45cb, type: 3}
 --- !u!1 &1086918255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1371170088414111626, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
@@ -36326,3 +36374,4 @@ SceneRoots:
   - {fileID: 1066024789}
   - {fileID: 710133547}
   - {fileID: 286843532}
+  - {fileID: 74969967}

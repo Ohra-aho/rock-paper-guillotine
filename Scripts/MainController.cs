@@ -243,6 +243,7 @@ public class MainController : MonoBehaviour
         switch (result)
         {
             case true:
+                if (playerChoise.draw_winner) playerChoise.draw.Invoke();
                 enemyChoise.lose.Invoke();
                 playerChoise.win.Invoke();
                 playerChoise.DealDamage(
@@ -250,6 +251,7 @@ public class MainController : MonoBehaviour
                     );
                 break;
             case false:
+                if (enemyChoise.draw_winner) enemyChoise.draw.Invoke();
                 enemyChoise.win.Invoke();
                 playerChoise.lose.Invoke();
                 enemyChoise.DealDamage(

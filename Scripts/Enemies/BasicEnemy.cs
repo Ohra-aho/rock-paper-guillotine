@@ -98,40 +98,11 @@ public class BasicEnemy : MonoBehaviour
     public int MakeChoise(MainController.Choise playerChoise)
     {
         int step = 0;
-
-        if(off_balance)
-        {
-            step = OffBalanceChoise();
-        }
-        else
-        {
-            step = BasicChoise();
-        }
-
+        step = StikToPlan();
         lastPlayerChoise = playerChoise;
 
         off_balance = false;
         return step;
-    }
-
-    private int BasicChoise()
-    {
-        //Debug.Log("Basic choise");
-        int choiseIndex = 0;
-        int step = 0;
-
-        //Does the action
-        switch (choiseIndex)
-        {
-            case 0: step = StikToPlan(); break;
-        }
-
-        return step;
-    }
-
-    private int OffBalanceChoise()
-    {
-        return off_balance_choises[Random.Range(0, off_balance_choises.Count)];
     }
 
     private int StikToPlan()

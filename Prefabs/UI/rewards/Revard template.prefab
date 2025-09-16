@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1770462993306789582}
   - component: {fileID: 3974445024432155974}
   - component: {fileID: 1926561174420656343}
+  - component: {fileID: 6598593643137720136}
   m_Layer: 0
   m_Name: Revard template
   m_TagString: Untagged
@@ -120,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896e64e4610f72d42a8ae08cc4ac8d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disabled: 0
   hoverEnter:
     m_PersistentCalls:
       m_Calls:
@@ -195,3 +197,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &6598593643137720136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787691903558563149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154cca0b1ee78f944bc6748f3f5e8804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  press:
+    m_PersistentCalls:
+      m_Calls: []
+  over:
+    m_PersistentCalls:
+      m_Calls: []
+  exit:
+    m_PersistentCalls:
+      m_Calls: []
+  hoverTint: 1
+  interactable: 1
+  individual_interactable: 1

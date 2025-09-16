@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 626574339369748426}
   - component: {fileID: 5287123566886258792}
   - component: {fileID: 1663819977986765526}
+  - component: {fileID: 8770773291161431055}
   m_Layer: 7
   m_Name: Reward rope
   m_TagString: Untagged
@@ -224,6 +225,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8770773291161431055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2431177580254377231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935a76298cac99f43b449fdb16f63290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4438377863734659364
 GameObject:
   m_ObjectHideFlags: 0

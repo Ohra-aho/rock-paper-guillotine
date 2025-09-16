@@ -97,12 +97,13 @@ MonoBehaviour:
   draw_winner: 0
   dead: 0
   type: 0
-  damage: 1
+  damage: 2
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Poison breath
-  description: If loses or draws, deals damage equal to an amount of Disposable head.
+  description: If loses or draws, deals damage equal to an amount of non-"useless"
+    Disposable heads.
   sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   first_turn:
     m_PersistentCalls:

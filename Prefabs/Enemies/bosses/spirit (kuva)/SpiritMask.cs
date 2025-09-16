@@ -12,6 +12,10 @@ public class SpiritMask : MonoBehaviour
             if (RIE.transform.GetChild(i).GetComponent<SpiritMask>())
             {
                 RIE.transform.GetChild(i).GetComponent<BuffController>().Unequip();
+                if(RIE.transform.GetChild(i).GetComponent<Fear>())
+                {
+                    RIE.transform.GetChild(i).GetComponent<Fear>().RemoveDebuffs();
+                }
             }
         }
         GetComponent<BuffController>().Equip();

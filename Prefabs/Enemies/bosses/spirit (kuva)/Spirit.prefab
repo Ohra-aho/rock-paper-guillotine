@@ -121,8 +121,8 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 971812e4dd1d816439d780f117d9711d, type: 3}
   - {fileID: 1944698211339908181, guid: 34284e9a13ac27140b35a43ad24246de, type: 3}
   - {fileID: 1944698211339908181, guid: 7b6392ce5a2cb6a4cbdc1cead10b287f, type: 3}
-  plan_1: 000000000300000001000000040000000200000005000000
-  plan_2: 000000000300000001000000040000000200000005000000
+  plan_1: 02000000
+  plan_2: 02000000
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 00000000
@@ -141,3 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debuff_active: 0
   debuffed_type: 0
+  active_mask: 0
+  fear_plan: 
+  anger_plan: 
+  arrogance_plan: 

@@ -99,11 +99,11 @@ MonoBehaviour:
   dead: 0
   type: 1
   damage: 1
-  armor: 3
+  armor: 2
   real_damage: 0
   real_armor: 0
-  name: Mist
-  description: If takes no damage, all weapons are "unbeatable" during the next turn.
+  name: Cloack
+  description: If takes no damage, all masks are "unbeatable" during the next turn.
   sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   first_turn:
     m_PersistentCalls:

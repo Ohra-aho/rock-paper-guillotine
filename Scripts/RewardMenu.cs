@@ -40,6 +40,7 @@ public class RewardMenu : MonoBehaviour
         CollectTypePreference();
         CollectEquippedWeaponPreferences();
         makeRewardList();
+        GetComponent<RewardBarks>().InstanciateRewardBarks();
         rope = GameObject.Find("Roope");
         rope.GetComponent<Test>().PlayAnimation("Move");
         rope.GetComponent<Test>().UnPauseAnimation();
@@ -63,7 +64,7 @@ public class RewardMenu : MonoBehaviour
 
     public void EnableRewards()
     {
-        for(int i = 0; i < transform.childCount; i++)
+        for(int i = 0; i < 3; i++)
         {
             transform.GetChild(i).GetChild(0).GetComponent<Revard>().disabled = false;
         }
