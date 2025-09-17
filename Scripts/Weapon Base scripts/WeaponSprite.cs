@@ -57,6 +57,7 @@ public class WeaponSprite : MonoBehaviour
         if (wheelHolder.GetComponent<PlayerWheelHolder>().detached && weapon != null)
         {
             Unequip();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.GiveAwarning();
         }
     }
 

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6601325160934384095}
   - component: {fileID: 225696280111978936}
+  - component: {fileID: 8677652584315031959}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -44,6 +45,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e39bf8316a056a4aa371c0cc72823ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bark: This is a rock.
+  bark: You have 1 rock.
   triggering_weapon: 
   triggering_type: 0
+--- !u!114 &8677652584315031959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228160335464627313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00287fca3f093a141a25b8e67d4d7776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  threshold: 1
+  exact: 1

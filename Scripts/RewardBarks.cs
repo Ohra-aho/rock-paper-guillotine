@@ -57,7 +57,6 @@ public class RewardBarks : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            Debug.Log(i);
             Weapon temp = transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward.GetComponent<Weapon>();
             if (name)
             {

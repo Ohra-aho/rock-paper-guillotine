@@ -36,6 +36,7 @@ public class DialogBox : MonoBehaviour
 
     public void StartTextAnimation(string text, float? time)
     {
+        text_anim_playing = true;
         text_anim = StartCoroutine(DisplayText(text, time));
     }
 
@@ -81,7 +82,7 @@ public class DialogBox : MonoBehaviour
         yield return new WaitWhile(() => animation_playing);
         transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "";
         current_line = text;
-        text_anim_playing = true;
+        //text_anim_playing = true;
         for(int i = 0; i < text.Length; i++)
         {
             transform.GetChild(0).GetComponent<TextMeshProUGUI>().text += text[i];

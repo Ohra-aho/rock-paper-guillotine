@@ -158,7 +158,7 @@ public class ManAnimator : MonoBehaviour
             bark_box.GetComponent<DialogBox>().StartAnimation(0);
             bark_box.GetComponent<DialogBox>().StartTextAnimation(current_bark.text, null);
             yield return new WaitWhile(() => bark_box.GetComponent<DialogBox>().text_anim_playing);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
             bark_box.GetComponent<DialogBox>().StartAnimation(1);
             yield return new WaitWhile(() => bark_box.GetComponent<DialogBox>().animation_playing);
             current_bark = null;

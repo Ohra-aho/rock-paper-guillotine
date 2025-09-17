@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
+    MainController MC;
     public List<GameObject> hearts;
     public GameObject heart;
     public GameObject heart_slot;
@@ -12,7 +13,26 @@ public class HealthBar : MonoBehaviour
     private int slots = 15;
     private int max_health = 2;
     private int current_health;
+    public List<string> warning_barks;
+    public List<string> low_health_barks;
+    public List<string> high_damage_barks;
+    //Bark stoppers
+    [HideInInspector] public bool warning_given = false;
+    [HideInInspector] public bool low_health = false;
 
+    private void Awake()
+    {
+        MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
+    }
+
+    private void Update()
+    {
+        if(gameObject.CompareTag("PlayerHealth"))
+        {
+            if (MC.game_state != MainController.State.in_battle && low_health) low_health = false;
+            if (MC.game_state != MainController.State.re_arming && warning_given) warning_given = false;
+        }
+    }
 
     public void TakeDamage(int damage)
     {
@@ -33,6 +53,8 @@ public class HealthBar : MonoBehaviour
             }
         }
         dead = CheckIfDead();
+        if(gameObject.CompareTag("PlayerHealth")) LowHealthReaction();
+        if(!dead) HighDamageReaction(damage);
     }
 
     public void HealDamage(int damage)
@@ -192,6 +214,10 @@ public class HealthBar : MonoBehaviour
 
     public int GiveMaxHealth()
     {
+        if(max_health > 15)
+        {
+            return 15;
+        }
         return max_health;
     }
 
@@ -247,27 +273,21 @@ public class HealthBar : MonoBehaviour
         int x = current_health;
         if (x > HP_gap) x = HP_gap;
         for (int i = 0; i < x; i++)
-        {
             if (transform.GetChild(i).GetComponent<Heart>())
-            {
                 if(transform.GetChild(i).GetComponent<Heart>().healthy)
-                {
                     transform.GetChild(i).GetComponent<Test>().PlayAnimation("Heal");
-                }
-            }
-        }
+                
+            
+        
     }
 
     public bool FullHealthBar()
     {
         int amount_of_bulbs = 0;
         for(int i = 0; i < transform.childCount; i++)
-        {
             if(transform.GetChild(i).GetComponent<Heart>())
-            {
                 amount_of_bulbs++;
-            }
-        }
+            
         return amount_of_bulbs == HP_gap;
     }
 
@@ -275,12 +295,50 @@ public class HealthBar : MonoBehaviour
     {
         int amount_of_bulbs = 0;
         for (int i = 0; i < transform.childCount; i++)
-        {
             if (transform.GetChild(i).GetComponent<Heart>())
-            {
                 amount_of_bulbs++;
-            }
-        }
+            
         return amount_of_bulbs;
     }
+
+
+    //Barking
+
+    private void Bark(string message)
+    {
+        GameObject bark_holder = GameObject.Find("BarkHolder");
+        GameObject new_bark = Instantiate(bark_holder.GetComponent<BarkController>().bark_template, bark_holder.transform);
+        new_bark.GetComponent<Bark>().SetTrueBark(message);
+        new_bark.GetComponent<Bark>().TheBark();
+    }
+
+    public void GiveAwarning()
+    {
+        if(GiveCurrentHealth() <= 0 && !warning_given)
+        {
+            warning_given = true;
+            int index = Random.Range(0, warning_barks.Count);
+            Bark(warning_barks[index]);
+        }
+    }
+
+    public void LowHealthReaction()
+    {
+        if(GiveCurrentHealth() <= GiveMaxHealth() / 3 && !low_health)
+        {
+            low_health = true;
+            int index = Random.Range(0, low_health_barks.Count);
+            Bark(low_health_barks[index]);
+        }
+    }
+
+    public void HighDamageReaction(int amount)
+    {
+        if(amount >= 5)
+        {
+            int index = Random.Range(0, high_damage_barks.Count);
+            Bark(high_damage_barks[index]);
+        }
+    }
+
 }
