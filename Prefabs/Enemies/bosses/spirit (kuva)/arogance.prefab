@@ -107,7 +107,7 @@ MonoBehaviour:
   name: Arrogance
   description: Until another mask is used, whenever doesn't take damage, deals one
     damage. If takes damage takes one additional damage damage. Pierces armor. (Continuous)
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 78c649293ba2edb49beffdbf9e502e60, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

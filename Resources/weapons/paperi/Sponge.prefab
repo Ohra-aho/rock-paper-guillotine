@@ -102,7 +102,7 @@ MonoBehaviour:
   real_armor: 0
   name: Sponge
   description: At the start of each battle, heal 1.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: f7b96ec387b33c54f976fe4dbacef557, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls:

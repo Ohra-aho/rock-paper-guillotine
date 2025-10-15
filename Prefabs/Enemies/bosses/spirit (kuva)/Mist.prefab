@@ -102,9 +102,9 @@ MonoBehaviour:
   armor: 2
   real_damage: 0
   real_armor: 0
-  name: Cloack
+  name: Cloak
   description: If takes no damage, all masks are "unbeatable" during the next turn.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: f47255441c5878a448fa5255d5739592, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

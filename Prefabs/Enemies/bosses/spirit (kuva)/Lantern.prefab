@@ -106,7 +106,7 @@ MonoBehaviour:
   name: Lantern
   description: +1 point when deals or takes damage. When at 3 points deals 2 damage
     and points drop to 0.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: d0c4e3ec74c78b746b95fcd6aa274e14, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

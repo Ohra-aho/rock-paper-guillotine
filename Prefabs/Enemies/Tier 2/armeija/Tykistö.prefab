@@ -103,8 +103,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Cannons
-  description: Deals 1 damage after using. Gains one point. When 3 points gained,
-    dealf no effect damage.
+  description: Deals 1 damage after using, if doen't have 3 or more points. Gains
+    one point after using.
   sprite: {fileID: 21300000, guid: 59aaaca44ac65224da39434a15e374e2, type: 3}
   first_turn:
     m_PersistentCalls:

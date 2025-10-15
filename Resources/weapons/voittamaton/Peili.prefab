@@ -105,7 +105,10 @@ MonoBehaviour:
   name: Mirror
   description: Deals damage equal to damage of weapon used against this. Destroyed
     after use.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: ae056215fff98244e928288aea793ccd, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

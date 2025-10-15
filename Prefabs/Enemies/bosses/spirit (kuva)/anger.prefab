@@ -105,7 +105,7 @@ MonoBehaviour:
   real_armor: 0
   name: Anger
   description: +2 damage to all weapons, unil another mask is used.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: ea0f9a92a5c1aac44bbdc1e014359ba3, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

@@ -106,7 +106,7 @@ MonoBehaviour:
   name: Fear
   description: Until another mask is used, -1 armor to all wepons and if takes damage,
     weapon that dealt damage becomes "useless" until another mask is used. (Continuous)
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: fc2133689d47e48459dc58dd3e5295d9, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

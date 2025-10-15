@@ -103,7 +103,7 @@ MonoBehaviour:
   real_armor: 0
   name: Shotgun
   description: At the beginning of each battle, deals 1 dmage to both.
-  sprite: {fileID: 21300000, guid: 0d43db1ff69bff943a7c40c74c9fd6a6, type: 3}
+  sprite: {fileID: 21300000, guid: f4e741da19cc05f4494735b9cda20439, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls:

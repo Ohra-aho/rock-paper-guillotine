@@ -102,7 +102,7 @@ MonoBehaviour:
   real_armor: 0
   name: Giant scissors
   description: -1 to damage for each other equipped weapon.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: e8c1e185d7465c443b5f96f5d06bdf7e, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
