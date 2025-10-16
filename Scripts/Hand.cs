@@ -7,6 +7,7 @@ public class Hand : MonoBehaviour
     public GameObject weapon_to_destroy;
     Sprite weapon_sprite;
     public List<Sprite> icons;
+    MainController.State previous_state = MainController.State.in_battle;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -64,5 +65,23 @@ public class Hand : MonoBehaviour
         weapon_sprite = null;
         transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
         transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+    }
+
+    public void ChangeState(int i)
+    {
+        MainController MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
+        switch(i)
+        {
+            case 1:
+                previous_state = MC.game_state;
+                MC.game_state = MainController.State.transition;
+                break;
+            case 2:
+                if(MC.game_state != MainController.State.dead)
+                {
+                    MC.game_state = previous_state;
+                }
+                break;
+        }
     }
 }

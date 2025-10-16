@@ -40,7 +40,6 @@ public class DeathBark : MonoBehaviour
 
     public void IncreaseRounds()
     {
-        Debug.Log("Increase rounds");
         round++;
     }
 }

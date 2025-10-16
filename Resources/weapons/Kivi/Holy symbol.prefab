@@ -107,7 +107,7 @@ MonoBehaviour:
   description: '+1 point at the beginning of each battle. 3 points: +1 to damage.
     6 points: +1 damage and HP. 10 points +1 damage and HP and heals one damage when
     used.'
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 0cc34a2dc800c64479085e3ed686f0d6, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls:
@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 0
+  in_view: 0
 --- !u!114 &3459604721502766603
 MonoBehaviour:
   m_ObjectHideFlags: 0

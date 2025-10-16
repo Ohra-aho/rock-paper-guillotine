@@ -103,7 +103,7 @@ MonoBehaviour:
   real_armor: 0
   name: Hilpari
   description: Tasapelitilanteessa tekee yhden vahingon vastustajaan.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 6a84f8f3612aa1d419e5824af60e714c, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

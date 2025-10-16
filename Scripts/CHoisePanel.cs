@@ -23,14 +23,12 @@ public class CHoisePanel : MonoBehaviour
 
     private void Update()
     {
-        switch(MC.game_state)
+        if(MC.game_state == MainController.State.in_battle && (weapon != null || weapon_name != ""))
         {
-            case MainController.State.in_battle:
-                GetComponent<NonUIButton>().interactable = true;
-                break;
-            default:
-                GetComponent<NonUIButton>().interactable = false;
-                break;
+            GetComponent<NonUIButton>().interactable = true;
+        } else
+        {
+            GetComponent<NonUIButton>().interactable = false;
         }
     }
 
@@ -43,6 +41,8 @@ public class CHoisePanel : MonoBehaviour
 
         if(weapon_name != null && weapon_name != "")
         {
+            GetComponent<NonUIButton>().interactable = true;
+
             if (transform.childCount <= 0)
             {
                 for (int i = 0; i < 8; i++)
@@ -78,6 +78,7 @@ public class CHoisePanel : MonoBehaviour
             }
         } else
         {
+            GetComponent<NonUIButton>().interactable = false;
             if (transform.childCount <= 0)
             {
                 for (int i = 0; i < 8; i++)
@@ -102,7 +103,7 @@ public class CHoisePanel : MonoBehaviour
 
     public void Choise()
     {
-        if(!transform.parent.gameObject.GetComponent<PlayerContoller>().spinning)
+        if(!transform.parent.gameObject.GetComponent<PlayerContoller>().spinning && MC.game_state == MainController.State.in_battle)
         {
             if (weapon_name != "" && weapon_name != null)
             {
