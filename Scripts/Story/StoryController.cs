@@ -34,6 +34,7 @@ public class StoryController : MonoBehaviour
         }
         story.GetComponent<Story>().AddBossSpeetches();
         story.GetComponent<Story>().AddIntroSpeeches();
+        story.GetComponent<Story>().CreateDeathBark();
         events.AddRange(story.GetComponent<Story>().events);
 
     }

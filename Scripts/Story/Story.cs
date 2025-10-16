@@ -71,4 +71,9 @@ public class Story : MonoBehaviour
         
     }
 
+    public void CreateDeathBark()
+    {
+        Instantiate(narrative.death);
+    }
+
 }

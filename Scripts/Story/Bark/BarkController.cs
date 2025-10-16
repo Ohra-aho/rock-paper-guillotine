@@ -23,6 +23,7 @@ public class BarkController : MonoBehaviour
         SaveSystem.SaveBarks(barks);
     }
 
+    //Tarvii jonkinlaiset ID:t latausta varten
     public void LoadBarks()
     {
         BarkData[] barks = SaveSystem.LoadBarks();
@@ -36,7 +37,7 @@ public class BarkController : MonoBehaviour
                     GameObject loaded_bark = Instantiate(bark_template, transform);
                     loaded_bark.GetComponent<Bark>().trigger = barks[i].trigger;
                     loaded_bark.GetComponent<Bark>().triggered = barks[i].triggered;
-                    loaded_bark.GetComponent<Bark>().bark = barks[i].bark;
+                    //loaded_bark.GetComponent<Bark>().bark = barks[i].bark;
                     loaded_bark.GetComponent<Bark>().SetTrueBark(barks[i].true_bark);
 
                     loaded_bark.GetComponent<Bark>().Inisiate();

@@ -10,5 +10,6 @@ public class Narrative : MonoBehaviour
     public List<GameObject> boss_victories;
     public List<GameObject> gear_changes;
     public List<GameObject> end;
+    public GameObject death;
 
 }

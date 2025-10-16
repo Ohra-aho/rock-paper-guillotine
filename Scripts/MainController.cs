@@ -229,6 +229,7 @@ public class MainController : MonoBehaviour
         TC = GameObject.FindGameObjectWithTag("Table").GetComponent<TableController>();
         TC.ClearDisplay();
         EndRound();
+        GameObject.Find("Death Barks(Clone)").GetComponent<DeathBark>().IncreaseRounds();
         if(
             !story_event_holder.transform.GetChild(0).GetComponent<Encounter>().last && 
             !player.GetComponent<PlayerContoller>().HB.dead && 

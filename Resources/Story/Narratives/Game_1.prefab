@@ -60,3 +60,4 @@ MonoBehaviour:
   - {fileID: 3768069680275742937, guid: b4f9eafb505d76342bbdb8b6fce8cf61, type: 3}
   gear_changes: []
   end: []
+  death: {fileID: 1228160335464627313, guid: 688452d2b74fdf54fb15b53026479802, type: 3}

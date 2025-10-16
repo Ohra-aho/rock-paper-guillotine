@@ -7,12 +7,13 @@ public class Bark : MonoBehaviour
     public string trigger;
     public bool triggered;
 
-    public int bark;
+    public string bark;
 
     string true_bark;
 
     public bool on_startbutton_activate;
     public bool on_startbutton_de_activate;
+    public bool immediate = false;
 
 
     private void Awake()
@@ -24,6 +25,7 @@ public class Bark : MonoBehaviour
     {
         TrueBark();
         SetUpTrigger();
+        if (immediate) TheBark();
     }
 
     private void Update()
@@ -92,7 +94,7 @@ public class Bark : MonoBehaviour
     //Remenant of worse days
     private void TrueBark()
     {
-        true_bark = LanguageController.barks[bark];
+        true_bark = bark;
     }
 
     public string GiveTrueBark()

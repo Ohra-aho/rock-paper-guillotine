@@ -9,12 +9,12 @@ public class BarkData
     public bool triggered;
     public int bark;
     public string true_bark;
-
+    //Bark needs an ID for saving an loading
     public BarkData(Bark b)
     {
         true_bark = b.GiveTrueBark();
         trigger = b.trigger;
-        bark = b.bark;
+        //bark = b.bark;
         triggered = b.triggered;
     }
 }

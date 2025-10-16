@@ -324,11 +324,14 @@ public class HealthBar : MonoBehaviour
 
     public void LowHealthReaction()
     {
-        if(GiveCurrentHealth() <= GiveMaxHealth() / 3 && !low_health)
+        if(GiveCurrentHealth() <= GiveMaxHealth() / 3 && !low_health && GiveCurrentHealth() > 0)
         {
             low_health = true;
             int index = Random.Range(0, low_health_barks.Count);
             Bark(low_health_barks[index]);
+        } else if(GiveCurrentHealth() <= 0)
+        {
+            GameObject.Find("Death Barks(Clone)").GetComponent<DeathBark>().Bark();
         }
     }
 

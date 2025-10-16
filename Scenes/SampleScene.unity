@@ -11097,7 +11097,6 @@ MonoBehaviour:
   reward_barks:
   - {fileID: 1228160335464627313, guid: e9e98f6e7b1f9e84b87cf21559400b47, type: 3}
   - {fileID: 1228160335464627313, guid: b1d16d6230cc0fc48983332d306303b7, type: 3}
-  - {fileID: 1228160335464627313, guid: 1b80de840b8bfda479449d0d1fac45cb, type: 3}
 --- !u!1 &1086918255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1371170088414111626, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
@@ -17338,6 +17337,7 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
+  - {fileID: 1944698211339908181, guid: 82b5e02d4fe2dfb4f9ca629356005ded, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623

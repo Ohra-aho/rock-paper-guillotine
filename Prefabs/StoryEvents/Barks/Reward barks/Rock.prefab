@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e39bf8316a056a4aa371c0cc72823ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bark: You have 1 rock.
+  bark: You have 5 rocks.
   triggering_weapon: 
   triggering_type: 0
 --- !u!114 &8677652584315031959
@@ -61,5 +61,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  threshold: 1
+  threshold: 5
   exact: 1

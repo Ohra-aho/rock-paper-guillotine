@@ -9,10 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6601325160934384095}
-  - component: {fileID: 225696280111978936}
-  - component: {fileID: -1392644788284490296}
+  - component: {fileID: -1996189797999429471}
   m_Layer: 0
-  m_Name: Own_thowing_knife
+  m_Name: Death Barks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &225696280111978936
+--- !u!114 &-1996189797999429471
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,22 +41,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1228160335464627313}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e39bf8316a056a4aa371c0cc72823ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b5bc5cca3fadc743be4bcb2e300f77f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bark: You own throwing knife.
-  triggering_weapon: 
-  triggering_type: 2
---- !u!114 &-1392644788284490296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228160335464627313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a6c939660ecf8c46bd7bd74244afba6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Throwing knife
+  bark: {fileID: 1228160335464627313, guid: 8968d1d70c0424a4e9aa70a7fb12b030, type: 3}
+  barks_0:
+  - Did you even try?
+  - Pathetic.
+  - What was that?
+  barks_1:
+  - It seemed to go well.
+  - I thought you had leared the game.
+  - You did better than most.
+  barks_2:
+  - You did good.
+  - Pitty.
+  - I almost rooted for you.
