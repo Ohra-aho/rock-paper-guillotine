@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -3775906259973895794}
   - component: {fileID: 1705922441453647033}
   m_Layer: 0
-  m_Name: First end
+  m_Name: BI 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,10 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - That's how it is done!
-  - You are not bad at this.
-  - This has been fun, but execution is an execution...
-  - Until we meet again.
+  - Next foe is one of my persional favourites.
+  - This ought to be interesting.
   sprite_frames: 
   activated: 0
 --- !u!114 &1705922441453647033

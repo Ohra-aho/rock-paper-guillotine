@@ -45,12 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed939c76aa0cf147bfc77bc68207605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialog_frames: 1
-  sprite_frames: 0000000006000000
-  tutorial: 1
-  boss_intro: 0
-  boss_victory: 0
-  greeting: 0
+  lines:
+  - Now it's time fo your last battle.
+  - Attach your weapons to the gear and put it back in it's place.
+  sprite_frames: 0600000000000000
   activated: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:

@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7010574343782720544}
-  - component: {fileID: -3775906259973895794}
+  - component: {fileID: -3790885527712366114}
   - component: {fileID: 1705922441453647033}
   m_Layer: 0
-  m_Name: First end
+  m_Name: Boss Victories
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-3775906259973895794
+--- !u!114 &-3790885527712366114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,15 +42,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 3768069680275742937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ed939c76aa0cf147bfc77bc68207605, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f4036a01707bb24f84896255b3f3a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines:
-  - That's how it is done!
-  - You are not bad at this.
-  - This has been fun, but execution is an execution...
-  - Until we meet again.
-  sprite_frames: 
+  messages:
+  - {fileID: 3768069680275742937, guid: 597fff1c9b372624996ed305049d3b28, type: 3}
+  - {fileID: 3768069680275742937, guid: 1231b5293c5b95146ba81f5cf4bdc6d5, type: 3}
+  - {fileID: 3768069680275742937, guid: 4ae9572847aecf043b054a6b6723ea1c, type: 3}
+  - {fileID: 3768069680275742937, guid: 2c9cf968e670eed4e850236cf5d0661f, type: 3}
+  - {fileID: 3768069680275742937, guid: 04637cb40be01b141a16e09d9fbdfcd9, type: 3}
+  - {fileID: 3768069680275742937, guid: 0cc0e7163201f2c41aa4f81f840568eb, type: 3}
+  - {fileID: 3768069680275742937, guid: e9e1879f6ceb8e944b7adc4c1359a389, type: 3}
+  - {fileID: 3768069680275742937, guid: af5a433677855284a892535358b8b0c7, type: 3}
   activated: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:
@@ -68,7 +71,7 @@ MonoBehaviour:
   eventFunction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -3775906259973895794}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Message, Assembly-CSharp
         m_MethodName: PlayMessage
         m_Mode: 1

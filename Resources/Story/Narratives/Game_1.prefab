@@ -46,17 +46,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   before_first_encounter:
   - {fileID: 2090958671281753362, guid: 4aa4afe92caad8645893a4e48ed9c2df, type: 3}
-  - {fileID: 3768069680275742937, guid: e8795e4e1ab038c4f8430107d7a50080, type: 3}
+  - {fileID: 3768069680275742937, guid: a088927ce8f6c304abc1bb847cf7d354, type: 3}
   first_victory: []
   boss_introduxtions:
-  - {fileID: 3768069680275742937, guid: 2bc7ea1b0e967f54190e079b0f88964e, type: 3}
-  - {fileID: 3768069680275742937, guid: 2bc7ea1b0e967f54190e079b0f88964e, type: 3}
-  - {fileID: 3768069680275742937, guid: 2bc7ea1b0e967f54190e079b0f88964e, type: 3}
-  - {fileID: 3768069680275742937, guid: 2bc7ea1b0e967f54190e079b0f88964e, type: 3}
+  - {fileID: 3768069680275742937, guid: 4a5afc41a44cada4ab77873b0bee96ee, type: 3}
+  - {fileID: 3768069680275742937, guid: 4a5afc41a44cada4ab77873b0bee96ee, type: 3}
+  - {fileID: 3768069680275742937, guid: 4a5afc41a44cada4ab77873b0bee96ee, type: 3}
+  - {fileID: 3768069680275742937, guid: 4a5afc41a44cada4ab77873b0bee96ee, type: 3}
   boss_victories:
-  - {fileID: 3768069680275742937, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
-  - {fileID: 3768069680275742937, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
-  - {fileID: 3768069680275742937, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
-  - {fileID: 3768069680275742937, guid: 6f2d50afb33f112469a790e25de91a29, type: 3}
+  - {fileID: 3768069680275742937, guid: b4f9eafb505d76342bbdb8b6fce8cf61, type: 3}
+  - {fileID: 3768069680275742937, guid: b4f9eafb505d76342bbdb8b6fce8cf61, type: 3}
+  - {fileID: 3768069680275742937, guid: b4f9eafb505d76342bbdb8b6fce8cf61, type: 3}
+  - {fileID: 3768069680275742937, guid: b4f9eafb505d76342bbdb8b6fce8cf61, type: 3}
   gear_changes: []
   end: []

@@ -4,22 +4,13 @@ using UnityEngine;
 
 public class Message : MonoBehaviour
 {
-    public int dialog_frames;
-
+    public List<string> lines;
     public List<int> sprite_frames;
-    //public List<int> dialog_frames;
-
-    public bool tutorial;
-    public bool boss_intro;
-    public bool boss_victory;
-    public bool greeting;
-
 
     GameObject man;
     [HideInInspector] public bool activated = false;
     public List<ManAnimator.Frame> frames;
     ManAnimator MA;
-
     MainController MC;
 
 
@@ -36,7 +27,7 @@ public class Message : MonoBehaviour
         frames = new List<ManAnimator.Frame>();
 
         //This is ok for now
-        string[] dialog = ChooseRandomLine();
+        string[] dialog = lines.ToArray();
         //Make a real system for this
         List<int> man_indexes = MakeRandomAnimation(dialog.Length);
 
@@ -45,11 +36,6 @@ public class Message : MonoBehaviour
         for (int i = 0; i < sprite_frames.Count; i++)
         {
             string line = dialog[i];
-            
-            //if (tutorial) line = LanguageController.tutorial[dialog_frames][i];
-            //if(boss_intro) line = LanguageController.boss_intros[dialog_frames][i];
-            //if(boss_victory) line = LanguageController.boss_victories[dialog_frames][i];
-            //if(greeting) line = LanguageController.greetings[dialog_frames][i];
 
             frames.Add(
                 new ManAnimator.Frame(
@@ -64,21 +50,6 @@ public class Message : MonoBehaviour
         GetComponent<StoryEvent>().Procceed();   
     }
 
-    public string[] ChooseRandomLine()
-    {
-        if(!tutorial)
-        {
-            //Choose a random dialog from correct set
-            if (boss_intro) return LanguageController.boss_intros[Random.Range(0, LanguageController.boss_intros.Length)];
-            if (boss_victory) return LanguageController.boss_victories[Random.Range(0, LanguageController.boss_victories.Length)];
-            if (greeting) return LanguageController.greetings[Random.Range(0, LanguageController.greetings.Length)];
-        } else
-        {
-            return LanguageController.tutorial[dialog_frames];
-        }
-
-        return new string[] { "" };
-    }
 
     //Temporary solution till I figure out hard code solution
     public List<int> MakeRandomAnimation(int amount)

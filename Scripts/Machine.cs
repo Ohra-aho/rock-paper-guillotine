@@ -105,8 +105,6 @@ public class Machine : MonoBehaviour
     {
         if (StoryEventHolder.transform.GetChild(0).GetComponent<BossBattle>())
         {
-            Debug.Log("Gear change");
-
             //Debug.Log("Gear update");
             StoryEventHolder.transform.GetChild(0).GetComponent<BossBattle>().UpdateGear();
         } else if(enemyWheelHolder.transform.GetChild(0).name != "Enemy Wheel")

@@ -369,6 +369,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 2ce7920984bb4a7468c2da75884a269c, type: 2}
+    - target: {fileID: 859590947781609668, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
+      propertyPath: stereo_pan
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 966703540362404372, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
       propertyPath: m_FlipY
       value: 1
@@ -521,6 +525,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6437607964839789386, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
+      propertyPath: stereo_pan
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7720398230260849525, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
       propertyPath: m_FlipY
       value: 1
@@ -532,6 +540,10 @@ PrefabInstance:
     - target: {fileID: 7720398230260849525, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051735297036908451, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
+      propertyPath: stereo_pan
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8141092044132247438, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
       propertyPath: m_FlipY
@@ -599,6 +611,9 @@ PrefabInstance:
     - {fileID: 1604993442250431125, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
     - {fileID: 9106147688695843040, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
     - {fileID: 3281328298759834385, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
+    - {fileID: 3164878435065226218, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
+    - {fileID: 5991811474440551603, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
+    - {fileID: 3676899568567529871, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
@@ -9538,6 +9553,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 2ce7920984bb4a7468c2da75884a269c, type: 2}
+    - target: {fileID: 859590947781609668, guid: dfbe6fd131ff4f943ba3351f5a8a88d4, type: 3}
+      propertyPath: stereo_pan
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1371170088414111626, guid: dfbe6fd131ff4f943ba3351f5a8a88d4, type: 3}
       propertyPath: m_Name
       value: Wheel 4
@@ -9642,6 +9661,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6437607964839789386, guid: dfbe6fd131ff4f943ba3351f5a8a88d4, type: 3}
+      propertyPath: stereo_pan
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6808813416406191042, guid: dfbe6fd131ff4f943ba3351f5a8a88d4, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -9661,6 +9684,10 @@ PrefabInstance:
     - target: {fileID: 7720398230260849525, guid: dfbe6fd131ff4f943ba3351f5a8a88d4, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051735297036908451, guid: dfbe6fd131ff4f943ba3351f5a8a88d4, type: 3}
+      propertyPath: stereo_pan
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8141092044132247438, guid: dfbe6fd131ff4f943ba3351f5a8a88d4, type: 3}
       propertyPath: m_FlipX
@@ -9720,6 +9747,9 @@ PrefabInstance:
     - {fileID: 9106147688695843040, guid: dfbe6fd131ff4f943ba3351f5a8a88d4, type: 3}
     - {fileID: 122656073635958348, guid: dfbe6fd131ff4f943ba3351f5a8a88d4, type: 3}
     - {fileID: 1604993442250431125, guid: dfbe6fd131ff4f943ba3351f5a8a88d4, type: 3}
+    - {fileID: 3164878435065226218, guid: dfbe6fd131ff4f943ba3351f5a8a88d4, type: 3}
+    - {fileID: 5991811474440551603, guid: dfbe6fd131ff4f943ba3351f5a8a88d4, type: 3}
+    - {fileID: 3676899568567529871, guid: dfbe6fd131ff4f943ba3351f5a8a88d4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfbe6fd131ff4f943ba3351f5a8a88d4, type: 3}
@@ -10884,7 +10914,7 @@ MonoBehaviour:
   story_event_holder: {fileID: 710133546}
   firstRewardMenu: 0
   playthroughts:
-  - {fileID: 4163066812587896230, guid: 0db93014473a88d4a884a2acf424b7dd, type: 3}
+  - {fileID: 4163066812587896230, guid: 815fa85bc2b2f534faa2e5ae2c1c5333, type: 3}
   buttons_active: 1
   reward_tier: 1
   rewards_disabled: 0
@@ -22930,6 +22960,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 2ce7920984bb4a7468c2da75884a269c, type: 2}
+    - target: {fileID: 859590947781609668, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
+      propertyPath: stereo_pan
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1371170088414111626, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
       propertyPath: m_Name
       value: Wheel 5
@@ -23038,6 +23072,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6437607964839789386, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
+      propertyPath: stereo_pan
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7720398230260849525, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
       propertyPath: m_FlipY
       value: 1
@@ -23049,6 +23087,10 @@ PrefabInstance:
     - target: {fileID: 7720398230260849525, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051735297036908451, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
+      propertyPath: stereo_pan
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8141092044132247438, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
       propertyPath: m_FlipY
@@ -23118,6 +23160,9 @@ PrefabInstance:
     - {fileID: 1604993442250431125, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
     - {fileID: 9106147688695843040, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
     - {fileID: 3281328298759834385, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
+    - {fileID: 3164878435065226218, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
+    - {fileID: 5991811474440551603, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
+    - {fileID: 3676899568567529871, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a58b1fb028afc734792da4c072e51e83, type: 3}

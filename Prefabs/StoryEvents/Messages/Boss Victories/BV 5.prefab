@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -3775906259973895794}
   - component: {fileID: 1705922441453647033}
   m_Layer: 0
-  m_Name: FisrtVictory
+  m_Name: BV 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed939c76aa0cf147bfc77bc68207605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite_frames: 000000000000000000000000
-  dialog_frames: 0a0000000b0000000c000000
+  lines:
+  - Well. It wasn't so bad. Was it?
+  sprite_frames: 
   activated: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:

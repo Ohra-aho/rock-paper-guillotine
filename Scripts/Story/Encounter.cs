@@ -52,6 +52,7 @@ public class Encounter : MonoBehaviour
         GameObject wheel_holder = GameObject.Find("RightSide").transform.GetChild(0).gameObject;
         if(wheel_holder.transform.GetChild(0).name == "Enemy Wheel")
         {
+            Debug.Log(index);
             wheel_holder.transform.GetChild(index).gameObject.SetActive(true);
             wheel_holder.transform.GetChild(0).gameObject.SetActive(false);
             wheel_holder.transform.GetChild(index).SetAsFirstSibling();

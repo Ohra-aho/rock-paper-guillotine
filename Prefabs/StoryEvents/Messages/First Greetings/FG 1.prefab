@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7010574343782720544}
-  - component: {fileID: 3800092539451632345}
+  - component: {fileID: -3775906259973895794}
   - component: {fileID: 1705922441453647033}
   m_Layer: 0
-  m_Name: Tier 1 encounter
+  m_Name: FG 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3800092539451632345
+--- !u!114 &-3775906259973895794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,19 +42,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3768069680275742937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1dae76cc67909a4f92310d2f43edf15, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ed939c76aa0cf147bfc77bc68207605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possible_enemies:
-  - {fileID: 6979226803842198351, guid: 870ed2e832e03c24390913ab1fe726e7, type: 3}
-  - {fileID: 6979226803842198351, guid: 2cce5fed51c0f454e800ac673cc52432, type: 3}
-  - {fileID: 6979226803842198351, guid: 8705371f5c6e303408e7ea00714d7e08, type: 3}
-  - {fileID: 6979226803842198351, guid: b3b3780a257db94429cdb19c45240e04, type: 3}
-  - {fileID: 6979226803842198351, guid: d722de004dc09094fbd764dea7158d79, type: 3}
-  enemies: []
-  amount: 5
-  immideate_over: 0
-  last: 0
+  lines:
+  - Oh. I was wondering, if you would end up here.
+  - What happened to that other one? That case about the statue. Few years in prison?
+  - It's interesting, how one child can change ones fate.
+  - Regardless. Shall we?
+  sprite_frames: 
+  activated: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,9 +68,9 @@ MonoBehaviour:
   eventFunction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3800092539451632345}
-        m_TargetAssemblyTypeName: Encounter, Assembly-CSharp
-        m_MethodName: Victory
+      - m_Target: {fileID: -3775906259973895794}
+        m_TargetAssemblyTypeName: Message, Assembly-CSharp
+        m_MethodName: PlayMessage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

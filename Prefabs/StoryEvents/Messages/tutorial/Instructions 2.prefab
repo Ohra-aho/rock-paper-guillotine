@@ -45,12 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed939c76aa0cf147bfc77bc68207605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialog_frames: 2
+  lines:
+  - That's that. Pull the lever, when you are ready.
   sprite_frames: 00000000
-  tutorial: 1
-  boss_intro: 0
-  boss_victory: 0
-  greeting: 0
   activated: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:

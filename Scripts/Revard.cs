@@ -142,7 +142,7 @@ public class Revard : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!disabled) { 
+        if (!disabled && MC.game_state == MainController.State.reward) { 
             Chosen();
             transform.parent.parent.GetComponent<RewardMenu>().DisableRewards();
         }

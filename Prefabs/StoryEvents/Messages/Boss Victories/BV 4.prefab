@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -3775906259973895794}
   - component: {fileID: 1705922441453647033}
   m_Layer: 0
-  m_Name: General greeting
+  m_Name: BV 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,12 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed939c76aa0cf147bfc77bc68207605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialog_frames: 0
+  lines:
+  - You did well. I hope you won't dissapoint.
   sprite_frames: 
-  tutorial: 0
-  boss_intro: 0
-  boss_victory: 0
-  greeting: 1
   activated: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:

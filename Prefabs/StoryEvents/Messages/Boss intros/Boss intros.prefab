@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7010574343782720544}
-  - component: {fileID: -3775906259973895794}
+  - component: {fileID: -3790885527712366114}
   - component: {fileID: 1705922441453647033}
   m_Layer: 0
-  m_Name: First end
+  m_Name: Boss intros
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-3775906259973895794
+--- !u!114 &-3790885527712366114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,15 +42,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3768069680275742937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ed939c76aa0cf147bfc77bc68207605, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f4036a01707bb24f84896255b3f3a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines:
-  - That's how it is done!
-  - You are not bad at this.
-  - This has been fun, but execution is an execution...
-  - Until we meet again.
-  sprite_frames: 
+  messages:
+  - {fileID: 3768069680275742937, guid: 9f52767a369a8a9498b261fb484acf96, type: 3}
+  - {fileID: 3768069680275742937, guid: 38121014adeb1b143824f573effe7279, type: 3}
+  - {fileID: 3768069680275742937, guid: 4ff63472b445b0748bfbec5fee5e5087, type: 3}
+  - {fileID: 3768069680275742937, guid: 8fd0eeeda0adb1f4ba57ecd7dfdfb7e7, type: 3}
   activated: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:
@@ -68,7 +67,7 @@ MonoBehaviour:
   eventFunction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -3775906259973895794}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Message, Assembly-CSharp
         m_MethodName: PlayMessage
         m_Mode: 1
