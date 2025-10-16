@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3800092539451632345}
   - component: {fileID: 1705922441453647033}
   m_Layer: 0
-  m_Name: Tier 2 encounter
+  m_Name: Tier 4 encounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,14 +46,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possible_enemies:
-  - {fileID: 6979226803842198351, guid: ac23e4c6ea12c5e4cb4a79982a2fd822, type: 3}
-  - {fileID: 6979226803842198351, guid: c9c48ac1817db184fb9dfce2614cd02a, type: 3}
-  - {fileID: 6979226803842198351, guid: fe755aa3cdadef9498c0b597e0e64270, type: 3}
-  - {fileID: 6979226803842198351, guid: a83c0229905e1d747b5af0c5c38ece71, type: 3}
-  - {fileID: 6979226803842198351, guid: 6ffffa3f9b71a6a4c9a9b478dcc7e6b5, type: 3}
-  - {fileID: 6979226803842198351, guid: d06643ab5223d42448a21cecf0a68c72, type: 3}
+  - {fileID: 6979226803842198351, guid: af9d19566801ba741bbaae73cf8de69f, type: 3}
+  - {fileID: 6979226803842198351, guid: 9cb988441ce22d94eb2675f04b51f5bf, type: 3}
+  - {fileID: 6979226803842198351, guid: 5cde088727cb2424498370bc586c20c2, type: 3}
+  - {fileID: 6979226803842198351, guid: 8f58c45af9d7e6145b32fa73c854d80d, type: 3}
+  - {fileID: 6979226803842198351, guid: fd977f3c76d377c4db4988198f9cda27, type: 3}
   enemies: []
-  amount: 5
+  amount: 4
   immideate_over: 0
   last: 0
 --- !u!114 &1705922441453647033

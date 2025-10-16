@@ -15,7 +15,7 @@ public class Story : MonoBehaviour
         {
             for (int i = 0; i < events.Count; i++)
             {
-                if (events[i].name.Contains("Bossbattle"))
+                if (events[i].name.Contains("Boss"))
                 {
                     InsertEvent(narrative.boss_introduxtions[boss_index].gameObject, i-1);
                     i++;

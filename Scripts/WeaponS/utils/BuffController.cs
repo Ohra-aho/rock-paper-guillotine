@@ -15,6 +15,7 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public int effect_damage_bonus = 0;
     [HideInInspector] public bool set_a_to_zero = false;
     [HideInInspector] public bool set_d_to_zero = false;
+    public bool always_on = true;
 
     //[HideInInspector] public UnityEvent special;
     public delegate void Special(Weapon weapon);

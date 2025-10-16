@@ -104,7 +104,7 @@ MonoBehaviour:
   real_armor: 0
   name: Gas gradane
   description: Deals 1 damage to both and destroys itself.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: d8c1bccb0d7ce3741be1f073eb127064, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

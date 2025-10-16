@@ -49,6 +49,7 @@ public class PlayerInventory : MonoBehaviour
             //Debug.Log("Something");
         }
         AddBuffToNewWeapon(newItem);
+        
     }
 
     private void AddBuffToNewWeapon(GameObject weapon)
@@ -60,7 +61,10 @@ public class PlayerInventory : MonoBehaviour
             {
                 if (equipped_weapons[i].GetComponent<BuffController>())
                 {
-                    equipped_weapons[i].GetComponent<BuffController>().Equip();
+                    if(equipped_weapons[i].GetComponent<BuffController>().always_on)
+                    {
+                        equipped_weapons[i].GetComponent<BuffController>().Equip();
+                    }
                 }
 
                 if (equipped_weapons[i].GetComponent<Laava>())
