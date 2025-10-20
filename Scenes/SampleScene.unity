@@ -441,6 +441,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.72
       objectReference: {fileID: 0}
+    - target: {fileID: 3493087720146216523, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4070415216445890418, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
       propertyPath: id
       value: 6
@@ -456,6 +460,14 @@ PrefabInstance:
     - target: {fileID: 4265802450139697798, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
       propertyPath: id
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821773334877876615, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993339656612273583, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5236946198349313458, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -476,6 +488,10 @@ PrefabInstance:
     - target: {fileID: 5603706768103966644, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865584375418487778, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5874367584535041045, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -528,6 +544,14 @@ PrefabInstance:
     - target: {fileID: 6437607964839789386, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
       propertyPath: stereo_pan
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808813416406191042, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087620186459202918, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7720398230260849525, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
       propertyPath: m_FlipY
@@ -6814,9 +6838,9 @@ MonoBehaviour:
   m_fontSize: 15
   m_fontSizeBase: 15
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 13
+  m_fontSizeMax: 15
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -10914,7 +10938,7 @@ MonoBehaviour:
   story_event_holder: {fileID: 710133546}
   firstRewardMenu: 0
   playthroughts:
-  - {fileID: 4163066812587896230, guid: 815fa85bc2b2f534faa2e5ae2c1c5333, type: 3}
+  - {fileID: 4163066812587896230, guid: 0db93014473a88d4a884a2acf424b7dd, type: 3}
   buttons_active: 1
   reward_tier: 1
   rewards_disabled: 0
@@ -17337,7 +17361,6 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: dc1ef5819bdc39f49b92496cf806f33b, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623

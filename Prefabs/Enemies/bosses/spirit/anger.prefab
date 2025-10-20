@@ -99,7 +99,7 @@ MonoBehaviour:
   draw_winner: 0
   dead: 0
   type: 2
-  damage: 3
+  damage: 2
   armor: 1
   real_damage: 0
   real_armor: 0
@@ -194,6 +194,7 @@ MonoBehaviour:
   effect_damage_bonus: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
+  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0

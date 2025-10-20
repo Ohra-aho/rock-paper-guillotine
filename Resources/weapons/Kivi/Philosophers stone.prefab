@@ -101,9 +101,8 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Philosophr's stone
-  description: Max HP is capped at 3, but heal all damage at the start of the battle
-    battles.
+  name: Philosopher's stone
+  description: Max HP is capped at 3, but heals all damage at the start of each battle.
   sprite: {fileID: 21300000, guid: fb824dac12b5f6b44880692ed7e37464, type: 3}
   first_turn:
     m_PersistentCalls:

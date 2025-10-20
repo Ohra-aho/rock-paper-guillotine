@@ -93,15 +93,19 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 1
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Paperilennokki
-  description: "L\xE4vist\xE4\xE4 panssarin."
+  name: Paper plane
+  description: Pierces armor
   sprite: {fileID: 21300000, guid: ba07c255ee48f93428c74ce7c021f194, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

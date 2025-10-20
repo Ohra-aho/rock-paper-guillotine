@@ -56,6 +56,9 @@ MonoBehaviour:
   amount: 5
   immideate_over: 0
   last: 0
+  surprices:
+  - {fileID: 6979226803842198351, guid: 55da036dcb43c494e82a5194403a5127, type: 3}
+  - {fileID: 6979226803842198351, guid: f4546a9ebefcabe4c98a859db5243b5e, type: 3}
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0

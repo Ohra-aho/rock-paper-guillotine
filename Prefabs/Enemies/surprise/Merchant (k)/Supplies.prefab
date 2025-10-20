@@ -102,7 +102,10 @@ MonoBehaviour:
   real_armor: 0
   name: Supplies
   description: '+1 to players HP after use. Destroys the weapon used against this. '
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 2178a1b8974bbdf448ff3d0b25d50125, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

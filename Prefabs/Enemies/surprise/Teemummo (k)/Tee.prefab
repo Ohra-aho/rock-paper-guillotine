@@ -100,9 +100,12 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Tee
+  name: Tea
   description: Heals 1 damage from the player and self.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: e5cbee1d18163e74995858806c529ed6, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

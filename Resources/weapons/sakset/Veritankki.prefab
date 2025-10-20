@@ -101,8 +101,8 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Veritankki
-  description: Aina kun tekee vahinkoa. +1 piste. Joka kolmas piste +1 HP.
+  name: Blood tank
+  description: Each time deals damage, +1 point. +1 HP for every 3 points.
   sprite: {fileID: 21300000, guid: 0adba0232cb922b41ba2834340a6f645, type: 3}
   first_turn:
     m_PersistentCalls:

@@ -10,6 +10,8 @@ public class Encounter : MonoBehaviour
     public bool immideate_over;
     public bool last; //Needs immideate over to work
 
+    public List<GameObject> surprices;
+
     private void Awake()
     {
         MakeEnemyList();
@@ -35,7 +37,7 @@ public class Encounter : MonoBehaviour
                 enemies.Add(possible_enemies[0]);
             }
         }
-        
+        AddSurprice();
     }
 
     public void Victory()
@@ -52,7 +54,6 @@ public class Encounter : MonoBehaviour
         GameObject wheel_holder = GameObject.Find("RightSide").transform.GetChild(0).gameObject;
         if(wheel_holder.transform.GetChild(0).name == "Enemy Wheel")
         {
-            Debug.Log(index);
             wheel_holder.transform.GetChild(index).gameObject.SetActive(true);
             wheel_holder.transform.GetChild(0).gameObject.SetActive(false);
             wheel_holder.transform.GetChild(index).SetAsFirstSibling();
@@ -73,5 +74,19 @@ public class Encounter : MonoBehaviour
             case "Wheel 6": active_gear.transform.SetSiblingIndex(3); break;
         }
         active_gear.SetActive(false);
+    }
+
+    public void AddSurprice()
+    {
+        if(surprices.Count > 0)
+        {
+            int chance = Random.Range(1, 6);
+            if (chance == 1)
+            {
+                int enemy = Random.Range(0, surprices.Count);
+                int index = Random.Range(1, amount);
+                enemies.Insert(index, surprices[enemy]);
+            }
+        }
     }
 }

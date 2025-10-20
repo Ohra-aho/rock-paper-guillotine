@@ -10,7 +10,7 @@ public class MerchantBehaviour : MonoBehaviour
     {
         GameObject controller = GameObject.FindGameObjectWithTag("EnemyHolder");
         controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
-        supply_counter = Random.Range(2, 6);
+        supply_counter = Random.Range(2, 5);
     }
 
     private int MakeChoise(MainController.Choise none)

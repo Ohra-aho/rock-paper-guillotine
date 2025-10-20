@@ -101,9 +101,8 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Alasin
-  description: "+1 vahinkoon kaikille asennetuille aseille k\xE4yt\xF6n j\xE4lkeen
-    ja tuhoaa itsens\xE4."
+  name: Anvil
+  description: +1 damage to all equipped weapons after use. Destroys itself.
   sprite: {fileID: 21300000, guid: 8b1ad240ae2886944a14c01e2b788377, type: 3}
   first_turn:
     m_PersistentCalls:

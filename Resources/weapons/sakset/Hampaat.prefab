@@ -94,15 +94,19 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 2
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Hampaat
-  description: Kun tekee vahinkoa, paranna 1 haava.
+  name: Teeth
+  description: If deals damage, heal 1.
   sprite: {fileID: 21300000, guid: 58608f9860cf9a1439532a03ce823b4e, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

@@ -100,7 +100,7 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Luu
+  name: Bone
   description: -1 HP
   sprite: {fileID: 21300000, guid: 32dcef5c12fd6b542bd77899bd6c4b93, type: 3}
   first_turn:

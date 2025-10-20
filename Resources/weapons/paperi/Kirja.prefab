@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 8104029208489123361}
-  - component: {fileID: 3184938875044343814}
   m_Layer: 5
   m_Name: Kirja
   m_TagString: Untagged
@@ -94,49 +93,28 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 1
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Kirja
-  description: "Joka kerta kun tekee vahinkoa, saa yhden pisteen. Jokainen 2 psitett\xE4
-    kasvattaa vahinkoa."
+  name: Book
+  description: +1 armor for every 3 "papers" you own.
   sprite: {fileID: 21300000, guid: 359fb2764748cb048a898e0a35a1298b, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   resultPhase:
     m_PersistentCalls:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Kirja, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -145,19 +123,7 @@ MonoBehaviour:
       m_Calls: []
   dealDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8104029208489123361}
-        m_TargetAssemblyTypeName: Kirja, Assembly-CSharp
-        m_MethodName: IncreaseStacks
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -181,7 +147,19 @@ MonoBehaviour:
       m_Calls: []
   constant:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8104029208489123361}
+        m_TargetAssemblyTypeName: Kirja, Assembly-CSharp
+        m_MethodName: CalculateHP
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
@@ -207,32 +185,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e300c453b9b1b748a56556b21a0a612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3184938875044343814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stacks: 0
-  stack_limit: 0
-  LoadFunction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8104029208489123361}
-        m_TargetAssemblyTypeName: Kirja, Assembly-CSharp
-        m_MethodName: CalculateDamage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2

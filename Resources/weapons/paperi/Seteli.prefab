@@ -93,15 +93,19 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 1
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Seteli
-  description: "Kaikki aseet saavat yhden pisteen, kun t\xE4m\xE4 ase on varustettuna."
+  name: Bill
+  description: Each weapon gain one point.
   sprite: {fileID: 21300000, guid: 6f54d77bf32883d40aa52cea431557a2, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

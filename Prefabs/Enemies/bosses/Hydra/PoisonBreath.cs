@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class PoisonBreath : MonoBehaviour
 {
-    public void DealDamage()
+    private void Awake()
     {
-        GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
-        int amount = 0;
-        for(int i = 0; i < RIE.transform.childCount; i++)
-        {
-            if(RIE.transform.GetChild(i).GetComponent<DisposableHead>() && RIE.transform.GetChild(i).GetComponent<Weapon>().type != MainController.Choise.hyödytön)
-            {
-                amount++;
-            }
-        }
-        GetComponent<EffectDamage>().amount = amount;
-        GetComponent<EffectDamage>().DealDamage(null);
+        GetComponent<BuffController>().special = DealDamage;
+        GetComponent<BuffController>().special_apply = true;
+        GetComponent<BuffController>().endPhase = true;
+        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name == "Disposable head"; };
+    }
+
+
+    public void DealDamage(Weapon w)
+    {
+        GetComponent<EffectDamage>().DealDamage(w);
+    }
+
+    public void ApplyByff()
+    {
+        GetComponent<BuffController>().Equip();
     }
 }

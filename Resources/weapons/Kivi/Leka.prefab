@@ -99,9 +99,12 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Leka
-  description: Voittaa tasapelit
+  name: Mallet
+  description: Wins draws.
   sprite: {fileID: 21300000, guid: c8eafc5786a3fd245831caa9f9294480, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

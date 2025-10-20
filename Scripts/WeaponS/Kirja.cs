@@ -6,15 +6,26 @@ using System;
 public class Kirja : MonoBehaviour
 {
 
-    public void IncreaseStacks()
+    GameObject ri;
+    int armor_bonus = 0;
+
+    private void Awake()
     {
-        GetComponent<Stacking>().IncreaseStacks(1);
-        CalculateDamage();
+        ri = GameObject.Find("Real inventory");
     }
 
-    public void CalculateDamage()
+    public void CalculateHP()
     {
-        GetComponent<Weapon>().damage = 1 + GetComponent<Stacking>().GiveAmountOfStackDividedBy(2);
+        int amount = 0;
+        GetComponent<Weapon>().armor -= armor_bonus;
+        for (int i = 0; i < ri.transform.childCount; i++)
+        {
+            if (ri.transform.GetChild(i).GetComponent<Weapon>().type == MainController.Choise.paperi)
+            {
+                amount++;
+            }
+        }
+        armor_bonus = amount / 3;
+        GetComponent<Weapon>().armor += armor_bonus;
     }
-
 }

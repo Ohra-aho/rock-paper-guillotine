@@ -94,15 +94,19 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 1
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Tappolista
-  description: "Aina kun t\xE4m\xE4 ase tappaa, +1 vahinkoon."
+  name: Hit list
+  description: Whenever you win an encounter with this weapon, +2 to damage.
   sprite: {fileID: 21300000, guid: f8f7b12fe8750db46a4053b5099fd229, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

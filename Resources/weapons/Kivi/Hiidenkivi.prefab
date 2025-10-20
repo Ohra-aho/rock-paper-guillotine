@@ -106,15 +106,19 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 0
   damage: 3
   armor: 2
   real_damage: 0
   real_armor: 0
-  name: Hiidenkivi
-  description: "Jos voittaa vuoron, tuhoaa itsens\xE4."
+  name: Glacial erratic
+  description: If wins, destroys itself.
   sprite: {fileID: 21300000, guid: adbdbe63e04c14e4f86c3265b66a6f58, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

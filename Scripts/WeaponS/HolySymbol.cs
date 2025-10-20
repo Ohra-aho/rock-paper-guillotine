@@ -6,7 +6,7 @@ public class HolySymbol : MonoBehaviour
 {
     public void Activate()
     {
-        GetComponent<Stacking>().IncreaseStacks(3);
+        GetComponent<Stacking>().IncreaseStacks(1);
         int stacks = GetComponent<Stacking>().stacks;
         if(stacks == 3)
         {

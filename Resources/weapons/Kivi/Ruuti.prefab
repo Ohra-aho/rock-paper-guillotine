@@ -102,8 +102,8 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Ruuti
-  description: AIna kun ase tuhoutuu, tee 1 vahinkoa vastustajaan.
+  name: Black powder
+  description: Each time one of your weapons is destroyed, deal 1 damage.
   sprite: {fileID: 21300000, guid: 41d16a9c9614d144e9851b6ea2e759aa, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -181,6 +181,7 @@ MonoBehaviour:
   effect_damage_bonus: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
+  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0

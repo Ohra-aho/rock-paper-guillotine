@@ -104,6 +104,9 @@ MonoBehaviour:
   name: Grab
   description: If wins, the next attack deals at least 1 damage.
   sprite: {fileID: 21300000, guid: 2303fa37f28b47442bd19b2e25d8b24a, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -198,8 +201,10 @@ MonoBehaviour:
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
   damage_bonus: 0
   armor_bonus: 0
+  effect_damage_bonus: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
+  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0

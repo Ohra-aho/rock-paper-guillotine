@@ -93,16 +93,19 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 3
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Kuolon sopimus
-  description: "Voittaa aina, mutta otat 2 pistett\xE4 vahinkoa aina k\xE4yt\xF6n
-    j\xE4lkeen."
+  name: Death pact
+  description: Deals 2 damage to you after use.
   sprite: {fileID: 21300000, guid: 7d76f7af0efe01144a59d27219a0e46d, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

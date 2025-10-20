@@ -93,15 +93,19 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: "J\xE4rk\xE4le"
+  name: Boulder
   description: +2 HP
   sprite: {fileID: 21300000, guid: cf4114a86ca2dc64d8f8c3377bdb6415, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -194,3 +198,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 2
+  in_view: 0

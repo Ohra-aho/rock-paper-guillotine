@@ -89,16 +89,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
+  dead: 0
   type: 1
-  damage: 0
+  damage: 1
   armor: 0
-  name: Puolustusmanifesti
-  description: +1 vahinkoa, per jokainen panssari, jonka olet asentanut.
+  real_damage: 0
+  real_armor: 0
+  name: Defence manifest
+  description: +1 damage for each armor you have equipped.
   sprite: {fileID: 21300000, guid: 909701237a89e394fa88097ef372cd99, type: 3}
-  stacks: 0
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -115,6 +122,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
     m_PersistentCalls:
       m_Calls: []
   draw:
@@ -147,6 +163,16 @@ MonoBehaviour:
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  self_destructive: 0
+  healing: 0
+  health: 0
+  kivi_synegry: 0
+  paperi_synergy: 0
+  sakset_synergy: 0
+  points: 0
 --- !u!114 &6457531259151266902
 MonoBehaviour:
   m_ObjectHideFlags: 0

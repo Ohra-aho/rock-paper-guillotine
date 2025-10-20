@@ -89,19 +89,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 1
   damage: 4
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Lippu
-  description: "Jos et ole t\xE4ysiss\xE4 HP:eissa, -3 vahinkoon."
+  name: Flag
+  description: -3 to damage if you are not at full health.
   sprite: {fileID: 21300000, guid: 67d1539dec5167746a0ed85e8a37ed24, type: 3}
-  stacks: 0
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

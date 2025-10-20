@@ -98,13 +98,12 @@ MonoBehaviour:
   draw_winner: 0
   dead: 0
   type: 2
-  damage: 4
+  damage: 6
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Pyssy
-  description: "-1 vahinkoon aina k\xE4yt\xF6n j\xE4lkeen. Tuhoutuu, kun vahinko
-    on 0."
+  name: Gun
+  description: Halves damage after each use. When used at 1 damage, destroys itself
   sprite: {fileID: 21300000, guid: fb3f64a9df7a0f244bcde7be6bfafdeb, type: 3}
   first_turn:
     m_PersistentCalls:

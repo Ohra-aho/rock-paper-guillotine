@@ -51,6 +51,7 @@ MonoBehaviour:
   amount: 1
   immideate_over: 1
   last: 0
+  surprices: []
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0

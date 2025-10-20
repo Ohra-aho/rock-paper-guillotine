@@ -89,19 +89,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 1
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Sidetarpeet
+  name: Bandages
   description: +1 HP
   sprite: {fileID: 21300000, guid: ec020210995d6ac49ad8a13c8712e495, type: 3}
-  stacks: 0
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -194,3 +198,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 1
+  in_view: 0

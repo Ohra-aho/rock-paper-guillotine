@@ -9,6 +9,33 @@ public class Heart : MonoBehaviour
 
     public bool healthy = true;
 
+    MainController MC;
+
+    private void Start()
+    {
+        MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
+    }
+
+    private void Update()
+    {
+        if(MC.game_state == MainController.State.in_battle)
+        {
+            if (healthy)
+            {
+                if (transform.GetChild(0).GetComponent<Light2D>().intensity == 0)
+                {
+                    heal();
+                }
+            }
+            else
+            {
+                if (transform.GetChild(0).GetComponent<Light2D>().intensity == 2)
+                {
+                    damage();
+                }
+            }
+        }
+    }
 
     public void damage()
     {

@@ -10,28 +10,20 @@ public class Pyssy : MonoBehaviour
     }
     public void IncreaseStack()
     {
-        //if(GetComponent<Stacking>().stacks <= 6)
-        //{
-            GetComponent<Stacking>().IncreaseStacks(1);
-            CalculateDamage();
-            /*if (GetComponent<Weapon>().damage < 0)
+        if (GetComponent<Weapon>().player)
+        {
+            if (GetComponent<Weapon>().damage <= 1)
             {
-                GetComponent<Weapon>().damage = 0;
-            }*/
-
-            if(GetComponent<Weapon>().player)
-            {
-                if (GetComponent<Weapon>().damage == 0)
-                {
-                    GetComponent<SelfDestruct>().Destruct();
-                }
+                GetComponent<SelfDestruct>().Destruct();
             }
-            
-        //}
+        }
+        GetComponent<Stacking>().IncreaseStacks(1);
+        CalculateDamage();
     }
 
     public void CalculateDamage()
     {
-        GetComponent<Weapon>().damage = 6 - GetComponent<Stacking>().stacks;
+        GetComponent<Weapon>().damage = GetComponent<Weapon>().damage / 2;
+        
     }
 }

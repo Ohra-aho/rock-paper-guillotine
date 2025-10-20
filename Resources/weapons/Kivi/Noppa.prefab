@@ -100,9 +100,13 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Noppa
-  description: "T\xE4m\xE4n aseen vahinko on 0-3. Vaihtuu joka k\xE4ytt\xF6kerralla."
+  name: Die
+  description: 'This weapons damage is anything between 0 and 3. Changes each time
+    when used. '
   sprite: {fileID: 21300000, guid: a6d3375a871b3e143bec2f35ec895a32, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls:

@@ -94,8 +94,10 @@ MonoBehaviour:
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
   damage_bonus: 0
   armor_bonus: 0
+  effect_damage_bonus: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
+  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
@@ -154,8 +156,8 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: "Pyh\xE4 teksti"
-  description: Aina kun parannat haavan, tekee yhden vahingon viholliseen.
+  name: Holy text
+  description: Each time you heal, deal one damage to the enemy. (Continuous)
   sprite: {fileID: 21300000, guid: cb5421596bf1f7242accc24cbb23b466, type: 3}
   first_turn:
     m_PersistentCalls:

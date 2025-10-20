@@ -19,37 +19,56 @@ public class Spirit : MonoBehaviour
     private int arrogance_index = 0;
 
     private int mask_timer = 0;
+    private int previous_health = 12;
 
     GameObject controller;
 
     private void Awake()
     {
-        //controller = GameObject.FindGameObjectWithTag("EnemyHolder");
-        //controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
+        controller = GameObject.FindGameObjectWithTag("EnemyHolder");
+        controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
     }
 
     public int MakeChoise(MainController.Choise c)
     {
-        switch(active_mask)
+        int health = controller.GetComponent<EnemyController>().HB.GetComponent<HealthBar>().GiveCurrentHealth();
+        if (health < previous_health)
+        {
+            if (previous_health > 8 && health <= 8 && health > 4)
+            {
+                active_mask = 0;
+            }
+            else if (previous_health > 4 && health <= 4)
+            {
+                active_mask = 0;
+            }
+        }
+        previous_health = health;
+
+        switch (active_mask)
         {
             case 0:
-                int mask = 0;
+                /*int mask = 0;
                 while (mask == last_mask)
                 {
                     mask = Random.Range(3, 6);
                 }
                 mask_timer = Random.Range(3, 7);
                 last_mask = mask;
-                active_mask = mask;
-                return last_mask;
-            case 1:
-                return ContinuePlan(1);
-            case 2:
-                return ContinuePlan(2);
+                active_mask = mask;*/
+                //return last_mask;
+                int choise = GetComponent<BasicEnemy>().MakeChoise(c);
+                active_mask = choise;
+                return choise;
             case 3:
+                return ContinuePlan(1);
+            case 4:
+                return ContinuePlan(2);
+            case 5:
                 return ContinuePlan(3);
+            default: 
+                return GetComponent<BasicEnemy>().MakeChoise(c);
         }
-        return GetComponent<BasicEnemy>().MakeChoise(c);
     }
 
     private int ContinuePlan(int plan)
@@ -57,27 +76,47 @@ public class Spirit : MonoBehaviour
         switch(plan)
         {
             case 1:
-                int? choise = FearChoise();
-                return choise ?? ComputePlan(fear_plan, fear_index);
-            case 2: return ComputePlan(anger_plan, anger_index);
-            case 3: return ComputePlan(arrogance_plan, arrogance_index);
+                //int? choise = FearChoise();
+                return ComputePlan(anger_plan, 1);
+            case 2: return ComputePlan(arrogance_plan, 2);
+            case 3: return ComputePlan(fear_plan, 3);
             default: return 0;
         }
     }
 
-    private int ComputePlan(List<int> plan, int index)
+    private int ComputePlan(List<int> plan, int mask)
     {
-        mask_timer--;
+
+        /*mask_timer--;
         if(mask_timer <= 0)
         {
             active_mask = 0;
+        }*/
+        //Ei toimi
+        
+        switch (mask)
+        {
+            case 1:
+                int i = anger_index;
+                anger_index++;
+                if (anger_index >= plan.Count) anger_index = 0;
+                return plan[i];
+            case 2:
+                int j = arrogance_index;
+                arrogance_index++;
+                if (arrogance_index >= plan.Count) arrogance_index = 0;
+                return plan[j];
+            case 3:
+                int k = fear_index;
+                fear_index++;
+                if (fear_index >= plan.Count) fear_index = 0;
+                return plan[k];
+            default: return 0; //Should never happen
         }
-        int step = plan[index];
-        index++;
-        if (index >= plan.Count) index = 0;
-        return step;
+       
     }
 
+    // Needs to account for multiple debuffed weapons
     private int? FearChoise()
     {
         switch(debuffed_type)

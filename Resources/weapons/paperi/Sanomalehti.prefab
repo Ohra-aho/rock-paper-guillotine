@@ -99,7 +99,7 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Sanomalehti
+  name: Newspaper
   description: 
   sprite: {fileID: 21300000, guid: 02e9d229332af7341952b474e221310c, type: 3}
   first_turn:

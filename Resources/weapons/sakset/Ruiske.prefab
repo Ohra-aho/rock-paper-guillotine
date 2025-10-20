@@ -91,19 +91,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 2
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Ruiske
-  description: "Parantaa 2 vahinkoa ja tuhoaa itsens\xE4."
+  name: Medicine
+  description: Heals 2 and destroys itself.
   sprite: {fileID: 21300000, guid: 0fc2116db9d52bb4594be4517edc9f38, type: 3}
-  stacks: 0
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

@@ -113,9 +113,12 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Tulipallo
-  description: "Tuhoaa itsens\xE4, jos voittaa vuoron."
+  name: Fireball
+  description: If wins a turn, destroys itself.
   sprite: {fileID: 21300000, guid: 4f0b59fe0f430a646b3a561c73ca8ccc, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

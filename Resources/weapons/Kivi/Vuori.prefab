@@ -101,7 +101,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Vuori
-  description: +6 HP
+  description: +5 HP
   sprite: {fileID: 21300000, guid: 2676b53b5e768a04c8ee94af143243b5, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -197,5 +197,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b528c9add8506e74192aac87c7001b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 6
+  amount: 5
   in_view: 0

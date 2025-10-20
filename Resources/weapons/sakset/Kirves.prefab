@@ -99,7 +99,7 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Kirves
+  name: Axe
   description: 
   sprite: {fileID: 21300000, guid: c034fbac73eabdc4691b6bb112957e33, type: 3}
   first_turn:

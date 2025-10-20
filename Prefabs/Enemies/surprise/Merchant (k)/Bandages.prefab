@@ -103,7 +103,10 @@ MonoBehaviour:
   name: Bandages
   description: Heals 1 damage from the player after used. -1 to damage to the weapon
     used agains this. Has a chance to destroy the weapon used agains this.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 21ee04eaaa86d86418f9a767d5e18c52, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

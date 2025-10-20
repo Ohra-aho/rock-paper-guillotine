@@ -92,15 +92,19 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 1
   damage: 1
   armor: 1
   real_damage: 0
   real_armor: 0
-  name: Kilpi
+  name: Shield
   description: 
   sprite: {fileID: 21300000, guid: 83ce175834cfac342a6329a0f314f526, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

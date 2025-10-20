@@ -102,7 +102,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Throwing knife
-  description: "Tekee yhden vahingon vastustajaan ja tuhoaa itsens\xE4."
+  description: Deals 1 damage and destroys itself.
   sprite: {fileID: 21300000, guid: 8e7bdeb279a07a14db995c276903a297, type: 3}
   first_turn:
     m_PersistentCalls:

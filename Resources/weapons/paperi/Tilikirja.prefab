@@ -94,16 +94,20 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 1
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Tilikirja
-  description: "+1 piste per jokainen piste aseissasi. Joka 10 pistett\xE4 antaa
-    +1 vahinkoon."
+  name: Logbook
+  description: Has one point for each point in other weapons. +1 damage for each
+    10 points this weapon has.
   sprite: {fileID: 21300000, guid: 5e1bbf3625b9f29469b9720fc3e80fb1, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

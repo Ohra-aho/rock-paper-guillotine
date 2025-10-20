@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 3846249056714875321}
   - component: {fileID: -63028216068414658}
+  - component: {fileID: -8384856073520370092}
   m_Layer: 5
   m_Name: Poison breath
   m_TagString: Untagged
@@ -102,8 +103,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Poison breath
-  description: If loses or draws, deals damage equal to an amount of non-"useless"
-    Disposable heads.
+  description: 'If wins or draws, whenever non-"useless" disposable head is used,
+    deals 1 damage. Disabled when disposable head becomes "useless". '
   sprite: {fileID: 21300000, guid: f224c506c895f5347aeb7fcec00585f0, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -131,13 +132,10 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls: []
-  lose:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3846249056714875321}
         m_TargetAssemblyTypeName: PoisonBreath, Assembly-CSharp
-        m_MethodName: DealDamage
+        m_MethodName: ApplyByff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -147,12 +145,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3846249056714875321}
         m_TargetAssemblyTypeName: PoisonBreath, Assembly-CSharp
-        m_MethodName: DealDamage
+        m_MethodName: ApplyByff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -211,4 +212,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
+  amount: 1
+--- !u!114 &-8384856073520370092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+  damage_bonus: 0
+  armor_bonus: 0
+  effect_damage_bonus: 0
+  set_a_to_zero: 0
+  set_d_to_zero: 0
+  always_on: 0
+  choisePhase: 0
+  resultPhase: 0
+  endPhase: 0
+  victory: 0
+  special_apply: 0
+  takeDamage: 0
+  takeNoDamage: 0
+  dealDamage: 0
+  draw: 0
+  win: 0
+  lose: 0
+  heal: 0
+  equip: 0
+  unEquip: 0
+  constant: 0
+  onDestruction: 0
+  awake: 0
+  temporary: 0
+  timer: 0
+  penetrating: 0
+  draw_winner: 0
+  destructive: 0

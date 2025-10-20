@@ -96,16 +96,20 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 1
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: "Nen\xE4liina"
-  description: "Aina kun otat tai teet vahinkoa, +1 piste. Aina kun saat 3 pistett\xE4,
-    tee yksi vahinko vastustajaan."
+  name: Handkerchief
+  description: Whenever you deal of take damage, gains one point. When at 3 points
+    deals one damage and loses all points. (Continuous)
   sprite: {fileID: 21300000, guid: 1ca9bc8b5371dcf48b50c8dc17938594, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -176,8 +180,10 @@ MonoBehaviour:
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
   damage_bonus: 0
   armor_bonus: 0
+  effect_damage_bonus: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
+  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
@@ -197,6 +203,9 @@ MonoBehaviour:
   awake: 0
   temporary: 0
   timer: 0
+  penetrating: 0
+  draw_winner: 0
+  destructive: 0
 --- !u!114 &6873274728737089563
 MonoBehaviour:
   m_ObjectHideFlags: 0

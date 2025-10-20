@@ -113,6 +113,7 @@ public class RewardMenu : MonoBehaviour
         //Change to get at least one healing weapon
         if(CheckIfPlayerIsHurt())
         {
+            Debug.Log("Player is hurt");
             int heal_chance = Random.Range(1, 4);
             //heal_chance = 3;
             if (heal_chance == 3)
@@ -198,7 +199,9 @@ public class RewardMenu : MonoBehaviour
     {
         int current_health = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>().GiveCurrentHealth();
         int max_health = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>().GiveMaxHealth();
-        return current_health <= max_health - max_health / 3;
+        int two_thirds = max_health / 3 * 2;
+        if (two_thirds == 0) return false;
+        return current_health <= max_health - (max_health / 3 * 2);
     }
 
     public void RemovePossibleRewards()

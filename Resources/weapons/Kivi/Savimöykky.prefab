@@ -100,10 +100,13 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: "Savim\xF6ykky"
-  description: Aina kun ottaa vahinkoa -1 vahinkoon ja +1 panssariin ja kun tekee
-    vahinkoa +1 vahinkoon ja -1 panssariin.
+  name: Clay
+  description: Every time you take damage, -1 to damage and +1 to armor. Each time
+    you deal damage +1 to damage and -1 to armor.
   sprite: {fileID: 21300000, guid: c18f93d43eb7b5a468ce45cc15d9131a, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

@@ -93,15 +93,19 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 3
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Jokeri
-  description: "Voittaa aina, mutta tuhoaa itsens\xE4, kun voittaa."
+  name: Joker
+  description: Destroys itselfs after use.
   sprite: {fileID: 21300000, guid: 96e547a411406a44c82e558aa65e439d, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

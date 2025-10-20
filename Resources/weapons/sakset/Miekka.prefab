@@ -88,19 +88,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 2
   damage: 2
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Miekka
+  name: Sword
   description: 
   sprite: {fileID: 21300000, guid: 9f9b0bd2e9f8f774a94b01740e117aa5, type: 3}
-  stacks: 0
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls:

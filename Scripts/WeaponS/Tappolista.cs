@@ -6,12 +6,15 @@ public class Tappolista : MonoBehaviour
 {
     public void IncreaseStacks()
     {
-        GetComponent<Stacking>().IncreaseStacks(1);
         CalculateDamage();
     }
 
     public void CalculateDamage()
     {
-        GetComponent<Weapon>().damage = 1 + GetComponent<Stacking>().GiveAmountOfStackDividedBy(1);
+        int amount = 0;
+        GetComponent<Weapon>().damage -= GetComponent<Stacking>().GiveAmountOfStackDividedBy(1) * 2;
+        GetComponent<Stacking>().IncreaseStacks(1);
+        amount = GetComponent<Stacking>().GiveAmountOfStackDividedBy(1) * 2;
+        GetComponent<Weapon>().damage += amount;
     }
 }

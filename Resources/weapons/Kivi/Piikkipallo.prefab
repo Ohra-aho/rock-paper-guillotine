@@ -93,15 +93,19 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Piikkipallo
-  description: Jos ottaa vahinkoa, vastustaja ottaa yhden vahingon
+  name: Spike ball
+  description: If you take damage, deals one damage to enemy.
   sprite: {fileID: 21300000, guid: 5d98066317e2fa94cbe8f69fee01af35, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

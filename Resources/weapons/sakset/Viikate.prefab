@@ -95,15 +95,19 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 2
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Viikate
-  description: +1 vahinkoa aina kun aseesi tuhoutuu
+  name: Sithe
+  description: +1 to damage each time one of your weapons is destroyed.
   sprite: {fileID: 21300000, guid: 0d43db1ff69bff943a7c40c74c9fd6a6, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -171,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931178680e3037542bbb06e39303016c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 1
 --- !u!114 &2715692804178075999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,8 +191,10 @@ MonoBehaviour:
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
   damage_bonus: 0
   armor_bonus: 0
+  effect_damage_bonus: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
+  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
@@ -207,6 +214,9 @@ MonoBehaviour:
   awake: 0
   temporary: 0
   timer: 0
+  penetrating: 0
+  draw_winner: 0
+  destructive: 0
 --- !u!114 &7527816165882342535
 MonoBehaviour:
   m_ObjectHideFlags: 0

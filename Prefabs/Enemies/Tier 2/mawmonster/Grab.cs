@@ -11,7 +11,7 @@ public class Grab : MonoBehaviour
         GetComponent<BuffController>().draw = true;
         GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return weapon.name != GetComponent<Weapon>().name; };
         GetComponent<BuffController>().temporary = true;
-        GetComponent<BuffController>().timer = 1;
+        GetComponent<BuffController>().timer = 2;
         GetComponent<BuffController>().special_apply = true;
     }
 
