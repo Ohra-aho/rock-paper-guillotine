@@ -96,16 +96,19 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 1
   damage: 2
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Kalma
-  description: "Jos ottaa vahinkoa t\xE4st\xE4 aseesta, otat saman verran vahinkoa.
-    Tuhoaa itsens\xE4"
+  name: Death cold
+  description: If takes damage, deals same amount of damage. Destroys itself.
   sprite: {fileID: 21300000, guid: cec0166c1fe7aa047900d60b355e1284, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []

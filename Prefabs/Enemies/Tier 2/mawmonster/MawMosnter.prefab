@@ -61,7 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: MawMonster
   image: {fileID: 21300000, guid: 93cb456b27e0a8d46893e4afb32a2eda, type: 3}
-  maxHealth: 4
+  maxHealth: 5
   weapons:
   - {fileID: 1944698211339908181, guid: afd4f4f878c061b468bfc8d38e99e588, type: 3}
   - {fileID: 1944698211339908181, guid: d4b190ce4a034834683f70897e9b487b, type: 3}

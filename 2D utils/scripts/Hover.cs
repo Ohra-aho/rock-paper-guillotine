@@ -8,6 +8,7 @@ public class Hover : MonoBehaviour
     public bool disabled = false;
     public UnityEvent hoverEnter;
     public UnityEvent hoverExit;
+    public UnityEvent hoverOver;
 
     private bool hovering;
 
@@ -43,5 +44,13 @@ public class Hover : MonoBehaviour
         
     }
 
-    
+    private void OnMouseOver()
+    {
+        if (hovering)
+        {
+            hoverOver.Invoke();
+        }
+    }
+
+
 }

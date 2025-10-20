@@ -16,26 +16,58 @@ public class Muuri : MonoBehaviour
 
     public void CalculateHP()
     {
+        int temp = 0;
         int amount = 0;
         for (int i = 0; i < ri.transform.childCount; i++)
         {
             if (ri.transform.GetChild(i).GetComponent<Weapon>().type == MainController.Choise.kivi)
             {
                 amount++;
+                if(amount == 2)
+                {
+                    temp++;
+                    amount = 0;
+                }
             }
         }
-        if(amount >= 2) GetComponent<HealthIncrease>().amount = amount / 2;
+
+        if (temp != HP_bonus)
+        {
+            HP_bonus = temp;
+            if(CheckIfEquipped())
+            {
+                Unequip();
+                GetComponent<HealthIncrease>().amount = HP_bonus;
+                Equip();
+            }
+            GetComponent<HealthIncrease>().amount = HP_bonus;
+        }
     }
 
     public void Equip()
     {
-        CalculateHP();
         GetComponent<HealthIncrease>().Increase();
     }
 
     public void Unequip()
     {
-        CalculateHP();
         GetComponent<HealthIncrease>().Decrease();
+    }
+
+    public bool CheckIfEquipped()
+    {
+        GameObject pwh = GameObject.Find("PlayerWheelHolder");
+        GameObject wheel = pwh.transform.GetChild(0).gameObject;
+        for(int i = 0; i < wheel.transform.childCount-1; i++)
+        {
+            if(wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
+            {
+                if(wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().name == GetComponent<Weapon>().name)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

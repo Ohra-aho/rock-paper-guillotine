@@ -101,7 +101,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Spit
-  description: Makes a one of your weapons useless for a turn at random.
+  description: Makes a one of your weapons useless for 2 turns at random.
   sprite: {fileID: 21300000, guid: 27a63e63500cf3046ae9d4676d0ba1d3, type: 3}
   first_turn:
     m_PersistentCalls:

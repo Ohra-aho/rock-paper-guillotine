@@ -17,6 +17,7 @@ public class Flames : MonoBehaviour
             {
                 GameObject weapon = RI.transform.GetChild(i).gameObject;
                 GameObject new_buff = Instantiate(buff, weapon.transform);
+                new_buff.GetComponent<Buff>().id = GetComponent<Weapon>().name;
                 new_buff.GetComponent<Buff>().timer = 1;
                 new_buff.GetComponent<Buff>().special = Burn;
                 new_buff.GetComponent<Buff>().endPhase = true;

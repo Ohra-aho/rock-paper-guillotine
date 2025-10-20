@@ -97,7 +97,7 @@ MonoBehaviour:
   draw_winner: 0
   dead: 0
   type: 1
-  damage: 2
+  damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0

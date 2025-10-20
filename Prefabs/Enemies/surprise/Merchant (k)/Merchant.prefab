@@ -66,12 +66,12 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 3bc5af7b3a8b9f54fa3197204d0f4078, type: 3}
   - {fileID: 1944698211339908181, guid: 38f33cfa11f93e24b8a3c7ff8470f0b5, type: 3}
   - {fileID: 1944698211339908181, guid: d26f45b81d1249b4cb5d3e0ca37cc100, type: 3}
-  plan_1: 
-  plan_2: 
+  plan_1: 000000000100000002000000
+  plan_2: 000000000100000002000000
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 00000000
-  advanced: 1
+  advanced: 0
 --- !u!212 &8687217563175998695
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class BuffController : MonoBehaviour
     private bool buff_on = false;
     [SerializeField] public GameObject buff;
     GameObject real_inventory;
+    GameObject other_inventory;
     [HideInInspector] public int damage_bonus = 0;
     [HideInInspector] public int armor_bonus = 0;
     [HideInInspector] public int effect_damage_bonus = 0;
@@ -65,6 +66,7 @@ public class BuffController : MonoBehaviour
         if (GetComponent<Weapon>().player)
         {
             real_inventory = GameObject.FindGameObjectWithTag("RI");
+            other_inventory = GameObject.FindGameObjectWithTag("RIE");
             if (!special_apply)
             {
                 GetComponent<Weapon>().equip.AddListener(Equip);
@@ -74,6 +76,7 @@ public class BuffController : MonoBehaviour
         else
         {
             real_inventory = GameObject.FindGameObjectWithTag("RIE");
+            other_inventory = GameObject.FindGameObjectWithTag("RI");
         }
     }
 
@@ -163,6 +166,16 @@ public class BuffController : MonoBehaviour
                     own_buffs[j].GetComponent<Buff>().RemoveBuff();
                     Destroy(own_buffs[j]);
                 }
+            }
+        }
+        for (int i = 0; i < other_inventory.transform.childCount; i++)
+        {
+            Transform weapon = other_inventory.transform.GetChild(i);
+            List<GameObject> own_buffs = FindOwnBuff(weapon);
+            for (int j = own_buffs.Count - 1; j >= 0; j--)
+            {
+                own_buffs[j].GetComponent<Buff>().RemoveBuff();
+                Destroy(own_buffs[j]);
             }
         }
     }

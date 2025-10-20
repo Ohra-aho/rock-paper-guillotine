@@ -157,6 +157,10 @@ public class EnemyController : MonoBehaviour
         {
             for (int i = true_weapon_holder.transform.childCount-1; i >= 0; i--)
             {
+                if(true_weapon_holder.transform.GetChild(i).GetComponent<BuffController>())
+                {
+                    true_weapon_holder.transform.GetChild(i).GetComponent<BuffController>().Unequip();
+                }
                 Destroy(true_weapon_holder.transform.GetChild(i).gameObject);
             }
         }

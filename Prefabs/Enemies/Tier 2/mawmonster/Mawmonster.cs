@@ -14,7 +14,7 @@ public class Mawmonster : MonoBehaviour
 
     private int MakeChoise(MainController.Choise playerChoise)
     {
-        int mutate = Random.Range(0, 5);
+        int mutate = Random.Range(0, 6);
         if (mutate == 0)
         {
             return 0;

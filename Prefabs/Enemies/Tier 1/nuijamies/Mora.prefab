@@ -91,7 +91,7 @@ MonoBehaviour:
   buff_data: []
   player: 0
   opponent: {fileID: 0}
-  penetrating: 1
+  penetrating: 0
   draw_winner: 0
   dead: 0
   type: 2
@@ -100,7 +100,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Knife
-  description: Pierces armor
+  description: 
   sprite: {fileID: 21300000, guid: 431a843f226140d43be01dacbffea102, type: 3}
   first_turn:
     m_PersistentCalls:

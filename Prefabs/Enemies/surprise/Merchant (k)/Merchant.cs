@@ -41,7 +41,7 @@ public class Merchant : MonoBehaviour
 
     private bool Chance()
     {
-        int chance = Random.Range(1, 6);
+        int chance = Random.Range(1, 11);
         return chance == 1;
     }
 }

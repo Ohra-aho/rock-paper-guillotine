@@ -23,6 +23,8 @@ public class Raise : MonoBehaviour
         {
             GameObject weapon = RI.transform.GetChild(i).gameObject;
             GameObject new_buff = Instantiate(buff, weapon.transform);
+            new_buff.GetComponent<Buff>().id = GetComponent<Weapon>().name;
+            new_buff.GetComponent<Buff>().temporary = true;
             new_buff.GetComponent<Buff>().timer = 1;
             new_buff.GetComponent<Buff>().damage_buff = 2;
             new_buff.GetComponent<Buff>().AddBuff();

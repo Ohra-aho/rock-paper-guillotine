@@ -209,7 +209,18 @@ public class HealthBar : MonoBehaviour
 
     public int GiveCurrentHealth()
     {
-        return current_health;
+        int temp = 0;
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            if(transform.GetChild(i).GetComponent<Heart>())
+            {
+                if (transform.GetChild(i).GetComponent<Heart>().healthy)
+                {
+                    temp++;
+                }
+            }
+        }
+        return temp;
     }
 
     public int GiveMaxHealth()

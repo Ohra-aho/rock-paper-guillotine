@@ -96,16 +96,20 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 0
   damage: 2
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Olematon
-  description: "Jos ei ota vahinkoa, seuraava hy\xF6kk\xE4ys on voittamaton. Tuhoaa
-    itsens\xE4. "
+  name: Incorporeal
+  description: If does not take damage, the next attack is "unbeatable". Destroys
+    itself.
   sprite: {fileID: 21300000, guid: 92ef179a327f20e479b815836d0031c1, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -224,8 +228,10 @@ MonoBehaviour:
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
   damage_bonus: 0
   armor_bonus: 0
+  effect_damage_bonus: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
+  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
@@ -245,6 +251,9 @@ MonoBehaviour:
   awake: 0
   temporary: 0
   timer: 0
+  penetrating: 0
+  draw_winner: 0
+  destructive: 0
 --- !u!114 &4270318186246276702
 MonoBehaviour:
   m_ObjectHideFlags: 0

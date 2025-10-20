@@ -36,10 +36,12 @@ public class RewardMenu : MonoBehaviour
         rewards3.AddRange(rewards2);
         rewards2.AddRange(rewards1);
         real_inventory = GameObject.Find("Real inventory");
+
         RemovePossibleRewards();
         CollectTypePreference();
         CollectEquippedWeaponPreferences();
         makeRewardList();
+
         GetComponent<RewardBarks>().InstanciateRewardBarks();
         rope = GameObject.Find("Roope");
         rope.GetComponent<Test>().PlayAnimation("Move");
@@ -107,13 +109,14 @@ public class RewardMenu : MonoBehaviour
     private void makeRewardList()
     {
         //Get at least one random reward
+        Debug.Log(CheckIfPlayerIsHurt());
+
         rewards.Add(GetRandomReward());
         rewards.Add(GetRandomReward());
 
         //Change to get at least one healing weapon
         if(CheckIfPlayerIsHurt())
         {
-            Debug.Log("Player is hurt");
             int heal_chance = Random.Range(1, 4);
             //heal_chance = 3;
             if (heal_chance == 3)

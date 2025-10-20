@@ -8,9 +8,9 @@ public class MerchantBehaviour : MonoBehaviour
     int? last_index = null;
     private void Awake()
     {
-        GameObject controller = GameObject.FindGameObjectWithTag("EnemyHolder");
+        /*GameObject controller = GameObject.FindGameObjectWithTag("EnemyHolder");
         controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
-        supply_counter = Random.Range(2, 5);
+        supply_counter = Random.Range(2, 5);*/
     }
 
     private int MakeChoise(MainController.Choise none)

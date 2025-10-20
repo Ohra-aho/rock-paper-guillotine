@@ -10,10 +10,13 @@ public class Kilpimuuri : MonoBehaviour
         int amount = RIE.childCount;
         for(int i = 0; i < amount; i++)
         {
-            RIE.GetChild(i).GetComponent<Weapon>().damage--;
-            if(RIE.GetChild(i).GetComponent<Weapon>().damage < 0)
+            if(RIE.GetChild(i).GetComponent<Weapon>().damage > 1)
             {
-                RIE.GetChild(i).GetComponent<Weapon>().damage = 0;
+                RIE.GetChild(i).GetComponent<Weapon>().damage--;
+                if (RIE.GetChild(i).GetComponent<Weapon>().damage < 1)
+                {
+                    RIE.GetChild(i).GetComponent<Weapon>().damage = 1;
+                }
             }
         }
     }
