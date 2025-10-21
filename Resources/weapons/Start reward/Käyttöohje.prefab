@@ -1,0 +1,253 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1944698211339908181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5442967482381830314}
+  - component: {fileID: 3637620753733424331}
+  - component: {fileID: 8405579031819043326}
+  - component: {fileID: 3098424137161797902}
+  - component: {fileID: 2684644120247685341}
+  - component: {fileID: 627897955164574743}
+  m_Layer: 5
+  m_Name: "K\xE4ytt\xF6ohje"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5442967482381830314
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -15.75, y: -12.97}
+  m_SizeDelta: {x: 68.5, y: 74.06}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3637620753733424331
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_CullTransparentMesh: 1
+--- !u!114 &8405579031819043326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.3490566, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3098424137161797902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff_data: []
+  player: 0
+  opponent: {fileID: 0}
+  penetrating: 0
+  draw_winner: 0
+  dead: 0
+  type: 1
+  damage: 1
+  armor: 0
+  real_damage: 0
+  real_armor: 0
+  name: Manual
+  description: Weapons which self destruct, won't do so for the first time.
+  sprite: {fileID: 21300000, guid: 703719a375780f345a9c22cfaa822c5f, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  choisePhase:
+    m_PersistentCalls:
+      m_Calls: []
+  resultPhase:
+    m_PersistentCalls:
+      m_Calls: []
+  endPhase:
+    m_PersistentCalls:
+      m_Calls: []
+  victory:
+    m_PersistentCalls:
+      m_Calls: []
+  takeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
+  draw:
+    m_PersistentCalls:
+      m_Calls: []
+  heal:
+    m_PersistentCalls:
+      m_Calls: []
+  equip:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2684644120247685341}
+        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
+        m_MethodName: Equip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  unEquip:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2684644120247685341}
+        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
+        m_MethodName: Unequip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  constant:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2684644120247685341}
+        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
+        m_MethodName: AddBuffs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDestruction:
+    m_PersistentCalls:
+      m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  self_destructive: 1
+  healing: 0
+  health: 0
+  kivi_synegry: 0
+  paperi_synergy: 0
+  sakset_synergy: 0
+  points: 0
+--- !u!114 &2684644120247685341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+  damage_bonus: 0
+  armor_bonus: 0
+  effect_damage_bonus: 0
+  set_a_to_zero: 0
+  set_d_to_zero: 0
+  always_on: 1
+  choisePhase: 0
+  resultPhase: 0
+  endPhase: 0
+  victory: 0
+  special_apply: 0
+  takeDamage: 0
+  takeNoDamage: 0
+  dealDamage: 0
+  draw: 0
+  win: 0
+  lose: 0
+  heal: 0
+  equip: 0
+  unEquip: 0
+  constant: 0
+  onDestruction: 0
+  awake: 0
+  temporary: 0
+  timer: 0
+  penetrating: 0
+  draw_winner: 0
+  destructive: 0
+--- !u!114 &627897955164574743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73308fa9b199b8a42be84e5ab4002f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
