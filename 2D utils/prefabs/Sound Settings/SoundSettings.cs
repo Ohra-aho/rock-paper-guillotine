@@ -13,7 +13,7 @@ public class SoundSettings : MonoBehaviour
     {
         soundTargets.Add(new SoundTarget("Music", false, 1));
         soundTargets.Add(new SoundTarget("Ambience", false, 1));
-        soundTargets.Add(new SoundTarget("Sound Effect", false, 0.4f));
+        soundTargets.Add(new SoundTarget("Sound Effect", false, 0.2f));
         soundTargets.Add(new SoundTarget("Man", false, 1));
     }
 

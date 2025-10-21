@@ -31,7 +31,7 @@ public class Heart : MonoBehaviour
             {
                 if (transform.GetChild(0).GetComponent<Light2D>().intensity == 2)
                 {
-                    damage();
+                   damage();
                 }
             }
         }

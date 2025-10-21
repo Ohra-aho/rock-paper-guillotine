@@ -116,8 +116,13 @@ public class EnemyController : MonoBehaviour
 
     public void HandleEnemy()
     {
-        if (transform.childCount > 0) DestroyThis();
-        else SpawnEnemy();
+        if (transform.childCount > 0)
+        {
+            DestroyThis();
+        }
+        else {
+            SpawnEnemy(); 
+        }
         
     }
 

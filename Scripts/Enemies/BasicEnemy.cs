@@ -33,7 +33,6 @@ public class BasicEnemy : MonoBehaviour
     {
         controller = GameObject.FindGameObjectWithTag("EnemyHolder");
         TransferInfo();
-        controller.GetComponent<EnemyController>().Inisiate();
         transform.parent.GetComponent<SpriteRenderer>().sprite = image;
         int plan = Random.Range(1, 3);
         switch(plan)
@@ -51,6 +50,7 @@ public class BasicEnemy : MonoBehaviour
         controller.GetComponent<EnemyController>().weapons = weapons;
         if(!advanced) controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
         controller.GetComponent<EnemyController>().currentEnemy = this.gameObject;
+        controller.GetComponent<EnemyController>().Inisiate();
     }
 
     /*public void SpawnWeaponInfo()

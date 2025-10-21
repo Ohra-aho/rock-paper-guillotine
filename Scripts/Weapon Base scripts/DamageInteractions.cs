@@ -25,7 +25,6 @@ public class DamageInteractions : MonoBehaviour
             HB = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
             enemy_HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
         }
-
         GetComponent<Weapon>().choisePhase.AddListener(SetPreviousHealth);
     }
 

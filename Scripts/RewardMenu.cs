@@ -109,8 +109,6 @@ public class RewardMenu : MonoBehaviour
     private void makeRewardList()
     {
         //Get at least one random reward
-        Debug.Log(CheckIfPlayerIsHurt());
-
         rewards.Add(GetRandomReward());
         rewards.Add(GetRandomReward());
 
@@ -118,7 +116,6 @@ public class RewardMenu : MonoBehaviour
         if(CheckIfPlayerIsHurt())
         {
             int heal_chance = Random.Range(1, 4);
-            //heal_chance = 3;
             if (heal_chance == 3)
             {
                 rewards.Add(SubChooseRandomWeapon(healing));

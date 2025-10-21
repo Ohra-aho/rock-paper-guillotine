@@ -4,23 +4,19 @@ using UnityEngine;
 
 public class Rauhansopimus : MonoBehaviour
 {
-    private int current_hp_self;
-    private int current_hp_enemy;
-
-    public int heal;
-
-    public void GetCurrentHPs()
+    private void Awake()
     {
-        current_hp_enemy = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB.GiveCurrentHealth();
-        current_hp_self = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.GiveCurrentHealth();
+        GetComponent<BuffController>().special = CompareHPs;
+        GetComponent<BuffController>().endPhase = true;
+        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
     }
 
-    public void CompareHPs()
+    public void CompareHPs(Weapon w)
     {
-        bool enemy = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB.GiveCurrentHealth() == current_hp_enemy;
-        bool player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.GiveCurrentHealth() == current_hp_self;
+        bool enemy = GetComponent<DamageInteractions>().CalculateDealtDamage() == 0;
+        bool player = GetComponent<DamageInteractions>().CalculateTakenDamage() == 0;
 
-        if(enemy && player)
+        if (enemy && player)
         {
             if(GetComponent<Weapon>().player)
             {
@@ -31,7 +27,24 @@ public class Rauhansopimus : MonoBehaviour
                 GetComponent<Healing>().Heal();
             }
         }
-        GetCurrentHPs();
+    }
+
+    public void AddDamageInteractionListeners()
+    {
+        GameObject RI = GameObject.FindGameObjectWithTag("RI");
+        for(int i = 0; i < RI.transform.childCount; i++)
+        {
+            RI.transform.GetChild(i).GetComponent<Weapon>().choisePhase.AddListener(GetComponent<DamageInteractions>().SetPreviousHealth);
+        }
+    }
+
+    public void RemoveDamageInteractions()
+    {
+        GameObject RI = GameObject.FindGameObjectWithTag("RI");
+        for (int i = 0; i < RI.transform.childCount; i++)
+        {
+            RI.transform.GetChild(i).GetComponent<Weapon>().choisePhase.RemoveListener(GetComponent<DamageInteractions>().SetPreviousHealth);
+        }
     }
 
 }
