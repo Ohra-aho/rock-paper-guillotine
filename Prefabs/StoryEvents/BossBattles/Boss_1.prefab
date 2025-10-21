@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3800092539451632345}
   - component: {fileID: 1705922441453647033}
   - component: {fileID: 6579391441425394134}
+  - component: {fileID: -6778750187717317044}
   m_Layer: 0
   m_Name: Boss_1
   m_TagString: Untagged
@@ -52,6 +53,7 @@ MonoBehaviour:
   amount: 1
   immideate_over: 0
   last: 0
+  surprices: []
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +82,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -6778750187717317044}
+        m_TargetAssemblyTypeName: Uncontaminated, Assembly-CSharp
+        m_MethodName: UnlockRamdonStartingWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6579391441425394134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,3 +107,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tier: 1
+--- !u!114 &-6778750187717317044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3768069680275742937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 519ba2fd484ed3649a5b3c3498d60f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -8,12 +8,13 @@ public static class SaveSystem
     public static string bark_data = "bark_data";
     public static string player_weapon_data = "player_weapon_data";
     public static string player_data = "player_data";
+    public static string achievement_data = "achievement_data";
 
     //Utilities
     private static string MainPath(string file)
     {
-        //return Application.persistentDataPath+file+".rpg";
-        return "C:/Tiedostoja/KiviPaperiGiljotiini/save files/" + file + ".rpg"; //Debug
+        return Application.persistentDataPath+file+".rpg";
+        //return "C:/Tiedostoja/KiviPaperiGiljotiini/save files/" + file + ".rpg"; //Debug
     }
     public static FileStream OpenFileStream(string file, FileMode mode)
     {
@@ -153,6 +154,30 @@ public static class SaveSystem
         if(stream != null)
         {
             PlayerData data = formatter.Deserialize(stream) as PlayerData;
+            stream.Close();
+            return data;
+        }
+        return null;
+    }
+
+    //Achievements
+    public static void SaveAchievements(RLController.RL rl)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = OpenFileStream(achievement_data, FileMode.Create);
+
+        formatter.Serialize(stream, rl);
+        stream.Close();
+    }
+
+    public static RLController.RL LoadAchievements()
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = OpenFileStream(achievement_data, FileMode.Open);
+
+        if (stream != null)
+        {
+            RLController.RL data = formatter.Deserialize(stream) as RLController.RL;
             stream.Close();
             return data;
         }

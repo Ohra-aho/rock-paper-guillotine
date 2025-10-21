@@ -5,16 +5,25 @@ using UnityEngine;
 public class RLController : MonoBehaviour
 {
     public List<string> achievements = new List<string>();
+    public int picks = 1;
+
+    GameObject background;
+
+    public List<GameObject> chosen_buffs = new List<GameObject>();
 
 
     private void Start()
     {
-        /*string[] data = SaveSystem.LoadAchievements();
+        RL data = SaveSystem.LoadAchievements();
         if(data != null)
         {
-            achievements.AddRange(data);
-        }*/
-        //ActivateAchievements();
+            achievements.AddRange(data.achievements);
+            picks = data.picks;
+        }
+
+        background = GameObject.Find("main screen background");
+
+        ActivateAchievements();
     }
 
     //Lis‰‰ t‰h‰n jokin miehen kommentti, kun on ekan kerran
@@ -24,8 +33,8 @@ public class RLController : MonoBehaviour
         {
             switch(achievements[i])
             {
-                case "decontaminated":
-                    GainRandomWeapon();
+                case "HP_master":
+                    background.transform.GetChild(0).gameObject.SetActive(true);
                     break;
             }
         }
@@ -40,6 +49,18 @@ public class RLController : MonoBehaviour
 
     public void SaveAchievements()
     {
-        SaveSystem.SaveAchievements(achievements.ToArray());
+        SaveSystem.SaveAchievements(new RL(achievements.ToArray(), picks));
+    }
+
+    [System.Serializable]
+    public class RL
+    {
+        public string[] achievements;
+        public int picks;
+        public RL(string[] a, int p)
+        {
+            achievements = a;
+            picks = p;
+        }
     }
 }

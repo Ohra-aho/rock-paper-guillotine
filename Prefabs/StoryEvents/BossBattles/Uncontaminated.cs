@@ -6,6 +6,9 @@ public class Uncontaminated : MonoBehaviour
 {
     public void UnlockRamdonStartingWeapon()
     {
-        GameObject.Find("EventSystem").GetComponent<RLController>().achievements.Add("decontaminated");
+        if (GameObject.Find("EventSystem").GetComponent<RLController>().picks == 0)
+        {
+            GameObject.Find("EventSystem").GetComponent<RLController>().picks++;
+        }
     }
 }

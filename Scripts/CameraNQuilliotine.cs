@@ -21,6 +21,7 @@ public class CameraNQuilliotine : MonoBehaviour
     public void DeathSave()
     {
         SaveSystem.SaveStoryData(eventSystem.GetComponent<StoryController>(), true);
+        GameObject.Find("EventSystem").GetComponent<RLController>().SaveAchievements();
         SaveSystem.DeleteFile(SaveSystem.player_weapon_data);
         SaveSystem.DeleteFile(SaveSystem.player_data);
         SaveSystem.DeleteFile(SaveSystem.bark_data);
@@ -32,5 +33,6 @@ public class CameraNQuilliotine : MonoBehaviour
         SaveSystem.DeleteFile(SaveSystem.bark_data);
         SaveSystem.DeleteFile(SaveSystem.player_weapon_data);
         SaveSystem.DeleteFile(SaveSystem.player_data);
+        SaveSystem.DeleteFile(SaveSystem.achievement_data);
     }
 }
