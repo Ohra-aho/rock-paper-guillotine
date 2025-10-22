@@ -38,6 +38,10 @@ public class MainController : MonoBehaviour
     public int reward_tier = 1;
     public bool rewards_disabled = false;
 
+
+    //Achievement aids
+    [HideInInspector] public bool first_turn = true;
+
     public enum Choise
     {
         kivi,
@@ -195,6 +199,7 @@ public class MainController : MonoBehaviour
 
     public void EndGame()
     {
+        first_turn = true;
         SetNewState(State.dead);
         GetComponent<StoryController>().playthroughts++;
         EndRound();
@@ -202,9 +207,11 @@ public class MainController : MonoBehaviour
 
     public void EndRound()
     {
+        first_turn = true;
         EnableObject(startButton);
         startButton.GetComponent<StartButton>().EndRound();
-        if(game_state != State.dead)
+
+        if (game_state != State.dead)
         {
             GameObject.Find("Story Event Holder").transform.GetChild(0).GetComponent<StoryEvent>().Procceed();
         }
@@ -230,6 +237,12 @@ public class MainController : MonoBehaviour
         TC.ClearDisplay();
         EndRound();
         GameObject.Find("Death Barks(Clone)").GetComponent<DeathBark>().IncreaseRounds();
+
+        //Achievement checks
+        GetComponent<RLController>().CHeckHPMaster();
+        GetComponent<RLController>().CheckForSlautherer();
+
+
         if(
             !story_event_holder.transform.GetChild(0).GetComponent<Encounter>().last && 
             !player.GetComponent<PlayerContoller>().HB.dead && 

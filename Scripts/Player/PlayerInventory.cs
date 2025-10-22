@@ -49,6 +49,9 @@ public class PlayerInventory : MonoBehaviour
             //Debug.Log("Something");
         }
         AddBuffToNewWeapon(newItem);
+        GameObject event_system = GameObject.Find("EventSystem");
+        event_system.GetComponent<RLController>().CheckCollector();
+        event_system.GetComponent<RLController>().ApplyBuffs();
         
     }
 

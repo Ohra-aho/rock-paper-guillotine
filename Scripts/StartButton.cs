@@ -70,6 +70,9 @@ public class StartButton : MonoBehaviour
         isActive = true;
         GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarUp();
         machine.GetComponent<Machine>().round_started = true;
+
+        //Achievement aids
+        SetHPForSlow();
     }
 
     public void Deactivate()
@@ -130,5 +133,11 @@ public class StartButton : MonoBehaviour
     }
 
 
+    //Achievement aids
+
+    private void SetHPForSlow()
+    {
+        GameObject.Find("EventSystem").GetComponent<RLController>().previous_health = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.GiveCurrentHealth();
+    }
 
 }

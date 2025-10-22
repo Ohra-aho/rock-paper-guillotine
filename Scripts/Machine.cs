@@ -29,6 +29,14 @@ public class Machine : MonoBehaviour
             round_started = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().ActivateFirstTurnEffects();
             GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().ActivateFirstTurnEffects();
+            RLController RLC = GameObject.Find("EventSystem").GetComponent<RLController>();
+            for(int i = 0; i < RLC.chosen_buffs.Count; i++)
+            {
+                if(RLC.chosen_buffs[i].GetComponent<Slow>())
+                {
+                    RLC.chosen_buffs[i].GetComponent<Slow>().ApplyBuff();
+                }
+            }
         }
     }
 

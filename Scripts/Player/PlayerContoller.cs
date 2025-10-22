@@ -303,6 +303,12 @@ public class PlayerContoller : MonoBehaviour
                 }
             }
         }
+        
+        if(MC.first_turn)
+        {
+            MC.GetComponent<RLController>().CheckForSlow();
+            MC.first_turn = false;
+        }
     }
 
 
