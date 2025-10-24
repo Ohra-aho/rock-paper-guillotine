@@ -13,6 +13,9 @@ public class PlayerWheelHolder : MonoBehaviour
     [SerializeField] private GameObject InventoryMenu;
     MainController MC;
 
+    //Achievement aids
+    [HideInInspector] public List<Weapon> used_weapons = new List<Weapon>(); //experimentor
+
     private void Awake()
     {
         MC = GameObject.Find("EventSystem").GetComponent<MainController>();
@@ -98,17 +101,6 @@ public class PlayerWheelHolder : MonoBehaviour
                 choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon_name = "";
             }
         }
-
-        /*GameObject ti = transform.parent.GetChild(1).GetComponent<PlayerContoller>().TrueInventory.gameObject;
-
-        for (int i = 0; i < ti.transform.childCount; i++)
-        {
-            if(ti.transform.GetChild(i).gameObject == weapon)
-            {
-                Destroy(ti.transform.GetChild(i).gameObject);
-                break;
-            }
-        }*/
     }
 
     private int LastIndex()
@@ -122,5 +114,24 @@ public class PlayerWheelHolder : MonoBehaviour
     {
         if (!detached) transform.GetChild(LastIndex()).GetChild(0).GetComponent<AudioPlayer>().PlayClip();
         else transform.GetChild(LastIndex()).GetChild(1).GetComponent<AudioPlayer>().PlayClip();
+    }
+
+
+    //achievement aiders
+
+    public void AdvanceExperimentor()
+    {
+        GameObject wheel = transform.GetChild(0).gameObject;
+        for(int i = 0; i < wheel.transform.childCount-1; i++)
+        {
+            if(wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
+            {
+                if (!used_weapons.Contains(wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>()))
+                {
+                    used_weapons.Add(wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>());
+                }
+            }
+            
+        }
     }
 }

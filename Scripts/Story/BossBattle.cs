@@ -15,4 +15,13 @@ public class BossBattle : MonoBehaviour
     {
         GetComponent<Encounter>().ResetGear();
     }
+
+    public void AddBossKill()
+    {
+        GameObject.Find("EventSystem").GetComponent<RLController>().bosses_killed++;
+        if(GameObject.Find("EventSystem").GetComponent<RLController>().picks < tier)
+        {
+            GameObject.Find("EventSystem").GetComponent<RLController>().picks++;
+        }
+    }
 }

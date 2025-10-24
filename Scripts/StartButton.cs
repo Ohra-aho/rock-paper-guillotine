@@ -18,10 +18,12 @@ public class StartButton : MonoBehaviour
     public bool deactivated; //If start button needs to be deactivated individually
 
     MainController MC;
+    PlayerWheelHolder PWH;
 
     private void Awake()
     {
         MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+        PWH = GameObject.Find("PlayerWheelHolder").GetComponent<PlayerWheelHolder>();
     }
 
     private void Update()
@@ -73,6 +75,9 @@ public class StartButton : MonoBehaviour
 
         //Achievement aids
         SetHPForSlow();
+        PWH.AdvanceExperimentor();
+        MC.GetComponent<RLController>().CheckForExperimentor();
+
     }
 
     public void Deactivate()

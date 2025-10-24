@@ -47,14 +47,19 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public bool onDestruction;
     [HideInInspector] public bool awake;
 
+    //Other
     [HideInInspector] public bool temporary;
     [HideInInspector] public int timer; //used for temporary buffs
 
     [HideInInspector] public bool penetrating;
     [HideInInspector] public bool draw_winner;
 
+    [HideInInspector] public int health_buff;
+
     //Debuffs
     [HideInInspector] public bool destructive;
+
+
 
     private void Awake()
     {
@@ -143,6 +148,7 @@ public class BuffController : MonoBehaviour
             new_buff.draw_winner = draw_winner;
             new_buff.penetrating = penetrating;
             new_buff.destructive = destructive;
+            new_buff.health_buff = health_buff;
             if (special != null) new_buff.GetComponent<Buff>().special = special;
             if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
             new_buff.GetComponent<Buff>().AddBuff();

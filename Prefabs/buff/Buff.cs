@@ -38,6 +38,7 @@ public class Buff : MonoBehaviour
     public bool awake;
     public bool onDestruction;
 
+    //Other
     public bool temporary;
     public int timer;
 
@@ -47,6 +48,8 @@ public class Buff : MonoBehaviour
     private bool og_pen;
     private bool og_draw_winner;
     private bool og_destructive;
+
+    public int health_buff;
 
     //Debuffs
     public bool destructive;
@@ -130,6 +133,13 @@ public class Buff : MonoBehaviour
             transform.parent.gameObject.AddComponent<SelfDestruct>();
             transform.parent.GetComponent<Weapon>().endPhase.AddListener(transform.parent.GetComponent<SelfDestruct>().Destruct);
         }
+        if(health_buff > 0)
+        {
+            transform.parent.gameObject.AddComponent<HealthIncrease>();
+            transform.parent.GetComponent<HealthIncrease>().amount = health_buff;
+            transform.parent.GetComponent<Weapon>().equip.AddListener(transform.parent.GetComponent<HealthIncrease>().Increase);
+            transform.parent.GetComponent<Weapon>().unEquip.AddListener(transform.parent.GetComponent<HealthIncrease>().Decrease);
+        }
             
     }
 
@@ -199,6 +209,12 @@ public class Buff : MonoBehaviour
         {
             transform.parent.GetComponent<Weapon>().endPhase.RemoveListener(transform.parent.GetComponent<SelfDestruct>().Destruct);
             Destroy(transform.parent.gameObject.GetComponent<SelfDestruct>());
+        }
+        if (health_buff > 0)
+        {
+            transform.parent.GetComponent<Weapon>().equip.RemoveListener(transform.parent.GetComponent<HealthIncrease>().Increase);
+            transform.parent.GetComponent<Weapon>().unEquip.RemoveListener(transform.parent.GetComponent<HealthIncrease>().Decrease);
+            Destroy(transform.parent.gameObject.GetComponent<HealthIncrease>());
         }
 
 

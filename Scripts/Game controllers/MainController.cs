@@ -241,6 +241,8 @@ public class MainController : MonoBehaviour
         //Achievement checks
         GetComponent<RLController>().CHeckHPMaster();
         GetComponent<RLController>().CheckForSlautherer();
+        GetComponent<RLController>().CheckForMadman();
+        GetComponent<RLController>().CheckForTraditionalist();
 
 
         if(
