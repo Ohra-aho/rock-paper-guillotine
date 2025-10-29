@@ -51,6 +51,7 @@ public class PlayerInventory : MonoBehaviour
         AddBuffToNewWeapon(newItem);
         GameObject event_system = GameObject.Find("EventSystem");
         event_system.GetComponent<RLController>().CheckCollector();
+        event_system.GetComponent<RLController>().CheckForNeurotic();
         event_system.GetComponent<RLController>().ApplyBuffs();
         
     }

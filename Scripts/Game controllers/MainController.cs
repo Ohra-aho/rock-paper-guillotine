@@ -233,6 +233,9 @@ public class MainController : MonoBehaviour
 
     public void Win()
     {
+        //Achievement victory effects
+        GetComponent<RLController>().ActivateWinEffects();
+
         TC = GameObject.FindGameObjectWithTag("Table").GetComponent<TableController>();
         TC.ClearDisplay();
         EndRound();
@@ -243,7 +246,11 @@ public class MainController : MonoBehaviour
         GetComponent<RLController>().CheckForSlautherer();
         GetComponent<RLController>().CheckForMadman();
         GetComponent<RLController>().CheckForTraditionalist();
-
+        GetComponent<RLController>().CheckForRiskTaker();
+        GetComponent<RLController>().CheckForPlotter();
+        GetComponent<RLController>().CheckForSurvivor();
+        GetComponent<RLController>().CheckForLucky();
+        GetComponent<RLController>().unyielding_counter = 0;
 
         if(
             !story_event_holder.transform.GetChild(0).GetComponent<Encounter>().last && 

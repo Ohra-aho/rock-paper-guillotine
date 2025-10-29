@@ -108,17 +108,38 @@ public class RewardMenu : MonoBehaviour
 
     private void makeRewardList()
     {
-        //Get at least one random reward
-        rewards.Add(GetRandomReward());
-        rewards.Add(GetRandomReward());
+        //Achievement check
+        bool neurotic = false;
+        Neurotic the_neurotic = null;
 
-        //Change to get at least one healing weapon
-        if(CheckIfPlayerIsHurt())
+        for (int i = 0; i < MC.GetComponent<RLController>().chosen_buffs.Count; i++)
         {
-            int heal_chance = Random.Range(1, 4);
-            if (heal_chance == 3)
+            if(MC.GetComponent<RLController>().chosen_buffs[i].GetComponent<Neurotic>())
             {
-                rewards.Add(SubChooseRandomWeapon(healing));
+                neurotic = true;
+                the_neurotic = MC.GetComponent<RLController>().chosen_buffs[i].GetComponent<Neurotic>();
+                break;
+            }
+        }
+
+        if(!neurotic)
+        {
+            //Get at least one random reward
+            rewards.Add(GetRandomReward());
+            rewards.Add(GetRandomReward());
+
+            //Change to get at least one healing weapon
+            if (CheckIfPlayerIsHurt())
+            {
+                int heal_chance = Random.Range(1, 4);
+                if (heal_chance == 3)
+                {
+                    rewards.Add(SubChooseRandomWeapon(healing));
+                }
+                else
+                {
+                    rewards.Add(GetRandomReward());
+                }
             }
             else
             {
@@ -126,73 +147,49 @@ public class RewardMenu : MonoBehaviour
             }
         } else
         {
-            rewards.Add(GetRandomReward());
+            if(CheckIfPlayerIsHurt())
+            {
+                int heal_chance = Random.Range(1, 4);
+                if(heal_chance == 3)
+                {
+                    int heal = Random.Range(1, 4);
+                    switch (heal)
+                    {
+                        case 1:
+                            rewards.Add(the_neurotic.rock_heal);
+                            rewards.Add(the_neurotic.GiveRandomPaper(MC.reward_tier));
+                            rewards.Add(the_neurotic.GiveRandomScissors(MC.reward_tier));
+                            break;
+                        case 2:
+                            rewards.Add(the_neurotic.GiveRandomRock(MC.reward_tier));
+                            rewards.Add(the_neurotic.paper_heal);
+                            rewards.Add(the_neurotic.GiveRandomScissors(MC.reward_tier));
+                            break;
+                        case 3:
+                            rewards.Add(the_neurotic.GiveRandomRock(MC.reward_tier));
+                            rewards.Add(the_neurotic.GiveRandomPaper(MC.reward_tier));
+                            rewards.Add(the_neurotic.scissors_heal);
+                            break;
+                    }
+                } else
+                {
+                    rewards.Add(the_neurotic.GiveRandomRock(MC.reward_tier));
+                    rewards.Add(the_neurotic.GiveRandomPaper(MC.reward_tier));
+                    rewards.Add(the_neurotic.GiveRandomScissors(MC.reward_tier));
+                }
+            } else
+            {
+                rewards.Add(the_neurotic.GiveRandomRock(MC.reward_tier));
+                rewards.Add(the_neurotic.GiveRandomPaper(MC.reward_tier));
+                rewards.Add(the_neurotic.GiveRandomScissors(MC.reward_tier));
+            }
         }
-
-        //Get preffered weapon
-        /* int preffered_type = PickFavouriteType();
-         //If there is a preffered type of weapons, pick weapons of that type
-         if(Chanse(0.7f))
-         {
-             if (preffered_type > 0)
-             {
-                 switch (preffered_type)
-                 {
-                     //If type synergizes with certain main type of weapon, there is a change to just get that type of weapon
-                     case 4:
-                         if (Chanse(0.4f))
-                         {
-                             rewards.Add(SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type)));
-                         }
-                         else
-                         {
-                             rewards.Add(SubChooseRandomWeapon(ExtractTypeOFWeapons(MainController.Choise.kivi)));
-                         }
-                         break;
-                     case 5:
-                         if (Chanse(0.4f))
-                         {
-                             rewards.Add(SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type)));
-                         }
-                         else
-                         {
-                             rewards.Add(SubChooseRandomWeapon(ExtractTypeOFWeapons(MainController.Choise.paperi)));
-                         }
-                         break;
-                     case 6:
-                         if (Chanse(0.4f))
-                         {
-                             rewards.Add(SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type)));
-                         }
-                         else
-                         {
-                             rewards.Add(SubChooseRandomWeapon(ExtractTypeOFWeapons(MainController.Choise.sakset)));
-                         }
-                         break;
-                     default:
-                         rewards.Add(
-                             SubChooseRandomWeapon(ExtractSubtypeOfWeapons(preffered_type))
-                         );
-                         break;
-                 }
-             }
-         } else
-         {
-             rewards.Add(GetRandomReward());
-         }
-
-         //Correction
-         if(rewards.Count < 3)
-         {
-             rewards.Add(GetRandomReward());
-         }
-        */
-
         for (int i = 0; i < rewards.Count; i++)
         {
             transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards[i];
             transform.GetChild(i).GetChild(0).GetComponent<Revard>().Invoke();
         }
+
     }
 
     private bool CheckIfPlayerIsHurt()

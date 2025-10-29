@@ -5,6 +5,7 @@ using UnityEngine;
 public class EffectDamage : MonoBehaviour
 {
     public int amount;
+    public bool armor_piercing;
     public void DealDamage(Weapon weapon)
     {
         if (weapon != null) weapon.EffectDamage(amount);

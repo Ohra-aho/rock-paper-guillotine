@@ -19,6 +19,8 @@ public class Healing : MonoBehaviour
                     valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
                     HB.HealDamage(amount);
                     if (valid_heal) GetComponent<Weapon>().heal.Invoke();
+
+                    GameObject.FindGameObjectWithTag("GameController").GetComponent<RLController>().CheckForUnyielding();
                 }
             }
             else

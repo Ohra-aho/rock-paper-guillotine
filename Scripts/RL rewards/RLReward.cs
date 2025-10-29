@@ -7,6 +7,7 @@ public class RLReward : MonoBehaviour
 {
     public bool continuous;
     public UnityEvent buffing;
+    public UnityEvent victory_effect;
     public bool CheckIfCanBePicked()
     {
         RLController rlc = GameObject.Find("EventSystem").GetComponent<RLController>();

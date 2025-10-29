@@ -192,7 +192,6 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 68d5b3cf7ebad524ba4add551a103bdb, type: 3}
   - {fileID: 1944698211339908181, guid: 65ee88a08df24be4f8a8ac6c6b48a1f6, type: 3}
   - {fileID: 1944698211339908181, guid: 3b29511a9d5470c46a8d00ea2e902842, type: 3}
-  - {fileID: 1944698211339908181, guid: dce2e8d034c82094694ad80e5bb98517, type: 3}
   - {fileID: 1944698211339908181, guid: bb288ef175fa3d94e8ddbd6ba441974f, type: 3}
   - {fileID: 1944698211339908181, guid: 21ffd87d2ce581d439e7b38335d6659e, type: 3}
   healing:

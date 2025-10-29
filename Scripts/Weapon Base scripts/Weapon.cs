@@ -103,13 +103,20 @@ public class Weapon : MonoBehaviour
     {
         if(opponent != null)
         {
+            if(GetComponent<EffectDamage>())
+            {
+                if (GetComponent<EffectDamage>().armor_piercing)
+                {
+                    amount += opponent.armor;
+                }
+            }
             opponent.TakeDamage(amount);
             CheckUp();
         } else
         {
             if(player)
             {
-                //Add bark to point this aout if happens
+                //Add bark to point this out if happens
                 //If not opponent, choose one at random
                 GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
                 int index = Random.Range(0, RIE.transform.childCount);
@@ -126,7 +133,7 @@ public class Weapon : MonoBehaviour
     public void SelfDamage(int amount)
     {
         int realDamage;
-        if (!penetrating)
+        if (!penetrating && !GetComponent<EffectDamage>().armor_piercing)
         {
             realDamage = amount - armor;
             if (realDamage < 0) realDamage = 0;
