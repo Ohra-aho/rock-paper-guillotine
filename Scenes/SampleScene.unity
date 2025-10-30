@@ -7214,7 +7214,7 @@ GameObject:
   - component: {fileID: 243905401}
   m_Layer: 0
   m_Name: Neurotic
-  m_TagString: Untagged
+  m_TagString: Achievement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7246,7 +7246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f47eb4f540275c4b9d29caadedb7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continuous: 0
   buffing:
     m_PersistentCalls:
       m_Calls: []
@@ -7459,7 +7458,7 @@ GameObject:
   - component: {fileID: 272713729}
   m_Layer: 0
   m_Name: Risk taker
-  m_TagString: Untagged
+  m_TagString: Achievement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7491,7 +7490,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f47eb4f540275c4b9d29caadedb7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continuous: 0
   buffing:
     m_PersistentCalls:
       m_Calls: []
@@ -7613,7 +7611,7 @@ GameObject:
   - component: {fileID: 280003053}
   m_Layer: 0
   m_Name: Slaughterer
-  m_TagString: Untagged
+  m_TagString: Achievement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7658,7 +7656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f47eb4f540275c4b9d29caadedb7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continuous: 0
   buffing:
     m_PersistentCalls:
       m_Calls:
@@ -7959,7 +7956,7 @@ GameObject:
   - component: {fileID: 292334038}
   m_Layer: 0
   m_Name: Collector
-  m_TagString: Untagged
+  m_TagString: Achievement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7991,7 +7988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f47eb4f540275c4b9d29caadedb7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continuous: 0
   buffing:
     m_PersistentCalls:
       m_Calls: []
@@ -9041,7 +9037,7 @@ GameObject:
   - component: {fileID: 484853834}
   m_Layer: 0
   m_Name: Survivor
-  m_TagString: Untagged
+  m_TagString: Achievement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9086,7 +9082,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f47eb4f540275c4b9d29caadedb7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continuous: 0
   buffing:
     m_PersistentCalls:
       m_Calls: []
@@ -10721,7 +10716,7 @@ GameObject:
   - component: {fileID: 742436650}
   m_Layer: 0
   m_Name: Traditionalist
-  m_TagString: Untagged
+  m_TagString: Achievement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10753,7 +10748,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f47eb4f540275c4b9d29caadedb7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continuous: 0
   buffing:
     m_PersistentCalls:
       m_Calls:
@@ -11179,7 +11173,7 @@ GameObject:
   - component: {fileID: 894558209}
   m_Layer: 0
   m_Name: Hoarder
-  m_TagString: Untagged
+  m_TagString: Achievement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11224,7 +11218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f47eb4f540275c4b9d29caadedb7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continuous: 0
   buffing:
     m_PersistentCalls:
       m_Calls:
@@ -11599,7 +11592,7 @@ GameObject:
   - component: {fileID: 960617514}
   m_Layer: 0
   m_Name: Experimentor
-  m_TagString: Untagged
+  m_TagString: Achievement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11631,7 +11624,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f47eb4f540275c4b9d29caadedb7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continuous: 0
   buffing:
     m_PersistentCalls:
       m_Calls:
@@ -12380,7 +12372,7 @@ GameObject:
   - component: {fileID: 1065204960}
   m_Layer: 0
   m_Name: Picky
-  m_TagString: Untagged
+  m_TagString: Achievement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12412,7 +12404,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f47eb4f540275c4b9d29caadedb7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continuous: 0
   buffing:
     m_PersistentCalls:
       m_Calls: []
@@ -18599,7 +18590,7 @@ GameObject:
   - component: {fileID: 1298052909}
   m_Layer: 0
   m_Name: Unyielding
-  m_TagString: Untagged
+  m_TagString: Achievement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18644,7 +18635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f47eb4f540275c4b9d29caadedb7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continuous: 0
   buffing:
     m_PersistentCalls:
       m_Calls:
@@ -18766,7 +18756,7 @@ GameObject:
   - component: {fileID: 1300552746}
   m_Layer: 0
   m_Name: Plotter
-  m_TagString: Untagged
+  m_TagString: Achievement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18810,7 +18800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f47eb4f540275c4b9d29caadedb7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continuous: 0
   buffing:
     m_PersistentCalls:
       m_Calls:
@@ -26454,7 +26443,7 @@ GameObject:
   - component: {fileID: 1698637733}
   m_Layer: 0
   m_Name: Madman
-  m_TagString: Untagged
+  m_TagString: Achievement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26499,7 +26488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f47eb4f540275c4b9d29caadedb7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continuous: 0
   buffing:
     m_PersistentCalls:
       m_Calls:
@@ -32059,7 +32047,7 @@ GameObject:
   - component: {fileID: 1816700568}
   m_Layer: 0
   m_Name: HP_bonus
-  m_TagString: Untagged
+  m_TagString: Achievement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32091,7 +32079,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f47eb4f540275c4b9d29caadedb7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continuous: 0
   buffing:
     m_PersistentCalls:
       m_Calls: []
@@ -37951,7 +37938,7 @@ GameObject:
   - component: {fileID: 1977854765}
   m_Layer: 0
   m_Name: Relentless
-  m_TagString: Untagged
+  m_TagString: Achievement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37983,7 +37970,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f47eb4f540275c4b9d29caadedb7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continuous: 0
   buffing:
     m_PersistentCalls:
       m_Calls:
@@ -38623,7 +38609,7 @@ GameObject:
   - component: {fileID: 2052326890}
   m_Layer: 0
   m_Name: Slow
-  m_TagString: Untagged
+  m_TagString: Achievement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38655,7 +38641,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f47eb4f540275c4b9d29caadedb7cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continuous: 0
   buffing:
     m_PersistentCalls:
       m_Calls:
