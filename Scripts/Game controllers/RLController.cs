@@ -22,6 +22,7 @@ public class RLController : MonoBehaviour
     public int unyielding_counter = 0;
     [HideInInspector] public int previous_health = 0;
     [HideInInspector] public int bosses_killed = 0;
+    public int hoard_counter = 0;
 
     private void Start()
     {
@@ -73,6 +74,8 @@ public class RLController : MonoBehaviour
                 case "Survivor": background.transform.GetChild(10).gameObject.SetActive(true); break;
                 case "Relentless": background.transform.GetChild(11).gameObject.SetActive(true); break;
                 case "Unyielding": background.transform.GetChild(12).gameObject.SetActive(true); break;
+                case "Picky": background.transform.GetChild(13).gameObject.SetActive(true); break;
+                case "Hoarder": background.transform.GetChild(14).gameObject.SetActive(true); break;
             }
         }
     }
@@ -324,6 +327,43 @@ public class RLController : MonoBehaviour
             if(unyielding_counter == 3)
             {
                 AddAchievement("Unyielding");
+            }
+        }
+    }
+
+    //After the first boss, own 6 weapons you have never brought to a fight
+    //You can reroll rewards ones ber encounter
+    public void CheckForPicky()
+    {
+        if(!achievements.Contains("Picky"))
+        {
+            if(bosses_killed >= 1)
+            {
+                int amount = 0;
+                for(int i = 0; i < RI.transform.childCount; i++)
+                {
+                    if(!RI.transform.GetChild(i).GetComponent<Weapon>().used_this_game)
+                    {
+                        amount++;
+                    }
+                }
+                if(amount >= 6)
+                {
+                    AddAchievement("Picky");
+                }
+            }
+        }
+    }
+
+    //Collect total of 20 points
+    //All point weapons gain 1 point when you pick them
+    public void CheckForHoarder()
+    {
+        if(!achievements.Contains("Hoarder"))
+        {
+            if(hoard_counter == 20)
+            {
+                AddAchievement("Hoarder");
             }
         }
     }

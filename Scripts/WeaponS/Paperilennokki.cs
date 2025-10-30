@@ -6,10 +6,10 @@ public class Paperilennokki : MonoBehaviour
 {
     private void Update()
     {
-        if(!GetComponent<Weapon>().penetrating) GetComponent<Weapon>().penetrating = true;
+        //if(!GetComponent<Weapon>().penetrating) GetComponent<Weapon>().penetrating = true;
     }
     private void Awake()
     {
-        GetComponent<Weapon>().penetrating = true;
+        //GetComponent<Weapon>().penetrating = true;
     }
 }

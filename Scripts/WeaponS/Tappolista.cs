@@ -17,4 +17,16 @@ public class Tappolista : MonoBehaviour
         amount = GetComponent<Stacking>().GiveAmountOfStackDividedBy(1);
         GetComponent<Weapon>().damage += amount;
     }
+
+    public void RemovePrevBuff()
+    {
+        GetComponent<Weapon>().damage -= GetComponent<Stacking>().GiveAmountOfStackDividedBy(1);
+    }
+
+    public void AddBuff()
+    {
+        int amount = 0;
+        amount = GetComponent<Stacking>().GiveAmountOfStackDividedBy(1);
+        GetComponent<Weapon>().damage += amount;
+    }
 }

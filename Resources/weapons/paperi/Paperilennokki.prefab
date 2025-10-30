@@ -93,7 +93,7 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
-  draw_winner: 0
+  draw_winner: 1
   dead: 0
   type: 1
   damage: 1
@@ -101,7 +101,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Paper plane
-  description: Pierces armor
+  description: Wins draws
   sprite: {fileID: 21300000, guid: ba07c255ee48f93428c74ce7c021f194, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -161,6 +161,7 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
 --- !u!114 &4573129366368106884
 MonoBehaviour:
   m_ObjectHideFlags: 0

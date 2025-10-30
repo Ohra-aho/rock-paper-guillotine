@@ -251,6 +251,7 @@ public class MainController : MonoBehaviour
         GetComponent<RLController>().CheckForSurvivor();
         GetComponent<RLController>().CheckForLucky();
         GetComponent<RLController>().unyielding_counter = 0;
+        GameObject.Find("Reward reroll").GetComponent<RewardReroll>().used = false;
 
         if(
             !story_event_holder.transform.GetChild(0).GetComponent<Encounter>().last && 

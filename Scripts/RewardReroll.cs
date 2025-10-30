@@ -6,6 +6,8 @@ public class RewardReroll : MonoBehaviour
 {
     MainController MC;
     public bool reward_open = true;
+    public bool unlocked = false;
+    public bool used = false;
 
     private void Awake()
     {
@@ -14,7 +16,7 @@ public class RewardReroll : MonoBehaviour
 
     private void Update()
     {
-        GetComponent<NonUIButton>().interactable = MC.game_state == MainController.State.reward && reward_open;
+        GetComponent<NonUIButton>().interactable = MC.game_state == MainController.State.reward && reward_open && unlocked && !used;
     }
 
     public void Reroll()
@@ -25,6 +27,6 @@ public class RewardReroll : MonoBehaviour
             reward_menus[i].GetComponent<Test>().UnPauseAnimation();
         }
         MC.SpawnRewardMenu();
-
+        used = true;
     }
 }

@@ -54,6 +54,9 @@ public class Weapon : MonoBehaviour
     public bool sakset_synergy;
     public bool points; //Weapons which collect points or synergize with them.
 
+    //Needed for achievements
+    [HideInInspector] public bool used_this_game;
+
     private void Awake()
     {
         real_armor = armor;
