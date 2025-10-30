@@ -78,6 +78,7 @@ public class StartButton : MonoBehaviour
         PWH.AdvanceExperimentor();
         MC.GetComponent<RLController>().CheckForExperimentor();
 
+        DisableAchievements();
     }
 
     public void Deactivate()
@@ -88,6 +89,15 @@ public class StartButton : MonoBehaviour
         GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.PowerHealthBarDown();
         GameObject.Find("EventSystem").GetComponent<MainController>().GiveUp();
         isActive = false;
+    }
+
+    private void DisableAchievements()
+    {
+        GameObject[] achievements = GameObject.FindGameObjectsWithTag("Achievement");
+        for (int i = 0; i < achievements.Length; i++)
+        {
+            achievements[i].GetComponent<RLReward>().DisableReward();
+        }
     }
 
     public void EndRound()

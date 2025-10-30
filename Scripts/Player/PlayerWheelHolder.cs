@@ -47,6 +47,16 @@ public class PlayerWheelHolder : MonoBehaviour
         {
             DetachWheel();
         }
+        DisableAchievements();
+    }
+
+    private void DisableAchievements()
+    {
+        GameObject[] achievements = GameObject.FindGameObjectsWithTag("Achievement");
+        for(int i = 0; i < achievements.Length; i++)
+        {
+            achievements[i].GetComponent<RLReward>().DisableReward();
+        }
     }
 
     public void DetachWheel()

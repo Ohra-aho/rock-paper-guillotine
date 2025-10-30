@@ -17,34 +17,39 @@ public class NonUIButton : MonoBehaviour
     {
         gameObject.AddComponent<BoxCollider2D>();
         individual_interactable = true;
+        MC = GameObject.Find("EventSystem").GetComponent<MainController>();
     }
 
     private void Update()
     {
-        if(MC == null)
+        /*if(MC == null)
         {
             MC = GameObject.Find("EventSystem").GetComponent<MainController>();
-        }
+        }*/
     }
 
     private void OnMouseDown()
     {
-        if(press != null && interactable)
+        
+        if (press != null && interactable)
         {
             press.Invoke();
-        } else if(!individual_interactable)
+        }
+        else if (!individual_interactable)
         {
             Debug.Log("Uninteractable");
         }
+        
     }
 
     private void OnMouseOver()
     {
-        if(over != null && interactable)
+        if (over != null && interactable)
         {
             over.Invoke();
             GetComponent<SpriteRenderer>().color = new Color(hoverTint, hoverTint, hoverTint);
-        } else
+        }
+        else
         {
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
         }
@@ -52,7 +57,7 @@ public class NonUIButton : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if(exit != null)
+        if (exit != null)
         {
             exit.Invoke();
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
