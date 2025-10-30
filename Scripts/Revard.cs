@@ -54,6 +54,7 @@ public class Revard : MonoBehaviour
             transform.parent.parent.GetComponent<Test>().UnPauseAnimation();
             Destroy(gameObject);
             GameObject.Find("Roope").GetComponent<Test>().UnPauseAnimation();
+            GameObject.Find("Reward reroll").GetComponent<RewardReroll>().reward_open = false;
         }
     }
 

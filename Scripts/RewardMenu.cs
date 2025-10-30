@@ -18,15 +18,6 @@ public class RewardMenu : MonoBehaviour
 
     MainController MC;
 
-    private int self_destructive = 0; //Weapons which synergize with self destruction
-    private int heal = 0; //Weapons which heal or synergice with it
-    private int health = 0; //Weapons which give health or care about it
-    private int kivi_synegry = 0; //Weapons which synergize with other stones
-    private int paperi_synergy = 0;
-    private int sakset_synergy = 0;
-    private int points = 0; //Weapons which collect points or synergize with them.
-
-
     //Might need some sort of connection to what player already has
 
     void Awake()
@@ -38,8 +29,6 @@ public class RewardMenu : MonoBehaviour
         real_inventory = GameObject.Find("Real inventory");
 
         RemovePossibleRewards();
-        CollectTypePreference();
-        CollectEquippedWeaponPreferences();
         makeRewardList();
 
         GetComponent<RewardBarks>().InstanciateRewardBarks();
@@ -62,6 +51,7 @@ public class RewardMenu : MonoBehaviour
         {
             MC.SetNewState(MainController.State.idle);
         }
+        GameObject.Find("Reward reroll").GetComponent<RewardReroll>().reward_open = true;
     }
 
     public void EnableRewards()
@@ -257,138 +247,6 @@ public class RewardMenu : MonoBehaviour
             return temp;
         }
 
-    }
-
-
-    //Collect types and alter rewards to keter to players build. More player collects certain weapons, more they get that type of weapons
-
-    private void CollectEquippedWeaponPreferences()
-    {
-        List<Weapon> equippend_weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
-        for(int i = 0; i < equippend_weapons.Count; i++)
-        {
-            if (equippend_weapons[i].self_destructive) self_destructive += 2;
-            if (equippend_weapons[i].healing) heal += 2;
-            if (equippend_weapons[i].health) health += 2;
-            if (equippend_weapons[i].kivi_synegry) kivi_synegry += 2;
-            if (equippend_weapons[i].paperi_synergy) paperi_synergy += 2;
-            if (equippend_weapons[i].sakset_synergy) sakset_synergy += 2;
-            if (equippend_weapons[i].points) points += 2;
-        }
-    }
-
-    private void CollectTypePreference()
-    {
-        for(int i = 0; i < real_inventory.transform.childCount; i++)
-        {
-            Weapon weapon = real_inventory.transform.GetChild(i).gameObject.GetComponent<Weapon>();
-            if (weapon.self_destructive) self_destructive++;
-            if (weapon.healing) heal++;
-            if (weapon.health) health++;
-            if (weapon.kivi_synegry) kivi_synegry++;
-            if (weapon.paperi_synergy) paperi_synergy++;
-            if (weapon.sakset_synergy) sakset_synergy++;
-            if (weapon.points) points++;
-        }
-        //Debug.Log(self_destructive + " " + heal + " " + health + " " + kivi_synegry + " " + paperi_synergy + " " + sakset_synergy + " " + points);
-    }
-
-    private int PickFavouriteType()
-    {
-        int temp = 0;
-
-        List<int> preferences = new List<int>();
-        preferences.Add(self_destructive);
-        preferences.Add(heal);
-        preferences.Add(health);
-        preferences.Add(kivi_synegry);
-        preferences.Add(paperi_synergy);
-        preferences.Add(sakset_synergy);
-        preferences.Add(points);
-
-        int biggest = 0;
-        for(int i = 0; i < preferences.Count; i++)
-        {
-            if(preferences[i] > 0)
-            {
-                if (preferences[i] > biggest)
-                {
-                    biggest = preferences[i];
-                    temp = i + 1;
-                }
-                if (preferences[i] == biggest)
-                {
-                    int change = Random.Range(0, 2);
-                    if (change == 1)
-                    {
-                        biggest = preferences[i];
-                        temp = i + 1;
-                    }
-                }
-            }
-        }
-        return temp;
-    }
-
-    //Extracts all weapons of certain type
-    private List<GameObject> ExtractSubtypeOfWeapons(int type)
-    {
-        List<GameObject> temp = new List<GameObject>();
-        List<GameObject> weapons = GiveCurrentRewardTier();
-        switch (type)
-        {
-            case 1:
-                for (int i = 0; i < weapons.Count; i++)
-                    if(weapons[i].GetComponent<Weapon>().self_destructive)
-                        temp.Add(weapons[i]);
-                break;
-            case 2:
-                for (int i = 0; i < weapons.Count; i++)
-                    if (weapons[i].GetComponent<Weapon>().healing)
-                        temp.Add(weapons[i]);
-                break;
-            case 3:
-                for (int i = 0; i < weapons.Count; i++)
-                    if (weapons[i].GetComponent<Weapon>().health)
-                        temp.Add(weapons[i]);
-                break;
-            case 4:
-                for (int i = 0; i < weapons.Count; i++)
-                    if (weapons[i].GetComponent<Weapon>().kivi_synegry)
-                        temp.Add(weapons[i]);
-                break;
-            case 5:
-                for (int i = 0; i < weapons.Count; i++)
-                    if (weapons[i].GetComponent<Weapon>().paperi_synergy)
-                        temp.Add(weapons[i]);
-                break;
-            case 6:
-                for (int i = 0; i < weapons.Count; i++)
-                    if (weapons[i].GetComponent<Weapon>().sakset_synergy)
-                        temp.Add(weapons[i]);
-                break;
-            case 7:
-                for (int i = 0; i < weapons.Count; i++)
-                    if (weapons[i].GetComponent<Weapon>().points)
-                        temp.Add(weapons[i]);
-                break;
-        }
-        return temp;
-    }
-
-    //Extracts weapons of main type
-    private List<GameObject> ExtractTypeOFWeapons(MainController.Choise type)
-    {
-        List<GameObject> temp = new List<GameObject>();
-        List<GameObject> weapons = GiveCurrentRewardTier();
-        for (int i = 0; i < weapons.Count; i++)
-        {
-            if(weapons[i].GetComponent<Weapon>().type == type)
-            {
-                temp.Add(weapons[i]);
-            }
-        }
-        return temp;
     }
 
     private List<GameObject> GiveCurrentRewardTier()
