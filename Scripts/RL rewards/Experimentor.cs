@@ -8,11 +8,7 @@ public class Experimentor : MonoBehaviour
     public List<GameObject> weapons_to_remove;
     public void Chosen()
     {
-        if (GetComponent<RLReward>().CheckIfCanBePicked())
-        {
-            GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs.Add(this.gameObject);
-            RandomizeStartingWeapons();
-        }
+        RandomizeStartingWeapons();
     }
 
     public void RandomizeStartingWeapons()

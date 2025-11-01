@@ -57,6 +57,7 @@ public class PlayerWheelHolder : MonoBehaviour
         {
             achievements[i].GetComponent<RLReward>().DisableReward();
         }
+        MC.GetComponent<RLController>().ActivateChosen();
     }
 
     public void DetachWheel()

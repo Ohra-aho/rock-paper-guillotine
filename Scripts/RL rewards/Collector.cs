@@ -7,12 +7,7 @@ public class Collector : MonoBehaviour
     public List<GameObject> possible_weapons;
     public void Chosen()
     {
-        if (GetComponent<RLReward>().CheckIfCanBePicked())
-        {
-            Debug.Log("Que");
-            GainRandomWeapon();
-            GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs.Add(this.gameObject);
-        }
+        GainRandomWeapon();   
     }
 
     private void GainRandomWeapon()

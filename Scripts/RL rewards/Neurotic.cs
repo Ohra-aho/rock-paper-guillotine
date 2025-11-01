@@ -23,10 +23,7 @@ public class Neurotic : MonoBehaviour
 
     public void Chosen()
     {
-        if (GetComponent<RLReward>().CheckIfCanBePicked())
-        {
-            GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs.Add(this.gameObject);
-        }
+        
     }
 
     public GameObject GiveRandomRock(int tier)

@@ -16,6 +16,8 @@ public class RLController : MonoBehaviour
     GameObject wheel_holder;
     MainController MC;
 
+    bool activated = false;
+
     //Counters
     int slow_counter = 0;
     int survivor_counter = 0;
@@ -30,7 +32,8 @@ public class RLController : MonoBehaviour
         if(data != null)
         {
             achievements.AddRange(data.achievements);
-            picks = data.picks+1;
+            picks = data.picks;
+            picks = 0;
         }
 
         background = GameObject.Find("main screen background");
@@ -368,6 +371,18 @@ public class RLController : MonoBehaviour
         }
     }
 
+    public void ActivateChosen()
+    {
+        if(!activated)
+        {
+            for (int i = 0; i < chosen_buffs.Count; i++)
+            {
+                chosen_buffs[i].GetComponent<RLReward>().activate.Invoke();
+            }
+            activated = true;
+        }
+    }
+ 
     public void SaveAchievements()
     {
         SaveSystem.SaveAchievements(new RL(achievements.ToArray(), picks));

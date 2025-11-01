@@ -6,11 +6,7 @@ public class HP_master : MonoBehaviour
 {
     public void Chosen()
     {
-        if(GetComponent<RLReward>().CheckIfCanBePicked())
-        {
-            IncreaseHP();
-            GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs.Add(this.gameObject);
-        }
+         IncreaseHP();
     }
 
     private void IncreaseHP()

@@ -79,6 +79,7 @@ public class StartButton : MonoBehaviour
         MC.GetComponent<RLController>().CheckForExperimentor();
 
         DisableAchievements();
+        MC.GetComponent<RLController>().ActivateChosen();
     }
 
     public void Deactivate()

@@ -9,12 +9,8 @@ public class Slaughterer : MonoBehaviour
 
     public void Chosen()
     {
-        if (GetComponent<RLReward>().CheckIfCanBePicked())
-        {
-            ApplyBuff();
-            DecreaseHealth();
-            GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs.Add(this.gameObject);
-        }
+        ApplyBuff();
+        DecreaseHealth();
     }
 
     public void ApplyBuff()

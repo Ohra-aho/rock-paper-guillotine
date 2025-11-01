@@ -9,11 +9,7 @@ public class Hoarder : MonoBehaviour
 
     public void Chosen()
     {
-        if (GetComponent<RLReward>().CheckIfCanBePicked())
-        {
-            ApplyBuff();
-            GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs.Add(this.gameObject);
-        }
+        ApplyBuff();
     }
 
     public void ApplyBuff()
