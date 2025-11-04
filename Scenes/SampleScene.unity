@@ -7305,7 +7305,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 0.9
+  hoverTint: 1
   interactable: 1
   individual_interactable: 1
 --- !u!212 &243905400
@@ -7569,7 +7569,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 0.9
+  hoverTint: 1
   interactable: 1
   individual_interactable: 1
 --- !u!212 &272713728
@@ -7767,7 +7767,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 0.9
+  hoverTint: 1
   interactable: 1
   individual_interactable: 1
 --- !u!212 &280003056
@@ -8107,7 +8107,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 0.9
+  hoverTint: 1
   interactable: 1
   individual_interactable: 1
 --- !u!212 &292334037
@@ -9233,7 +9233,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 0.9
+  hoverTint: 1
   interactable: 1
   individual_interactable: 1
 --- !u!212 &484853837
@@ -10919,7 +10919,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 0.9
+  hoverTint: 1
   interactable: 1
   individual_interactable: 1
 --- !u!212 &742436649
@@ -11543,7 +11543,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 0
+  hoverTint: 1
   interactable: 1
   individual_interactable: 1
 --- !u!212 &894558212
@@ -11969,7 +11969,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 0.9
+  hoverTint: 1
   interactable: 1
   individual_interactable: 1
 --- !u!212 &960617513
@@ -12757,7 +12757,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 0.9
+  hoverTint: 1
   interactable: 1
   individual_interactable: 1
 --- !u!212 &1065204959
@@ -19097,7 +19097,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 0.9
+  hoverTint: 1
   interactable: 1
   individual_interactable: 1
 --- !u!212 &1298052912
@@ -19282,7 +19282,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 0.9
+  hoverTint: 1
   interactable: 1
   individual_interactable: 1
 --- !u!212 &1300552749
@@ -27124,7 +27124,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 0.9
+  hoverTint: 1
   interactable: 1
   individual_interactable: 1
 --- !u!212 &1698637736
@@ -32735,7 +32735,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 0.9
+  hoverTint: 1
   interactable: 1
   individual_interactable: 1
 --- !u!212 &1816700571
@@ -38647,7 +38647,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 0.9
+  hoverTint: 1
   interactable: 1
   individual_interactable: 1
 --- !u!212 &1977854764
@@ -39338,7 +39338,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 0.9
+  hoverTint: 1
   interactable: 1
   individual_interactable: 1
 --- !u!212 &2052326889
