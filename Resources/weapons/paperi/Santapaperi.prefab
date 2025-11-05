@@ -162,6 +162,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - Maybe  carving tools would be more accurate.
 --- !u!114 &2715692804178075999
 MonoBehaviour:
   m_ObjectHideFlags: 0

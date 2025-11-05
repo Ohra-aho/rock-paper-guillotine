@@ -174,6 +174,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - Are you getting a little impatient?
 --- !u!114 &-1369255445511996085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,3 +202,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 0
+  armor_piercing: 0

@@ -202,6 +202,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - Pray while you still can.
 --- !u!114 &-794109146025331787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +234,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &-6476933309544844180
 MonoBehaviour:
   m_ObjectHideFlags: 0

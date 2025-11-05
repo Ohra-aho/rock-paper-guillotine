@@ -185,6 +185,9 @@ MonoBehaviour:
   paperi_synergy: 1
   sakset_synergy: 1
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - I know that armor can be frustrating.
 --- !u!114 &3410846685529990821
 MonoBehaviour:
   m_ObjectHideFlags: 0

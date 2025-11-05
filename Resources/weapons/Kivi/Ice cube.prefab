@@ -177,6 +177,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - Soon every problem will look like a scissors to you.
 --- !u!114 &3127145727892044911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +197,12 @@ MonoBehaviour:
   LoadFunction:
     m_PersistentCalls:
       m_Calls: []
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6304471562356913016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   used_ones: 0
+  destroyed: 0
 --- !u!114 &7308197723006176440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +257,7 @@ MonoBehaviour:
   timer: 0
   penetrating: 0
   draw_winner: 0
+  health_buff: 0
   destructive: 0
 --- !u!114 &-3007650200040234590
 MonoBehaviour:

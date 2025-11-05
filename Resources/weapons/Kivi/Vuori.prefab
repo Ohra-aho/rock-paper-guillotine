@@ -185,6 +185,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - You have more room for errors now. Lets see if you need them.
 --- !u!114 &8317546583071739834
 MonoBehaviour:
   m_ObjectHideFlags: 0

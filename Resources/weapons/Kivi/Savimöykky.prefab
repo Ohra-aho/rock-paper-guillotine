@@ -186,6 +186,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - Well if you can't make a well balanced build, that will most certainly help.
 --- !u!114 &3956481556211390759
 MonoBehaviour:
   m_ObjectHideFlags: 0

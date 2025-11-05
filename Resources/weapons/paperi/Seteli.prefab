@@ -185,6 +185,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 1
+  used_this_game: 0
+  pick_barks:
+  - Pocket change. That's all that is.
 --- !u!114 &-773870869169075467
 MonoBehaviour:
   m_ObjectHideFlags: 0

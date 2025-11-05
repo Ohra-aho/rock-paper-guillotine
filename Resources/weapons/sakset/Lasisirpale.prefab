@@ -173,6 +173,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - It will be fun while it lasts.
 --- !u!114 &7825775738186712243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,3 +189,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   used_ones: 0
+  destroyed: 0

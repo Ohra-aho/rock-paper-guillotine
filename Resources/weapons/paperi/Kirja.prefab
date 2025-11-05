@@ -173,6 +173,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 1
+  used_this_game: 0
+  pick_barks:
+  - That will take a while to be any good.
 --- !u!114 &8104029208489123361
 MonoBehaviour:
   m_ObjectHideFlags: 0

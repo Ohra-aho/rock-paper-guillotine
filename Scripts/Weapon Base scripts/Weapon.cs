@@ -57,6 +57,9 @@ public class Weapon : MonoBehaviour
     //Needed for achievements
     [HideInInspector] public bool used_this_game;
 
+    //Displayed maube when picked
+    public List<string> pick_barks;
+
     private void Awake()
     {
         real_armor = armor;

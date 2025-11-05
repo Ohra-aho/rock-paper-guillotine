@@ -165,6 +165,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - Hit or get hit. It all ends the same.
 --- !u!114 &5419796846845610242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +208,7 @@ MonoBehaviour:
   timer: 0
   penetrating: 0
   draw_winner: 0
+  health_buff: 0
   destructive: 0
 --- !u!114 &6873274728737089563
 MonoBehaviour:
@@ -231,6 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 1
+  armor_piercing: 0
 --- !u!114 &4649406059305924212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,5 +251,11 @@ MonoBehaviour:
   stacks: 0
   stack_limit: 0
   LoadFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
     m_PersistentCalls:
       m_Calls: []

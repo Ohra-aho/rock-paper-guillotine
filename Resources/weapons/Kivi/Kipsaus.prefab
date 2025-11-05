@@ -186,6 +186,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - Just delaying the inevitable.
 --- !u!114 &8443349561577102891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   used_ones: 0
+  destroyed: 0
 --- !u!114 &4382531305847131888
 MonoBehaviour:
   m_ObjectHideFlags: 0

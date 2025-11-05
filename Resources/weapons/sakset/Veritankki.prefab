@@ -198,6 +198,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 1
+  used_this_game: 0
+  pick_barks:
+  - Make them bleed, so you can bleed more. Smart I guess.
 --- !u!114 &8947393005657488649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,3 +242,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
+    m_PersistentCalls:
+      m_Calls: []

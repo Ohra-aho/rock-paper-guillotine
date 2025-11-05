@@ -185,6 +185,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - Another turtle build?
 --- !u!114 &-4730871935511348176
 MonoBehaviour:
   m_ObjectHideFlags: 0

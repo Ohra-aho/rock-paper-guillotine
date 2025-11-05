@@ -164,6 +164,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - Haven't got enough beating already?
 --- !u!114 &2131917852590219947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +182,12 @@ MonoBehaviour:
   stacks: 0
   stack_limit: 0
   LoadFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &8377459506818662379
@@ -211,6 +220,7 @@ MonoBehaviour:
   effect_damage_bonus: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
+  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
@@ -232,4 +242,5 @@ MonoBehaviour:
   timer: 0
   penetrating: 0
   draw_winner: 0
+  health_buff: 0
   destructive: 0

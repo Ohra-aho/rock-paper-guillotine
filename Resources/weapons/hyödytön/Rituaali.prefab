@@ -163,6 +163,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - Mayve that will compensate to your lack of skill.
 --- !u!114 &7275601658284212627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +206,7 @@ MonoBehaviour:
   timer: 0
   penetrating: 0
   draw_winner: 0
+  health_buff: 0
   destructive: 0
 --- !u!114 &-1573053616698272558
 MonoBehaviour:
@@ -230,3 +234,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 1
+  armor_piercing: 0

@@ -164,6 +164,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - Getting cocky are we?
 --- !u!114 &-6867594184265076172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +197,7 @@ MonoBehaviour:
   effect_damage_bonus: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
+  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
@@ -215,6 +219,7 @@ MonoBehaviour:
   timer: 0
   penetrating: 0
   draw_winner: 0
+  health_buff: 0
   destructive: 0
 --- !u!114 &7863754594264066741
 MonoBehaviour:
@@ -233,6 +238,12 @@ MonoBehaviour:
   LoadFunction:
     m_PersistentCalls:
       m_Calls: []
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8146985597736291281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,3 +257,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 2
+  armor_piercing: 0

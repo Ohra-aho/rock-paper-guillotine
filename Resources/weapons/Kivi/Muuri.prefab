@@ -198,6 +198,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 1
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - You know, HP won't help you win by itself.
 --- !u!114 &2278583403661379804
 MonoBehaviour:
   m_ObjectHideFlags: 0

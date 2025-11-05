@@ -173,6 +173,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - 'Unstopabble force meets imovable object. '
 --- !u!114 &-1840290319814650153
 MonoBehaviour:
   m_ObjectHideFlags: 0

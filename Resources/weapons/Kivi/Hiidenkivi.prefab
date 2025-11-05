@@ -186,6 +186,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - Won't help you much, but it is satisfying.
 --- !u!114 &2821382414112198119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,3 +202,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   used_ones: 0
+  destroyed: 0

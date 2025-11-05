@@ -186,6 +186,9 @@ MonoBehaviour:
   paperi_synergy: 1
   sakset_synergy: 1
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - To be honesr, that is one of my favourites.
 --- !u!114 &5419796846845610242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +229,7 @@ MonoBehaviour:
   timer: 0
   penetrating: 0
   draw_winner: 0
+  health_buff: 0
   destructive: 0
 --- !u!114 &8040888928295333974
 MonoBehaviour:

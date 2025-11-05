@@ -173,6 +173,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 1
+  used_this_game: 0
+  pick_barks:
+  - Soon you will see, that's the only thing you have,
 --- !u!114 &5101497510755020665
 MonoBehaviour:
   m_ObjectHideFlags: 0

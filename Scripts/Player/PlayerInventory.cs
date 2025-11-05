@@ -37,17 +37,7 @@ public class PlayerInventory : MonoBehaviour
             the_item.GetComponent<BuffController>().Inisiate();
         }
         items.Add(the_item);
-
-        if(newItem.GetComponent<Weapon>())
-        {
-            //Debug.Log("New weapon: "+newItem.GetComponent<Weapon>().name);
-        } else if(newItem.GetComponent<Item>())
-        {
-            //Debug.Log("New item: " + newItem.GetComponent<Item>().name);
-        } else
-        {
-            //Debug.Log("Something");
-        }
+        
         AddBuffToNewWeapon(newItem);
         GameObject event_system = GameObject.Find("EventSystem");
         event_system.GetComponent<RLController>().CheckCollector();

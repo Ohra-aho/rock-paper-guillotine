@@ -176,6 +176,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 1
+  used_this_game: 0
+  pick_barks:
+  - That will keep you safe. For now.
 --- !u!114 &8578841849468338333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   used_ones: 0
+  destroyed: 0
 --- !u!114 &6455492341648169083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,3 +234,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
+    m_PersistentCalls:
+      m_Calls: []

@@ -173,6 +173,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - How long will that stay up.
 --- !u!114 &409352218259904777
 MonoBehaviour:
   m_ObjectHideFlags: 0

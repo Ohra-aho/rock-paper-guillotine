@@ -175,6 +175,8 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 1
   used_this_game: 0
+  pick_barks:
+  - Good luck getting the first kill.
 --- !u!114 &3743869549810819751
 MonoBehaviour:
   m_ObjectHideFlags: 0

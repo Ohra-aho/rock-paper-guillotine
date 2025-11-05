@@ -173,6 +173,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - Weapon for the desperate.
 --- !u!114 &-1696649652281203580
 MonoBehaviour:
   m_ObjectHideFlags: 0

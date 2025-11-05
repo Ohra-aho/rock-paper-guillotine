@@ -5,6 +5,7 @@ using UnityEngine;
 public class BarkController : MonoBehaviour
 {
     public GameObject bark_template;
+    public GameObject reward_bark_template;
 
     private void Awake()
     {
@@ -44,5 +45,12 @@ public class BarkController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void ActivateInstantBark(string bark)
+    {
+        GameObject new_bark = Instantiate(reward_bark_template, transform);
+        new_bark.GetComponent<RewardBark>().bark = bark;
+        new_bark.GetComponent<RewardBark>().Activate();
     }
 }

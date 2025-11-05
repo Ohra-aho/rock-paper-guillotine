@@ -8001,6 +8001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bark_template: {fileID: 1228160335464627313, guid: 8968d1d70c0424a4e9aa70a7fb12b030, type: 3}
+  reward_bark_template: {fileID: 1228160335464627313, guid: 136265e79e19faa468b6272c48034bc3, type: 3}
 --- !u!1 &292334032
 GameObject:
   m_ObjectHideFlags: 0
@@ -13066,6 +13067,7 @@ MonoBehaviour:
   previous_health: 0
   bosses_killed: 0
   hoard_counter: 0
+  bark: {fileID: 1228160335464627313, guid: 136265e79e19faa468b6272c48034bc3, type: 3}
 --- !u!1 &1086918255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1371170088414111626, guid: a58b1fb028afc734792da4c072e51e83, type: 3}

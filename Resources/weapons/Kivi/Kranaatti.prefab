@@ -187,6 +187,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks:
+  - Going out in a blaze of glory? I like that.
 --- !u!114 &3190234363839393543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   used_ones: 0
+  destroyed: 0
 --- !u!114 &-4740210523757410787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,3 +229,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 2
+  armor_piercing: 0

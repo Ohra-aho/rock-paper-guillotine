@@ -37,10 +37,6 @@ public class Revard : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = actualReward.GetComponent<Weapon>().sprite;
         }
-        else if (actualReward.GetComponent<Item>())
-        {
-            GetComponent<SpriteRenderer>().sprite = actualReward.GetComponent<Item>().sprite;
-        }
     }
 
     public void Chosen()
@@ -55,6 +51,7 @@ public class Revard : MonoBehaviour
             Destroy(gameObject);
             GameObject.Find("Roope").GetComponent<Test>().UnPauseAnimation();
             GameObject.Find("Reward reroll").GetComponent<RewardReroll>().reward_open = false;
+            ActivatePickBark();
         }
     }
 
@@ -116,11 +113,6 @@ public class Revard : MonoBehaviour
                         break;
                 }                
             }
-            else if (actualReward.GetComponent<Item>())
-            {
-                visibleInfo.transform.GetChild(0)
-                    .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Item>().name;
-            }
         }
     }
 
@@ -150,5 +142,18 @@ public class Revard : MonoBehaviour
         DestroyAllInfo();
     }
 
+    private void ActivatePickBark()
+    {
+        if(actualReward.GetComponent<Weapon>().pick_barks.Count > 0)
+        {
+            int chance = Random.Range(1, 6);
+            if (chance == 1)
+            {
+                int index = Random.Range(0, actualReward.GetComponent<Weapon>().pick_barks.Count);
+                string bark = actualReward.GetComponent<Weapon>().pick_barks[index];
+                GameObject.Find("BarkHolder").GetComponent<BarkController>().ActivateInstantBark(bark);
+            }
+        }
+    }
 
 }
