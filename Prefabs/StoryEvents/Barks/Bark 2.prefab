@@ -50,3 +50,4 @@ MonoBehaviour:
   on_startbutton_activate: 0
   on_startbutton_de_activate: 1
   immediate: 0
+  priority: 1

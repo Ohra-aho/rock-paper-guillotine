@@ -100,8 +100,9 @@ public class RLController : MonoBehaviour
     {
         GameObject bark_holder = GameObject.Find("BarkHolder");
         GameObject new_bark = Instantiate(bark, bark_holder.transform);
-        new_bark.GetComponent<RewardBark>().bark = script;
-        new_bark.GetComponent<RewardBark>().Activate();
+        new_bark.GetComponent<Bark>().bark = script;
+        new_bark.GetComponent<Bark>().immediate = true;
+        new_bark.GetComponent<Bark>().Inisiate();
     }
 
 

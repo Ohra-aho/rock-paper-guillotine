@@ -9,6 +9,7 @@ public static class SaveSystem
     public static string player_weapon_data = "player_weapon_data";
     public static string player_data = "player_data";
     public static string achievement_data = "achievement_data";
+    public static string story_checklist_data = "story_checklist_data";
 
     //Utilities
     private static string MainPath(string file)
@@ -178,6 +179,30 @@ public static class SaveSystem
         if (stream != null)
         {
             RLController.RL data = formatter.Deserialize(stream) as RLController.RL;
+            stream.Close();
+            return data;
+        }
+        return null;
+    }
+
+    //Story checklist
+    public static void SaveStoryChecklist(StoryCheckList.CheckList check_list)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = OpenFileStream(story_checklist_data, FileMode.Create);
+
+        formatter.Serialize(stream, check_list);
+        stream.Close();
+    }
+
+    public static StoryCheckList.CheckList LoadStoryChecklist()
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = OpenFileStream(story_checklist_data, FileMode.Open);
+
+        if (stream != null)
+        {
+            StoryCheckList.CheckList data = formatter.Deserialize(stream) as StoryCheckList.CheckList;
             stream.Close();
             return data;
         }

@@ -29,6 +29,8 @@ public class BasicEnemy : MonoBehaviour
 
     public bool advanced = false;
 
+    public List<string> victory_barks;
+
     private void Awake()
     {
         controller = GameObject.FindGameObjectWithTag("EnemyHolder");
@@ -40,8 +42,9 @@ public class BasicEnemy : MonoBehaviour
             case 1: chosen_plan.AddRange(plan_1); break;
             case 2: chosen_plan.AddRange(plan_2); break;
         }
-        
-        //SpawnWeaponInfo();
+       
+        GameObject.Find("EventSystem").GetComponent<MainController>().victory_barks = victory_barks;
+       
     }
 
     public void TransferInfo()

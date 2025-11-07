@@ -14,6 +14,7 @@ public class Bark : MonoBehaviour
     public bool on_startbutton_activate;
     public bool on_startbutton_de_activate;
     public bool immediate = false;
+    public bool priority = false;
 
 
     private void Awake()
@@ -77,7 +78,7 @@ public class Bark : MonoBehaviour
     //Plays the bark without conditions
     public void TheBark()
     {
-        GameObject.Find("man").GetComponent<ManAnimator>().CreateABark(true_bark);
+        GameObject.Find("man").GetComponent<ManAnimator>().CreateABark(true_bark, priority);
         triggered = true;
     }
 
@@ -86,7 +87,7 @@ public class Bark : MonoBehaviour
     {
         if(!GameObject.Find("StartButton").GetComponent<StartButton>().isActive)
         {
-            GameObject.Find("man").GetComponent<ManAnimator>().CreateABark(true_bark);
+            GameObject.Find("man").GetComponent<ManAnimator>().CreateABark(true_bark, priority);
             triggered = true;
         }
     }

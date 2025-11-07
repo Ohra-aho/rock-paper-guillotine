@@ -40,7 +40,6 @@ public class BarkController : MonoBehaviour
                     loaded_bark.GetComponent<Bark>().triggered = barks[i].triggered;
                     //loaded_bark.GetComponent<Bark>().bark = barks[i].bark;
                     loaded_bark.GetComponent<Bark>().SetTrueBark(barks[i].true_bark);
-
                     loaded_bark.GetComponent<Bark>().Inisiate();
                 }
             }
@@ -49,8 +48,18 @@ public class BarkController : MonoBehaviour
 
     public void ActivateInstantBark(string bark)
     {
-        GameObject new_bark = Instantiate(reward_bark_template, transform);
-        new_bark.GetComponent<RewardBark>().bark = bark;
-        new_bark.GetComponent<RewardBark>().Activate();
+        GameObject new_bark = Instantiate(bark_template, transform);
+        new_bark.GetComponent<Bark>().bark = bark;
+        new_bark.GetComponent<Bark>().immediate = true;
+        new_bark.GetComponent<Bark>().Inisiate();
+    }
+
+    public void ActivatePriorityBark(string bark)
+    {
+        GameObject new_bark = Instantiate(bark_template, transform);
+        new_bark.GetComponent<Bark>().bark = bark;
+        new_bark.GetComponent<Bark>().immediate = true;
+        new_bark.GetComponent<Bark>().priority = true;
+        new_bark.GetComponent<Bark>().Inisiate();
     }
 }

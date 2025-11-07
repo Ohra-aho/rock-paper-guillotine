@@ -29,6 +29,8 @@ public class MainController : MonoBehaviour
     public GameObject quilliotine;
     public GameObject story_event_holder;
 
+    BarkController BC;
+
     [HideInInspector] public bool firstRewardMenu = false;
 
     public List<GameObject> playthroughts;
@@ -37,6 +39,8 @@ public class MainController : MonoBehaviour
 
     public int reward_tier = 1;
     public bool rewards_disabled = false;
+
+    public List<string> victory_barks;
 
 
     //Achievement aids
@@ -72,6 +76,7 @@ public class MainController : MonoBehaviour
         if (first) {
            // GetComponent<StoryController>().events.AddRange(playthroughts[0].GetComponent<Story>().events); 
         }
+        BC = GameObject.Find("BarkHolder").GetComponent<BarkController>();
     }
 
     private void Update()
@@ -258,6 +263,10 @@ public class MainController : MonoBehaviour
             !player.GetComponent<PlayerContoller>().HB.dead && 
             !rewards_disabled
             ) SpawnRewardMenu();
+
+        //Barks
+        DisplayVictoryBark();
+
     }
 
     
@@ -292,5 +301,26 @@ public class MainController : MonoBehaviour
     public void SpawnRewardMenu()
     {
         Instantiate(rewardMenu, rewardmenuHolder.transform);
+    }
+
+
+    //Barking
+
+    public string GiveRandomBark(List<string> barks)
+    {
+        int index = Random.Range(0, barks.Count);
+        return barks[index];
+    }
+
+    public void DisplayVictoryBark()
+    {
+        if(victory_barks.Count > 0)
+        {
+            int chance = Random.Range(1, 2); //1, 4
+            if (chance == 1)
+            {
+                BC.ActivateInstantBark(GiveRandomBark(victory_barks));
+            }
+        }
     }
 }

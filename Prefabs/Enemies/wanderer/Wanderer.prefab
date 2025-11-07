@@ -118,12 +118,15 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: b24b279d010d53e40beb5b4c604dd7a1, type: 3}
   - {fileID: 1944698211339908181, guid: 5dfcb6cef6cdff94ba707c7027b52324, type: 3}
   - {fileID: 1944698211339908181, guid: d973b6fde138fa3479172f532aae631b, type: 3}
-  plan_1: 000000000200000001000000
-  plan_2: 000000000100000002000000
+  plan_1: 
+  plan_2: 
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 00000000
   advanced: 1
+  victory_barks:
+  - Well done. But now the real game begins.
+  - At least you didn't embarass yourself.
 --- !u!114 &4638538761962290413
 MonoBehaviour:
   m_ObjectHideFlags: 0

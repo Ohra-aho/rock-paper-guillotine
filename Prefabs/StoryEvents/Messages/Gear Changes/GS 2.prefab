@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -3775906259973895794}
   - component: {fileID: 1705922441453647033}
   m_Layer: 0
-  m_Name: BV 6
+  m_Name: GS 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Might need a buff...
+  - 
   sprite_frames: 
   activated: 0
 --- !u!114 &1705922441453647033

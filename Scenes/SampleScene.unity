@@ -12843,6 +12843,7 @@ GameObject:
   - component: {fileID: 1066024795}
   - component: {fileID: 1066024796}
   - component: {fileID: 1066024797}
+  - component: {fileID: 1066024798}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: GameController
@@ -12882,6 +12883,7 @@ MonoBehaviour:
   buttons_active: 1
   reward_tier: 1
   rewards_disabled: 0
+  victory_barks: []
   first_turn: 1
   game_state: 4
 --- !u!114 &1066024787
@@ -13033,6 +13035,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1066024798}
+        m_TargetAssemblyTypeName: StoryCheckList, Assembly-CSharp
+        m_MethodName: SaveStoryCheckList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1066024796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13067,7 +13083,30 @@ MonoBehaviour:
   previous_health: 0
   bosses_killed: 0
   hoard_counter: 0
-  bark: {fileID: 1228160335464627313, guid: 136265e79e19faa468b6272c48034bc3, type: 3}
+  bark: {fileID: 1228160335464627313, guid: 8968d1d70c0424a4e9aa70a7fb12b030, type: 3}
+--- !u!114 &1066024798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066024785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb4b3dd452d89d4a9bc71d772974e57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  first_greeting: 0
+  equip_instructions: 0
+  battle_instructions: 0
+  first_forfeit: 0
+  first_victory: 0
+  first_boss_met: 0
+  first_boss_beaten: 0
+  gear_upgrade_1: 0
+  gear_upgrade_2: 0
+  gear_upgrade_3: 0
+  first_achievement: 0
 --- !u!1 &1086918255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1371170088414111626, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
@@ -19756,7 +19795,7 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: 6b7fe6eb81891f04cbcefa1cb92711bf, type: 3}
+  - {fileID: 1944698211339908181, guid: 8fa7244700a3c5646908c5ce549a74c3, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623

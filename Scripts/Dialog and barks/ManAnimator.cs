@@ -137,7 +137,7 @@ public class ManAnimator : MonoBehaviour
         }
     }
 
-    public void CreateABark(string bark)
+    public void CreateABark(string bark, bool priority)
     {
         if(current_bark == null)
         {
@@ -147,8 +147,18 @@ public class ManAnimator : MonoBehaviour
                     null,
                     bark
                 );
+            bark_cr = StartCoroutine(HandleBarking());
+        } else if(priority)
+        {
+            StopCoroutine(bark_cr);
+            current_bark =
+                new Frame(
+                    bark_sheet[Random.Range(0, bark_sheet.Length)],
+                    null,
+                    bark
+                );
+            bark_cr = StartCoroutine(HandleBarking());
         }
-        bark_cr = StartCoroutine(HandleBarking());
     }
 
     IEnumerator HandleBarking()
@@ -161,10 +171,9 @@ public class ManAnimator : MonoBehaviour
             yield return new WaitForSeconds(2f);
             bark_box.GetComponent<DialogBox>().StartAnimation(1);
             yield return new WaitWhile(() => bark_box.GetComponent<DialogBox>().animation_playing);
-            current_bark = null;
             StopCoroutine(bark_cr);
+            current_bark = null;
         }
-
     }
 
     private void ChangeSprite(Sprite new_sprite)
