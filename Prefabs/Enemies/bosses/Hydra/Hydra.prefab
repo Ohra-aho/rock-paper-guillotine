@@ -61,19 +61,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Hydra
   image: {fileID: 21300000, guid: 749eb76d72b91954ebdba355cc0005d4, type: 3}
-  maxHealth: 8
+  maxHealth: 10
   weapons:
   - {fileID: 1944698211339908181, guid: db69e2c45e1fce94399e8629e1c93d30, type: 3}
   - {fileID: 1944698211339908181, guid: 484135f8cb574b24daec012ff97b2326, type: 3}
   - {fileID: 1944698211339908181, guid: 97561741cc5c494498d8d815aedb79bd, type: 3}
   - {fileID: 1944698211339908181, guid: 97561741cc5c494498d8d815aedb79bd, type: 3}
   - {fileID: 1944698211339908181, guid: 97561741cc5c494498d8d815aedb79bd, type: 3}
-  plan_1: 01000000020000000200000002000000000000000100000000000000
-  plan_2: 010000000200000001000000020000000000000002000000
+  plan_1: 01000000020000000200000002000000000000000100000002000000
+  plan_2: 010000000200000002000000010000000000000002000000
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 
   advanced: 1
+  victory_barks: []
+  victory_message: {fileID: 0}
 --- !u!212 &3076687715594733710
 SpriteRenderer:
   m_ObjectHideFlags: 0

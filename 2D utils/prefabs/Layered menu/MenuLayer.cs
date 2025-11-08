@@ -16,5 +16,10 @@ public class MenuLayer : MonoBehaviour
     {
         GameObject.FindGameObjectWithTag("GameController").GetComponent<PauseController>().Resume();
     }
+
+    public void QuitGame()
+    {
+        transform.parent.GetComponent<LayeredMenu>().QuitGame();
+    }
 }
 

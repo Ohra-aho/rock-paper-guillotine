@@ -381,7 +381,7 @@ public class RLController : MonoBehaviour
                         amount++;
                     }
                 }
-                if(amount >= 6)
+                if(amount >= 7)
                 {
                     AddAchievement("Picky");
                     Bark("Maybe I shold disable the reward mechanism. you are not using the weapons you pick anyway.");

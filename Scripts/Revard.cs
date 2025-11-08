@@ -146,7 +146,7 @@ public class Revard : MonoBehaviour
     {
         if(actualReward.GetComponent<Weapon>().pick_barks.Count > 0)
         {
-            int chance = Random.Range(1, 6); //1,6
+            int chance = Random.Range(1, 5); //1,5
             if (chance == 1)
             {
                 int index = Random.Range(0, actualReward.GetComponent<Weapon>().pick_barks.Count);

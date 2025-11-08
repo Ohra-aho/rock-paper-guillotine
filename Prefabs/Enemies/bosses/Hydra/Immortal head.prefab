@@ -103,8 +103,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Immortal head
-  description: If not used, heals 1 damage. If used turn one weapon back from useless
-    to its original type.
+  description: If used turn one weapon back from useless to its original type.
   sprite: {fileID: 21300000, guid: a7f1a4dc56bd81c4dafaa46ca3a3ebe9, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -176,6 +175,8 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks: []
 --- !u!114 &-8883035689301764761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
+  amount: 0
 --- !u!114 &-5852725014963203341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +208,7 @@ MonoBehaviour:
   effect_damage_bonus: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
+  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
@@ -228,6 +230,7 @@ MonoBehaviour:
   timer: 0
   penetrating: 0
   draw_winner: 0
+  health_buff: 0
   destructive: 0
 --- !u!114 &6946501283730401584
 MonoBehaviour:

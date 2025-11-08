@@ -31,10 +31,11 @@ public class RewardMenu : MonoBehaviour
         RemovePossibleRewards();
         makeRewardList();
 
-        GetComponent<RewardBarks>().InstanciateRewardBarks();
+        //GetComponent<RewardBarks>().InstanciateRewardBarks();
         rope = GameObject.Find("Roope");
         rope.GetComponent<Test>().PlayAnimation("Move");
         rope.GetComponent<Test>().UnPauseAnimation();
+        GameObject.Find("Reward reroll").GetComponent<Test>().UnPauseAnimation();
     }
 
     private void Update()
@@ -56,7 +57,8 @@ public class RewardMenu : MonoBehaviour
 
     public void EnableRewards()
     {
-        for(int i = 0; i < 3; i++)
+        GameObject.Find("Reward reroll").GetComponent<Test>().PauseAnimation();
+        for (int i = 0; i < 3; i++)
         {
             transform.GetChild(i).GetChild(0).GetComponent<Revard>().disabled = false;
         }
@@ -76,7 +78,7 @@ public class RewardMenu : MonoBehaviour
 
     public void ObliterateThis()
     {
-        //rope.transform.GetChild(rope.transform.childCount - 1).GetChild(0).GetComponent<AudioPlayer>().StopClip();
+        GameObject.Find("Reward reroll").GetComponent<Test>().PauseAnimation();
         EndAudio();
         Destroy(gameObject);
     }
@@ -267,6 +269,7 @@ public class RewardMenu : MonoBehaviour
 
     public void DisableRewards()
     {
+        GameObject.Find("Reward reroll").GetComponent<Test>().UnPauseAnimation();
         for (int i = 0; i < transform.childCount; i++)
         {
             if (transform.GetChild(i).childCount > 0)

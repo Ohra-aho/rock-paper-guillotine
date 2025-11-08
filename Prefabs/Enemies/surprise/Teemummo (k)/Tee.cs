@@ -9,7 +9,7 @@ public class Tee : MonoBehaviour
         GameObject EC = GameObject.FindGameObjectWithTag("EnemyHolder");
         GameObject PC = GameObject.FindGameObjectWithTag("Player");
 
-        EC.GetComponent<EnemyController>().HB.HealDamage(1);
+        if(!EC.GetComponent<EnemyController>().HB.dead) EC.GetComponent<EnemyController>().HB.HealDamage(1);
         PC.GetComponent<PlayerContoller>().HB.HealDamage(1);
         GetComponent<Weapon>().heal.Invoke();
     }

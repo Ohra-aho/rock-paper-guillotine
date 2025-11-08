@@ -7259,7 +7259,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 243905401}
         m_TargetAssemblyTypeName: Neurotic, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7523,7 +7523,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 272713729}
         m_TargetAssemblyTypeName: RiskTaker, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7721,7 +7721,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 280003053}
         m_TargetAssemblyTypeName: Slaughterer, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8062,7 +8062,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 292334038}
         m_TargetAssemblyTypeName: Collector, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9188,7 +9188,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 484853834}
         m_TargetAssemblyTypeName: Survivor, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10874,7 +10874,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 742436650}
         m_TargetAssemblyTypeName: Traditionalist, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11498,7 +11498,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 894558209}
         m_TargetAssemblyTypeName: Hoarder, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11924,7 +11924,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 960617514}
         m_TargetAssemblyTypeName: Experimentor, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12712,7 +12712,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1065204960}
         m_TargetAssemblyTypeName: Picky, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13108,7 +13108,7 @@ MonoBehaviour:
   first_boss_beaten: 0
   first_achievement: 0
   first_achievement_pick: 0
-  first_greeting_ids: []
+  greeting_index: 0
 --- !u!1 &1086918255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1371170088414111626, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
@@ -19094,7 +19094,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1298052909}
         m_TargetAssemblyTypeName: Unyielding, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19279,7 +19279,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1300552746}
         m_TargetAssemblyTypeName: Plotter, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19797,7 +19797,6 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: 078db46d1732a0744a627368a8fd7f6f, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
@@ -27121,7 +27120,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1698637733}
         m_TargetAssemblyTypeName: Madman, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32720,7 +32719,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1816700569}
         m_TargetAssemblyTypeName: HP_master, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38645,7 +38644,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1977854765}
         m_TargetAssemblyTypeName: Relentless, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39076,6 +39075,8 @@ GameObject:
   - component: {fileID: 2018902157}
   - component: {fileID: 2018902156}
   - component: {fileID: 2018902155}
+  - component: {fileID: 2018902159}
+  - component: {fileID: 2018902158}
   m_Layer: 0
   m_Name: Reward reroll
   m_TagString: Untagged
@@ -39201,6 +39202,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2018902158
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018902153}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8352462c4b1c70849a477dcaadfc88f1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2018902159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018902153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5776a22fb7835eb43b232f9ebc560b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  continious: 1
+  trigger:
+    m_PersistentCalls:
+      m_Calls: []
+  reverse: 0
 --- !u!1 &2026639145
 GameObject:
   m_ObjectHideFlags: 0
@@ -39336,7 +39375,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2052326890}
         m_TargetAssemblyTypeName: Slow, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

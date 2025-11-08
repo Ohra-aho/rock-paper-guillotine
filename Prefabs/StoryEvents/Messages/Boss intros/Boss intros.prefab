@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7010574343782720544}
-  - component: {fileID: -3790885527712366114}
   - component: {fileID: 1705922441453647033}
+  - component: {fileID: -42086506574366525}
   m_Layer: 0
   m_Name: Boss intros
   m_TagString: Untagged
@@ -33,24 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-3790885527712366114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3768069680275742937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f4036a01707bb24f84896255b3f3a13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  messages:
-  - {fileID: 3768069680275742937, guid: 9f52767a369a8a9498b261fb484acf96, type: 3}
-  - {fileID: 3768069680275742937, guid: 38121014adeb1b143824f573effe7279, type: 3}
-  - {fileID: 3768069680275742937, guid: 4ff63472b445b0748bfbec5fee5e5087, type: 3}
-  - {fileID: 3768069680275742937, guid: 8fd0eeeda0adb1f4ba57ecd7dfdfb7e7, type: 3}
-  activated: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,3 +61,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-42086506574366525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3768069680275742937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b5772583f212140827761873539ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: {fileID: 3768069680275742937, guid: 1f704de55a9440b46bf8e65757b8485e, type: 3}
+  activated: 0
