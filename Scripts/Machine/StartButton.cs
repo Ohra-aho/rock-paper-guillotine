@@ -146,7 +146,8 @@ public class StartButton : MonoBehaviour
         GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.PowerHealthBarDown();
         GameObject.Find("EventSystem").GetComponent<MainController>().GiveUp();
         isActive = false;
-        if(MC.GetComponent<StoryController>().playthroughts != 1) DisplayForfeitBark();
+        DisplayForfeitBark(!MC.GetComponent<StoryCheckList>().first_forfeit);
+        
     }
 
     private void DisableAchievements()
@@ -207,13 +208,21 @@ public class StartButton : MonoBehaviour
 
     //Barking
 
-    private void DisplayForfeitBark()
+    private void DisplayForfeitBark(bool first)
     {
-        GameObject bark_holder = GameObject.Find("BarkHolder");
-        int index = Random.Range(0, forfeit_barks.Length);
-        string bark = forfeit_barks[index];
+        if(first)
+        {
+            MC.GetComponent<StoryCheckList>().first_forfeit = true;
+            GameObject bark_holder = GameObject.Find("BarkHolder");
+            bark_holder.GetComponent<BarkController>().ActivateInstantBark("Oh... I propably should have warned you.");
+        } else
+        {
+            GameObject bark_holder = GameObject.Find("BarkHolder");
+            int index = Random.Range(0, forfeit_barks.Length);
+            string bark = forfeit_barks[index];
 
-        bark_holder.GetComponent<BarkController>().ActivateInstantBark(bark);
+            bark_holder.GetComponent<BarkController>().ActivateInstantBark(bark);
+        }
     }
 
     private void DisplayEmptyGearBark()

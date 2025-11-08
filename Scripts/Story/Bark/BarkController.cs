@@ -9,7 +9,7 @@ public class BarkController : MonoBehaviour
 
     private void Awake()
     {
-        LoadBarks();
+        //LoadBarks(); might need because of instant bark system
     }
 
     public void SaveBarks()

@@ -189,6 +189,12 @@ public class ManAnimator : MonoBehaviour
 
     public void ManMessage(List<Frame> frames)
     {
+        if(current_bark != null)
+        {
+            StopCoroutine(bark_cr);
+            current_bark = null;
+            bark_box.GetComponent<DialogBox>().StartAnimation(1);
+        }
         current_frames = frames;
         current_frame = 0;
         dialog_box.GetComponent<DialogBox>().StartAnimation(0);

@@ -7,9 +7,15 @@ public class Wanderer : MonoBehaviour
     bool bag_broken = false;
     public bool stick_missed = false;
 
+    public GameObject first_victory;
+
     private void Awake()
     {
         GameObject.Find("EnemyHolder").GetComponent<EnemyController>().choiseMaker = MakeAChoise;
+        if(!GameObject.Find("EventSystem").GetComponent<StoryCheckList>().first_victory)
+        {
+            GameObject.Find("EventSystem").GetComponent<MainController>().victory_message = first_victory;
+        }
     }
 
     public int MakeAChoise(MainController.Choise c)

@@ -28,10 +28,10 @@ public class RLController : MonoBehaviour
 
     public GameObject bark;
 
-    private void Start()
+    public void Insiate()
     {
         RL data = SaveSystem.LoadAchievements();
-        if(data != null)
+        if (data != null)
         {
             achievements.AddRange(data.achievements);
             picks = data.picks;

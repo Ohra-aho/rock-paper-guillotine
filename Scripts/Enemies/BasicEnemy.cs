@@ -30,6 +30,7 @@ public class BasicEnemy : MonoBehaviour
     public bool advanced = false;
 
     public List<string> victory_barks;
+    public GameObject victory_message;
 
     private void Awake()
     {
@@ -42,9 +43,13 @@ public class BasicEnemy : MonoBehaviour
             case 1: chosen_plan.AddRange(plan_1); break;
             case 2: chosen_plan.AddRange(plan_2); break;
         }
-       
-        GameObject.Find("EventSystem").GetComponent<MainController>().victory_barks = victory_barks;
-       
+
+        MainController MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+        MC.victory_barks = victory_barks;
+        if (victory_message != null) MC.victory_message = victory_message;
+        else MC.victory_message = null;
+
+
     }
 
     public void TransferInfo()

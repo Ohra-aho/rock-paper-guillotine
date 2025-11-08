@@ -7,6 +7,15 @@ public class Story : MonoBehaviour
     public List<GameObject> events;
     public Narrative narrative;
 
+    StoryCheckList SCL;
+    StoryController SC;
+
+    private void Awake()
+    {
+        SCL = transform.parent.GetComponent<StoryCheckList>();
+        SC = transform.parent.GetComponent<StoryController>();
+    }
+
     //Adds bossintros before bossbattles and boss victory speeches after boss battles
     public void AddBossSpeetches()
     {
@@ -17,11 +26,33 @@ public class Story : MonoBehaviour
             {
                 if (events[i].name.Contains("Boss"))
                 {
-                    InsertEvent(narrative.boss_introduxtions[boss_index].gameObject, i-1);
-                    i++;
-                    InsertEvent(narrative.boss_victories[boss_index].gameObject, i);
-                    i++;
-                    boss_index++;
+                    //tutorial
+                    if (boss_index == 0 && !SCL.first_boss_met)
+                    {
+                        InsertEvent(SC.first_boss_intro, i - 1);
+                        i++;
+                        InsertEvent(SC.first_boss_victory, i);
+                        i++;
+                    }
+                    else if (boss_index == 0 && !SCL.first_boss_beaten)
+                    {
+                        InsertEvent(narrative.boss_introduxtions[boss_index].gameObject, i - 1);
+                        i++;
+                        InsertEvent(SC.first_boss_victory, i);
+                        i++;
+
+                        boss_index++;
+                    }
+                    //Non tutorial
+                    else
+                    {
+                        InsertEvent(narrative.boss_introduxtions[boss_index].gameObject, i - 1);
+                        i++;
+                        InsertEvent(narrative.boss_victories[boss_index].gameObject, i);
+                        i++;
+
+                        boss_index++;
+                    }
                 }
             }
         }
@@ -33,16 +64,41 @@ public class Story : MonoBehaviour
         //Adds all events in the list before the first encounter
         if(narrative.before_first_encounter != null && narrative.before_first_encounter.Count > 0)
         {
-            for(int i = 0; i < events.Count; i++)
+            
+            for (int i = 0; i < events.Count; i++)
             {
                 if(events[i].name.Contains("FirstEncounter"))
                 {
-                    InsertEvent(narrative.before_first_encounter[intro_index].gameObject, i-1);
-                    intro_index++;
-                    if(intro_index >= narrative.before_first_encounter.Count)
+                    //Turorials
+                    if (!SCL.first_achievement && transform.parent.GetComponent<RLController>().achievements.Count > 0)
                     {
-                        i++;
+                        if (!SCL.first_achievement_pick && transform.parent.GetComponent<RLController>().picks > 0)
+                        {
+                            SCL.first_achievement_pick = true;
+                            InsertEvent(SC.first_achievement_pick, i - 1);
+                        }
+                        InsertEvent(SC.first_achievement, i - 1);
+                        SCL.first_achievement = true;
+                        break;
+                    } else if(!SCL.first_achievement_pick && transform.parent.GetComponent<RLController>().picks > 0)
+                    {
+                        SCL.first_achievement_pick = true;
+                        InsertEvent(SC.first_achievement_pick, i - 1);
+                        break;
+                    } 
+                    else
+                    {
+                        //Non tutorials
+                        InsertEvent(narrative.before_first_encounter[intro_index].gameObject, i - 1);
+                        intro_index++;
+
+                        if (intro_index >= narrative.before_first_encounter.Count)
+                        {
+                            break;
+                            i++;
+                        }
                     }
+                    
                 }
             }
         }

@@ -7259,7 +7259,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 243905401}
         m_TargetAssemblyTypeName: Neurotic, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7523,7 +7523,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 272713729}
         m_TargetAssemblyTypeName: RiskTaker, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7721,7 +7721,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 280003053}
         m_TargetAssemblyTypeName: Slaughterer, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8062,7 +8062,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 292334038}
         m_TargetAssemblyTypeName: Collector, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9188,7 +9188,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 484853834}
         m_TargetAssemblyTypeName: Survivor, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10874,7 +10874,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 742436650}
         m_TargetAssemblyTypeName: Traditionalist, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11924,7 +11924,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 960617514}
         m_TargetAssemblyTypeName: Experimentor, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12700,7 +12700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Picky
-  description: You can reroll rewards by clicking the rope gear ones after each fight.
+  description: Ones per fight, you can reroll rewards by clicking the rope gear.
   buffing:
     m_PersistentCalls:
       m_Calls: []
@@ -12712,7 +12712,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1065204960}
         m_TargetAssemblyTypeName: Picky, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12884,6 +12884,7 @@ MonoBehaviour:
   reward_tier: 1
   rewards_disabled: 0
   victory_barks: []
+  victory_message: {fileID: 0}
   first_turn: 1
   game_state: 4
 --- !u!114 &1066024787
@@ -12954,6 +12955,11 @@ MonoBehaviour:
   playthroughts: 0
   storyIndex: -1
   narrative_index: -1
+  first_victory: {fileID: 3768069680275742937, guid: 079ee5d6e1960a54abf8ebb55de51ba4, type: 3}
+  first_boss_intro: {fileID: 3768069680275742937, guid: 48c6dc499525cb44e911c62c470c45f8, type: 3}
+  first_boss_victory: {fileID: 3768069680275742937, guid: 868c4a66e36bb3c428eb3e81c9ba05d0, type: 3}
+  first_achievement: {fileID: 3768069680275742937, guid: 99006f26adc5acd49abd06638b7162b1, type: 3}
+  first_achievement_pick: {fileID: 3768069680275742937, guid: 39c82e93799bfb144b2ce049b6338ea2, type: 3}
 --- !u!114 &1066024792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13096,17 +13102,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb4b3dd452d89d4a9bc71d772974e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  first_greeting: 0
-  equip_instructions: 0
-  battle_instructions: 0
   first_forfeit: 0
   first_victory: 0
   first_boss_met: 0
   first_boss_beaten: 0
-  gear_upgrade_1: 0
-  gear_upgrade_2: 0
-  gear_upgrade_3: 0
   first_achievement: 0
+  first_achievement_pick: 0
 --- !u!1 &1086918255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1371170088414111626, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
@@ -19092,7 +19093,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1298052909}
         m_TargetAssemblyTypeName: Unyielding, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19277,7 +19278,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1300552746}
         m_TargetAssemblyTypeName: Plotter, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19795,7 +19796,7 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: 8fa7244700a3c5646908c5ce549a74c3, type: 3}
+  - {fileID: 1944698211339908181, guid: 078db46d1732a0744a627368a8fd7f6f, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
@@ -27119,7 +27120,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1698637733}
         m_TargetAssemblyTypeName: Madman, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32718,7 +32719,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1816700569}
         m_TargetAssemblyTypeName: HP_master, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38431,6 +38432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathScreen: {fileID: 1505469055}
   eventSystem: {fileID: 1066024785}
+  event_system: {fileID: 1066024785}
 --- !u!1 &1910697456 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1371170088414111626, guid: 1ca244630d06a134bb97f1f3b88cb43b, type: 3}
@@ -38642,7 +38644,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1977854765}
         m_TargetAssemblyTypeName: Relentless, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39333,7 +39335,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2052326890}
         m_TargetAssemblyTypeName: Slow, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Chosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

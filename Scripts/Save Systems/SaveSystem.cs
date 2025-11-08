@@ -46,7 +46,6 @@ public static class SaveSystem
     {
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = OpenFileStream(story_data, FileMode.Create);
-        Debug.Log(dead);
         if(dead)
         {
             story_controller.storyIndex = -1;

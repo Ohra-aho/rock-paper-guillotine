@@ -14,6 +14,7 @@ public class Contaminator : MonoBehaviour
     {
         controller = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>();
         controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
+        GameObject.Find("EventSystem").GetComponent<StoryCheckList>().first_boss_met = true;
     }
 
     private int MakeChoise(MainController.Choise choise)

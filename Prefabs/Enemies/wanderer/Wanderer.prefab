@@ -127,6 +127,7 @@ MonoBehaviour:
   victory_barks:
   - Well done. But now the real game begins.
   - At least you didn't embarass yourself.
+  victory_message: {fileID: 0}
 --- !u!114 &4638538761962290413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,3 +141,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stick_missed: 0
+  first_victory: {fileID: 3768069680275742937, guid: 079ee5d6e1960a54abf8ebb55de51ba4, type: 3}

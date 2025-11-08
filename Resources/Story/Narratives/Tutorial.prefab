@@ -51,7 +51,6 @@ MonoBehaviour:
   - {fileID: 503840598905201475, guid: 98948caa7d9070243bff93c7194f7b5c, type: 3}
   - {fileID: 3768069680275742937, guid: 1538014c1a584a647ae75befab5c32f0, type: 3}
   - {fileID: 503840598905201475, guid: 0263b2b182f9d0b419999914aab8d22f, type: 3}
-  - {fileID: 503840598905201475, guid: 71bd6d45af1a61b4e8234dc8955810d9, type: 3}
   first_victory: []
   boss_introduxtions:
   - {fileID: 3768069680275742937, guid: 9f52767a369a8a9498b261fb484acf96, type: 3}

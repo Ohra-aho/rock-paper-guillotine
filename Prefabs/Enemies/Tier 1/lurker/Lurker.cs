@@ -18,6 +18,7 @@ public class Lurker : MonoBehaviour
         
         if(taken_damage)
         {
+            taken_damage = false;
             return 0;
         } else if(tail_hit > 0)
         {

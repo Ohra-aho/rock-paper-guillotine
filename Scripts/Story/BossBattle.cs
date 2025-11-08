@@ -18,6 +18,10 @@ public class BossBattle : MonoBehaviour
 
     public void AddBossKill()
     {
+        if(tier == 1)
+        {
+            GameObject.Find("EventSystem").GetComponent<StoryCheckList>().first_boss_beaten = true;
+        }
         GameObject.Find("EventSystem").GetComponent<RLController>().bosses_killed++;
         if(GameObject.Find("EventSystem").GetComponent<RLController>().picks < tier)
         {

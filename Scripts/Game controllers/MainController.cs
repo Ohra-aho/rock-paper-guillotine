@@ -41,6 +41,7 @@ public class MainController : MonoBehaviour
     public bool rewards_disabled = false;
 
     public List<string> victory_barks;
+    public GameObject victory_message;
 
 
     //Achievement aids
@@ -77,6 +78,9 @@ public class MainController : MonoBehaviour
            // GetComponent<StoryController>().events.AddRange(playthroughts[0].GetComponent<Story>().events); 
         }
         BC = GameObject.Find("BarkHolder").GetComponent<BarkController>();
+
+        GetComponent<RLController>().Insiate();
+        GetComponent<StoryController>().Inisiate();
     }
 
     private void Update()
@@ -238,6 +242,7 @@ public class MainController : MonoBehaviour
 
     public void Win()
     {
+        if (!GetComponent<StoryCheckList>().first_victory) GetComponent<StoryCheckList>().first_victory = true;
         //Achievement victory effects
         GetComponent<RLController>().ActivateWinEffects();
 
@@ -314,9 +319,13 @@ public class MainController : MonoBehaviour
 
     public void DisplayVictoryBark()
     {
-        if(victory_barks.Count > 0)
+        if(victory_message != null)
         {
-            int chance = Random.Range(1, 2); //1, 4
+            Instantiate(victory_message, story_event_holder.transform);
+        }
+        else if(victory_barks.Count > 0)
+        {
+            int chance = Random.Range(1, 4); //1, 4
             if (chance == 1)
             {
                 BC.ActivateInstantBark(GiveRandomBark(victory_barks));

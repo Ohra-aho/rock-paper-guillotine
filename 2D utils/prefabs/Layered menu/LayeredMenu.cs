@@ -46,4 +46,11 @@ public class LayeredMenu : MonoBehaviour
             GameObject.Find("man").GetComponent<ManAnimator>().paused = false;
         }
     }
+
+    public void QuitGame()
+    {
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        controller.GetComponent<SaveHub>().SaveAll();
+        Application.Quit();
+    }
 }

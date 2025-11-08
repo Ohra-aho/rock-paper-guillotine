@@ -60,3 +60,4 @@ MonoBehaviour:
   - {fileID: 0}
   gear_changes: []
   end: []
+  death: {fileID: 0}
