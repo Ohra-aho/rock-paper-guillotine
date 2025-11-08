@@ -14,6 +14,8 @@ public class StoryCheckList : MonoBehaviour
     public bool first_achievement = false;
     public bool first_achievement_pick = false;
 
+    public int greeting_index = 0;
+
     public void SaveStoryCheckList()
     {
         CheckList data = new CheckList
@@ -25,7 +27,9 @@ public class StoryCheckList : MonoBehaviour
                 first_boss_beaten,
 
                 first_achievement,
-                first_achievement_pick
+                first_achievement_pick,
+
+                greeting_index
             );
         SaveSystem.SaveStoryChecklist(data);
     }
@@ -43,6 +47,8 @@ public class StoryCheckList : MonoBehaviour
 
             first_achievement = data.first_achievement;
             first_achievement_pick = data.first_achievement_pick;
+
+            greeting_index = data.greeting_index;
         }
     }
 
@@ -58,6 +64,8 @@ public class StoryCheckList : MonoBehaviour
         public bool first_achievement;
         public bool first_achievement_pick;
 
+        public int greeting_index;
+
         public CheckList
             (
                 bool first_forfeit,
@@ -67,7 +75,9 @@ public class StoryCheckList : MonoBehaviour
                 bool first_boss_beaten,
 
                 bool first_achievement,
-                bool first_achievement_pick
+                bool first_achievement_pick,
+
+                int greeting_index
             )
         {
             this.first_forfeit = first_forfeit;
@@ -76,6 +86,7 @@ public class StoryCheckList : MonoBehaviour
             this.first_boss_beaten = first_boss_beaten;
             this.first_achievement = first_achievement;
             this.first_achievement_pick = first_achievement_pick;
+            this.greeting_index = greeting_index;
         }
     }
 }

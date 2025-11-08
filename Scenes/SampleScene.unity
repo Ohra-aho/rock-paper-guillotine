@@ -7259,7 +7259,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 243905401}
         m_TargetAssemblyTypeName: Neurotic, Assembly-CSharp
-        m_MethodName: Chosen
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7305,7 +7305,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 1
+  hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
 --- !u!212 &243905400
@@ -7523,7 +7523,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 272713729}
         m_TargetAssemblyTypeName: RiskTaker, Assembly-CSharp
-        m_MethodName: Chosen
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7569,7 +7569,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 1
+  hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
 --- !u!212 &272713728
@@ -7721,7 +7721,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 280003053}
         m_TargetAssemblyTypeName: Slaughterer, Assembly-CSharp
-        m_MethodName: Chosen
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7767,7 +7767,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 1
+  hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
 --- !u!212 &280003056
@@ -8062,7 +8062,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 292334038}
         m_TargetAssemblyTypeName: Collector, Assembly-CSharp
-        m_MethodName: Chosen
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8108,7 +8108,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 1
+  hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
 --- !u!212 &292334037
@@ -9188,7 +9188,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 484853834}
         m_TargetAssemblyTypeName: Survivor, Assembly-CSharp
-        m_MethodName: Chosen
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9234,7 +9234,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 1
+  hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
 --- !u!212 &484853837
@@ -10874,7 +10874,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 742436650}
         m_TargetAssemblyTypeName: Traditionalist, Assembly-CSharp
-        m_MethodName: Chosen
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10920,7 +10920,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 1
+  hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
 --- !u!212 &742436649
@@ -11544,7 +11544,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 1
+  hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
 --- !u!212 &894558212
@@ -11924,7 +11924,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 960617514}
         m_TargetAssemblyTypeName: Experimentor, Assembly-CSharp
-        m_MethodName: Chosen
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11970,7 +11970,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 1
+  hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
 --- !u!212 &960617513
@@ -12712,7 +12712,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1065204960}
         m_TargetAssemblyTypeName: Picky, Assembly-CSharp
-        m_MethodName: Chosen
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12758,7 +12758,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 1
+  hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
 --- !u!212 &1065204959
@@ -13108,6 +13108,7 @@ MonoBehaviour:
   first_boss_beaten: 0
   first_achievement: 0
   first_achievement_pick: 0
+  first_greeting_ids: []
 --- !u!1 &1086918255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1371170088414111626, guid: a58b1fb028afc734792da4c072e51e83, type: 3}
@@ -19093,7 +19094,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1298052909}
         m_TargetAssemblyTypeName: Unyielding, Assembly-CSharp
-        m_MethodName: Chosen
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19139,7 +19140,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 1
+  hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
 --- !u!212 &1298052912
@@ -19278,7 +19279,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1300552746}
         m_TargetAssemblyTypeName: Plotter, Assembly-CSharp
-        m_MethodName: Chosen
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19324,7 +19325,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 1
+  hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
 --- !u!212 &1300552749
@@ -27120,7 +27121,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1698637733}
         m_TargetAssemblyTypeName: Madman, Assembly-CSharp
-        m_MethodName: Chosen
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27166,7 +27167,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 1
+  hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
 --- !u!212 &1698637736
@@ -27479,8 +27480,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.26, y: 4.58}
-  m_SizeDelta: {x: 720.53, y: 108.85}
+  m_AnchoredPosition: {x: 0, y: 0.0000071526}
+  m_SizeDelta: {x: 424.66, y: 108.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1773602591
 MonoBehaviour:
@@ -32719,7 +32720,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1816700569}
         m_TargetAssemblyTypeName: HP_master, Assembly-CSharp
-        m_MethodName: Chosen
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32777,7 +32778,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 1
+  hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
 --- !u!212 &1816700571
@@ -38644,7 +38645,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1977854765}
         m_TargetAssemblyTypeName: Relentless, Assembly-CSharp
-        m_MethodName: Chosen
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38690,7 +38691,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 1
+  hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
 --- !u!212 &1977854764
@@ -39335,7 +39336,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2052326890}
         m_TargetAssemblyTypeName: Slow, Assembly-CSharp
-        m_MethodName: Chosen
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39381,7 +39382,7 @@ MonoBehaviour:
   exit:
     m_PersistentCalls:
       m_Calls: []
-  hoverTint: 1
+  hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
 --- !u!212 &2052326889

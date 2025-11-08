@@ -35,7 +35,6 @@ public class RLController : MonoBehaviour
         {
             achievements.AddRange(data.achievements);
             picks = data.picks;
-            picks = 0;
         }
 
         background = GameObject.Find("main screen background");

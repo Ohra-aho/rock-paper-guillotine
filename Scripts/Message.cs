@@ -21,6 +21,14 @@ public class Message : MonoBehaviour
 
     private void Awake()
     {
+        if(lines.Count > 0)
+        {
+            Inisiate();
+        }  
+    }
+
+    public void Inisiate()
+    {
         MA = GameObject.Find("man").GetComponent<ManAnimator>();
         MC = GameObject.Find("EventSystem").GetComponent<MainController>();
 
@@ -47,7 +55,7 @@ public class Message : MonoBehaviour
         }
 
         DisableButtons();
-        GetComponent<StoryEvent>().Procceed();   
+        GetComponent<StoryEvent>().Procceed();
     }
 
 
