@@ -48,7 +48,7 @@ MonoBehaviour:
   lines:
   - Now it's time fo your last battle.
   - Attach your weapons to the gear and put it back in it's place.
-  sprite_frames: 0600000000000000
+  sprite_frames: 0200000000000000
   activated: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:

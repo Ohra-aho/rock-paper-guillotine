@@ -103,7 +103,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Black powder
-  description: Each time one of your weapons is destroyed, deal 1 damage.
+  description: Each time one of your weapons is destroyed, deal 1 damage. (Continuous)
   sprite: {fileID: 21300000, guid: 41d16a9c9614d144e9851b6ea2e759aa, type: 3}
   first_turn:
     m_PersistentCalls:

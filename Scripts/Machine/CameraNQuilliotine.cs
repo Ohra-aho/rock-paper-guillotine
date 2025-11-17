@@ -39,4 +39,10 @@ public class CameraNQuilliotine : MonoBehaviour
         SaveSystem.DeleteFile(SaveSystem.achievement_data);
         SaveSystem.DeleteFile(SaveSystem.story_checklist_data);
     }
+
+    public void HeadFalls()
+    {
+        Camera.main.GetComponent<CameraMovement>().disabled = true;
+        Camera.main.GetComponent<Test>().PlayAnimation("Death");
+    }
 }
