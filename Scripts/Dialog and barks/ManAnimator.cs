@@ -26,6 +26,7 @@ public class ManAnimator : MonoBehaviour
     //6: left hand up fist
     public Sprite[] man_sheet;
     public Sprite[] bark_sheet;
+    public Sprite[] idle_sheet;
 
     int clip;
 
@@ -35,10 +36,13 @@ public class ManAnimator : MonoBehaviour
 
     public bool paused = false;
 
+    Coroutine idle;
+
     // Start is called before the first frame update
     void Start()
     {
         settings = GameObject.FindGameObjectWithTag("GameController").GetComponent<SoundSettings>();
+        //idle = StartCoroutine(IdleAnimation());
     }
 
     // Update is called once per frame
@@ -199,6 +203,31 @@ public class ManAnimator : MonoBehaviour
         current_frame = 0;
         dialog_box.GetComponent<DialogBox>().StartAnimation(0);
         PlayFrame(current_frames[current_frame]);
+    }
+
+    bool idle_seen = false;
+    IEnumerator IdleAnimation()
+    {
+        while(controller.game_state != MainController.State.dead)
+        {
+            if (current_frames == null && current_bark == null)
+            {
+                yield return new WaitForSeconds(1f);
+                int chance = Random.Range(1, 5);
+                if (chance == 1 && !idle_seen)
+                {
+                    GetComponent<SpriteRenderer>().sprite = idle_sheet[Random.Range(0, idle_sheet.Length)];
+                    yield return new WaitForSeconds(0.5f);
+                    GetComponent<SpriteRenderer>().sprite = man_sheet[0];
+                    idle_seen = true;
+                }
+                if (idle_seen)
+                {
+                    yield return new WaitForSeconds(Random.Range(5, 21));
+                    idle_seen = false;
+                }
+            }
+        }
     }
 
     //Animations

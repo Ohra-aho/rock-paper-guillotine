@@ -43,6 +43,8 @@ public class Revard : MonoBehaviour
     {
         if(MC.buttons_active)
         {
+            transform.parent.position = new Vector3(transform.parent.position.x, transform.parent.position.y - 0.2f, transform.parent.position.z);
+
             player.GetComponent<PlayerInventory>().AddItem(actualReward);
             //Get rid of info
             if (visibleInfo != null) DestroyInfo();

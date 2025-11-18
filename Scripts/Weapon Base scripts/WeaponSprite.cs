@@ -76,6 +76,7 @@ public class WeaponSprite : MonoBehaviour
         player.DisplayChoises();
         displaySprite();
         DestroyInfo();
+        transform.parent.GetChild(1).GetComponent<DropDetector>().PlayAudio(6);
     }
 
     public void DisplayInfo()

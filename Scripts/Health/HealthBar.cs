@@ -53,7 +53,23 @@ public class HealthBar : MonoBehaviour
             }
         }
         dead = CheckIfDead();
-        if(gameObject.CompareTag("PlayerHealth")) LowHealthReaction();
+        if (gameObject.CompareTag("PlayerHealth") && !dead) {
+            //Damage animations
+            if(GiveCurrentHealth() >= GiveMaxHealth() - GiveMaxHealth()/3)
+            {
+                Camera.main.GetComponent<Test>().PlayAnimation("Damage 1");
+            }
+            else if(GiveCurrentHealth() <= GiveMaxHealth()/2 && GiveCurrentHealth() > GiveMaxHealth()/3)
+            {
+                Camera.main.GetComponent<Test>().PlayAnimation("Damage 2");
+            }
+            else if(GiveCurrentHealth() <= GiveMaxHealth() / 3)
+            {
+                Camera.main.GetComponent<Test>().PlayAnimation("Damage 3");
+            }
+            
+            LowHealthReaction();
+        };
         if(!dead) HighDamageReaction(damage);
     }
 

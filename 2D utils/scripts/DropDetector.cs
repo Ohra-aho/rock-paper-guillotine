@@ -27,6 +27,7 @@ public class DropDetector : MonoBehaviour
     public void changeWeapon(GameObject newWeapon, int index)
     {
         PlayAudio(5);
+        transform.parent.GetChild(0).GetComponent<Test>().PlayAnimation("Equip");
         if(weaponHolder.GetComponent<WeaponSprite>().weapon != null)
         {
             GameObject.Find("InventoryMenu(Clone)").GetComponent<InventoryMenu>()
