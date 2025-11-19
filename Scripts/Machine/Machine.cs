@@ -97,9 +97,21 @@ public class Machine : MonoBehaviour
     }
 
     //Look some time if there is better way
+    bool reverse = false;
     public void ActivateParticle(int index)
     {
-        if(index == 2) transform.GetChild(0).GetChild(4).GetComponent<Test>().PlayAnimation("Reveal bulbs");
+        if (index == 2) 
+        { 
+            if(!reverse)
+            {
+                transform.GetChild(0).GetChild(4).GetComponent<Test>().PlayAnimation("Reveal bulbs");
+            } else
+            {
+                transform.GetChild(0).GetChild(4).GetComponent<Test>().PlayAnimation("Hide bulbs");
+            }
+            reverse = !reverse;
+        }
+        
         sparks[index].GetComponent<ParticleSystem>().Play();
     }
 

@@ -36,7 +36,9 @@ public class PlayerContoller : MonoBehaviour
     {
         for (int i = 0; i < 6; i++)
         {
-            Instantiate(choise_panel, transform);
+            GameObject panel = Instantiate(choise_panel, transform);
+            panel.transform.GetChild(0).GetComponent<SpriteMask>().frontSortingOrder = i;
+            panel.transform.GetChild(1).GetComponent<SpriteRenderer>().sortingOrder = i;
         }
         InstanciateRealWeapons();
         LoadPlayerData();

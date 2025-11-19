@@ -37,17 +37,21 @@ public class CHoisePanel : MonoBehaviour
         if (weapon == null)
         {
             weapon_name = "";
+            transform.GetChild(1).GetComponent<Test>().PlayAnimation("Hide");
+        } else
+        {
+            transform.GetChild(1).GetComponent<Test>().PlayAnimation("Reveal");
         }
 
         if(weapon_name != null && weapon_name != "")
         {
             GetComponent<NonUIButton>().interactable = true;
 
-            if (transform.childCount <= 0)
+            if (transform.GetChild(2).childCount <= 0)
             {
                 for (int i = 0; i < 8; i++)
                 {
-                    GameObject chr = Instantiate(character, transform);
+                    GameObject chr = Instantiate(character, transform.GetChild(2));
                 }
             }
             character_sheet = Resources.LoadAll<Sprite>("aakkosto");
@@ -57,34 +61,34 @@ public class CHoisePanel : MonoBehaviour
                 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'å', 'ä', 'ö'
             };
             char[] divided_name = weapon_name.ToLower().ToCharArray();
-            for (int i = 0; i < transform.childCount; i++)
+            for (int i = 0; i < transform.GetChild(2).childCount; i++)
             {
-                transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+                transform.GetChild(2).GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
             }
             for (int i = 0; i < divided_name.Length; i++)
             {
                 try
                 {
                     int index = Array.IndexOf(characters, divided_name[i]);
-                    transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = character_sheet[index];
+                    transform.GetChild(2).GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = character_sheet[index];
                 }
                 catch
                 {
-                    if(i < transform.childCount)
+                    if(i < transform.GetChild(2).childCount)
                     {
-                        transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+                        transform.GetChild(2).GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
                     }
                 }
             }
         } else
         {
             GetComponent<NonUIButton>().interactable = false;
-            if (transform.childCount <= 0)
+            if (transform.GetChild(2).childCount <= 0)
             {
                 for (int i = 0; i < 8; i++)
                 {
-                    GameObject chr = Instantiate(character, transform);
-                    transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+                    GameObject chr = Instantiate(character, transform.GetChild(2));
+                    transform.GetChild(2).GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
                 }
             } else
             {
@@ -95,9 +99,18 @@ public class CHoisePanel : MonoBehaviour
 
     public void ClearName()
     {
-        for(int i = 0; i < transform.childCount; i++)
+        if (MC.game_state != MainController.State.re_arming)
         {
-            transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+            transform.GetChild(1).GetComponent<Test>().PlayAnimation("Hide");
+        }
+        else TrueClear();
+    }
+
+    public void TrueClear()
+    {
+        for (int i = 0; i < transform.GetChild(2).childCount; i++)
+        {
+            transform.GetChild(2).GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
         }
     }
 

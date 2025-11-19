@@ -22,6 +22,7 @@ public class Test : MonoBehaviour
 
     public void PlayAnimation(string trigger)
     {
+        GetComponent<Animator>().speed = 1;
         GetComponent<Animator>().SetTrigger(trigger);
     }
 
