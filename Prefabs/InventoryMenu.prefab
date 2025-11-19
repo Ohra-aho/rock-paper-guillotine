@@ -146,6 +146,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hoverOver:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &5211580441867743584
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -326,7 +329,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 035ba649a81770744b64cfa7a8c1f7ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c3d1231f1522ef443b3f4974c9b7763b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

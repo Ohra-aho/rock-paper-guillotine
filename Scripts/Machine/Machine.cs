@@ -99,6 +99,7 @@ public class Machine : MonoBehaviour
     //Look some time if there is better way
     public void ActivateParticle(int index)
     {
+        if(index == 2) transform.GetChild(0).GetChild(4).GetComponent<Test>().PlayAnimation("Reveal bulbs");
         sparks[index].GetComponent<ParticleSystem>().Play();
     }
 

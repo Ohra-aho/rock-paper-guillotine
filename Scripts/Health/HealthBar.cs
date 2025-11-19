@@ -197,16 +197,32 @@ public class HealthBar : MonoBehaviour
         max_health += amount;
         current_health += amount;
         int damage_taken = max_health - current_health;
+
+        if (!FullHealthBar())
+        {
+            if (MC.game_state == MainController.State.in_battle) {
+                transform.parent.GetChild(4).GetComponent<Test>().PlayAnimation("Change health"); 
+            } else
+            {
+                int x = max_health;
+                int y = current_health;
+                if (x > HP_gap) x = HP_gap;
+                if (y > HP_gap) y = HP_gap;
+                DestroyHealthBar();
+                RecostructHealthBar(x, y, in_view);
+            }
+            
+        }
+    }
+
+    public void TrueReconstruct()
+    {
         int x = max_health;
         int y = current_health;
         if (x > HP_gap) x = HP_gap;
         if (y > HP_gap) y = HP_gap;
-
-        if (!FullHealthBar())
-        {
-            DestroyHealthBar();
-            RecostructHealthBar(x, y, in_view);
-        }
+        DestroyHealthBar();
+        RecostructHealthBar(x, y, true);
     }
 
     public void DecreaseHealthBar(int amount, bool in_view)

@@ -13,7 +13,6 @@ public class Test : MonoBehaviour
     private void Start()
     {
         if (continious) GetComponent<Animator>().speed = 0;
-       
     }
 
     public void InvokeTrigger()
