@@ -35,7 +35,10 @@ public class RewardMenu : MonoBehaviour
         rope = GameObject.Find("Roope");
         rope.GetComponent<Test>().PlayAnimation("Move");
         rope.GetComponent<Test>().UnPauseAnimation();
-        GameObject.Find("Reward reroll").GetComponent<Test>().UnPauseAnimation();
+        GameObject re_re = GameObject.Find("Reward reroll");
+        re_re.GetComponent<Test>().UnPauseAnimation();
+        re_re.GetComponent<Test>().PlayAudio(1);
+        re_re.GetComponent<Test>().PlayAudio(0);
     }
 
     private void Update()
@@ -57,6 +60,8 @@ public class RewardMenu : MonoBehaviour
 
     public void EnableRewards()
     {
+        GameObject re_re = GameObject.Find("Reward reroll");
+        re_re.GetComponent<Test>().StopAudio(0);
         GameObject.Find("Reward reroll").GetComponent<Test>().PauseAnimation();
         for (int i = 0; i < 3; i++)
         {
@@ -78,7 +83,9 @@ public class RewardMenu : MonoBehaviour
 
     public void ObliterateThis()
     {
-        GameObject.Find("Reward reroll").GetComponent<Test>().PauseAnimation();
+        GameObject re_re = GameObject.Find("Reward reroll");
+        re_re.GetComponent<Test>().PauseAnimation();
+        re_re.GetComponent<Test>().StopAudio(0);
         EndAudio();
         Destroy(gameObject);
     }

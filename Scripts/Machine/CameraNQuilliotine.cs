@@ -42,7 +42,6 @@ public class CameraNQuilliotine : MonoBehaviour
 
     public void HeadFalls()
     {
-        Camera.main.GetComponent<CameraMovement>().disabled = true;
         Camera.main.GetComponent<Test>().PlayAnimation("Death");
     }
 }
