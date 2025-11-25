@@ -114,6 +114,14 @@ public class CHoisePanel : MonoBehaviour
         }
     }
 
+    public void PlayAudio()
+    {
+        if(MC.game_state == MainController.State.re_arming)
+        {
+            transform.GetChild(1).GetComponent<Test>().PlayAudio(0);
+        }
+    }
+
     public void Choise()
     {
         if(!transform.parent.gameObject.GetComponent<PlayerContoller>().spinning && MC.game_state == MainController.State.in_battle)

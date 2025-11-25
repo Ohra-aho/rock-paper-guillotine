@@ -8,16 +8,28 @@ public class Test : MonoBehaviour
     public bool continious = false;
     public UnityEvent trigger;
 
+    public List<UnityEvent> multiple_triggers;
+
     public bool reverse = false;
+
+    public MainController.State state_requirement;
+
+    MainController MC; 
 
     private void Start()
     {
         if (continious) GetComponent<Animator>().speed = 0;
+        MC = GameObject.Find("EventSystem").GetComponent<MainController>();
     }
 
     public void InvokeTrigger()
     {
         trigger.Invoke();
+    }
+
+    public void InvokeMultiTrigger(int index)
+    {
+        multiple_triggers[index].Invoke();
     }
 
     public void PlayAnimation(string trigger)
@@ -75,7 +87,16 @@ public class Test : MonoBehaviour
 
     public void PlayAudio(int clip)
     {
-        if(!reverse) transform.GetChild(LastIndex()).GetChild(clip).GetComponent<AudioPlayer>().PlayClip();    
+        if(state_requirement != MainController.State.any)
+        {
+            if(MC.game_state == state_requirement)
+            {
+                if (!reverse) transform.GetChild(LastIndex()).GetChild(clip).GetComponent<AudioPlayer>().PlayClip();
+            }
+        } else
+        {
+            if (!reverse) transform.GetChild(LastIndex()).GetChild(clip).GetComponent<AudioPlayer>().PlayClip();
+        }
     }
 
     public void PlayAudioIfReverse(int clip)
@@ -89,18 +110,6 @@ public class Test : MonoBehaviour
     //Might need some sort of fade out of something
     public void StopAudio(int clip)
     {
-        /*for(int i = 0; i < transform.childCount; i++)
-        {
-            if()
-            {
-
-            }
-        }*/
         transform.GetChild(LastIndex()).GetChild(clip).GetComponent<AudioPlayer>().StopClip();
-    }
-
-    public void LastLoop(int clip)
-    {
-        //transform.GetChild(LastIndex()).GetChild(clip).GetComponent<AudioPlayer>().StopLoop();
     }
 }

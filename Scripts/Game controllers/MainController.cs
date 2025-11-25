@@ -58,6 +58,7 @@ public class MainController : MonoBehaviour
 
     public enum State
     {
+        any,
         in_battle,
         re_arming,
         transition,

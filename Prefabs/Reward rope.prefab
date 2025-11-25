@@ -218,7 +218,9 @@ MonoBehaviour:
   trigger:
     m_PersistentCalls:
       m_Calls: []
+  multiple_triggers: []
   reverse: 0
+  state_requirement: 0
 --- !u!95 &1663819977986765526
 Animator:
   serializedVersion: 5
@@ -680,6 +682,10 @@ PrefabInstance:
     - target: {fileID: 4787691903558563149, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722235633458634849, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
+      propertyPath: volume_modifier
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 36985129395244446, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}

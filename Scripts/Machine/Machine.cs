@@ -22,6 +22,9 @@ public class Machine : MonoBehaviour
 
     public bool round_started = false;
 
+    //Look some time if there is better way
+    bool reverse = false;
+
     public void FirstTurn()
     {
         if(round_started)
@@ -63,7 +66,7 @@ public class Machine : MonoBehaviour
         InvokeBossGearChange();
         rightSide.transform.GetChild(3).GetComponent<EnemyController>().HandleEnemy();
         ToggleIdle();
-        EndTheGame(); //Currently the only way to lose
+        EndTheGame();
     }
 
     public void ToggleInBattle()
@@ -96,8 +99,6 @@ public class Machine : MonoBehaviour
         }
     }
 
-    //Look some time if there is better way
-    bool reverse = false;
     public void ActivateParticle(int index)
     {
         if (index == 2) 
@@ -141,5 +142,10 @@ public class Machine : MonoBehaviour
             }
             active_gear.SetActive(false);
         }
+    }
+
+    public void PlayEnemyChangeAudio()
+    {
+        GetComponent<Test>().PlayAudioIfReverse(4);
     }
 }
