@@ -10,6 +10,7 @@ public static class SaveSystem
     public static string player_data = "player_data";
     public static string achievement_data = "achievement_data";
     public static string story_checklist_data = "story_checklist_data";
+    public static string sound_setting_data = "sound_settings_data";
 
     //Utilities
     private static string MainPath(string file)
@@ -208,4 +209,28 @@ public static class SaveSystem
         return null;
     }
 
+
+    //Sound settings
+    public static void SaveSoundSettings(SoundData data)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = OpenFileStream(sound_setting_data, FileMode.Create);
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+
+    public static SoundData LoadSoundSettings()
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = OpenFileStream(sound_setting_data, FileMode.Open);
+
+        if (stream != null)
+        {
+            SoundData data = formatter.Deserialize(stream) as SoundData;
+            stream.Close();
+            return data;
+        }
+        return null;
+    }
 }

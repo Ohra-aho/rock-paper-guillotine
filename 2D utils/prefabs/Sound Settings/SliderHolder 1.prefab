@@ -998,3 +998,5 @@ MonoBehaviour:
   name: M
   value: 0.5
   mute: 0
+  muteNeeded: 1
+  settings: EventSystem

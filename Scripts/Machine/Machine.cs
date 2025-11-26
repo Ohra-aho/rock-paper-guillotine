@@ -146,6 +146,6 @@ public class Machine : MonoBehaviour
 
     public void PlayEnemyChangeAudio()
     {
-        GetComponent<Test>().PlayAudioIfReverse(4);
+        if(MC.GetComponent<MainController>().game_state != MainController.State.dead) GetComponent<Test>().PlayAudioIfReverse(4);
     }
 }

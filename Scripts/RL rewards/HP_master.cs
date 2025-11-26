@@ -11,6 +11,6 @@ public class HP_master : MonoBehaviour
 
     private void IncreaseHP()
     {
-        GameObject.Find("PlayerHealth").GetComponent<HealthBar>().IncreaseHealthBar(1, false);
+        GameObject.Find("PlayerHealth").GetComponent<HealthBar>().IncreaseHealthBar(2, false);
     }
 }

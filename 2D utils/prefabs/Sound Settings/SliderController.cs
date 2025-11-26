@@ -20,6 +20,7 @@ public class SliderController : MonoBehaviour
     {
         transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = name;
         transform.GetChild(1).GetComponent<Slider>().value = value;
+        transform.GetChild(3).GetComponent<Toggle>().isOn = !mute;
         if(!muteNeeded)
         {
             transform.GetChild(3).gameObject.SetActive(false);

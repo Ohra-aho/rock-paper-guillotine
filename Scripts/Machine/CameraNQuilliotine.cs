@@ -24,6 +24,7 @@ public class CameraNQuilliotine : MonoBehaviour
         SaveSystem.SaveStoryData(eventSystem.GetComponent<StoryController>(), true);
         event_system.GetComponent<RLController>().SaveAchievements();
         event_system.GetComponent<StoryCheckList>().SaveStoryCheckList();
+        event_system.GetComponent<SoundSettings>().SaveSoundSettings();
 
         SaveSystem.DeleteFile(SaveSystem.player_weapon_data);
         SaveSystem.DeleteFile(SaveSystem.player_data);
