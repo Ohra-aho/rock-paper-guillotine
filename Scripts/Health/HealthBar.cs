@@ -69,8 +69,12 @@ public class HealthBar : MonoBehaviour
             }
             
             LowHealthReaction();
-        };
+        }
         if(!dead) HighDamageReaction(damage);
+        if(dead)
+        {
+            Camera.main.GetComponent<Test>().PlayAnimation("dead react");
+        }
     }
 
     public void HealDamage(int damage)
