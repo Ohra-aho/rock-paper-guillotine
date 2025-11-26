@@ -108,9 +108,12 @@ public class CHoisePanel : MonoBehaviour
 
     public void TrueClear()
     {
-        for (int i = 0; i < transform.GetChild(2).childCount; i++)
+        if(weapon_name == "")
         {
-            transform.GetChild(2).GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+            for (int i = 0; i < transform.GetChild(2).childCount; i++)
+            {
+                transform.GetChild(2).GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+            }
         }
     }
 

@@ -67,14 +67,17 @@ public class HealthBar : MonoBehaviour
             {
                 Camera.main.GetComponent<Test>().PlayAnimation("Damage 3");
             }
-            
+
             LowHealthReaction();
+        } else if(gameObject.CompareTag("PlayerHealth"))
+        {
+            if (dead)
+            {
+                Camera.main.GetComponent<Test>().PlayAnimation("dead react");
+            }
         }
         if(!dead) HighDamageReaction(damage);
-        if(dead)
-        {
-            Camera.main.GetComponent<Test>().PlayAnimation("dead react");
-        }
+        
     }
 
     public void HealDamage(int damage)

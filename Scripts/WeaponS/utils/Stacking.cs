@@ -62,4 +62,9 @@ public class Stacking : MonoBehaviour
         }
         return 0;
     }
+
+    public bool IsAtLimit()
+    {
+        return stacks == stack_limit;
+    }
 }

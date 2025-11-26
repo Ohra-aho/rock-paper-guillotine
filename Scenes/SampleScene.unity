@@ -26787,7 +26787,7 @@ MonoBehaviour:
   ongoing: 0
   mute: 0
   volume: 1
-  volume_modifier: 10
+  volume_modifier: 5
   pitch: 1
   stereo_pan: 0
 --- !u!1 &1622991873
