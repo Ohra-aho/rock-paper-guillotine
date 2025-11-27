@@ -102,9 +102,9 @@ public class WeaponSprite : MonoBehaviour
                 visibleInfo.transform.GetChild(0)
                     .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().name;
                 visibleInfo.transform.GetChild(1).GetChild(0)
-                    .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().damage.ToString();
+                    .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().GiveEffectiveDamage().ToString();
                 visibleInfo.transform.GetChild(1).GetChild(1)
-                    .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().armor.ToString();
+                    .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().GiveEffectiveArmor().ToString();
 
                 if (weapon.GetComponent<Stacking>())
                 {

@@ -83,8 +83,34 @@ public class Weapon : MonoBehaviour
         return false;
     }
 
+    public int GiveEffectiveDamage()
+    {
+        int damage_bonus = 0;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            damage_bonus += transform.GetChild(i).GetComponent<Buff>().damage_buff;
+        }
+        return damage + damage_bonus;
+    }
+
+    public int GiveEffectiveArmor()
+    {
+        int armor_bonus = 0;
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            armor_bonus += transform.GetChild(i).GetComponent<Buff>().armor_buff;
+        }
+        return armor + armor_bonus;
+    }
+
     public void TakeDamage(int amount)
     {
+        int armor_bonus = 0;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            armor_bonus += transform.GetChild(i).GetComponent<Buff>().armor_buff;
+        }
+
         int realDamage;
         if(!opponent.penetrating)
         {
@@ -101,7 +127,12 @@ public class Weapon : MonoBehaviour
 
     public void DealDamage(Weapon target)
     {
-        target.TakeDamage(damage);
+        int damage_bonus = 0;
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            damage_bonus += transform.GetChild(i).GetComponent<Buff>().damage_buff;
+        }
+        target.TakeDamage(damage+damage_bonus);
         CheckUp();
     }
 

@@ -144,8 +144,8 @@ public class CHoisePanel : MonoBehaviour
         {
             GameObject info = GameObject.Find("Canvas").transform.GetChild(9).gameObject;
             info.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon_name;
-            info.transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.damage.ToString();
-            info.transform.GetChild(1).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.armor.ToString();
+            info.transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.GiveEffectiveDamage().ToString();
+            info.transform.GetChild(1).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.GiveEffectiveArmor().ToString();
             if (weapon.GetComponent<Stacking>()) {
                 info.transform.GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(200f, 40f);
                 info.transform.GetChild(1).GetComponent<RectTransform>().localScale = new Vector2(0.75f, 0.75f);

@@ -71,7 +71,7 @@ public class Buff : MonoBehaviour
             {
                 damage_buff = -transform.parent.GetComponent<Weapon>().damage;
             }
-            transform.parent.GetComponent<Weapon>().damage += damage_buff;
+            //transform.parent.GetComponent<Weapon>().damage += damage_buff;
         }
 
         if (armor_buff != 0)
@@ -80,7 +80,7 @@ public class Buff : MonoBehaviour
             {
                 armor_buff = -transform.parent.GetComponent<Weapon>().armor;
             }
-            transform.parent.GetComponent<Weapon>().armor += armor_buff;
+            //transform.parent.GetComponent<Weapon>().armor += armor_buff;
         }
 
         if (effect_damage_buff != 0)
@@ -151,7 +151,7 @@ public class Buff : MonoBehaviour
             {
                 damage_buff = transform.parent.GetComponent<Weapon>().damage;
             }
-            transform.parent.GetComponent<Weapon>().damage -= damage_buff;
+            //transform.parent.GetComponent<Weapon>().damage -= damage_buff;
 
         }
 
@@ -161,7 +161,7 @@ public class Buff : MonoBehaviour
             {
                 armor_buff = transform.parent.GetComponent<Weapon>().armor;
             }
-            transform.parent.GetComponent<Weapon>().armor -= armor_buff;
+            //transform.parent.GetComponent<Weapon>().armor -= armor_buff;
         }
 
         if (effect_damage_buff != 0)
