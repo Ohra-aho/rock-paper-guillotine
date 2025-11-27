@@ -104,6 +104,9 @@ MonoBehaviour:
   name: Dodge
   description: After use, all other weapons gain +1 armor during the next turn.
   sprite: {fileID: 21300000, guid: 1ca580e0f3215044fb2301b30b5fe037, type: 3}
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -171,6 +174,8 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks: []
 --- !u!114 &8735357463152483393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,8 +191,10 @@ MonoBehaviour:
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
   damage_bonus: 0
   armor_bonus: 0
+  effect_damage_bonus: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
+  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
@@ -209,6 +216,7 @@ MonoBehaviour:
   timer: 0
   penetrating: 0
   draw_winner: 0
+  health_buff: 0
   destructive: 0
 --- !u!114 &-8691021010670127
 MonoBehaviour:

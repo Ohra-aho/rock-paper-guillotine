@@ -143,7 +143,8 @@ public class CHoisePanel : MonoBehaviour
         if(weapon_name != "" && weapon_name != null)
         {
             GameObject info = GameObject.Find("Canvas").transform.GetChild(9).gameObject;
-            info.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon_name;
+            info.GetComponent<WeaponInfo>().weapon = weapon;
+            /*info.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon_name;
             info.transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.GiveEffectiveDamage().ToString();
             info.transform.GetChild(1).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.GiveEffectiveArmor().ToString();
             if (weapon.GetComponent<Stacking>()) {
@@ -176,7 +177,7 @@ public class CHoisePanel : MonoBehaviour
                 case MainController.Choise.voittamaton:
                     info.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = icons[4];
                     break;
-            }
+            }*/
 
             info.SetActive(true);
         }

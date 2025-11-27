@@ -22,13 +22,20 @@ public class TallMan : MonoBehaviour
             return GetComponent<BasicEnemy>().MakeChoise(MainController.Choise.kivi);
         } else
         {
-            hurt = false;
-            return 1;
+            if (GameObject.Find("Seerumi(Clone)").GetComponent<Stacking>().stacks > 0)
+            {
+                hurt = false;
+                return 1;
+            }
+            return GetComponent<BasicEnemy>().MakeChoise(MainController.Choise.kivi);
         }
     }
 
     public void TakeDamage()
     {
-        hurt = true;
+        if(GetComponent<BasicEnemy>().HB.GiveCurrentHealth() <= 2)
+        {
+            hurt = true;
+        }
     }
 }

@@ -40,8 +40,8 @@ public class EnemyWeaponInfo : MonoBehaviour
                     info.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = symbols[4];
                     break;
             }
-            info.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = weapon.damage.ToString();
-            info.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = weapon.armor.ToString();
+            info.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = weapon.GiveEffectiveDamage().ToString();
+            info.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = weapon.GiveEffectiveArmor().ToString();
             info.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = weapon.description;
         }
     }

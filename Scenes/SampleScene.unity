@@ -12223,6 +12223,7 @@ GameObject:
   - component: {fileID: 950168361}
   - component: {fileID: 950168363}
   - component: {fileID: 950168362}
+  - component: {fileID: 950168364}
   m_Layer: 5
   m_Name: player weapon info
   m_TagString: infobox
@@ -12290,6 +12291,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950168360}
   m_CullTransparentMesh: 1
+--- !u!114 &950168364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950168360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa6a5681da73c64aa826ebe29282400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
+  icons:
+  - {fileID: 21300000, guid: 95f724b909ecdb94d88fa04576f68942, type: 3}
+  - {fileID: 21300000, guid: 216225b3908260c40a1f393d0f86ddf8, type: 3}
+  - {fileID: 21300000, guid: 1f343e7416db9ca4b8ba4dae9a4b2af1, type: 3}
+  - {fileID: 21300000, guid: f0e41909c0d6d6a48a5d4b8e19513d8b, type: 3}
+  - {fileID: 21300000, guid: 7a63350e1538e1e4eb79323b1d08d629, type: 3}
 --- !u!1 &960617508
 GameObject:
   m_ObjectHideFlags: 0
@@ -13326,7 +13346,7 @@ MonoBehaviour:
   victory_barks: []
   victory_message: {fileID: 0}
   first_turn: 1
-  game_state: 4
+  game_state: 5
 --- !u!114 &1066024787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20350,7 +20370,8 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: 048dd4a1f920edd42bb2f11dcc121a96, type: 3}
+  - {fileID: 1944698211339908181, guid: dc1ef5819bdc39f49b92496cf806f33b, type: 3}
+  - {fileID: 1944698211339908181, guid: dc1ef5819bdc39f49b92496cf806f33b, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623

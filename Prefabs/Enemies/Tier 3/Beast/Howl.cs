@@ -21,6 +21,7 @@ public class Howl : MonoBehaviour
                 GameObject new_buff = Instantiate(buff, weapon.transform);
                 new_buff.GetComponent<Buff>().id = GetComponent<Weapon>().name;
                 new_buff.GetComponent<Buff>().timer = 1;
+                new_buff.GetComponent<Buff>().temporary = true;
                 new_buff.GetComponent<Buff>().destructive = true;
                 new_buff.GetComponent<Buff>().AddBuff();
             }

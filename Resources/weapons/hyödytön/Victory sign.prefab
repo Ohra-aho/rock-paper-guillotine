@@ -208,7 +208,7 @@ MonoBehaviour:
   effect_damage_bonus: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
-  always_on: 1
+  always_on: 0
   choisePhase: 0
   resultPhase: 0
   endPhase: 0

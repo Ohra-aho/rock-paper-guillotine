@@ -14,7 +14,6 @@ public class MeteoriSade : MonoBehaviour
 
     public void DealDamageToAmountOfStones()
     {
-        GetComponent<EffectDamage>().amount -= damage;
         damage = 0;
         for(int i = 0; i < RI.transform.childCount; i++)
         {

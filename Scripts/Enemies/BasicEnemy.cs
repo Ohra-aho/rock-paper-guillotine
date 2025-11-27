@@ -32,6 +32,8 @@ public class BasicEnemy : MonoBehaviour
     public List<string> victory_barks;
     public GameObject victory_message;
 
+    public HealthBar HB;
+
     private void Awake()
     {
         controller = GameObject.FindGameObjectWithTag("EnemyHolder");
@@ -49,6 +51,7 @@ public class BasicEnemy : MonoBehaviour
         if (victory_message != null) MC.victory_message = victory_message;
         else MC.victory_message = null;
 
+        HB = GameObject.Find("EnemyHealth").GetComponent<HealthBar>();
 
     }
 

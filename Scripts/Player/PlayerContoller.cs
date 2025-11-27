@@ -9,7 +9,7 @@ public class PlayerContoller : MonoBehaviour
     private EnemyController currentEnemy;
     public HealthBar HB;
 
-    //[HideInInspector] public int maxHealth = 1;f
+    //[HideInInspector] public int maxHealth = 1;
     private int maxHealth = 2;
     [HideInInspector] public int damage = 0;
     [HideInInspector] public int armor = 0;
@@ -235,7 +235,6 @@ public class PlayerContoller : MonoBehaviour
 
     public void TakeDamage()
     {
-        Debug.Log("Takeing damage");
         bool dead = HB.GetComponent<HealthBar>().CheckIfDead();
 
         if (dead) MC.Loose();

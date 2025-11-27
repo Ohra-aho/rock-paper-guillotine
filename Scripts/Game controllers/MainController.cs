@@ -43,6 +43,8 @@ public class MainController : MonoBehaviour
     public List<string> victory_barks;
     public GameObject victory_message;
 
+    GameObject RI;
+
 
     //Achievement aids
     [HideInInspector] public bool first_turn = true;
@@ -74,11 +76,8 @@ public class MainController : MonoBehaviour
 
     private void Start()
     {
-        first = true;
-        if (first) {
-           // GetComponent<StoryController>().events.AddRange(playthroughts[0].GetComponent<Story>().events); 
-        }
         BC = GameObject.Find("BarkHolder").GetComponent<BarkController>();
+        RI = GameObject.FindGameObjectWithTag("RI");
 
         GetComponent<RLController>().Insiate();
         GetComponent<StoryController>().Inisiate();
@@ -87,6 +86,25 @@ public class MainController : MonoBehaviour
     private void Update()
     {
         GetComponent<StoryController>().InvokeNextEvent();
+
+        if(game_state == State.in_battle)
+        {
+            GameObject wheel = GameObject.Find("PlayerWheelHolder").transform.GetChild(0).gameObject;
+            bool empty = true;
+            for (int i = 0; i < wheel.transform.childCount - 1; i++)
+            {
+                if (wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
+                {
+                    empty = false;
+                    break;
+                }
+            }
+
+            if (empty)
+            {
+                GameObject.Find("EventSystem").GetComponent<MainController>().EndGame();
+            }
+        }
     }
 
     public void SetNewState(State new_state)
@@ -224,6 +242,20 @@ public class MainController : MonoBehaviour
         {
             GameObject.Find("Story Event Holder").transform.GetChild(0).GetComponent<StoryEvent>().Procceed();
         }
+
+        for(int i = 0; i < RI.transform.childCount; i++)
+        {
+            GameObject weapon = RI.transform.GetChild(i).gameObject;
+
+            for (int j = 0; j < weapon.transform.childCount; j++)
+            {
+                if(weapon.transform.GetChild(j).GetComponent<Buff>().temporary || weapon.transform.GetChild(j).GetComponent<Buff>().timer > 0)
+                {
+                    weapon.transform.GetChild(j).GetComponent<Buff>().RemoveBuff();
+                }
+            }
+        }
+
     }
 
     public void GiveUp()
