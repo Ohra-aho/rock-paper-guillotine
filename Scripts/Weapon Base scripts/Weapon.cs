@@ -60,6 +60,8 @@ public class Weapon : MonoBehaviour
     //Displayed maube when picked
     public List<string> pick_barks;
 
+    [HideInInspector] public int damage_soft_cap = 7;
+
     private void Awake()
     {
         real_armor = armor;

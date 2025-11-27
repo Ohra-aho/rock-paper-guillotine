@@ -66,12 +66,15 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: afd4f4f878c061b468bfc8d38e99e588, type: 3}
   - {fileID: 1944698211339908181, guid: d4b190ce4a034834683f70897e9b487b, type: 3}
   - {fileID: 1944698211339908181, guid: fcebe5f896ca7cf44ac69245fc011b3e, type: 3}
-  plan_1: 010000000000000002000000
-  plan_2: 02000000010000000000000001000000
+  plan_1: 01000000020000000000000002000000
+  plan_2: 0200000001000000020000000000000001000000
   off_balance: 0
   nearDeath: 0
   off_balance_choises: 00000000
   advanced: 1
+  victory_barks: []
+  victory_message: {fileID: 0}
+  HB: {fileID: 0}
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -102,7 +102,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Hit list
-  description: Whenever you win an encounter with this weapon, +1 to damage.
+  description: Whenever you win an encounter with this weapon, +1 to damage. To maximum
+    of 7.
   sprite: {fileID: 21300000, guid: f8f7b12fe8750db46a4053b5099fd229, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -177,6 +178,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Good luck getting the first kill.
+  damage_soft_cap: 7
 --- !u!114 &3743869549810819751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stacks: 0
-  stack_limit: 0
+  stack_limit: 6
   LoadFunction:
     m_PersistentCalls:
       m_Calls:

@@ -6,17 +6,26 @@ public class Tykistö : MonoBehaviour
 {
     public void DealDamage()
     {
-        if(GetComponent<Stacking>().stacks < 3)
+        if(GetComponent<Stacking>().stacks > 0)
         {
-            Debug.Log("Que");
-
             GetComponent<EffectDamage>().DealDamage(null);
-            GetComponent<Stacking>().IncreaseStacks(1);
-            
-            if(GetComponent<Stacking>().stacks >= 3)
+            GetComponent<Stacking>().DecreaseStacks(1);
+        }
+    }
+
+    public void BuffWeapons()
+    {
+        if (GetComponent<Stacking>().stacks > 0)
+        {
+            GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+            for (int i = 0; i < RIE.transform.childCount; i++)
             {
-                GetComponent<EffectDamage>().amount = 0;
+                if(RIE.transform.GetChild(i).GetComponent<Weapon>().name != GetComponent<Weapon>().name)
+                {
+                    RIE.transform.GetChild(i).GetComponent<Weapon>().damage++;
+                }
             }
+            GetComponent<Stacking>().DecreaseStacks(1);
         }
     }
 }

@@ -8,7 +8,7 @@ public class SelfDestruct : MonoBehaviour
     public bool destroyed = false;
     public void Destruct()
     {
-        Buff käyttöohje = FindCertainBuff("Käyttöohje");
+        Buff käyttöohje = FindCertainBuff("Manual");
         bool risk_taker = false;
         for(int i = 0; i < GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs.Count; i++)
         {

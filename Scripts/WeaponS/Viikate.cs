@@ -14,8 +14,29 @@ public class Viikate : MonoBehaviour
 
     public void IncreaseStack(Weapon weapon)
     {
-        GetComponent<Weapon>().damage -= GetComponent<Stacking>().stacks;
         GetComponent<Stacking>().IncreaseStacks(amount);
+    }
+
+    public void BeforeStacking()
+    {
+        GetComponent<Weapon>().damage -= GetComponent<Stacking>().stacks;
+    }
+
+    public void AfterStacking()
+    {
         GetComponent<Weapon>().damage += GetComponent<Stacking>().stacks;
+        /*if(GetComponent<Weapon>().damage > GetComponent<Weapon>().damage_soft_cap)
+        {
+            GetComponent<Weapon>().damage = 7;
+        }*/
+    }
+
+    public void LoadDamage()
+    {
+        GetComponent<Weapon>().damage += GetComponent<Stacking>().stacks;
+        /*if (GetComponent<Weapon>().damage > GetComponent<Weapon>().damage_soft_cap)
+        {
+            GetComponent<Weapon>().damage = 7;
+        }*/
     }
 }

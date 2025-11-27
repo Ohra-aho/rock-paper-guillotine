@@ -103,7 +103,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Sithe
-  description: +1 to damage each time one of your weapons is destroyed.
+  description: +1 to damage each time one of your weapons is destroyed. To maximum
+    of 7.
   sprite: {fileID: 21300000, guid: 0d43db1ff69bff943a7c40c74c9fd6a6, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -166,6 +167,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - The Reaper comes knocking.
+  damage_soft_cap: 7
 --- !u!114 &606049651646200694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,13 +236,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stacks: 0
-  stack_limit: 0
+  stack_limit: 6
   LoadFunction:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 606049651646200694}
         m_TargetAssemblyTypeName: Viikate, Assembly-CSharp
-        m_MethodName: CalculateDamage
+        m_MethodName: LoadDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -252,7 +254,31 @@ MonoBehaviour:
         m_CallState: 2
   before_stacking:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 606049651646200694}
+        m_TargetAssemblyTypeName: Viikate, Assembly-CSharp
+        m_MethodName: BeforeStacking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   after_stacking:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 606049651646200694}
+        m_TargetAssemblyTypeName: Viikate, Assembly-CSharp
+        m_MethodName: AfterStacking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

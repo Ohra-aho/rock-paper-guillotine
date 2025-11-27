@@ -179,6 +179,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - That will keep you safe. For now.
+  damage_soft_cap: 7
 --- !u!114 &8578841849468338333
 MonoBehaviour:
   m_ObjectHideFlags: 0

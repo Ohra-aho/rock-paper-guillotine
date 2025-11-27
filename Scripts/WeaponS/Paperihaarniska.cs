@@ -11,7 +11,7 @@ public class Paperihaarniska : MonoBehaviour
 
     public void IncreaseStack()
     {
-        if(GetComponent<Weapon>().armor > 0)
+        if(GetComponent<Weapon>().armor > 0 && GetComponent<Weapon>().GiveEffectiveArmor() > 0)
         {
             GetComponent<Stacking>().IncreaseStacks(1);
             CalculateArmor();

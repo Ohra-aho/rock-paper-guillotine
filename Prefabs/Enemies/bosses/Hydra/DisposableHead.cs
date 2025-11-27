@@ -27,32 +27,23 @@ public class DisposableHead : MonoBehaviour
 
     public void Lose()
     {
-        if(GetComponent<Weapon>().type == MainController.Choise.hyödytön)
+        GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+        GetComponent<Weapon>().type = MainController.Choise.hyödytön;
+        for(int i = 0; i < RIE.transform.childCount; i++)
         {
-            GetComponent<SelfDestruct>().Destruct();
-        } else
-        {
-            GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
-            GetComponent<Weapon>().type = MainController.Choise.hyödytön;
-            for(int i = 0; i < RIE.transform.childCount; i++)
+            if(RIE.transform.GetChild(i).gameObject == this.gameObject)
             {
-                if(RIE.transform.GetChild(i).gameObject == this.gameObject)
+                for(int j = 0; j < RIE.transform.GetChild(i).transform.childCount; j++)
                 {
-                    for(int j = 0; j < RIE.transform.GetChild(i).transform.childCount; j++)
+                    if (RIE.transform.GetChild(i).GetChild(j).GetComponent<Buff>().id == "Poison breath")
                     {
-                        Debug.Log(RIE.transform.GetChild(i).GetChild(j).GetComponent<Buff>().id);
-                        if (RIE.transform.GetChild(i).GetChild(j).GetComponent<Buff>().id == "Poison breath")
-                        {
-                            RIE.transform.GetChild(i).GetChild(j).GetComponent<Buff>().RemoveBuff();
-                            Destroy(RIE.transform.GetChild(i).GetChild(j).gameObject);
-                            Debug.Log("Que?");
-                            break;
-                        }
+                        RIE.transform.GetChild(i).GetChild(j).GetComponent<Buff>().RemoveBuff();
+                        Destroy(RIE.transform.GetChild(i).GetChild(j).gameObject);
+                        break;
                     }
-                    break;
                 }
-                
-            }
+                break;
+            }  
         }
     }
 
@@ -62,7 +53,7 @@ public class DisposableHead : MonoBehaviour
         int amount = 0;
         for (int i = 0; i < RIE.transform.childCount; i++)
         {
-            if (RIE.transform.GetChild(i).GetComponent<DisposableHead>())
+            if (RIE.transform.GetChild(i).GetComponent<DisposableHead>() && RIE.transform.GetChild(i).GetComponent<Weapon>().type != MainController.Choise.hyödytön)
             {
                 amount++;
             }
