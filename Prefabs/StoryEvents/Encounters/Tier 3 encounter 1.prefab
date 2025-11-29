@@ -53,7 +53,7 @@ MonoBehaviour:
   - {fileID: 6979226803842198351, guid: 0b2fff98fa05d2e4fa4b193152ac410c, type: 3}
   - {fileID: 6979226803842198351, guid: d65a010538e98554b81908ef24a83cd1, type: 3}
   enemies: []
-  amount: 5
+  amount: 4
   immideate_over: 0
   last: 0
   surprices:
