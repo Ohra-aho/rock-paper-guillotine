@@ -46,11 +46,11 @@ public class TableController : MonoBehaviour
         MC.DisplayConsequenses(result);
 
         //Might need something...
-        player.GetComponent<PlayerContoller>().ResultPhase();
         enemy.GetComponent<EnemyController>().ResultPhase();
+        player.GetComponent<PlayerContoller>().ResultPhase();
 
-        player.GetComponent<PlayerContoller>().EndPhase();
         enemy.GetComponent<EnemyController>().EndPhase();
+        player.GetComponent<PlayerContoller>().EndPhase();
 
         ActivateEachTurnEffects(GameObject.FindGameObjectWithTag("RI"));
         ActivateEachTurnEffects(GameObject.FindGameObjectWithTag("RIE"));

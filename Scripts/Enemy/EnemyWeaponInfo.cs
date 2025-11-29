@@ -40,8 +40,23 @@ public class EnemyWeaponInfo : MonoBehaviour
                     info.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = symbols[4];
                     break;
             }
-            info.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = weapon.GiveEffectiveDamage().ToString();
-            info.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = weapon.GiveEffectiveArmor().ToString();
+            if(weapon.GetComponent<Stacking>())
+            {
+                info.transform.GetChild(1).gameObject.SetActive(false);
+                info.transform.GetChild(2).gameObject.SetActive(true);
+
+                info.transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.GiveEffectiveDamage().ToString();
+                info.transform.GetChild(2).GetChild(1).GetComponent<TextMeshProUGUI>().text = weapon.GiveEffectiveArmor().ToString();
+                info.transform.GetChild(2).GetChild(2).GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Stacking>().stacks.ToString();
+            } else
+            {
+                info.transform.GetChild(1).gameObject.SetActive(true);
+                info.transform.GetChild(2).gameObject.SetActive(false);
+
+                info.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.GiveEffectiveDamage().ToString();
+                info.transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>().text = weapon.GiveEffectiveArmor().ToString();
+            }
+
             info.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = weapon.description;
         }
     }

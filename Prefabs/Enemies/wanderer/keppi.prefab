@@ -89,9 +89,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e542768038246394eaef4ffd1902bb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff_data: []
   player: 0
   opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   penetrating: 0
+  draw_winner: 0
   dead: 0
   type: 2
   damage: 1
@@ -101,7 +103,9 @@ MonoBehaviour:
   name: Keppi
   description: 
   sprite: {fileID: 21300000, guid: e00ac6bfe97f48c4bb71c6df8e45d66f, type: 3}
-  stacks: 0
+  first_turn:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -181,6 +185,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks: []
+  damage_soft_cap: 7
 --- !u!114 &-1982862768278979025
 MonoBehaviour:
   m_ObjectHideFlags: 0

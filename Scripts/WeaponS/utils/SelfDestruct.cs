@@ -8,43 +8,53 @@ public class SelfDestruct : MonoBehaviour
     public bool destroyed = false;
     public void Destruct()
     {
-        Buff käyttöohje = FindCertainBuff("Manual");
-        bool risk_taker = false;
-        for(int i = 0; i < GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs.Count; i++)
+        bool nessessary = true;
+        if(GetComponent<Weapon>().dead)
         {
-            if(GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs[i].GetComponent<RiskTaker>())
-            {
-                risk_taker = true;
-                break;
-            }
+            nessessary = false;
         }
-        GetComponent<Weapon>().onDestruction.Invoke();
 
-        if(GetComponent<Weapon>().player)
+        if(nessessary)
         {
-            if ((käyttöohje != null || risk_taker) && !used_ones)
+            Buff käyttöohje = FindCertainBuff("Manual");
+            bool risk_taker = false;
+            for (int i = 0; i < GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs.Count; i++)
             {
-                used_ones = true;
+                if (GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs[i].GetComponent<RiskTaker>())
+                {
+                    risk_taker = true;
+                    break;
+                }
             }
-            else if (käyttöohje != null && used_ones)
+            GetComponent<Weapon>().onDestruction.Invoke();
+
+            if (GetComponent<Weapon>().player)
             {
-                GameObject.Find("Destruction hand").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
-                GameObject.Find("Destruction hand").GetComponent<Test>().PlayAnimation("grab");
-                destroyed = true;
+                if ((käyttöohje != null || risk_taker) && !used_ones)
+                {
+                    used_ones = true;
+                }
+                else if (käyttöohje != null && used_ones)
+                {
+                    GameObject.Find("Destruction hand").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
+                    GameObject.Find("Destruction hand").GetComponent<Test>().PlayAnimation("grab");
+                    destroyed = true;
+                }
+                else
+                {
+                    GameObject.Find("Destruction hand").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
+                    GameObject.Find("Destruction hand").GetComponent<Test>().PlayAnimation("grab");
+                    destroyed = true;
+                }
             }
             else
             {
-                GameObject.Find("Destruction hand").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
-                GameObject.Find("Destruction hand").GetComponent<Test>().PlayAnimation("grab");
-                destroyed = true;
-            }
-        } else
-        {
-            if(!GetComponent<Weapon>().dead)
-            {
-                GameObject.Find("Destruction hand e").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
-                GameObject.Find("Destruction hand e").GetComponent<Test>().PlayAnimation("grab2");
-                destroyed = true;
+                if (!GetComponent<Weapon>().dead)
+                {
+                    GameObject.Find("Destruction hand e").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
+                    GameObject.Find("Destruction hand e").GetComponent<Test>().PlayAnimation("grab2");
+                    destroyed = true;
+                }
             }
         }
     }

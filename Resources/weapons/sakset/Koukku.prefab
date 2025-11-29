@@ -94,7 +94,7 @@ MonoBehaviour:
   buff_data: []
   player: 0
   opponent: {fileID: 0}
-  penetrating: 0
+  penetrating: 1
   draw_winner: 0
   dead: 0
   type: 2
@@ -166,6 +166,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - You and your enemy will both be on a clock.
+  damage_soft_cap: 7
 --- !u!114 &2715692804178075999
 MonoBehaviour:
   m_ObjectHideFlags: 0

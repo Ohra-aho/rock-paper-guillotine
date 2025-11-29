@@ -172,10 +172,22 @@ public class Weapon : MonoBehaviour
     public void SelfDamage(int amount)
     {
         int realDamage;
-        if (!penetrating && !GetComponent<EffectDamage>().armor_piercing)
+        if (!penetrating)
         {
-            realDamage = amount - armor;
+            realDamage = amount - GiveEffectiveArmor();
             if (realDamage < 0) realDamage = 0;
+        } 
+        else if(GetComponent<EffectDamage>())
+        {
+            if(!GetComponent<EffectDamage>().armor_piercing)
+            {
+                realDamage = amount - GiveEffectiveArmor();
+                if (realDamage < 0) realDamage = 0;
+            } else
+            {
+                realDamage = amount;
+                if (realDamage < 0) realDamage = 0;
+            }
         }
         else
         {
