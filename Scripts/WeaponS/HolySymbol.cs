@@ -6,14 +6,14 @@ public class HolySymbol : MonoBehaviour
 {
     public void Activate()
     {
-        if (!GetComponent<Stacking>().IsAtLimit()) GetComponent<Stacking>().IncreaseStacks(5);
+        if (!GetComponent<Stacking>().IsAtLimit()) GetComponent<Stacking>().IncreaseStacks(1);
         int stacks = GetComponent<Stacking>().stacks;
         if(stacks == 3)
         {
             GetComponent<Weapon>().damage++;
         }
 
-        if(stacks == 5)
+        if(stacks == 6)
         {
             GetComponent<Weapon>().damage++;
             GetComponent<HealthIncrease>().amount++;

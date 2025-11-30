@@ -101,7 +101,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Chomp
-  description: +1 to gamage equal to the opposing weapons damage.
+  description: +X to gamage equal to the opposing weapons damage.
   sprite: {fileID: 21300000, guid: 5e442e6984865ad4ba10baf138f83efd, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -185,6 +185,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks: []
+  damage_soft_cap: 7
 --- !u!114 &-5141482461320767321
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class Abomination : MonoBehaviour
         GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
         for(int i = 0; i < RIE.transform.childCount; i++)
         {
-            RIE.transform.GetChild(i).GetComponent<Weapon>().armor++;
+            if (RIE.transform.GetChild(i).GetComponent<Weapon>().armor < 4) RIE.transform.GetChild(i).GetComponent<Weapon>().armor++;
             if(RIE.transform.GetChild(i).GetComponent<Weapon>().damage > 0)
             {
                 RIE.transform.GetChild(i).GetComponent<Weapon>().damage--;
@@ -22,7 +22,7 @@ public class Abomination : MonoBehaviour
         GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
         for (int i = 0; i < RIE.transform.childCount; i++)
         {
-            RIE.transform.GetChild(i).GetComponent<Weapon>().damage++;
+            if(RIE.transform.GetChild(i).GetComponent<Weapon>().damage < 4) RIE.transform.GetChild(i).GetComponent<Weapon>().damage++;
             if (RIE.transform.GetChild(i).GetComponent<Weapon>().armor > 0)
             {
                 RIE.transform.GetChild(i).GetComponent<Weapon>().armor--;

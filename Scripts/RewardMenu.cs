@@ -146,7 +146,8 @@ public class RewardMenu : MonoBehaviour
             }
         } else
         {
-            if(CheckIfPlayerIsHurt())
+            the_neurotic.MakeTrueRewardLists();
+            if (CheckIfPlayerIsHurt())
             {
                 int heal_chance = Random.Range(1, 4);
                 if(heal_chance == 3)

@@ -6,11 +6,12 @@ public class Anvil : MonoBehaviour
 {
     public void IcreaseDamage()
     {
-        GameObject wheel = GameObject.Find("PlayerWheelHolder").transform.GetChild(0).gameObject;
-        for(int i = 0; i < wheel.transform.childCount-1; i++)
+        List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
+        int index = Random.Range(0, weapons.Count);
+        while(weapons[index].name == GetComponent<Weapon>().name)
         {
-            if(wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
-                wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().damage++;
+            index = Random.Range(0, weapons.Count);
         }
+        weapons[index].damage++;
     }
 }

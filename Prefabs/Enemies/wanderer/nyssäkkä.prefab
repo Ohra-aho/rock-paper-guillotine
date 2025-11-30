@@ -95,7 +95,7 @@ MonoBehaviour:
   draw_winner: 0
   dead: 0
   type: 0
-  damage: 2
+  damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
@@ -160,3 +160,6 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks: []
+  damage_soft_cap: 7

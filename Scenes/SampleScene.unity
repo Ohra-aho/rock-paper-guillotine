@@ -7887,7 +7887,6 @@ MonoBehaviour:
   tier_2_rocks:
   - {fileID: 1944698211339908181, guid: ccfdc530554c71248a3c4806a7000aca, type: 3}
   - {fileID: 1944698211339908181, guid: f9e684b84fc563443b5381b14e3c445b, type: 3}
-  - {fileID: 1944698211339908181, guid: 67c6e0a030e2be7468a6aeead01f4fc2, type: 3}
   - {fileID: 1944698211339908181, guid: 6afab9e87777a694b97c769a2248edf2, type: 3}
   - {fileID: 1944698211339908181, guid: 4d7ef4a2e17c78349947b9e5a0a223a4, type: 3}
   tier_2_papers:
@@ -41083,37 +41082,13 @@ MonoBehaviour:
   description: All weapons gain +2 armor during the first turn.
   buffing:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Slaughterer, Assembly-CSharp
-        m_MethodName: ApplyBuff
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory_effect:
     m_PersistentCalls:
       m_Calls: []
   activate:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2052326890}
-        m_TargetAssemblyTypeName: Slow, Assembly-CSharp
-        m_MethodName: Chosen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   chosen: 0
   image_1: {fileID: 21300000, guid: 8adfdf232a80e3e4593531f34e567d1e, type: 3}
   image_2: {fileID: 21300000, guid: 20088d6ef771e764fb5444949855c6bb, type: 3}

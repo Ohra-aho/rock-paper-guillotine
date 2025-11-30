@@ -7,11 +7,6 @@ public class Slow : MonoBehaviour
     public GameObject buff;
     string name = "Slow";
 
-    public void Chosen()
-    {
-        GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs.Add(this.gameObject);
-    }
-
     public void ApplyBuff()
     {
         GameObject RI = GameObject.FindGameObjectWithTag("RI");
