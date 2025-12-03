@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 3603452539436064434}
+  - component: {fileID: 7275601658284212627}
+  - component: {fileID: -5376515112420613057}
+  - component: {fileID: -2095154296589638271}
   m_Layer: 5
-  m_Name: Jokeri
+  m_Name: Curse 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,14 +97,15 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   dead: 0
-  type: 3
-  damage: 1
-  armor: 0
+  type: 4
+  damage: 0
+  armor: 1
   real_damage: 0
   real_armor: 0
-  name: Joker
-  description: Destroys itselfs after use.
-  sprite: {fileID: 21300000, guid: 96e547a411406a44c82e558aa65e439d, type: 3}
+  name: Weakening Curse
+  description: When this weapon is not equipped, it gives -1 damage to a random equipped
+    weapon at the start of each fight for 10 turns. Destroys itself after use.
+  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -118,7 +121,7 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3603452539436064434}
+      - m_Target: {fileID: -5376515112420613057}
         m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
         m_MethodName: Destruct
         m_Mode: 1
@@ -171,7 +174,19 @@ MonoBehaviour:
       m_Calls: []
   unequipped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -2095154296589638271}
+        m_TargetAssemblyTypeName: WeakeningCurse, Assembly-CSharp
+        m_MethodName: ApplyBuffs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   self_destructive: 0
   healing: 0
   health: 0
@@ -181,9 +196,51 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks:
-  - Funny you shoud pick that.
+  - This should not be here.
   damage_soft_cap: 7
---- !u!114 &3603452539436064434
+--- !u!114 &7275601658284212627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+  damage_bonus: 0
+  armor_bonus: 0
+  effect_damage_bonus: 0
+  set_a_to_zero: 0
+  set_d_to_zero: 0
+  always_on: 0
+  choisePhase: 0
+  resultPhase: 0
+  endPhase: 0
+  victory: 0
+  special_apply: 0
+  takeDamage: 0
+  takeNoDamage: 0
+  dealDamage: 0
+  draw: 0
+  win: 0
+  lose: 0
+  heal: 0
+  equip: 0
+  unEquip: 0
+  constant: 0
+  onDestruction: 0
+  awake: 0
+  temporary: 0
+  timer: 0
+  penetrating: 0
+  draw_winner: 0
+  health_buff: 0
+  destructive: 0
+--- !u!114 &-5376515112420613057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,3 +254,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   used_ones: 0
   destroyed: 0
+--- !u!114 &-2095154296589638271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737a35160719bf74eac466358752c02d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -91,7 +91,6 @@ public class SelfDestruct : MonoBehaviour
                 }
             }
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            Debug.Log(empty + " " + MC.victory + " " + player.GetComponent<PlayerContoller>().HB.dead);
             if (empty && !MC.victory && !player.GetComponent<PlayerContoller>().HB.dead)
             {
                 GameObject.Find("EventSystem").GetComponent<MainController>().EndGame();

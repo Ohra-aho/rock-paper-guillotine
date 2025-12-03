@@ -44,6 +44,8 @@ public class Weapon : MonoBehaviour
     public UnityEvent onDestruction;
     public UnityEvent eachTurn;
 
+    public UnityEvent unequipped;
+
     private bool loop_stopper = false; //Helps counteract infinite loops 
 
     //Types iguess

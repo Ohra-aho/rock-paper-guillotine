@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 3603452539436064434}
+  - component: {fileID: 8052938824773061975}
+  - component: {fileID: -610114215062522363}
   m_Layer: 5
-  m_Name: Jokeri
+  m_Name: Crystal Scissors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,18 +92,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   player: 0
-  opponent: {fileID: 0}
+  opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   penetrating: 0
   draw_winner: 0
   dead: 0
-  type: 3
-  damage: 1
+  type: 2
+  damage: 4
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Joker
-  description: Destroys itselfs after use.
-  sprite: {fileID: 21300000, guid: 96e547a411406a44c82e558aa65e439d, type: 3}
+  name: Crystal Scissors
+  description: Halves its damage after each use. When used with 1 or less damage
+    destroyes itself.
+  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -118,9 +120,9 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3603452539436064434}
-        m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
-        m_MethodName: Destruct
+      - m_Target: {fileID: 8052938824773061975}
+        m_TargetAssemblyTypeName: CrystalScissors, Assembly-CSharp
+        m_MethodName: HalfDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -169,9 +171,6 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
-  unequipped:
-    m_PersistentCalls:
-      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -180,10 +179,21 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks:
-  - Funny you shoud pick that.
+  pick_barks: []
   damage_soft_cap: 7
---- !u!114 &3603452539436064434
+--- !u!114 &8052938824773061975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c72eb28616b102e48847963ee82fa0da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-610114215062522363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

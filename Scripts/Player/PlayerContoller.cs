@@ -32,8 +32,11 @@ public class PlayerContoller : MonoBehaviour
 
     public bool spinning; //used to disable choise panels during wheelspin
 
+    GameObject RI;
+
     private void Start()
     {
+        RI = GameObject.FindGameObjectWithTag("RI");
         for (int i = 0; i < 6; i++)
         {
             GameObject panel = Instantiate(choise_panel, transform);
@@ -196,12 +199,29 @@ public class PlayerContoller : MonoBehaviour
 
     public void ActivateFirstTurnEffects()
     {
+        ActivateUnequippedEffects();
+
         List<Weapon> equipped_weapons = GetWeapons();
         for(int i = 0; i < equipped_weapons.Count; i++)
         {
             if (equipped_weapons[i].first_turn != null)
             {
                 equipped_weapons[i].first_turn.Invoke();
+            }
+        }
+    }
+
+    private void ActivateUnequippedEffects()
+    {
+        List<Weapon> equipped_weapons = GetWeapons();
+        for (int i = 0; i < RI.transform.childCount; i++)
+        {
+            if(RI.transform.GetChild(i).GetComponent<Weapon>().unequipped != null)
+            {
+                if(!equipped_weapons.Contains(RI.transform.GetChild(i).GetComponent<Weapon>()))
+                {
+                    RI.transform.GetChild(i).GetComponent<Weapon>().unequipped.Invoke();
+                }
             }
         }
     }
