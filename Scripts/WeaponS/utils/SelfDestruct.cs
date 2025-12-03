@@ -65,6 +65,38 @@ public class SelfDestruct : MonoBehaviour
         {
             GameObject.Find("PlayerWheelHolder").GetComponent<PlayerWheelHolder>()
                 .RemoveWeapon(this.gameObject);
+
+            //Check if player is left starnded
+            MainController MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+            GameObject wheel = GameObject.Find("PlayerWheelHolder").transform.GetChild(0).gameObject;
+            bool empty = true;
+            for (int i = 0; i < wheel.transform.childCount - 1; i++)
+            {
+                GameObject w = wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon;
+                if (w != null)
+                {
+                    if (w.GetComponent<SelfDestruct>())
+                    {
+                        if (!w.GetComponent<SelfDestruct>().destroyed)
+                        {
+                            empty = false;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        empty = false;
+                        break;
+                    }
+                }
+            }
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            Debug.Log(empty + " " + MC.victory + " " + player.GetComponent<PlayerContoller>().HB.dead);
+            if (empty && !MC.victory && !player.GetComponent<PlayerContoller>().HB.dead)
+            {
+                GameObject.Find("EventSystem").GetComponent<MainController>().EndGame();
+            }
+            
         } else
         {
             GameObject.Find("Wheel holder").GetComponent<EnemyWheelHolder>()

@@ -109,7 +109,7 @@ MonoBehaviour:
   draw_winner: 0
   dead: 0
   type: 0
-  damage: 3
+  damage: 2
   armor: 2
   real_damage: 0
   real_armor: 0
@@ -189,6 +189,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Won't help you much, but it is satisfying.
+  damage_soft_cap: 7
 --- !u!114 &2821382414112198119
 MonoBehaviour:
   m_ObjectHideFlags: 0

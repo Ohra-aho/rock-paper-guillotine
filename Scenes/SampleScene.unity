@@ -13923,6 +13923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   first: 0
+  victory: 0
   endTriggered: 0
   stop: 0
   TC: {fileID: 967173491}
@@ -20969,6 +20970,7 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
+  - {fileID: 1944698211339908181, guid: 88f91e4d08a4c364e9a958121fc68618, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623

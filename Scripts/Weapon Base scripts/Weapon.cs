@@ -22,6 +22,7 @@ public class Weapon : MonoBehaviour
     public Sprite sprite;
     //public int stacks;
     public UnityEvent first_turn;
+    public UnityEvent end_of_fight;
 
     public UnityEvent choisePhase;
     public UnityEvent resultPhase;

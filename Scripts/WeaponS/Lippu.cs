@@ -14,14 +14,14 @@ public class Lippu : MonoBehaviour
             {
                 if(!debuffed)
                 {
-                    GetComponent<Weapon>().damage -= 3;
+                    GetComponent<Weapon>().damage -= 2;
                     debuffed = true;
                 }
             } else
             {
                 if(debuffed)
                 {
-                    GetComponent<Weapon>().damage += 3;
+                    GetComponent<Weapon>().damage += 2;
                     debuffed = false;
                 }
             }

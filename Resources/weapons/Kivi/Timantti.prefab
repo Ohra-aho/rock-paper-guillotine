@@ -101,7 +101,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Diamond
-  description: +4 HP
+  description: +3 HP
   sprite: {fileID: 21300000, guid: 4adcfdc4f3e4d864184f9b1429193ce0, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -188,6 +188,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - We might run out of space for bulbs with you.
+  damage_soft_cap: 7
 --- !u!114 &-212170227653697807
 MonoBehaviour:
   m_ObjectHideFlags: 0

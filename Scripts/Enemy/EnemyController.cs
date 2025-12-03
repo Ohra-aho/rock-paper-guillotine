@@ -36,7 +36,6 @@ public class EnemyController : MonoBehaviour
     public bool victory = false;
 
     public GameObject true_weapon_holder;
-
     private void Update()
     {
         if(HB.dead)
@@ -191,11 +190,18 @@ public class EnemyController : MonoBehaviour
     public void TakeDamage()
     {
         dead = HB.GetComponent<HealthBar>().CheckIfDead();
-        //if(!dead)
-        //{
-            if(damageEffect != null) damageEffect.Invoke();
-            if(!dead) currentEnemy.GetComponent<BasicEnemy>().ReactToDamage();
-        //}
+        if(damageEffect != null) damageEffect.Invoke();
+        if (!dead)
+        {
+            currentEnemy.GetComponent<BasicEnemy>().ReactToDamage();
+        }
+        else
+        {
+            GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
+            infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
+            MC.Win();
+            HB.dead = false;
+        }
     }
 
     // Rock, Paper, scissors
@@ -205,7 +211,6 @@ public class EnemyController : MonoBehaviour
         //Does things when choise is made
         chosenWeapon.GetComponent<Weapon>().choisePhase.Invoke();
         if(choiseEffect != null) choiseEffect();
-
     }
 
     public void ResultPhase()

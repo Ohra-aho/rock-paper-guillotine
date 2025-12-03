@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
+  - component: {fileID: -6143591333916454339}
   m_Layer: 5
   m_Name: Sanomalehti
   m_TagString: Untagged
@@ -100,11 +101,26 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Newspaper
-  description: 
+  description: -1 damage when wins until the end of the fight.
   sprite: {fileID: 21300000, guid: 02e9d229332af7341952b474e221310c, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
+  end_of_fight:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -6143591333916454339}
+        m_TargetAssemblyTypeName: NewsPaper, Assembly-CSharp
+        m_MethodName: ResetDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -113,7 +129,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -6143591333916454339}
+        m_TargetAssemblyTypeName: NewsPaper, Assembly-CSharp
+        m_MethodName: DebuffDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -128,7 +156,19 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -6143591333916454339}
+        m_TargetAssemblyTypeName: NewsPaper, Assembly-CSharp
+        m_MethodName: Win
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   lose:
     m_PersistentCalls:
       m_Calls: []
@@ -164,3 +204,16 @@ MonoBehaviour:
   pick_barks:
   - To be hoonest, it actually took me a while to think of anything for the newspaper.
     Then I found a fly in my coffee.
+  damage_soft_cap: 7
+--- !u!114 &-6143591333916454339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acf234be3eb38143ba18cbbd0753a67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

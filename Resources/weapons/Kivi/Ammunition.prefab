@@ -119,6 +119,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  end_of_fight:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -177,6 +180,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Going for quick kills?
+  damage_soft_cap: 7
 --- !u!114 &-7783867195882298360
 MonoBehaviour:
   m_ObjectHideFlags: 0

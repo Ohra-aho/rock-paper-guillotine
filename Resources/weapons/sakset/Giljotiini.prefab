@@ -96,7 +96,7 @@ MonoBehaviour:
   draw_winner: 0
   dead: 0
   type: 2
-  damage: 30
+  damage: 5
   armor: 0
   real_damage: 0
   real_armor: 0
@@ -104,6 +104,9 @@ MonoBehaviour:
   description: If loses, you die.
   sprite: {fileID: 21300000, guid: 41df8518cdfdb0a40a53583927b0f308, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -188,6 +191,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Honest and true. One choise, one chance.
+  damage_soft_cap: 7
 --- !u!114 &2529801539375396388
 MonoBehaviour:
   m_ObjectHideFlags: 0

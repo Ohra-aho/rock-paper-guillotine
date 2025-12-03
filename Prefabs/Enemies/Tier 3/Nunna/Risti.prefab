@@ -100,10 +100,13 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Risti
-  description: "Parantaa 1 haava aina kun k\xE4ytet\xE4\xE4n."
+  name: Charm
+  description: Heals 1 after use.
   sprite: {fileID: 21300000, guid: 9cd1ff15fff3469478b2eae61b43a14c, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -173,6 +176,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks: []
+  damage_soft_cap: 7
 --- !u!114 &4104482693168961448
 MonoBehaviour:
   m_ObjectHideFlags: 0

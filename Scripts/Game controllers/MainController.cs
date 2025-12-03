@@ -8,6 +8,7 @@ public class MainController : MonoBehaviour
     [HideInInspector] public bool first;
 
     [HideInInspector] public bool? won;
+    [HideInInspector] public bool victory = false;
     //[HideInInspector] public bool dead;
     [HideInInspector] public bool endTriggered;
     public bool stop;
@@ -86,25 +87,6 @@ public class MainController : MonoBehaviour
     private void Update()
     {
         GetComponent<StoryController>().InvokeNextEvent();
-
-        if(game_state == State.in_battle)
-        {
-            GameObject wheel = GameObject.Find("PlayerWheelHolder").transform.GetChild(0).gameObject;
-            bool empty = true;
-            for (int i = 0; i < wheel.transform.childCount - 1; i++)
-            {
-                if (wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
-                {
-                    empty = false;
-                    break;
-                }
-            }
-
-            if (empty)
-            {
-                GameObject.Find("EventSystem").GetComponent<MainController>().EndGame();
-            }
-        }
     }
 
     public void SetNewState(State new_state)
@@ -247,6 +229,8 @@ public class MainController : MonoBehaviour
         {
             GameObject weapon = RI.transform.GetChild(i).gameObject;
 
+            if(weapon.GetComponent<Weapon>().end_of_fight != null) weapon.GetComponent<Weapon>().end_of_fight.Invoke();
+
             for (int j = 0; j < weapon.transform.childCount; j++)
             {
                 if(weapon.transform.GetChild(j).GetComponent<Buff>().temporary || weapon.transform.GetChild(j).GetComponent<Buff>().timer > 0)
@@ -255,6 +239,7 @@ public class MainController : MonoBehaviour
                 }
             }
         }
+
 
     }
 
@@ -274,6 +259,7 @@ public class MainController : MonoBehaviour
 
     public void Win()
     {
+        victory = true;
         if (!GetComponent<StoryCheckList>().first_victory) GetComponent<StoryCheckList>().first_victory = true;
         //Achievement victory effects
         GetComponent<RLController>().ActivateWinEffects();

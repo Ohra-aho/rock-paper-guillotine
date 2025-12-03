@@ -96,12 +96,12 @@ MonoBehaviour:
   draw_winner: 0
   dead: 0
   type: 1
-  damage: 4
+  damage: 3
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Flag
-  description: -3 to damage if you are not at full health.
+  description: -2 to damage if you are not at full health.
   sprite: {fileID: 21300000, guid: 67d1539dec5167746a0ed85e8a37ed24, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -176,6 +176,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Let's see how long will that stay up.
+  damage_soft_cap: 7
 --- !u!114 &409352218259904777
 MonoBehaviour:
   m_ObjectHideFlags: 0

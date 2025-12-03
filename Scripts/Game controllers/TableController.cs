@@ -51,7 +51,6 @@ public class TableController : MonoBehaviour
 
         player.GetComponent<PlayerContoller>().EndPhase();
         enemy.GetComponent<EnemyController>().EndPhase();
-       
 
         ActivateEachTurnEffects(GameObject.FindGameObjectWithTag("RI"));
         ActivateEachTurnEffects(GameObject.FindGameObjectWithTag("RIE"));

@@ -99,13 +99,16 @@ MonoBehaviour:
   dead: 0
   type: 1
   damage: 2
-  armor: 0
+  armor: 1
   real_damage: 0
   real_armor: 0
   name: Immortal head
   description: If used turn one weapon back from useless to its original type.
   sprite: {fileID: 21300000, guid: a7f1a4dc56bd81c4dafaa46ca3a3ebe9, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -177,6 +180,7 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks: []
+  damage_soft_cap: 7
 --- !u!114 &-8883035689301764761
 MonoBehaviour:
   m_ObjectHideFlags: 0

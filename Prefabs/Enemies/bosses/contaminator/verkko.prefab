@@ -98,13 +98,16 @@ MonoBehaviour:
   dead: 0
   type: 1
   damage: 2
-  armor: 0
+  armor: 1
   real_damage: 0
   real_armor: 0
   name: Net
   description: If wins, you take self inficted damage from enemy weapons as well.
   sprite: {fileID: 21300000, guid: 92324259aa0ac0c4eb15506d3b1e3c0b, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -186,6 +189,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks: []
+  damage_soft_cap: 7
 --- !u!114 &2467561525901918921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,3 +218,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 1
+  armor_piercing: 0

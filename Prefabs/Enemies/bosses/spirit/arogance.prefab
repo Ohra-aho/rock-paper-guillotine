@@ -101,7 +101,7 @@ MonoBehaviour:
   dead: 0
   type: 1
   damage: 2
-  armor: 1
+  armor: 2
   real_damage: 0
   real_armor: 0
   name: Arrogance
@@ -109,6 +109,9 @@ MonoBehaviour:
     damage. If takes damage takes one additional damage. Pierces armor. (Continuous)
   sprite: {fileID: 21300000, guid: 78c649293ba2edb49beffdbf9e502e60, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -178,6 +181,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks: []
+  damage_soft_cap: 7
 --- !u!114 &3430048096288073510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +224,7 @@ MonoBehaviour:
   timer: 0
   penetrating: 0
   draw_winner: 0
+  health_buff: 0
   destructive: 0
 --- !u!114 &4094959677778941704
 MonoBehaviour:
@@ -256,6 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 1
+  armor_piercing: 0
 --- !u!114 &-8793795135118929271
 MonoBehaviour:
   m_ObjectHideFlags: 0

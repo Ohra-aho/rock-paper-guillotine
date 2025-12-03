@@ -103,7 +103,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Granade
-  description: Deals 2 damage to both and destroys itself.
+  description: Deals 2 damage to enemy and 1 damage to self.
   sprite: {fileID: 21300000, guid: 104ecc10c28beb84c8bbd51eb596b5fc, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -190,6 +190,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Going out in a blaze of glory? I like that.
+  damage_soft_cap: 7
 --- !u!114 &3190234363839393543
 MonoBehaviour:
   m_ObjectHideFlags: 0
