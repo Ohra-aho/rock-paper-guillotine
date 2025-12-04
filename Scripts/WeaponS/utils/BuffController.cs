@@ -35,6 +35,7 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public bool takeDamage;
     [HideInInspector] public bool takeNoDamage;
     [HideInInspector] public bool dealDamage;
+    [HideInInspector] public bool deal_effect_damage;
     [HideInInspector] public bool draw;
     [HideInInspector] public bool win;
     [HideInInspector] public bool lose;
@@ -149,6 +150,7 @@ public class BuffController : MonoBehaviour
             new_buff.penetrating = penetrating;
             new_buff.destructive = destructive;
             new_buff.health_buff = health_buff;
+            new_buff.deal_effect_damage = deal_effect_damage;
             if (special != null) new_buff.GetComponent<Buff>().special = special;
             if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
             new_buff.GetComponent<Buff>().AddBuff();

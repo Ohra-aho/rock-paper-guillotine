@@ -9,8 +9,8 @@ public class Shotgun : MonoBehaviour
         HealthBar player_HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
         HealthBar enemy_HB = GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>();
 
-        //player_HB.TakeDamage(GetComponent<EffectDamage>().amount);
         enemy_HB.TakeDamage(GetComponent<EffectDamage>().amount);
-        GetComponent<Weapon>().SelfDamage(GetComponent<EffectDamage>().amount);
+        GetComponent<Weapon>().deal_effect_damage.Invoke();
+        GetComponent<EffectDamage>().SelfDamage(null);
     }
 }

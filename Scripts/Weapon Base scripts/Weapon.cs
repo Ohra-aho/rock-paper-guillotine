@@ -31,6 +31,7 @@ public class Weapon : MonoBehaviour
 
     public UnityEvent takeDamage;
     public UnityEvent dealDamage;
+    public UnityEvent deal_effect_damage;
     public UnityEvent takeNoDamage;
     public UnityEvent win;
     public UnityEvent lose;

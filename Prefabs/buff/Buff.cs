@@ -25,6 +25,7 @@ public class Buff : MonoBehaviour
     public bool takeDamage;
     public bool takeNoDamage;
     public bool dealDamage;
+    public bool deal_effect_damage;
     public bool draw;
     public bool win;
     public bool lose;
@@ -108,6 +109,8 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().takeNoDamage.AddListener(() => special(weapon));
         if (dealDamage)
             transform.parent.GetComponent<Weapon>().dealDamage.AddListener(() => special(weapon));
+        if (deal_effect_damage)
+            transform.parent.GetComponent<Weapon>().deal_effect_damage.AddListener(() => special(weapon));
         if (draw)
             transform.parent.GetComponent<Weapon>().draw.AddListener(() => special(weapon));
         if (heal)
@@ -187,6 +190,8 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().takeNoDamage.RemoveListener(() => special(weapon));
         if (dealDamage)
             transform.parent.GetComponent<Weapon>().dealDamage.RemoveListener(() => special(weapon));
+        if (deal_effect_damage)
+            transform.parent.GetComponent<Weapon>().deal_effect_damage.RemoveListener(() => special(weapon));
         if (draw)
             transform.parent.GetComponent<Weapon>().draw.RemoveListener(() => special(weapon));
         if (heal)
