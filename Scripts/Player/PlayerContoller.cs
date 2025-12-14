@@ -49,12 +49,17 @@ public class PlayerContoller : MonoBehaviour
 
     private void Update()
     {
+        
+    }
+
+    public void Death()
+    {
         if (HB.dead && !defeat)
         {
             MC.Loose();
             HB.dead = false;
         }
-    }
+    } 
 
     public void DisplayChoises()
     {

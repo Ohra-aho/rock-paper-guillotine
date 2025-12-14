@@ -107,10 +107,16 @@ MonoBehaviour:
   first_turn:
     m_PersistentCalls:
       m_Calls: []
+  end_of_fight:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
   resultPhase:
+    m_PersistentCalls:
+      m_Calls: []
+  endPhase:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4382531305847131888}
@@ -137,9 +143,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  endPhase:
-    m_PersistentCalls:
-      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -147,6 +150,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -179,6 +185,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 1
   healing: 1
   health: 0
@@ -189,6 +198,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Just delaying the inevitable.
+  damage_soft_cap: 7
 --- !u!114 &8443349561577102891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   used_ones: 0
   destroyed: 0
+  disabled: 0
 --- !u!114 &4382531305847131888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,4 +226,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disabled: 0
   amount: 3

@@ -38,4 +38,19 @@ public class Healing : MonoBehaviour
             }
         }
     }
+
+    public void ForcedHeal()
+    {
+        bool valid_heal = false;
+
+        HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
+
+        valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
+        HB.HealDamage(amount);
+        if (valid_heal)
+        {
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<RLController>().CheckForUnyielding();
+            GetComponent<Weapon>().heal.Invoke();
+        }
+    }
 }

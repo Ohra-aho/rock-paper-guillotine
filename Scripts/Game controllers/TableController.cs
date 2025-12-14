@@ -55,6 +55,8 @@ public class TableController : MonoBehaviour
         ActivateEachTurnEffects(GameObject.FindGameObjectWithTag("RI"));
         ActivateEachTurnEffects(GameObject.FindGameObjectWithTag("RIE"));
 
+        player.GetComponent<PlayerContoller>().Death();
+
         if (table != null) StopCoroutine(table);
     }
 

@@ -241,8 +241,15 @@ public class HealthBar : MonoBehaviour
         if (x > HP_gap) x = HP_gap;
         if (y > HP_gap) y = HP_gap;
 
-        DestroyHealthBar();
-        RecostructHealthBar(x, y, in_view);
+        if (MC.game_state == MainController.State.in_battle)
+        {
+            transform.parent.GetChild(4).GetComponent<Test>().PlayAnimation("Change health");
+        }
+        else
+        {
+            DestroyHealthBar();
+            RecostructHealthBar(x, y, in_view);
+        }
     }
 
 
