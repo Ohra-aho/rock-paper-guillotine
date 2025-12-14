@@ -271,4 +271,24 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
+
+    public List<Weapon> GetWeapons()
+    {
+        List<Weapon> temp = new List<Weapon>();
+
+        GameObject wheel = transform.parent
+            .GetChild(0).GetChild(0).gameObject;
+
+        for (int i = 0; i < wheel.transform.childCount - 1; i++)
+        {
+            if (wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
+            {
+                temp.Add(
+                    wheel.transform.GetChild(i).GetChild(0)
+                        .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>()
+                );
+            }
+        }
+        return temp;
+    }
 }

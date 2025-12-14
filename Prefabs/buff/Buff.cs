@@ -54,9 +54,12 @@ public class Buff : MonoBehaviour
 
     //Debuffs
     public bool destructive;
+    public bool heal_disabler;
 
     public MainController.Choise og_type;
     public MainController.Choise? type_change;
+
+    private bool healing_disabled = false;
 
     private void Awake()
     {
@@ -66,6 +69,7 @@ public class Buff : MonoBehaviour
 
     public void AddBuff()
     {
+
         if (damage_buff != 0)
         {
             if(damage_buff < 0 && -damage_buff > transform.parent.GetComponent<Weapon>().damage)
@@ -143,14 +147,26 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().equip.AddListener(transform.parent.GetComponent<HealthIncrease>().Increase);
             transform.parent.GetComponent<Weapon>().unEquip.AddListener(transform.parent.GetComponent<HealthIncrease>().Decrease);
         }
-            
+        if(heal_disabler)
+        {
+            if(transform.parent.GetComponent<Healing>())
+            {
+                if(!transform.parent.GetComponent<Healing>().disabled)
+                {
+                    transform.parent.GetComponent<Healing>().disabled = true;
+                } else
+                {
+                    healing_disabled = true;
+                }
+            }
+        }
     }
 
     public void RemoveBuff()
     {
         if (damage_buff != 0)
         {
-            if(transform.parent.GetComponent<Weapon>().damage < damage_buff)
+            if (transform.parent.GetComponent<Weapon>().damage < damage_buff)
             {
                 damage_buff = transform.parent.GetComponent<Weapon>().damage;
             }
@@ -221,7 +237,11 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().unEquip.RemoveListener(transform.parent.GetComponent<HealthIncrease>().Decrease);
             Destroy(transform.parent.gameObject.GetComponent<HealthIncrease>());
         }
-
+        if (heal_disabler && !healing_disabled)
+            if (transform.parent.GetComponent<Healing>())
+                transform.parent.GetComponent<Healing>().disabled = false;
+            
+        
 
         if (special_removal != null) special_removal(weapon);
     }

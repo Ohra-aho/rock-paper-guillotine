@@ -231,11 +231,12 @@ public class MainController : MonoBehaviour
 
             if(weapon.GetComponent<Weapon>().end_of_fight != null) weapon.GetComponent<Weapon>().end_of_fight.Invoke();
 
-            for (int j = 0; j < weapon.transform.childCount; j++)
+            for (int j = weapon.transform.childCount-1; j >= 0; j--)
             {
                 if(weapon.transform.GetChild(j).GetComponent<Buff>().temporary || weapon.transform.GetChild(j).GetComponent<Buff>().timer > 0)
                 {
                     weapon.transform.GetChild(j).GetComponent<Buff>().RemoveBuff();
+                    Destroy(weapon.transform.GetChild(j).gameObject);
                 }
             }
         }

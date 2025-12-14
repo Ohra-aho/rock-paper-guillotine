@@ -59,6 +59,7 @@ public class BuffController : MonoBehaviour
 
     //Debuffs
     [HideInInspector] public bool destructive;
+    [HideInInspector] public bool heal_disabler;
 
 
 
@@ -151,6 +152,7 @@ public class BuffController : MonoBehaviour
             new_buff.destructive = destructive;
             new_buff.health_buff = health_buff;
             new_buff.deal_effect_damage = deal_effect_damage;
+            new_buff.heal_disabler = heal_disabler;
             if (special != null) new_buff.GetComponent<Buff>().special = special;
             if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
             new_buff.GetComponent<Buff>().AddBuff();

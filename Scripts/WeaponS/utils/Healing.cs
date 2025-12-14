@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Healing : MonoBehaviour
 {
+    [HideInInspector] public bool disabled = false;
     public int amount;
 
     public void Heal()
     {
         bool valid_heal = false;
-        if(amount > 0)
+        if(amount > 0 && !disabled)
         {
             if (GetComponent<Weapon>().player)
             {
