@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour
     public bool draw_winner = false;
     [HideInInspector] public bool dead;
     public MainController.Choise type;
+    //public int base_damage;
     public int damage;
     public int armor;
     [HideInInspector] public int real_damage;
