@@ -23,6 +23,7 @@ public class Siili : MonoBehaviour
             if(!worm_eaten)
             {
                 worm_eaten = true;
+                GetComponent<BasicEnemy>().Balance();
                 return 1;
             } else
             {
@@ -37,6 +38,10 @@ public class Siili : MonoBehaviour
 
     private void TakeDamage()
     {
-        damage_taken = true;
+        if(!worm_eaten)
+        {
+            damage_taken = true;
+            GetComponent<BasicEnemy>().OffBalance();
+        }
     }
 }

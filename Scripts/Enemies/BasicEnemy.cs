@@ -142,4 +142,14 @@ public class BasicEnemy : MonoBehaviour
     {
         return weapons[index] != null;
     }
+
+    public void OffBalance()
+    {
+        transform.parent.parent.GetChild(4).GetComponent<Test>().PlayAnimation("offBalance");
+    }
+
+    public void Balance()
+    {
+        transform.parent.parent.GetChild(4).GetComponent<Test>().PlayAnimation("balance");
+    }
 }
