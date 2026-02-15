@@ -13985,6 +13985,7 @@ GameObject:
   - component: {fileID: 1066024796}
   - component: {fileID: 1066024797}
   - component: {fileID: 1066024798}
+  - component: {fileID: 1066024799}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: GameController
@@ -14021,7 +14022,7 @@ MonoBehaviour:
   story_event_holder: {fileID: 710133546}
   firstRewardMenu: 0
   playthroughts:
-  - {fileID: 4163066812587896230, guid: 0db93014473a88d4a884a2acf424b7dd, type: 3}
+  - {fileID: 4163066812587896230, guid: 815fa85bc2b2f534faa2e5ae2c1c5333, type: 3}
   buttons_active: 1
   reward_tier: 1
   rewards_disabled: 0
@@ -14265,6 +14266,18 @@ MonoBehaviour:
   first_achievement: 0
   first_achievement_pick: 0
   greeting_index: 0
+--- !u!114 &1066024799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066024785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7536b68b3bf37a4faaf577ba2868891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1086918255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1371170088414111626, guid: a58b1fb028afc734792da4c072e51e83, type: 3}

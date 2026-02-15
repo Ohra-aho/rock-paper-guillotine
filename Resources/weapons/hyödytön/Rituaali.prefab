@@ -108,6 +108,9 @@ MonoBehaviour:
   first_turn:
     m_PersistentCalls:
       m_Calls: []
+  end_of_fight:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -124,6 +127,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -156,6 +162,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -166,6 +175,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Mayve that will compensate to your lack of skill.
+  damage_soft_cap: 7
 --- !u!114 &7275601658284212627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +203,7 @@ MonoBehaviour:
   takeDamage: 0
   takeNoDamage: 0
   dealDamage: 0
+  deal_effect_damage: 0
   draw: 0
   win: 0
   lose: 0
@@ -208,6 +219,7 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   destructive: 0
+  heal_disabler: 0
 --- !u!114 &-1573053616698272558
 MonoBehaviour:
   m_ObjectHideFlags: 0

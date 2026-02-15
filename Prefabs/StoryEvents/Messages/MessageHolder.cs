@@ -11,6 +11,40 @@ public class MessageHolder : MonoBehaviour
 
     MainController MC;
 
+    private void Update()
+    {
+        if (MC.game_state != MainController.State.dialog) MC.game_state = MainController.State.dialog;
+    }
+
+    private void Awake()
+    {
+        MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+
+        frames = new List<ManAnimator.Frame>();
+
+        //This is ok for now
+        int index = MC.GetComponent<StoryCheckList>().greeting_index;
+        GameObject new_message = Instantiate(message, transform.parent);
+        List<string> temp = new List<string>();
+        MC.GetComponent<StoryCheckList>().greeting_index = index + 1;
+
+        //Add new starting weapons
+        List<GameObject> starting_weapons = MC.GetComponent<StartingWeapons>().GiveStartingWeapons();
+        for(int i = 0; i < starting_weapons.Count; i++)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(starting_weapons[i]);
+        }
+        
+
+        for (int i = 0; i < messages[index].Length; i++)
+        {
+            temp.Add(messages[index][i]);
+        }
+        new_message.GetComponent<Message>().lines = temp;
+        new_message.GetComponent<Message>().Inisiate();
+        GetComponent<StoryEvent>().over = true;
+    }
+
     string[][] messages = 
     {
         new string[] { "Oh. I was wondering, if you would end up here.", "What happened to that other one? That case about the statue. Few years in prison?", "It's interesting, how one child can change ones fate.", "Regardless. Shall we?" },
@@ -48,7 +82,7 @@ public class MessageHolder : MonoBehaviour
 
         new string[] {  "Butcher of Narubaaz, welcome.", "It is rather ironic how differently we both do the same job." },
         new string[] {  "Let's make this one fast.", "There is a long line behind you." },
-        new string[] {  "You know, sometimes I think about quitting this job", "But then,", "Where I would meet such nice people as you." },
+        new string[] {  "You know, sometimes I think about quitting this job", "But then,", "Where I would meet such nice people like you." },
         new string[] {  "What are you so afraid of losing,", "that you would do all those things?", "And then you just ended up here." },
         new string[] {  "You should not be here. If that amounts to anything." },
         new string[] {  "Check. Mate.", "I always wanted to say that." },
@@ -66,7 +100,7 @@ public class MessageHolder : MonoBehaviour
         new string[] {  "All that money and you chose to make more.", "Have you any idea how many innocent souls ended up to streets just because of that substance?" },
         new string[] {  "A treason?", "I could say something patriotic, but I kill perfectly good citisens quite often so.", "Who am I to judge?" },
         new string[] { "Word, five letters, keywords being finality and end of the road. ", "Why do they make these so hard..", "Any ideas?" },
-        new string[] { "No last meal, no talk, no nothing.", " Strange fella, you are. Strange one indeed." },
+        new string[] { "No last meal, no talk, no nothing.", " Strange fella you are. Strange one indeed." },
         //new string[] { "No more, please no more.", " I did not ask for this." }
 
         new string[] { "Your ads, I got them.", "I understood the idea; kids sniffing glue, very fun.", " And you were allowed to go for so long.", "So, so long." },
@@ -80,30 +114,4 @@ public class MessageHolder : MonoBehaviour
         new string[] { "Hi.", ".", ".", ".", ".", "Long...", "Long time no see?", "Yeah...", "Let's get this over with." }, //Might need something special for barks
         new string[] { "I have seen a quite may people here.", "But never someone as disgusting as you.", "They were children." }
     };
-
-    private void Update()
-    {
-        if (MC.game_state != MainController.State.dialog) MC.game_state = MainController.State.dialog;
-    }
-
-    private void Awake()
-    {
-        MC = GameObject.Find("EventSystem").GetComponent<MainController>();
-
-        frames = new List<ManAnimator.Frame>();
-
-        //This is ok for now
-        int index = MC.GetComponent<StoryCheckList>().greeting_index;
-        GameObject new_message = Instantiate(message, transform.parent);
-        List<string> temp = new List<string>();
-        MC.GetComponent<StoryCheckList>().greeting_index = index+1;
-
-        for(int i = 0; i < messages[index].Length; i++)
-        {
-            temp.Add(messages[index][i]);
-        }
-        new_message.GetComponent<Message>().lines = temp;
-        new_message.GetComponent<Message>().Inisiate();
-        GetComponent<StoryEvent>().over = true;
-    }
 }
