@@ -13,12 +13,12 @@ public class LurkerWeapons : MonoBehaviour
     public void Scales()
     {
         Lurker l = GameObject.Find("Lurker(Clone)").GetComponent<Lurker>();
-        l.taken_damage = false;
+        GetComponent<Weapon>().owner.Balance();
     }
 
     public void TakeDamage()
     {
         Lurker l = GameObject.Find("Lurker(Clone)").GetComponent<Lurker>();
-        l.taken_damage = true;
+        GetComponent<Weapon>().owner.OffBalance();
     }
 }

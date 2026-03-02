@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 3190234363839393543}
   - component: {fileID: 5755444230686218645}
   - component: {fileID: 8976710668392138213}
+  - component: {fileID: 8855097565557682067}
   m_Layer: 5
   m_Name: Kranaatti 1
   m_TagString: Untagged
@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -102,21 +103,22 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Kranaatti
-  description: "Tekee 2 vahinkoa molempiin osapuoliin ja tuhoaa itsens\xE4."
+  name: Granade
+  description: If off balance, deals 2 damage to both. Otherwise deals 2 damage to
+    self.
   sprite: {fileID: 21300000, guid: 104ecc10c28beb84c8bbd51eb596b5fc, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
-  choisePhase:
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
-  resultPhase:
+  choisePhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3190234363839393543}
-        m_TargetAssemblyTypeName: Kranaatti, Assembly-CSharp
-        m_MethodName: DamageBoth
+      - m_Target: {fileID: 8855097565557682067}
+        m_TargetAssemblyTypeName: FanaticWeapons, Assembly-CSharp
+        m_MethodName: ResetOffBalanceTrigger
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -126,12 +128,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  resultPhase:
+    m_PersistentCalls:
+      m_Calls: []
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5755444230686218645}
-        m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
-        m_MethodName: Destruct
+      - m_Target: {fileID: 8855097565557682067}
+        m_TargetAssemblyTypeName: FanaticWeapons, Assembly-CSharp
+        m_MethodName: Granade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8855097565557682067}
+        m_TargetAssemblyTypeName: FanaticWeapons, Assembly-CSharp
+        m_MethodName: Balance
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -148,6 +165,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -180,6 +200,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -187,18 +210,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
---- !u!114 &3190234363839393543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08de111b31cbdee4fbf8db127c591e92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  used_this_game: 0
+  pick_barks: []
+  damage_soft_cap: 7
 --- !u!114 &5755444230686218645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   used_ones: 0
+  destroyed: 0
+  disabled: 0
 --- !u!114 &8976710668392138213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,3 +241,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 2
+  armor_piercing: 0
+--- !u!114 &8855097565557682067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e00bc2b2a0414d47a07410df7916971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

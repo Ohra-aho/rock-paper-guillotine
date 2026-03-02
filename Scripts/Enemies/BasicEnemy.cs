@@ -22,10 +22,10 @@ public class BasicEnemy : MonoBehaviour
 
     MainController.Choise lastPlayerChoise = MainController.Choise.kivi;
 
-    public bool off_balance;
+    [HideInInspector] public bool off_balance;
     public bool nearDeath;
 
-    public List<int> off_balance_choises;
+    [HideInInspector] public List<int> off_balance_choises;
 
     public bool advanced = false;
 
@@ -33,6 +33,8 @@ public class BasicEnemy : MonoBehaviour
     public GameObject victory_message;
 
     public HealthBar HB;
+
+    public bool off_balance_triggered = false;
 
     private void Awake()
     {
@@ -75,22 +77,7 @@ public class BasicEnemy : MonoBehaviour
 
     public void ReactToDamage() //Nees indicator when off balance
     {
-        float change_to_off_balance = Random.Range(0.01f, 1f);
-        if(!off_balance)
-        {
-            if (change_to_off_balance <= 0.7f)
-            {
-                off_balance = true;
-            }
-            else
-            {
-                off_balance = false;
-            }
-        } else
-        {
-            off_balance = false;
-        }
-        off_balance = false; //Try without off balance
+        
     }
 
     public void CheckUp(int currentHealth, int maxHealth, int enemyCurrentHealth, int enemyMaxHealth)
@@ -112,7 +99,6 @@ public class BasicEnemy : MonoBehaviour
         step = StikToPlan();
         lastPlayerChoise = playerChoise;
 
-        off_balance = false;
         return step;
     }
 
@@ -145,11 +131,20 @@ public class BasicEnemy : MonoBehaviour
 
     public void OffBalance()
     {
-        transform.parent.parent.GetChild(4).GetComponent<Test>().PlayAnimation("offBalance");
+        if(!HB.dead)
+        {
+            off_balance = true;
+            off_balance_triggered = true;
+            GameObject.Find("light holder").GetComponent<Test>().PlayAnimation("offBalance");
+        }
     }
 
     public void Balance()
     {
-        transform.parent.parent.GetChild(4).GetComponent<Test>().PlayAnimation("balance");
+        if(off_balance && !off_balance_triggered)
+        {
+            off_balance = false;
+            GameObject.Find("light holder").GetComponent<Test>().PlayAnimation("balance");
+        }
     }
 }

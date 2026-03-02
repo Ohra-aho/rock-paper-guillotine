@@ -16,9 +16,8 @@ public class Lurker : MonoBehaviour
     public int MakeAChoise(MainController.Choise c)
     {
         
-        if(taken_damage)
+        if(GetComponent<BasicEnemy>().off_balance)
         {
-            taken_damage = false;
             return 0;
         } else if(tail_hit > 0)
         {

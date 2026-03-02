@@ -7,6 +7,8 @@ public class Weapon : MonoBehaviour
 {
     public BuffData[] buff_data; //Used in buff loading
 
+    [HideInInspector] public BasicEnemy owner;
+
     [HideInInspector] public bool player;
     [HideInInspector] public Weapon opponent;
     public bool penetrating = false;

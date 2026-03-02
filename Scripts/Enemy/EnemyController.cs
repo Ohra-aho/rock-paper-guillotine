@@ -59,6 +59,7 @@ public class EnemyController : MonoBehaviour
 
     public Weapon EnemyChoise(MainController.Choise playerChoise)
     {
+        currentEnemy.GetComponent<BasicEnemy>().off_balance_triggered = false;
         int choise = choiseMaker(playerChoise);
         //choise = 0;
         Weapon enemyChoise = weapons[choise].GetComponent<Weapon>();
@@ -133,6 +134,7 @@ public class EnemyController : MonoBehaviour
         {
             GameObject new_weapon = Instantiate(weapons[i], true_weapon_holder.transform);
             new_weapon.GetComponent<Weapon>().player = false;
+            new_weapon.GetComponent<Weapon>().owner = currentEnemy.GetComponent<BasicEnemy>();
             EnemyWheel.transform.GetChild(i).GetChild(0)
                 .GetComponent<WeaponSprite>().weapon = new_weapon;
             weapons[i] = new_weapon;
