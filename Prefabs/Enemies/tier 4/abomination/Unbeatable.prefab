@@ -102,9 +102,12 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Unbeatable
-  description: Deals 2-X damage after use. X is current armor on this weapon.
+  description: Deals 3-X damage after use. X is current armor on this weapon.
   sprite: {fileID: 21300000, guid: 7392e396a342b6140a49e4db5b6bd02b, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -135,6 +138,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -179,6 +185,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -186,6 +195,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks: []
+  damage_soft_cap: 7
 --- !u!114 &2856670220802805572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,4 +222,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 2
+  amount: 3
+  armor_piercing: 0

@@ -26,6 +26,7 @@ public class Wanderer : MonoBehaviour
             return 0;
         } else if(!stick_missed)
         {
+            stick_missed = true;
             return 2;
         } else
         {

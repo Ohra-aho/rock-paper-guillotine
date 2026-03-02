@@ -103,9 +103,12 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Raise
-  description: +2 to all damage during the next turn.
+  description: +2 to all damage on to both during the next turn.
   sprite: {fileID: 21300000, guid: 8e91aed68d4bf6c4badc50a89720641c, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -136,6 +139,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -180,6 +186,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -187,6 +196,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks: []
+  damage_soft_cap: 7
 --- !u!114 &-7928718496815920504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +230,7 @@ MonoBehaviour:
   effect_damage_bonus: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
+  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
@@ -226,6 +239,7 @@ MonoBehaviour:
   takeDamage: 0
   takeNoDamage: 0
   dealDamage: 0
+  deal_effect_damage: 0
   draw: 0
   win: 0
   lose: 0
@@ -239,7 +253,9 @@ MonoBehaviour:
   timer: 0
   penetrating: 0
   draw_winner: 0
+  health_buff: 0
   destructive: 0
+  heal_disabler: 0
 --- !u!114 &9119766527384774574
 MonoBehaviour:
   m_ObjectHideFlags: 0

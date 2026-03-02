@@ -96,7 +96,7 @@ MonoBehaviour:
   draw_winner: 0
   dead: 0
   type: 0
-  damage: 2
+  damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
@@ -104,6 +104,9 @@ MonoBehaviour:
   description: Weapon used against this gains +2 to damage for one turn.
   sprite: {fileID: 21300000, guid: 4ba20bdcf553a83459f7a74517bce6d0, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -136,6 +139,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -166,6 +172,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -173,6 +182,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks: []
+  damage_soft_cap: 7
 --- !u!114 &2738651632487618836
 MonoBehaviour:
   m_ObjectHideFlags: 0

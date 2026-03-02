@@ -106,6 +106,9 @@ MonoBehaviour:
   first_turn:
     m_PersistentCalls:
       m_Calls: []
+  end_of_fight:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -136,6 +139,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -164,6 +170,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  unequipped:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0
