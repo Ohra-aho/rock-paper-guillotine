@@ -16,7 +16,10 @@ public class Decreasing : MonoBehaviour
         {
             if(RIE.transform.GetChild(i).GetComponent<Weapon>().name != "Reload")
             {
-                RIE.transform.GetChild(i).GetComponent<Weapon>().damage--;
+                if(RIE.transform.GetChild(i).GetComponent<Weapon>().damage > 0)
+                {
+                    RIE.transform.GetChild(i).GetComponent<Weapon>().damage--;
+                }
             }
         }
     }

@@ -303,17 +303,13 @@ public class MainController : MonoBehaviour
                 if (playerChoise.draw_winner) playerChoise.draw.Invoke();
                 enemyChoise.lose.Invoke();
                 playerChoise.win.Invoke();
-                playerChoise.DealDamage(
-                    enemyChoise
-                    );
+                playerChoise.DealDamage(enemyChoise);
                 break;
             case false:
                 if (enemyChoise.draw_winner) enemyChoise.draw.Invoke();
                 enemyChoise.win.Invoke();
                 playerChoise.lose.Invoke();
-                enemyChoise.DealDamage(
-                    playerChoise
-                    );
+                enemyChoise.DealDamage(playerChoise);
                 break;
             case null:
                 enemyChoise.HandleDraw();

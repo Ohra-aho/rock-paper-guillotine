@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -5355994565532053554}
-  - component: {fileID: -4263594918213079095}
   - component: {fileID: 1561530986855741878}
   m_Layer: 5
   m_Name: "Tykist\xF6"
@@ -92,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -103,10 +103,12 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Cannons
-  description: If wins, uses 1 point to give all other weapons +1 damage. If draws,
-    uses 1 point to deal 1 damage.
+  description: Deals 1 damage after use.
   sprite: {fileID: 21300000, guid: 59aaaca44ac65224da39434a15e374e2, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -117,7 +119,31 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1561530986855741878}
+        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
+        m_MethodName: DealDamage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3098424137161797902}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -5355994565532053554}
+        m_TargetAssemblyTypeName: "Tykist\xF6, Assembly-CSharp"
+        m_MethodName: SetPreviousWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -127,33 +153,21 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -5355994565532053554}
-        m_TargetAssemblyTypeName: "Tykist\xF6, Assembly-CSharp"
-        m_MethodName: BuffWeapons
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   lose:
     m_PersistentCalls:
-      m_Calls: []
-  draw:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -5355994565532053554}
         m_TargetAssemblyTypeName: "Tykist\xF6, Assembly-CSharp"
-        m_MethodName: DealDamage
+        m_MethodName: Lose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -163,6 +177,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  draw:
+    m_PersistentCalls:
+      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -179,6 +196,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  unequipped:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0
@@ -203,29 +223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bdc0acad15510e4e9d89c41833b1efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-4263594918213079095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stacks: 3
-  stack_limit: 3
-  LoadFunction:
-    m_PersistentCalls:
-      m_Calls: []
-  before_stacking:
-    m_PersistentCalls:
-      m_Calls: []
-  after_stacking:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1561530986855741878
 MonoBehaviour:
   m_ObjectHideFlags: 0

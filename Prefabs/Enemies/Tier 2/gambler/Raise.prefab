@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -103,7 +104,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Raise
-  description: +2 to all damage on to both during the next turn.
+  description: +2 damage to all weapons for both sides during the next turn.
   sprite: {fileID: 21300000, guid: 8e91aed68d4bf6c4badc50a89720641c, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -149,19 +150,7 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9119766527384774574}
-        m_TargetAssemblyTypeName: VictroyTrigger, Assembly-CSharp
-        m_MethodName: VictoryTrigger
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   lose:
     m_PersistentCalls:
       m_Calls: []

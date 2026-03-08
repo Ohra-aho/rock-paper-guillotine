@@ -225,6 +225,8 @@ public class EnemyController : MonoBehaviour
     public void EndPhase()
     {
         if (endEffect != null) endEffect();
+        
+        chosenWeapon.GetComponent<Weapon>().endPhase.Invoke();
 
         //Advance temporary buffs
         GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
@@ -245,8 +247,6 @@ public class EnemyController : MonoBehaviour
                 }
             }
         }
-
-        chosenWeapon.GetComponent<Weapon>().endPhase.Invoke();
 
         //Does things when round is over
         currentEnemy.GetComponent<BasicEnemy>().CheckUp(

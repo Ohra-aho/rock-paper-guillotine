@@ -169,10 +169,10 @@ public class BasicEnemy : MonoBehaviour
 
     public void OffBalance()
     {
-        if(!HB.dead)
+        off_balance_triggered = true;
+        if (!HB.dead && !off_balance)
         {
             off_balance = true;
-            off_balance_triggered = true;
             GameObject.Find("light holder").GetComponent<Test>().PlayAnimation("offBalance");
         }
     }

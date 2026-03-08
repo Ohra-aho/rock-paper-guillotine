@@ -20,4 +20,16 @@ public class Kilpimuuri : MonoBehaviour
             }
         }
     }
+
+    public void Lose()
+    {
+        GetComponent<Weapon>().owner.OffBalance();
+    }
+
+    public void SetPreviousWeapon()
+    {
+        GameObject enemy = GameObject.Find("EnemyHolder").transform.GetChild(0).gameObject;
+        enemy.GetComponent<Army>().previous_weapon = this.GetComponent<Weapon>();
+        enemy.GetComponent<BasicEnemy>().Balance();
+    }
 }

@@ -10,7 +10,7 @@ public class Raise : MonoBehaviour
     {
         GetComponent<BuffController>().damage_bonus = 2;
         GetComponent<BuffController>().temporary = true;
-        GetComponent<BuffController>().timer = 1;
+        GetComponent<BuffController>().timer = 2;
         GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
         GetComponent<BuffController>().special_apply = true;
     }

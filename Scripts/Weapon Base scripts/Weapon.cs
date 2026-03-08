@@ -286,4 +286,9 @@ public class Weapon : MonoBehaviour
         armor = real_armor;
         damage = real_damage;
     }
+
+    public void Balance()
+    {
+        owner.GetComponent<BasicEnemy>().Balance();
+    }
 }
