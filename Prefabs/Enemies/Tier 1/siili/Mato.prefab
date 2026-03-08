@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -101,8 +102,8 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Mato
-  description: "Parantaa yhden haavan ja tuhoaa itsens\xE4."
+  name: Worm
+  description: Heals 1 after use and self destructs.
   sprite: {fileID: 21300000, guid: 561ec2212eeb2654ca4db35c7a00ad24, type: 3}
   first_turn:
     m_PersistentCalls:

@@ -19,22 +19,24 @@ public class BasicEnemy : MonoBehaviour
 
     private List<int> chosen_plan = new List<int>();
     private int planIndex = 0;
+    private int off_balance_plan_index = 0;
 
     MainController.Choise lastPlayerChoise = MainController.Choise.kivi;
 
     [HideInInspector] public bool off_balance;
-    public bool nearDeath;
+    [HideInInspector] public bool nearDeath;
+    [HideInInspector] public bool off_balance_pattern_done;
 
-    [HideInInspector] public List<int> off_balance_choises;
+    public List<int> off_balance_choises;
 
     public bool advanced = false;
 
     public List<string> victory_barks;
     public GameObject victory_message;
 
-    public HealthBar HB;
+    [HideInInspector] public HealthBar HB;
 
-    public bool off_balance_triggered = false;
+    [HideInInspector] public bool off_balance_triggered = false;
 
     private void Awake()
     {
@@ -87,6 +89,12 @@ public class BasicEnemy : MonoBehaviour
             nearDeath = true;
         }
 
+        if(off_balance && off_balance_pattern_done)
+        {
+            off_balance_pattern_done = false;
+            Balance();
+        }
+
         /*if(nearDeath)
         {
 
@@ -95,10 +103,35 @@ public class BasicEnemy : MonoBehaviour
 
     public int MakeChoise(MainController.Choise playerChoise)
     {
-        int step = 0;
-        step = StikToPlan();
+        int step = StikToPlan();
         lastPlayerChoise = playerChoise;
 
+        return step;
+    }
+
+    public int MakeOffBalanceChoise()
+    {
+        int step = off_balance_choises[off_balance_plan_index];
+        off_balance_plan_index++;
+        if (off_balance_plan_index >= off_balance_choises.Count)
+        {
+            off_balance_pattern_done = true;
+            off_balance_plan_index = 0;
+            planIndex = 0; //Might neer revision
+        }
+
+        //If weapon is destroyed, skip it in plan
+        while (!CheckIfWeaponExists(step))
+        {
+            step = off_balance_choises[off_balance_plan_index];
+            off_balance_plan_index++;
+            if (off_balance_plan_index >= off_balance_choises.Count)
+            {
+                off_balance_pattern_done = true;
+                off_balance_plan_index = 0;
+                planIndex = 0; //Might need revision
+            }
+        }
         return step;
     }
 
@@ -127,6 +160,11 @@ public class BasicEnemy : MonoBehaviour
     private bool CheckIfWeaponExists(int index)
     {
         return weapons[index] != null;
+    }
+
+    public void ResetPlan()
+    {
+        planIndex = 0;
     }
 
     public void OffBalance()

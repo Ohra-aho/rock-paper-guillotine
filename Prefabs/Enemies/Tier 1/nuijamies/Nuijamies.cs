@@ -6,6 +6,7 @@ public class Nuijamies : MonoBehaviour
 {
     EnemyController controller;
     bool hurt;
+    int smoke_timer = 3;
 
     private void Awake()
     {
@@ -16,17 +17,29 @@ public class Nuijamies : MonoBehaviour
 
     private int MakeChoise(MainController.Choise choise)
     {
-        if(!hurt)
+        if(!GetComponent<BasicEnemy>().off_balance)
         {
-            return 2;
+            if (!hurt && smoke_timer > 0)
+            {
+                smoke_timer--;
+                return 2;
+            }
+            else
+            {
+                return GetComponent<BasicEnemy>().MakeChoise(choise);
+            }
         } else
         {
-            return GetComponent<BasicEnemy>().MakeChoise(choise);
+            return GetComponent<BasicEnemy>().MakeOffBalanceChoise();
         }
     }
 
     private void TakeDamage()
     {
-        hurt = true;
+        if(GetComponent<BasicEnemy>().HB.GiveCurrentHealth() == 1)
+        {
+            hurt = true;
+            GetComponent<BasicEnemy>().OffBalance();
+        }
     }
 }

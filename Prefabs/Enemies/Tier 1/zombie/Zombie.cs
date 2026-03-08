@@ -25,17 +25,12 @@ public class Zombie : MonoBehaviour
             } else
             {
                 flip = !flip;
-                if(Hurt())
-                {
-                    int chance = Random.Range(0, 3);
-                    if (chance > 0) return 2;
-                    else return 0;
-                }
                 return 0;
             }
         }
         else
         {
+            GetComponent<BasicEnemy>().ResetPlan();
             return GetComponent<BasicEnemy>().MakeChoise(choise);
         }
     }

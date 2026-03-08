@@ -16,12 +16,12 @@ public class Siili : MonoBehaviour
 
     public int MakeAChoise(MainController.Choise c)
     {
-        Debug.Log(GetComponent<BasicEnemy>().off_balance);
-        if (GetComponent<BasicEnemy>().off_balance)
+        if (damage_taken)
         {
             if(!worm_eaten)
             {
                 worm_eaten = true;
+                damage_taken = false;
                 //GetComponent<BasicEnemy>().Balance();
                 return 1;
             } else
@@ -40,7 +40,7 @@ public class Siili : MonoBehaviour
         if(!worm_eaten)
         {
             damage_taken = true;
-            GetComponent<BasicEnemy>().OffBalance();
+            //GetComponent<BasicEnemy>().OffBalance();
         }
     }
 }

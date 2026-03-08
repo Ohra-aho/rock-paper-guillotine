@@ -101,7 +101,7 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Kynnet
+  name: Claws
   description: 
   sprite: {fileID: 21300000, guid: fdc4c3731ffe1cb44af8cc70970b2ede, type: 3}
   first_turn:
