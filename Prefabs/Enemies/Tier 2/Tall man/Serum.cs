@@ -11,5 +11,7 @@ public class Serum : MonoBehaviour
             GetComponent<Healing>().Heal();
             GetComponent<Stacking>().DecreaseStacks(1);
         }
+        GetComponent<Weapon>().owner.off_balance_triggered = false;
+        GetComponent<Weapon>().owner.Balance();
     }
 }

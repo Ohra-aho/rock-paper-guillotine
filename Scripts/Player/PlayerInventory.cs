@@ -47,6 +47,11 @@ public class PlayerInventory : MonoBehaviour
         
     }
 
+    public void ClearInventory()
+    {
+        items.Clear();
+    }
+
     private void AddBuffToNewWeapon(GameObject weapon)
     {
         List<Weapon> equipped_weapons = GetComponent<PlayerContoller>().GetWeapons();

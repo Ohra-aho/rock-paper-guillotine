@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -101,9 +102,12 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Bill
-  description: Each weapon gain one point.
+  description: Each weapon gains one point.
   sprite: {fileID: 21300000, guid: 6f54d77bf32883d40aa52cea431557a2, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -122,6 +126,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -178,6 +185,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -188,6 +198,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Pocket change. That's all that is.
+  damage_soft_cap: 7
 --- !u!114 &-773870869169075467
 MonoBehaviour:
   m_ObjectHideFlags: 0

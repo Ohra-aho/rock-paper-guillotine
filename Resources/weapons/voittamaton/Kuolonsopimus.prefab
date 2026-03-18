@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 8157586575091064521}
   m_Layer: 5
   m_Name: Kuolonsopimus
   m_TagString: Untagged
@@ -90,20 +89,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
   dead: 0
   type: 3
-  damage: 1
+  damage: 2
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Death pact
-  description: Deals 2 damage to you after use.
+  name: Pact
+  description: Has unforseen consequenses
   sprite: {fileID: 21300000, guid: 7d76f7af0efe01144a59d27219a0e46d, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -123,19 +126,10 @@ MonoBehaviour:
       m_Calls: []
   dealDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8157586575091064521}
-        m_TargetAssemblyTypeName: KuolonSopimus, Assembly-CSharp
-        m_MethodName: SelfDamage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -166,26 +160,17 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
-  health: 1
+  health: 0
   kivi_synegry: 0
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
   used_this_game: 0
   pick_barks:
-  - Do you have health to spare?
---- !u!114 &8157586575091064521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb0b2a2bc9ef67943bccaa1a97e4464c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 2
+  - We have a deal then?
+  damage_soft_cap: 7

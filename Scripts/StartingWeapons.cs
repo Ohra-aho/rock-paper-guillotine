@@ -8,28 +8,36 @@ public class StartingWeapons : MonoBehaviour
 
     private void Awake()
     {
+        all_weapons.AddRange(Resources.LoadAll<GameObject>("weapons/sakset"));
         all_weapons.AddRange(Resources.LoadAll<GameObject>("weapons/hyödytön"));
+        all_weapons.AddRange(Resources.LoadAll<GameObject>("weapons/paperi"));
+        all_weapons.AddRange(Resources.LoadAll<GameObject>("weapons/kivi"));
+        all_weapons.AddRange(Resources.LoadAll<GameObject>("weapons/voittamaton"));
+
     }
-       
+
     public List<GameObject> GiveStartingWeapons()
     {
         List<GameObject> temp = new List<GameObject>();
         int index = GetComponent<MainController>().GetComponent<StoryCheckList>().greeting_index;
-        Debug.Log(index);
+
         if(index >= weapon_collections.Length)
         {
             index = weapon_collections.Length - 1;
         }
         string[] weapon_names = weapon_collections[index];
 
-        for(int i = 0; i < all_weapons.Count; i++)
+        if(weapon_names.Length > 0)
         {
-            for(int j = 0; j < weapon_names.Length; j++)
+            for (int i = 0; i < all_weapons.Count; i++)
             {
-                if(all_weapons[i].GetComponent<Weapon>().name == weapon_names[j])
+                for (int j = 0; j < weapon_names.Length; j++)
                 {
-                    temp.Add(all_weapons[i]);
-                    break;
+                    if (all_weapons[i].GetComponent<Weapon>().name == weapon_names[j])
+                    {
+                        temp.Add(all_weapons[i]);
+                        break;
+                    }
                 }
             }
         }
@@ -38,8 +46,15 @@ public class StartingWeapons : MonoBehaviour
 
     string[][] weapon_collections =
     {
-        new string[] { "Anvil" },
-        new string[] { "Ritual stone" },
-        new string[] { "Tombstone" },
+        new string[] { "Pencil", "Paper", "Rock" },
+        new string[] { "Gun", "Paper", "Wallet" },
+        new string[] { "Scissors", "Bottle", "Rock" },
+
+        //Story 1
+        new string[] { "Bill", "Access code", "Brass Knuckles" },
+
+        new string[] { "Shotgun", "Cardboard", "Ammunition" },
+
+        new string[] { },
     };
 }

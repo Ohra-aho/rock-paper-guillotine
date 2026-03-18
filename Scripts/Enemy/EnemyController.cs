@@ -193,11 +193,7 @@ public class EnemyController : MonoBehaviour
     {
         dead = HB.GetComponent<HealthBar>().CheckIfDead();
         if(damageEffect != null) damageEffect.Invoke();
-        if (!dead)
-        {
-            currentEnemy.GetComponent<BasicEnemy>().ReactToDamage();
-        }
-        else
+        if(dead)
         {
             GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
             infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();

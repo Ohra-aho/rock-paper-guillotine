@@ -22,6 +22,8 @@ public class BasicEnemy : MonoBehaviour
     private int off_balance_plan_index = 0;
 
     MainController.Choise lastPlayerChoise = MainController.Choise.kivi;
+    [HideInInspector] public Weapon previous_weapon;
+    [HideInInspector] public int weapon_streak = 0;
 
     [HideInInspector] public bool off_balance;
     [HideInInspector] public bool nearDeath;
@@ -77,10 +79,6 @@ public class BasicEnemy : MonoBehaviour
         }
     }*/
 
-    public void ReactToDamage() //Nees indicator when off balance
-    {
-        
-    }
 
     public void CheckUp(int currentHealth, int maxHealth, int enemyCurrentHealth, int enemyMaxHealth)
     {
@@ -94,11 +92,6 @@ public class BasicEnemy : MonoBehaviour
             off_balance_pattern_done = false;
             Balance();
         }
-
-        /*if(nearDeath)
-        {
-
-        }*/
     }
 
     public int MakeChoise(MainController.Choise playerChoise)
@@ -154,12 +147,35 @@ public class BasicEnemy : MonoBehaviour
                 planIndex = 0;
             }
         }
+        while(CheckIfWeaponHasBeenSpammed(step))
+        {
+            step = chosen_plan[planIndex];
+            planIndex++;
+            if (planIndex >= chosen_plan.Count)
+            {
+                planIndex = 0;
+            }
+        }
+
+        weapon_streak++;
+        if(previous_weapon != null && previous_weapon != weapons[step].GetComponent<Weapon>())
+        {
+            weapon_streak = 1;
+        }
+        previous_weapon = weapons[step].GetComponent<Weapon>();
+
         return step;
     }
 
     private bool CheckIfWeaponExists(int index)
     {
+
         return weapons[index] != null;
+    }
+
+    private bool CheckIfWeaponHasBeenSpammed(int index)
+    {
+        return weapon_streak >= 2 && previous_weapon == weapons[index].GetComponent<Weapon>();
     }
 
     public void ResetPlan()

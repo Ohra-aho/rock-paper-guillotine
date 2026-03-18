@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -101,7 +102,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Newspaper
-  description: -1 damage when wins until the end of the fight.
+  description: Whenever wins, -1 damage until the end of the fight.
   sprite: {fileID: 21300000, guid: 02e9d229332af7341952b474e221310c, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -151,6 +152,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -191,6 +195,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  unequipped:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0

@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -102,9 +103,12 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Needle
-  description: Heal one damage after use.
+  description: Heal 1 damage after use.
   sprite: {fileID: 21300000, guid: 29e37166a8eaa3c46ab07ccd4d220f7c, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -137,6 +141,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -167,6 +174,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 1
   health: 0
@@ -177,6 +187,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Still can see it, can you.
+  damage_soft_cap: 7
 --- !u!114 &-4155978701443049850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disabled: 0
   amount: 0
 --- !u!114 &-5576181622998021734
 MonoBehaviour:

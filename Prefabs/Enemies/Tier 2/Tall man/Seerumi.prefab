@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -106,6 +107,9 @@ MonoBehaviour:
   description: Uses one point to heal 2 after use.
   sprite: {fileID: 21300000, guid: ecca68dc6e69f5d47915b4d615ce8033, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -138,6 +142,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -168,6 +175,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -177,6 +187,7 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks: []
+  damage_soft_cap: 7
 --- !u!114 &3858271718651255243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,4 +235,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disabled: 0
   amount: 2

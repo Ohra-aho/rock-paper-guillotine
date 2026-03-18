@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -101,9 +102,12 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Lava
-  description: Armor of each weapon turns to damage.
+  description: Armor of each weapon turns into damage.
   sprite: {fileID: 21300000, guid: ac85426b120d33c4cb9d6999dbd7e97b, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -122,6 +126,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -154,6 +161,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -164,6 +174,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Abandon all caution and set all papers to blaze.
+  damage_soft_cap: 7
 --- !u!114 &6088703525507109606
 MonoBehaviour:
   m_ObjectHideFlags: 0

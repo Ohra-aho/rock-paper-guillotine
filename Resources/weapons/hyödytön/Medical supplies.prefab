@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 5025081480952226764}
+  - component: {fileID: -3206155839901610199}
   m_Layer: 5
   m_Name: Medical supplies
   m_TagString: Untagged
@@ -90,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -102,14 +104,14 @@ MonoBehaviour:
   real_armor: 0
   name: Medical supplies
   description: Gives 1 random healing item to your inventory at the star of each
-    fight.
+    fight when unequipped and heals 1 when equipped..
   sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5025081480952226764}
-        m_TargetAssemblyTypeName: MedicalSupplies, Assembly-CSharp
-        m_MethodName: GiveRandomItem
+      - m_Target: {fileID: -3206155839901610199}
+        m_TargetAssemblyTypeName: Healing, Assembly-CSharp
+        m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -138,6 +140,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -172,7 +177,19 @@ MonoBehaviour:
       m_Calls: []
   unequipped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5025081480952226764}
+        m_TargetAssemblyTypeName: MedicalSupplies, Assembly-CSharp
+        m_MethodName: GiveRandomItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   self_destructive: 0
   healing: 0
   health: 0
@@ -200,3 +217,17 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 02faeedc78bf44e408a7b9177f5fe424, type: 3}
   - {fileID: 1944698211339908181, guid: 43d70232744f01c419ebc48c2a6e60c1, type: 3}
   - {fileID: 1944698211339908181, guid: 5bcba36359ca32a43b32c4f9b2206f11, type: 3}
+--- !u!114 &-3206155839901610199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabled: 0
+  amount: 1

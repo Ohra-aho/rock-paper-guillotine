@@ -30,9 +30,14 @@ public class MessageHolder : MonoBehaviour
 
         //Add new starting weapons
         List<GameObject> starting_weapons = MC.GetComponent<StartingWeapons>().GiveStartingWeapons();
-        for(int i = 0; i < starting_weapons.Count; i++)
+        Debug.Log(starting_weapons.Count);
+        if(starting_weapons.Count > 0)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(starting_weapons[i]);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().ClearInventory();
+            for (int i = 0; i < starting_weapons.Count; i++)
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(starting_weapons[i]);
+            }
         }
         
 
@@ -47,11 +52,15 @@ public class MessageHolder : MonoBehaviour
 
     string[][] messages = 
     {
-        new string[] { "Oh. I was wondering, if you would end up here.", "What happened to that other one? That case about the statue. Few years in prison?", "It's interesting, how one child can change ones fate.", "Regardless. Shall we?" },
-        new string[] {  "Whoah... The Shadow of Gial in the flesh.", "I almost rooted for you. Reading about your heists was just too entertaining.", "This should be interesting." },
-        new string[] {  "Hello...", "You know. I never got my money back.", "I will enjoy this." },
-        new string[] {  "YOU!", "I am very tempted to just end you. Right here and right now.", "So let's get this over with.", "I wish you the worst of luck." },
-        new string[] {  "Hello.", "I read about your case. A bit boring, if you ask me.", "Still can't remember why you killed them?", "Well I doubt, I will remember you either." },
+        new string[] { "I know how and when,", "but why...", "I did not bother to figure that one out.", "And I don’t plan to explain anything to you either." },
+        new string[] { "It is funny to think that in situations like this, everyone is still innocent.", "Well, until proven, I suppose."},
+        new string[] { "Was it worth it?" },
+
+        //Story 1
+        new string[] { "Whoah... The Shadow of Gial in the flesh.", "I almost rooted for you, but I guess life has a price in the end.", "Shame. Reading about your heists was quite entertaining.", "This should be interesting." },
+
+        new string[] { "Smoke? ", "Well if you don't mind I will grab one.", "It has been a long day." },
+
         new string[] {  "It wasn't worth it, was it.", "And now I will do to you, what you did to them.", "Funny how that works." },
         new string[] {  "...", "...", "Just pull the lever." },
         new string[] {  "I never understood those numbers.", "Was it code?", "Was it key?", "Oh, do not tell me. It is funnier to continue guessing." },

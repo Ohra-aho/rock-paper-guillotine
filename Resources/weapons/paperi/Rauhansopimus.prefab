@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -104,9 +105,12 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Peace treaty
-  description: If no damage is dealt, heal one damage. (Continuous)
+  description: If no damage is dealt, heal 2. (Continuous)
   sprite: {fileID: 21300000, guid: 582ef63cd44095c49a7f829819444e29, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -125,6 +129,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -205,6 +212,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -215,6 +225,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - The very definition of stalling.
+  damage_soft_cap: 7
 --- !u!114 &5239540486493636854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
+  disabled: 0
+  amount: 2
 --- !u!114 &8512697344651705140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,6 +291,7 @@ MonoBehaviour:
   takeDamage: 0
   takeNoDamage: 0
   dealDamage: 0
+  deal_effect_damage: 0
   draw: 0
   win: 0
   lose: 0
@@ -294,3 +307,4 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   destructive: 0
+  heal_disabler: 0

@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -102,9 +103,13 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Dodge
-  description: After use, all other weapons gain +1 armor during the next turn.
+  description: If does not lose, all other weapons gain +2 damage and +1 armor during
+    the next turn.
   sprite: {fileID: 21300000, guid: 1ca580e0f3215044fb2301b30b5fe037, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -114,6 +119,24 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   endPhase:
+    m_PersistentCalls:
+      m_Calls: []
+  victory:
+    m_PersistentCalls:
+      m_Calls: []
+  takeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -8691021010670127}
@@ -128,27 +151,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  victory:
-    m_PersistentCalls:
-      m_Calls: []
-  takeDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  dealDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  takeNoDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  win:
-    m_PersistentCalls:
-      m_Calls: []
   lose:
     m_PersistentCalls:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -8691021010670127}
+        m_TargetAssemblyTypeName: Dodge, Assembly-CSharp
+        m_MethodName: AddBuffs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -167,6 +187,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -176,6 +199,7 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks: []
+  damage_soft_cap: 7
 --- !u!114 &8735357463152483393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +227,7 @@ MonoBehaviour:
   takeDamage: 0
   takeNoDamage: 0
   dealDamage: 0
+  deal_effect_damage: 0
   draw: 0
   win: 0
   lose: 0
@@ -218,6 +243,7 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   destructive: 0
+  heal_disabler: 0
 --- !u!114 &-8691021010670127
 MonoBehaviour:
   m_ObjectHideFlags: 0

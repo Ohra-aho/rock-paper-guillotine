@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -7289125193417213194}
   - component: {fileID: -7023939810274262516}
   - component: {fileID: 3545483467775676389}
+  - component: {fileID: 5655800709896458466}
   m_Layer: 5
   m_Name: mutation
   m_TagString: Untagged
@@ -92,21 +93,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
-  penetrating: 1
+  penetrating: 0
   draw_winner: 0
   dead: 0
   type: 0
   damage: 1
-  armor: 1
+  armor: 0
   real_damage: 0
   real_armor: 0
   name: Mutation
   description: Deals 1 damage to self. Then either heals 2 or one random weapon gains
-    either +1 to damage or armor. Pierces armor.
+    either +1 to damage or armor.
   sprite: {fileID: 21300000, guid: 25b9fcaeacf5063478c57be7c660eb47, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -118,6 +123,18 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 3545483467775676389}
+        m_TargetAssemblyTypeName: Mutation, Assembly-CSharp
+        m_MethodName: CheckDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 3545483467775676389}
         m_TargetAssemblyTypeName: Mutation, Assembly-CSharp
         m_MethodName: Mutate
@@ -137,6 +154,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -169,6 +189,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -176,6 +199,9 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks: []
+  damage_soft_cap: 7
 --- !u!114 &-7289125193417213194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 1
+  armor_piercing: 1
 --- !u!114 &-7023939810274262516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disabled: 0
   amount: 2
 --- !u!114 &3545483467775676389
 MonoBehaviour:
@@ -212,5 +240,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dda3d387ecc752c49b3ca4301142425f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5655800709896458466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5665f5f93a7f649bffbb97d7b763bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

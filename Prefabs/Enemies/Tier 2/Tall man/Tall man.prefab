@@ -66,12 +66,19 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: d7c3ddcc363e6bd4bb4f4389e69b1aac, type: 3}
   - {fileID: 1944698211339908181, guid: 63332b36f15b6474e80d4e3468ec1dfb, type: 3}
   - {fileID: 1944698211339908181, guid: e87979058bf87bf409669a093ceab9f5, type: 3}
-  plan_1: 0200000000000000
-  plan_2: 000000000200000002000000
+  plan_1: 0000000002000000
+  plan_2: 020000000000000000000000
+  previous_weapon: {fileID: 0}
+  weapon_streak: 0
   off_balance: 0
   nearDeath: 0
+  off_balance_pattern_done: 0
   off_balance_choises: 
   advanced: 1
+  victory_barks: []
+  victory_message: {fileID: 0}
+  HB: {fileID: 0}
+  off_balance_triggered: 0
 --- !u!114 &4110409653828241436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0403a78261fc3df47ba53067a91354c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dodge_active: 0
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0

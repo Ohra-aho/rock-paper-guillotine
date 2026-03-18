@@ -14,14 +14,20 @@ public class Mawmonster : MonoBehaviour
 
     private int MakeChoise(MainController.Choise playerChoise)
     {
-        int mutate = Random.Range(0, 6);
-        if (mutate == 0)
+        if(!GetComponent<BasicEnemy>().off_balance)
+        {
+           /* int mutate = Random.Range(0, 6);
+            if (mutate == 0)
+            {
+                return 0;
+            }
+            else
+            {*/
+                return GetComponent<BasicEnemy>().MakeChoise(MainController.Choise.kivi);
+            //}
+        } else
         {
             return 0;
-        }
-        else
-        {
-            return GetComponent<BasicEnemy>().MakeChoise(MainController.Choise.kivi);
         }
     }
 }

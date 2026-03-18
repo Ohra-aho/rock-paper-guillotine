@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -101,9 +102,12 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Scalpel
-  description: If enemy is in full health, +2 to damage.
+  description: If enemy is at full health, +2 to damage.
   sprite: {fileID: 21300000, guid: 39b4b3214e4a51c478cacfa516800034, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -122,6 +126,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -166,6 +173,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -175,6 +185,7 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks: []
+  damage_soft_cap: 7
 --- !u!114 &-1557287006312864216
 MonoBehaviour:
   m_ObjectHideFlags: 0
