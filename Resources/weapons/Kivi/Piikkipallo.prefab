@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   penetrating: 0
@@ -101,9 +102,12 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Spike ball
-  description: If you take damage, deals one damage to enemy.
+  description: If you take damage, deals 1 damage.
   sprite: {fileID: 21300000, guid: 5d98066317e2fa94cbe8f69fee01af35, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -136,6 +140,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -166,6 +173,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -176,6 +186,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Bark and bite. A good pick.
+  damage_soft_cap: 7
 --- !u!114 &2865161422314870810
 MonoBehaviour:
   m_ObjectHideFlags: 0

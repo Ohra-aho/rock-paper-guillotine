@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -104,7 +105,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Molotov
-  description: After use, for 3 turns deals 1 damage to the enemy.
+  description: After use, for 3 turns deals 1 damage to the enemy and destroys itself.
   sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -243,6 +244,7 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   destructive: 0
+  heal_disabler: 0
 --- !u!114 &9133575823650017183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   used_ones: 0
   destroyed: 0
+  disabled: 0
 --- !u!114 &-1453686802247340637
 MonoBehaviour:
   m_ObjectHideFlags: 0

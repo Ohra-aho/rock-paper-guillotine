@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -103,9 +104,12 @@ MonoBehaviour:
   real_armor: 0
   name: Hit list
   description: Whenever you win an encounter with this weapon, +1 to damage. To maximum
-    of 7.
+    of 5.
   sprite: {fileID: 21300000, guid: f8f7b12fe8750db46a4053b5099fd229, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -138,6 +142,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -166,6 +173,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  unequipped:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0
@@ -204,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stacks: 0
-  stack_limit: 6
+  stack_limit: 4
   LoadFunction:
     m_PersistentCalls:
       m_Calls:

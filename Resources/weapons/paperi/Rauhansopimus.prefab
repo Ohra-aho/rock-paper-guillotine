@@ -105,7 +105,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Peace treaty
-  description: If no damage is dealt, heal 2. (Continuous)
+  description: If no damage is dealt, heal 1. (Continuous)
   sprite: {fileID: 21300000, guid: 582ef63cd44095c49a7f829819444e29, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabled: 0
-  amount: 2
+  amount: 1
 --- !u!114 &8512697344651705140
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -114,7 +115,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Fireball
-  description: If wins a turn, destroys itself.
+  description: If wins, destroys itself.
   sprite: {fileID: 21300000, guid: 4f0b59fe0f430a646b3a561c73ca8ccc, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -138,6 +139,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -182,6 +186,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 1
   healing: 0
   health: 0
@@ -207,3 +214,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   used_ones: 0
   destroyed: 0
+  disabled: 0

@@ -106,6 +106,7 @@ MonoBehaviour:
   takeDamage: 0
   takeNoDamage: 0
   dealDamage: 0
+  deal_effect_damage: 0
   draw: 0
   win: 0
   lose: 0
@@ -121,6 +122,7 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   destructive: 0
+  heal_disabler: 0
 --- !u!114 &1415664320520306304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -158,9 +161,12 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Holy text
-  description: Each time you heal, deal one damage to the enemy. (Continuous)
+  description: Each time you heal, deals 1 damage. (Continuous)
   sprite: {fileID: 21300000, guid: cb5421596bf1f7242accc24cbb23b466, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -179,6 +185,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -247,6 +256,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 1
   health: 0
@@ -257,6 +269,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Ready to confess?
+  damage_soft_cap: 7
 --- !u!114 &-4890876596102729932
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -101,10 +102,13 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Die
-  description: 'This weapons damage is anything between 0 and 3. Changes each time
+  description: 'This weapons damage can be anything from 0 to 3. Changes each time
     when used. '
   sprite: {fileID: 21300000, guid: a6d3375a871b3e143bec2f35ec895a32, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -137,6 +141,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -167,6 +174,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -177,6 +187,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - What? This isn't enough gambling for you?
+  damage_soft_cap: 7
 --- !u!114 &-8405036362851658125
 MonoBehaviour:
   m_ObjectHideFlags: 0

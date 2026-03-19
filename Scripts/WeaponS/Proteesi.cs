@@ -6,7 +6,7 @@ public class Proteesi : MonoBehaviour
 {
     public void HealthIncrease()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.IncreaseHealthBar(2, true);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.IncreaseHealthBar(1, true);
         GetComponent<SelfDestruct>().Destruct();
     }
 }

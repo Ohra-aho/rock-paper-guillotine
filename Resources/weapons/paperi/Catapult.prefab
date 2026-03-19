@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -103,7 +104,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Catapult
-  description: 'After use all "Rocks" gain: "Deals 1 damage after use" for one turn. '
+  description: 'After use all "rocks" gain: "Deals 1 damage after use" during the
+    next turn. '
   sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   first_turn:
     m_PersistentCalls:
