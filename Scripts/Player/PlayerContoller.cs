@@ -57,6 +57,11 @@ public class PlayerContoller : MonoBehaviour
         {
             MC.Loose();
             HB.dead = false;
+        } else
+        {
+            GameObject enemy = GameObject.FindGameObjectWithTag("EnemyHolder");
+            bool dead = enemy.GetComponent<EnemyController>().dead;
+            if (dead) MC.Win();
         }
     } 
 
@@ -232,7 +237,7 @@ public class PlayerContoller : MonoBehaviour
 
     //Combat functions
 
-    public void DealDamage()
+   /* public void DealDamage()
     {
         GameObject enemy = GameObject.FindGameObjectWithTag("EnemyHolder");
         bool dead = enemy.GetComponent<EnemyController>().dead;
@@ -244,7 +249,7 @@ public class PlayerContoller : MonoBehaviour
         bool dead = HB.GetComponent<HealthBar>().CheckIfDead();
 
         if (dead) MC.Loose();
-    }
+    }*/
 
     public void Draw()
     {

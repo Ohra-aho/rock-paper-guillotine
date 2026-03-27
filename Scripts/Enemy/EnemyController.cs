@@ -43,7 +43,6 @@ public class EnemyController : MonoBehaviour
             dead = true;
             GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
             infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
-            MC.Win();
             HB.dead = false;
         }
     }
@@ -197,7 +196,6 @@ public class EnemyController : MonoBehaviour
         {
             GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
             infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
-            MC.Win();
             HB.dead = false;
         }
     }
@@ -268,6 +266,7 @@ public class EnemyController : MonoBehaviour
                 RIE.transform.GetChild(i).GetComponent<Weapon>().first_turn.Invoke();
             }
         }
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().Death();
     }
 
     public List<Weapon> GetWeapons()

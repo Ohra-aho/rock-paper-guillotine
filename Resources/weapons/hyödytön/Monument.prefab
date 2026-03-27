@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -101,7 +102,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Monument
-  description: After use, triggers all after use effects of all weapons.
+  description: After use, triggers all after use effects of all equipped weapons.
   sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   first_turn:
     m_PersistentCalls:

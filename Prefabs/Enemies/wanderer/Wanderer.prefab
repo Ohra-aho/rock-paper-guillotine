@@ -120,8 +120,11 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: d973b6fde138fa3479172f532aae631b, type: 3}
   plan_1: 
   plan_2: 
+  previous_weapon: {fileID: 0}
+  weapon_streak: 0
   off_balance: 0
   nearDeath: 0
+  off_balance_pattern_done: 0
   off_balance_choises: 00000000
   advanced: 1
   victory_barks:
@@ -129,6 +132,7 @@ MonoBehaviour:
   - At least you didn't embarass yourself.
   victory_message: {fileID: 0}
   HB: {fileID: 0}
+  off_balance_triggered: 0
 --- !u!114 &4638538761962290413
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -175,6 +175,7 @@ public class BasicEnemy : MonoBehaviour
 
     private bool CheckIfWeaponHasBeenSpammed(int index)
     {
+        if (weapons[index].GetComponent<Weapon>().spammable) return false;
         return weapon_streak >= 2 && previous_weapon == weapons[index].GetComponent<Weapon>();
     }
 

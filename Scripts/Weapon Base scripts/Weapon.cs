@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour
     [HideInInspector] public Weapon opponent;
     public bool penetrating = false;
     public bool draw_winner = false;
+    public bool spammable = false; //For enemy behaviour
     [HideInInspector] public bool dead;
     public MainController.Choise type;
     //public int base_damage;
