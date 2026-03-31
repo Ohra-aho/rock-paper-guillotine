@@ -79,11 +79,22 @@ public class Story : MonoBehaviour
                         }
                         InsertEvent(SC.first_achievement, i - 1);
                         SCL.first_achievement = true;
+
+                        //Add story
+                        Debug.Log("Event should be there");
+                        InsertEvent(narrative.before_first_encounter[intro_index+1].gameObject, i);
+
                         break;
                     } else if(!SCL.first_achievement_pick && transform.parent.GetComponent<RLController>().picks > 0)
                     {
                         SCL.first_achievement_pick = true;
                         InsertEvent(SC.first_achievement_pick, i - 1);
+
+                        //Add story
+                        Debug.Log("Event should be there");
+
+                        InsertEvent(narrative.before_first_encounter[intro_index+1].gameObject, i);
+
                         break;
                     } 
                     else

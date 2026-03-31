@@ -30,7 +30,6 @@ public class MessageHolder : MonoBehaviour
 
         //Add new starting weapons
         List<GameObject> starting_weapons = MC.GetComponent<StartingWeapons>().GiveStartingWeapons();
-        Debug.Log(starting_weapons.Count);
         if(starting_weapons.Count > 0)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().ClearInventory();
