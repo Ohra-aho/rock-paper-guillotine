@@ -14,23 +14,43 @@ public class WinStreak : MonoBehaviour
     public void Stacking(Weapon w)
     {
         MainController MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
-        if(MC.won != null)
+        if(MC.won == true)
         {
-            if(MC.won == true)
-            {
-                GetComponent<Stacking>().IncreaseStacks(1);
-                if (GetComponent<Stacking>().stacks == 3)
-                {
-                    GetComponent<EffectDamage>().DealDamage(w);
-                    GetComponent<Stacking>().stacks = 0;
-                }
-            } else {
-                GetComponent<Stacking>().stacks = 0;
-            }
-        } else
-        {
-            GetComponent<Stacking>().stacks = 0;
+            AppluBuffs();
         }
 
+    }
+
+    public void AppluBuffs()
+    {
+        GameObject RI = GameObject.FindGameObjectWithTag("RI");
+        for(int i = 0; i < RI.transform.childCount; i++)
+        {
+            Buff new_buff = Instantiate(GetComponent<BuffController>().buff, RI.transform.GetChild(i)).GetComponent<Buff>();
+            new_buff.id = GetComponent<Weapon>().name+"_2";
+            new_buff.temporary = true;
+            new_buff.timer = 1000;
+            new_buff.special = (Weapon w) => { RemoveDamageBuffs(); };
+            new_buff.draw = true;
+            new_buff.lose = true;
+            new_buff.damage_buff = 1;
+            new_buff.AddBuff();
+        }
+    }
+
+    public void RemoveDamageBuffs()
+    {
+        GameObject RI = GameObject.FindGameObjectWithTag("RI");
+        for(int i = 0; i < RI.transform.childCount; i++)
+        {
+            for(int j = RI.transform.GetChild(i).transform.childCount-1; j >= 0; j--)
+            {
+                if(RI.transform.GetChild(i).transform.GetChild(j).GetComponent<Buff>().id == GetComponent<Weapon>().name + "_2")
+                {
+                    RI.transform.GetChild(i).transform.GetChild(j).GetComponent<Buff>().RemoveBuff(); 
+                    Destroy(RI.transform.GetChild(i).transform.GetChild(j).gameObject);
+                }
+            }
+        }
     }
 }
