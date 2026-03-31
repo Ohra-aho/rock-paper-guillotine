@@ -12,7 +12,7 @@ public class Puolustusmanifesti : MonoBehaviour
         List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
         for(int i = 0; i < weapons.Count; i++)
         {
-            damage += weapons[i].armor;
+            damage += weapons[i].GiveEffectiveArmor();
         }
 
         if(armor_found < damage)
