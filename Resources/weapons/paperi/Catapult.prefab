@@ -97,6 +97,7 @@ MonoBehaviour:
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 1
   damage: 1
@@ -104,8 +105,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Catapult
-  description: 'After use all "rocks" gain: "Deals 1 damage after use" during the
-    next turn. '
+  description: After use all weapons gain "Deals 1 damage after use and destroys
+    itself" during the next turn.
   sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   first_turn:
     m_PersistentCalls:
