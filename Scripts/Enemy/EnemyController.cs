@@ -97,6 +97,7 @@ public class EnemyController : MonoBehaviour
 
     public void SpawnEnemy()
     {
+        dead = false;
         if (story_event_holder.transform.childCount > 0)
         {
             Encounter encounter = null;

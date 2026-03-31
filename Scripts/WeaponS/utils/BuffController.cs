@@ -89,8 +89,15 @@ public class BuffController : MonoBehaviour
 
     public void Equip()
     {
-        buff_on = true;
-        AddBuffs();
+        if (!temporary)
+        {
+            buff_on = true;
+            AddBuffs();
+        } else if (!GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().dead)
+        {
+            buff_on = true;
+            AddBuffs();
+        }
     }
 
     public void Unequip()

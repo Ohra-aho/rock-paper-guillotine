@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -6867594184265076172}
   - component: {fileID: 4782333914233514103}
-  - component: {fileID: 7863754594264066741}
-  - component: {fileID: 8146985597736291281}
   m_Layer: 5
   m_Name: Victory streak
   m_TagString: Untagged
@@ -93,10 +91,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 0
   damage: 1
@@ -104,9 +104,13 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Victory streak
-  description: If you win 3 turn in a row, deals 2 damage.
+  description: Whenever you win, all your weapons gain +1 damage, until you lose
+    or draw.
   sprite: {fileID: 21300000, guid: b868e3f5ead59cb479fca06c41bdcee1, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -125,6 +129,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -157,6 +164,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -167,6 +177,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Getting cocky are we?
+  damage_soft_cap: 7
 --- !u!114 &-6867594184265076172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +217,7 @@ MonoBehaviour:
   takeDamage: 0
   takeNoDamage: 0
   dealDamage: 0
+  deal_effect_damage: 0
   draw: 0
   win: 0
   lose: 0
@@ -221,40 +233,4 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   destructive: 0
---- !u!114 &7863754594264066741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stacks: 0
-  stack_limit: 3
-  LoadFunction:
-    m_PersistentCalls:
-      m_Calls: []
-  before_stacking:
-    m_PersistentCalls:
-      m_Calls: []
-  after_stacking:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &8146985597736291281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 2
-  armor_piercing: 0
+  heal_disabler: 0

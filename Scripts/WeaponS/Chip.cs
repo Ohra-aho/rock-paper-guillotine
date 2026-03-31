@@ -6,25 +6,17 @@ public class Chip : MonoBehaviour
 {
     private void Awake()
     {
+        GetComponent<BuffController>().special_apply = true;
         GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
-        GetComponent<BuffController>().endPhase = true;
-        GetComponent<BuffController>().special = ApplyBuffs;
+        GetComponent<BuffController>().draw = true;
+        GetComponent<BuffController>().lose = true;
+        GetComponent<BuffController>().special = (Weapon w) => { GetComponent<EffectDamage>().SelfDamage(w); };
+        GetComponent<BuffController>().temporary = true;
+        GetComponent<BuffController>().timer = 2;
     }
 
-    public void ApplyBuffs(Weapon w)
+    public void ApplyBuffs()
     {
-        if(GameObject.Find("EventSystem").GetComponent<MainController>().won == true && !GameObject.Find("EnemyHolder").GetComponent<EnemyController>().dead)
-        {
-            List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
-            for (int i = 0; i < weapons.Count; i++)
-            {
-                GameObject new_buff = Instantiate(GetComponent<BuffController>().buff, weapons[i].transform);
-                new_buff.GetComponent<Buff>().id = "Chip_buff";
-                new_buff.GetComponent<Buff>().damage_buff = 1;
-                new_buff.GetComponent<Buff>().temporary = true;
-                new_buff.GetComponent<Buff>().timer = 2;
-                new_buff.GetComponent<Buff>().AddBuff();
-            }
-        }
+        GetComponent<BuffController>().Equip();
     }
 }
