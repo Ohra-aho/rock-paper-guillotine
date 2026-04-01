@@ -4,27 +4,32 @@ using UnityEngine;
 
 public class Tappolista : MonoBehaviour
 {
-    public void IncreaseStacks()
+    bool kill = false;
+
+    public void Kill()
     {
-        CalculateDamage();
+        kill = true;
+        GetComponent<Stacking>().IncreaseStacks(1);
     }
 
-    public void CalculateDamage()
+    public void EndOfFight()
     {
-        int amount = 0;
-        GetComponent<Weapon>().damage -= GetComponent<Stacking>().GiveAmountOfStackDividedBy(1);
-        GetComponent<Stacking>().IncreaseStacks(1);
-        amount = GetComponent<Stacking>().GiveAmountOfStackDividedBy(1);
-        GetComponent<Weapon>().damage += amount;
+        if(!kill)
+        {
+            RemovePrevBuff();
+            GetComponent<Stacking>().stacks = 0;
+            AddBuff();
+        }
+        kill = false;
     }
 
     public void RemovePrevBuff()
     {
-        GetComponent<Weapon>().damage -= GetComponent<Stacking>().GiveAmountOfStackDividedBy(1);
+        GetComponent<Weapon>().damage -= GetComponent<Stacking>().stacks;
     }
 
     public void AddBuff()
     {
-        GetComponent<Weapon>().damage += GetComponent<Stacking>().GiveAmountOfStackDividedBy(1); ;
+        GetComponent<Weapon>().damage += GetComponent<Stacking>().stacks;
     }
 }

@@ -10,7 +10,7 @@ public class GreatSword : MonoBehaviour
         GetComponent<Weapon>().damage -= damage_buff;
         damage_buff = 0;
         HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
-        damage_buff = HB.GiveMaxHealth() / 3;
+        damage_buff = HB.GiveCurrentHealth() / 2;
         GetComponent<Weapon>().damage += damage_buff;
 
     }
