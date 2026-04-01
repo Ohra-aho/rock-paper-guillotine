@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 906790563591549630}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 2821382414112198119}
+  - component: {fileID: 937213836965795298}
   m_Layer: 5
   m_Name: Hiidenkivi
   m_TagString: Untagged
@@ -103,20 +104,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 0
   damage: 2
-  armor: 2
+  armor: 0
   real_damage: 0
   real_armor: 0
   name: Glacial erratic
-  description: If wins, destroys itself.
+  description: +3 HP. If wins, destroys itself.
   sprite: {fileID: 21300000, guid: adbdbe63e04c14e4f86c3265b66a6f58, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -137,12 +143,27 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
   win:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 937213836965795298}
+        m_TargetAssemblyTypeName: HealthIncrease, Assembly-CSharp
+        m_MethodName: Decrease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2821382414112198119}
         m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
         m_MethodName: Destruct
@@ -166,10 +187,34 @@ MonoBehaviour:
       m_Calls: []
   equip:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 937213836965795298}
+        m_TargetAssemblyTypeName: HealthIncrease, Assembly-CSharp
+        m_MethodName: Increase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unEquip:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 937213836965795298}
+        m_TargetAssemblyTypeName: HealthIncrease, Assembly-CSharp
+        m_MethodName: Decrease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   constant:
     m_PersistentCalls:
       m_Calls: []
@@ -177,6 +222,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  unequipped:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 1
@@ -204,3 +252,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   used_ones: 0
   destroyed: 0
+  disabled: 0
+--- !u!114 &937213836965795298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b528c9add8506e74192aac87c7001b8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 3
+  in_view: 0

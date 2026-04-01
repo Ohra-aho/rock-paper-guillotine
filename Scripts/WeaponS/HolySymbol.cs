@@ -4,52 +4,20 @@ using UnityEngine;
 
 public class HolySymbol : MonoBehaviour
 {
-    public void Activate()
+    public List<GameObject> miracles;
+  
+    public void Worship()
     {
-        if (!GetComponent<Stacking>().IsAtLimit()) GetComponent<Stacking>().IncreaseStacks(1);
-        int stacks = GetComponent<Stacking>().stacks;
-        if(stacks == 3)
-        {
-            GetComponent<Weapon>().damage++;
-        }
-
-        if(stacks == 6)
-        {
-            GetComponent<Weapon>().damage++;
-            GetComponent<HealthIncrease>().amount++;
-            GetComponent<HealthIncrease>().Increase();
-        }
-
-        if(stacks == 10)
-        {
-            GetComponent<Weapon>().damage++;
-            GetComponent<Healing>().amount++;
-            GetComponent<Weapon>().endPhase.AddListener(GetComponent<Healing>().Heal);
-            GetComponent<HealthIncrease>().Increase();
-            GetComponent<HealthIncrease>().amount++;
-        }
+        GetComponent<Stacking>().IncreaseStacks(1);
     }
 
-    public void LoadEvent()
+    public void Miracle()
     {
-        int stacks = GetComponent<Stacking>().stacks;
-        if (stacks >= 3)
+        if (GetComponent<Stacking>().stacks >= 5)
         {
-            GetComponent<Weapon>().damage++;
-        }
-
-        if (stacks >= 6)
-        {
-            GetComponent<Weapon>().damage++;
-            GetComponent<HealthIncrease>().amount++;
-        }
-
-        if (stacks == 10)
-        {
-            GetComponent<Weapon>().damage++;
-            GetComponent<HealthIncrease>().amount++;
-            GetComponent<Healing>().amount++;
-            GetComponent<Weapon>().endPhase.AddListener(GetComponent<Healing>().Heal);
+            GetComponent<Stacking>().stacks = 0;
+            PlayerInventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+            inventory.AddItem(miracles[Random.Range(0, miracles.Count)]);
         }
     }
 }
