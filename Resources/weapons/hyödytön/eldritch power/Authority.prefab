@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 6361541160200024083}
-  - component: {fileID: -8037816972097706396}
-  - component: {fileID: 2426040337145588873}
+  - component: {fileID: -249106101545597668}
+  - component: {fileID: -7525784373397673617}
   m_Layer: 5
-  m_Name: Altar
+  m_Name: Authority
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,14 +98,14 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   dead: 0
-  type: 0
-  damage: 1
+  type: 4
+  damage: 0
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Altar
-  description: Whenever you take damage gains 1 point. Uses 5 points after use to
-    give one random "Eldritch power" to your inventory.
+  name: Authority
+  description: When this weapon is not equipped, one random weapon becomes "unbeatable"
+    for the first turn of the fight..
   sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -122,19 +121,7 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6361541160200024083}
-        m_TargetAssemblyTypeName: Altar, Assembly-CSharp
-        m_MethodName: Ritual
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -179,7 +166,19 @@ MonoBehaviour:
       m_Calls: []
   unequipped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7525784373397673617}
+        m_TargetAssemblyTypeName: EldritchPower, Assembly-CSharp
+        m_MethodName: GiveAuthority
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   self_destructive: 0
   healing: 0
   health: 0
@@ -188,9 +187,10 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks: []
+  pick_barks:
+  - This should not be here.
   damage_soft_cap: 7
---- !u!114 &6361541160200024083
+--- !u!114 &-249106101545597668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,14 +199,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da0f9d1b39b7fbd41a2ddf9629b552f9, type: 3}
+  m_Script: {fileID: 11500000, guid: b528c9add8506e74192aac87c7001b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powers:
-  - {fileID: 1944698211339908181, guid: 60283fdf5fc01854fb91fb5b7934a477, type: 3}
-  - {fileID: 1944698211339908181, guid: 40596934a9b747343ab7ddad3f9536f5, type: 3}
-  - {fileID: 1944698211339908181, guid: e3948a761d752404eb0760de3b735480, type: 3}
---- !u!114 &-8037816972097706396
+  amount: 2
+  in_view: 0
+--- !u!114 &-7525784373397673617
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,61 +213,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
+  m_Script: {fileID: 11500000, guid: cd4294805eaf1cb4bb657a20232747c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
-  damage_bonus: 0
-  armor_bonus: 0
-  effect_damage_bonus: 0
-  set_a_to_zero: 0
-  set_d_to_zero: 0
-  always_on: 1
-  choisePhase: 0
-  resultPhase: 0
-  endPhase: 0
-  victory: 0
-  special_apply: 0
-  takeDamage: 0
-  takeNoDamage: 0
-  dealDamage: 0
-  deal_effect_damage: 0
-  draw: 0
-  win: 0
-  lose: 0
-  heal: 0
-  equip: 0
-  unEquip: 0
-  constant: 0
-  onDestruction: 0
-  awake: 0
-  temporary: 0
-  timer: 0
-  penetrating: 0
-  draw_winner: 0
-  health_buff: 0
-  destructive: 0
-  heal_disabler: 0
---- !u!114 &2426040337145588873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stacks: 0
-  stack_limit: 5
-  LoadFunction:
-    m_PersistentCalls:
-      m_Calls: []
-  before_stacking:
-    m_PersistentCalls:
-      m_Calls: []
-  after_stacking:
-    m_PersistentCalls:
-      m_Calls: []

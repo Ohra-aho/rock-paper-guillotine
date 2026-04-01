@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Altar : MonoBehaviour
 {
-    public GameObject power;
+    public List<GameObject> powers;
     private void Awake()
     {
         GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
@@ -14,16 +14,16 @@ public class Altar : MonoBehaviour
 
     public void Sacrifice(Weapon w)
     {
-        GetComponent<Stacking>().IncreaseStacks(1);
+        GetComponent<Stacking>().IncreaseStacks(5);
     }
 
     public void Ritual()
     {
-        if(GetComponent<Stacking>().stacks == 10)
+        if (GetComponent<Stacking>().stacks >= 5)
         {
+            GetComponent<Stacking>().stacks -= 5;
             PlayerInventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
-            inventory.AddItem(power);
-            GetComponent<SelfDestruct>().Destruct();
+            inventory.AddItem(powers[Random.Range(0, powers.Count)]);
         }
     }
 }

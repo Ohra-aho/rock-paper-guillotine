@@ -9265,6 +9265,7 @@ MonoBehaviour:
   heart: {fileID: 7308045239515813869, guid: 19fd7e589cd54fd498459ca08acb21cb, type: 3}
   heart_slot: {fileID: 7308045239515813869, guid: 8c6270a2ce8210e47a4fb4d4e899d6c1, type: 3}
   dead: 0
+  damage_taken: 0
   HP_gap: 15
   warning_barks:
   - Your health is zero currently. If you start a new round, you lose.
@@ -19760,6 +19761,7 @@ MonoBehaviour:
   heart: {fileID: 7308045239515813869, guid: 19fd7e589cd54fd498459ca08acb21cb, type: 3}
   heart_slot: {fileID: 7308045239515813869, guid: 8c6270a2ce8210e47a4fb4d4e899d6c1, type: 3}
   dead: 0
+  damage_taken: 0
   HP_gap: 15
   warning_barks: []
   low_health_barks: []
@@ -19768,7 +19770,7 @@ MonoBehaviour:
   - Your build seems to be working.
   - That should turn the round to your favor.
   - And I thought that the enemy might have too much health.
-  - Slow down a litthe. Circuits might fry.
+  - Slow down a little. Circuits might fry.
   warning_given: 0
   low_health: 0
 --- !u!114 &1238540700
@@ -21066,8 +21068,10 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: bade532ba40076345a0820c94b31c93e, type: 3}
-  - {fileID: 1944698211339908181, guid: 2760d63d19ded864a8bc3f8cc5137881, type: 3}
+  - {fileID: 1944698211339908181, guid: e3948a761d752404eb0760de3b735480, type: 3}
+  - {fileID: 1944698211339908181, guid: e3948a761d752404eb0760de3b735480, type: 3}
+  - {fileID: 1944698211339908181, guid: e3948a761d752404eb0760de3b735480, type: 3}
+  - {fileID: 1944698211339908181, guid: e3948a761d752404eb0760de3b735480, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
