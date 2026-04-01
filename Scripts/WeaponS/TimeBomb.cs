@@ -15,12 +15,19 @@ public class TimeBomb : MonoBehaviour
     {
         if(!w.opponent.dead)
         {
-            GetComponent<Weapon>().damage++;
+            //GetComponent<Weapon>().damage++;
+            GetComponent<Stacking>().IncreaseStacks(1);
         }
     }
 
     public void ResetDamage()
     {
-        GetComponent<Weapon>().damage = 0;
+        //GetComponent<Weapon>().damage = 0;
+        GetComponent<Stacking>().stacks = 0;
+    }
+
+    public void CalculateDamage()
+    {
+        GetComponent<Weapon>().damage = GetComponent<Stacking>().stacks;
     }
 }
