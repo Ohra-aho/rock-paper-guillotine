@@ -13,10 +13,10 @@ public class Rauhansopimus : MonoBehaviour
 
     public void CompareHPs(Weapon w)
     {
-        bool enemy = GetComponent<DamageInteractions>().CalculateDealtDamage() == 0;
-        bool player = GetComponent<DamageInteractions>().CalculateTakenDamage() == 0;
+        bool enemy = GetComponent<DamageInteractions>().EnemyDamageTaken();
+        bool player = GetComponent<DamageInteractions>().PlayerDamageTaken();
 
-        if (enemy && player)
+        if (!enemy && !player)
         {
             if(GetComponent<Weapon>().player)
             {

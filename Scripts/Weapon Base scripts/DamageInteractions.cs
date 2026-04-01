@@ -54,4 +54,27 @@ public class DamageInteractions : MonoBehaviour
         return dealt_damage;
     }
 
+    public bool PlayerDamageTaken()
+    {
+        if(GetComponent<Weapon>().player)
+        {
+            return HB.damage_taken;
+        } else
+        {
+            return enemy_HB.damage_taken;
+        }
+    }
+
+    public bool EnemyDamageTaken()
+    {
+        if (GetComponent<Weapon>().player)
+        {
+            return enemy_HB.damage_taken;
+        }
+        else
+        {
+            return HB.damage_taken;
+        }
+    }
+
 }

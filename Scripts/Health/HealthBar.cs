@@ -9,6 +9,7 @@ public class HealthBar : MonoBehaviour
     public GameObject heart;
     public GameObject heart_slot;
     public bool dead;
+    [HideInInspector] public bool damage_taken = false;
     public int HP_gap = 15;
     private int slots = 15;
     private int max_health = 2;
@@ -53,6 +54,7 @@ public class HealthBar : MonoBehaviour
             }
         }
         dead = CheckIfDead();
+        damage_taken = true;
         if (gameObject.CompareTag("PlayerHealth") && !dead) {
             //Damage animations
             if(GiveCurrentHealth() >= GiveMaxHealth() - GiveMaxHealth()/3)
