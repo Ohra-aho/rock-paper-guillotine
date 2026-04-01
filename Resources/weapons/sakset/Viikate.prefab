@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 606049651646200694}
   - component: {fileID: 2715692804178075999}
-  - component: {fileID: 7527816165882342535}
   m_Layer: 5
   m_Name: Viikate
   m_TagString: Untagged
@@ -97,6 +96,7 @@ MonoBehaviour:
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 2
   damage: 1
@@ -104,8 +104,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Sithe
-  description: +1 to damage each time one of your weapons is destroyed. To maximum
-    of 5.
+  description: +2 to damage each time one of your weapons is destroyed until the
+    end of the fight.
   sprite: {fileID: 21300000, guid: 0d43db1ff69bff943a7c40c74c9fd6a6, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931178680e3037542bbb06e39303016c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
 --- !u!114 &2715692804178075999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,62 +235,3 @@ MonoBehaviour:
   health_buff: 0
   destructive: 0
   heal_disabler: 0
---- !u!114 &7527816165882342535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stacks: 0
-  stack_limit: 4
-  LoadFunction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 606049651646200694}
-        m_TargetAssemblyTypeName: Viikate, Assembly-CSharp
-        m_MethodName: LoadDamage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  before_stacking:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 606049651646200694}
-        m_TargetAssemblyTypeName: Viikate, Assembly-CSharp
-        m_MethodName: BeforeStacking
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  after_stacking:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 606049651646200694}
-        m_TargetAssemblyTypeName: Viikate, Assembly-CSharp
-        m_MethodName: AfterStacking
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
