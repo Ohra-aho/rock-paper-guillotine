@@ -14,7 +14,7 @@ public class Altar : MonoBehaviour
 
     public void Sacrifice(Weapon w)
     {
-        GetComponent<Stacking>().IncreaseStacks(5);
+        GetComponent<Stacking>().IncreaseStacks(1);
     }
 
     public void Ritual()

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 5419796846845610242}
   - component: {fileID: 6873274728737089563}
   - component: {fileID: 7393566699563639282}
   - component: {fileID: 4649406059305924212}
@@ -93,10 +92,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 1
   damage: 1
@@ -104,10 +105,13 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Handkerchief
-  description: Whenever you deal of take damage, gains one point. When at 3 points
-    deals one damage and loses all points. (Continuous)
+  description: Gains points equal to life you have lost. If used at 10 points, uses
+    all points to deal 2 damage.
   sprite: {fileID: 21300000, guid: 1ca9bc8b5371dcf48b50c8dc17938594, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -118,7 +122,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6873274728737089563}
+        m_TargetAssemblyTypeName: Handcerchife, Assembly-CSharp
+        m_MethodName: IncreaseStack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -126,6 +142,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -158,6 +177,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 1
@@ -167,49 +189,8 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks:
-  - Hit or get hit. It all ends the same.
---- !u!114 &5419796846845610242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
-  damage_bonus: 0
-  armor_bonus: 0
-  effect_damage_bonus: 0
-  set_a_to_zero: 0
-  set_d_to_zero: 0
-  always_on: 1
-  choisePhase: 0
-  resultPhase: 0
-  endPhase: 0
-  victory: 0
-  special_apply: 0
-  takeDamage: 0
-  takeNoDamage: 0
-  dealDamage: 0
-  draw: 0
-  win: 0
-  lose: 0
-  heal: 0
-  equip: 0
-  unEquip: 0
-  constant: 0
-  onDestruction: 0
-  awake: 0
-  temporary: 0
-  timer: 0
-  penetrating: 0
-  draw_winner: 0
-  health_buff: 0
-  destructive: 0
+  - To wipe away the blood.
+  damage_soft_cap: 7
 --- !u!114 &6873274728737089563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
+  amount: 2
   armor_piercing: 0
 --- !u!114 &4649406059305924212
 MonoBehaviour:
@@ -249,7 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stacks: 0
-  stack_limit: 0
+  stack_limit: 10
   LoadFunction:
     m_PersistentCalls:
       m_Calls: []
