@@ -36,9 +36,9 @@ public class Nuijamies : MonoBehaviour
 
     private void TakeDamage()
     {
-        if(GetComponent<BasicEnemy>().HB.GiveCurrentHealth() == 1)
+        hurt = true;
+        if (GetComponent<BasicEnemy>().HB.GiveCurrentHealth() == 1)
         {
-            hurt = true;
             GetComponent<BasicEnemy>().OffBalance();
         }
     }

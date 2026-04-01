@@ -278,7 +278,13 @@ public class Weapon : MonoBehaviour
 
     private void OnDestroy()
     {
-        
+        if(GetComponent<BuffController>())
+        {
+            if(!GetComponent<BuffController>().temporary)
+            {
+                GetComponent<BuffController>().Unequip();
+            }
+        }
     }
 
     //Could be useful
