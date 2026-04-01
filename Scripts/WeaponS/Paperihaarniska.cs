@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class Paperihaarniska : MonoBehaviour
 {
-    private void Awake()
-    {
-        GetComponent<Stacking>().stack_limit = 4;
-    }
-
     public void IncreaseStack()
     {
         if(GetComponent<Weapon>().armor > 0 && GetComponent<Weapon>().GiveEffectiveArmor() > 0)
         {
-            GetComponent<Stacking>().IncreaseStacks(1);
-            CalculateArmor();
+            GetComponent<Stacking>().DecreaseStacks(1);
         } else
         {
             GetComponent<SelfDestruct>().Destruct();
@@ -23,6 +17,6 @@ public class Paperihaarniska : MonoBehaviour
 
     public void CalculateArmor()
     {
-        GetComponent<Weapon>().armor = 4 - GetComponent<Stacking>().stacks;
+        GetComponent<Weapon>().armor = GetComponent<Stacking>().stacks;
     }
 }
