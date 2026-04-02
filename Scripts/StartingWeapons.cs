@@ -13,7 +13,6 @@ public class StartingWeapons : MonoBehaviour
         all_weapons.AddRange(Resources.LoadAll<GameObject>("weapons/paperi"));
         all_weapons.AddRange(Resources.LoadAll<GameObject>("weapons/kivi"));
         all_weapons.AddRange(Resources.LoadAll<GameObject>("weapons/voittamaton"));
-
     }
 
     public List<GameObject> GiveStartingWeapons()
@@ -46,15 +45,44 @@ public class StartingWeapons : MonoBehaviour
 
     string[][] weapon_collections =
     {
-        new string[] { "Pencil", "Paper", "Rock" },
-        new string[] { "Gun", "Paper", "Wallet" },
-        new string[] { "Scissors", "Bottle", "Rock" },
+        new string[] { "Scissors", "Paper", "Rock" },
+        new string[] { "Scissors", "Cardboard", "Rock" },
+        new string[] { "Sword", "Paper", "Rock" },
 
         //Story 1
-        new string[] { "Bill", "Access code", "Brass Knuckles" },
+        new string[] { "Crystal scissors", "Access code", "Brass Knuckles" },
 
-        new string[] { "Shotgun", "Cardboard", "Ammunition" },
+        new string[] { "Adrenaline", "Voodoo doll", "Scissors" },
+        new string[] { "Altar", "Shotgun", "Paper" },
+        new string[] { "Scissors", "Rock", "Newspaper" },
+        new string[] { "Adrenaline", "Voodoo doll", "Scissors" },
+        new string[] { "Beer", "Bottle" },
+        new string[] { "Gun", "Ammunition", "Bill" },
 
-        new string[] { },
+        //Story 2
+        new string[] { "Blowtorch", "Throwing knife", "Smoke" },
+
+        new string[] { "Double edged sword", "Bone", "Bandade" },
+        new string[] { "Spike ball", "Pickaxe", "Thumb" },
+        new string[] { "Drill", "Medicine", "Rot" },
+        new string[] { "Middle finger" },
+        new string[] { "Catapult", "Rock", "Rock", "Rock", "Rock" },
+
+        //Story 3
+        new string[] { "Flag", "Victory sign", "Rock" },
+
+        new string[] { "Law Book", "Scissors", "Rock" },
+        new string[] { "Paper", "Scissors", "Time bomb" },
+        new string[] { "Manual", "Rock", "Scissors" },
+        new string[] { "Four jokers", "Sithe" },
+        new string[] { "Altar", "Mirror", "Holy text"},
+
+        //Story 4
+        new string[] { "Flag", "Cape", "Peace treaty" },
+
+        new string[] { "Dynamo", "Hit list", "Scalpel" },
+        new string[] { "Cursed scissors", "Prosthesis", "Sandpaper" },
+        new string[] { "Gun", "Shotgun", "Granade" },
+        new string[] { "Blood blade", "Victory sign", "Bandages" },
     };
 }
