@@ -84,5 +84,56 @@ public class StartingWeapons : MonoBehaviour
         new string[] { "Cursed scissors", "Prosthesis", "Sandpaper" },
         new string[] { "Gun", "Shotgun", "Granade" },
         new string[] { "Blood blade", "Victory sign", "Bandages" },
+        new string[] { "Silver", "Cardboard", "Scalpel" },
+
+        //Story 5
+        new string[] { "Scissors", "Paper", "Star" },
+
+        new string[] { "Sithe", "Paper armor", "Beer" },
+        new string[] { "Crystal scissors", "Paper armor", "Ice cube" },
+        new string[] { "Scissors", "Paper", "Rock" },
+        new string[] { "Chip", "Deck", "Die" },
+        new string[] { "Deck", "Singularity" },
+
+        //Story 6
+        new string[] { "Newspaper", "Flamethrower", "Victory streak" },
+
+        new string[] { "Adrenaline", "Sidearm", "Smoke" },
+        new string[] { "Teeth", "Mallet", "Hat" },
+        new string[] { "Airbag", "Rock", "Throwing knife" },
+        new string[] { "Scissors", "Paper", "Mountain" },
+
+        //Story 7
+        new string[] { "Gun", "Wallet", "Wallet", "Wallet" },
+
+        new string[] { "Rock", "Paper", "Scissors" },
+        new string[] { "Recycler", "Rock", "Bladestorm" },
+        new string[] { "Pickaxe", "Smoke", "Medipack" },
+        new string[] { "Middle finger", "Hit list", "Handkerchief" },
+
+        //Story 8
+        new string[] { "Arm band", "Brass Knuckles", "Pencil" },
+
+        new string[] { "Wall", "Ice cube" },
+        new string[] { "Access code", "Knife belt" },
+        new string[] { "Diamond", "Paper", "Scissors" },
+        new string[] { "Boulder", "Shield", "Sword" },
+        new string[] { "Guillotine", "Whetstone" },
+
+        //Story 9
+        new string[] { "Medical supplies", "Smoke", "Ruin" },
+
+        new string[] { "Beer", "Granade", "Disinfectant" },
+        new string[] { "Smoke", "Cape", "Monument" },
+        new string[] { "Bubble", "Defence manifest" },
+
+        //Story 10
+        new string[] { "Bone", "Teeth", "Prosthesis" },
+
+        new string[] { "Recycler", "Paper", "Rock" },
+        new string[] { "Chainsaw", "Paper", "Rock" }, /// Tee chainsaw
+        new string[] { "Teeth", "Reinforced glass", "Barricade" },
+
+
     };
 }

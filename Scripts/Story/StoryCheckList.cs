@@ -14,6 +14,8 @@ public class StoryCheckList : MonoBehaviour
     public bool first_achievement = false;
     public bool first_achievement_pick = false;
 
+    public bool executioner_dead = false;
+
     public int greeting_index = 0;
 
     public void SaveStoryCheckList()
@@ -28,6 +30,8 @@ public class StoryCheckList : MonoBehaviour
 
                 first_achievement,
                 first_achievement_pick,
+
+                executioner_dead,
 
                 greeting_index
             );
@@ -49,6 +53,8 @@ public class StoryCheckList : MonoBehaviour
             first_achievement_pick = data.first_achievement_pick;
 
             greeting_index = data.greeting_index;
+
+            executioner_dead = data.executioner_dead;
         }
     }
 
@@ -64,6 +70,8 @@ public class StoryCheckList : MonoBehaviour
         public bool first_achievement;
         public bool first_achievement_pick;
 
+        public bool executioner_dead;
+
         public int greeting_index;
 
         public CheckList
@@ -77,6 +85,8 @@ public class StoryCheckList : MonoBehaviour
                 bool first_achievement,
                 bool first_achievement_pick,
 
+                bool executioner_dead,
+
                 int greeting_index
             )
         {
@@ -87,6 +97,7 @@ public class StoryCheckList : MonoBehaviour
             this.first_achievement = first_achievement;
             this.first_achievement_pick = first_achievement_pick;
             this.greeting_index = greeting_index;
+            this.executioner_dead = executioner_dead;
         }
     }
 }
