@@ -25,17 +25,14 @@ public class MessageHolder : MonoBehaviour
     private void Awake()
     {
         MC = GameObject.Find("EventSystem").GetComponent<MainController>();
-        messages = GameObject.Find("EventSystem").GetComponent<StoryController>().GiveMessages();
-        executioner_message = GameObject.Find("EventSystem").GetComponent<StoryController>().GiveExecutionerMessage();
+        messages = MC.GetComponent<StoryController>().GiveMessages();
+        executioner_message = MC.GetComponent<StoryController>().GiveExecutionerMessage();
+        executioner = MC.GetComponent<StoryController>().executioner;
 
         frames = new List<ManAnimator.Frame>();
 
         //This is ok for now
         int index = MC.GetComponent<StoryCheckList>().greeting_index;
-        if(index >= messages.Length)
-        {
-            executioner = true;
-        }
         GameObject new_message = Instantiate(message, transform.parent);
         List<string> temp = new List<string>();
         MC.GetComponent<StoryCheckList>().greeting_index = index + 1;
@@ -61,11 +58,25 @@ public class MessageHolder : MonoBehaviour
         {
             for (int i = 0; i < messages[index].Length; i++)
             {
-                temp.Add(messages[index][i]);
+                if(messages[index][i] == "[kill]")
+                {
+                    MC.game_state = MainController.State.dead;
+                    GameObject.Find("Machine").GetComponent<Machine>().EndTheGame();
+                    break;
+                } else
+                {
+                    temp.Add(messages[index][i]);
+                }
             }
         }
-        new_message.GetComponent<Message>().lines = temp;
-        new_message.GetComponent<Message>().Inisiate();
+        if(temp.Count > 0)
+        {
+            new_message.GetComponent<Message>().lines = temp;
+            new_message.GetComponent<Message>().Inisiate();
+        } else
+        {
+            Destroy(new_message);
+        }
         GetComponent<StoryEvent>().over = true;
 
     }

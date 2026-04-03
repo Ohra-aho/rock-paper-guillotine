@@ -11,6 +11,11 @@ public class CameraNQuilliotine : MonoBehaviour
     public void RevealDeathScreen()
     {
         deathScreen.GetComponent<Test>().PlayAnimation("DeathADone");
+        GameObject es = GameObject.Find("EventSystem");
+        if (es.GetComponent<StoryController>().executioner)
+        {
+            es.GetComponent<StoryCheckList>().executioner_dead = true;
+        }
         DeathSave();
     }
 

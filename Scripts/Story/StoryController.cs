@@ -22,13 +22,25 @@ public class StoryController : MonoBehaviour
     public GameObject first_achievement;
     public GameObject first_achievement_pick;
 
+    public bool executioner = false;
+
+    //Scenes
+    public GameObject cellar;
+    public GameObject museum;
+
     public void Inisiate()
     {
         LoadStory();
         GetComponent<StoryCheckList>().LoadStoryCheckList();
         if(GetComponent<StoryCheckList>().greeting_index >= messages.Length) 
         {
+            executioner = true;
             GameObject.Find("man").GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        } 
+        if(GetComponent<StoryCheckList>().executioner_dead)
+        {
+            cellar.SetActive(false);
+            museum.SetActive(true);
         }
 
         //Set base for the playthrough (at this point there is just one)
@@ -216,7 +228,7 @@ public class StoryController : MonoBehaviour
         new string[] {  "...", "What?" },
         new string[] {  "..." },
         new string[] {  "You know, I built this thing to mess with awful people.", "And you have killed others as well, and I think they are still fixing the crater on the street, but you are not like the usual folk here.", "You don’t hurt because you believe your life to be more precious than someone elses.", "You hurt because you believe your world would be better than someone elses." },
-        new string[] {  "You know, let’s just get this over with." },
+        new string[] {  "You know, let’s just get this over with." },*/
         new string[] {  "[kill]" },
         new string[] {  "[kill]" },
         new string[] {  "[kill]" },
@@ -251,7 +263,7 @@ public class StoryController : MonoBehaviour
         new string[] {  "Apparently no-one learned from the King.", "Let just get one thing straight. I am not against you per se, just your actions." },
         new string[] {  "Same as all before?" },
         new string[] {  "I am too old for this shit." },
-        new string[] {  "Go.", "Just get out.", "You will be shot yes, but what difference it makes?" },*/
+        new string[] {  "Go.", "Just get out.", "You will be shot yes, but what difference it makes?" }
     };
 
     string[] executioner_message = { "Now, let's see how well I remember this.", "Or...", "Should I just..." };
