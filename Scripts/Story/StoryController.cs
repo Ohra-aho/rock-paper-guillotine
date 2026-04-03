@@ -26,7 +26,7 @@ public class StoryController : MonoBehaviour
     {
         LoadStory();
         GetComponent<StoryCheckList>().LoadStoryCheckList();
-        if(storyIndex >= messages.Length) 
+        if(GetComponent<StoryCheckList>().greeting_index >= messages.Length) 
         {
             GameObject.Find("man").GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
         }
