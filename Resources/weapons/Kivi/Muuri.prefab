@@ -91,10 +91,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 0
   damage: 1
@@ -102,9 +104,12 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Wall
-  description: +1 HP for each two "rocks" you own.
+  description: +1 HP for each "rock" you have equipped.
   sprite: {fileID: 21300000, guid: 407c2ecb77ae7604e9f59f92cb5b0298, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -123,6 +128,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -191,6 +199,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 1
@@ -201,6 +212,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - You know, HP won't help you win by itself.
+  damage_soft_cap: 7
 --- !u!114 &2278583403661379804
 MonoBehaviour:
   m_ObjectHideFlags: 0

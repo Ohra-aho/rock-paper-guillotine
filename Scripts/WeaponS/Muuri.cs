@@ -6,28 +6,23 @@ public class Muuri : MonoBehaviour
 {
     //Might need some alteration. Maybe something that activated when reward is collected
 
-    GameObject ri;
     int HP_bonus = 0;
+    PlayerContoller player;
 
     private void Awake()
     {
-        ri = GameObject.Find("Real inventory");
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
     }
 
     public void CalculateHP()
     {
         int temp = 0;
-        int amount = 0;
-        for (int i = 0; i < ri.transform.childCount; i++)
+        List<Weapon> weapons = player.GetWeapons();
+        for (int i = 0; i < weapons.Count; i++)
         {
-            if (ri.transform.GetChild(i).GetComponent<Weapon>().type == MainController.Choise.kivi)
+            if (weapons[i].GetComponent<Weapon>().type == MainController.Choise.kivi)
             {
-                amount++;
-                if(amount == 2)
-                {
-                    temp++;
-                    amount = 0;
-                }
+                temp++;
             }
         }
 

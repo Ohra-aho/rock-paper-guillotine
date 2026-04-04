@@ -90,10 +90,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 1
   damage: 1
@@ -101,9 +103,12 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Book
-  description: +1 armor for every 3 "papers" you own.
+  description: +1 armor for every other "paper" you have equipped.
   sprite: {fileID: 21300000, guid: 359fb2764748cb048a898e0a35a1298b, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -122,6 +127,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -166,6 +174,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -176,6 +187,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - That will take a while to be any good.
+  damage_soft_cap: 7
 --- !u!114 &8104029208489123361
 MonoBehaviour:
   m_ObjectHideFlags: 0
