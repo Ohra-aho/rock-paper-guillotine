@@ -96,6 +96,7 @@ MonoBehaviour:
   opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 2
   damage: 4
@@ -105,7 +106,7 @@ MonoBehaviour:
   name: Crystal Scissors
   description: Halves its damage after use. When used with 1 or less damage destroyes
     itself.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 61c45304f7d12e64281ab71052b601f3, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

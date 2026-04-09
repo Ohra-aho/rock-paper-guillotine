@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class MessageHolder : MonoBehaviour
 {
@@ -65,19 +66,44 @@ public class MessageHolder : MonoBehaviour
                     break;
                 } else
                 {
-                    temp.Add(messages[index][i]);
+                    try
+                    {
+                        string line = messages[index][i];
+                        int test = Int32.Parse(line[line.Length-1].ToString());
+                        temp.Add(line.Substring(0, line.Length-1));
+                    } catch
+                    {
+                        temp.Add(messages[index][i]);
+                    }
                 }
             }
         }
         if(temp.Count > 0)
         {
             new_message.GetComponent<Message>().lines = temp;
+            new_message.GetComponent<Message>().sprite_frames = ExtractFrameSprites(index);
             new_message.GetComponent<Message>().Inisiate();
         } else
         {
             Destroy(new_message);
         }
         GetComponent<StoryEvent>().over = true;
+    }
 
+    private List<int> ExtractFrameSprites(int index)
+    {
+        List<int> temp = new List<int>();
+        for(int i = 0; i < messages[index].Length; i++)
+        {
+            try
+            {
+                int frame = Int32.Parse(messages[index][i][messages[index][i].Length - 1].ToString());
+                temp.Add(frame);
+            } catch
+            {
+                temp.Add(0);
+            }
+        }
+        return temp;
     }
 }

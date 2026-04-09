@@ -110,8 +110,8 @@ public class StoryController : MonoBehaviour
 
     string[][] messages =
     {
-        /*new string[] { "I know how and when,", "but why...", "I did not bother to figure that one out." },
-        new string[] { "It is funny to think that in situations like this, everyone is still innocent.", "Well, until proven, I suppose."},
+        new string[] { "I know how and when,", "but why...", "I did not bother to figure that one out." },
+        new string[] { "It is funny to think that in situations like this, everyone is still innocent.", "Well, until proven, I suppose. 3"},
         new string[] { "Was it worth it?" },
 
         //Story 1
@@ -228,7 +228,7 @@ public class StoryController : MonoBehaviour
         new string[] {  "...", "What?" },
         new string[] {  "..." },
         new string[] {  "You know, I built this thing to mess with awful people.", "And you have killed others as well, and I think they are still fixing the crater on the street, but you are not like the usual folk here.", "You don’t hurt because you believe your life to be more precious than someone elses.", "You hurt because you believe your world would be better than someone elses." },
-        new string[] {  "You know, let’s just get this over with." },*/
+        new string[] {  "You know, let’s just get this over with." },
         new string[] {  "[kill]" },
         new string[] {  "[kill]" },
         new string[] {  "[kill]" },

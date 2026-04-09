@@ -97,6 +97,7 @@ MonoBehaviour:
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 0
   damage: 1
@@ -105,7 +106,7 @@ MonoBehaviour:
   real_armor: 0
   name: Barricade
   description: If you lose a round but take no damage, deals 2 damage. (Continuous))
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 7f60d662ab3f62645acda05d6b0d2c19, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

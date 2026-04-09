@@ -107,7 +107,7 @@ MonoBehaviour:
   name: Altar
   description: Whenever you take damage gains 1 point. Uses 5 points after use to
     give one random "Eldritch power" to your inventory.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: c6ed8ce54727be24aa6ed9b94b68eeb8, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

@@ -98,6 +98,7 @@ MonoBehaviour:
   opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 2
   damage: 1
@@ -106,7 +107,7 @@ MonoBehaviour:
   real_armor: 0
   name: Scalpel
   description: Whenever you heal, +1 point. After use, uses one point to deal 1 damage.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: b47613f360beeff48bc4f9780beed6ef, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

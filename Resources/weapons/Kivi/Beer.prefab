@@ -109,7 +109,7 @@ MonoBehaviour:
   name: Beer
   description: After use, uses 1 point to heal 1 and give all weapons -1 damage for
     one turn. When the last point is spent, destroys itself.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 12e7439ccbe773241a24318ae396ee78, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

@@ -90,10 +90,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 0
   damage: 0
@@ -102,7 +104,7 @@ MonoBehaviour:
   real_armor: 0
   name: Brass Knuckles
   description: Deals 1 damage on draws.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: fcd6866a9ac412744996d6b67ec9a459, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -125,6 +127,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -167,6 +172,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  unequipped:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0

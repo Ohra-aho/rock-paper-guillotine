@@ -107,7 +107,7 @@ MonoBehaviour:
   name: Chip
   description: Deals 1 damage after use. If you lose or draw during the next turn,
     deals 1 damage to you.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 962b0eaedf92f744ea47f3c8cb22c7a8, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
