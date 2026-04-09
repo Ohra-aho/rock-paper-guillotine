@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -81,7 +82,7 @@ public class ManAnimator : MonoBehaviour
             int x = clip;
             while (clip == x)
             {
-                clip = Random.Range(1, 4);
+                clip = UnityEngine.Random.Range(1, 4);
             }
             switch (clip)
             {
@@ -143,13 +144,20 @@ public class ManAnimator : MonoBehaviour
 
     public void CreateABark(string bark, bool priority)
     {
+        string the_bark = bark;
+        try
+        {
+            int test = Int32.Parse(bark[bark.Length-1].ToString());
+            the_bark = bark.Substring(0, bark.Length-1);
+        } catch {}
+
         if(current_bark == null)
         {
             current_bark =
                 new Frame(
-                    bark_sheet[Random.Range(0, bark_sheet.Length)],
+                    ExtractFrame(bark),
                     null,
-                    bark
+                    the_bark
                 );
             bark_cr = StartCoroutine(HandleBarking());
         } else if(priority)
@@ -157,11 +165,23 @@ public class ManAnimator : MonoBehaviour
             StopCoroutine(bark_cr);
             current_bark =
                 new Frame(
-                    bark_sheet[Random.Range(0, bark_sheet.Length)],
+                    ExtractFrame(bark),
                     null,
-                    bark
+                    the_bark
                 );
             bark_cr = StartCoroutine(HandleBarking());
+        }
+    }
+
+    public Sprite ExtractFrame(string bark)
+    {
+        try
+        {
+            int test = int.Parse(bark[bark.Length - 1].ToString());
+            return man_sheet[test];
+        } catch
+        {
+            return man_sheet[0];
         }
     }
 
@@ -171,8 +191,10 @@ public class ManAnimator : MonoBehaviour
         {
             bark_box.GetComponent<DialogBox>().StartAnimation(0);
             bark_box.GetComponent<DialogBox>().StartTextAnimation(current_bark.text, null);
+            ChangeSprite(current_bark.sprite);
             yield return new WaitWhile(() => bark_box.GetComponent<DialogBox>().text_anim_playing);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
+            ChangeSprite(man_sheet[0]);
             bark_box.GetComponent<DialogBox>().StartAnimation(1);
             yield return new WaitWhile(() => bark_box.GetComponent<DialogBox>().animation_playing);
             StopCoroutine(bark_cr);
@@ -213,17 +235,17 @@ public class ManAnimator : MonoBehaviour
             if (current_frames == null && current_bark == null)
             {
                 yield return new WaitForSeconds(1f);
-                int chance = Random.Range(1, 5);
+                int chance = UnityEngine.Random.Range(1, 5);
                 if (chance == 1 && !idle_seen)
                 {
-                    GetComponent<SpriteRenderer>().sprite = idle_sheet[Random.Range(0, idle_sheet.Length)];
+                    GetComponent<SpriteRenderer>().sprite = idle_sheet[UnityEngine.Random.Range(0, idle_sheet.Length)];
                     yield return new WaitForSeconds(0.5f);
                     GetComponent<SpriteRenderer>().sprite = man_sheet[0];
                     idle_seen = true;
                 }
                 if (idle_seen)
                 {
-                    yield return new WaitForSeconds(Random.Range(5, 21));
+                    yield return new WaitForSeconds(UnityEngine.Random.Range(5, 21));
                     idle_seen = false;
                 }
             }

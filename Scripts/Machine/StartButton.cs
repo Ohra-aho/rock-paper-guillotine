@@ -25,16 +25,16 @@ public class StartButton : MonoBehaviour
     private string[] forfeit_barks =
     {
         "Suit yourself.",
-        "Oh... Sorry about that.",
+        "Oh... Sorry about that. 3",
         "Pathetic",
-        "What's the rush?",
-        "If you insist.",
+        "What's the rush? 5",
+        "If you insist. 3",
         "Won't even go down fighting?",
-        "Pity.",
-        "Have peace.",
-        "Why give up?",
+        "Pity. 3",
+        "Have peace. 1",
+        "Why give up? 5",
         "Going already?",
-        "Can't even have fun with you people."
+        "Can't even have fun with you people. 3"
     };
 
     bool empty_regard = false; //To prevent constant barking
@@ -66,7 +66,7 @@ public class StartButton : MonoBehaviour
     {
         "Back to basics.",
         "Why use the starting weapons? You have other options.",
-        "What? New weapons not good for you enough?"
+        "What? New weapons not good enough for you?"
     };
 
 
@@ -215,7 +215,7 @@ public class StartButton : MonoBehaviour
         {
             MC.GetComponent<StoryCheckList>().first_forfeit = true;
             GameObject bark_holder = GameObject.Find("BarkHolder");
-            bark_holder.GetComponent<BarkController>().ActivateInstantBark("Oh... I propably should have warned you.");
+            bark_holder.GetComponent<BarkController>().ActivateInstantBark("Oh... I propably should have warned you. 3");
         } else
         {
             GameObject bark_holder = GameObject.Find("BarkHolder");
@@ -240,7 +240,7 @@ public class StartButton : MonoBehaviour
             }
         }
 
-        if (weapons.Count < weapon_slots && !giant_scissors_equipped)
+        if (weapons.Count < weapon_slots && !giant_scissors_equipped && weapons.Count > 0)
         {
             if (!empty_regard)
             {
