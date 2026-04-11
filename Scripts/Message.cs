@@ -18,6 +18,7 @@ public class Message : MonoBehaviour
 
     private void Update()
     {
+        if(MC == null) MC = GameObject.Find("EventSystem").GetComponent<MainController>();
         if (MC.game_state != MainController.State.dialog) MC.game_state = MainController.State.dialog;
     }
 

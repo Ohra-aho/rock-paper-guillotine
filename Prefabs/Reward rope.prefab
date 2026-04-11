@@ -596,6 +596,10 @@ PrefabInstance:
       value: -99.784
       objectReference: {fileID: 0}
     - target: {fileID: 1770462993306789582, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
+      propertyPath: message
+      value: 
+      objectReference: {fileID: 3768069680275742937, guid: 1f704de55a9440b46bf8e65757b8485e, type: 3}
+    - target: {fileID: 1770462993306789582, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
       propertyPath: disabled
       value: 1
       objectReference: {fileID: 0}
@@ -685,6 +689,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -99.784
       objectReference: {fileID: 0}
+    - target: {fileID: 1770462993306789582, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
+      propertyPath: message
+      value: 
+      objectReference: {fileID: 3768069680275742937, guid: 1f704de55a9440b46bf8e65757b8485e, type: 3}
     - target: {fileID: 1770462993306789582, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
       propertyPath: disabled
       value: 1
@@ -780,6 +788,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -99.784
       objectReference: {fileID: 0}
+    - target: {fileID: 1770462993306789582, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
+      propertyPath: message
+      value: 
+      objectReference: {fileID: 3768069680275742937, guid: 1f704de55a9440b46bf8e65757b8485e, type: 3}
     - target: {fileID: 1770462993306789582, guid: 117f0d4f7c45e1c47a96f801c23e260c, type: 3}
       propertyPath: disabled
       value: 1

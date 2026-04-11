@@ -183,6 +183,11 @@ public class BasicEnemy : MonoBehaviour
         {
             off_balance = true;
             GameObject.Find("light holder").GetComponent<Test>().PlayAnimation("offBalance");
+            if(!GameObject.Find("EventSystem").GetComponent<StoryCheckList>().off_balance_explained)
+            {
+                GameObject.Find("EventSystem").GetComponent<StoryCheckList>().off_balance_explained = true;
+                GameObject.Find("BarkHolder").GetComponent<BarkController>().ActivateInstantBark("Enemy is now off balance. Their strategy might change or some effects may activate.");
+            }
         }
     }
 

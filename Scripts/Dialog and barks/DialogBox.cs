@@ -91,4 +91,9 @@ public class DialogBox : MonoBehaviour
         text_anim_playing = false;
         if (text_anim != null) StopCoroutine(text_anim);
     }
+
+    public void ClearBox()
+    {
+        transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "";
+    }
 }

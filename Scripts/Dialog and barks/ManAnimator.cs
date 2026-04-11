@@ -2,6 +2,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ManAnimator : MonoBehaviour
 {
@@ -131,6 +132,7 @@ public class ManAnimator : MonoBehaviour
                                 }
                             }
                         }
+                        current_frames.Clear();
                         current_frames = null;
                     }
                 }
@@ -189,11 +191,12 @@ public class ManAnimator : MonoBehaviour
     {
         if(current_bark != null)
         {
+            bark_box.GetComponent<DialogBox>().ClearBox();
             bark_box.GetComponent<DialogBox>().StartAnimation(0);
             bark_box.GetComponent<DialogBox>().StartTextAnimation(current_bark.text, null);
             ChangeSprite(current_bark.sprite);
             yield return new WaitWhile(() => bark_box.GetComponent<DialogBox>().text_anim_playing);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.5f);
             ChangeSprite(man_sheet[0]);
             bark_box.GetComponent<DialogBox>().StartAnimation(1);
             yield return new WaitWhile(() => bark_box.GetComponent<DialogBox>().animation_playing);

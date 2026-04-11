@@ -10987,7 +10987,7 @@ MonoBehaviour:
   - Don't worry. If you lose here, you are not the first.
   exe_high_damage_barks:
   - Damn...
-  - I should have known.
+  - I should know better.
   - That felt just cheap.
   - Come on. I got this.
   exe_low_health:
@@ -29790,6 +29790,9 @@ MonoBehaviour:
   executioner_dead: 0
   end_counter: 0
   greeting_index: 0
+  off_balance_explained: 0
+  unbeatable_explained: 0
+  useless_explained: 0
 --- !u!114 &1066024799
 MonoBehaviour:
   m_ObjectHideFlags: 0

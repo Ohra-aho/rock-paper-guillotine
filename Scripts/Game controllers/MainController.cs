@@ -352,6 +352,7 @@ public class MainController : MonoBehaviour
             int chance = Random.Range(1, 4); //1, 4
             if (chance == 1)
             {
+                Debug.Log("victory bark");
                 BC.ActivateInstantBark(GiveRandomBark(victory_barks));
             }
         }

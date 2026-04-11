@@ -17,6 +17,8 @@ public class Revard : MonoBehaviour
 
     public List<Sprite> symbols;
 
+    public GameObject message;
+
 
     private void Start()
     {
@@ -148,7 +150,22 @@ public class Revard : MonoBehaviour
 
     private void ActivatePickBark()
     {
-        if(!MC.GetComponent<StoryController>().executioner)
+        BarkController BC = GameObject.Find("BarkHolder").GetComponent<BarkController>();
+
+        //Give tutorial on unbeatable
+        if (actualReward.GetComponent<Weapon>().type == MainController.Choise.voittamaton && !MC.GetComponent<StoryCheckList>().unbeatable_explained)
+        {
+            MC.GetComponent<StoryCheckList>().unbeatable_explained = true;
+            BC.ActivateInstantBark("That weapon type is \"unbeatable\". It wins against all other types.");
+        } 
+        //Give tutorial for useless
+        else if (actualReward.GetComponent<Weapon>().type == MainController.Choise.hyödytön && !MC.GetComponent<StoryCheckList>().useless_explained)
+        {
+            MC.GetComponent<StoryCheckList>().useless_explained = true;
+            BC.ActivateInstantBark("That weapon type is \"useless\". It loses to all other types");
+        } 
+        //Give generic barks
+        else if (!MC.GetComponent<StoryController>().executioner)
         {
             if (actualReward.GetComponent<Weapon>().pick_barks.Count > 0)
             {
@@ -157,7 +174,7 @@ public class Revard : MonoBehaviour
                 {
                     int index = Random.Range(0, actualReward.GetComponent<Weapon>().pick_barks.Count);
                     string bark = actualReward.GetComponent<Weapon>().pick_barks[index];
-                    GameObject.Find("BarkHolder").GetComponent<BarkController>().ActivateInstantBark(bark);
+                    BC.ActivateInstantBark(bark);
                 }
             }
         } else
@@ -165,7 +182,7 @@ public class Revard : MonoBehaviour
             int chance = Random.Range(1, 4);
             if (chance == 1)
             {
-                GameObject.Find("BarkHolder").GetComponent<BarkController>().ActivateExecutionerBark(actualReward.GetComponent<Weapon>().executioner_comment);
+                BC.ActivateExecutionerBark(actualReward.GetComponent<Weapon>().executioner_comment);
             }
         }
     }

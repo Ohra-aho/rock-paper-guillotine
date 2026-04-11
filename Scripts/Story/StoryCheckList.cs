@@ -20,6 +20,10 @@ public class StoryCheckList : MonoBehaviour
 
     public int greeting_index = 0;
 
+    public bool off_balance_explained = false;
+    public bool unbeatable_explained = false;
+    public bool useless_explained = false;
+
     public void SaveStoryCheckList()
     {
         CheckList data = new CheckList
@@ -37,7 +41,11 @@ public class StoryCheckList : MonoBehaviour
 
                 greeting_index,
 
-                end_counter
+                end_counter,
+
+                off_balance_explained,
+                unbeatable_explained,
+                useless_explained
             );
         SaveSystem.SaveStoryChecklist(data);
     }
@@ -61,6 +69,10 @@ public class StoryCheckList : MonoBehaviour
             executioner_dead = data.executioner_dead;
 
             end_counter = data.end_counter;
+
+            off_balance_explained = data.off_balance_explained;
+            unbeatable_explained = data.unbeatable_explained;
+            useless_explained = data.useless_explained;
         }
     }
 
@@ -82,6 +94,10 @@ public class StoryCheckList : MonoBehaviour
 
         public int end_counter;
 
+        public bool off_balance_explained;
+        public bool unbeatable_explained;
+        public bool useless_explained;
+
         public CheckList
             (
                 bool first_forfeit,
@@ -97,7 +113,11 @@ public class StoryCheckList : MonoBehaviour
 
                 int greeting_index,
 
-                int end_counter
+                int end_counter,
+
+                bool off_balance_explained,
+                bool unbeatable_explained,
+                bool useless_explained
             )
         {
             this.first_forfeit = first_forfeit;
@@ -109,6 +129,9 @@ public class StoryCheckList : MonoBehaviour
             this.greeting_index = greeting_index;
             this.executioner_dead = executioner_dead;
             this.end_counter = end_counter;
+            this.off_balance_explained = off_balance_explained;
+            this.unbeatable_explained = unbeatable_explained;
+            this.useless_explained = useless_explained;
         }
     }
 }
