@@ -17,6 +17,10 @@ public class HealthBar : MonoBehaviour
     public List<string> warning_barks;
     public List<string> low_health_barks;
     public List<string> high_damage_barks;
+
+    public List<string> exe_high_damage_barks;
+    public List<string> exe_low_health;
+
     //Bark stoppers
     [HideInInspector] public bool warning_given = false;
     [HideInInspector] public bool low_health = false;
@@ -57,23 +61,26 @@ public class HealthBar : MonoBehaviour
         damage_taken = true;
         if (gameObject.CompareTag("PlayerHealth") && !dead) {
             //Damage animations
-            if(GiveCurrentHealth() >= GiveMaxHealth() - GiveMaxHealth()/3)
+            if(!MC.GetComponent<StoryController>().executioner)
             {
-                Camera.main.GetComponent<Test>().PlayAnimation("Damage 1");
-            }
-            else if(GiveCurrentHealth() <= GiveMaxHealth()/2 && GiveCurrentHealth() > GiveMaxHealth()/3)
-            {
-                Camera.main.GetComponent<Test>().PlayAnimation("Damage 2");
-            }
-            else if(GiveCurrentHealth() <= GiveMaxHealth() / 3)
-            {
-                Camera.main.GetComponent<Test>().PlayAnimation("Damage 3");
+                if (GiveCurrentHealth() >= GiveMaxHealth() - GiveMaxHealth() / 3)
+                {
+                    Camera.main.GetComponent<Test>().PlayAnimation("Damage 1");
+                }
+                else if (GiveCurrentHealth() <= GiveMaxHealth() / 2 && GiveCurrentHealth() > GiveMaxHealth() / 3)
+                {
+                    Camera.main.GetComponent<Test>().PlayAnimation("Damage 2");
+                }
+                else if (GiveCurrentHealth() <= GiveMaxHealth() / 3)
+                {
+                    Camera.main.GetComponent<Test>().PlayAnimation("Damage 3");
+                }
             }
 
             LowHealthReaction();
         } else if(gameObject.CompareTag("PlayerHealth"))
         {
-            if (dead)
+            if (dead && !MC.GetComponent<StoryController>().executioner)
             {
                 Camera.main.GetComponent<Test>().PlayAnimation("dead react");
             }
@@ -385,9 +392,17 @@ public class HealthBar : MonoBehaviour
     {
         if(GiveCurrentHealth() <= GiveMaxHealth() / 3 && !low_health && GiveCurrentHealth() > 0)
         {
-            low_health = true;
-            int index = Random.Range(0, low_health_barks.Count);
-            Bark(low_health_barks[index]);
+            if (!MC.GetComponent<StoryController>().executioner)
+            {
+                low_health = true;
+                int index = Random.Range(0, low_health_barks.Count);
+                Bark(low_health_barks[index]);
+            } else
+            {
+                low_health = true;
+                int index = Random.Range(0, exe_low_health.Count);
+                GameObject.Find("BarkHolder").GetComponent<BarkController>().ActivateExecutionerBark(exe_low_health[index]);
+            }
         } else if(GiveCurrentHealth() <= 0)
         {
             GameObject.Find("Death Barks(Clone)").GetComponent<DeathBark>().Bark();
@@ -398,9 +413,17 @@ public class HealthBar : MonoBehaviour
     {
         if(amount >= 5)
         {
-            int index = Random.Range(0, high_damage_barks.Count);
-            Bark(high_damage_barks[index]);
+            if(!MC.GetComponent<StoryController>().executioner)
+            {
+                int index = Random.Range(0, high_damage_barks.Count);
+                Bark(high_damage_barks[index]);
+            } else
+            {
+                int i = Random.Range(0, exe_high_damage_barks.Count);
+                GameObject.Find("BarkHolder").GetComponent<BarkController>().ActivateExecutionerBark(exe_high_damage_barks[i]);
+            }
         }
+        
     }
 
 }

@@ -18,6 +18,8 @@ public class MessageHolder : MonoBehaviour
 
     string[] executioner_message = { };
 
+    public GameObject guillotine;
+
     private void Update()
     {
         if (MC.game_state != MainController.State.dialog) MC.game_state = MainController.State.dialog;
@@ -51,6 +53,7 @@ public class MessageHolder : MonoBehaviour
         
         if(executioner)
         {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(guillotine);
             for (int i = 0; i < executioner_message.Length; i++)
             {
                 temp.Add(executioner_message[i]);

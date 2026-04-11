@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7010574343782720544}
   - component: {fileID: -3775906259973895794}
   - component: {fileID: 1705922441453647033}
+  - component: {fileID: 7992817074451580435}
   m_Layer: 0
   m_Name: First end
   m_TagString: Untagged
@@ -50,8 +51,9 @@ MonoBehaviour:
   - You are not bad at this.
   - This has been fun, but execution is an execution...
   - Until we meet again.
-  sprite_frames: 
+  sprite_frames: 00000000000000000000000000000000
   activated: 0
+  executioner: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,3 +82,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7992817074451580435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3768069680275742937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65822fff40d93cf4e8f098258222c49d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

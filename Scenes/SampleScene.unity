@@ -10984,7 +10984,17 @@ MonoBehaviour:
   - Don't let that happen again.
   - What will you do know?
   - That one might need a debuff...
-  - Don't worry. if you lose here, you are not the first.
+  - Don't worry. If you lose here, you are not the first.
+  exe_high_damage_barks:
+  - Damn...
+  - I should have known.
+  - That felt just cheap.
+  - Come on. I got this.
+  exe_low_health:
+  - Wierd. Some part of me wants this to not be the end.
+  - Be still my heart. I need to think.
+  - This just got interesting.
+  - Oh no.
   warning_given: 0
   low_health: 0
 --- !u!114 &370411302
@@ -29778,6 +29788,7 @@ MonoBehaviour:
   first_achievement: 0
   first_achievement_pick: 0
   executioner_dead: 0
+  end_counter: 0
   greeting_index: 0
 --- !u!114 &1066024799
 MonoBehaviour:
@@ -40971,6 +40982,8 @@ MonoBehaviour:
   - That should turn the round to your favor.
   - And I thought that the enemy might have too much health.
   - Slow down a little. Circuits might fry.
+  exe_high_damage_barks: []
+  exe_low_health: []
   warning_given: 0
   low_health: 0
 --- !u!114 &1238540700
@@ -43196,9 +43209,6 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: a5a7e4dab1970aa4eb91d881a39969e5, type: 3}
-  - {fileID: 1944698211339908181, guid: 8e2e0581809bae947a126bd0b543ce49, type: 3}
-  - {fileID: 1944698211339908181, guid: 88f91e4d08a4c364e9a958121fc68618, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
@@ -43704,6 +43714,8 @@ MonoBehaviour:
   - What will you do know?
   - That one might need a debuff...
   - Don't worry. if you lose here, you are not the first.
+  exe_high_damage_barks: []
+  exe_low_health: []
   warning_given: 0
   low_health: 0
 --- !u!114 &1394640657
@@ -61775,6 +61787,8 @@ MonoBehaviour:
   - That should turn the round to your favor.
   - And I thought that the enemy might have too much health.
   - Slow down a little. Circuits might fry.
+  exe_high_damage_barks: []
+  exe_low_health: []
   warning_given: 0
   low_health: 0
 --- !u!114 &1657881650

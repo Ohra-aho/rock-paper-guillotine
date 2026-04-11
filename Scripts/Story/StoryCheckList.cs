@@ -16,6 +16,8 @@ public class StoryCheckList : MonoBehaviour
 
     public bool executioner_dead = false;
 
+    public int end_counter = 0;
+
     public int greeting_index = 0;
 
     public void SaveStoryCheckList()
@@ -33,7 +35,9 @@ public class StoryCheckList : MonoBehaviour
 
                 executioner_dead,
 
-                greeting_index
+                greeting_index,
+
+                end_counter
             );
         SaveSystem.SaveStoryChecklist(data);
     }
@@ -55,6 +59,8 @@ public class StoryCheckList : MonoBehaviour
             greeting_index = data.greeting_index;
 
             executioner_dead = data.executioner_dead;
+
+            end_counter = data.end_counter;
         }
     }
 
@@ -74,6 +80,8 @@ public class StoryCheckList : MonoBehaviour
 
         public int greeting_index;
 
+        public int end_counter;
+
         public CheckList
             (
                 bool first_forfeit,
@@ -87,7 +95,9 @@ public class StoryCheckList : MonoBehaviour
 
                 bool executioner_dead,
 
-                int greeting_index
+                int greeting_index,
+
+                int end_counter
             )
         {
             this.first_forfeit = first_forfeit;
@@ -98,6 +108,7 @@ public class StoryCheckList : MonoBehaviour
             this.first_achievement_pick = first_achievement_pick;
             this.greeting_index = greeting_index;
             this.executioner_dead = executioner_dead;
+            this.end_counter = end_counter;
         }
     }
 }

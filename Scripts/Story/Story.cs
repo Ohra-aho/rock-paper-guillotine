@@ -27,14 +27,14 @@ public class Story : MonoBehaviour
                 if (events[i].name.Contains("Boss"))
                 {
                     //tutorial
-                    if (boss_index == 0 && !SCL.first_boss_met)
+                    if (boss_index == 0 && !SCL.first_boss_met && !SC.executioner)
                     {
                         InsertEvent(SC.first_boss_intro, i - 1);
                         i++;
                         InsertEvent(SC.first_boss_victory, i);
                         i++;
                     }
-                    else if (boss_index == 0 && !SCL.first_boss_beaten)
+                    else if (boss_index == 0 && !SCL.first_boss_beaten && !SC.executioner)
                     {
                         InsertEvent(narrative.boss_introduxtions[boss_index].gameObject, i - 1);
                         i++;
@@ -44,11 +44,19 @@ public class Story : MonoBehaviour
                         boss_index++;
                     }
                     //Non tutorial
-                    else
+                    else if(!SC.executioner)
                     {
                         InsertEvent(narrative.boss_introduxtions[boss_index].gameObject, i - 1);
                         i++;
                         InsertEvent(narrative.boss_victories[boss_index].gameObject, i);
+                        i++;
+
+                        boss_index++;
+                    } else
+                    {
+                        InsertEvent(narrative.exe_boss_intros[boss_index].gameObject, i - 1);
+                        i++;
+                        InsertEvent(narrative.exe_boss_victories[boss_index].gameObject, i);
                         i++;
 
                         boss_index++;

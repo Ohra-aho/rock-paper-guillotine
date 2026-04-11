@@ -49,8 +49,9 @@ MonoBehaviour:
   - The one before you did something quite interesting.
   - I decided to remember them.
   - I wonder if you will be as interesting.
-  sprite_frames: 
+  sprite_frames: 000000000000000000000000
   activated: 0
+  executioner: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0

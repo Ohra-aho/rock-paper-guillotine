@@ -45,6 +45,12 @@ public class MainController : MonoBehaviour
 
     GameObject RI;
 
+    private string[] executioner_loss = {
+           "Well that's embarasing.",
+           "End of the line, I suppose",
+           "And that's the game."
+    };
+
 
     //Achievement aids
     [HideInInspector] public bool first_turn = true;
@@ -210,6 +216,10 @@ public class MainController : MonoBehaviour
         first_turn = true;
         SetNewState(State.dead);
         GetComponent<StoryController>().playthroughts++;
+        if(GetComponent<StoryController>().executioner)
+        {
+            GameObject.Find("BarkHolder").GetComponent<BarkController>().ActivateExecutionerBark(executioner_loss[reward_tier-1]);
+        }
         EndRound();
     }
 

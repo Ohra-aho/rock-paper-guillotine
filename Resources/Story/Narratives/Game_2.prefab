@@ -57,7 +57,8 @@ MonoBehaviour:
   - {fileID: 3768069680275742937, guid: b4f9eafb505d76342bbdb8b6fce8cf61, type: 3}
   - {fileID: 3768069680275742937, guid: b4f9eafb505d76342bbdb8b6fce8cf61, type: 3}
   - {fileID: 3768069680275742937, guid: b4f9eafb505d76342bbdb8b6fce8cf61, type: 3}
-  - {fileID: 0}
   gear_changes: []
   end: []
+  exe_boss_victories: []
+  exe_boss_intros: []
   death: {fileID: 0}

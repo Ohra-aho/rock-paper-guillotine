@@ -23,6 +23,10 @@ public class Message : MonoBehaviour
 
     private void Awake()
     {
+        if(GetComponent<End>())
+        {
+            GetComponent<End>().Inisiate();
+        }
         if(lines.Count > 0)
         {
             Inisiate();

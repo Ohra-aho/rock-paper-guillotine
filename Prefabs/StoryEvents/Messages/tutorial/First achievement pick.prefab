@@ -50,8 +50,9 @@ MonoBehaviour:
   - I tought it would be shame that their accomplishment would go to waste, so pick
     one of the remembered ones.
   - Their accomplishment will aid you in battle.
-  sprite_frames: 
+  sprite_frames: 000000000000000000000000
   activated: 0
+  executioner: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0

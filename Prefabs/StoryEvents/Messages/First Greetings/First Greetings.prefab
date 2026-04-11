@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message: {fileID: 3768069680275742937, guid: 5d1e42c56984f7044aa93ee06d6f55e7, type: 3}
   activated: 0
+  guillotine: {fileID: 1944698211339908181, guid: c02b21a307e0d544d8b3d96c998a4bcc, type: 3}
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0

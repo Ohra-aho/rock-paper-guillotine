@@ -60,4 +60,12 @@ MonoBehaviour:
   - {fileID: 3768069680275742937, guid: b4f9eafb505d76342bbdb8b6fce8cf61, type: 3}
   gear_changes: []
   end: []
+  exe_boss_victories:
+  - {fileID: 3768069680275742937, guid: b15bd4a8ad82ccd49abebcd8cc66aa5d, type: 3}
+  - {fileID: 3768069680275742937, guid: c74dcfb5a3d191f45b43777b5365dd1d, type: 3}
+  - {fileID: 3768069680275742937, guid: d464b47fe90bbf1478feeb4fb264e3fa, type: 3}
+  exe_boss_intros:
+  - {fileID: 3768069680275742937, guid: a226992d9f2f0d4488cf8c2b15e1d042, type: 3}
+  - {fileID: 3768069680275742937, guid: 1cd260da9ba95954ca35865721a9dadf, type: 3}
+  - {fileID: 3768069680275742937, guid: 0609d371f23896f42bf2a95ca77efb5d, type: 3}
   death: {fileID: 1228160335464627313, guid: 688452d2b74fdf54fb15b53026479802, type: 3}

@@ -49,8 +49,9 @@ MonoBehaviour:
   - You have fought well.
   - But the next foe will be more dangerous than anyhting you have faced this far.
   - Wish you luck.
-  sprite_frames: 
+  sprite_frames: 000000000000000000000000
   activated: 0
+  executioner: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0

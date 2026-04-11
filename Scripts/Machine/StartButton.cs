@@ -36,6 +36,7 @@ public class StartButton : MonoBehaviour
         "Going already?",
         "Can't even have fun with you people. 3"
     };
+    private string executioner_forfeit = "See you soon.";
 
     bool empty_regard = false; //To prevent constant barking
     int emtpy_regard_counter = 3; //Amount of fights man waits to bark at empty wheel again
@@ -211,18 +212,21 @@ public class StartButton : MonoBehaviour
 
     private void DisplayForfeitBark(bool first)
     {
-        if(first)
+        GameObject bark_holder = GameObject.Find("BarkHolder");
+
+        if (first)
         {
             MC.GetComponent<StoryCheckList>().first_forfeit = true;
-            GameObject bark_holder = GameObject.Find("BarkHolder");
             bark_holder.GetComponent<BarkController>().ActivateInstantBark("Oh... I propably should have warned you. 3");
-        } else
+        } else if(!MC.GetComponent<StoryController>().executioner)
         {
-            GameObject bark_holder = GameObject.Find("BarkHolder");
             int index = Random.Range(0, forfeit_barks.Length);
             string bark = forfeit_barks[index];
 
             bark_holder.GetComponent<BarkController>().ActivateInstantBark(bark);
+        } else
+        {
+            bark_holder.GetComponent<BarkController>().ActivateExecutionerBark(executioner_forfeit);
         }
     }
 
