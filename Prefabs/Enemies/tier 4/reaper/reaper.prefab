@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6943869333779220170}
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
-  - component: {fileID: 8718582777317775678}
   - component: {fileID: 9126511307194648938}
   m_Layer: 5
   m_Name: reaper
@@ -68,22 +67,19 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 29837efef47116a49ae0744e0aa29d4a, type: 3}
   plan_1: 00000000010000000200000000000000
   plan_2: 00000000010000000200000000000000
+  previous_weapon: {fileID: 0}
+  weapon_streak: 0
   off_balance: 0
   nearDeath: 0
+  off_balance_pattern_done: 0
   off_balance_choises: 01000000
   advanced: 0
---- !u!114 &8718582777317775678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78d68595e1839bb468f960d08df05c0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  victory_barks: []
+  executioner_comment: Placeholder
+  victory_message: {fileID: 0}
+  commented: 0
+  HB: {fileID: 0}
+  off_balance_triggered: 0
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0

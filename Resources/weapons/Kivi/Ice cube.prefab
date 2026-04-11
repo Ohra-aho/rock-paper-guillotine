@@ -98,6 +98,7 @@ MonoBehaviour:
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 0
   damage: 2
@@ -190,6 +191,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Soon every problem will look like a scissors to you.
+  executioner_comment: 1111111111111111111
   damage_soft_cap: 7
 --- !u!114 &3127145727892044911
 MonoBehaviour:

@@ -91,10 +91,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 0
   damage: 0
@@ -198,6 +200,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Just delaying the inevitable.
+  executioner_comment: 11111111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &8443349561577102891
 MonoBehaviour:

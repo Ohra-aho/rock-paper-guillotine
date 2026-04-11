@@ -90,10 +90,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 0
   damage: 2
@@ -104,6 +106,9 @@ MonoBehaviour:
   description: -1 HP
   sprite: {fileID: 21300000, guid: 32dcef5c12fd6b542bd77899bd6c4b93, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -122,6 +127,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -178,6 +186,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -188,6 +199,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Glass cannon are we?
+  executioner_comment: 111111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &2400389283692484848
 MonoBehaviour:

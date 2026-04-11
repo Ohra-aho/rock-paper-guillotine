@@ -151,7 +151,6 @@ public class Machine : MonoBehaviour
 
     public void PlayExecutionerComment()
     {
-        Debug.Log("Que?????");
         BasicEnemy enemy = GameObject.Find("EnemyHolder").GetComponent<EnemyController>().currentEnemy.GetComponent<BasicEnemy>();
         enemy.ExecutionerComment();
     }

@@ -201,6 +201,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Pray while you still can.
+  executioner_comment: 1111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &-794109146025331787
 MonoBehaviour:

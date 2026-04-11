@@ -16,7 +16,6 @@ public class Weapon : MonoBehaviour
     public bool spammable = false; //For enemy behaviour
     [HideInInspector] public bool dead;
     public MainController.Choise type;
-    //public int base_damage;
     public int damage;
     public int armor;
     [HideInInspector] public int real_damage;
@@ -24,7 +23,7 @@ public class Weapon : MonoBehaviour
     public string name;
     public string description;
     public Sprite sprite;
-    //public int stacks;
+
     public UnityEvent first_turn;
     public UnityEvent end_of_fight;
 
@@ -65,8 +64,9 @@ public class Weapon : MonoBehaviour
     //Needed for achievements
     [HideInInspector] public bool used_this_game;
 
-    //Displayed maube when picked
+    //Displayed maybe when picked
     public List<string> pick_barks;
+    public string executioner_comment;
 
     [HideInInspector] public int damage_soft_cap = 7;
 

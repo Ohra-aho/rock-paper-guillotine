@@ -69,10 +69,19 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 202f466333267f948a939456b66292af, type: 3}
   plan_1: 00000000020000000100000002000000
   plan_2: 01000000020000000000000002000000
+  previous_weapon: {fileID: 0}
+  weapon_streak: 0
   off_balance: 0
   nearDeath: 0
+  off_balance_pattern_done: 0
   off_balance_choises: 
   advanced: 1
+  victory_barks: []
+  executioner_comment: This one I will beat at least.
+  victory_message: {fileID: 0}
+  commented: 0
+  HB: {fileID: 0}
+  off_balance_triggered: 0
 --- !u!212 &3076687715594733710
 SpriteRenderer:
   m_ObjectHideFlags: 0

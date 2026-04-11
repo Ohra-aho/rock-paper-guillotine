@@ -90,10 +90,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 0
   damage: 1
@@ -104,6 +106,9 @@ MonoBehaviour:
   description: +5 HP
   sprite: {fileID: 21300000, guid: 2676b53b5e768a04c8ee94af143243b5, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -122,6 +127,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -178,6 +186,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 1
@@ -188,6 +199,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - You have more room for errors now. Lets see if you need them.
+  executioner_comment: 11111111111111111111111
+  damage_soft_cap: 7
 --- !u!114 &8317546583071739834
 MonoBehaviour:
   m_ObjectHideFlags: 0

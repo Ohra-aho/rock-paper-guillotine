@@ -148,14 +148,24 @@ public class Revard : MonoBehaviour
 
     private void ActivatePickBark()
     {
-        if(actualReward.GetComponent<Weapon>().pick_barks.Count > 0)
+        if(!MC.GetComponent<StoryController>().executioner)
         {
-            int chance = Random.Range(1, 5); //1,5
+            if (actualReward.GetComponent<Weapon>().pick_barks.Count > 0)
+            {
+                int chance = Random.Range(1, 5); //1,5
+                if (chance == 1)
+                {
+                    int index = Random.Range(0, actualReward.GetComponent<Weapon>().pick_barks.Count);
+                    string bark = actualReward.GetComponent<Weapon>().pick_barks[index];
+                    GameObject.Find("BarkHolder").GetComponent<BarkController>().ActivateInstantBark(bark);
+                }
+            }
+        } else
+        {
+            int chance = Random.Range(1, 4);
             if (chance == 1)
             {
-                int index = Random.Range(0, actualReward.GetComponent<Weapon>().pick_barks.Count);
-                string bark = actualReward.GetComponent<Weapon>().pick_barks[index];
-                GameObject.Find("BarkHolder").GetComponent<BarkController>().ActivateInstantBark(bark);
+                GameObject.Find("BarkHolder").GetComponent<BarkController>().ActivateExecutionerBark(actualReward.GetComponent<Weapon>().executioner_comment);
             }
         }
     }

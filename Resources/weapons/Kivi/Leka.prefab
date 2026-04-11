@@ -89,10 +89,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 1
+  spammable: 0
   dead: 0
   type: 0
   damage: 1
@@ -103,6 +105,9 @@ MonoBehaviour:
   description: Wins draws.
   sprite: {fileID: 21300000, guid: c8eafc5786a3fd245831caa9f9294480, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -121,6 +126,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -153,6 +161,9 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -163,3 +174,5 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Good old reliable.
+  executioner_comment: 111111111111111111111111
+  damage_soft_cap: 7

@@ -199,6 +199,7 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks: []
+  executioner_comment: 11111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &5405939345543289842
 MonoBehaviour:

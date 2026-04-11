@@ -91,10 +91,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 0
   damage: 1
@@ -174,6 +176,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Planning for failure? I like your confidence.
+  executioner_comment: 11111111111111111111
   damage_soft_cap: 7
 --- !u!114 &-7783867195882298360
 MonoBehaviour:
@@ -218,6 +221,7 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   destructive: 0
+  heal_disabler: 0
 --- !u!114 &5810372262768151894
 MonoBehaviour:
   m_ObjectHideFlags: 0

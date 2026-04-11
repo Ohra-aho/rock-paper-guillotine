@@ -95,6 +95,7 @@ MonoBehaviour:
   opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 0
   damage: 1
@@ -186,6 +187,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Bark and bite. A good pick.
+  executioner_comment: 111111111111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &2865161422314870810
 MonoBehaviour:
