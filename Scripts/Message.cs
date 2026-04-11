@@ -13,6 +13,8 @@ public class Message : MonoBehaviour
     ManAnimator MA;
     MainController MC;
 
+    public bool executioner = false;
+
 
     private void Update()
     {
@@ -29,17 +31,27 @@ public class Message : MonoBehaviour
 
     public void Inisiate()
     {
-        MA = GameObject.Find("man").GetComponent<ManAnimator>();
         MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+        if (!executioner && !MC.GetComponent<StoryController>().executioner)
+        {
+            if (GameObject.Find("man") != null) HandleMessage();
+        } else if(executioner && MC.GetComponent<StoryController>().executioner)
+        {
+            if (GameObject.Find("man") != null) HandleMessage();
+        } else
+        {
+            GetComponent<StoryEvent>().over = true;
+        }
+    }
+
+    private void HandleMessage()
+    {
+        MA = GameObject.Find("man").GetComponent<ManAnimator>();
 
         frames = new List<ManAnimator.Frame>();
 
         //This is ok for now
         string[] dialog = lines.ToArray();
-        //Make a real system for this
-        List<int> man_indexes = MakeRandomAnimation(dialog.Length);
-
-        if (sprite_frames.Count <= 0) sprite_frames = man_indexes;
 
         for (int i = 0; i < sprite_frames.Count; i++)
         {
@@ -56,22 +68,7 @@ public class Message : MonoBehaviour
 
         DisableButtons();
         GetComponent<StoryEvent>().Procceed();
-    }
 
-
-    //Temporary solution till I figure out hard code solution
-    public List<int> MakeRandomAnimation(int amount)
-    {
-        MA = GameObject.Find("man").GetComponent<ManAnimator>();
-
-        List<int> temp = new List<int>();
-
-        for(int i = 0; i < amount; i++)
-        {
-            //temp.Add(Random.Range(0, MA.man_sheet.Length));
-            temp.Add(0); //Adding just blanks
-        }
-        return temp;
     }
 
     private void OnDestroy()
@@ -93,7 +90,7 @@ public class Message : MonoBehaviour
     public void PlayMessage()
     {
         man = GameObject.Find("man");
-        man.GetComponent<ManAnimator>().ManMessage(frames);
+        if(man != null) man.GetComponent<ManAnimator>().ManMessage(frames);
         activated = true;
     }
 }

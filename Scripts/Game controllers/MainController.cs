@@ -9,7 +9,6 @@ public class MainController : MonoBehaviour
 
     [HideInInspector] public bool? won;
     [HideInInspector] public bool victory = false;
-    //[HideInInspector] public bool dead;
     [HideInInspector] public bool endTriggered;
     public bool stop;
 

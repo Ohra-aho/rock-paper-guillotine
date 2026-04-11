@@ -107,7 +107,7 @@ MonoBehaviour:
   name: Time Bomb
   description: +1 damage after each turn when not used. Damage drops to 0 after use
     or at the end of a fight.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: bba4eed768f62e2468873cc32b2046e5, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

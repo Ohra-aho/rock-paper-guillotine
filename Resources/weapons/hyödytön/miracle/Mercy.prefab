@@ -105,7 +105,7 @@ MonoBehaviour:
   real_armor: 0
   name: Mercy
   description: 'Heals you to full health. Destroys itself. '
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: a1f6d1bda08fc1f459993b256474d2dd, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

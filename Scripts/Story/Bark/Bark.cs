@@ -16,6 +16,8 @@ public class Bark : MonoBehaviour
     public bool immediate = false;
     public bool priority = false;
 
+    public bool executioner = false;
+
 
     private void Awake()
     {
@@ -78,7 +80,10 @@ public class Bark : MonoBehaviour
     //Plays the bark without conditions
     public void TheBark()
     {
-        GameObject.Find("man").GetComponent<ManAnimator>().CreateABark(true_bark, priority);
+        if(!executioner)
+        {
+            GameObject.Find("man").GetComponent<ManAnimator>().CreateABark(true_bark, priority);
+        }
         triggered = true;
     }
 

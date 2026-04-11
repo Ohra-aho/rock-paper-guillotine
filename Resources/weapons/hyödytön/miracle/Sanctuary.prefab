@@ -106,7 +106,7 @@ MonoBehaviour:
   real_armor: 0
   name: Sanctuary
   description: +3 armor to all weapons for 3 turns after use. Destroys itself.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: c58a56122edb2c2449d475d1a3fa6355, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

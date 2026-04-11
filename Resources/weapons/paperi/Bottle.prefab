@@ -91,10 +91,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 1
   damage: 1
@@ -103,7 +105,7 @@ MonoBehaviour:
   real_armor: 0
   name: Bottle
   description: Gives "Glass Shard" to inventory after use. Destroys itself.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: e7241872e938d9844a1b94e794af2409, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -225,3 +227,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   used_ones: 0
   destroyed: 0
+  disabled: 0

@@ -42,6 +42,7 @@ public class StoryController : MonoBehaviour
             cellar.SetActive(false);
             museum.SetActive(true);
         }
+        executioner = true;
 
         //Set base for the playthrough (at this point there is just one)
         story = Instantiate(GetComponent<MainController>().playthroughts[0], transform);

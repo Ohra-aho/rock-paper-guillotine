@@ -59,7 +59,7 @@ public class MessageHolder : MonoBehaviour
         {
             for (int i = 0; i < messages[index].Length; i++)
             {
-                if(messages[index][i] == "[kill]")
+                if(messages[index][i] == "[kill]") //Add animation
                 {
                     MC.game_state = MainController.State.dead;
                     GameObject.Find("Machine").GetComponent<Machine>().EndTheGame();
@@ -82,6 +82,7 @@ public class MessageHolder : MonoBehaviour
         {
             new_message.GetComponent<Message>().lines = temp;
             new_message.GetComponent<Message>().sprite_frames = ExtractFrameSprites(index);
+            if (executioner) new_message.GetComponent<Message>().executioner = true;
             new_message.GetComponent<Message>().Inisiate();
         } else
         {

@@ -96,6 +96,7 @@ MonoBehaviour:
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 0
   damage: 1
@@ -104,7 +105,7 @@ MonoBehaviour:
   real_armor: 0
   name: Rot
   description: +6 HP. -1 HP at the beginning of each fight.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 32316206308949541966fd2a728fcfb4, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls:

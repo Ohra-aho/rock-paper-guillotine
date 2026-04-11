@@ -106,7 +106,7 @@ MonoBehaviour:
   name: Strength
   description: When this weapon is not equipped, weapon with the least damage gain
     +1 damage until the end of the fight.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: d38bcbb657bdfc04489d3596e88eb3b4, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

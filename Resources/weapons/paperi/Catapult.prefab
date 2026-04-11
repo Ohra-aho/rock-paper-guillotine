@@ -107,7 +107,7 @@ MonoBehaviour:
   name: Catapult
   description: After use all weapons gain "Deals 1 damage after use and destroys
     itself" during the next turn.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: ac9752e3fea28aa4d99a87d64f9dd9fb, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

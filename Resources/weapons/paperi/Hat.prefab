@@ -90,10 +90,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 1
   damage: 1
@@ -103,7 +105,7 @@ MonoBehaviour:
   name: Hat
   description: At the start of each fight, gives +1 damage to one random weapon until
     the end of the fight.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 1bad85555d9c2274f90eaa4ac9aad987, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls:

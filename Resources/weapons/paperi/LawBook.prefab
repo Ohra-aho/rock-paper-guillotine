@@ -92,10 +92,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 1
   damage: 1
@@ -104,7 +106,7 @@ MonoBehaviour:
   real_armor: 0
   name: Law Book
   description: The first time you would die, you instead heal 3.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: d88564a0424476b409061512e74e3508, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

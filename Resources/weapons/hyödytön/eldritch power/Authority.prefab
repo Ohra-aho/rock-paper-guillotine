@@ -106,7 +106,7 @@ MonoBehaviour:
   name: Authority
   description: When this weapon is not equipped, one random weapon becomes "unbeatable"
     for the first turn of the fight..
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: a9b6b4df44f366344a920a728d0a3e37, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []

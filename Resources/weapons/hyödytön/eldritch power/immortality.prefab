@@ -105,7 +105,7 @@ MonoBehaviour:
   real_armor: 0
   name: Immortality
   description: When this weapon is not equipped, +2 HP
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 5108218310bb6ea429e7c3627f4a480c, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -215,3 +215,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd4294805eaf1cb4bb657a20232747c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff: {fileID: 0}
