@@ -68,13 +68,20 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: af7a8fd6185211b468f1da3679a73f79, type: 3}
   plan_1: 0200000001000000
   plan_2: 020000000100000002000000
+  previous_weapon: {fileID: 0}
+  weapon_streak: 0
   off_balance: 0
   nearDeath: 0
+  off_balance_pattern_done: 0
   off_balance_choises: 00000000
   advanced: 1
   victory_barks: []
+  executioner_comment: They say stars are angels. Just wating for the judgement day.
+    I hope it's true.
   victory_message: {fileID: 0}
+  commented: 0
   HB: {fileID: 0}
+  off_balance_triggered: 0
 --- !u!114 &-5607654906472149355
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -68,12 +68,17 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 4e2f6e2de2f6d6445bed3b02d3b29ce9, type: 3}
   plan_1: 020000000100000000000000
   plan_2: 010000000200000000000000
+  previous_weapon: {fileID: 0}
+  weapon_streak: 0
   off_balance: 0
   nearDeath: 0
+  off_balance_pattern_done: 0
   off_balance_choises: 00000000
   advanced: 0
   victory_barks: []
+  executioner_comment: Ok... Let's not blow up.
   victory_message: {fileID: 0}
+  commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0
 --- !u!212 &9126511307194648938

@@ -130,7 +130,9 @@ MonoBehaviour:
   victory_barks:
   - Well done. But now the real game begins.
   - At least you didn't embarass yourself.
+  executioner_comment: Hi old friend...
   victory_message: {fileID: 0}
+  commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0
 --- !u!114 &4638538761962290413

@@ -148,4 +148,11 @@ public class Machine : MonoBehaviour
     {
         if(MC.GetComponent<MainController>().game_state != MainController.State.dead) GetComponent<Test>().PlayAudioIfReverse(4);
     }
+
+    public void PlayExecutionerComment()
+    {
+        Debug.Log("Que?????");
+        BasicEnemy enemy = GameObject.Find("EnemyHolder").GetComponent<EnemyController>().currentEnemy.GetComponent<BasicEnemy>();
+        enemy.ExecutionerComment();
+    }
 }

@@ -76,7 +76,9 @@ MonoBehaviour:
   off_balance_choises: 
   advanced: 1
   victory_barks: []
+  executioner_comment: Don't look at me like that.
   victory_message: {fileID: 0}
+  commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0
 --- !u!212 &9126511307194648938

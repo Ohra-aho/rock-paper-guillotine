@@ -68,13 +68,17 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: b01cd12941fc90f4cb6e2f268ad58bdb, type: 3}
   plan_1: 0200000000000000000000000100000002000000
   plan_2: 0200000000000000010000000200000000000000
+  previous_weapon: {fileID: 0}
+  weapon_streak: 0
   off_balance: 0
   nearDeath: 0
   off_balance_pattern_done: 0
   off_balance_choises: 01000000
   advanced: 1
   victory_barks: []
+  executioner_comment: I know. Leave me alone!
   victory_message: {fileID: 0}
+  commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0
 --- !u!212 &9126511307194648938

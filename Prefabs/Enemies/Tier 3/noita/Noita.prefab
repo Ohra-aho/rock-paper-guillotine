@@ -67,10 +67,19 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 1cbd7a9ad16806f48b695e8ef6b70575, type: 3}
   plan_1: 0200000001000000020000000000000000000000
   plan_2: 0100000000000000020000000100000000000000
+  previous_weapon: {fileID: 0}
+  weapon_streak: 0
   off_balance: 0
   nearDeath: 0
+  off_balance_pattern_done: 0
   off_balance_choises: 02000000
   advanced: 0
+  victory_barks: []
+  executioner_comment: One of the most diabolical creations of mine.
+  victory_message: {fileID: 0}
+  commented: 0
+  HB: {fileID: 0}
+  off_balance_triggered: 0
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0

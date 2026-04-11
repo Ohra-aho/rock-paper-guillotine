@@ -76,7 +76,9 @@ MonoBehaviour:
   off_balance_choises: 
   advanced: 1
   victory_barks: []
+  executioner_comment: True legends never die.
   victory_message: {fileID: 0}
+  commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0
 --- !u!114 &4110409653828241436

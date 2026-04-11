@@ -34,7 +34,9 @@ public class BasicEnemy : MonoBehaviour
     public bool advanced = false;
 
     public List<string> victory_barks;
+    public string executioner_comment;
     public GameObject victory_message;
+    [HideInInspector] public bool commented = false;
 
     [HideInInspector] public HealthBar HB;
 
@@ -69,16 +71,6 @@ public class BasicEnemy : MonoBehaviour
         controller.GetComponent<EnemyController>().currentEnemy = this.gameObject;
         controller.GetComponent<EnemyController>().Inisiate();
     }
-
-    /*public void SpawnWeaponInfo()
-    {
-        GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
-        for(int i = 0; i < weapons.Count; i++)
-        {
-            infoHolder.GetComponent<WeaponInfoRack>().SpawnWeaponInfo(weapons[i].GetComponent<Weapon>());
-        }
-    }*/
-
 
     public void CheckUp(int currentHealth, int maxHealth, int enemyCurrentHealth, int enemyMaxHealth)
     {
@@ -200,6 +192,16 @@ public class BasicEnemy : MonoBehaviour
         {
             off_balance = false;
             GameObject.Find("light holder").GetComponent<Test>().PlayAnimation("balance");
+        }
+    }
+
+    public void ExecutionerComment()
+    {
+        StoryController SC = GameObject.Find("EventSystem").GetComponent<StoryController>();
+        if (executioner_comment != "" && SC.executioner && !commented)
+        {
+            GameObject.Find("BarkHolder").GetComponent<BarkController>().ActivateExecutionerBark(executioner_comment);
+            commented = true;
         }
     }
 }

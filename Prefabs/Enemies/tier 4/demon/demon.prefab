@@ -68,10 +68,19 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 08ccdac1db428e443a4f6c86c6025b96, type: 3}
   plan_1: 00000000020000000100000000000000
   plan_2: 01000000020000000100000000000000
+  previous_weapon: {fileID: 0}
+  weapon_streak: 0
   off_balance: 0
   nearDeath: 0
+  off_balance_pattern_done: 0
   off_balance_choises: 02000000
   advanced: 1
+  victory_barks: []
+  executioner_comment: Fan the flames my friend.
+  victory_message: {fileID: 0}
+  commented: 0
+  HB: {fileID: 0}
+  off_balance_triggered: 0
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0
