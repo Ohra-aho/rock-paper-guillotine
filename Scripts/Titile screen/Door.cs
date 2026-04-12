@@ -9,7 +9,14 @@ public class Door : MonoBehaviour
 
     public void Interact()
     {
-        transform.parent.parent.GetComponent<Test>().PlayAnimation("start");
+        if(GameObject.Find("EventSystem").GetComponent<StoryCheckList>().executioner_dead)
+        {
+            transform.parent.parent.GetComponent<Test>().PlayAnimation("start_2");
+        }
+        else
+        {
+            transform.parent.parent.GetComponent<Test>().PlayAnimation("start");
+        }
     }
 
 }

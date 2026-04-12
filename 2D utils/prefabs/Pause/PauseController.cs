@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseController : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class PauseController : MonoBehaviour
 
     MainController.State last_state;
 
+    public GameObject main_menu;
+    public GameObject museum_menu;
+
     // Update is called once per frame
     void Update()
     {
@@ -19,7 +23,19 @@ public class PauseController : MonoBehaviour
         {
             if(paused) Resume();
             else Pause();
-            
+        }
+    }
+
+    private void Awake()
+    {
+        if(SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            GetComponent<StoryCheckList>().LoadStoryCheckList();
+            if (GetComponent<StoryCheckList>().executioner_dead)
+            {
+                main_menu.SetActive(false);
+                museum_menu.SetActive(true);
+            }
         }
     }
 
