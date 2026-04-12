@@ -23,6 +23,18 @@ public class CameraNQuilliotine : MonoBehaviour
         DeathSave();
     }
 
+    public void PlayDeathAnimation()
+    {
+        GameObject es = GameObject.Find("EventSystem");
+        if (es.GetComponent<StoryCheckList>().executioner_dead)
+        {
+            GetComponent<Test>().PlayAnimation("Lose_2");
+        } else
+        {
+            GetComponent<Test>().PlayAnimation("Lose");
+        }
+    }
+
     public void DisableAllInteractavles()
     {
         eventSystem.GetComponent<MainController>().stop = true;

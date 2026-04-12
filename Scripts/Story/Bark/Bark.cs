@@ -83,11 +83,11 @@ public class Bark : MonoBehaviour
         StoryController SC = GameObject.Find("EventSystem").GetComponent<StoryController>();
         if (!executioner && !SC.executioner)
         {
-            GameObject.Find("man").GetComponent<ManAnimator>().CreateABark(true_bark, priority);
+            if(GameObject.Find("man") != null) GameObject.Find("man").GetComponent<ManAnimator>().CreateABark(true_bark, priority);
         }
         else if (executioner && SC.executioner)
         {
-            GameObject.Find("man").GetComponent<ManAnimator>().CreateABark(true_bark, priority);
+            if (GameObject.Find("man") != null) GameObject.Find("man").GetComponent<ManAnimator>().CreateABark(true_bark, priority);
         }
         
         triggered = true;

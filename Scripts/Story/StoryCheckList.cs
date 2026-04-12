@@ -66,7 +66,8 @@ public class StoryCheckList : MonoBehaviour
 
             greeting_index = data.greeting_index;
 
-            executioner_dead = data.executioner_dead;
+            //executioner_dead = data.executioner_dead;
+            executioner_dead = true; //Debug
 
             end_counter = data.end_counter;
 

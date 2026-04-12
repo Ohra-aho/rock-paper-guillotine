@@ -95,7 +95,8 @@ public class Machine : MonoBehaviour
     {
         if(MC.GetComponent<MainController>().game_state == MainController.State.dead)
         {
-            Guilliotine.GetComponent<Test>().PlayAnimation("Lose");
+            //Guilliotine.GetComponent<Test>().PlayAnimation("Lose");
+            Guilliotine.GetComponent<CameraNQuilliotine>().PlayDeathAnimation();
         }
     }
 

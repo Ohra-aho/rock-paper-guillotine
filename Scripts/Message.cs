@@ -24,7 +24,7 @@ public class Message : MonoBehaviour
 
     private void Awake()
     {
-        if(GetComponent<End>())
+        if (GetComponent<End>())
         {
             GetComponent<End>().Inisiate();
         }
@@ -40,10 +40,14 @@ public class Message : MonoBehaviour
         if (!executioner && !MC.GetComponent<StoryController>().executioner)
         {
             if (GameObject.Find("man") != null) HandleMessage();
-        } else if(executioner && MC.GetComponent<StoryController>().executioner)
+            else GetComponent<StoryEvent>().over = true;
+        }
+        else if(executioner && MC.GetComponent<StoryController>().executioner)
         {
             if (GameObject.Find("man") != null) HandleMessage();
-        } else
+            else GetComponent<StoryEvent>().over = true;
+        }
+        else
         {
             GetComponent<StoryEvent>().over = true;
         }

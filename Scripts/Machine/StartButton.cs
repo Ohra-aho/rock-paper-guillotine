@@ -142,14 +142,13 @@ public class StartButton : MonoBehaviour
 
     public void Deactivate()
     {
+        DisplayForfeitBark(!MC.GetComponent<StoryCheckList>().first_forfeit);
         GetComponent<SpriteRenderer>().sprite = inactive;
         machine.GetComponent<Test>().PlayAnimation("OpenMachine");
         GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarDown();
         GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.PowerHealthBarDown();
         GameObject.Find("EventSystem").GetComponent<MainController>().GiveUp();
         isActive = false;
-        DisplayForfeitBark(!MC.GetComponent<StoryCheckList>().first_forfeit);
-        
     }
 
     private void DisableAchievements()
