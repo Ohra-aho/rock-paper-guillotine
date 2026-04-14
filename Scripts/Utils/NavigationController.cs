@@ -9,4 +9,10 @@ public class NavigationController : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
+
+    public void ReloadCurrentScene()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
 }

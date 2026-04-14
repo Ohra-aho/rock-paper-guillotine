@@ -7,18 +7,26 @@ public class CameraNQuilliotine : MonoBehaviour
     public GameObject deathScreen;
     public GameObject eventSystem;
     public GameObject event_system;
+    public GameObject museum_deathScreen;
 
     public void RevealDeathScreen()
     {
         GameObject es = GameObject.Find("EventSystem");
-        if (es.GetComponent<StoryController>().executioner)
+        if(!es.GetComponent<StoryCheckList>().executioner_dead)
         {
-            es.GetComponent<StoryCheckList>().executioner_dead = true;
-            deathScreen.transform.GetChild(0).gameObject.SetActive(false);
-            deathScreen.transform.GetChild(1).gameObject.SetActive(false);
-            deathScreen.transform.GetChild(2).gameObject.SetActive(true);
+            if (es.GetComponent<StoryController>().executioner)
+            {
+                es.GetComponent<StoryCheckList>().executioner_dead = true;
+                deathScreen.transform.GetChild(0).gameObject.SetActive(false);
+                deathScreen.transform.GetChild(1).gameObject.SetActive(false);
+                deathScreen.transform.GetChild(2).gameObject.SetActive(true);
+            }
+            deathScreen.GetComponent<Test>().PlayAnimation("DeathADone");
+        } else
+        {
+            museum_deathScreen.SetActive(true);
+            museum_deathScreen.GetComponent<Test>().PlayAnimation("MDeathADone");
         }
-        deathScreen.GetComponent<Test>().PlayAnimation("DeathADone");
        
         DeathSave();
     }

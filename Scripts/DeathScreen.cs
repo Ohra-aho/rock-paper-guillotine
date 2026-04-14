@@ -13,4 +13,6 @@ public class DeathScreen : MonoBehaviour
     {
         GetComponent<NavigationController>().changeScene("MainMenu");
     }
+
+
 }

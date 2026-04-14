@@ -41,6 +41,10 @@ public class StoryController : MonoBehaviour
         {
             cellar.SetActive(false);
             museum.SetActive(true);
+
+            TableController table = GameObject.Find("Table").GetComponent<TableController>();
+            table.enemy = GameObject.Find("EnemyHolder");
+            table.player = GameObject.FindGameObjectWithTag("Player");
         }
         //executioner = true; ///////Debug
 

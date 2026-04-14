@@ -213,6 +213,7 @@ public class EnemyController : MonoBehaviour
     {
         if (resultEffect != null) resultEffect();
         chosenWeapon.GetComponent<Weapon>().resultPhase.Invoke();
+
         //Does things when result is determined
     }
 

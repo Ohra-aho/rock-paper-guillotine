@@ -142,7 +142,7 @@ public class CHoisePanel : MonoBehaviour
     {
         if(weapon_name != "" && weapon_name != null)
         {
-            GameObject info = GameObject.Find("Canvas").transform.GetChild(9).gameObject;
+            GameObject info = GameObject.Find("Canvas").transform.GetChild(10).gameObject;
             info.GetComponent<WeaponInfo>().weapon = weapon;
             /*info.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon_name;
             info.transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.GiveEffectiveDamage().ToString();
@@ -187,7 +187,7 @@ public class CHoisePanel : MonoBehaviour
     {
         if (weapon_name != "" && weapon_name != null)
         {
-            GameObject info = GameObject.Find("Canvas").transform.GetChild(9).gameObject;
+            GameObject info = GameObject.Find("Canvas").transform.GetChild(10).gameObject;
             info.SetActive(false);
             info.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "";
             info.transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "";

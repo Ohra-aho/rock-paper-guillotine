@@ -98,10 +98,11 @@ public class RLController : MonoBehaviour
     public void Bark(string script)
     {
         GameObject bark_holder = GameObject.Find("BarkHolder");
-        GameObject new_bark = Instantiate(bark, bark_holder.transform);
+        bark_holder.GetComponent<BarkController>().ActivateInstantBark(script);
+        /*GameObject new_bark = Instantiate(bark, bark_holder.transform);
         new_bark.GetComponent<Bark>().bark = script;
         new_bark.GetComponent<Bark>().immediate = true;
-        new_bark.GetComponent<Bark>().Inisiate();
+        new_bark.GetComponent<Bark>().Inisiate();*/
     }
 
 
@@ -342,10 +343,13 @@ public class RLController : MonoBehaviour
     {
         if(!achievements.Contains("Relentless"))
         {
-            if(MC.playerChoise.type == MC.enemyChoise.type)
+            if(MC.playerChoise != null && MC.enemyChoise != null)
             {
-                AddAchievement("Relentless");
-                Bark("Hehe... Usually I find draws a bit dull, but that was funny.");
+                if (MC.playerChoise.type == MC.enemyChoise.type)
+                {
+                    AddAchievement("Relentless");
+                    Bark("Hehe... Usually I find draws a bit dull, but that was funny.");
+                }
             }
         }
     }
