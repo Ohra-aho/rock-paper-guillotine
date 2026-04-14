@@ -165,7 +165,6 @@ public class StartButton : MonoBehaviour
     public void EndRound()
     {
         GetComponent<SpriteRenderer>().sprite = inactive;
-        Debug.Log(machine.transform.parent.parent);
         machine.GetComponent<Test>().PlayAnimation("OpenMachine");
         GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarDown();
         GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.PowerHealthBarDown();

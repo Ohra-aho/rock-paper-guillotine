@@ -22,7 +22,7 @@ public class RLReward : MonoBehaviour
 
     private void Awake()
     {
-        info = GameObject.Find("Canvas").transform.GetChild(14).gameObject;
+        info = GameObject.Find("Canvas").transform.GetChild(15).gameObject;
         GetComponent<NonUIButton>().over.AddListener(ShowInfo);
         GetComponent<NonUIButton>().exit.AddListener(HideInfo);
     }
