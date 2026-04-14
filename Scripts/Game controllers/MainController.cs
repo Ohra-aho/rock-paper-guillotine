@@ -87,11 +87,25 @@ public class MainController : MonoBehaviour
 
         GetComponent<RLController>().Insiate();
         GetComponent<StoryController>().Inisiate();
+        if (GetComponent<StoryCheckList>().executioner_dead) ResetImportantGameObjects();
     }
 
     private void Update()
     {
         GetComponent<StoryController>().InvokeNextEvent();
+    }
+
+    public void ResetImportantGameObjects()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        enemy = GameObject.Find("EnemyHolder");
+
+        enemyHolder = GameObject.Find("EnemyHolder");
+
+        startButton = GameObject.Find("StartButton");
+        rewardmenuHolder = GameObject.Find("RopeHolder");
+
+        quilliotine = GameObject.Find("The Q");
     }
 
     public void SetNewState(State new_state)

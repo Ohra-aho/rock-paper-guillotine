@@ -114,6 +114,7 @@ public class StartButton : MonoBehaviour
 
     public void Activate()
     {
+
         MC.victory = false;
         GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().defeat = false;
         GameObject ec = GameObject.Find("EnemyHolder");
@@ -144,6 +145,7 @@ public class StartButton : MonoBehaviour
     {
         DisplayForfeitBark(!MC.GetComponent<StoryCheckList>().first_forfeit);
         GetComponent<SpriteRenderer>().sprite = inactive;
+
         machine.GetComponent<Test>().PlayAnimation("OpenMachine");
         GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarDown();
         GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.PowerHealthBarDown();
@@ -163,6 +165,7 @@ public class StartButton : MonoBehaviour
     public void EndRound()
     {
         GetComponent<SpriteRenderer>().sprite = inactive;
+        Debug.Log(machine.transform.parent.parent);
         machine.GetComponent<Test>().PlayAnimation("OpenMachine");
         GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarDown();
         GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.PowerHealthBarDown();
