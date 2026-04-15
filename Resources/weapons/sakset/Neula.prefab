@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -4155978701443049850}
-  - component: {fileID: -5576181622998021734}
   m_Layer: 5
   m_Name: Neula
   m_TagString: Untagged
@@ -96,6 +95,7 @@ MonoBehaviour:
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 2
   damage: 1
@@ -187,6 +187,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Still can see it, can you.
+  executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &-4155978701443049850
 MonoBehaviour:
@@ -202,15 +203,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disabled: 0
   amount: 0
---- !u!114 &-5576181622998021734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6acf9d9234916c649a6962758b3dfa1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

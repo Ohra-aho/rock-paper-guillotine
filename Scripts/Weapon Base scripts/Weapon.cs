@@ -40,6 +40,7 @@ public class Weapon : MonoBehaviour
     public UnityEvent lose;
     public UnityEvent draw;
     public UnityEvent heal;
+    public UnityEvent gain_points;
 
     public UnityEvent equip;
     public UnityEvent unEquip;

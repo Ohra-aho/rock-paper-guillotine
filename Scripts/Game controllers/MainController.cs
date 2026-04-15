@@ -242,6 +242,10 @@ public class MainController : MonoBehaviour
         first_turn = true;
         EnableObject(startButton);
         startButton.GetComponent<StartButton>().EndRound();
+        if(enemy.GetComponent<EnemyController>().currentEnemy.GetComponent<BasicEnemy>().off_balance)
+        {
+            enemy.GetComponent<EnemyController>().currentEnemy.GetComponent<BasicEnemy>().Balance();
+        }
 
         if (game_state != State.dead)
         {

@@ -30,6 +30,7 @@ public class Buff : MonoBehaviour
     public bool win;
     public bool lose;
     public bool heal;
+    public bool gain_points;
 
     public bool equip;
     public bool unEquip;
@@ -127,7 +128,9 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().win.AddListener(() => special(weapon));
         if (lose)
             transform.parent.GetComponent<Weapon>().lose.AddListener(() => special(weapon));
-        if(type_change != null)
+        if (gain_points) 
+            transform.parent.GetComponent<Weapon>().gain_points.AddListener(() => special(weapon));
+        if (type_change != null)
             transform.parent.GetComponent<Weapon>().type = type_change ?? og_type;   
         if (penetrating)
             transform.parent.GetComponent<Weapon>().penetrating = true;
@@ -215,6 +218,8 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().win.RemoveListener(() => special(weapon));
         if (lose)
             transform.parent.GetComponent<Weapon>().lose.RemoveListener(() => special(weapon));
+        if (gain_points)
+            transform.parent.GetComponent<Weapon>().gain_points.RemoveListener(() => special(weapon));
         if (type_change != null)
             transform.parent.GetComponent<Weapon>().type = og_type;
         if (penetrating)

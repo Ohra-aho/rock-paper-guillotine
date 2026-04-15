@@ -40,6 +40,7 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public bool win;
     [HideInInspector] public bool lose;
     [HideInInspector] public bool heal;
+    [HideInInspector] public bool gain_points;
 
     [HideInInspector] public bool equip;
     [HideInInspector] public bool unEquip;
@@ -160,6 +161,7 @@ public class BuffController : MonoBehaviour
             new_buff.health_buff = health_buff;
             new_buff.deal_effect_damage = deal_effect_damage;
             new_buff.heal_disabler = heal_disabler;
+            new_buff.gain_points = gain_points;
             if (special != null) new_buff.GetComponent<Buff>().special = special;
             if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
             new_buff.GetComponent<Buff>().AddBuff();
