@@ -159,6 +159,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -202,4 +205,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabled: 0
-  amount: 0
+  amount: 1
