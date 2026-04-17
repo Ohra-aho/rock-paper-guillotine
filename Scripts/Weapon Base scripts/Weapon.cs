@@ -222,6 +222,7 @@ public class Weapon : MonoBehaviour
                     takeDamage.Invoke();
                 }
                 dead = hb.GetComponent<HealthBar>().CheckIfDead();
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().damage_taken = true;
             }
             else
             {
@@ -234,7 +235,7 @@ public class Weapon : MonoBehaviour
                 }
                 dead = hb.GetComponent<HealthBar>().CheckIfDead();
                 GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().TakeDamage();
-
+                GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().damage_taken = true;
             }
             loop_stopper = true;
         }

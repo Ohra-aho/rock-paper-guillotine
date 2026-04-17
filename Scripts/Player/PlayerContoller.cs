@@ -33,6 +33,8 @@ public class PlayerContoller : MonoBehaviour
 
     GameObject RI;
 
+    [HideInInspector] public bool damage_taken = false;
+
     private void Start()
     {
         RI = GameObject.FindGameObjectWithTag("RI");
@@ -93,6 +95,9 @@ public class PlayerContoller : MonoBehaviour
 
     public void MakeAChoise(int choise)
     {
+        GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().damage_taken = false;
+        damage_taken = false;
+
         MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
         currentEnemy = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>();
         if(PlayerWheels[unlocked_wheel].transform.GetChild(choise).GetChild(0).GetComponent<WeaponSprite>().weapon != null)

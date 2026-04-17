@@ -35,6 +35,8 @@ public class EnemyController : MonoBehaviour
     public bool victory = false;
 
     public GameObject true_weapon_holder;
+
+    [HideInInspector] public bool damage_taken = false;
     private void Update()
     {
         if(HB.dead)

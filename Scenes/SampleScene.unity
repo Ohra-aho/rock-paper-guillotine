@@ -43406,6 +43406,7 @@ MonoBehaviour:
   MC: {fileID: 1066024786}
   victory: 0
   true_weapon_holder: {fileID: 7502287}
+  damage_taken: 0
 --- !u!212 &1362538243
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43580,6 +43581,7 @@ MonoBehaviour:
   choise_panel: {fileID: 3739126361549298607, guid: fe990e7900a5c3643a118c58020d6a1c, type: 3}
   defeat: 0
   spinning: 0
+  damage_taken: 0
 --- !u!114 &1366762622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43596,7 +43598,7 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: 70d0c9114c47cd84ca44d0d196c55f86, type: 3}
+  - {fileID: 1944698211339908181, guid: c97f624550e24ad48ad76567bb645f7d, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
@@ -71050,6 +71052,7 @@ MonoBehaviour:
   choise_panel: {fileID: 3739126361549298607, guid: fe990e7900a5c3643a118c58020d6a1c, type: 3}
   defeat: 0
   spinning: 0
+  damage_taken: 0
 --- !u!212 &1843696429
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -77276,6 +77279,7 @@ MonoBehaviour:
   MC: {fileID: 1066024786}
   victory: 0
   true_weapon_holder: {fileID: 7502287}
+  damage_taken: 0
 --- !u!212 &1967165130
 SpriteRenderer:
   m_ObjectHideFlags: 0
