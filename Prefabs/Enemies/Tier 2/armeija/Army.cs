@@ -15,29 +15,12 @@ public class Army : MonoBehaviour
 
     private int MakeChoise(MainController.Choise choise)
     {
-        if(GetComponent<BasicEnemy>().off_balance)
+        if(!GetComponent<BasicEnemy>().off_balance)
         {
-            switch(previous_weapon.name)
-            {
-                case "Shield wall": return 0;
-                case "Charge": return 1;
-                case "Cannons": return 1;
-            }
+            return GetComponent<BasicEnemy>().MakeChoise(choise);
         } else
         {
-            if(previous_weapon != null)
-            {
-                switch (previous_weapon.name)
-                {
-                    case "Shield wall": return 2;
-                    case "Charge": return 0;
-                    case "Cannons": return 1;
-                }
-            } else
-            {
-                return Random.Range(0, 2);
-            }
+            return GetComponent<BasicEnemy>().MakeOffBalanceChoise();
         }
-        return 0;
     }
 }

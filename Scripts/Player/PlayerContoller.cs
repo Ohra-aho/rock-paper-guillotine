@@ -242,20 +242,6 @@ public class PlayerContoller : MonoBehaviour
 
     //Combat functions
 
-   /* public void DealDamage()
-    {
-        GameObject enemy = GameObject.FindGameObjectWithTag("EnemyHolder");
-        bool dead = enemy.GetComponent<EnemyController>().dead;
-        if (dead) MC.Win();
-    }
-
-    public void TakeDamage()
-    {
-        bool dead = HB.GetComponent<HealthBar>().CheckIfDead();
-
-        if (dead) MC.Loose();
-    }*/
-
     public void Draw()
     {
 

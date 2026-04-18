@@ -4,50 +4,16 @@ using UnityEngine;
 
 public class CB_Reload : MonoBehaviour
 {
-
-    public void Reloading()
+    public void Reload()
     {
         GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
-
-        for (int i = 0; i < RIE.transform.childCount; i++)
+        for(int i = 0; i < RIE.transform.childCount; i++)
         {
-            if (RIE.transform.GetChild(i).GetComponent<Weapon>().name != GetComponent<Weapon>().name)
+            if(RIE.transform.GetChild(i).GetComponent<Weapon>().name == "Presicion shot")
             {
-                RIE.transform.GetChild(i).GetComponent<Weapon>().damage += 3;
+                RIE.transform.GetChild(i).GetComponent<Stacking>().IncreaseStacks(1);
+                break;
             }
         }
-        GetComponent<Weapon>().owner.ResetPlan();
-        ResetFantTheHammer();
-    }
-
-    public void ShotOffBalance()
-    {
-        GetComponent<Weapon>().owner.OffBalance();
-    }
-
-    public void FanOffBalance()
-    {
-        GetComponent<Weapon>().owner.GetComponent<CowBoy>().fan_misses++;
-        if (GetComponent<Weapon>().owner.GetComponent<CowBoy>().fan_counter >= 2 && GetComponent<Weapon>().owner.GetComponent<CowBoy>().fan_misses >= 2)
-        {
-            GetComponent<Weapon>().owner.OffBalance();
-        }
-    }
-
-    public void ResetFantTheHammer()
-    {
-        GetComponent<Weapon>().owner.GetComponent<CowBoy>().fan_misses = 0;
-        GetComponent<Weapon>().owner.GetComponent<CowBoy>().fan_counter = 0;
-    }
-
-    public void SetPreviousWeapon()
-    {
-        GetComponent<Weapon>().owner.GetComponent<CowBoy>().previous_weapon = this.GetComponent<Weapon>();
-        GetComponent<Weapon>().owner.GetComponent<BasicEnemy>().Balance();
-    }
-
-    public void FanTheHammer()
-    {
-        GetComponent<Weapon>().owner.GetComponent<CowBoy>().fan_counter++;
     }
 }

@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class Charge : MonoBehaviour
 {
-    public void DecreaseArmor()
+    private void Awake()
     {
-        Transform RIE = GameObject.FindGameObjectWithTag("RIE").transform;
-        int amount = RIE.childCount;
-        for (int i = 0; i < amount; i++)
+        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name != GetComponent<Weapon>().name; };
+        GetComponent<BuffController>().lose = true;
+        GetComponent<BuffController>().special = ApplyBuffs;
+    }
+
+    public void ApplyBuffs(Weapon w)
+    {
+        GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+        for(int i = 0; i < RIE.transform.childCount; i++)
         {
-            RIE.GetChild(i).GetComponent<Weapon>().armor--;
-            if (RIE.GetChild(i).GetComponent<Weapon>().armor < 0)
-            {
-                RIE.GetChild(i).GetComponent<Weapon>().armor = 0;
-            }
+            Buff new_buff = Instantiate(GetComponent<BuffController>().buff, RIE.transform.GetChild(i)).GetComponent<Buff>();
+            new_buff.id = GetComponent<Weapon>().name + "_2";
+            new_buff.temporary = true;
+            new_buff.timer = 2;
+            new_buff.damage_buff = 2;
+            new_buff.AddBuff();
         }
     }
 
     public void Lose()
     {
-        GetComponent<Weapon>().owner.OffBalance();
+        if(GetComponent<Weapon>().owner.HB.GiveCurrentHealth() <= GetComponent<Weapon>().owner.HB.GiveMaxHealth() / 2)
+        {
+            GetComponent<Weapon>().owner.OffBalance();
+        }
     }
-
-    public void SetPreviousWeapon()
-    {
-        GameObject enemy = GameObject.Find("EnemyHolder").transform.GetChild(0).gameObject;
-        enemy.GetComponent<Army>().previous_weapon = this.GetComponent<Weapon>();
-        enemy.GetComponent<BasicEnemy>().Balance();
-
-    }
-
-
 }

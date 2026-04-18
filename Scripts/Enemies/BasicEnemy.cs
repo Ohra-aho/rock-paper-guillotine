@@ -60,7 +60,7 @@ public class BasicEnemy : MonoBehaviour
         else MC.victory_message = null;
 
         HB = GameObject.Find("EnemyHealth").GetComponent<HealthBar>();
-
+        GameObject.Find("light holder").GetComponent<Test>().PlayAnimation("balance");
     }
 
     public void TransferInfo()

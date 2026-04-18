@@ -4,7 +4,21 @@ using UnityEngine;
 
 public class Tykistö : MonoBehaviour
 {
-    public void DealDamage()
+    private void Awake()
+    {
+        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name != GetComponent<Weapon>().name; };
+        GetComponent<BuffController>().lose = true;
+        GetComponent<BuffController>().special = DealDamage;
+    }
+
+    public void Lose()
+    {
+        if (GetComponent<Weapon>().owner.HB.GiveCurrentHealth() <= GetComponent<Weapon>().owner.HB.GiveMaxHealth() / 2)
+        {
+            GetComponent<Weapon>().owner.OffBalance();
+        }
+    }
+    public void DealDamage(Weapon w)
     {
         if(GetComponent<Stacking>().stacks > 0)
         {
@@ -12,33 +26,4 @@ public class Tykistö : MonoBehaviour
             GetComponent<Stacking>().DecreaseStacks(1);
         }
     }
-
-    public void BuffWeapons()
-    {
-        if (GetComponent<Stacking>().stacks > 0)
-        {
-            GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
-            for (int i = 0; i < RIE.transform.childCount; i++)
-            {
-                if(RIE.transform.GetChild(i).GetComponent<Weapon>().name != GetComponent<Weapon>().name)
-                {
-                    RIE.transform.GetChild(i).GetComponent<Weapon>().damage++;
-                }
-            }
-            GetComponent<Stacking>().DecreaseStacks(1);
-        }
-    }
-
-    public void Lose()
-    {
-        GetComponent<Weapon>().owner.OffBalance();
-    }
-
-    public void SetPreviousWeapon()
-    {
-        GameObject enemy = GameObject.Find("EnemyHolder").transform.GetChild(0).gameObject;
-        enemy.GetComponent<Army>().previous_weapon = this.GetComponent<Weapon>();
-        enemy.GetComponent<BasicEnemy>().Balance();
-    }
-
 }

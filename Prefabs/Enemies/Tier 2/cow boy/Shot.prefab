@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 3473221643255588054}
-  - component: {fileID: -3489714743446755805}
+  - component: {fileID: -3653331939365215849}
+  - component: {fileID: -3807283068526482697}
+  - component: {fileID: -5097256326757377528}
+  - component: {fileID: 7200651658434785375}
   m_Layer: 5
   m_Name: Shot
   m_TagString: Untagged
@@ -95,15 +97,17 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 1
-  draw_winner: 1
+  draw_winner: 0
+  spammable: 0
   dead: 0
   type: 2
-  damage: 3
+  damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Presicion shot
-  description: Pierces armor. Wins draws. -1 to damage after use.
+  description: Gains 1 point after each turn. (Continuous) After use, uses all points
+    to deal damage equal to the half of the points used. Pierces armor.
   sprite: {fileID: 21300000, guid: 9c4f05f316beb084193e3916bf80dfd2, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -120,33 +124,9 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -3489714743446755805}
-        m_TargetAssemblyTypeName: CB_Reload, Assembly-CSharp
-        m_MethodName: ResetFantTheHammer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3098424137161797902}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: Balance
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: -3489714743446755805}
-        m_TargetAssemblyTypeName: CB_Reload, Assembly-CSharp
-        m_MethodName: SetPreviousWeapon
+      - m_Target: {fileID: 7200651658434785375}
+        m_TargetAssemblyTypeName: PresicionShot, Assembly-CSharp
+        m_MethodName: DealDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -162,9 +142,9 @@ MonoBehaviour:
   takeDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -3489714743446755805}
-        m_TargetAssemblyTypeName: CB_Reload, Assembly-CSharp
-        m_MethodName: ShotOffBalance
+      - m_Target: {fileID: 7200651658434785375}
+        m_TargetAssemblyTypeName: PresicionShot, Assembly-CSharp
+        m_MethodName: OffBalance
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -195,6 +175,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -222,8 +205,9 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks: []
+  executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &3473221643255588054
+--- !u!114 &-3653331939365215849
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,10 +216,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f03c567f3bddeee4aae407891a55f9cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-3489714743446755805
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+  damage_bonus: 0
+  armor_bonus: 0
+  effect_damage_bonus: 0
+  set_a_to_zero: 0
+  set_d_to_zero: 0
+  always_on: 1
+  choisePhase: 0
+  resultPhase: 0
+  endPhase: 0
+  victory: 0
+  special_apply: 0
+  takeDamage: 0
+  takeNoDamage: 0
+  dealDamage: 0
+  deal_effect_damage: 0
+  draw: 0
+  win: 0
+  lose: 0
+  heal: 0
+  gain_points: 0
+  equip: 0
+  unEquip: 0
+  constant: 0
+  onDestruction: 0
+  awake: 0
+  temporary: 0
+  timer: 0
+  penetrating: 0
+  draw_winner: 0
+  health_buff: 0
+  destructive: 0
+  heal_disabler: 0
+--- !u!114 &-3807283068526482697
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,6 +261,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38a5730667bbe2643b3206eb37138938, type: 3}
+  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stacks: 0
+  stack_limit: 0
+  LoadFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-5097256326757377528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 0
+  armor_piercing: 0
+--- !u!114 &7200651658434785375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d7d5de67cdf9c458b450cd446a06d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
