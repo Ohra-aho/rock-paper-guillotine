@@ -66,8 +66,8 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 8df209879b8327343b6df07fbcc4efe4, type: 3}
   - {fileID: 1944698211339908181, guid: 51ea9930548be084d845381301215245, type: 3}
   - {fileID: 1944698211339908181, guid: 58d61df4140868e4ab804d57a8900a3b, type: 3}
-  plan_1: 01000000020000000200000000000000
-  plan_2: 01000000020000000200000000000000
+  plan_1: 
+  plan_2: 
   previous_weapon: {fileID: 0}
   weapon_streak: 0
   off_balance: 0

@@ -18,7 +18,13 @@ public class Lurker : MonoBehaviour
         
         if(GetComponent<BasicEnemy>().off_balance)
         {
-            return 0;
+            int i = Random.Range(0, 2);
+            switch(i)
+            {
+                case 0: return 0;
+                case 1: return 2;
+                default: return 0;
+            }
         } else if(tail_hit > 0)
         {
             tail = true;

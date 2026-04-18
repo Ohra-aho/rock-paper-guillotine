@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 2960523552579534939}
-  - component: {fileID: -9222919528382503969}
+  - component: {fileID: -5376515112420613057}
+  - component: {fileID: 2351907287884867695}
+  - component: {fileID: -2837925835377614634}
   m_Layer: 5
-  m_Name: suomut
+  m_Name: Bleed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,14 +99,15 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   dead: 0
-  type: 0
-  damage: 1
-  armor: 0
+  type: 4
+  damage: 0
+  armor: 1
   real_damage: 0
   real_armor: 0
-  name: Scales
-  description: Heals 1 on draws.
-  sprite: {fileID: 21300000, guid: 4735035bd5e464347a28d5c8cbc06bee, type: 3}
+  name: Bleed
+  description: When not equipped, deals 1 damage at the start of each fight. Destroyed
+    after use.
+  sprite: {fileID: 21300000, guid: 77c8f67adf3c9094ea3e21ba227b6dfa, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -121,9 +123,9 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2960523552579534939}
-        m_TargetAssemblyTypeName: LurkerWeapons, Assembly-CSharp
-        m_MethodName: Scales
+      - m_Target: {fileID: -5376515112420613057}
+        m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
+        m_MethodName: Destruct
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -156,19 +158,7 @@ MonoBehaviour:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -9222919528382503969}
-        m_TargetAssemblyTypeName: Healing, Assembly-CSharp
-        m_MethodName: Heal
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -192,7 +182,19 @@ MonoBehaviour:
       m_Calls: []
   unequipped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -2837925835377614634}
+        m_TargetAssemblyTypeName: Bleed, Assembly-CSharp
+        m_MethodName: TakeDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   self_destructive: 0
   healing: 0
   health: 0
@@ -201,10 +203,11 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks: []
+  pick_barks:
+  - This should not be here.
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &2960523552579534939
+--- !u!114 &-5376515112420613057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,20 +216,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aec6fdf4ee718a64ba76791e079dc393, type: 3}
+  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-9222919528382503969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  used_ones: 0
+  destroyed: 0
   disabled: 0
+--- !u!114 &2351907287884867695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   amount: 1
+  armor_piercing: 0
+--- !u!114 &-2837925835377614634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ee45210b0313314195d5d89937932bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
