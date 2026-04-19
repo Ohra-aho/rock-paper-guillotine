@@ -127,9 +127,56 @@ public class EnemyController : MonoBehaviour
         
     }
 
+    private void ChangeWheel()
+    {
+        GameObject wheel_holder = GameObject.Find("Wheel holder");
+        for(int i = 0; i < wheel_holder.transform.childCount; i++)
+        {
+            wheel_holder.transform.GetChild(i).gameObject.SetActive(true);
+        }
+        switch(weapons.Count)
+        {
+            case 3:
+                SetWheelToTop("Enemy Wheel");
+                break;
+            case 4:
+                SetWheelToTop("Wheel 4");
+                break;
+            case 5:
+                SetWheelToTop("Wheel 5");
+                break;
+            case 6:
+                SetWheelToTop("Wheel 6");
+                break;
+        }
+        for(int i = 1; i < wheel_holder.transform.childCount; i++)
+        {
+            wheel_holder.transform.GetChild(i).gameObject.SetActive(false);
+
+        }
+    }
+
+    private void SetWheelToTop(string name)
+    {
+        GameObject wheel_holder = GameObject.Find("Wheel holder");
+
+        if (wheel_holder.transform.GetChild(0).name != name)
+        {
+            for (int i = 0; i < wheel_holder.transform.childCount; i++)
+            {
+                if (wheel_holder.transform.GetChild(i).name == name)
+                {
+                    wheel_holder.transform.GetChild(i).SetAsFirstSibling();
+                }
+            }
+        }
+    }
+
     public void DisplayWeapons()
     {
         EnemyWheel = GameObject.Find("RightSide").transform.GetChild(0).GetChild(0).gameObject;
+        ChangeWheel();
+        EnemyWheel = GameObject.Find("Wheel holder").transform.GetChild(0).gameObject;
         GameObject.FindGameObjectWithTag("EnemyWeaponDetector").GetComponent<WeaponDetector>().weaponWheel = EnemyWheel;
         for(int i = 0; i < weapons.Count; i++)
         {

@@ -12,11 +12,12 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -7928718496815920504}
-  - component: {fileID: 5501050124353481544}
-  - component: {fileID: 9119766527384774574}
+  - component: {fileID: 8594040579424551377}
+  - component: {fileID: 8853084314710953927}
+  - component: {fileID: -8579761800670837983}
+  - component: {fileID: 1022036010789639349}
   m_Layer: 5
-  m_Name: Raise
+  m_Name: jackpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,15 +100,15 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   dead: 0
-  type: 2
-  damage: 2
+  type: 1
+  damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Raise
-  description: +2 damage to all weapons for both sides during the next turn. If wins
-    or draws, gives Dept to your inventory.
-  sprite: {fileID: 21300000, guid: 8e91aed68d4bf6c4badc50a89720641c, type: 3}
+  name: Jackpot
+  description: When Raise is used, gain 1 point. If you kill through this weapon,
+    gives Price to your inventory.
+  sprite: {fileID: 21300000, guid: 9780c758d211b8d4792dfc6414cb5a2c, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -122,10 +123,16 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
+      m_Calls: []
+  victory:
+    m_PersistentCalls:
+      m_Calls: []
+  takeDamage:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -7928718496815920504}
-        m_TargetAssemblyTypeName: Raise, Assembly-CSharp
-        m_MethodName: ApplyBuffs
+      - m_Target: {fileID: 8853084314710953927}
+        m_TargetAssemblyTypeName: Jackpot, Assembly-CSharp
+        m_MethodName: DeathTrigger
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -135,12 +142,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  victory:
-    m_PersistentCalls:
-      m_Calls: []
-  takeDamage:
-    m_PersistentCalls:
-      m_Calls: []
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -152,7 +153,19 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8594040579424551377}
+        m_TargetAssemblyTypeName: VictroyTrigger, Assembly-CSharp
+        m_MethodName: VictoryTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   lose:
     m_PersistentCalls:
       m_Calls: []
@@ -194,65 +207,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &-7928718496815920504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 127f2afd91fadcc409433846d3fae1c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
---- !u!114 &5501050124353481544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
-  damage_bonus: 0
-  armor_bonus: 0
-  effect_damage_bonus: 0
-  set_a_to_zero: 0
-  set_d_to_zero: 0
-  always_on: 1
-  choisePhase: 0
-  resultPhase: 0
-  endPhase: 0
-  victory: 0
-  special_apply: 0
-  takeDamage: 0
-  takeNoDamage: 0
-  dealDamage: 0
-  deal_effect_damage: 0
-  draw: 0
-  win: 0
-  lose: 0
-  heal: 0
-  gain_points: 0
-  equip: 0
-  unEquip: 0
-  constant: 0
-  onDestruction: 0
-  awake: 0
-  temporary: 0
-  timer: 0
-  penetrating: 0
-  draw_winner: 0
-  health_buff: 0
-  destructive: 0
-  heal_disabler: 0
---- !u!114 &9119766527384774574
+--- !u!114 &8594040579424551377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,3 +219,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6caf9c72f1b50b429a2f810d082f26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8853084314710953927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91030800d3b288d4eb94675f3a28d867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8579761800670837983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stacks: 0
+  stack_limit: 0
+  LoadFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1022036010789639349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 1944698211339908181, guid: ebfef123ff6a81c498e0a07aa391e22f, type: 3}

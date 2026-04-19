@@ -35,5 +35,19 @@ public class Raise : MonoBehaviour
     {
         GetComponent<BuffController>().Equip();
         BuffOpposingWeapons();
+        IncreaseJackpot();
+    }
+
+    private void IncreaseJackpot()
+    {
+        GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+        for(int i = 0; i < RIE.transform.childCount; i++)
+        {
+            if(RIE.transform.GetChild(i).GetComponent<Weapon>().name == "Jackpot")
+            {
+                RIE.transform.GetChild(i).GetComponent<Stacking>().IncreaseStacks(1);
+                break;
+            }
+        }
     }
 }
