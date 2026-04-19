@@ -107,7 +107,7 @@ public class BasicEnemy : MonoBehaviour
         {
             off_balance_pattern_done = true;
             off_balance_plan_index = 0;
-            planIndex = 0; //Might neer revision
+            planIndex = 0; //Might need revision
         }
 
         //If weapon is destroyed, skip it in plan

@@ -304,4 +304,9 @@ public class Weapon : MonoBehaviour
     {
         owner.GetComponent<BasicEnemy>().Balance();
     }
+
+    public void OffBalance()
+    {
+        owner.GetComponent<BasicEnemy>().OffBalance();
+    }
 }

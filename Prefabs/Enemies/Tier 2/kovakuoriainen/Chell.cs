@@ -6,18 +6,23 @@ public class Chell : MonoBehaviour
 {
     private void Awake()
     {
-        GetComponent<BuffController>().special = BreakArmor;
-        GetComponent<BuffController>().takeDamage = true;
         GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+        GetComponent<BuffController>().takeDamage = true;
+        GetComponent<BuffController>().special = ApplyBuffs;
     }
 
-    public void BreakArmor(Weapon w)
+    public void ApplyBuffs(Weapon w)
     {
         GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
-
-        for (int i = 0; i < RIE.transform.childCount; i++)
+        for(int i = 0; i < RIE.transform.childCount; i++)
         {
-            RIE.transform.GetChild(i).GetComponent<Weapon>().armor = 0;
+            Buff new_buff = Instantiate(GetComponent<BuffController>().buff, RIE.transform.GetChild(i)).GetComponent<Buff>();
+            new_buff.id = GetComponent<Weapon>().name + "_2";
+            new_buff.armor_buff = 1;
+            new_buff.temporary = true;
+            new_buff.timer = 2;
+            new_buff.AddBuff();
         }
     }
+
 }

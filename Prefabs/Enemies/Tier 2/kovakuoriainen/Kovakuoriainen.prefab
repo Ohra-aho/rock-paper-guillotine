@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
   - component: {fileID: 9126511307194648938}
-  - component: {fileID: -6367188896515260050}
   m_Layer: 5
   m_Name: Kovakuoriainen
   m_TagString: Enemy
@@ -66,12 +65,21 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: e6f5dacd513cf4949b52db9ae88cf4f5, type: 3}
   - {fileID: 1944698211339908181, guid: 49489f57f67496948b2aa55953450bbb, type: 3}
   - {fileID: 1944698211339908181, guid: 431167f948e211743a8be33abd7d9f34, type: 3}
-  plan_1: 02000000000000000200000000000000
-  plan_2: 0000000002000000000000000200000002000000
+  plan_1: 020000000000000001000000
+  plan_2: 020000000100000000000000
+  previous_weapon: {fileID: 0}
+  weapon_streak: 0
   off_balance: 0
   nearDeath: 0
+  off_balance_pattern_done: 0
   off_balance_choises: 01000000
-  advanced: 1
+  advanced: 0
+  victory_barks: []
+  executioner_comment: 
+  victory_message: {fileID: 0}
+  commented: 0
+  HB: {fileID: 0}
+  off_balance_triggered: 0
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -124,15 +132,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6367188896515260050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ef16915fecfe2046b3104f5e759e306, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
