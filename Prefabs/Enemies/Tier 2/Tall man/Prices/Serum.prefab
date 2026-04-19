@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 8735357463152483393}
-  - component: {fileID: -8691021010670127}
-  - component: {fileID: -7465601354306158090}
+  - component: {fileID: 3858271718651255243}
+  - component: {fileID: 1851903233197984926}
   m_Layer: 5
-  m_Name: "V\xE4ist\xF6"
+  m_Name: Serum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,15 +98,14 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   dead: 0
-  type: 1
-  damage: 2
+  type: 0
+  damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Dodge
-  description: If does not lose, all other weapons gain +2 damage and +1 armor during
-    the next turn.
-  sprite: {fileID: 21300000, guid: 1ca580e0f3215044fb2301b30b5fe037, type: 3}
+  name: Serum
+  description: Uses one point to heal 2 after use.
+  sprite: {fileID: 21300000, guid: ecca68dc6e69f5d47915b4d615ce8033, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -122,7 +120,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Serum, Assembly-CSharp
+        m_MethodName: Heal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -140,37 +150,13 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8691021010670127}
-        m_TargetAssemblyTypeName: Dodge, Assembly-CSharp
-        m_MethodName: AddBuffs
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   lose:
     m_PersistentCalls:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8691021010670127}
-        m_TargetAssemblyTypeName: Dodge, Assembly-CSharp
-        m_MethodName: AddBuffs
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -200,19 +186,7 @@ MonoBehaviour:
       m_Calls: []
   on_death:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8691021010670127}
-        m_TargetAssemblyTypeName: Dodge, Assembly-CSharp
-        m_MethodName: GiveSerum
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -224,7 +198,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &8735357463152483393
+--- !u!114 &3858271718651255243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,43 +207,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
+  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
-  damage_bonus: 0
-  armor_bonus: 0
-  effect_damage_bonus: 0
-  set_a_to_zero: 0
-  set_d_to_zero: 0
-  always_on: 1
-  choisePhase: 0
-  resultPhase: 0
-  endPhase: 0
-  victory: 0
-  special_apply: 0
-  takeDamage: 0
-  takeNoDamage: 0
-  dealDamage: 0
-  deal_effect_damage: 0
-  draw: 0
-  win: 0
-  lose: 0
-  heal: 0
-  gain_points: 0
-  equip: 0
-  unEquip: 0
-  constant: 0
-  onDestruction: 0
-  awake: 0
-  temporary: 0
-  timer: 0
-  penetrating: 0
-  draw_winner: 0
-  health_buff: 0
-  destructive: 0
-  heal_disabler: 0
---- !u!114 &-8691021010670127
+  stacks: 2
+  stack_limit: 2
+  LoadFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1851903233197984926
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,21 +230,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61673bc1293f2524088b204fb61f6d07, type: 3}
+  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-7465601354306158090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 1944698211339908181, guid: e3bb0d9002daec04cb103b0eb61b7adb, type: 3}
-  - {fileID: 1944698211339908181, guid: 5cb795b60c0b8c34294154c635fcbba9, type: 3}
+  disabled: 0
+  amount: 2

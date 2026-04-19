@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3858271718651255243}
   - component: {fileID: 5533893107495704954}
   - component: {fileID: 1851903233197984926}
+  - component: {fileID: -8359847716221382078}
   m_Layer: 5
   m_Name: Seerumi
   m_TagString: Untagged
@@ -97,6 +98,7 @@ MonoBehaviour:
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 0
   damage: 1
@@ -160,6 +162,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -178,6 +183,24 @@ MonoBehaviour:
   unequipped:
     m_PersistentCalls:
       m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5533893107495704954}
+        m_TargetAssemblyTypeName: Serum, Assembly-CSharp
+        m_MethodName: GiveSerum
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   self_destructive: 0
   healing: 0
   health: 0
@@ -187,6 +210,7 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks: []
+  executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &3858271718651255243
 MonoBehaviour:
@@ -237,3 +261,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disabled: 0
   amount: 2
+--- !u!114 &-8359847716221382078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 1944698211339908181, guid: e3bb0d9002daec04cb103b0eb61b7adb, type: 3}
+  - {fileID: 1944698211339908181, guid: 5cb795b60c0b8c34294154c635fcbba9, type: 3}
