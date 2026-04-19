@@ -33,6 +33,8 @@ public class Story : MonoBehaviour
                         i++;
                         InsertEvent(SC.first_boss_victory, i);
                         i++;
+                        
+                        boss_index++;
                     }
                     else if (boss_index == 0 && !SCL.first_boss_beaten && !SC.executioner)
                     {

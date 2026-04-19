@@ -48,8 +48,9 @@ MonoBehaviour:
   lines:
   - Next foe is one of my persional favourites.
   - This ought to be interesting.
-  sprite_frames: 
+  sprite_frames: 0000000000000000
   activated: 0
+  executioner: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0

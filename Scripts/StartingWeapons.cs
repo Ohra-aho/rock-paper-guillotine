@@ -50,7 +50,7 @@ public class StartingWeapons : MonoBehaviour
         new string[] { "Sword", "Paper", "Rock" },
 
         //Story 1
-        new string[] { "Crystal scissors", "Access code", "Brass Knuckles" },
+        new string[] { "Crystal Scissors", "Access code", "Brass Knuckles" },
 
         new string[] { "Adrenaline", "Voodoo doll", "Scissors" },
         new string[] { "Altar", "Shotgun", "Paper" },
@@ -72,7 +72,7 @@ public class StartingWeapons : MonoBehaviour
         new string[] { "Flag", "Victory sign", "Rock" },
 
         new string[] { "Law Book", "Scissors", "Rock" },
-        new string[] { "Paper", "Scissors", "Time bomb" },
+        new string[] { "Paper", "Scissors", "Time Bomb" },
         new string[] { "Manual", "Rock", "Scissors" },
         new string[] { "Four jokers", "Sithe" },
         new string[] { "Altar", "Mirror", "Holy text"},
