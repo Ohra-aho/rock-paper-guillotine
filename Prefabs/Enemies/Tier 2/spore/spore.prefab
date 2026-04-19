@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6943869333779220170}
   - component: {fileID: 6291404997652609654}
-  - component: {fileID: 1165865232959651390}
   - component: {fileID: 4809575014415415317}
-  - component: {fileID: 4638538761962290413}
+  - component: {fileID: 9126511307194648938}
+  - component: {fileID: 8251212114963601346}
   m_Layer: 5
-  m_Name: Wanderer
+  m_Name: spore
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6979226803842198351}
   m_CullTransparentMesh: 1
---- !u!212 &1165865232959651390
+--- !u!114 &4809575014415415317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979226803842198351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Kovakuoriainen
+  image: {fileID: 21300000, guid: a5f89942a4080f54aae3f34b1876c376, type: 3}
+  maxHealth: 3
+  weapons:
+  - {fileID: 1944698211339908181, guid: 0018fe6bcedd92340adaa14feb7d0fff, type: 3}
+  - {fileID: 1944698211339908181, guid: 8178820789e64044c8f312059fcb0fe8, type: 3}
+  - {fileID: 1944698211339908181, guid: 67dff4dcf2b05cb438fad94a7e9b6981, type: 3}
+  plan_1: 0100000002000000
+  plan_2: 0100000002000000
+  previous_weapon: {fileID: 0}
+  weapon_streak: 0
+  off_balance: 0
+  nearDeath: 0
+  off_balance_pattern_done: 0
+  off_balance_choises: 00000000
+  advanced: 0
+  victory_barks: []
+  executioner_comment: 
+  victory_message: {fileID: 0}
+  commented: 0
+  HB: {fileID: 0}
+  off_balance_triggered: 0
+--- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,7 +133,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4809575014415415317
+--- !u!114 &8251212114963601346
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,44 +142,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6979226803842198351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f8cdaca2d0f8a84c99604de499c10c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Wanderer
-  image: {fileID: 21300000, guid: 5ada3f2c1142ab4429915fd576b41b15, type: 3}
-  maxHealth: 1
-  weapons:
-  - {fileID: 1944698211339908181, guid: b24b279d010d53e40beb5b4c604dd7a1, type: 3}
-  - {fileID: 1944698211339908181, guid: 5dfcb6cef6cdff94ba707c7027b52324, type: 3}
-  - {fileID: 1944698211339908181, guid: d973b6fde138fa3479172f532aae631b, type: 3}
-  plan_1: 
-  plan_2: 
-  previous_weapon: {fileID: 0}
-  weapon_streak: 0
-  off_balance: 0
-  nearDeath: 0
-  off_balance_pattern_done: 0
-  off_balance_choises: 00000000
-  advanced: 1
-  victory_barks:
-  - Well done. But now the real game begins.
-  - At least you didn't embarass yourself.
-  executioner_comment: Hi old friend...
-  victory_message: {fileID: 0}
-  commented: 0
-  HB: {fileID: 0}
-  off_balance_triggered: 0
---- !u!114 &4638538761962290413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96e6bc5c449d70d4a822c584509303f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stick_missed: 0
-  first_victory: {fileID: 3768069680275742937, guid: 079ee5d6e1960a54abf8ebb55de51ba4, type: 3}
+  spike_damaged: 0
+  fungus_damaged: 0

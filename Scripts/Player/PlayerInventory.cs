@@ -9,11 +9,6 @@ public class PlayerInventory : MonoBehaviour
 
     public bool all_weapons = false;
 
-    private void Start()
-    {
-        
-    }
-
     public void AddAllWeapons()
     {
         if (all_weapons)
@@ -36,6 +31,7 @@ public class PlayerInventory : MonoBehaviour
         {
             the_item.GetComponent<BuffController>().Inisiate();
         }
+        the_item.GetComponent<Weapon>().on_pick.Invoke(); 
         items.Add(the_item);
         
         AddBuffToNewWeapon(newItem);

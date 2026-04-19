@@ -8,4 +8,18 @@ public class Bleed : MonoBehaviour
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.TakeDamage(1);
     }
+
+    public void DealPoisonDamage()
+    {
+        GameObject RI = GameObject.FindGameObjectWithTag("RI");
+        int poisons = 0;
+        for(int i = 0; i < RI.transform.childCount; i++)
+        {
+            if(RI.transform.GetChild(i).GetComponent<Weapon>().name == "Poison")
+            {
+                poisons++;
+            }
+        }
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.TakeDamage(poisons);
+    }
 }

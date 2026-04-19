@@ -72,7 +72,7 @@ public class BasicEnemy : MonoBehaviour
         controller.GetComponent<EnemyController>().Inisiate();
     }
 
-    public void CheckUp(int currentHealth, int maxHealth, int enemyCurrentHealth, int enemyMaxHealth)
+    public void CheckUp(int currentHealth, int maxHealth)
     {
         if(currentHealth <= maxHealth/3 || currentHealth == 1)
         {
@@ -88,10 +88,15 @@ public class BasicEnemy : MonoBehaviour
 
     public int MakeChoise(MainController.Choise playerChoise)
     {
-        int step = StikToPlan();
         lastPlayerChoise = playerChoise;
 
-        return step;
+        if (!off_balance)
+        {
+            return StikToPlan();
+        } else
+        {
+            return MakeOffBalanceChoise();
+        }
     }
 
     public int MakeOffBalanceChoise()

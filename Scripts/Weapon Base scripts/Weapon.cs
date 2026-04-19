@@ -51,6 +51,9 @@ public class Weapon : MonoBehaviour
 
     public UnityEvent unequipped;
 
+    public UnityEvent on_pick;
+    public UnityEvent on_death;
+
     private bool loop_stopper = false; //Helps counteract infinite loops 
 
     //Types iguess
@@ -134,6 +137,7 @@ public class Weapon : MonoBehaviour
         }
 
         HandleDamageTaking(realDamage, true);
+        if (dead) on_death.Invoke();
     }
 
     public void DealDamage(Weapon target)

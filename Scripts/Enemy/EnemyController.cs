@@ -295,9 +295,7 @@ public class EnemyController : MonoBehaviour
         //Does things when round is over
         currentEnemy.GetComponent<BasicEnemy>().CheckUp(
                 HB.GiveCurrentHealth(),
-                maxHealth,
-                EnemyHB.GiveCurrentHealth(),
-                EnemyHB.GiveMaxHealth()
+                maxHealth
             );
     }
 
