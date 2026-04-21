@@ -315,6 +315,8 @@ public class EnemyController : MonoBehaviour
             }
         }
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().Death();
+        transform.GetChild(0).GetComponent<BasicEnemy>().SelectWeaponPair();
+        transform.GetChild(0).GetComponent<BasicEnemy>().TelegraphWeaponPair();
     }
 
     public List<Weapon> GetWeapons()

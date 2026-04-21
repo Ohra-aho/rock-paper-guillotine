@@ -11,7 +11,7 @@ public class Wanderer : MonoBehaviour
 
     private void Awake()
     {
-        GameObject.Find("EnemyHolder").GetComponent<EnemyController>().choiseMaker = MakeAChoise;
+       // GameObject.Find("EnemyHolder").GetComponent<EnemyController>().choiseMaker = MakeAChoise;
         if(!GameObject.Find("EventSystem").GetComponent<StoryCheckList>().first_victory)
         {
             GameObject.Find("EventSystem").GetComponent<MainController>().victory_message = first_victory;

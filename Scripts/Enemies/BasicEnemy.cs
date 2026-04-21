@@ -17,17 +17,11 @@ public class BasicEnemy : MonoBehaviour
     public List<int> plan_1;
     public List<int> plan_2;
 
-    private List<int> chosen_plan = new List<int>();
-    private int planIndex = 0;
-    private int off_balance_plan_index = 0;
+    public List<WeaponPair> weapon_pairs;
 
-    MainController.Choise lastPlayerChoise = MainController.Choise.kivi;
-    [HideInInspector] public Weapon previous_weapon;
-    [HideInInspector] public int weapon_streak = 0;
-
-    [HideInInspector] public bool off_balance;
-    [HideInInspector] public bool nearDeath;
-    [HideInInspector] public bool off_balance_pattern_done;
+    [System.Serializable]
+    public class WeaponPair { public List<int> pair; }
+    private List<int> current_pair;
 
     public List<int> off_balance_choises;
 
@@ -36,6 +30,19 @@ public class BasicEnemy : MonoBehaviour
     public List<string> victory_barks;
     public string executioner_comment;
     public GameObject victory_message;
+
+    private List<int> chosen_plan = new List<int>();
+    private int planIndex = 0;
+    private int off_balance_plan_index = 0;
+    private int previous_pair = -1;
+
+    MainController.Choise lastPlayerChoise = MainController.Choise.kivi;
+    [HideInInspector] public Weapon previous_weapon;
+    [HideInInspector] public int weapon_streak = 0;
+
+    [HideInInspector] public bool off_balance;
+    [HideInInspector] public bool nearDeath;
+    [HideInInspector] public bool off_balance_pattern_done;
     [HideInInspector] public bool commented = false;
 
     [HideInInspector] public HealthBar HB;
@@ -92,7 +99,8 @@ public class BasicEnemy : MonoBehaviour
 
         if (!off_balance)
         {
-            return StikToPlan();
+            return PickWeaponFromPair();
+            //return StikToPlan();
         } else
         {
             return MakeOffBalanceChoise();
@@ -164,9 +172,41 @@ public class BasicEnemy : MonoBehaviour
         return step;
     }
 
+    public void SelectWeaponPair()
+    {
+        int index = Random.Range(0, weapon_pairs.Count);
+        while(index == previous_pair)
+        {
+            index = Random.Range(0, weapon_pairs.Count);
+        }
+        previous_pair = index;
+        current_pair = weapon_pairs[index].pair;
+        //return weapon_pairs[index].pair;
+    }
+
+    public void TelegraphWeaponPair()
+    {
+        GameObject EVI = GameObject.Find("EnemyWeaponInfo");
+        for(int i = 0; i < EVI.transform.childCount; i++)
+        {
+            EVI.transform.GetChild(i).GetComponent<Image>().color = new Color(255, 255, 255);
+            for (int j = 0; j < current_pair.Count; j++)
+            {
+                if (weapons[current_pair[j]].GetComponent<Weapon>().name == EVI.transform.GetChild(i).GetComponent<EnemyWeaponInfo>().weapon.name)
+                {
+                    EVI.transform.GetChild(i).GetComponent<Image>().color = new Color(185, 0, 0);
+                }
+            }
+        }
+    }
+
+    public int PickWeaponFromPair()
+    {
+        return current_pair[Random.Range(0, current_pair.Count)];
+    }
+
     private bool CheckIfWeaponExists(int index)
     {
-
         return weapons[index] != null;
     }
 
