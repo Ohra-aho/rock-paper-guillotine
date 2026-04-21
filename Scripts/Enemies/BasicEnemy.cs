@@ -175,13 +175,27 @@ public class BasicEnemy : MonoBehaviour
     public void SelectWeaponPair()
     {
         int index = Random.Range(0, weapon_pairs.Count);
-        while(index == previous_pair)
+        int safe = 0;
+        while(index == previous_pair && CheckIfPairHasMissingWeapon(index) && safe < 100)
         {
             index = Random.Range(0, weapon_pairs.Count);
+            safe++;
         }
         previous_pair = index;
         current_pair = weapon_pairs[index].pair;
-        //return weapon_pairs[index].pair;
+    }
+
+    private bool CheckIfPairHasMissingWeapon(int index)
+    {
+        List<int> pair = weapon_pairs[index].pair;
+        for(int i = 0; i < pair.Count; i++)
+        {
+            if(!CheckIfWeaponExists(pair[i]))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void TelegraphWeaponPair()
@@ -194,7 +208,7 @@ public class BasicEnemy : MonoBehaviour
             {
                 if (weapons[current_pair[j]].GetComponent<Weapon>().name == EVI.transform.GetChild(i).GetComponent<EnemyWeaponInfo>().weapon.name)
                 {
-                    EVI.transform.GetChild(i).GetComponent<Image>().color = new Color(185, 0, 0);
+                    EVI.transform.GetChild(i).GetComponent<Image>().color = new Color(150, 0, 0);
                 }
             }
         }
