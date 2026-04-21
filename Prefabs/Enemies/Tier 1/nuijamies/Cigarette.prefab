@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 2771997909833561724}
+  - component: {fileID: 8051118182753573445}
+  - component: {fileID: 794197210476734249}
   m_Layer: 5
-  m_Name: Tupakka
+  m_Name: Cigarette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,16 +95,16 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
-  draw_winner: 0
+  draw_winner: 1
   spammable: 0
   dead: 0
   type: 1
-  damage: 1
+  damage: 0
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Smoke
-  description: If loses, gives you a Cigarette.
+  name: Cigarette
+  description: Heals 3 and gives you 1 Poison after use.
   sprite: {fileID: 21300000, guid: c58113e58d7a36e45acd0afe985e3b1a, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -140,19 +141,7 @@ MonoBehaviour:
       m_Calls: []
   lose:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2771997909833561724}
-        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
-        m_MethodName: SpawnOnlyWeapon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -197,7 +186,21 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &2771997909833561724
+--- !u!114 &8051118182753573445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabled: 0
+  amount: 3
+--- !u!114 &794197210476734249
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -210,4 +213,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 1944698211339908181, guid: 5afa3debf1022954cb256b712fdc9a39, type: 3}
+  - {fileID: 1944698211339908181, guid: a47ba23783ff33d44ac4df8e5ce9a434, type: 3}

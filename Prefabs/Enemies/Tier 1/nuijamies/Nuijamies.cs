@@ -11,8 +11,8 @@ public class Nuijamies : MonoBehaviour
     private void Awake()
     {
         controller = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>();
-        controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
-        controller.GetComponent<EnemyController>().damageEffect = TakeDamage;
+        //controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
+        //controller.GetComponent<EnemyController>().damageEffect = TakeDamage;
     }
 
     private int MakeChoise(MainController.Choise choise)
