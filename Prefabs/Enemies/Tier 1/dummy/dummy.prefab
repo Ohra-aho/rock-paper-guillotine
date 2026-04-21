@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 6943869333779220170}
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
-  - component: {fileID: 9135753412353779111}
-  - component: {fileID: -6868955580325059846}
+  - component: {fileID: 9126511307194648938}
   m_Layer: 5
-  m_Name: Hedgehob
+  m_Name: dummy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,24 +58,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Hedgehog
-  image: {fileID: 21300000, guid: afb47bd7d61b0924488c498fbcc1ce92, type: 3}
-  maxHealth: 2
+  name: Zombie
+  image: {fileID: 21300000, guid: 779baba707ba4d44999eeb2c24a16f2a, type: 3}
+  maxHealth: 4
   weapons:
-  - {fileID: 1944698211339908181, guid: f6d36dde60aedfa4c992d82fae72a8ab, type: 3}
-  - {fileID: 1944698211339908181, guid: d7b21f1dae144db40b19fabd78502c63, type: 3}
-  - {fileID: 1944698211339908181, guid: 06860cb033971f940add3fa511953795, type: 3}
-  plan_1: 0000000002000000
-  plan_2: 0000000002000000
+  - {fileID: 1944698211339908181, guid: 12529e89447752c43a73d5c0f3cd6062, type: 3}
+  - {fileID: 1944698211339908181, guid: d775991c7ddf20649aece642fa9a3b43, type: 3}
+  - {fileID: 1944698211339908181, guid: 618b7b69980b1ce43908d4faac838168, type: 3}
+  - {fileID: 1944698211339908181, guid: 618b7b69980b1ce43908d4faac838168, type: 3}
+  - {fileID: 1944698211339908181, guid: 618b7b69980b1ce43908d4faac838168, type: 3}
+  plan_1: 02000000
+  plan_2: 02000000
   weapon_pairs:
-  - pair: 0000000001000000
-  - pair: 0100000002000000
   - pair: 00000000
+  - pair: 0000000001000000
   - pair: 0000000002000000
-  off_balance_choises: 02000000
+  off_balance_choises: 
   advanced: 0
   victory_barks: []
-  executioner_comment: 'I first thought to make this a some sort of spike monster. '
+  executioner_comment: Don't look at me like that.
   victory_message: {fileID: 0}
   previous_weapon: {fileID: 0}
   weapon_streak: 0
@@ -86,7 +86,7 @@ MonoBehaviour:
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0
---- !u!212 &9135753412353779111
+--- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,16 +138,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6868955580325059846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1933dbe2e72a91343a3ed68f63f5e432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage_taken: 0

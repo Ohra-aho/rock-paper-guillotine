@@ -21,7 +21,7 @@ public class BasicEnemy : MonoBehaviour
 
     [System.Serializable]
     public class WeaponPair { public List<int> pair; }
-    private List<int> current_pair;
+    private List<int> current_pair = new List<int>();
 
     public List<int> off_balance_choises;
 
@@ -174,15 +174,59 @@ public class BasicEnemy : MonoBehaviour
 
     public void SelectWeaponPair()
     {
-        int index = Random.Range(0, weapon_pairs.Count);
-        int safe = 0;
-        while(index == previous_pair && CheckIfPairHasMissingWeapon(index) && safe < 100)
+        if(current_pair != null) current_pair.Clear();
+        int legit_pairs = CalculateLegitPairs();
+        //As long as there is pairs to use
+        if (legit_pairs > 1)
         {
-            index = Random.Range(0, weapon_pairs.Count);
-            safe++;
+            int index = Random.Range(0, weapon_pairs.Count);
+            while (index == previous_pair || CheckIfPairHasMissingWeapon(index))
+            {
+                index = Random.Range(0, weapon_pairs.Count);
+            }
+            previous_pair = index;
+            current_pair.AddRange(weapon_pairs[index].pair);
+
+        //Pick the last possible pair
+        } else if(legit_pairs == 1)
+        {
+            for (int i = 0; i < weapon_pairs.Count; i++)
+            {
+                if(!CheckIfPairHasMissingWeapon(i))
+                {
+                    current_pair.AddRange(weapon_pairs[i].pair);
+                    break;
+                }
+            }
+
+        //Pick weapons left
+        } else if(legit_pairs == 0)
+        {
+            List<int> temp = new List<int>();
+            for(int i = 0; i < weapons.Count; i++)
+            {
+                if (CheckIfWeaponExists(i)) temp.Add(i);
+            }
+            //If there is enough weapons, make a random pair
+            if (temp.Count > 2)
+            {
+                current_pair.Add(temp[Random.Range(0, temp.Count)]);
+                int another = temp[Random.Range(0, temp.Count)];
+                while(current_pair.Contains(another))
+                {
+                    another = temp[Random.Range(0, temp.Count)];
+                }
+                current_pair.Add(another);
+            } else
+            {
+                current_pair.AddRange(temp);
+            }
+
+            if(current_pair.Count == 0)
+            {
+                GameObject.Find("EventSystem").GetComponent<MainController>().Win();
+            }
         }
-        previous_pair = index;
-        current_pair = weapon_pairs[index].pair;
     }
 
     private bool CheckIfPairHasMissingWeapon(int index)
@@ -196,6 +240,16 @@ public class BasicEnemy : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public int CalculateLegitPairs()
+    {
+        int amount = 0;
+        for(int i = 0; i < weapon_pairs.Count; i++)
+        {
+            if(!CheckIfPairHasMissingWeapon(i)) amount++;
+        }
+        return amount;
     }
 
     public void TelegraphWeaponPair()
@@ -221,6 +275,12 @@ public class BasicEnemy : MonoBehaviour
 
     private bool CheckIfWeaponExists(int index)
     {
+        if(weapons[index] != null)
+        {
+            if (weapons[index].GetComponent<SelfDestruct>())
+                if (weapons[index].GetComponent<SelfDestruct>().destroyed)
+                    return false;
+        }
         return weapons[index] != null;
     }
 

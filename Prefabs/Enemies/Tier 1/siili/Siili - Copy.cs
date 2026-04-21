@@ -9,8 +9,8 @@ public class Siili : MonoBehaviour
 
     private void Awake()
     {
-        GameObject.Find("EnemyHolder").GetComponent<EnemyController>().choiseMaker = MakeAChoise;
-        GameObject.Find("EnemyHolder").GetComponent<EnemyController>().damageEffect = TakeDamage;
+        //GameObject.Find("EnemyHolder").GetComponent<EnemyController>().choiseMaker = MakeAChoise;
+        //GameObject.Find("EnemyHolder").GetComponent<EnemyController>().damageEffect = TakeDamage;
 
     }
 
