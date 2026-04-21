@@ -10,7 +10,7 @@ public class Lurker : MonoBehaviour
 
     private void Awake()
     {
-        GameObject.Find("EnemyHolder").GetComponent<EnemyController>().choiseMaker = MakeAChoise;
+        //GameObject.Find("EnemyHolder").GetComponent<EnemyController>().choiseMaker = MakeAChoise;
     }
 
     public int MakeAChoise(MainController.Choise c)

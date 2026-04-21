@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class LurkerWeapons : MonoBehaviour
 {
-    public void Tail()
+    public GameObject buff;
+    public void DebuffOpposingWeapon()
     {
-        Lurker l = GameObject.Find("Lurker(Clone)").GetComponent<Lurker>();
-        l.tail_hit = 2;
-    }
-
-    public void Scales()
-    {
-        Lurker l = GameObject.Find("Lurker(Clone)").GetComponent<Lurker>();
-        GetComponent<Weapon>().owner.Balance();
-    }
-
-    public void TakeDamage()
-    {
-        Lurker l = GameObject.Find("Lurker(Clone)").GetComponent<Lurker>();
-        GetComponent<Weapon>().owner.OffBalance();
+        Weapon opponent = GetComponent<Weapon>().opponent;
+        Buff new_buff = Instantiate(buff, opponent.gameObject.transform).GetComponent<Buff>();
+        new_buff.id = GetComponent<Weapon>().name + "_2";
+        new_buff.temporary = true;
+        new_buff.timer = 1;
+        new_buff.type_change = MainController.Choise.hyödytön;
+        new_buff.AddBuff();
     }
 }

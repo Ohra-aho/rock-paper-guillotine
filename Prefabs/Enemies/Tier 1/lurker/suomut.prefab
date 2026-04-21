@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 2960523552579534939}
   - component: {fileID: -9222919528382503969}
   m_Layer: 5
   m_Name: suomut
@@ -104,7 +103,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Scales
-  description: Heals 1 on draws.
+  description: On draws, heals 1.
   sprite: {fileID: 21300000, guid: 4735035bd5e464347a28d5c8cbc06bee, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -120,19 +119,7 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2960523552579534939}
-        m_TargetAssemblyTypeName: LurkerWeapons, Assembly-CSharp
-        m_MethodName: Scales
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -193,6 +180,12 @@ MonoBehaviour:
   unequipped:
     m_PersistentCalls:
       m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -204,18 +197,6 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &2960523552579534939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aec6fdf4ee718a64ba76791e079dc393, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-9222919528382503969
 MonoBehaviour:
   m_ObjectHideFlags: 0

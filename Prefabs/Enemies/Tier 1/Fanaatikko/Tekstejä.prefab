@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -1737921444782715771}
+  - component: {fileID: 2050239818442710736}
   m_Layer: 5
   m_Name: "Tekstej\xE4"
   m_TagString: Untagged
@@ -103,7 +104,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Muttering
-  description: 
+  description: If loses, takes 1 damage.
   sprite: {fileID: 21300000, guid: c82e7b27756c7ba498ed066a3df37f35, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -113,55 +114,19 @@ MonoBehaviour:
       m_Calls: []
   choisePhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -1737921444782715771}
-        m_TargetAssemblyTypeName: FanaticWeapons, Assembly-CSharp
-        m_MethodName: ResetOffBalanceTrigger
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   resultPhase:
     m_PersistentCalls:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -1737921444782715771}
-        m_TargetAssemblyTypeName: FanaticWeapons, Assembly-CSharp
-        m_MethodName: Balance
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
   takeDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -1737921444782715771}
-        m_TargetAssemblyTypeName: FanaticWeapons, Assembly-CSharp
-        m_MethodName: Lose
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -176,11 +141,26 @@ MonoBehaviour:
       m_Calls: []
   lose:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2050239818442710736}
+        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
+        m_MethodName: SelfDamage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3098424137161797902}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   draw:
     m_PersistentCalls:
       m_Calls: []
   heal:
+    m_PersistentCalls:
+      m_Calls: []
+  gain_points:
     m_PersistentCalls:
       m_Calls: []
   equip:
@@ -201,6 +181,12 @@ MonoBehaviour:
   unequipped:
     m_PersistentCalls:
       m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -210,6 +196,7 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks: []
+  executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &-1737921444782715771
 MonoBehaviour:
@@ -223,3 +210,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e00bc2b2a0414d47a07410df7916971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2050239818442710736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 1
+  armor_piercing: 0
