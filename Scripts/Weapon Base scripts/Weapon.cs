@@ -86,6 +86,26 @@ public class Weapon : MonoBehaviour
         if (constant != null) constant.Invoke();
     }
 
+    public void InisiateTypeEffects()
+    {
+        if (player)
+        {
+            gameObject.AddComponent<TypeEffects>();
+            switch (type)
+            {
+                case MainController.Choise.kivi:
+                    GetComponent<TypeEffects>().InisiateRock();
+                    break;
+                case MainController.Choise.paperi:
+                    GetComponent<TypeEffects>().InisiatePaper();
+                    break;
+                case MainController.Choise.sakset:
+                    GetComponent<TypeEffects>().InisiateScissors();
+                    break;
+            }
+        }
+    }
+
     public bool? GetVictory()
     {
         return GameObject.Find("EventSystem").GetComponent<MainController>().won;

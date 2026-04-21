@@ -137,6 +137,7 @@ public class PlayerContoller : MonoBehaviour
             {
                 weapon.GetComponent<BuffController>().Inisiate();
             }
+            weapon.GetComponent<Weapon>().InisiateTypeEffects();
         }
         GetComponent<PlayerInventory>().items.Clear();
         for (int i = 0; i < TrueInventory.transform.childCount; i++)

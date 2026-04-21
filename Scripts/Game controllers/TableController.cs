@@ -60,6 +60,7 @@ public class TableController : MonoBehaviour
         player.GetComponent<PlayerContoller>().HB.damage_taken = false;
         enemy.GetComponent<EnemyController>().HB.damage_taken = false;
 
+        //New battle mechanics
         enemy.transform.GetChild(0).GetComponent<BasicEnemy>().SelectWeaponPair();
         enemy.transform.GetChild(0).GetComponent<BasicEnemy>().TelegraphWeaponPair();
 

@@ -39,4 +39,21 @@ public class EffectDamage : MonoBehaviour
                 GetComponent<Weapon>().deal_effect_damage.Invoke();
         }
     }
+
+    public void DealSetDamage(Weapon weapon, int amount)
+    {
+        if (weapon != null)
+        {
+            weapon.EffectDamage(amount);
+            if (weapon.deal_effect_damage != null)
+                weapon.deal_effect_damage.Invoke();
+
+        }
+        else
+        {
+            GetComponent<Weapon>().EffectDamage(amount);
+            if (GetComponent<Weapon>().deal_effect_damage != null)
+                GetComponent<Weapon>().deal_effect_damage.Invoke();
+        }
+    }
 }

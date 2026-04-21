@@ -31,7 +31,8 @@ public class PlayerInventory : MonoBehaviour
         {
             the_item.GetComponent<BuffController>().Inisiate();
         }
-        the_item.GetComponent<Weapon>().on_pick.Invoke(); 
+        the_item.GetComponent<Weapon>().on_pick.Invoke();
+        the_item.GetComponent<Weapon>().InisiateTypeEffects();
         items.Add(the_item);
         
         AddBuffToNewWeapon(newItem);

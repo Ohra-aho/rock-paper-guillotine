@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class BuffController : MonoBehaviour
 {
+
     public MainController.Choise? type_change = null;
 
     private bool buff_on = false;
@@ -18,7 +19,6 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public bool set_d_to_zero = false;
     public bool always_on = true;
 
-    //[HideInInspector] public UnityEvent special;
     public delegate void Special(Weapon weapon);
     public Special special;
     public Special special_removal;
