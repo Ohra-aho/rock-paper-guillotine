@@ -28,4 +28,15 @@ public class PermanentDebuffer : MonoBehaviour
         new_buff.id = GetComponent<Weapon>() + "_debuff";
         new_buff.AddBuff();
     }
+
+    public void MakeOpposingWeaponUselessTemporarily(int turns)
+    {
+        Weapon opponent = GetComponent<Weapon>().opponent;
+        Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+        new_buff.id = GetComponent<Weapon>().name + "_debuff";
+        new_buff.type_change = MainController.Choise.hyödytön;
+        new_buff.temporary = true;
+        new_buff.timer = turns;
+        new_buff.AddBuff();
+    }
 }

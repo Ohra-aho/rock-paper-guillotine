@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -1037077564906613574}
+  - component: {fileID: 8935435275914766813}
   m_Layer: 5
   m_Name: naamio
   m_TagString: Untagged
@@ -90,10 +91,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 0
   damage: 1
@@ -101,7 +104,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Mask
-  description: Negates self damage during the next turn.
+  description: If wins or draws, becomes immune to self damage. Heals 2 on draws.
   sprite: {fileID: 21300000, guid: 81c2a24ea51bd974b9b62503f2e6eb74, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -117,6 +120,24 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
+      m_Calls: []
+  victory:
+    m_PersistentCalls:
+      m_Calls: []
+  takeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -1037077564906613574}
         m_TargetAssemblyTypeName: Mask, Assembly-CSharp
@@ -130,28 +151,40 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  victory:
-    m_PersistentCalls:
-      m_Calls: []
-  takeDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  dealDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  takeNoDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  win:
-    m_PersistentCalls:
-      m_Calls: []
   lose:
     m_PersistentCalls:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -1037077564906613574}
+        m_TargetAssemblyTypeName: Mask, Assembly-CSharp
+        m_MethodName: NullifyContaminator
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8935435275914766813}
+        m_TargetAssemblyTypeName: Healing, Assembly-CSharp
+        m_MethodName: Heal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   heal:
+    m_PersistentCalls:
+      m_Calls: []
+  gain_points:
     m_PersistentCalls:
       m_Calls: []
   equip:
@@ -169,6 +202,15 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -178,6 +220,7 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks: []
+  executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &-1037077564906613574
 MonoBehaviour:
@@ -191,4 +234,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def19445eb45dc841b29d89d90699394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self_damage_nullified: 0
+--- !u!114 &8935435275914766813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabled: 0
+  amount: 2

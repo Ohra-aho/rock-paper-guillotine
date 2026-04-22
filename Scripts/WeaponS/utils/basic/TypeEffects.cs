@@ -25,7 +25,7 @@ public class TypeEffects : MonoBehaviour
 
     public void ActivateScissors()
     {
-        GetComponent<EffectDamage>().DealSetDamage(GetComponent<Weapon>(), 1);
+        GetComponent<EffectDamage>().DealSetDamage(1);
     }
 
     public void ActivateRock()

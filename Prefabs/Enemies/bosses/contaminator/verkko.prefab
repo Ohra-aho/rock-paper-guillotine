@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 2467561525901918921}
-  - component: {fileID: -1284012239689991367}
+  - component: {fileID: 3252091650006279905}
+  - component: {fileID: 7393853568192613954}
   m_Layer: 5
   m_Name: verkko
   m_TagString: Untagged
@@ -91,18 +91,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 1
   damage: 2
-  armor: 1
+  armor: 0
   real_damage: 0
   real_armor: 0
   name: Net
-  description: If wins, you take self inficted damage from enemy weapons as well.
+  description: If draws, you share the self damage from enemy weapons.
   sprite: {fileID: 21300000, guid: 92324259aa0ac0c4eb15506d3b1e3c0b, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -128,25 +130,16 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
   win:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2467561525901918921}
-        m_TargetAssemblyTypeName: Mask, Assembly-CSharp
-        m_MethodName: NetHit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2467561525901918921}
+      - m_Target: {fileID: 7393853568192613954}
         m_TargetAssemblyTypeName: Mask, Assembly-CSharp
         m_MethodName: ShareSelfDamage
         m_Mode: 1
@@ -163,8 +156,23 @@ MonoBehaviour:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7393853568192613954}
+        m_TargetAssemblyTypeName: Mask, Assembly-CSharp
+        m_MethodName: ShareSelfDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   heal:
+    m_PersistentCalls:
+      m_Calls: []
+  gain_points:
     m_PersistentCalls:
       m_Calls: []
   equip:
@@ -182,6 +190,15 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -191,8 +208,21 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks: []
+  executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &2467561525901918921
+--- !u!114 &3252091650006279905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b84c21e8388ac64da2a85039d59a1b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7393853568192613954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,18 +234,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def19445eb45dc841b29d89d90699394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self_damage_nullified: 0
---- !u!114 &-1284012239689991367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 1
-  armor_piercing: 0
