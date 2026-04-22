@@ -95,6 +95,7 @@ MonoBehaviour:
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 1
   damage: 2
@@ -109,19 +110,7 @@ MonoBehaviour:
       m_Calls: []
   end_of_fight:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -6143591333916454339}
-        m_TargetAssemblyTypeName: NewsPaper, Assembly-CSharp
-        m_MethodName: ResetDamage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -133,7 +122,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -6143591333916454339}
         m_TargetAssemblyTypeName: NewsPaper, Assembly-CSharp
-        m_MethodName: DebuffDamage
+        m_MethodName: Debuff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -182,6 +171,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -200,6 +192,12 @@ MonoBehaviour:
   unequipped:
     m_PersistentCalls:
       m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -211,6 +209,7 @@ MonoBehaviour:
   pick_barks:
   - To be hoonest, it actually took me a while to think of anything for the newspaper.
     Then I found a fly in my coffee.
+  executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &-6143591333916454339
 MonoBehaviour:
@@ -224,3 +223,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2acf234be3eb38143ba18cbbd0753a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}

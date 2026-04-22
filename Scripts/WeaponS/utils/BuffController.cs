@@ -67,6 +67,10 @@ public class BuffController : MonoBehaviour
     private void Awake()
     {
         Inisiate();
+        if(buff == null)
+        {
+            buff = Resources.Load<GameObject>("buff/buff");
+        }
     }
 
     public void Inisiate() 

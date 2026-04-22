@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
   - component: {fileID: 9126511307194648938}
-  - component: {fileID: 7754363781121052919}
   m_Layer: 5
   m_Name: Zombie
   m_TagString: Enemy
@@ -68,16 +67,20 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: d4c4cefe547ac7d45a819422aa2d6685, type: 3}
   plan_1: 02000000
   plan_2: 02000000
+  weapon_pairs:
+  - pair: 0100000002000000
+  - pair: 0000000002000000
+  - pair: 0000000001000000
+  off_balance_choises: 
+  advanced: 0
+  victory_barks: []
+  executioner_comment: Don't look at me like that.
+  victory_message: {fileID: 0}
   previous_weapon: {fileID: 0}
   weapon_streak: 0
   off_balance: 0
   nearDeath: 0
   off_balance_pattern_done: 0
-  off_balance_choises: 
-  advanced: 1
-  victory_barks: []
-  executioner_comment: Don't look at me like that.
-  victory_message: {fileID: 0}
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0
@@ -133,16 +136,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7754363781121052919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebea29cea71b3134aa38e56eba7f2995, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grab: 0

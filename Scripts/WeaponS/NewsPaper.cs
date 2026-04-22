@@ -4,26 +4,24 @@ using UnityEngine;
 
 public class NewsPaper : MonoBehaviour
 {
+    public GameObject buff;
     bool won = false;
-    int debuff = 0;
     public void Win()
     {
         won = true;
     }
 
-    public void DebuffDamage()
+    public void Debuff()
     {
-        if(won)
+        if (won) 
         {
-            GetComponent<Weapon>().damage--;
-            if (GetComponent<Weapon>().damage < 0) GetComponent<Weapon>().damage = 0;
-            else debuff++;
-            won = false;
+            Buff new_buff = Instantiate(buff, transform).GetComponent<Buff>();
+            new_buff.id = GetComponent<Weapon>().name + "_debuff";
+            new_buff.damage_buff = -1;
+            new_buff.temporary = true;
+            new_buff.timer = 1000;
+            new_buff.AddBuff();
         }
-    }
-
-    public void ResetDamage()
-    {
-        GetComponent<Weapon>().damage += debuff;
+        won = false;
     }
 }

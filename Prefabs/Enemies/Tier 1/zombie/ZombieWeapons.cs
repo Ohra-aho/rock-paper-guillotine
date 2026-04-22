@@ -4,13 +4,27 @@ using UnityEngine;
 
 public class ZombieWeapons : MonoBehaviour
 {
-    public void TakeDamage()
+    private void Awake()
     {
-        GameObject.FindGameObjectWithTag("EnemyHolder").transform.GetChild(0).GetComponent<Zombie>().grab = false;
+        if(GetComponent<BuffController>())
+        {
+            GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+            GetComponent<BuffController>().win = true;
+            GetComponent<BuffController>().draw = true;
+            GetComponent<BuffController>().temporary = true;
+            GetComponent<BuffController>().timer = 2;
+            GetComponent<BuffController>().special = GiveDebuff;
+            GetComponent<BuffController>().special_apply = true;
+        }
     }
 
-    public void Grab()
+    public void GiveDebuff(Weapon w)
     {
-        GameObject.FindGameObjectWithTag("EnemyHolder").transform.GetChild(0).GetComponent<Zombie>().grab = true;
+        GetComponent<WeaponSpawner>().SpawnOnlyWeapon();
+    }
+
+    public void BodyLoss() 
+    {
+        GetComponent<Weapon>().owner.HB.InstaKill();
     }
 }

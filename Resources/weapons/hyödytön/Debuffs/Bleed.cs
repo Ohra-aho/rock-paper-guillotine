@@ -20,6 +20,6 @@ public class Bleed : MonoBehaviour
                 poisons++;
             }
         }
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.TakeDamage(poisons);
+        if(poisons > 1) GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.TakeDamage(poisons);
     }
 }
