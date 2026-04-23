@@ -12,7 +12,7 @@ public class Bleed : MonoBehaviour
     public void DealPoisonDamage()
     {
         GameObject RI = GameObject.FindGameObjectWithTag("RI");
-        int poisons = 0;
+        int poisons = -1;
         for(int i = 0; i < RI.transform.childCount; i++)
         {
             if(RI.transform.GetChild(i).GetComponent<Weapon>().name == "Poison")
@@ -20,6 +20,6 @@ public class Bleed : MonoBehaviour
                 poisons++;
             }
         }
-        if(poisons > 1) GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.TakeDamage(poisons);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.TakeDamage(poisons);
     }
 }

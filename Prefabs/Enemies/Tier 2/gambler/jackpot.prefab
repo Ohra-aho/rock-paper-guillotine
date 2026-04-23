@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -107,7 +108,7 @@ MonoBehaviour:
   real_armor: 0
   name: Jackpot
   description: When Raise is used, gain 1 point. If you kill through this weapon,
-    gives Price to your inventory.
+    you get a price.
   sprite: {fileID: 21300000, guid: 9780c758d211b8d4792dfc6414cb5a2c, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -194,6 +195,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0

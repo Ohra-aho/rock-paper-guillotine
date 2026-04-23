@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 1
@@ -106,8 +107,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Presicion shot
-  description: Gains 1 point after each turn. (Continuous) After use, uses all points
-    to deal damage equal to the half of the points used. Pierces armor.
+  description: Gains 1 point after each turn. (Continuous) If loses or draws, uses
+    all points to deal damage equal to the half of the points used. Pierces armor.
   sprite: {fileID: 21300000, guid: 9c4f05f316beb084193e3916bf80dfd2, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -123,37 +124,13 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7200651658434785375}
-        m_TargetAssemblyTypeName: PresicionShot, Assembly-CSharp
-        m_MethodName: DealDamage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
   takeDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7200651658434785375}
-        m_TargetAssemblyTypeName: PresicionShot, Assembly-CSharp
-        m_MethodName: OffBalance
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -168,10 +145,34 @@ MonoBehaviour:
       m_Calls: []
   lose:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7200651658434785375}
+        m_TargetAssemblyTypeName: PresicionShot, Assembly-CSharp
+        m_MethodName: DealDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   draw:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7200651658434785375}
+        m_TargetAssemblyTypeName: PresicionShot, Assembly-CSharp
+        m_MethodName: DealDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -194,6 +195,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0

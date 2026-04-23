@@ -14,8 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 415817938805776748}
   - component: {fileID: 1436429293994302817}
-  - component: {fileID: -3220275885568824226}
-  - component: {fileID: -2193772257171282969}
+  - component: {fileID: 6929204344415664289}
   m_Layer: 5
   m_Name: Fan the hammer
   m_TagString: Untagged
@@ -94,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Fan the hammer
-  description: After use, +1 damage to all weapons for one turn.
+  description: 'If draws, all weapons gain: "On draw, deals 1 damage."'
   sprite: {fileID: 21300000, guid: fc91bed047970784a85bab63d60cb0ba, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -116,37 +116,13 @@ MonoBehaviour:
       m_Calls: []
   choisePhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -2193772257171282969}
-        m_TargetAssemblyTypeName: CB_Reload, Assembly-CSharp
-        m_MethodName: FanTheHammer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   resultPhase:
     m_PersistentCalls:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 415817938805776748}
-        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
-        m_MethodName: Equip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -170,7 +146,19 @@ MonoBehaviour:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 415817938805776748}
+        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
+        m_MethodName: Equip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -193,6 +181,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0
@@ -263,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d95b069f7f71d247805613c8e964a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-3220275885568824226
+--- !u!114 &6929204344415664289
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,18 +266,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f03c567f3bddeee4aae407891a55f9cc, type: 3}
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-2193772257171282969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38a5730667bbe2643b3206eb37138938, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  amount: 1
+  armor_piercing: 0

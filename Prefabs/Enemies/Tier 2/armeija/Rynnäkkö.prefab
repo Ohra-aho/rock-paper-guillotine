@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -104,7 +105,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Charge
-  description: When loses with another weapon, +2 damage to all weapons for one turn.
+  description: If draws with another weapon, +1 damage to all weapons.
   sprite: {fileID: 21300000, guid: 13861850f7a44ff49bf19b7ef69a4117, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -179,6 +180,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0

@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
     public BuffData[] buff_data; //Used in buff loading
 
     [HideInInspector] public BasicEnemy owner;
+    [HideInInspector] public PlayerContoller player_owner;
 
     [HideInInspector] public bool player;
     [HideInInspector] public Weapon opponent;
@@ -90,6 +91,7 @@ public class Weapon : MonoBehaviour
     {
         if (player)
         {
+            player_owner = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
             gameObject.AddComponent<TypeEffects>();
             switch (type)
             {
@@ -240,11 +242,11 @@ public class Weapon : MonoBehaviour
             {
                 HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
                 hb.TakeDamage(realDamage);
-                if(!loop_stopper)
-                {
+                //if(!loop_stopper)
+                //{
                     if (effect) opponent.dealDamage.Invoke();
                     takeDamage.Invoke();
-                }
+                //}
                 dead = hb.GetComponent<HealthBar>().CheckIfDead();
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().damage_taken = true;
             }
@@ -252,24 +254,24 @@ public class Weapon : MonoBehaviour
             {
                 HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
                 hb.TakeDamage(realDamage);
-                if(!loop_stopper)
-                {
+                //if(!loop_stopper)
+                //{
                     if (effect) opponent.dealDamage.Invoke();
                     takeDamage.Invoke();
-                }
+                //}
                 dead = hb.GetComponent<HealthBar>().CheckIfDead();
                 GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().TakeDamage();
                 GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().damage_taken = true;
             }
-            loop_stopper = true;
+            //loop_stopper = true;
         }
         else
         {
-            if(!loop_stopper)
-            {
+            //if(!loop_stopper)
+            //{
                 takeNoDamage.Invoke();
-            }
-            loop_stopper = true;
+            //}
+            //loop_stopper = true;
         }
     }
 

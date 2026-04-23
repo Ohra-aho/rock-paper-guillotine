@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: -5355994565532053554}
   - component: {fileID: 1561530986855741878}
   - component: {fileID: -1901879005808758160}
-  - component: {fileID: 2919113700433674179}
   m_Layer: 5
   m_Name: "Tykist\xF6"
   m_TagString: Untagged
@@ -94,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -106,8 +106,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Cannons
-  description: When loses with another weapon, uses 1 point to deal 1 damage. Uses
-    one point after use.
+  description: When draws with another weapon, deals 1 damage. After use, deals 1
+    damage.
   sprite: {fileID: 21300000, guid: 59aaaca44ac65224da39434a15e374e2, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -124,14 +124,14 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2919113700433674179}
-        m_TargetAssemblyTypeName: Stacking, Assembly-CSharp
-        m_MethodName: DecreaseStacks
-        m_Mode: 3
+      - m_Target: {fileID: 1561530986855741878}
+        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
+        m_MethodName: DealDamage
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_ObjectArgument: {fileID: 3098424137161797902}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -141,19 +141,7 @@ MonoBehaviour:
       m_Calls: []
   takeDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -5355994565532053554}
-        m_TargetAssemblyTypeName: "Tykist\xF6, Assembly-CSharp"
-        m_MethodName: Lose
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -168,19 +156,7 @@ MonoBehaviour:
       m_Calls: []
   lose:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -5355994565532053554}
-        m_TargetAssemblyTypeName: "Tykist\xF6, Assembly-CSharp"
-        m_MethodName: Lose
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -206,6 +182,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0
@@ -290,26 +272,3 @@ MonoBehaviour:
   health_buff: 0
   destructive: 0
   heal_disabler: 0
---- !u!114 &2919113700433674179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stacks: 3
-  stack_limit: 3
-  LoadFunction:
-    m_PersistentCalls:
-      m_Calls: []
-  before_stacking:
-    m_PersistentCalls:
-      m_Calls: []
-  after_stacking:
-    m_PersistentCalls:
-      m_Calls: []

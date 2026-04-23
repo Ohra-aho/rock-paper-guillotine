@@ -7,7 +7,7 @@ public class Charge : MonoBehaviour
     private void Awake()
     {
         GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name != GetComponent<Weapon>().name; };
-        GetComponent<BuffController>().lose = true;
+        GetComponent<BuffController>().draw = true;
         GetComponent<BuffController>().special = ApplyBuffs;
     }
 
@@ -20,16 +20,8 @@ public class Charge : MonoBehaviour
             new_buff.id = GetComponent<Weapon>().name + "_2";
             new_buff.temporary = true;
             new_buff.timer = 2;
-            new_buff.damage_buff = 2;
+            new_buff.damage_buff = 1;
             new_buff.AddBuff();
-        }
-    }
-
-    public void Lose()
-    {
-        if(GetComponent<Weapon>().owner.HB.GiveCurrentHealth() <= GetComponent<Weapon>().owner.HB.GiveMaxHealth() / 2)
-        {
-            GetComponent<Weapon>().owner.OffBalance();
         }
     }
 }
