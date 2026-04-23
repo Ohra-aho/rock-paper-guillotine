@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
   - component: {fileID: 9126511307194648938}
-  - component: {fileID: -4655737539523256328}
   m_Layer: 5
   m_Name: Gambler
   m_TagString: Enemy
@@ -69,16 +68,21 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 5f5d8b4e8ef3a65418d47b3aa5f8817f, type: 3}
   plan_1: 01000000020000000300000000000000
   plan_2: 02000000010000000300000000000000
+  weapon_pairs:
+  - pair: 0200000003000000
+  - pair: 0100000002000000
+  - pair: 0000000003000000
+  - pair: 0000000001000000
+  off_balance_choises: 
+  advanced: 0
+  victory_barks: []
+  executioner_comment: Should I just take it to the chin to bait the Raise?
+  victory_message: {fileID: 0}
   previous_weapon: {fileID: 0}
   weapon_streak: 0
   off_balance: 0
   nearDeath: 0
   off_balance_pattern_done: 0
-  off_balance_choises: 
-  advanced: 1
-  victory_barks: []
-  executioner_comment: Should I just take it to the chin to bait the Raise?
-  victory_message: {fileID: 0}
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0
@@ -134,16 +138,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4655737539523256328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9aa6c84c5ca758498b3fcf1803f0a10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  won: 0

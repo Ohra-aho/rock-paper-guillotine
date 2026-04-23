@@ -90,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   penetrating: 0
@@ -102,7 +103,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Scissors
-  description: 
+  description: (All "scissors" deal 1 damage on draws.)
   sprite: {fileID: 21300000, guid: 450adc5cd317429448b2ba8ad209c42d, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -146,6 +147,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -162,6 +166,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0
