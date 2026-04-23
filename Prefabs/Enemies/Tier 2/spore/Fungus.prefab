@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -104,7 +105,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Fungus
-  description: If you kill through this weapon, gives one Poison to your inventory.
+  description: If wins, removes all Poison from you and heals equal to amount of
+    Poison removed. If draws or takes damage, gives you 1 Poison.
   sprite: {fileID: 21300000, guid: 7526365df6c3b0c4681791132d032e0f, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -127,9 +129,9 @@ MonoBehaviour:
   takeDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1471888311314212958}
-        m_TargetAssemblyTypeName: SporeWeapons, Assembly-CSharp
-        m_MethodName: OffBalance
+      - m_Target: {fileID: 6776472068296714692}
+        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
+        m_MethodName: SpawnOnlyWeapon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -147,10 +149,19 @@ MonoBehaviour:
       m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
+  draw:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3098424137161797902}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: Balance
+      - m_Target: {fileID: 6776472068296714692}
+        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
+        m_MethodName: SpawnOnlyWeapon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -160,15 +171,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  win:
-    m_PersistentCalls:
-      m_Calls: []
-  lose:
-    m_PersistentCalls:
-      m_Calls: []
-  draw:
-    m_PersistentCalls:
-      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -198,19 +200,7 @@ MonoBehaviour:
       m_Calls: []
   on_death:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6776472068296714692}
-        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
-        m_MethodName: SpawnOnlyWeapon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0

@@ -39,14 +39,14 @@ public class Heart : MonoBehaviour
 
     public void damage()
     {
-        GetComponent<Test>().PlayAnimation("LoseLife");
         healthy = false;
+        GetComponent<Test>().PlayAnimation("LoseLife");
     }
 
     public void heal()
     {
-        GetComponent<Test>().PlayAnimation("Heal");
         healthy = true;
+        GetComponent<Test>().PlayAnimation("Heal");
     }
 
     public void UtilEmpty()

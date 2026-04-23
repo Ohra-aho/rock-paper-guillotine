@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -121,8 +122,8 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Serum, Assembly-CSharp
+      - m_Target: {fileID: 1851903233197984926}
+        m_TargetAssemblyTypeName: Healing, Assembly-CSharp
         m_MethodName: Heal
         m_Mode: 1
         m_Arguments:

@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -103,7 +104,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Head
-  description: If you kill through this weapon, gives one Trophy to your inventory.
+  description: If you kill through this weapon, you get a price.
   sprite: {fileID: 21300000, guid: 3ae688cfd58a32a47a3ffc55dc3ea8bb, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -134,19 +135,7 @@ MonoBehaviour:
       m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3098424137161797902}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: Balance
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   win:
     m_PersistentCalls:
       m_Calls: []

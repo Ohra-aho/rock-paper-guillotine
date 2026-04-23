@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8735357463152483393}
   - component: {fileID: -8691021010670127}
   - component: {fileID: -7465601354306158090}
+  - component: {fileID: -5404168715990265617}
   m_Layer: 5
   m_Name: "V\xE4ist\xF6"
   m_TagString: Untagged
@@ -93,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -105,8 +107,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Dodge
-  description: If does not lose, all other weapons gain +2 damage and +1 armor during
-    the next turn.
+  description: If draws, all other weapons gain +2 damage and +1 armor during the
+    next turn. If loses, takes 1 damage.
   sprite: {fileID: 21300000, guid: 1ca580e0f3215044fb2301b30b5fe037, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -140,22 +142,22 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -8691021010670127}
-        m_TargetAssemblyTypeName: Dodge, Assembly-CSharp
-        m_MethodName: AddBuffs
-        m_Mode: 1
+      - m_Target: {fileID: -5404168715990265617}
+        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
+        m_MethodName: SelfDamage
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 3098424137161797902}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  lose:
-    m_PersistentCalls:
-      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls:
@@ -296,3 +298,17 @@ MonoBehaviour:
   weapons:
   - {fileID: 1944698211339908181, guid: e3bb0d9002daec04cb103b0eb61b7adb, type: 3}
   - {fileID: 1944698211339908181, guid: 5cb795b60c0b8c34294154c635fcbba9, type: 3}
+--- !u!114 &-5404168715990265617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 1
+  armor_piercing: 0
