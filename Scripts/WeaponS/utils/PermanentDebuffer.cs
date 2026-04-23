@@ -39,4 +39,24 @@ public class PermanentDebuffer : MonoBehaviour
         new_buff.timer = turns;
         new_buff.AddBuff();
     }
+
+    public void DecreaseOpposingHealth(int amount)
+    {
+        GetComponent<Weapon>().opponent.player_owner.HB.DecreaseHealthBar(amount, true);
+    }
+
+    public void MakeOpposingWeaponSelfDestructive(int turns)
+    {
+        Weapon opponent = GetComponent<Weapon>().opponent;
+        Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+        new_buff.id = GetComponent<Weapon>().name + "_debuff";
+        new_buff.destructive = true;
+        new_buff.desruction_buffer = true;
+        if(turns > 0)
+        {
+            new_buff.temporary = true;
+            new_buff.timer = turns;
+        }
+        new_buff.AddBuff();
+    }
 }

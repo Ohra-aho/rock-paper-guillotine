@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SelfDestruct : MonoBehaviour
 {
-    public bool used_ones = false;
+    public bool used_ones = true;
     public bool destroyed = false;
     public bool disabled = false;
     public void Destruct()
@@ -20,12 +20,12 @@ public class SelfDestruct : MonoBehaviour
             if (nessessary)
             {
                 Buff käyttöohje = FindCertainBuff("Manual");
-                bool risk_taker = false;
+                if (käyttöohje != null) used_ones = false;
                 for (int i = 0; i < GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs.Count; i++)
                 {
                     if (GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs[i].GetComponent<RiskTaker>())
                     {
-                        risk_taker = true;
+                        used_ones = false;
                         break;
                     }
                 }
@@ -33,15 +33,9 @@ public class SelfDestruct : MonoBehaviour
 
                 if (GetComponent<Weapon>().player)
                 {
-                    if ((käyttöohje != null || risk_taker) && !used_ones)
+                    if (!used_ones)
                     {
                         used_ones = true;
-                    }
-                    else if (käyttöohje != null && used_ones)
-                    {
-                        GameObject.Find("Destruction hand").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
-                        GameObject.Find("Destruction hand").GetComponent<Test>().PlayAnimation("grab");
-                        destroyed = true;
                     }
                     else
                     {

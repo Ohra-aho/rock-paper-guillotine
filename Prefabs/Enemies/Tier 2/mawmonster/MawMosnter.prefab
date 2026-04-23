@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
   - component: {fileID: 9126511307194648938}
-  - component: {fileID: -3675180634909382432}
   m_Layer: 5
   m_Name: MawMosnter
   m_TagString: Enemy
@@ -68,16 +67,19 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: fcebe5f896ca7cf44ac69245fc011b3e, type: 3}
   plan_1: 01000000020000000200000000000000
   plan_2: 0200000002000000010000000000000001000000
+  weapon_pairs:
+  - pair: 0000000001000000
+  - pair: 0200000001000000
+  off_balance_choises: 00000000
+  advanced: 0
+  victory_barks: []
+  executioner_comment: You were one of my favourites when it comes to the idea.
+  victory_message: {fileID: 0}
   previous_weapon: {fileID: 0}
   weapon_streak: 0
   off_balance: 0
   nearDeath: 0
   off_balance_pattern_done: 0
-  off_balance_choises: 00000000
-  advanced: 1
-  victory_barks: []
-  executioner_comment: You were one of my favourites when it comes to the idea.
-  victory_message: {fileID: 0}
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0
@@ -133,15 +135,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-3675180634909382432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 111a4b5cbad9a444da9842d8d296ccce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

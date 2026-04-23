@@ -5,40 +5,33 @@ using UnityEngine;
 public class Mutation : MonoBehaviour
 {
     [HideInInspector] public int mutation_counter = 0;
-    public void Mutate()
+
+    private void Awake()
     {
-        int choise = Random.Range(1, 5);
-
-        mutation_counter++;
-        if(mutation_counter % 3 == 0 && mutation_counter >= 3)
+        if(GetComponent<BuffController>())
         {
-            choise = 1;
-        } else
-        {
-            GetComponent<EffectDamage>().SelfDamage(null);
-        }
-
-
-        switch (choise)
-        {
-            case 1: GetComponent<Healing>().Heal(); break;
-            case 2: IncreaseStat(true); break;
-            case 3: IncreaseStat(false); break;
-            case 4: IncreaseStat(true); break;
-        }
-
-        if(!GetComponent<Weapon>().owner.off_balance_triggered)
-        {
-            GetComponent<Weapon>().owner.Balance();
+            GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+            GetComponent<BuffController>().draw = true;
+            GetComponent<BuffController>().special = Mutate;
         }
     }
 
-    private void IncreaseStat(bool damage)
+    public void Mutate(Weapon w)
     {
-        int index = Random.Range(0, 3);
-        GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+        int choise = Random.Range(1, 5);
+        switch (choise)
+        {
+            case 1: GetComponent<Healing>().Heal(); break;
+            case 2: IncreaseStat(true, w); GetComponent<Weapon>().owner.HB.TakeDamage(1); break;
+            case 3: IncreaseStat(false, w); GetComponent<Weapon>().owner.HB.TakeDamage(1); break;
+            case 4: IncreaseStat(true, w); GetComponent<Weapon>().owner.HB.TakeDamage(1); break;
+        }
 
-        Weapon chosen = RIE.transform.GetChild(index).GetComponent<Weapon>();
+    }
+
+    private void IncreaseStat(bool damage, Weapon w)
+    {
+        Weapon chosen = w;
         if (damage) chosen.damage++;
         else chosen.armor++;
     }
