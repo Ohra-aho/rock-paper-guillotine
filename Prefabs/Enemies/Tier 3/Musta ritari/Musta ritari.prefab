@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6943869333779220170}
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
-  - component: {fileID: 7313228718439826780}
   - component: {fileID: 9126511307194648938}
   m_Layer: 5
   m_Name: Musta ritari
@@ -61,30 +60,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Musta ritari
   image: {fileID: 21300000, guid: 1d43eacead7ef3849b9501f0b879f344, type: 3}
-  maxHealth: 6
+  maxHealth: 8
   weapons:
-  - {fileID: 1944698211339908181, guid: 5635276c70ff57c4aa8b2240b1d87ee7, type: 3}
+  - {fileID: 1944698211339908181, guid: 61fcb3a51ed444044925f79db6fe594a, type: 3}
   - {fileID: 1944698211339908181, guid: 2e04ba3db4132ca4ca7824a0bf544098, type: 3}
   - {fileID: 1944698211339908181, guid: c4da266d1050b394eb8b92d8df5c5f52, type: 3}
+  - {fileID: 1944698211339908181, guid: 4546b519c47eae14284966594b2daa27, type: 3}
   plan_1: 020000000100000000000000
   plan_2: 020000000000000001000000
+  weapon_pairs:
+  - pair: 00000000
+  - pair: 0000000001000000
+  - pair: 0000000003000000
+  - pair: 02000000
+  - pair: 0200000003000000
+  - pair: 0100000003000000
+  off_balance_choises: 01000000
+  advanced: 0
+  victory_barks: []
+  executioner_comment: 
+  victory_message: {fileID: 0}
+  previous_weapon: {fileID: 0}
+  weapon_streak: 0
   off_balance: 0
   nearDeath: 0
-  off_balance_choises: 01000000
-  advanced: 1
---- !u!114 &7313228718439826780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4362b9f91b909544dbbfbd2ab0be3333, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buffed: 0
+  off_balance_pattern_done: 0
+  commented: 0
+  HB: {fileID: 0}
+  off_balance_triggered: 0
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0

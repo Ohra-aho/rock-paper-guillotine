@@ -11,7 +11,7 @@ public class Tackle : MonoBehaviour
         GetComponent<BuffController>().draw_winner = true;
         GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name != this.GetComponent<Weapon>().name; };
         GetComponent<BuffController>().temporary = true;
-        GetComponent<BuffController>().timer = 1;
+        GetComponent<BuffController>().timer = 2;
     }
 
     public void ApplyBuffs()

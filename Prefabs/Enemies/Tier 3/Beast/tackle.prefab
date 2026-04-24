@@ -91,10 +91,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 1
   draw_winner: 1
+  spammable: 0
   dead: 0
   type: 0
   damage: 2
@@ -102,9 +105,13 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Tackle
-  description: Pierces armor and wins draws. Next attack pierces armor and wins draws.
+  description: Pierces armor and wins draws. If wins, next attack pierces armor and
+    wins draws.
   sprite: {fileID: 21300000, guid: 58e765ec69317fb4e8d9bbb5328155ed, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -114,6 +121,24 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   endPhase:
+    m_PersistentCalls:
+      m_Calls: []
+  victory:
+    m_PersistentCalls:
+      m_Calls: []
+  takeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -2158723062123651784}
@@ -128,21 +153,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  victory:
-    m_PersistentCalls:
-      m_Calls: []
-  takeDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  dealDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  takeNoDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  win:
-    m_PersistentCalls:
-      m_Calls: []
   lose:
     m_PersistentCalls:
       m_Calls: []
@@ -150,6 +160,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   heal:
+    m_PersistentCalls:
+      m_Calls: []
+  gain_points:
     m_PersistentCalls:
       m_Calls: []
   equip:
@@ -167,6 +180,15 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -174,6 +196,10 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks: []
+  executioner_comment: 
+  damage_soft_cap: 7
 --- !u!114 &8600953092652137520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +218,7 @@ MonoBehaviour:
   effect_damage_bonus: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
+  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
@@ -200,10 +227,12 @@ MonoBehaviour:
   takeDamage: 0
   takeNoDamage: 0
   dealDamage: 0
+  deal_effect_damage: 0
   draw: 0
   win: 0
   lose: 0
   heal: 0
+  gain_points: 0
   equip: 0
   unEquip: 0
   constant: 0
@@ -213,7 +242,9 @@ MonoBehaviour:
   timer: 0
   penetrating: 0
   draw_winner: 0
+  health_buff: 0
   destructive: 0
+  heal_disabler: 0
 --- !u!114 &-2158723062123651784
 MonoBehaviour:
   m_ObjectHideFlags: 0

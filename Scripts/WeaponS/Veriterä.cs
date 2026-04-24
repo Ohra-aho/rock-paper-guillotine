@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class Veriterä : MonoBehaviour
 {
+    private void Awake()
+    {
+        Debug.Log(GetComponent<BuffController>());
+        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name == GetComponent<Weapon>().name; };
+        GetComponent<BuffController>().temporary = true;
+        GetComponent<BuffController>().timer = 3;
+        GetComponent<BuffController>().type_change = MainController.Choise.voittamaton;
+        GetComponent<BuffController>().special_apply = true;
+    }
+
     public void CalculateDamage()
     {
         if(GetComponent<Weapon>().player)

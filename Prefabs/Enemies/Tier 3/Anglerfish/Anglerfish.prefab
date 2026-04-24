@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
   - component: {fileID: 9126511307194648938}
-  - component: {fileID: -5620121085772611849}
   m_Layer: 5
   m_Name: Anglerfish
   m_TagString: Enemy
@@ -69,9 +68,10 @@ MonoBehaviour:
   plan_1: 000000000100000002000000
   plan_2: 020000000100000000000000
   weapon_pairs:
+  - pair: 0200000001000000
+  - pair: 0100000000000000
+  - pair: 0200000000000000
   - pair: 02000000
-  - pair: 01000000
-  - pair: 00000000
   off_balance_choises: 01000000
   advanced: 0
   victory_barks: []
@@ -137,19 +137,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-5620121085772611849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20a525f2639e33948988854fb05bc5e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bait: 0
-  spit: 0
-  baited_type: 0
-  spitted_type: 0

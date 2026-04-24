@@ -14,4 +14,13 @@ public class Orb : MonoBehaviour
             GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>().playerChoise.heal.Invoke();
         }
     }
+
+    public void StackForDeath()
+    {
+        GetComponent<Stacking>().IncreaseStacks(1);
+        if(GetComponent<Stacking>().stacks == 3)
+        {
+            GetComponent<Weapon>().owner.HB.InstaKill();
+        }
+    }
 }
