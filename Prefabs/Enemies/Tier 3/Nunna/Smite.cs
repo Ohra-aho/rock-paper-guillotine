@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Smite : MonoBehaviour
 {
+    private void Awake()
+    {
+        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+        //GetComponent<BuffController>().
+    }
+
     bool damage_dealt = false;
     public void Flagelation()
     {

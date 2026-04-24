@@ -90,10 +90,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 0
   damage: 2
@@ -101,7 +104,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Charm
-  description: Heals 1 after use.
+  description: Heals 1. If draws you and enemy heal 1. If loses, Smite becomes "unbeatable"
+    until used.
   sprite: {fileID: 21300000, guid: 9cd1ff15fff3469478b2eae61b43a14c, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -157,6 +161,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -175,6 +182,12 @@ MonoBehaviour:
   unequipped:
     m_PersistentCalls:
       m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -184,6 +197,7 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks: []
+  executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &3547462557179733568
 MonoBehaviour:

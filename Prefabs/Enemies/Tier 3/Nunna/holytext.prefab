@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -7458322146957719203}
-  - component: {fileID: 4171768396775819594}
+  - component: {fileID: 6279085910599654247}
+  - component: {fileID: 1415664320520306304}
+  - component: {fileID: -4890876596102729932}
   m_Layer: 5
-  m_Name: Smite
+  m_Name: holytext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,15 +100,15 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   dead: 0
-  type: 2
-  damage: 3
+  type: 1
+  damage: 2
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Smite
-  description: If draws, deals damage equal to the amount of times you have dealt
-    damage this fight.
-  sprite: {fileID: 21300000, guid: 2f44c6333b0dc7a42b809081cdad793a, type: 3}
+  name: Holy text
+  description: Each time heals, deals 1 damage. (Continuous) If wins, you gain a
+    Miracle. If you already have a Miracle, dies.
+  sprite: {fileID: 21300000, guid: cb5421596bf1f7242accc24cbb23b466, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -146,19 +147,7 @@ MonoBehaviour:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -7458322146957719203}
-        m_TargetAssemblyTypeName: Smite, Assembly-CSharp
-        m_MethodName: DealingDamage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -197,10 +186,11 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks: []
+  pick_barks:
+  - Ready to confess?
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &-7458322146957719203
+--- !u!114 &6279085910599654247
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,10 +199,56 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc52e3378fa70d349917ea845103d715, type: 3}
+  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4171768396775819594
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+  damage_bonus: 0
+  armor_bonus: 0
+  effect_damage_bonus: 0
+  set_a_to_zero: 0
+  set_d_to_zero: 0
+  always_on: 1
+  choisePhase: 0
+  resultPhase: 0
+  endPhase: 0
+  victory: 0
+  special_apply: 0
+  takeDamage: 0
+  takeNoDamage: 0
+  dealDamage: 0
+  deal_effect_damage: 0
+  draw: 0
+  win: 0
+  lose: 0
+  heal: 0
+  gain_points: 0
+  equip: 0
+  unEquip: 0
+  constant: 0
+  onDestruction: 0
+  awake: 0
+  temporary: 0
+  timer: 0
+  penetrating: 0
+  draw_winner: 0
+  health_buff: 0
+  destructive: 0
+  heal_disabler: 0
+--- !u!114 &1415664320520306304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f533a8f85beee47ae1cde74dbc4546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+--- !u!114 &-4890876596102729932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
