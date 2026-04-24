@@ -17,4 +17,10 @@ public class Chomp : MonoBehaviour
         GetComponent<Weapon>().damage -= amount;
         amount = 0;
     }
+
+    public void DealDamage()
+    {
+        GetComponent<EffectDamage>().amount = GetComponent<Weapon>().opponent.damage;
+        GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
+    }
 }

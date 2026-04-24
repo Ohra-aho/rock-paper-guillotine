@@ -53,6 +53,8 @@ public class Buff : MonoBehaviour
 
     public int health_buff;
 
+    public bool until_used;
+
     //Debuffs
     public bool destructive;
     public bool heal_disabler;
@@ -162,6 +164,13 @@ public class Buff : MonoBehaviour
                     healing_disabled = true;
                 }
             }
+        }
+        if(until_used)
+        {
+            transform.parent.GetComponent<Weapon>().endPhase.AddListener(() => {
+                RemoveBuff();
+                Destroy(this.gameObject);
+            });
         }
     }
 
