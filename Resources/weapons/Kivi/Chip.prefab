@@ -93,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -174,6 +175,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -190,6 +194,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0
@@ -219,6 +229,7 @@ MonoBehaviour:
   damage_bonus: 0
   armor_bonus: 0
   effect_damage_bonus: 0
+  toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
   always_on: 1
@@ -235,6 +246,7 @@ MonoBehaviour:
   win: 0
   lose: 0
   heal: 0
+  gain_points: 0
   equip: 0
   unEquip: 0
   constant: 0

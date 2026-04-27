@@ -35,7 +35,7 @@ public class StartingWeapons : MonoBehaviour
                     if (all_weapons[i].GetComponent<Weapon>().name == weapon_names[j])
                     {
                         temp.Add(all_weapons[i]);
-                        break;
+                        //break;
                     }
                 }
             }
@@ -48,6 +48,7 @@ public class StartingWeapons : MonoBehaviour
         new string[] { "Scissors", "Paper", "Rock" },
         new string[] { "Scissors", "Cardboard", "Rock" },
         new string[] { "Sword", "Paper", "Rock" },
+        new string[] { "Scissors", "Hat", "Wall" },
 
         //Story 1
         new string[] { "Crystal Scissors", "Access code", "Brass Knuckles" },
@@ -66,7 +67,7 @@ public class StartingWeapons : MonoBehaviour
         new string[] { "Spike ball", "Pickaxe", "Thumb" },
         new string[] { "Drill", "Medicine", "Rot" },
         new string[] { "Middle finger" },
-        new string[] { "Catapult", "Rock", "Rock", "Rock", "Rock" },
+        new string[] { "Catapult", "Rock", "Rock", "Rock", "Rock", "Rock", "Rock"},
 
         //Story 3
         new string[] { "Flag", "Victory sign", "Rock" },

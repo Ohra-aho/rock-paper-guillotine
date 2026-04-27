@@ -9,7 +9,7 @@ public class PlayerContoller : MonoBehaviour
     private EnemyController currentEnemy;
     public HealthBar HB;
 
-    private int maxHealth = 0;
+    private int maxHealth = 2;
     [HideInInspector] public int damage = 0;
     [HideInInspector] public int armor = 0;
 
