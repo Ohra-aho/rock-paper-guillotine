@@ -11,6 +11,7 @@ public class Buff : MonoBehaviour
     public int damage_buff;
     public int armor_buff;
     public int effect_damage_buff;
+    public int toughness_buff;
     public bool used = false;
 
     public BuffController.Special special;
@@ -99,6 +100,15 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<EffectDamage>().amount += effect_damage_buff;
         }
 
+        if(toughness_buff != 0)
+        {
+            if (toughness_buff < 0 && -toughness_buff > transform.parent.GetComponent<SelfDestruct>().toughness)
+            {
+                toughness_buff = -transform.parent.GetComponent<SelfDestruct>().toughness;
+            }
+            transform.parent.GetComponent<SelfDestruct>().toughness += toughness_buff;
+        }
+
         GetOGs();
 
         if(choisePhase)
@@ -142,7 +152,7 @@ public class Buff : MonoBehaviour
         if (destructive)
         {
             transform.parent.gameObject.AddComponent<SelfDestruct>();
-            if (desruction_buffer) transform.parent.GetComponent<SelfDestruct>().used_ones = false; 
+            //if (desruction_buffer) transform.parent.GetComponent<SelfDestruct>().used_ones = false; 
             transform.parent.GetComponent<Weapon>().endPhase.AddListener(transform.parent.GetComponent<SelfDestruct>().Destruct);
         }
         if(health_buff > 0)
@@ -199,6 +209,15 @@ public class Buff : MonoBehaviour
                 effect_damage_buff = transform.parent.GetComponent<EffectDamage>().amount;
             }
             transform.parent.GetComponent<EffectDamage>().amount -= effect_damage_buff;
+        }
+
+        if (toughness_buff != 0)
+        {
+            if (toughness_buff > transform.parent.GetComponent<SelfDestruct>().toughness)
+            {
+                toughness_buff = transform.parent.GetComponent<SelfDestruct>().toughness;
+            }
+            transform.parent.GetComponent<SelfDestruct>().toughness -= toughness_buff;
         }
 
         if (choisePhase)

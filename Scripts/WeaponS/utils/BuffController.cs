@@ -15,6 +15,7 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public int damage_bonus = 0;
     [HideInInspector] public int armor_bonus = 0;
     [HideInInspector] public int effect_damage_bonus = 0;
+    [HideInInspector] public int toughness_buff = 0;
     [HideInInspector] public bool set_a_to_zero = false;
     [HideInInspector] public bool set_d_to_zero = false;
     public bool always_on = true;
@@ -142,6 +143,7 @@ public class BuffController : MonoBehaviour
             new_buff.damage_buff = damage_bonus;
             new_buff.armor_buff = armor_bonus;
             new_buff.effect_damage_buff = effect_damage_bonus;
+            new_buff.toughness_buff = toughness_buff;
             new_buff.choisePhase = choisePhase;
             new_buff.resultPhase = resultPhase;
             new_buff.endPhase = endPhase;

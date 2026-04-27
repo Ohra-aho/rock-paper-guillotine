@@ -7,5 +7,6 @@ public class Käyttöohje : MonoBehaviour
     private void Awake()
     {
         GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return weapon.gameObject.GetComponent<SelfDestruct>(); };
+        GetComponent<BuffController>().toughness_buff = 1;
     }
 }
