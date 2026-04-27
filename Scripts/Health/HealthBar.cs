@@ -367,6 +367,11 @@ public class HealthBar : MonoBehaviour
         return amount_of_bulbs;
     }
 
+    public bool ValidHeal()
+    {
+        return GiveCurrentHealth() < GiveMaxHealth();
+    }
+
 
     //Barking
 

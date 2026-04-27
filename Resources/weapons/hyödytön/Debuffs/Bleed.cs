@@ -27,13 +27,13 @@ public class Bleed : MonoBehaviour
 
     public void DebuffDamage(int amount)
     {
-        GameObject RI = GameObject.FindGameObjectWithTag("RI");
-        Weapon strongest = RI.transform.GetChild(0).GetComponent<Weapon>();
-        for(int i = 0; i < RI.transform.childCount; i++)
+        List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
+        Weapon strongest = weapons[0];
+        for(int i = 0; i < weapons.Count; i++)
         {
-            Buff buff_already = CheckIfDebuffExists(RI.transform.GetChild(i));
+            Buff buff_already = CheckIfDebuffExists(weapons[0].transform);
 
-            int damage = RI.transform.GetChild(i).GetComponent<Weapon>().damage;
+            int damage = weapons[0].GetComponent<Weapon>().damage;
             if(buff_already != null)
             {
                 damage += buff_already.damage_buff;
@@ -41,13 +41,13 @@ public class Bleed : MonoBehaviour
 
             if (damage > strongest.damage)
             {
-                strongest = RI.transform.GetChild(i).GetComponent<Weapon>();
+                strongest = weapons[i];
             } else if(damage == strongest.damage)
             {
                 int chance = Random.Range(0, 2);
                 if(chance == 1)
                 {
-                    strongest = RI.transform.GetChild(i).GetComponent<Weapon>();
+                    strongest = weapons[i];
                 }
             }
         }

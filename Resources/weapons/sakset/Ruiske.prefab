@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -186217803599990264}
-  - component: {fileID: 5153217829464244253}
   - component: {fileID: 9178696264602828713}
   m_Layer: 5
   m_Name: Ruiske
@@ -92,10 +91,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 2
   damage: 1
@@ -106,6 +108,9 @@ MonoBehaviour:
   description: Heals 2 and destroys itself.
   sprite: {fileID: 21300000, guid: 0fc2116db9d52bb4594be4517edc9f38, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -150,6 +155,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -163,6 +171,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   heal:
+    m_PersistentCalls:
+      m_Calls: []
+  gain_points:
     m_PersistentCalls:
       m_Calls: []
   equip:
@@ -180,6 +191,15 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 1
   healing: 1
   health: 0
@@ -190,6 +210,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - That's right. Fight back.
+  executioner_comment: 
+  damage_soft_cap: 7
 --- !u!114 &-186217803599990264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,21 +224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used_ones: 0
   destroyed: 0
---- !u!114 &5153217829464244253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb1c653ad85aaf14b8ed5d4f53657032, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heal: 2
+  disabled: 0
+  toughness: 0
 --- !u!114 &9178696264602828713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,4 +239,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disabled: 0
   amount: 2

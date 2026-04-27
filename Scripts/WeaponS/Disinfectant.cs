@@ -15,8 +15,7 @@ public class Disinfectant : MonoBehaviour
     {
         if(weapon.player)
         {
-            PlayerContoller PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
-            PC.HB.HealDamage(1);
+            GameObject.Find("Table").GetComponent<TableController>().player_healing++;
         }
     }
 }

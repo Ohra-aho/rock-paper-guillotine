@@ -30,7 +30,7 @@ public class TypeEffects : MonoBehaviour
 
     public void ActivateRock()
     {
-        GetComponent<Healing>().HealSetAmount(1);
+        GetComponent<Healing>().HealSetAmount(2);
     }
 
     public void ActivatePaper()

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -915748003629455221}
   - component: {fileID: 728901231638690517}
+  - component: {fileID: 6799964917637838455}
   m_Layer: 5
   m_Name: d_kivi
   m_TagString: Untagged
@@ -228,3 +229,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 1
   armor_piercing: 0
+--- !u!114 &6799964917637838455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabled: 0
+  amount: 1

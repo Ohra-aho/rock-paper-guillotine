@@ -9,9 +9,11 @@ public class Orb : MonoBehaviour
         int damage = GetComponent<DamageInteractions>().CalculateTakenDamage();
         if(damage <= 0)
         {
-            HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
-            HB.HealDamage(1);
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>().playerChoise.heal.Invoke();
+            GameObject.Find("Table").GetComponent<TableController>().player_healing++;
+            if(GetComponent<Weapon>().opponent.player_owner.GetComponent<PlayerContoller>().HB.ValidHeal())
+            {
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>().playerChoise.heal.Invoke();
+            }
         }
     }
 

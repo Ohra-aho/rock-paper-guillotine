@@ -6,12 +6,16 @@ public class Tee : MonoBehaviour
 {
     public void HealBoth()
     {
-        GameObject EC = GameObject.FindGameObjectWithTag("EnemyHolder");
-        GameObject PC = GameObject.FindGameObjectWithTag("Player");
+        TableController TC = GameObject.Find("Table").GetComponent<TableController>();
+        TC.player_healing++;
+        TC.enemy_healing++;
 
-        if(!EC.GetComponent<EnemyController>().HB.dead) EC.GetComponent<EnemyController>().HB.HealDamage(1);
-        PC.GetComponent<PlayerContoller>().HB.HealDamage(1);
-        GetComponent<Weapon>().heal.Invoke();
+        GameObject.Find("Table").GetComponent<TableController>().player_healing++;
+        HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
+        if (hb.GiveCurrentHealth() < hb.GiveMaxHealth())
+        {
+            GetComponent<Weapon>().opponent.heal.Invoke();
+        }
     }
 
     public void BuffPlayerWeapon()

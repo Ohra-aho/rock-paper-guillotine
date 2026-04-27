@@ -119,11 +119,11 @@ public class TableController : MonoBehaviour
             }
             player_healing = 0;
         }
-        if (enemy_damage > 0)
+        if (enemy_healing > 0)
         {
             if (!enemy.GetComponent<EnemyController>().HB.dead)
             {
-                enemy.GetComponent<PlayerContoller>().HB.HealDamage(enemy_healing);
+                enemy.GetComponent<EnemyController>().HB.HealDamage(enemy_healing);
             }
             enemy_healing = 0;
         }

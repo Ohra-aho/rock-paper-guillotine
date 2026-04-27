@@ -17,8 +17,6 @@ public class Dodge : MonoBehaviour
     public void AddBuffs()
     {
         GetComponent<BuffController>().Equip();
-        GetComponent<Weapon>().owner.Balance();
-        GetComponent<Weapon>().owner.GetComponent<TallMan>().dodge_active = true;
     }
 
     public void GiveSerum()

@@ -9,20 +9,22 @@ public class Merchant : MonoBehaviour
         GetComponent<EffectDamage>().DealDamage(null);
         MainController MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
         MC.playerChoise.damage++;
-        if (Chance()) DestroyPlayerWeapon();
     }
 
     public void Bandages()
     {
-        HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
-        HB.HealDamage(1);
+        GameObject.Find("Table").GetComponent<TableController>().player_healing++;
+        HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
+        if (hb.GiveCurrentHealth() < hb.GiveMaxHealth())
+        {
+            GetComponent<Weapon>().opponent.heal.Invoke();
+        }
         MainController MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
         MC.playerChoise.damage--;
         if(MC.playerChoise.damage < 0)
         {
             MC.playerChoise.damage = 0;
         }
-        if (Chance()) DestroyPlayerWeapon(); 
     }
 
     public void Supplies()

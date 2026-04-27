@@ -257,6 +257,7 @@ public class Weapon : MonoBehaviour
                 GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
                 infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
                 GameObject.Find("EventSystem").GetComponent<MainController>().Win();
+                if(on_death != null) on_death.Invoke();
                 hb.dead = false;
             }
         }
