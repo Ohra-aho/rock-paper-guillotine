@@ -17,17 +17,11 @@ public class Voodoonukke : MonoBehaviour
         if (weapon.player)
         {
             GameObject MC = GameObject.Find("EventSystem");
-            if (MC.GetComponent<MainController>().enemyChoise != null)
-            {
-                MC.GetComponent<MainController>().enemyChoise.TakeDamage(damage);
-            } else
-            {
-                GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>().TakeDamage(damage);
-            }
+            MC.GetComponent<MainController>().enemy.GetComponent<EnemyController>().HB.TakeDamage(GetComponent<EffectDamage>().amount);
         }
         else
         {
-            GameObject.Find("EventSystem").GetComponent<MainController>().playerChoise.TakeDamage(damage);
+            GameObject.Find("Player").GetComponent<PlayerContoller>().HB.TakeDamage(GetComponent<EffectDamage>().amount);
         }
     }
 }

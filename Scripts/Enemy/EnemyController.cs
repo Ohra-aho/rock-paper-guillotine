@@ -37,16 +37,6 @@ public class EnemyController : MonoBehaviour
     public GameObject true_weapon_holder;
 
     [HideInInspector] public bool damage_taken = false;
-    private void Update()
-    {
-        if(HB.dead)
-        {
-            dead = true;
-            GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
-            infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
-            HB.dead = false;
-        }
-    }
 
     public void Inisiate()
     {
@@ -239,14 +229,14 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage()
     {
-        dead = HB.GetComponent<HealthBar>().CheckIfDead();
+        //dead = HB.GetComponent<HealthBar>().CheckIfDead();
         if(damageEffect != null) damageEffect.Invoke();
-        if(dead)
+       /* if(dead)
         {
             GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
             infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
             HB.dead = false;
-        }
+        }*/
     }
 
     // Rock, Paper, scissors
@@ -291,12 +281,6 @@ public class EnemyController : MonoBehaviour
                 }
             }
         }
-
-        //Does things when round is over
-        currentEnemy.GetComponent<BasicEnemy>().CheckUp(
-                HB.GiveCurrentHealth(),
-                maxHealth
-            );
     }
 
     public int GiveCurrentHealth()

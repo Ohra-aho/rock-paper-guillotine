@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class SelfDestruct : MonoBehaviour
 {
-    [HideInInspector] public bool used_ones = true;
+    //[HideInInspector] public bool used_ones = true;
     [HideInInspector] public bool destroyed = false;
     [HideInInspector] public bool disabled = false;
     [HideInInspector] public int toughness = 0;
-
-    private void Awake()
-    {
-        used_ones = true;
-    }
 
     public void Destruct()
     {
@@ -28,31 +23,13 @@ public class SelfDestruct : MonoBehaviour
 
             if (nessessary)
             {
-                /*Buff käyttöohje = FindCertainBuff("Manual");
-                if (käyttöohje != null) used_ones = false;
-                for (int i = 0; i < GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs.Count; i++)
-                {
-                    if (GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs[i].GetComponent<RiskTaker>())
-                    {
-                        used_ones = false;
-                        break;
-                    }
-                }*/
                 GetComponent<Weapon>().onDestruction.Invoke();
 
                 if (GetComponent<Weapon>().player)
                 {
-                   /* if (!used_ones)
-                    {
-                        Debug.Log("QUE?");
-                        used_ones = true;
-                    }
-                    else
-                    {*/
-                        GameObject.Find("Destruction hand").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
-                        GameObject.Find("Destruction hand").GetComponent<Test>().PlayAnimation("grab");
-                        destroyed = true;
-                    //}
+                    GameObject.Find("Destruction hand").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
+                    GameObject.Find("Destruction hand").GetComponent<Test>().PlayAnimation("grab");
+                    destroyed = true;
                 }
                 else
                 {

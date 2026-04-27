@@ -52,7 +52,7 @@ public class WeaponController : MonoBehaviour
                     weapon.GetComponent<Weapon>().buff_data = ExtractRelevantBuffs(weapons[i].buffs);
                     if(weapon.GetComponent<SelfDestruct>())
                     {
-                        weapon.GetComponent<SelfDestruct>().used_ones = weapons[i].self_destruct_used;
+                        //weapon.GetComponent<SelfDestruct>().used_ones = weapons[i].self_destruct_used;
                     }
 
                 }

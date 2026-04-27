@@ -22,9 +22,9 @@ public class Mutation : MonoBehaviour
         switch (choise)
         {
             case 1: GetComponent<Healing>().Heal(); break;
-            case 2: IncreaseStat(true, w); GetComponent<Weapon>().owner.HB.TakeDamage(1); break;
-            case 3: IncreaseStat(false, w); GetComponent<Weapon>().owner.HB.TakeDamage(1); break;
-            case 4: IncreaseStat(true, w); GetComponent<Weapon>().owner.HB.TakeDamage(1); break;
+            case 2: IncreaseStat(true, w); GetComponent<Weapon>().TakeDamage(1); break;
+            case 3: IncreaseStat(false, w); GetComponent<Weapon>().TakeDamage(1); break;
+            case 4: IncreaseStat(true, w); GetComponent<Weapon>().TakeDamage(1); break;
         }
 
     }

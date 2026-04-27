@@ -18,7 +18,8 @@ public class Healing : MonoBehaviour
                 if(!HB.CheckIfDead())
                 {
                     valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
-                    HB.HealDamage(amount);
+                    //HB.HealDamage(amount);
+                    GameObject.Find("Table").GetComponent<TableController>().player_healing += amount;
                     if (valid_heal)
                     {
                         GameObject.FindGameObjectWithTag("GameController").GetComponent<RLController>().CheckForUnyielding();
@@ -32,7 +33,9 @@ public class Healing : MonoBehaviour
                 if (!HB.CheckIfDead())
                 {
                     valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
-                    HB.HealDamage(amount);
+                    //HB.HealDamage(amount);
+                    GameObject.Find("Table").GetComponent<TableController>().enemy_healing += amount;
+
                     if (valid_heal) GetComponent<Weapon>().heal.Invoke();
                 }
             }
@@ -46,7 +49,9 @@ public class Healing : MonoBehaviour
         HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
 
         valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
-        HB.HealDamage(amount);
+        //HB.HealDamage(amount);
+        GameObject.Find("Table").GetComponent<TableController>().player_healing += amount;
+
         if (valid_heal)
         {
             GameObject.FindGameObjectWithTag("GameController").GetComponent<RLController>().CheckForUnyielding();
@@ -65,7 +70,9 @@ public class Healing : MonoBehaviour
                 if (!HB.CheckIfDead())
                 {
                     valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
-                    HB.HealDamage(amount);
+                    //HB.HealDamage(amount);
+                    GameObject.Find("Table").GetComponent<TableController>().player_healing += amount;
+
                     if (valid_heal)
                     {
                         GameObject.FindGameObjectWithTag("GameController").GetComponent<RLController>().CheckForUnyielding();
@@ -79,7 +86,9 @@ public class Healing : MonoBehaviour
                 if (!HB.CheckIfDead())
                 {
                     valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
-                    HB.HealDamage(amount);
+                    //HB.HealDamage(amount);
+                    GameObject.Find("Table").GetComponent<TableController>().enemy_healing += amount;
+
                     if (valid_heal) GetComponent<Weapon>().heal.Invoke();
                 }
             }

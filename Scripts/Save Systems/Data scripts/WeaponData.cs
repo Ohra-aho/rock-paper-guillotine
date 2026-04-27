@@ -28,7 +28,7 @@ public class WeaponData
 
         if(weapon.gameObject.GetComponent<SelfDestruct>())
         {
-            self_destruct_used = weapon.gameObject.GetComponent<SelfDestruct>().used_ones;
+            //self_destruct_used = weapon.gameObject.GetComponent<SelfDestruct>().used_ones;
         }
 
     }

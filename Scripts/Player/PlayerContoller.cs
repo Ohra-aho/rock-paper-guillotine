@@ -9,7 +9,7 @@ public class PlayerContoller : MonoBehaviour
     private EnemyController currentEnemy;
     public HealthBar HB;
 
-    private int maxHealth = 20;
+    private int maxHealth = 0;
     [HideInInspector] public int damage = 0;
     [HideInInspector] public int armor = 0;
 
@@ -59,11 +59,6 @@ public class PlayerContoller : MonoBehaviour
         {
             MC.Loose();
             HB.dead = false;
-        } else
-        {
-            GameObject enemy = GameObject.FindGameObjectWithTag("EnemyHolder");
-            bool dead = enemy.GetComponent<EnemyController>().dead;
-            if (dead) MC.Win();
         }
     } 
 

@@ -15,6 +15,11 @@ public class TableController : MonoBehaviour
     MainController MC;
     Coroutine table;
 
+    [HideInInspector] public int player_damage = 0;
+    [HideInInspector] public int enemy_damage = 0;
+    [HideInInspector] public int player_healing = 0;
+    [HideInInspector] public int enemy_healing = 0;
+
     private void Update()
     {
         table = null;
@@ -55,10 +60,16 @@ public class TableController : MonoBehaviour
         ActivateEachTurnEffects(GameObject.FindGameObjectWithTag("RI"));
         ActivateEachTurnEffects(GameObject.FindGameObjectWithTag("RIE"));
 
+        HandleDamage();
+        HandleHealing();
+
         player.GetComponent<PlayerContoller>().Death();
 
         player.GetComponent<PlayerContoller>().HB.damage_taken = false;
         enemy.GetComponent<EnemyController>().HB.damage_taken = false;
+
+        MC.playerChoise.GetComponent<Weapon>().CheckUp();
+        MC.enemyChoise.GetComponent<Weapon>().CheckUp();
 
         //New battle mechanics
         enemy.transform.GetChild(0).GetComponent<BasicEnemy>().SelectWeaponPair();
@@ -75,6 +86,46 @@ public class TableController : MonoBehaviour
             {
                 weapon_holder.transform.GetChild(i).GetComponent<Weapon>().eachTurn.Invoke();
             }
+        }
+    }
+
+    private void HandleDamage()
+    {
+        if(player_damage > 0)
+        {
+            if(!player.GetComponent<PlayerContoller>().HB.dead)
+            {
+                player.GetComponent<PlayerContoller>().HB.TakeDamage(player_damage);
+            }
+            player_damage = 0;
+        }
+        if(enemy_damage > 0)
+        {
+            if(!enemy.GetComponent<EnemyController>().HB.dead)
+            {
+                enemy.GetComponent<EnemyController>().HB.TakeDamage(enemy_damage);
+            }
+            enemy_damage = 0;
+        }
+    }
+
+    private void HandleHealing()
+    {
+        if (player_healing > 0)
+        {
+            if (!player.GetComponent<PlayerContoller>().HB.dead)
+            {
+                player.GetComponent<PlayerContoller>().HB.HealDamage(player_healing);
+            }
+            player_healing = 0;
+        }
+        if (enemy_damage > 0)
+        {
+            if (!enemy.GetComponent<EnemyController>().HB.dead)
+            {
+                enemy.GetComponent<PlayerContoller>().HB.HealDamage(enemy_healing);
+            }
+            enemy_healing = 0;
         }
     }
 }

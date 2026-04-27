@@ -81,7 +81,7 @@ public class BasicEnemy : MonoBehaviour
 
     public void CheckUp(int currentHealth, int maxHealth)
     {
-        if(currentHealth <= maxHealth/3 || currentHealth == 1)
+       /* if(currentHealth <= maxHealth/3 || currentHealth == 1)
         {
             nearDeath = true;
         }
@@ -90,7 +90,7 @@ public class BasicEnemy : MonoBehaviour
         {
             off_balance_pattern_done = false;
             Balance();
-        }
+        }*/
     }
 
     public int MakeChoise(MainController.Choise playerChoise)

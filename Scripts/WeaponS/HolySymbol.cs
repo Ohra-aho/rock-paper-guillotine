@@ -13,7 +13,7 @@ public class HolySymbol : MonoBehaviour
 
     public void Miracle()
     {
-        if (GetComponent<Stacking>().stacks >= 5)
+        if (GetComponent<Stacking>().stacks >= 3)
         {
             GetComponent<Stacking>().stacks = 0;
             PlayerInventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();

@@ -141,13 +141,9 @@ public class Weapon : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        int armor_bonus = 0;
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            armor_bonus += transform.GetChild(i).GetComponent<Buff>().armor_buff;
-        }
-
-        int realDamage;
+        int armor_bonus = GiveEffectiveArmor();
+       
+        int realDamage = 0;
         if(!opponent.penetrating)
         {
             realDamage = amount - (armor+armor_bonus);
@@ -157,20 +153,14 @@ public class Weapon : MonoBehaviour
             realDamage = amount;
             if (realDamage < 0) realDamage = 0;
         }
-
         HandleDamageTaking(realDamage, true);
-        if (dead) on_death.Invoke();
+        //if (dead) on_death.Invoke(); //Place to Table controller
     }
 
     public void DealDamage(Weapon target)
     {
-        int damage_bonus = 0;
-        for(int i = 0; i < transform.childCount; i++)
-        {
-            damage_bonus += transform.GetChild(i).GetComponent<Buff>().damage_buff;
-        }
-        target.TakeDamage(damage+damage_bonus);
-        CheckUp();
+        int damage_bonus = GiveEffectiveDamage();
+        target.TakeDamage(damage_bonus);
     }
 
     public void EffectDamage(int amount)
@@ -179,26 +169,17 @@ public class Weapon : MonoBehaviour
         {
             if(GetComponent<EffectDamage>())
             {
-                if (GetComponent<EffectDamage>().armor_piercing)
+                if (GetComponent<EffectDamage>().armor_piercing || GetComponent<Weapon>().penetrating)
                 {
-                    amount += opponent.armor;
+                    amount += opponent.GiveEffectiveArmor();
                 }
             }
             opponent.TakeDamage(amount);
-            CheckUp();
         } else
         {
             if(player)
             {
-                //Add bark to point this out if happens
-                //If not opponent, choose one at random
-                GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
-                int index = Random.Range(0, RIE.transform.childCount);
-                opponent = RIE.transform.GetChild(index).GetComponent<Weapon>();
-                RIE.transform.GetChild(index).GetComponent<Weapon>().opponent = this;
-
-                opponent.TakeDamage(amount);
-                CheckUp();
+                GameObject.Find("Table").GetComponent<TableController>().enemy_damage += amount;
             }
         }
     }
@@ -214,7 +195,7 @@ public class Weapon : MonoBehaviour
         } 
         else if(GetComponent<EffectDamage>())
         {
-            if(!GetComponent<EffectDamage>().armor_piercing)
+            if(!GetComponent<EffectDamage>().armor_piercing && !GetComponent<Weapon>().penetrating)
             {
                 realDamage = amount - GiveEffectiveArmor();
                 if (realDamage < 0) realDamage = 0;
@@ -231,47 +212,31 @@ public class Weapon : MonoBehaviour
         }
 
         HandleDamageTaking(realDamage, false);
-        
     }
 
     public void HandleDamageTaking(int realDamage, bool effect)
     {
+        TableController TC = GameObject.Find("Table").GetComponent<TableController>();
         if (realDamage > 0)
         {
             if (player)
             {
-                HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
-                hb.TakeDamage(realDamage);
-                //if(!loop_stopper)
-                //{
-                    if (effect) opponent.dealDamage.Invoke();
-                    takeDamage.Invoke();
-                //}
-                dead = hb.GetComponent<HealthBar>().CheckIfDead();
+                TC.player_damage += realDamage;
+                if (effect) opponent.dealDamage.Invoke();
+                takeDamage.Invoke();
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().damage_taken = true;
             }
             else
             {
-                HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
-                hb.TakeDamage(realDamage);
-                //if(!loop_stopper)
-                //{
-                    if (effect) opponent.dealDamage.Invoke();
-                    takeDamage.Invoke();
-                //}
-                dead = hb.GetComponent<HealthBar>().CheckIfDead();
-                GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().TakeDamage();
+                TC.enemy_damage += realDamage;
+                if (effect) opponent.dealDamage.Invoke();
+                takeDamage.Invoke();
                 GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().damage_taken = true;
             }
-            //loop_stopper = true;
         }
         else
         {
-            //if(!loop_stopper)
-            //{
-                takeNoDamage.Invoke();
-            //}
-            //loop_stopper = true;
+            takeNoDamage.Invoke();
         }
     }
 
@@ -283,10 +248,17 @@ public class Weapon : MonoBehaviour
     public void CheckUp()
     {
         bool dead = false;
-        if (player)
+        if (!player)
         {
             HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
             dead = hb.GetComponent<HealthBar>().CheckIfDead();
+            if (dead)
+            {
+                GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
+                infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
+                GameObject.Find("EventSystem").GetComponent<MainController>().Win();
+                hb.dead = false;
+            }
         }
         else
         {

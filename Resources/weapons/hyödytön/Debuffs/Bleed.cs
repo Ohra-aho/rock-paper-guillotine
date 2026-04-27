@@ -21,7 +21,8 @@ public class Bleed : MonoBehaviour
                 poisons++;
             }
         }
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.TakeDamage(poisons);
+        GameObject.Find("Table").GetComponent<TableController>().player_damage += poisons;
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.TakeDamage(poisons);
     }
 
     public void DebuffDamage(int amount)

@@ -30,8 +30,11 @@ public class Machine : MonoBehaviour
         if(round_started)
         {
             round_started = false;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().ActivateFirstTurnEffects();
-            GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().ActivateFirstTurnEffects();
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            GameObject enemy = GameObject.FindGameObjectWithTag("EnemyHolder");
+            player.GetComponent<PlayerContoller>().ActivateFirstTurnEffects();
+            enemy.GetComponent<EnemyController>().ActivateFirstTurnEffects();
+
             RLController RLC = GameObject.Find("EventSystem").GetComponent<RLController>();
             for(int i = 0; i < RLC.chosen_buffs.Count; i++)
             {
@@ -40,6 +43,8 @@ public class Machine : MonoBehaviour
                     RLC.chosen_buffs[i].GetComponent<Slow>().ApplyBuff();
                 }
             }
+            player.GetComponent<PlayerContoller>().GetWeapons()[0].GetComponent<Weapon>().CheckUp();
+            enemy.GetComponent<EnemyController>().currentEnemy.GetComponent<BasicEnemy>().weapons[0].GetComponent<Weapon>().CheckUp();
         }
     }
 
