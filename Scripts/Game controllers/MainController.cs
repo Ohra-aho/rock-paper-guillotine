@@ -198,11 +198,11 @@ public class MainController : MonoBehaviour
         {
             return null;
         }
-        if(player.draw_winner)
+        else if(player.draw_winner)
         {
             return true;
         }
-        if(enemy.draw_winner)
+        else if(enemy.draw_winner)
         {
             return false;
         }
@@ -321,13 +321,11 @@ public class MainController : MonoBehaviour
         switch (result)
         {
             case true:
-                if (playerChoise.draw_winner) playerChoise.draw.Invoke();
                 enemyChoise.lose.Invoke();
                 playerChoise.win.Invoke();
                 playerChoise.DealDamage(enemyChoise);
                 break;
             case false:
-                if (enemyChoise.draw_winner) enemyChoise.draw.Invoke();
                 enemyChoise.win.Invoke();
                 playerChoise.lose.Invoke();
                 enemyChoise.DealDamage(playerChoise);

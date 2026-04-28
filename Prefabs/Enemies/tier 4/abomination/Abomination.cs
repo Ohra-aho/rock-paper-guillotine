@@ -4,54 +4,95 @@ using UnityEngine;
 
 public class Abomination : MonoBehaviour
 {
-    public void LoseAdapt()
+    public GameObject buff;
+    public void UseAdapt()
     {
         GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
-        for(int i = 0; i < RIE.transform.childCount; i++)
+
+        int useless_count = 0;
+        // change 2 to useless
+        bool buff_active = RIE.transform.GetChild(1).GetComponent<Weapon>().FindCertainBuff(GetComponent<Weapon>().name);
+        if(!buff_active)
         {
-            if (RIE.transform.GetChild(i).GetComponent<Weapon>().armor < 4) RIE.transform.GetChild(i).GetComponent<Weapon>().armor++;
-            if(RIE.transform.GetChild(i).GetComponent<Weapon>().damage > 0)
+            while (useless_count < 2)
             {
-                RIE.transform.GetChild(i).GetComponent<Weapon>().damage--;
+                for (int i = Random.Range(0, RIE.transform.childCount); i < RIE.transform.childCount; i++)
+                {
+                    if (RIE.transform.GetChild(i).GetComponent<Weapon>().name != GetComponent<Weapon>().name && !RIE.transform.GetChild(i).GetComponent<Weapon>().FindCertainBuff(GetComponent<Weapon>().name))
+                    {
+                        Buff new_buff = Instantiate(buff, RIE.transform.GetChild(i)).GetComponent<Buff>();
+                        new_buff.type_change = MainController.Choise.hyödytön;
+                        new_buff.id = GetComponent<Weapon>().name;
+                        new_buff.temporary = true;
+                        new_buff.timer = 3;
+                        new_buff.AddBuff();
+                        useless_count++;
+                    }
+                }
+            }
+        }
+        // Change 1 to unbeatable
+        for (int i = 0; i < RIE.transform.childCount; i++)
+        {
+            if (RIE.transform.GetChild(i).GetComponent<Weapon>().name != GetComponent<Weapon>().name && !RIE.transform.GetChild(i).GetComponent<Weapon>().FindCertainBuff(GetComponent<Weapon>().name))
+            {
+                Buff new_buff = Instantiate(buff, RIE.transform.GetChild(i)).GetComponent<Buff>();
+                new_buff.type_change = MainController.Choise.voittamaton;
+                new_buff.id = GetComponent<Weapon>().name;
+                new_buff.temporary = true;
+                new_buff.timer = 3;
+                new_buff.AddBuff();
             }
         }
     }
 
-    public void WinAdapt()
+    public void Unstoppable()
     {
         GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+
         for (int i = 0; i < RIE.transform.childCount; i++)
         {
-            if(RIE.transform.GetChild(i).GetComponent<Weapon>().damage < 4) RIE.transform.GetChild(i).GetComponent<Weapon>().damage++;
-            if (RIE.transform.GetChild(i).GetComponent<Weapon>().armor > 0)
+            if(!RIE.transform.GetChild(i).GetComponent<Weapon>().FindCertainBuff(GetComponent<Weapon>().name))
             {
-                RIE.transform.GetChild(i).GetComponent<Weapon>().armor--;
+                Buff new_buff = Instantiate(buff, RIE.transform.GetChild(i)).GetComponent<Buff>();
+                new_buff.id = GetComponent<Weapon>().name;
+                new_buff.draw_winner = true;
+                new_buff.AddBuff();
             }
         }
     }
 
     public void Unbeateble()
     {
-        GetComponent<EffectDamage>().amount = 2 - GetComponent<Weapon>().armor;
-        if(GetComponent<EffectDamage>().amount < 0)
+        GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+
+        for (int i = 0; i < RIE.transform.childCount; i++)
         {
-            GetComponent<EffectDamage>().amount = 0;
+            if (!RIE.transform.GetChild(i).GetComponent<Weapon>().FindCertainBuff(GetComponent<Weapon>().name))
+            {
+                Buff new_buff = Instantiate(buff, RIE.transform.GetChild(i)).GetComponent<Buff>();
+                new_buff.id = GetComponent<Weapon>().name;
+                new_buff.draw = true;
+                new_buff.special = (Weapon w) => { GetComponent<EffectDamage>().DealDamage(w); };
+                new_buff.AddBuff();
+            }
         }
-        GetComponent<EffectDamage>().DealDamage(null);
     }
 
     public void Unkillable()
     {
-        GetComponent<Healing>().amount = 2 - GetComponent<Weapon>().damage;
-        if(GetComponent<Healing>().amount < 0)
-        {
-            GetComponent<Healing>().amount = 0;
-        }
-        GetComponent<Healing>().Heal();
-    }
+        GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
 
-    public void Lost()
-    {
-        GameObject.Find("Abomination(Clone)").GetComponent<AbominationBehavior>().damaged = true;
+        for (int i = 0; i < RIE.transform.childCount; i++)
+        {
+            if (!RIE.transform.GetChild(i).GetComponent<Weapon>().FindCertainBuff(GetComponent<Weapon>().name))
+            {
+                Buff new_buff = Instantiate(buff, RIE.transform.GetChild(i)).GetComponent<Buff>();
+                new_buff.id = GetComponent<Weapon>().name;
+                new_buff.draw = true;
+                new_buff.special = (Weapon w) => { GetComponent<Healing>().Heal(); };
+                new_buff.AddBuff();
+            }
+        }
     }
 }

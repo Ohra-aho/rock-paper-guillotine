@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 1377130633756727261}
-  - component: {fileID: 2871746661172461147}
+  - component: {fileID: 2856670220802805572}
   m_Layer: 5
-  m_Name: Unkillable
+  m_Name: Unstoppalbe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,14 +98,14 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   dead: 0
-  type: 1
+  type: 0
   damage: 2
-  armor: 2
+  armor: 0
   real_damage: 0
   real_armor: 0
-  name: Unkillable
-  description: If loses, all weapons heal 1 on draws permanently.
-  sprite: {fileID: 21300000, guid: 2972ec88b83729a4e9ba16e18e98a8b1, type: 3}
+  name: Unstoppable
+  description: If loses, all weapons win draws permanently.
+  sprite: {fileID: 21300000, guid: 7392e396a342b6140a49e4db5b6bd02b, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -143,9 +142,9 @@ MonoBehaviour:
   lose:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1377130633756727261}
+      - m_Target: {fileID: 2856670220802805572}
         m_TargetAssemblyTypeName: Abomination, Assembly-CSharp
-        m_MethodName: Unkillable
+        m_MethodName: Unstoppable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -199,7 +198,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &1377130633756727261
+--- !u!114 &2856670220802805572
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,17 +211,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
---- !u!114 &2871746661172461147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disabled: 0
-  amount: 1

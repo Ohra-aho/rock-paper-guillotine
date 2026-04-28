@@ -152,7 +152,6 @@ public class Buff : MonoBehaviour
         if (destructive)
         {
             transform.parent.gameObject.AddComponent<SelfDestruct>();
-            //if (desruction_buffer) transform.parent.GetComponent<SelfDestruct>().used_ones = false; 
             transform.parent.GetComponent<Weapon>().endPhase.AddListener(transform.parent.GetComponent<SelfDestruct>().Destruct);
         }
         if(health_buff > 0)

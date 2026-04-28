@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
   - component: {fileID: 9126511307194648938}
-  - component: {fileID: -4228610053379720931}
   m_Layer: 5
   m_Name: Abomination
   m_TagString: Enemy
@@ -61,23 +60,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Abomination
   image: {fileID: 21300000, guid: fb775ea48ae935d4581a426a051302ea, type: 3}
-  maxHealth: 10
+  maxHealth: 8
   weapons:
   - {fileID: 1944698211339908181, guid: 7a9150a9b23df71418f5aa1e82c15b58, type: 3}
   - {fileID: 1944698211339908181, guid: 06c690d2effdf3642aaf60a10109075e, type: 3}
   - {fileID: 1944698211339908181, guid: 10f4363b257d6aa499c0b291b7a18090, type: 3}
+  - {fileID: 1944698211339908181, guid: 91885b031e525d441a99533ec159cf36, type: 3}
   plan_1: 0100000002000000010000000200000001000000
   plan_2: 0200000001000000020000000100000001000000
+  weapon_pairs:
+  - pair: 00000000
+  - pair: 0100000002000000
+  - pair: 0100000003000000
+  - pair: 0200000003000000
+  off_balance_choises: 02000000
+  advanced: 0
+  victory_barks: []
+  executioner_comment: You were liberating to draw.
+  victory_message: {fileID: 0}
   previous_weapon: {fileID: 0}
   weapon_streak: 0
   off_balance: 0
   nearDeath: 0
   off_balance_pattern_done: 0
-  off_balance_choises: 02000000
-  advanced: 1
-  victory_barks: []
-  executioner_comment: You were liberating to draw.
-  victory_message: {fileID: 0}
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0
@@ -133,16 +138,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4228610053379720931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a4ff9c43a3496445b18c45a0f12e3bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damaged: 0

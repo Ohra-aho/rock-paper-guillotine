@@ -292,7 +292,7 @@ public class Weapon : MonoBehaviour
     {
         for(int i = 0; i < transform.childCount; i++)
         {
-            if(transform.gameObject.GetComponent<Buff>().id == name)
+            if(transform.GetChild(i).gameObject.GetComponent<Buff>().id == name)
             {
                 return true;
             }
