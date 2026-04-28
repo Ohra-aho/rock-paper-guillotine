@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6279085910599654247}
   - component: {fileID: 1415664320520306304}
   - component: {fileID: -4890876596102729932}
+  - component: {fileID: 2576201141290962257}
   m_Layer: 5
   m_Name: holytext
   m_TagString: Untagged
@@ -141,7 +142,19 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1415664320520306304}
+        m_TargetAssemblyTypeName: "Pyh\xE4teksti, Assembly-CSharp"
+        m_MethodName: EnemyEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   lose:
     m_PersistentCalls:
       m_Calls: []
@@ -206,6 +219,7 @@ MonoBehaviour:
   damage_bonus: 0
   armor_bonus: 0
   effect_damage_bonus: 0
+  toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
   always_on: 1
@@ -247,7 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f533a8f85beee47ae1cde74dbc4546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
 --- !u!114 &-4890876596102729932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,3 +275,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 1
   armor_piercing: 0
+--- !u!114 &2576201141290962257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 1944698211339908181, guid: bf44e920d974a204589742366b914b99, type: 3}
+  - {fileID: 1944698211339908181, guid: 5b41f0edba9bf1e4e8fd39f7636b42ae, type: 3}
+  - {fileID: 1944698211339908181, guid: 9a70c67ed37840641afc7537eb6cbf38, type: 3}

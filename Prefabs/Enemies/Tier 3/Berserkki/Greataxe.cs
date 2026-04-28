@@ -6,10 +6,7 @@ public class Greataxe : MonoBehaviour
 {
     public void Tenacity()
     {
-        int damage = GetComponent<DamageInteractions>().CalculateTakenDamage();
-        if(damage <= 0)
-        {
-            GetComponent<EffectDamage>().DealDamage(null);
-        }
+        GetComponent<EffectDamage>().amount = GetComponent<Weapon>().GiveEffectiveDamage() / 2;
+        GetComponent<EffectDamage>().DealDamage(null);
     }
 }

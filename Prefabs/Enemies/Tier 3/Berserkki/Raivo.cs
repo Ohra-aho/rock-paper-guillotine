@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Raivo : MonoBehaviour
 {
-    public int damage_bonus;
-    private bool applied = false;
-    private int time;
     private void Awake()
     {
         //GetComponent<BuffController>().special_removal = Remove;
@@ -17,33 +14,30 @@ public class Raivo : MonoBehaviour
 
     public void Empower(Weapon weapon)
     {
-        if(time < 2)
+       
+        GameObject true_weapon_holder = GameObject.FindGameObjectWithTag("RIE");
+        for (int i = 0; i < true_weapon_holder.transform.childCount; i++)
         {
-            if(time <= 0)
-            {
-                GameObject true_weapon_holder = GameObject.FindGameObjectWithTag("RIE");
-                for (int i = 0; i < true_weapon_holder.transform.childCount; i++)
-                {
-                    true_weapon_holder.transform.GetChild(i).GetComponent<Weapon>().damage += damage_bonus;
-                }
-            }
-            time = 2;
+            Buff new_buff = Instantiate(GetComponent<BuffController>().buff, true_weapon_holder.transform.GetChild(i)).GetComponent<Buff>();
+            new_buff.temporary = true;
+            new_buff.timer = 2;
+            new_buff.damage_buff = 2;
+            new_buff.id = GetComponent<Weapon>().name + "_2";
+            new_buff.AddBuff();
         }
     }
 
-    public void PowerDown()
+    public void Debuff()
     {
-        if(time > 0)
+        GameObject true_weapon_holder = GameObject.FindGameObjectWithTag("RIE");
+        for (int i = 0; i < true_weapon_holder.transform.childCount; i++)
         {
-            time--;
-            if(time <= 0)
-            {
-                GameObject true_weapon_holder = GameObject.FindGameObjectWithTag("RIE");
-                for (int i = 0; i < true_weapon_holder.transform.childCount; i++)
-                {
-                    true_weapon_holder.transform.GetChild(i).GetComponent<Weapon>().damage -= damage_bonus;
-                }
-            }
+            Buff new_buff = Instantiate(GetComponent<BuffController>().buff, true_weapon_holder.transform.GetChild(i)).GetComponent<Buff>();
+            new_buff.temporary = true;
+            new_buff.timer = 2;
+            new_buff.damage_buff = -1;
+            new_buff.id = GetComponent<Weapon>().name + "_3";
+            new_buff.AddBuff();
         }
     }
 }

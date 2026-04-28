@@ -288,6 +288,18 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    public bool FindCertainBuff(string name)
+    {
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            if(transform.gameObject.GetComponent<Buff>().id == name)
+            {
+                return true;
+            }
+        }
+        return false;
+    } 
+
     //Could be useful
     public void ResetStats()
     {

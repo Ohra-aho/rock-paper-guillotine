@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 7225767104249451499}
   - component: {fileID: -3470480356065589785}
   - component: {fileID: 8148992089103089434}
   - component: {fileID: 1934008209786845313}
+  - component: {fileID: 4042581367318644536}
   m_Layer: 5
   m_Name: Rituaali
   m_TagString: Untagged
@@ -93,10 +93,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 2
   damage: 1
@@ -107,6 +110,9 @@ MonoBehaviour:
   description: If deals damage, heals 2 damage.
   sprite: {fileID: 21300000, guid: f88de4c37ff92ef40a020304d6dad7db, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -139,9 +145,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7225767104249451499}
-        m_TargetAssemblyTypeName: Hanpaat, Assembly-CSharp
-        m_MethodName: DrainLife
+      - m_Target: {fileID: 4042581367318644536}
+        m_TargetAssemblyTypeName: Healing, Assembly-CSharp
+        m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -151,6 +157,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -164,6 +173,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   heal:
+    m_PersistentCalls:
+      m_Calls: []
+  gain_points:
     m_PersistentCalls:
       m_Calls: []
   equip:
@@ -181,6 +193,15 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -190,20 +211,8 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks: []
+  executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &7225767104249451499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 779c6c1fb836483468695ec026ced291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heal: 2
 --- !u!114 &-3470480356065589785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,3 +251,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 1
   armor_piercing: 0
+--- !u!114 &4042581367318644536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabled: 0
+  amount: 2

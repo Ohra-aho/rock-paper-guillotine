@@ -6,7 +6,7 @@ public class Doll : MonoBehaviour
 {
     public void Retaliate()
     {
-        if(GetComponent<DamageInteractions>().CalculateTakenDamage() > 0)
+        if(GameObject.Find("Table").GetComponent<TableController>().enemy_damage > 0)
         {
             GetComponent<EffectDamage>().DealDamage(null);
         }

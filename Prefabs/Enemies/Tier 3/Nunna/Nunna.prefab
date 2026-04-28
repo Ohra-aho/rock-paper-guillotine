@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6943869333779220170}
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
-  - component: {fileID: -5607654906472149355}
   - component: {fileID: 3076687715594733710}
   m_Layer: 5
   m_Name: Nunna
@@ -64,36 +63,30 @@ MonoBehaviour:
   maxHealth: 7
   weapons:
   - {fileID: 1944698211339908181, guid: 28ab671382fb7284ebb5e81e3a056105, type: 3}
-  - {fileID: 1944698211339908181, guid: 79850675526f2004785715de57916c35, type: 3}
+  - {fileID: 1944698211339908181, guid: 626c760899d122b40b776a1ea6fae0a0, type: 3}
   - {fileID: 1944698211339908181, guid: af7a8fd6185211b468f1da3679a73f79, type: 3}
   plan_1: 0200000001000000
   plan_2: 020000000100000002000000
+  weapon_pairs:
+  - pair: 0000000001000000
+  - pair: 0100000002000000
+  - pair: 01000000
+  - pair: 0000000002000000
+  - pair: 00000000
+  off_balance_choises: 00000000
+  advanced: 0
+  victory_barks: []
+  executioner_comment: They say stars are angels. Just wating for the judgement day.
+    I hope it's true.
+  victory_message: {fileID: 0}
   previous_weapon: {fileID: 0}
   weapon_streak: 0
   off_balance: 0
   nearDeath: 0
   off_balance_pattern_done: 0
-  off_balance_choises: 00000000
-  advanced: 1
-  victory_barks: []
-  executioner_comment: They say stars are angels. Just wating for the judgement day.
-    I hope it's true.
-  victory_message: {fileID: 0}
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0
---- !u!114 &-5607654906472149355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42410e3c635c8d046a8531e26ab7dbfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &3076687715594733710
 SpriteRenderer:
   m_ObjectHideFlags: 0

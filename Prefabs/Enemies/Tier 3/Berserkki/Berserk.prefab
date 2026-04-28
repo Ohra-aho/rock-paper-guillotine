@@ -60,17 +60,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Berserk
   image: {fileID: 21300000, guid: ef3c989140730f341ad84d74ac68fbf4, type: 3}
-  maxHealth: 8
+  maxHealth: 10
   weapons:
   - {fileID: 1944698211339908181, guid: f166918cbb12a284e866e41031df0da6, type: 3}
   - {fileID: 1944698211339908181, guid: b747fb4c5fe2bed42b7b297d83f83029, type: 3}
   - {fileID: 1944698211339908181, guid: 3c8a40efd724bd6429becd7c303ba12b, type: 3}
   plan_1: 0200000000000000000000000000000001000000000000000100000001000000
   plan_2: 000000000200000001000000010000000000000000000000000000000100000001000000
-  off_balance: 0
-  nearDeath: 0
+  weapon_pairs:
+  - pair: 0000000001000000
+  - pair: 00000000
+  - pair: 0000000002000000
+  - pair: 02000000
   off_balance_choises: 01000000
   advanced: 0
+  victory_barks: []
+  executioner_comment: 
+  victory_message: {fileID: 0}
+  previous_weapon: {fileID: 0}
+  weapon_streak: 0
+  off_balance: 0
+  nearDeath: 0
+  off_balance_pattern_done: 0
+  commented: 0
+  HB: {fileID: 0}
+  off_balance_triggered: 0
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0

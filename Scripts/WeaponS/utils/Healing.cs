@@ -28,14 +28,11 @@ public class Healing : MonoBehaviour
             }
             else
             {
-                Debug.Log("WTF");
                 HealthBar HB = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
                 if (!HB.CheckIfDead())
                 {
                     valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
                     GameObject.Find("Table").GetComponent<TableController>().enemy_healing += amount;
-                    Debug.Log(GameObject.Find("Table").GetComponent<TableController>().enemy_healing);
-
                     if (valid_heal) GetComponent<Weapon>().heal.Invoke();
                 }
             }
@@ -49,7 +46,6 @@ public class Healing : MonoBehaviour
         HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
 
         valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
-        //HB.HealDamage(amount);
         GameObject.Find("Table").GetComponent<TableController>().player_healing += amount;
 
         if (valid_heal)
@@ -70,7 +66,6 @@ public class Healing : MonoBehaviour
                 if (!HB.CheckIfDead())
                 {
                     valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
-                    //HB.HealDamage(amount);
                     GameObject.Find("Table").GetComponent<TableController>().player_healing += amount;
 
                     if (valid_heal)
@@ -86,9 +81,36 @@ public class Healing : MonoBehaviour
                 if (!HB.CheckIfDead())
                 {
                     valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
-                    //HB.HealDamage(amount);
                     GameObject.Find("Table").GetComponent<TableController>().enemy_healing += amount;
 
+                    if (valid_heal) GetComponent<Weapon>().heal.Invoke();
+                }
+            }
+        }
+    }
+
+    public void HealEnemy()
+    {
+        bool valid_heal = false;
+        if (amount > 0 && !disabled)
+        {
+            if (GetComponent<Weapon>().player)
+            {
+                HealthBar HB = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
+                if (!HB.CheckIfDead())
+                {
+                    valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
+                    GameObject.Find("Table").GetComponent<TableController>().enemy_healing += amount;
+                    if (valid_heal) GetComponent<Weapon>().heal.Invoke();
+                }
+            }
+            else
+            {
+                HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
+                if (!HB.CheckIfDead())
+                {
+                    valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
+                    GameObject.Find("Table").GetComponent<TableController>().player_healing += amount;
                     if (valid_heal) GetComponent<Weapon>().heal.Invoke();
                 }
             }

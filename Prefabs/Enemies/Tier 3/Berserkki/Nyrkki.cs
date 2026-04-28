@@ -6,6 +6,7 @@ public class Nyrkki : MonoBehaviour
 {
     public void SelfDamage()
     {
-        GetComponent<Weapon>().TakeDamage(1);
+        GetComponent<EffectDamage>().DealDamage(null);
+        GetComponent<EffectDamage>().SelfDamage(null);
     }
 }
