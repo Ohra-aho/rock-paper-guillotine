@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -107,7 +108,7 @@ MonoBehaviour:
   real_armor: 0
   name: Dynamo
   description: Whenever you deal effect damage, gains 1 point. (Continuous) After
-    use, uses all points and heals 1 for each 3 points used.
+    use, uses all points and heals 1 for each 2 points used.
   sprite: {fileID: 21300000, guid: 52d42ef59ae3d3d4db182afc22491d5f, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -163,6 +164,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -179,6 +183,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0
@@ -257,6 +267,7 @@ MonoBehaviour:
   damage_bonus: 0
   armor_bonus: 0
   effect_damage_bonus: 0
+  toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
   always_on: 1
@@ -273,6 +284,7 @@ MonoBehaviour:
   win: 0
   lose: 0
   heal: 0
+  gain_points: 0
   equip: 0
   unEquip: 0
   constant: 0

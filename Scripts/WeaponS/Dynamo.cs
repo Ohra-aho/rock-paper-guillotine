@@ -13,10 +13,13 @@ public class Dynamo : MonoBehaviour
 
     public void UseStacks()
     {
-        int heal = GetComponent<Stacking>().stacks / 3;
-        GetComponent<Healing>().amount = heal;
-        GetComponent<Healing>().Heal();
-        GetComponent<Stacking>().stacks = GetComponent<Stacking>().stacks % 3;
+        if(GetComponent<Stacking>().stacks >= 2)
+        {
+            int heal = GetComponent<Stacking>().stacks / 2;
+            GetComponent<Healing>().amount = heal;
+            GetComponent<Healing>().Heal();
+            GetComponent<Stacking>().stacks = GetComponent<Stacking>().stacks % 2;
+        }
     }
 
     public void GainPoint(Weapon w)

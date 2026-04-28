@@ -18,7 +18,7 @@ public class Chell : MonoBehaviour
         {
             Buff new_buff = Instantiate(GetComponent<BuffController>().buff, RIE.transform.GetChild(i)).GetComponent<Buff>();
             new_buff.id = GetComponent<Weapon>().name + "_2";
-            new_buff.armor_buff = 1;
+            new_buff.armor_buff = GetComponent<Beetle>().armor_bonus;
             new_buff.temporary = true;
             new_buff.timer = 2;
             new_buff.AddBuff();

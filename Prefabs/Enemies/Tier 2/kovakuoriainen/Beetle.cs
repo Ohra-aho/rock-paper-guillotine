@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Beetle : MonoBehaviour
 {
+    [HideInInspector] public int armor_bonus = 1;
     public void IncreaseArmor()
     {
         GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
 
         for(int i = 0; i < RIE.transform.childCount; i++)
         {
-            RIE.transform.GetChild(i).GetComponent<Weapon>().armor++;
+            RIE.transform.GetChild(i).GetComponent<Weapon>().armor += armor_bonus;
         }
     }
 
@@ -40,21 +41,31 @@ public class Beetle : MonoBehaviour
         }
     }
 
+    public void SetArmorToPermanent()
+    {
+        GetComponent<Weapon>().armor = GetComponent<Weapon>().GiveEffectiveArmor();
+    }
+
     public void DropArmor()
     {
         GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
 
         for (int i = 0; i < RIE.transform.childCount; i++)
         {
-            RIE.transform.GetChild(i).GetComponent<Weapon>().armor = 0;
+            RIE.transform.GetChild(i).GetComponent<Weapon>().armor -= armor_bonus;
         }
+    }
+
+    public void IncreaseArmorBonus()
+    {
+        armor_bonus++;
     }
 
     public void NoDamageTaken()
     {
-        if(GetComponent<DamageInteractions>().CalculateTakenDamage() == 0)
+        if(GameObject.Find("Table").GetComponent<TableController>().enemy_damage == 0)
         {
-            GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
+            GetComponent<EffectDamage>().DealDamage(null);
         }
     }
 }

@@ -25,12 +25,17 @@ public class TypeEffects : MonoBehaviour
 
     public void ActivateScissors()
     {
-        GetComponent<EffectDamage>().DealSetDamage(1);
+        int bonus = 0;
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            bonus += transform.GetChild(i).GetComponent<Buff>().effect_damage_buff;
+        }
+        GetComponent<EffectDamage>().DealSetDamage(1+bonus);
     }
 
     public void ActivateRock()
     {
-        GetComponent<Healing>().HealSetAmount(2);
+        GetComponent<Healing>().HealSetAmount(1);
     }
 
     public void ActivatePaper()

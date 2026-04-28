@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -103,7 +104,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Wings
-  description: +1 damage equal to armor on all weapons.
+  description: +1 damage equal to armor on all weapons. If draws, own armor becomes
+    permanent.
   sprite: {fileID: 21300000, guid: 7526365df6c3b0c4681791132d032e0f, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -143,7 +145,19 @@ MonoBehaviour:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 395466286827957940}
+        m_TargetAssemblyTypeName: Beetle, Assembly-CSharp
+        m_MethodName: SetArmorToPermanent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   heal:
     m_PersistentCalls:
       m_Calls: []
