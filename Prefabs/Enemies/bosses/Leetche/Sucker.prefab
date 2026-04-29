@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 2738651632487618836}
-  - component: {fileID: -4893588959877682491}
+  - component: {fileID: 5113841899327357899}
+  - component: {fileID: 4471331243038928352}
+  - component: {fileID: 6529267319005985599}
   m_Layer: 5
-  m_Name: bait
+  m_Name: Sucker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,9 +105,9 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Bait
-  description: +1 damage to weapon used against this. If wins, you get a price.
-  sprite: {fileID: 21300000, guid: 4ba20bdcf553a83459f7a74517bce6d0, type: 3}
+  name: Sucker
+  description: If draws, -1 HP. If loses, you get 1 lost HP back.
+  sprite: {fileID: 21300000, guid: 7c3ec1e3a432ee347b2120ad5d591664, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -121,19 +122,7 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2738651632487618836}
-        m_TargetAssemblyTypeName: Bait, Assembly-CSharp
-        m_MethodName: BuffOpposingWeapon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -151,10 +140,13 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -4893588959877682491}
-        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
-        m_MethodName: SpawnRandomWeapon
+      - m_Target: {fileID: 6529267319005985599}
+        m_TargetAssemblyTypeName: Leetche, Assembly-CSharp
+        m_MethodName: SuckerLoss
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -164,12 +156,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  lose:
-    m_PersistentCalls:
-      m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6529267319005985599}
+        m_TargetAssemblyTypeName: Leetche, Assembly-CSharp
+        m_MethodName: SuckerDraw
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -211,7 +212,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &2738651632487618836
+--- !u!114 &5113841899327357899
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,11 +221,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1445f78ae0c13f42af2f8f7cbdddaea, type: 3}
+  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
---- !u!114 &-4893588959877682491
+  stacks: 0
+  stack_limit: 0
+  LoadFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4471331243038928352
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,9 +244,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b84c21e8388ac64da2a85039d59a1b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 1944698211339908181, guid: 21ffd87d2ce581d439e7b38335d6659e, type: 3}
-  - {fileID: 1944698211339908181, guid: bb0177d58d0e7b6498827e7ef37db465, type: 3}
+--- !u!114 &6529267319005985599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8622a594ffc840b478f1da939ba95f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 2738651632487618836}
-  - component: {fileID: -4893588959877682491}
+  - component: {fileID: -5292889363836287203}
+  - component: {fileID: 4359384120706584436}
   m_Layer: 5
-  m_Name: bait
+  m_Name: Corruption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,14 +99,15 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   dead: 0
-  type: 0
-  damage: 2
+  type: 1
+  damage: 3
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Bait
-  description: +1 damage to weapon used against this. If wins, you get a price.
-  sprite: {fileID: 21300000, guid: 4ba20bdcf553a83459f7a74517bce6d0, type: 3}
+  name: Corruption
+  description: If draws, weapon used against this becomes "useless" until used again. 
+    If this wins, Annahilation is "unbeatable" until used again.
+  sprite: {fileID: 21300000, guid: cd6a29d1abc27ea4b823f4ec6fefda1e, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -121,19 +122,7 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2738651632487618836}
-        m_TargetAssemblyTypeName: Bait, Assembly-CSharp
-        m_MethodName: BuffOpposingWeapon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -152,9 +141,9 @@ MonoBehaviour:
   win:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -4893588959877682491}
-        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
-        m_MethodName: SpawnRandomWeapon
+      - m_Target: {fileID: -5292889363836287203}
+        m_TargetAssemblyTypeName: Damnation, Assembly-CSharp
+        m_MethodName: AddBuffs
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -169,7 +158,19 @@ MonoBehaviour:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -5292889363836287203}
+        m_TargetAssemblyTypeName: Damnation, Assembly-CSharp
+        m_MethodName: DebuffOpposingWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -211,7 +212,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &2738651632487618836
+--- !u!114 &-5292889363836287203
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,22 +221,53 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1445f78ae0c13f42af2f8f7cbdddaea, type: 3}
+  m_Script: {fileID: 11500000, guid: c62de1fc15b4b394c82fdbc3cd05e86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4359384120706584436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
---- !u!114 &-4893588959877682491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 1944698211339908181, guid: 21ffd87d2ce581d439e7b38335d6659e, type: 3}
-  - {fileID: 1944698211339908181, guid: bb0177d58d0e7b6498827e7ef37db465, type: 3}
+  damage_bonus: 0
+  armor_bonus: 0
+  effect_damage_bonus: 0
+  toughness_buff: 0
+  set_a_to_zero: 0
+  set_d_to_zero: 0
+  always_on: 1
+  choisePhase: 0
+  resultPhase: 0
+  endPhase: 0
+  victory: 0
+  special_apply: 0
+  takeDamage: 0
+  takeNoDamage: 0
+  dealDamage: 0
+  deal_effect_damage: 0
+  draw: 0
+  win: 0
+  lose: 0
+  heal: 0
+  gain_points: 0
+  equip: 0
+  unEquip: 0
+  constant: 0
+  onDestruction: 0
+  awake: 0
+  temporary: 0
+  timer: 0
+  penetrating: 0
+  draw_winner: 0
+  health_buff: 0
+  until_used: 0
+  destructive: 0
+  heal_disabler: 0

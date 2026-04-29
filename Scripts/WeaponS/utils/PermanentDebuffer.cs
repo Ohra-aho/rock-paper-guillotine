@@ -59,4 +59,13 @@ public class PermanentDebuffer : MonoBehaviour
         }
         new_buff.AddBuff();
     }
+
+    public void MakeOpposingWeaponUseless()
+    {
+        Weapon opponent = GetComponent<Weapon>().opponent;
+        Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+        new_buff.id = GetComponent<Weapon>().name + "_debuff";
+        new_buff.type_change = MainController.Choise.hyödytön;
+        new_buff.AddBuff();
+    }
 }

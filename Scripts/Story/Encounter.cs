@@ -37,7 +37,7 @@ public class Encounter : MonoBehaviour
                 enemies.Add(possible_enemies[0]);
             }
         }
-        AddSurprice();
+        //AddSurprice();
     }
 
     public void Victory()

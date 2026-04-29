@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6943869333779220170}
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
-  - component: {fileID: 9126511307194648938}
+  - component: {fileID: 3076687715594733710}
   m_Layer: 5
-  m_Name: demon
+  m_Name: Leetche
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,23 +58,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Demon
-  image: {fileID: 21300000, guid: 1d7abb562b2023c4d8080e9527c45cbe, type: 3}
-  maxHealth: 6
+  name: Hydra
+  image: {fileID: 21300000, guid: 3f555572e84f62d48a8135892e4f432e, type: 3}
+  maxHealth: 10
   weapons:
-  - {fileID: 1944698211339908181, guid: 192d8b8462f101849bc1af7b7a593e99, type: 3}
-  - {fileID: 1944698211339908181, guid: 25450cb84c293824abca7cf95962f4d6, type: 3}
-  - {fileID: 1944698211339908181, guid: aaa5e1a493ee97443831f52e564a65f5, type: 3}
-  - {fileID: 1944698211339908181, guid: 08ccdac1db428e443a4f6c86c6025b96, type: 3}
-  plan_1: 00000000020000000100000000000000
-  plan_2: 01000000020000000100000000000000
+  - {fileID: 1944698211339908181, guid: 221a8fe5300501c40b9feaab2b5f8788, type: 3}
+  - {fileID: 1944698211339908181, guid: ee51035f19e90424b896df87265e0bed, type: 3}
+  - {fileID: 1944698211339908181, guid: d26f82a625e78df4db69bc0a11d90eb6, type: 3}
+  - {fileID: 1944698211339908181, guid: 6771f722d2f63eb4cb9b73b67e27f453, type: 3}
+  - {fileID: 1944698211339908181, guid: a4722e533439a3d45ab0ca78478249e0, type: 3}
+  plan_1: 01000000020000000200000002000000000000000100000002000000
+  plan_2: 010000000200000002000000010000000000000002000000
   weapon_pairs:
-  - pair: 03000000
-  - pair: 03000000
-  off_balance_choises: 02000000
+  - pair: 0000000001000000
+  - pair: 0200000003000000
+  - pair: 0300000000000000
+  - pair: 0100000004000000
+  - pair: 0400000002000000
+  off_balance_choises: 
   advanced: 0
   victory_barks: []
-  executioner_comment: Fan the flames my friend.
+  executioner_comment: Placeholder
   victory_message: {fileID: 0}
   previous_weapon: {fileID: 0}
   weapon_streak: 0
@@ -84,7 +88,7 @@ MonoBehaviour:
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0
---- !u!212 &9126511307194648938
+--- !u!212 &3076687715594733710
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -180,6 +180,9 @@ public class Weapon : MonoBehaviour
             if(player)
             {
                 GameObject.Find("Table").GetComponent<TableController>().enemy_damage += amount;
+            } else
+            {
+                GameObject.Find("Table").GetComponent<TableController>().player_damage += amount;
             }
         }
     }
@@ -193,7 +196,7 @@ public class Weapon : MonoBehaviour
             realDamage = amount - GiveEffectiveArmor();
             if (realDamage < 0) realDamage = 0;
         } 
-        else if(GetComponent<EffectDamage>())
+        if(GetComponent<EffectDamage>())
         {
             if(!GetComponent<EffectDamage>().armor_piercing && !GetComponent<Weapon>().penetrating)
             {
@@ -233,10 +236,6 @@ public class Weapon : MonoBehaviour
                 takeDamage.Invoke();
                 GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().damage_taken = true;
             }
-        }
-        else
-        {
-            takeNoDamage.Invoke();
         }
     }
 
@@ -298,7 +297,19 @@ public class Weapon : MonoBehaviour
             }
         }
         return false;
-    } 
+    }
+    
+    public GameObject? GetCertainBuff(string name)
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).gameObject.GetComponent<Buff>().id == name)
+            {
+                return transform.GetChild(i).gameObject;
+            }
+        }
+        return null;
+    }
 
     //Could be useful
     public void ResetStats()

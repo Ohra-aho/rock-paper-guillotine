@@ -98,7 +98,12 @@ public class TableController : MonoBehaviour
                 player.GetComponent<PlayerContoller>().HB.TakeDamage(player_damage);
             }
             player_damage = 0;
+        } else
+        {
+            MC.playerChoise.takeNoDamage.Invoke();
         }
+
+
         if(enemy_damage > 0)
         {
             if(!enemy.GetComponent<EnemyController>().HB.dead)
@@ -106,6 +111,9 @@ public class TableController : MonoBehaviour
                 enemy.GetComponent<EnemyController>().HB.TakeDamage(enemy_damage);
             }
             enemy_damage = 0;
+        } else
+        {
+            MC.enemyChoise.takeNoDamage.Invoke();
         }
     }
 

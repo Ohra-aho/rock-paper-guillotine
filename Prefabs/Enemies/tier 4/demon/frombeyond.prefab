@@ -12,10 +12,12 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 2738651632487618836}
-  - component: {fileID: -4893588959877682491}
+  - component: {fileID: -7311424476482465679}
+  - component: {fileID: -6332813233045949048}
+  - component: {fileID: 329802906985235259}
+  - component: {fileID: -3583622201855565660}
   m_Layer: 5
-  m_Name: bait
+  m_Name: frombeyond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,14 +101,15 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   dead: 0
-  type: 0
-  damage: 2
-  armor: 0
+  type: 4
+  damage: 0
+  armor: 2
   real_damage: 0
   real_armor: 0
-  name: Bait
-  description: +1 damage to weapon used against this. If wins, you get a price.
-  sprite: {fileID: 21300000, guid: 4ba20bdcf553a83459f7a74517bce6d0, type: 3}
+  name: From beyond
+  description: Heal 1 damage after use. Whenever enemy takes damage from the player,
+    deal as much damage back. Deals 1 tamage to self after each round. (Continuous)
+  sprite: {fileID: 21300000, guid: cd9f6e456e032b54a82cd6b2de17dd7e, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -122,9 +125,9 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2738651632487618836}
-        m_TargetAssemblyTypeName: Bait, Assembly-CSharp
-        m_MethodName: BuffOpposingWeapon
+      - m_Target: {fileID: -6332813233045949048}
+        m_TargetAssemblyTypeName: Healing, Assembly-CSharp
+        m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -151,19 +154,7 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -4893588959877682491}
-        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
-        m_MethodName: SpawnRandomWeapon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   lose:
     m_PersistentCalls:
       m_Calls: []
@@ -211,7 +202,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &2738651632487618836
+--- !u!114 &-7311424476482465679
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,11 +211,71 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1445f78ae0c13f42af2f8f7cbdddaea, type: 3}
+  m_Script: {fileID: 11500000, guid: 0070aeb23cb72a14e80d175f822e0a9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6332813233045949048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabled: 0
+  amount: 1
+--- !u!114 &329802906985235259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
---- !u!114 &-4893588959877682491
+  damage_bonus: 0
+  armor_bonus: 0
+  effect_damage_bonus: 0
+  toughness_buff: 0
+  set_a_to_zero: 0
+  set_d_to_zero: 0
+  always_on: 1
+  choisePhase: 0
+  resultPhase: 0
+  endPhase: 0
+  victory: 0
+  special_apply: 0
+  takeDamage: 0
+  takeNoDamage: 0
+  dealDamage: 0
+  deal_effect_damage: 0
+  draw: 0
+  win: 0
+  lose: 0
+  heal: 0
+  gain_points: 0
+  equip: 0
+  unEquip: 0
+  constant: 0
+  onDestruction: 0
+  awake: 0
+  temporary: 0
+  timer: 0
+  penetrating: 0
+  draw_winner: 0
+  health_buff: 0
+  until_used: 0
+  destructive: 0
+  heal_disabler: 0
+--- !u!114 &-3583622201855565660
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,9 +284,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 1944698211339908181, guid: 21ffd87d2ce581d439e7b38335d6659e, type: 3}
-  - {fileID: 1944698211339908181, guid: bb0177d58d0e7b6498827e7ef37db465, type: 3}
+  amount: 0
+  armor_piercing: 0

@@ -114,31 +114,33 @@ public class StartButton : MonoBehaviour
 
     public void Activate()
     {
+        if(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.GiveCurrentHealth() > 0)
+        {
+            MC.victory = false;
+            GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().defeat = false;
+            GameObject ec = GameObject.Find("EnemyHolder");
+            ec.GetComponent<EnemyController>().victory = false;
+            //ec.GetComponent<EnemyController>().HandleEnemy();
 
-        MC.victory = false;
-        GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().defeat = false;
-        GameObject ec = GameObject.Find("EnemyHolder");
-        ec.GetComponent<EnemyController>().victory = false;
-        //ec.GetComponent<EnemyController>().HandleEnemy();
+            GetComponent<SpriteRenderer>().sprite = active;
+            machine.GetComponent<Test>().PlayAnimation("CloseMachine");
+            isActive = true;
+            GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarUp();
+            machine.GetComponent<Machine>().round_started = true;
 
-        GetComponent<SpriteRenderer>().sprite = active;
-        machine.GetComponent<Test>().PlayAnimation("CloseMachine");
-        isActive = true;
-        GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarUp();
-        machine.GetComponent<Machine>().round_started = true;
+            //Achievement aids
+            SetHPForSlow();
+            PWH.AdvanceExperimentor();
+            MC.GetComponent<RLController>().CheckForExperimentor();
 
-        //Achievement aids
-        SetHPForSlow();
-        PWH.AdvanceExperimentor();
-        MC.GetComponent<RLController>().CheckForExperimentor();
+            DisableAchievements();
+            MC.GetComponent<RLController>().ActivateChosen();
+            DisplayEmptyGearBark();
 
-        DisableAchievements();
-        MC.GetComponent<RLController>().ActivateChosen();
-        DisplayEmptyGearBark();
-
-        //LoadoutBarks
-        GiantScissorsFull();
-        BackToBasics();
+            //LoadoutBarks
+            GiantScissorsFull();
+            BackToBasics();
+        } 
     }
 
     public void Deactivate()
@@ -190,7 +192,9 @@ public class StartButton : MonoBehaviour
         if (dead)
         {
             MC.SetNewState(MainController.State.dead);
-        } else
+            GameObject.Find("The Q").GetComponent<CameraNQuilliotine>().PlayDeathAnimation();
+        }
+        else
         {
             Activate();
         }

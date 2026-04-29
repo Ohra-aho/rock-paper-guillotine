@@ -12,7 +12,7 @@ public class Buff : MonoBehaviour
     public int armor_buff;
     public int effect_damage_buff;
     public int toughness_buff;
-    public bool used = false;
+    public bool used = true;
 
     public BuffController.Special special;
     public BuffController.Special special_removal;
@@ -177,8 +177,14 @@ public class Buff : MonoBehaviour
         if(until_used)
         {
             transform.parent.GetComponent<Weapon>().endPhase.AddListener(() => {
-                RemoveBuff();
-                Destroy(this.gameObject);
+                if(used)
+                {
+                    RemoveBuff();
+                    Destroy(this.gameObject);
+                } else
+                {
+                    used = true;
+                }
             });
         }
     }
@@ -269,8 +275,22 @@ public class Buff : MonoBehaviour
         if (heal_disabler && !healing_disabled)
             if (transform.parent.GetComponent<Healing>())
                 transform.parent.GetComponent<Healing>().disabled = false;
-            
-        
+        if (until_used)
+        {
+            transform.parent.GetComponent<Weapon>().endPhase.RemoveListener(() => {
+                if (used)
+                {
+                    RemoveBuff();
+                    Destroy(this.gameObject);
+                }
+                else
+                {
+                    used = true;
+                }
+            });
+        }
+
+
 
         if (special_removal != null) special_removal(weapon);
     }

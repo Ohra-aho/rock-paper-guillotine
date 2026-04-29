@@ -59,6 +59,8 @@ public class BuffController : MonoBehaviour
 
     [HideInInspector] public int health_buff;
 
+    [HideInInspector] public bool until_used;
+
     //Debuffs
     [HideInInspector] public bool destructive;
     [HideInInspector] public bool heal_disabler;
@@ -168,6 +170,7 @@ public class BuffController : MonoBehaviour
             new_buff.deal_effect_damage = deal_effect_damage;
             new_buff.heal_disabler = heal_disabler;
             new_buff.gain_points = gain_points;
+            new_buff.until_used = until_used;
             if (special != null) new_buff.GetComponent<Buff>().special = special;
             if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
             new_buff.GetComponent<Buff>().AddBuff();
