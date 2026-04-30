@@ -12,11 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -915748003629455221}
-  - component: {fileID: 728901231638690517}
-  - component: {fileID: 6799964917637838455}
+  - component: {fileID: 1544605976336470441}
   m_Layer: 5
-  m_Name: d_kivi
+  m_Name: Trample
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,14 +98,14 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   dead: 0
-  type: 0
-  damage: 1
-  armor: 1
+  type: 3
+  damage: 0
+  armor: 0
   real_damage: 0
   real_armor: 0
-  name: Kivi
-  description: 
-  sprite: {fileID: 21300000, guid: 770dc4e948498fd46839dbcb2f57440b, type: 3}
+  name: Trample
+  description: +1 damage for every third health remaining.
+  sprite: {fileID: 21300000, guid: aabdc3433be264348b8acd6b984db551, type: 3}
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -122,19 +120,7 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 728901231638690517}
-        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
-        m_MethodName: DealDamage
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 3098424137161797902}
-          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -173,7 +159,19 @@ MonoBehaviour:
       m_Calls: []
   constant:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1544605976336470441}
+        m_TargetAssemblyTypeName: GreatSword, Assembly-CSharp
+        m_MethodName: EnemyEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
@@ -198,9 +196,9 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks: []
-  executioner_comment: 
+  executioner_comment: So let's chip away.
   damage_soft_cap: 7
---- !u!114 &-915748003629455221
+--- !u!114 &1544605976336470441
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,37 +207,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
+  m_Script: {fileID: 11500000, guid: 26dcaebecec2cde45bb362de5566841b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyed: 0
-  disabled: 0
-  toughness: 0
---- !u!114 &728901231638690517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 1
-  armor_piercing: 0
---- !u!114 &6799964917637838455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disabled: 0
-  amount: 1

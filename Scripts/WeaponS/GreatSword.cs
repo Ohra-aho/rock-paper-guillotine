@@ -14,4 +14,13 @@ public class GreatSword : MonoBehaviour
         GetComponent<Weapon>().damage += damage_buff;
 
     }
+
+    public void EnemyEffect()
+    {
+        GetComponent<Weapon>().damage -= damage_buff;
+        damage_buff = 0;
+        HealthBar HB = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
+        damage_buff = HB.GiveCurrentHealth() / 3;
+        GetComponent<Weapon>().damage += damage_buff;
+    }
 }

@@ -146,7 +146,7 @@ public class Weapon : MonoBehaviour
         int realDamage = 0;
         if(!opponent.penetrating)
         {
-            realDamage = amount - (armor+armor_bonus);
+            realDamage = amount - (armor_bonus);
             if (realDamage < 0) realDamage = 0;
         } else
         {
