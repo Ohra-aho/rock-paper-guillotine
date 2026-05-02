@@ -68,7 +68,7 @@ MonoBehaviour:
   plan_1: 02000000
   plan_2: 02000000
   weapon_pairs:
-  - pair: 00000000
+  - pair: 01000000
   off_balance_choises: 
   advanced: 0
   victory_barks: []

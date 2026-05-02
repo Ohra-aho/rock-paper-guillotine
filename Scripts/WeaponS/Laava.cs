@@ -49,9 +49,31 @@ public class Laava : MonoBehaviour
         {
             GameObject new_buff = Instantiate(buff, weapon);
             new_buff.GetComponent<Buff>().id = GetComponent<Weapon>().name;
-            new_buff.GetComponent<Buff>().damage_buff = weapon.GetComponent<Weapon>().armor;
-            new_buff.GetComponent<Buff>().armor_buff = -weapon.GetComponent<Weapon>().armor;
+            new_buff.GetComponent<Buff>().damage_buff = weapon.GetComponent<Weapon>().GiveEffectiveArmor();
+            new_buff.GetComponent<Buff>().armor_buff = -weapon.GetComponent<Weapon>().GiveEffectiveArmor();
+            //new_buff.GetComponent<Buff>().endPhase = true;
+            /*new_buff.GetComponent<Buff>().special = (Weapon w) =>
+            {
+                new_buff.GetComponent<Buff>().RemoveBuff();
+                new_buff.GetComponent<Buff>().damage_buff = w.GetComponent<Weapon>().GiveEffectiveArmor();
+                new_buff.GetComponent<Buff>().armor_buff = -w.GetComponent<Weapon>().GiveEffectiveArmor();
+            };*/
             new_buff.GetComponent<Buff>().AddBuff();
+        }
+    }
+
+    public void ReapplyBuffs()
+    {
+        GameObject RI = GameObject.FindGameObjectWithTag("RI");
+        for(int i = 0; i < RI.transform.childCount; i++)
+        {
+            GameObject buff = RI.transform.GetChild(i).GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name);
+            if(buff != null)
+            {
+                buff.GetComponent<Buff>().RemoveBuff();
+                buff.GetComponent<Buff>().damage_buff = RI.transform.GetChild(i).GetComponent<Weapon>().GiveEffectiveArmor();
+                buff.GetComponent<Buff>().armor_buff = -RI.transform.GetChild(i).GetComponent<Weapon>().GiveEffectiveArmor();
+            }
         }
     }
 
@@ -63,8 +85,11 @@ public class Laava : MonoBehaviour
             {
                 Transform weapon = real_inventory.transform.GetChild(i);
                 GameObject own_buff = FindOwnBuff(weapon);
-                own_buff.GetComponent<Buff>().RemoveBuff();
-                Destroy(own_buff);
+                if(own_buff != null)
+                {
+                    own_buff.GetComponent<Buff>().RemoveBuff();
+                    Destroy(own_buff);
+                }
             }
         }
     }

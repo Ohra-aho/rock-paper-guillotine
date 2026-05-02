@@ -14,11 +14,9 @@ public class Barricade : MonoBehaviour
 
     public void Retaliate(Weapon w)
     {
-        switch(GameObject.Find("EventSystem").GetComponent<MainController>().won)
+        if(GameObject.Find("EventSystem").GetComponent<MainController>().won == false)
         {
-            case false:
-                GetComponent<EffectDamage>().DealDamage(null);
-                break;
+            GetComponent<EffectDamage>().DealDamage(null);
         }
     }
 }

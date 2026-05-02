@@ -92,20 +92,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
-  type: 2
-  damage: 2
+  type: 3
+  damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Scythe
-  description: +2 damage each time a weapon is destroyed.
+  description: If deals damage, weapon used against this is destroyed. Destroys itself
+    after use.
   sprite: {fileID: 21300000, guid: 0d43db1ff69bff943a7c40c74c9fd6a6, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -126,6 +133,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -139,6 +149,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   heal:
+    m_PersistentCalls:
+      m_Calls: []
+  gain_points:
     m_PersistentCalls:
       m_Calls: []
   equip:
@@ -156,6 +169,15 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 1
   healing: 0
   health: 0
@@ -163,6 +185,10 @@ MonoBehaviour:
   paperi_synergy: 0
   sakset_synergy: 0
   points: 0
+  used_this_game: 0
+  pick_barks: []
+  executioner_comment: 
+  damage_soft_cap: 7
 --- !u!114 &606049651646200694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931178680e3037542bbb06e39303016c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 2
 --- !u!114 &2715692804178075999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +217,7 @@ MonoBehaviour:
   damage_bonus: 0
   armor_bonus: 0
   effect_damage_bonus: 0
+  toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
   always_on: 1
@@ -203,10 +229,12 @@ MonoBehaviour:
   takeDamage: 0
   takeNoDamage: 0
   dealDamage: 0
+  deal_effect_damage: 0
   draw: 0
   win: 0
   lose: 0
   heal: 0
+  gain_points: 0
   equip: 0
   unEquip: 0
   constant: 0
@@ -216,7 +244,10 @@ MonoBehaviour:
   timer: 0
   penetrating: 0
   draw_winner: 0
+  health_buff: 0
+  until_used: 0
   destructive: 0
+  heal_disabler: 0
 --- !u!114 &7527816165882342535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,3 +277,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
+    m_PersistentCalls:
+      m_Calls: []

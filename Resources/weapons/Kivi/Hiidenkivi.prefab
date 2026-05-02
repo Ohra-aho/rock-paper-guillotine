@@ -105,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -117,7 +118,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Glacial erratic
-  description: +3 HP. If wins, destroys itself.
+  description: +2 HP. If wins, destroys itself.
   sprite: {fileID: 21300000, guid: adbdbe63e04c14e4f86c3265b66a6f58, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -185,6 +186,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls:
@@ -227,6 +231,12 @@ MonoBehaviour:
   unequipped:
     m_PersistentCalls:
       m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 1
   healing: 0
   health: 0
@@ -251,9 +261,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used_ones: 0
   destroyed: 0
   disabled: 0
+  toughness: 0
 --- !u!114 &937213836965795298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,5 +276,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b528c9add8506e74192aac87c7001b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 3
+  amount: 2
   in_view: 0

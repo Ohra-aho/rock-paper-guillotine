@@ -126,7 +126,9 @@ public class Weapon : MonoBehaviour
         {
             damage_bonus += transform.GetChild(i).GetComponent<Buff>().damage_buff;
         }
-        return damage + damage_bonus;
+        int effective_damage = damage + damage_bonus;
+        if(effective_damage < 0) effective_damage = 0;
+        return effective_damage;
     }
 
     public int GiveEffectiveArmor()
@@ -136,7 +138,9 @@ public class Weapon : MonoBehaviour
         {
             armor_bonus += transform.GetChild(i).GetComponent<Buff>().armor_buff;
         }
-        return armor + armor_bonus;
+        int effective_armor = armor + armor_bonus;
+        if (effective_armor < 0) effective_armor = 0;
+        return effective_armor;
     }
 
     public void TakeDamage(int amount)
