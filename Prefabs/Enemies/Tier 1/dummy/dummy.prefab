@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Zombie
   image: {fileID: 21300000, guid: 779baba707ba4d44999eeb2c24a16f2a, type: 3}
-  maxHealth: 4
+  maxHealth: 1
   weapons:
   - {fileID: 1944698211339908181, guid: 12529e89447752c43a73d5c0f3cd6062, type: 3}
   - {fileID: 1944698211339908181, guid: d775991c7ddf20649aece642fa9a3b43, type: 3}

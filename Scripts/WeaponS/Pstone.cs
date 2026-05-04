@@ -20,4 +20,10 @@ public class Pstone : MonoBehaviour
         HB.HP_gap = previous_HP_gap;
         HB.IncreaseHealthBar(0, false);
     }
+
+    public void Heal()
+    {
+        HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
+        HB.HealToFull();
+    }
 }
