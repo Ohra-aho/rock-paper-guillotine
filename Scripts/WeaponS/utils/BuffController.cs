@@ -49,6 +49,7 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public bool constant;
     [HideInInspector] public bool onDestruction;
     [HideInInspector] public bool awake;
+    [HideInInspector] public bool on_death;
 
     //Other
     [HideInInspector] public bool temporary;
@@ -171,6 +172,7 @@ public class BuffController : MonoBehaviour
             new_buff.heal_disabler = heal_disabler;
             new_buff.gain_points = gain_points;
             new_buff.until_used = until_used;
+            new_buff.on_death = on_death;
             if (special != null) new_buff.GetComponent<Buff>().special = special;
             if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
             new_buff.GetComponent<Buff>().AddBuff();

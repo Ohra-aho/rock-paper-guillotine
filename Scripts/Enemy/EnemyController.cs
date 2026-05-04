@@ -298,7 +298,6 @@ public class EnemyController : MonoBehaviour
                 RIE.transform.GetChild(i).GetComponent<Weapon>().first_turn.Invoke();
             }
         }
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().Death();
         transform.GetChild(0).GetComponent<BasicEnemy>().SelectWeaponPair();
         transform.GetChild(0).GetComponent<BasicEnemy>().TelegraphWeaponPair();
     }

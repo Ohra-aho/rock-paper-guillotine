@@ -48,20 +48,6 @@ public class PlayerContoller : MonoBehaviour
         LoadPlayerData();
     }
 
-    private void Update()
-    {
-        
-    }
-
-    public void Death()
-    {
-        if (HB.dead && !defeat)
-        {
-            MC.Loose();
-            HB.dead = false;
-        }
-    } 
-
     public void DisplayChoises()
     {
         for(int i = 0; i < 6; i++)

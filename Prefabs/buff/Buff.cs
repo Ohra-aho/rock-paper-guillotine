@@ -40,6 +40,7 @@ public class Buff : MonoBehaviour
 
     public bool awake;
     public bool onDestruction;
+    public bool on_death;
 
     //Other
     public bool temporary;
@@ -74,23 +75,6 @@ public class Buff : MonoBehaviour
 
     public void AddBuff()
     {
-
-        /*if (damage_buff != 0)
-        {
-            if(damage_buff < 0 && -damage_buff > transform.parent.GetComponent<Weapon>().damage)
-            {
-                damage_buff = -transform.parent.GetComponent<Weapon>().damage;
-            }
-        }
-
-        if (armor_buff != 0)
-        {
-            if (armor_buff < 0 && -armor_buff > transform.parent.GetComponent<Weapon>().armor)
-            {
-                armor_buff = -transform.parent.GetComponent<Weapon>().armor;
-            }
-        }*/
-
         if (effect_damage_buff != 0)
         {
             if (effect_damage_buff < 0 && -effect_damage_buff > transform.parent.GetComponent<EffectDamage>().amount)
@@ -143,6 +127,8 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().lose.AddListener(() => special(weapon));
         if (gain_points) 
             transform.parent.GetComponent<Weapon>().gain_points.AddListener(() => special(weapon));
+        if (on_death)
+            transform.parent.GetComponent<Weapon>().on_death.AddListener(() => special(weapon));
         if (type_change != null)
             transform.parent.GetComponent<Weapon>().type = type_change ?? og_type;   
         if (penetrating)
@@ -249,6 +235,8 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().lose.RemoveListener(() => special(weapon));
         if (gain_points)
             transform.parent.GetComponent<Weapon>().gain_points.RemoveListener(() => special(weapon));
+        if (on_death)
+            transform.parent.GetComponent<Weapon>().on_death.RemoveListener(() => special(weapon));
         if (type_change != null)
             transform.parent.GetComponent<Weapon>().type = og_type;
         if (penetrating)

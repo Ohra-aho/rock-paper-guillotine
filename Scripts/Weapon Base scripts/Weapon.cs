@@ -15,7 +15,6 @@ public class Weapon : MonoBehaviour
     public bool penetrating = false;
     public bool draw_winner = false;
     public bool spammable = false; //For enemy behaviour
-    [HideInInspector] public bool dead;
     public MainController.Choise type;
     public int damage;
     public int armor;
@@ -262,16 +261,21 @@ public class Weapon : MonoBehaviour
                 GameObject.Find("EventSystem").GetComponent<MainController>().Win();
                 if(on_death != null) on_death.Invoke();
                 hb.dead = false;
+                if (dead)
+                {
+                    opponent.victory.Invoke();
+                }
             }
         }
         else
         {
             HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
             dead = hb.GetComponent<HealthBar>().CheckIfDead();
-        }
-        if (dead)
-        {
-            victory.Invoke();
+            if(dead) on_death.Invoke();
+            if(hb.GetComponent<HealthBar>().dead)
+            {
+                GameObject.Find("EventSystem").GetComponent<MainController>().Loose();
+            }
         }
     }
 

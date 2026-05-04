@@ -9,17 +9,18 @@ public class LawBook : MonoBehaviour
     private void Awake()
     {
         GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
-        GetComponent<BuffController>().endPhase = true;
+        //GetComponent<BuffController>().endPhase = true;
+        GetComponent<BuffController>().on_death = true;
         GetComponent<BuffController>().special = DefyDeath;
     }
 
     public void DefyDeath(Weapon w)
     {
-        if(!used && w.dead)
+        Debug.Log("WTTTFFFF");
+        if (!used && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.dead)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.dead = false;
-            w.dead = false;
-            GetComponent<Healing>().ForcedHeal();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.HealDamage(GetComponent<Healing>().amount);
             used = true;
         }
     }

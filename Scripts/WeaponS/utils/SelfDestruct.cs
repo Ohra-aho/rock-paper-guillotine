@@ -14,9 +14,12 @@ public class SelfDestruct : MonoBehaviour
         if(!disabled && GetComponent<Weapon>().name != "Diamond")
         {
             bool nessessary = true;
-            if (GetComponent<Weapon>().dead)
+            if (GetComponent<Weapon>().player)
             {
-                nessessary = false;
+                if(GetComponent<Weapon>().player_owner.HB.dead) nessessary = false;
+            } else
+            {
+                if (GetComponent<Weapon>().owner.HB.dead) nessessary = false;
             }
 
             if (toughness > 0) nessessary = false;
@@ -33,7 +36,7 @@ public class SelfDestruct : MonoBehaviour
                 }
                 else
                 {
-                    if (!GetComponent<Weapon>().dead)
+                    if (!GetComponent<Weapon>().owner.HB.dead)
                     {
                         GameObject.Find("Destruction hand e").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
                         GameObject.Find("Destruction hand e").GetComponent<Test>().PlayAnimation("grab2");

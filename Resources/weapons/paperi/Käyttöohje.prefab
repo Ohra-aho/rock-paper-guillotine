@@ -91,10 +91,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
+  spammable: 0
   dead: 0
   type: 1
   damage: 1
@@ -102,7 +105,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Manual
-  description: Weapons which self destruct, won't do so for the first time.
+  description: Self-destructing weapons can be used an additional time.
   sprite: {fileID: 21300000, guid: 703719a375780f345a9c22cfaa822c5f, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -144,6 +147,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   heal:
+    m_PersistentCalls:
+      m_Calls: []
+  gain_points:
     m_PersistentCalls:
       m_Calls: []
   equip:
@@ -200,6 +206,12 @@ MonoBehaviour:
   unequipped:
     m_PersistentCalls:
       m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 1
   healing: 0
   health: 0
@@ -210,6 +222,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - I might like you.
+  executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &2684644120247685341
 MonoBehaviour:
@@ -227,6 +240,7 @@ MonoBehaviour:
   damage_bonus: 0
   armor_bonus: 0
   effect_damage_bonus: 0
+  toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
   always_on: 1
@@ -243,6 +257,7 @@ MonoBehaviour:
   win: 0
   lose: 0
   heal: 0
+  gain_points: 0
   equip: 0
   unEquip: 0
   constant: 0
@@ -253,7 +268,9 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   health_buff: 0
+  until_used: 0
   destructive: 0
+  heal_disabler: 0
 --- !u!114 &627897955164574743
 MonoBehaviour:
   m_ObjectHideFlags: 0
