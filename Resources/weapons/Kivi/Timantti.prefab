@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -212170227653697807}
   m_Layer: 5
   m_Name: Timantti
   m_TagString: Untagged
@@ -91,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -99,11 +99,11 @@ MonoBehaviour:
   dead: 0
   type: 0
   damage: 1
-  armor: 1
+  armor: 0
   real_damage: 0
   real_armor: 0
   name: Diamond
-  description: +3 HP
+  description: Can't be destroyed.
   sprite: {fileID: 21300000, guid: 4adcfdc4f3e4d864184f9b1429193ce0, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -147,10 +147,13 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -212170227653697807}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: HealthIncrease, Assembly-CSharp
         m_MethodName: Increase
         m_Mode: 1
@@ -165,7 +168,7 @@ MonoBehaviour:
   unEquip:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -212170227653697807}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: HealthIncrease, Assembly-CSharp
         m_MethodName: Decrease
         m_Mode: 1
@@ -189,6 +192,12 @@ MonoBehaviour:
   unequipped:
     m_PersistentCalls:
       m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 1
@@ -198,20 +207,6 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks:
-  - We might run out of space for bulbs with you.
+  - Could be useful.
   executioner_comment: 11111111111111111111
   damage_soft_cap: 7
---- !u!114 &-212170227653697807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b528c9add8506e74192aac87c7001b8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 4
-  in_view: 0

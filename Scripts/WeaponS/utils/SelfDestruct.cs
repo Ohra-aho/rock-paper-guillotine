@@ -11,7 +11,7 @@ public class SelfDestruct : MonoBehaviour
 
     public void Destruct()
     {
-        if(!disabled)
+        if(!disabled && GetComponent<Weapon>().name != "Diamond")
         {
             bool nessessary = true;
             if (GetComponent<Weapon>().dead)

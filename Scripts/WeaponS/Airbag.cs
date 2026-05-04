@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class Airbag : MonoBehaviour
 {
-    private void Awake()
+    public void Cushion()
     {
-        GetComponent<BuffController>().special = Cushion;
-        GetComponent<BuffController>().takeDamage = true;
-        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
-    }
-
-    public void Cushion(Weapon w)
-    {
-        if(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.GiveCurrentHealth() == 1)
+        int current_health = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.GiveCurrentHealth();
+        int damage = GameObject.Find("Table").GetComponent<TableController>().player_damage;
+        if (current_health - damage == 1 && GameObject.Find("Table").GetComponent<TableController>().player_healing == 0)
         {
             GetComponent<Healing>().Heal();
         }

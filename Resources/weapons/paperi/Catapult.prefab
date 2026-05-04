@@ -93,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
@@ -105,7 +106,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Catapult
-  description: After use all weapons gain "Deals 1 damage after use and destroys
+  description: After use all weapons gain "Deals 2 damage after use and destroys
     itself" during the next turn.
   sprite: {fileID: 21300000, guid: ac9752e3fea28aa4d99a87d64f9dd9fb, type: 3}
   first_turn:
@@ -162,6 +163,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -180,6 +184,12 @@ MonoBehaviour:
   unequipped:
     m_PersistentCalls:
       m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -189,6 +199,7 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks: []
+  executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &7511640265576175850
 MonoBehaviour:
@@ -206,6 +217,7 @@ MonoBehaviour:
   damage_bonus: 0
   armor_bonus: 0
   effect_damage_bonus: 0
+  toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
   always_on: 0
@@ -222,6 +234,7 @@ MonoBehaviour:
   win: 0
   lose: 0
   heal: 0
+  gain_points: 0
   equip: 0
   unEquip: 0
   constant: 0
@@ -232,6 +245,7 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   health_buff: 0
+  until_used: 0
   destructive: 0
   heal_disabler: 0
 --- !u!114 &4468434497027989641
@@ -258,5 +272,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
+  amount: 2
   armor_piercing: 0
