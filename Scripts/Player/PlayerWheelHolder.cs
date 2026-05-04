@@ -50,7 +50,7 @@ public class PlayerWheelHolder : MonoBehaviour
         DisableAchievements();
     }
 
-    private void DisableAchievements()
+    public void DisableAchievements()
     {
         GameObject[] achievements = GameObject.FindGameObjectsWithTag("Achievement");
         for(int i = 0; i < achievements.Length; i++)
@@ -66,7 +66,6 @@ public class PlayerWheelHolder : MonoBehaviour
         transform.GetChild(0).GetComponent<Test>().UnPauseAnimation();
         transform.GetChild(0).GetComponent<Test>().PlayAnimation("DetachWheel");
         detached = true;
-        if (GameObject.Find("InventoryMenu(Clone)") == null) inventory_button.GetComponent<InventoryButton>().Press();
     }
 
     public void OpenDrawer()
@@ -83,7 +82,6 @@ public class PlayerWheelHolder : MonoBehaviour
     {
         transform.GetChild(0).GetComponent<Test>().PlayAnimation("AttachWheel");
         detached = false;
-        if (GameObject.Find("InventoryMenu(Clone)") != null) inventory_button.GetComponent<InventoryButton>().Press(); //CloseDrawer();
     }
 
     public void RemoveWeapon(GameObject weapon)

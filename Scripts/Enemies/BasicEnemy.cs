@@ -36,7 +36,6 @@ public class BasicEnemy : MonoBehaviour
     private int off_balance_plan_index = 0;
     private int previous_pair = -1;
 
-    MainController.Choise lastPlayerChoise = MainController.Choise.kivi;
     [HideInInspector] public Weapon previous_weapon;
     [HideInInspector] public int weapon_streak = 0;
 
@@ -79,28 +78,12 @@ public class BasicEnemy : MonoBehaviour
         controller.GetComponent<EnemyController>().Inisiate();
     }
 
-    public void CheckUp(int currentHealth, int maxHealth)
-    {
-       /* if(currentHealth <= maxHealth/3 || currentHealth == 1)
-        {
-            nearDeath = true;
-        }
-
-        if(off_balance && off_balance_pattern_done)
-        {
-            off_balance_pattern_done = false;
-            Balance();
-        }*/
-    }
-
     public int MakeChoise(MainController.Choise playerChoise)
     {
-        lastPlayerChoise = playerChoise;
 
         if (!off_balance)
         {
             return PickWeaponFromPair();
-            //return StikToPlan();
         } else
         {
             return MakeOffBalanceChoise();
@@ -133,43 +116,76 @@ public class BasicEnemy : MonoBehaviour
         return step;
     }
 
-    private int StikToPlan()
+    public void StikToPlan()
     {
-        int step = chosen_plan[planIndex];
-        planIndex++;
-        if (planIndex >= chosen_plan.Count)
+        bool weapon_found = false;
+        for (int i = 0; i < weapons.Count; i++)
         {
-            planIndex = 0;
+            if (weapons[i] != null) 
+            {
+                if (weapons[i].GetComponent<SelfDestruct>())
+                {
+                    if(!weapons[i].GetComponent<SelfDestruct>().destroyed)
+                    {
+                        weapon_found = true;
+                    }
+                }
+            }
         }
 
-        //If weapon is destroyed, skip it in plan
-        while (!CheckIfWeaponExists(step))
+
+        if(weapon_found)
         {
-            step = chosen_plan[planIndex];
+            int step = chosen_plan[planIndex];
             planIndex++;
             if (planIndex >= chosen_plan.Count)
             {
                 planIndex = 0;
             }
-        }
-        while(CheckIfWeaponHasBeenSpammed(step))
-        {
-            step = chosen_plan[planIndex];
-            planIndex++;
-            if (planIndex >= chosen_plan.Count)
+
+            bool valid_weapon_found = false;
+
+            for (int i = 0; i < weapon_pairs[step].pair.Count; i++)
             {
-                planIndex = 0;
+                if (CheckIfWeaponExists(weapon_pairs[step].pair[i]))
+                {
+                    valid_weapon_found = true;
+                    break;
+                }
             }
-        }
 
-        weapon_streak++;
-        if(previous_weapon != null && previous_weapon != weapons[step].GetComponent<Weapon>())
+            while (!valid_weapon_found)
+            {
+                planIndex++;
+                if (planIndex >= chosen_plan.Count)
+                {
+                    planIndex = 0;
+                }
+                step = chosen_plan[planIndex];
+
+                for (int i = 0; i < weapon_pairs[step].pair.Count; i++)
+                {
+                    if (CheckIfWeaponExists(weapon_pairs[step].pair[i]))
+                    {
+                        valid_weapon_found = true;
+                        break;
+                    }
+                }
+            }
+
+            current_pair.Clear();
+            for (int i = 0; i < weapon_pairs[step].pair.Count; i++)
+            {
+                if (CheckIfWeaponExists(weapon_pairs[step].pair[i]))
+                {
+                    current_pair.Add(weapon_pairs[step].pair[i]);
+                }
+            }
+        } else
         {
-            weapon_streak = 1;
+            HB.InstaKill();
+            GameObject.Find("EventSystem").GetComponent<MainController>().Win();
         }
-        previous_weapon = weapons[step].GetComponent<Weapon>();
-
-        return step;
     }
 
     public void SelectWeaponPair()
@@ -273,7 +289,7 @@ public class BasicEnemy : MonoBehaviour
         return current_pair[Random.Range(0, current_pair.Count)];
     }
 
-    private bool CheckIfWeaponExists(int index)
+    public bool CheckIfWeaponExists(int index)
     {
         if(weapons[index] != null)
         {

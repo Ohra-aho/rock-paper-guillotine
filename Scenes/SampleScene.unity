@@ -7029,9 +7029,21 @@ MonoBehaviour:
   press:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1039625553}
+        m_TargetAssemblyTypeName: InventoryButton, Assembly-CSharp
+        m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 138571110}
         m_TargetAssemblyTypeName: PlayerWheelHolder, Assembly-CSharp
-        m_MethodName: press
+        m_MethodName: DisableAchievements
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29392,6 +29404,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 138571110}
+        m_TargetAssemblyTypeName: PlayerWheelHolder, Assembly-CSharp
+        m_MethodName: DisableAchievements
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1039625551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43632,7 +43656,6 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: 8c794c83c57093646beed80c0350630d, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623

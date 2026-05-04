@@ -24,7 +24,7 @@ public class InventoryMenu : MonoBehaviour
         {
             if(items[i].GetComponent<Weapon>())
             {
-                GameObject temp = Instantiate(WeaponPref, transform.GetChild(0).GetChild(1)/*.GetChild(i)*/);
+                GameObject temp = Instantiate(WeaponPref, transform.GetChild(0).GetChild(1));
                 temp.GetComponent<ClaimedWeapon>().weapon = items[i];
                 temp.GetComponent<ClaimedWeapon>().DispalyWeapon();
             }
@@ -69,5 +69,11 @@ public class InventoryMenu : MonoBehaviour
             DestroyImmediate(child.gameObject);
 
         }   
+    }
+
+    public void ReconstructInventory()
+    {
+        clearInventory();
+        displayWeapons();
     }
 }

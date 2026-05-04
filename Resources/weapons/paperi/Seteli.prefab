@@ -91,11 +91,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
-  dead: 0
+  spammable: 0
   type: 1
   damage: 1
   armor: 0
@@ -146,6 +147,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls:
@@ -181,11 +185,29 @@ MonoBehaviour:
       m_Calls: []
   onDestruction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -773870869169075467}
+        m_TargetAssemblyTypeName: Seteli, Assembly-CSharp
+        m_MethodName: UnEquip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0
@@ -198,6 +220,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Pocket change. That's all that is.
+  executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &-773870869169075467
 MonoBehaviour:

@@ -73,7 +73,8 @@ public class TableController : MonoBehaviour
         MC.enemyChoise.GetComponent<Weapon>().CheckUp();
 
         //New battle mechanics
-        enemy.transform.GetChild(0).GetComponent<BasicEnemy>().SelectWeaponPair();
+        //enemy.transform.GetChild(0).GetComponent<BasicEnemy>().SelectWeaponPair();
+        enemy.transform.GetChild(0).GetComponent<BasicEnemy>().StikToPlan();
         enemy.transform.GetChild(0).GetComponent<BasicEnemy>().TelegraphWeaponPair();
 
         if (table != null) StopCoroutine(table);

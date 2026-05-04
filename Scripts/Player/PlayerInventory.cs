@@ -41,6 +41,12 @@ public class PlayerInventory : MonoBehaviour
         event_system.GetComponent<RLController>().CheckForNeurotic();
         event_system.GetComponent<RLController>().CheckForPicky();
         event_system.GetComponent<RLController>().ApplyBuffs();
+
+        if(GameObject.FindGameObjectWithTag("Inventory") != null)
+        {
+            InventoryMenu IM = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryMenu>();
+            IM.ReconstructInventory();
+        }
         
     }
 

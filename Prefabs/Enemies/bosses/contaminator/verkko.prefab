@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 3252091650006279905}
   - component: {fileID: 7393853568192613954}
+  - component: {fileID: 7629444655894861322}
   m_Layer: 5
   m_Name: verkko
   m_TagString: Untagged
@@ -92,14 +92,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 1
-  damage: 2
+  damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
@@ -210,18 +210,6 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &3252091650006279905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b84c21e8388ac64da2a85039d59a1b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7393853568192613954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,3 +222,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def19445eb45dc841b29d89d90699394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7629444655894861322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 0
+  armor_piercing: 0

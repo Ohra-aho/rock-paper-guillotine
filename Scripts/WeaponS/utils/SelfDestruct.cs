@@ -13,13 +13,29 @@ public class SelfDestruct : MonoBehaviour
     {
         if(!disabled && GetComponent<Weapon>().name != "Diamond")
         {
-            bool nessessary = true;
+            bool nessessary = false;
+            bool play_animation = true;
             if (GetComponent<Weapon>().player)
             {
-                if(GetComponent<Weapon>().player_owner.HB.dead) nessessary = false;
+                if(!GetComponent<Weapon>().player_owner.HB.dead) nessessary = true;
             } else
             {
-                if (GetComponent<Weapon>().owner.HB.dead) nessessary = false;
+                if (!GetComponent<Weapon>().owner.HB.dead) nessessary = true;
+
+                for (int i = 0; i < GetComponent<Weapon>().owner.weapons.Count; i++)
+                {
+                    if(GetComponent<Weapon>().owner.weapons[i] != null)
+                    {
+                        if (GetComponent<Weapon>().owner.weapons[i].GetComponent<Weapon>().name != GetComponent<Weapon>().name)
+                        {
+                            play_animation = true;
+                            break;
+                        }
+                    } else
+                    {
+                        play_animation = false;
+                    }
+                }
             }
 
             if (toughness > 0) nessessary = false;
@@ -38,8 +54,8 @@ public class SelfDestruct : MonoBehaviour
                 {
                     if (!GetComponent<Weapon>().owner.HB.dead)
                     {
-                        GameObject.Find("Destruction hand e").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
-                        GameObject.Find("Destruction hand e").GetComponent<Test>().PlayAnimation("grab2");
+                        if(play_animation) GameObject.Find("Destruction hand e").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
+                        if(play_animation) GameObject.Find("Destruction hand e").GetComponent<Test>().PlayAnimation("grab2");
                         destroyed = true;
                     }
                 }

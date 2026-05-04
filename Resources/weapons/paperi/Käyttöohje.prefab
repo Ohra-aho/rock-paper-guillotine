@@ -98,7 +98,6 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 1
   damage: 1
   armor: 0
@@ -263,6 +262,7 @@ MonoBehaviour:
   constant: 0
   onDestruction: 0
   awake: 0
+  on_death: 0
   temporary: 0
   timer: 0
   penetrating: 0
