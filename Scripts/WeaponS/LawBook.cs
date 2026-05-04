@@ -16,7 +16,6 @@ public class LawBook : MonoBehaviour
 
     public void DefyDeath(Weapon w)
     {
-        Debug.Log("WTTTFFFF");
         if (!used && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.dead)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.dead = false;

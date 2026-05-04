@@ -92,20 +92,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 1
   draw_winner: 0
-  dead: 0
+  spammable: 0
   type: 2
   damage: 4
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Hook
-  description: You take one damage each turn. (Continuous) Pierces armor.
+  description: You take 1 damage each turn. (Continuous) Pierces armor.
   sprite: {fileID: 21300000, guid: 2ee79b7c164a29948adc776b8eb22d4a, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -126,6 +131,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -139,6 +147,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   heal:
+    m_PersistentCalls:
+      m_Calls: []
+  gain_points:
     m_PersistentCalls:
       m_Calls: []
   equip:
@@ -156,6 +167,15 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -166,6 +186,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - You and your enemy will both be on a clock.
+  executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &2715692804178075999
 MonoBehaviour:
@@ -183,6 +204,7 @@ MonoBehaviour:
   damage_bonus: 0
   armor_bonus: 0
   effect_damage_bonus: 0
+  toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
   always_on: 1
@@ -194,21 +216,26 @@ MonoBehaviour:
   takeDamage: 0
   takeNoDamage: 0
   dealDamage: 0
+  deal_effect_damage: 0
   draw: 0
   win: 0
   lose: 0
   heal: 0
+  gain_points: 0
   equip: 0
   unEquip: 0
   constant: 0
   onDestruction: 0
   awake: 0
+  on_death: 0
   temporary: 0
   timer: 0
   penetrating: 0
   draw_winner: 0
   health_buff: 0
+  until_used: 0
   destructive: 0
+  heal_disabler: 0
 --- !u!114 &3344856902671754979
 MonoBehaviour:
   m_ObjectHideFlags: 0

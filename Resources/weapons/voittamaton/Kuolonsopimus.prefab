@@ -96,14 +96,13 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 3
   damage: 5
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Pact
-  description: Has unforseen consequenses
+  description: Victory. But at what cost.
   sprite: {fileID: 21300000, guid: 7d76f7af0efe01144a59d27219a0e46d, type: 3}
   first_turn:
     m_PersistentCalls:

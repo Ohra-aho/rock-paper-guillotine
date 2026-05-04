@@ -116,4 +116,13 @@ public class Healing : MonoBehaviour
             }
         }
     }
+
+    public void TrueHeal()
+    {
+        HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
+        if(!HB.CheckIfDead())
+        {
+            HB.HealDamage(amount);
+        }
+    }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -6709545489086483546}
+  - component: {fileID: -4350378569778806696}
   m_Layer: 5
   m_Name: Cursed Scissors
   m_TagString: Untagged
@@ -91,12 +91,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 2
   damage: 4
   armor: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   first_turn:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -6709545489086483546}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CursedScissors, Assembly-CSharp
         m_MethodName: SpawnCurse
         m_Mode: 1
@@ -159,6 +159,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -177,6 +180,12 @@ MonoBehaviour:
   unequipped:
     m_PersistentCalls:
       m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -186,8 +195,9 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks: []
+  executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &-6709545489086483546
+--- !u!114 &-4350378569778806696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,7 +206,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15feb97804b49c64c9affd1cb37c121e, type: 3}
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curse: {fileID: 1944698211339908181, guid: 508ec2fc756074049a8691b13413ddd8, type: 3}
+  weapons:
+  - {fileID: 1944698211339908181, guid: 508ec2fc756074049a8691b13413ddd8, type: 3}

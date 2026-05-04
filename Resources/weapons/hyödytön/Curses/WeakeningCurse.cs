@@ -9,7 +9,7 @@ public class WeakeningCurse : MonoBehaviour
     {
         GetComponent<BuffController>().damage_bonus = -1;
         GetComponent<BuffController>().temporary = true;
-        GetComponent<BuffController>().timer = 10;
+        GetComponent<BuffController>().timer = 1000;
         GetComponent<BuffController>().special_apply = true;
     }
 

@@ -91,11 +91,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
-  dead: 0
+  spammable: 0
   type: 2
   damage: 2
   armor: 0
@@ -107,19 +109,34 @@ MonoBehaviour:
   first_turn:
     m_PersistentCalls:
       m_Calls: []
+  end_of_fight:
+    m_PersistentCalls:
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
   resultPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4253422903725897790}
-        m_TargetAssemblyTypeName: Turmio, Assembly-CSharp
-        m_MethodName: DealDamageToBoth
-        m_Mode: 1
+      - m_Target: {fileID: -9105430085159417747}
+        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
+        m_MethodName: DealDamage
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 3098424137161797902}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -9105430085159417747}
+        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
+        m_MethodName: SelfDamage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3098424137161797902}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -137,6 +154,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -150,6 +170,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   heal:
+    m_PersistentCalls:
+      m_Calls: []
+  gain_points:
     m_PersistentCalls:
       m_Calls: []
   equip:
@@ -167,6 +190,15 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 1
@@ -177,6 +209,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - That was one of my earliest creations actually.
+  executioner_comment: 
+  damage_soft_cap: 7
 --- !u!114 &4253422903725897790
 MonoBehaviour:
   m_ObjectHideFlags: 0
