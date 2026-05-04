@@ -244,20 +244,36 @@ public class HealthBar : MonoBehaviour
     public void DecreaseHealthBar(int amount, bool in_view)
     {
         max_health -= amount;
-        current_health -= amount;
-        int x = max_health;
-        int y = current_health;
-        if (x > HP_gap) x = HP_gap;
-        if (y > HP_gap) y = HP_gap;
-
-        if (MC.game_state == MainController.State.in_battle)
+        if(current_health > max_health) current_health = max_health;
+        if (max_health <= 0)
         {
-            transform.parent.GetChild(4).GetComponent<Test>().PlayAnimation("Change health");
+            if(MC.game_state == MainController.State.in_battle) MC.Loose();//Lisää jokin kommentti
+            else
+            {
+                int x = max_health;
+                int y = current_health;
+                if (x > HP_gap) x = HP_gap;
+                if (y > HP_gap) y = HP_gap;
+                DestroyHealthBar();
+                RecostructHealthBar(x, y, in_view);
+            }
         }
-        else
+        else if (max_health < 15)
         {
-            DestroyHealthBar();
-            RecostructHealthBar(x, y, in_view);
+            int x = max_health;
+            int y = current_health;
+            if (x > HP_gap) x = HP_gap;
+            if (y > HP_gap) y = HP_gap;
+
+            if (MC.game_state == MainController.State.in_battle)
+            {
+                transform.parent.GetChild(4).GetComponent<Test>().PlayAnimation("Change health");
+            }
+            else
+            {
+                DestroyHealthBar();
+                RecostructHealthBar(x, y, in_view);
+            }
         }
     }
 
