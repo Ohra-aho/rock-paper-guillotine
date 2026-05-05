@@ -199,9 +199,7 @@ public class StartingWeapons : MonoBehaviour
         new string[] { "Airbag", "Scalpel", "Time bomb" },
 
         new string[] { "Pact" },
-
+        //Executioner
         new string[] { "Rock", "Paper", "Guillotine" },
-
-
     };
 }
