@@ -65,18 +65,23 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 2b974b4735ce866469e179a848bfb224, type: 3}
   - {fileID: 1944698211339908181, guid: 97656c1ce690dcd45a52c35b49fd62e8, type: 3}
   - {fileID: 1944698211339908181, guid: 29837efef47116a49ae0744e0aa29d4a, type: 3}
-  plan_1: 00000000010000000200000000000000
-  plan_2: 00000000010000000200000000000000
-  previous_weapon: {fileID: 0}
-  weapon_streak: 0
-  off_balance: 0
-  nearDeath: 0
-  off_balance_pattern_done: 0
+  - {fileID: 1944698211339908181, guid: e9528339ac6fe054db0f2a415a65750c, type: 3}
+  plan_1: 000000000100000002000000
+  plan_2: 020000000100000000000000
+  weapon_pairs:
+  - pair: 0000000001000000
+  - pair: 0000000002000000
+  - pair: 0000000003000000
   off_balance_choises: 01000000
   advanced: 0
   victory_barks: []
   executioner_comment: Placeholder
   victory_message: {fileID: 0}
+  previous_weapon: {fileID: 0}
+  weapon_streak: 0
+  off_balance: 0
+  nearDeath: 0
+  off_balance_pattern_done: 0
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0

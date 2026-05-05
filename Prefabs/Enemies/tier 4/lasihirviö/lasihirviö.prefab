@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6943869333779220170}
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
-  - component: {fileID: -9088260649125739273}
   - component: {fileID: 9126511307194648938}
   m_Layer: 5
   m_Name: "lasihirvi\xF6"
@@ -66,33 +65,26 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: c01f4e6b829b4a24b93fc8bd2325bbfc, type: 3}
   - {fileID: 1944698211339908181, guid: 6d156c078ce5d1746acf9a7f6c7dee5d, type: 3}
   - {fileID: 1944698211339908181, guid: 87adcbfe2abe5e64c875d0c478c47609, type: 3}
-  plan_1: 00000000000000000100000002000000
+  plan_1: 000000000100000002000000
   plan_2: 010000000000000002000000
-  previous_weapon: {fileID: 0}
-  weapon_streak: 0
-  off_balance: 0
-  nearDeath: 0
-  off_balance_pattern_done: 0
+  weapon_pairs:
+  - pair: 0000000001000000
+  - pair: 0000000002000000
+  - pair: 0200000001000000
+  - pair: 0000000001000000
   off_balance_choises: 02000000
   advanced: 0
   victory_barks: []
   executioner_comment: Placeholder
   victory_message: {fileID: 0}
+  previous_weapon: {fileID: 0}
+  weapon_streak: 0
+  off_balance: 0
+  nearDeath: 0
+  off_balance_pattern_done: 0
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0
---- !u!114 &-9088260649125739273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fc42a4ed5c2a9441b98892bd58e09cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &9126511307194648938
 SpriteRenderer:
   m_ObjectHideFlags: 0
