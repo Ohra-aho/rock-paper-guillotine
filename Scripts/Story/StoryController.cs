@@ -204,7 +204,7 @@ public class StoryController : MonoBehaviour
 
         new string[] {  "Ok. I got it the first couple of times, but they got all things you took back." },
         new string[] {  "The Splatter!", "People like you brighten my day. You know how to put on a show.", "Here. Just for you." },
-        new string[] {  "Poor pup.", "They had to put it down.", "Canít imagine what it was feeling. Must have been confused.", "Mans best friend, redused to a weapon." }, // T‰h‰n j‰‰tiin
+        new string[] {  "Poor pup.", "They had to put it down.", "Canít imagine what it was feeling. Must have been confused.", "Mans best friend, redused to a weapon." },
         new string[] {  "It is funny, that even now they kept sure that the inheritance was furthered to you.", "Do you have kids?" },
 
         //Story 11

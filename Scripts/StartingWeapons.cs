@@ -57,7 +57,7 @@ public class StartingWeapons : MonoBehaviour
         new string[] { "Altar", "Shotgun", "Paper" },
         new string[] { "Scissors", "Rock", "Newspaper" },
         new string[] { "Adrenaline", "Voodoo doll", "Scissors" },
-        new string[] { "Beer", "Bottle" },
+        new string[] { "Beer", "Bottle", "Paper" },
         new string[] { "Gun", "Ammunition", "Bill" },
 
         //Story 2
@@ -94,7 +94,7 @@ public class StartingWeapons : MonoBehaviour
         new string[] { "Crystal scissors", "Paper armor", "Ice cube" },
         new string[] { "Scissors", "Paper", "Rock" },
         new string[] { "Chip", "Deck", "Die" },
-        new string[] { "Deck", "Singularity" },
+        new string[] { "Deck", "Singularity", "Sidearm" },
 
         //Story 6
         new string[] { "Newspaper", "Flamethrower", "Victory streak" },
@@ -105,10 +105,10 @@ public class StartingWeapons : MonoBehaviour
         new string[] { "Scissors", "Paper", "Mountain" },
 
         //Story 7
-        new string[] { "Gun", "Wallet", "Wallet", "Wallet" },
+        new string[] { "Gun", "Archnode", "Wallet", "Wallet" },
 
         new string[] { "Rock", "Paper", "Scissors" },
-        new string[] { "Recycler", "Rock", "Bladestorm" },
+        new string[] { "Recycler", "Rock", "Bladestorm", "Paper" },
         new string[] { "Pickaxe", "Smoke", "Medipack" },
         new string[] { "Middle finger", "Hit list", "Handkerchief" },
 
@@ -134,6 +134,73 @@ public class StartingWeapons : MonoBehaviour
         new string[] { "Recycler", "Paper", "Rock" },
         new string[] { "Chainsaw", "Paper", "Rock" }, /// Tee chainsaw
         new string[] { "Teeth", "Reinforced glass", "Barricade" },
+        new string[] { "Law Book", "Medical supplies", "Ruin" },
+
+        //Story 11
+        new string[] { "Archnode", "Recipe", "Battery" },
+
+        new string[] { "Flesh render", "Wall", "Origami" },
+        new string[] { "Pencil", "Whetstone", "Sandpaper" },
+        new string[] { "Deck", "Teeth", "Monument" },
+
+        //Story 12
+        new string[] { "Beer", "Chip", "Buckshot" },
+
+        new string[] { "Meteor swarm", "Meteor swarm", "Meteor swarm", "Meteor swarm", "Meteor swarm" },
+        new string[] { "Barricade", "Bubble" },
+        new string[] { "Ender", "Middle finger", "Painkiller" },
+        new string[] { "Time bomb", "Joker", "Rage" },
+        new string[] { "Barricade", "Sidearm", "Rage" },
+
+        //Story 13
+        new string[] { "Lava", "Paper armor", "Crystal Scissors" },
+        new string[] { "Rock", "Paper", "Scissors" },
+        new string[] { "Rock", "Paper", "Scissors" },
+        new string[] { "Rock", "Paper", "Scissors" },
+        new string[] { "Rock", "Paper", "Scissors" },
+        new string[] { "Rock", "Paper", "Scissors" },
+        new string[] { "Rock", "Paper", "Scissors" },
+        new string[] { "Rock", "Paper", "Scissors" },
+        new string[] { "Nothing" },
+        //Kill
+        new string[] { "Nothing" },
+        new string[] { "Nothing" },
+        new string[] { "Nothing" },
+        new string[] { "Nothing" },
+        new string[] { "Nothing" },
+        new string[] { "Nothing" },
+        new string[] { "Nothing" },
+        //Continue
+        new string[] { "Rock", "Paper", "Scissors" },
+        new string[] { "Barricade", "Bunker", "Reality Smasher" },
+
+        new string[] { "Singularity", "Star", "Double edged sword" },
+        new string[] { "Mountain", "Mountain", "Mountain" },
+        new string[] { "Rot", "Avalance", "Paper cutter" },
+        new string[] { "Medicine", "Medicine", "Medicine", "Hook" },
+
+        //Story 14
+        new string[] { "Law Book", "Law Book", "Blood blade", "Victory streak" },
+
+        new string[] { "Fireball", "Reinforced glass", "Glacial erratic" },
+        new string[] { "Die", "Cape", "Shredder" },
+        new string[] { "Needle", "Paper", "Scissors" },
+
+        //Story 15
+        new string[] { "Ender", "Handkerchief", "Drill" },
+
+        new string[] { "Lava", "Bunker", "Bubble" },
+        new string[] { "Battery", "Lightning", "Wire" },
+        new string[] { "Bone", "Paper plane", "Gaint scissors" },
+
+        //Story 16
+        new string[] { "Thumb", "Middle finger", "Victory sign" },
+        new string[] { "Diamond", "Sithe", "Sponge" },
+        new string[] { "Airbag", "Scalpel", "Time bomb" },
+
+        new string[] { "Pact" },
+
+        new string[] { "Rock", "Paper", "Guillotine" },
 
 
     };
