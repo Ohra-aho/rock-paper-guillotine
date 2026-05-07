@@ -105,7 +105,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Avalance
-  description: +3 HP. After use, -1 HP and deals 1 damage.
+  description: +2 HP. After use, -1 HP and deals 1 damage.
   sprite: {fileID: 21300000, guid: 77c8f67adf3c9094ea3e21ba227b6dfa, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b528c9add8506e74192aac87c7001b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 3
+  amount: 2
   in_view: 0
 --- !u!114 &3234056374793999739
 MonoBehaviour:
