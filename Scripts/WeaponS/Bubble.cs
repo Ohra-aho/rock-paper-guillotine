@@ -4,17 +4,29 @@ using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
-    private void Awake()
+    /*private void Awake()
     {
         GetComponent<BuffController>().special_apply = true;
         GetComponent<BuffController>().armor_bonus = 1;
         GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name != this.GetComponent<Weapon>().name; };
         GetComponent<BuffController>().temporary = true;
         GetComponent<BuffController>().timer = 2;
-    }
+    }*/
 
     public void ApplyBuff()
     {
         GetComponent<BuffController>().Equip();
     }
+
+	public void IncreaseHealth() {
+		if(GetComponent<HealthIncrease>().amount < 2) {
+			GetComponent<HealthIncrease>().IncreaseSetAmount(1);
+			GetComponent<HealthIncrease>().amount++;
+		}
+	}
+
+	public void ResetHealth() {
+		GetComponent<HealthIncrease>().Decrease();
+		GetComponent<HealthIncrease>().amount = 0;
+	}
 }
