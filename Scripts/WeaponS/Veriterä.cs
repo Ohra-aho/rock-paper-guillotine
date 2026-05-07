@@ -18,7 +18,7 @@ public class Veriterä : MonoBehaviour
         if(GetComponent<Weapon>().player)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            GetComponent<Weapon>().damage = 1 + (player.GetComponent<PlayerContoller>().HB.GiveMaxHealth() - player.GetComponent<PlayerContoller>().HB.GiveCurrentHealth());
+            GetComponent<Weapon>().damage = (player.GetComponent<PlayerContoller>().HB.GiveMaxHealth() - player.GetComponent<PlayerContoller>().HB.GiveCurrentHealth()) / 2;
         }
         else
         {

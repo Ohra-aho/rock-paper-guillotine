@@ -4,27 +4,33 @@ using UnityEngine;
 
 public class Sidearm : MonoBehaviour
 {
-    private void Awake()
-    {
-        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
-        GetComponent<BuffController>().endPhase = true;
-        GetComponent<BuffController>().special = ApplyBuffs;
-    }
+    public void Fire() {
+		if(GetComponent<Stacking>().stacks > 0) {
+			GetComponent<Stacking>().DecreaseStacks(1);
+			GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
+		}
+	}
 
-    public void ApplyBuffs(Weapon w)
-    {
-        if (GameObject.Find("EventSystem").GetComponent<MainController>().won == false && !GameObject.Find("EnemyHolder").GetComponent<EnemyController>().dead)
-        {
-            List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
-            for (int i = 0; i < weapons.Count; i++)
-            {
-                GameObject new_buff = Instantiate(GetComponent<BuffController>().buff, weapons[i].transform);
-                new_buff.GetComponent<Buff>().id = GetComponent<Weapon>().name + "_2";
-                new_buff.GetComponent<Buff>().damage_buff = 1;
-                new_buff.GetComponent<Buff>().temporary = true;
-                new_buff.GetComponent<Buff>().timer = 2;
-                new_buff.GetComponent<Buff>().AddBuff();
-            }
-        }
-    }
+	public void GivePointsAway() {
+		if(GetComponent<Stacking>().stacks > 0) {
+			GetComponent<Stacking>().DecreaseStacks(1);
+			List<Weapon> weapons = GetComponent<Weapon>().player_owner.GetWeapons();
+			List<Weapon> valid_targets = new List<Weapon>();
+			for(int i = 0; i < weapons.Count; i++) {
+				if(weapons[i].GetComponent<Stacking>() && weapons[i].name != GetComponent<Weapon>().name) {
+					valid_targets.Add(weapons[i]);
+				}
+			}
+			if(valid_targets.Count > 0) {
+				int index = Random.Range(0, valid_targets.Count);
+				valid_targets[index].GetComponent<Stacking>().IncreaseStacks(1);
+			}
+		}
+	}
+
+	public void GainStartingPoint() {
+		if(GetComponent<Stacking>().stacks < 1) {
+			GetComponent<Stacking>().IncreaseStacks(1);
+		}
+	}
 }
