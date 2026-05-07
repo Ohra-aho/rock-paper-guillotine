@@ -18,7 +18,7 @@ public class Madman : MonoBehaviour
         for (int i = 0; i < RI.transform.childCount; i++)
         {
             GameObject weapon = RI.transform.GetChild(i).gameObject;
-            if (!FindOwnBuff(weapon.GetComponent<Weapon>()) && weapon.GetComponent<Weapon>().type == MainController.Choise.hyödytön)
+            if (!FindOwnBuff(weapon.GetComponent<Weapon>()) && weapon.GetComponent<Weapon>().type == MainController.Choise.useless)
             {
                 GameObject new_buff = Instantiate(buff, weapon.transform);
                 new_buff.GetComponent<Buff>().id = name;

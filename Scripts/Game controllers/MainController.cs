@@ -61,7 +61,7 @@ public class MainController : MonoBehaviour
         paperi,
         sakset,
         voittamaton,
-        hyödytön
+        useless
     }
 
     public enum State
@@ -132,7 +132,7 @@ public class MainController : MonoBehaviour
                     case Choise.kivi: won = ChechDrawWinners(playerChoise, enemyChoise); break;
                     case Choise.paperi: won = false; break;
                     case Choise.sakset: won = true; break;
-                    case Choise.hyödytön: won = true; break;
+                    case Choise.useless: won = true; break;
                     case Choise.voittamaton: won = false; break;
                 }
                 break;
@@ -142,7 +142,7 @@ public class MainController : MonoBehaviour
                     case Choise.kivi: won = true; break;
                     case Choise.paperi: won = ChechDrawWinners(playerChoise, enemyChoise); break;
                     case Choise.sakset: won = false; break;
-                    case Choise.hyödytön: won = true; break;
+                    case Choise.useless: won = true; break;
                     case Choise.voittamaton: won = false; break;
                 }
                 break;
@@ -152,7 +152,7 @@ public class MainController : MonoBehaviour
                     case Choise.kivi: won = false; break;
                     case Choise.paperi: won = true; break;
                     case Choise.sakset: won = ChechDrawWinners(playerChoise, enemyChoise); break;
-                    case Choise.hyödytön: won = true; break;
+                    case Choise.useless: won = true; break;
                     case Choise.voittamaton: won = false; break;
                 }
                 break;
@@ -165,8 +165,8 @@ public class MainController : MonoBehaviour
                     won = ChechDrawWinners(playerChoise, enemyChoise);
                 }
                 break;
-            case Choise.hyödytön:
-                if (enemyChoise.type != Choise.hyödytön)
+            case Choise.useless:
+                if (enemyChoise.type != Choise.useless)
                 {
                     won = false;
                 }

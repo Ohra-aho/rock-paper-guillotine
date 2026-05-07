@@ -11,7 +11,7 @@ public class FanaticWeapons : MonoBehaviour
         {
             if(RIE.transform.GetChild(i).GetComponent<Weapon>().name == "Granade")
             {
-                RIE.transform.GetChild(i).GetComponent<Weapon>().type = MainController.Choise.hyödytön;
+                RIE.transform.GetChild(i).GetComponent<Weapon>().type = MainController.Choise.useless;
                 break;
             }
         }

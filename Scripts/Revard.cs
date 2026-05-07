@@ -111,7 +111,7 @@ public class Revard : MonoBehaviour
                     case MainController.Choise.sakset:
                         visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[2];
                         break;
-                    case MainController.Choise.hyödytön:
+                    case MainController.Choise.useless:
                         visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[3];
                         break;
                     case MainController.Choise.voittamaton:
@@ -159,7 +159,7 @@ public class Revard : MonoBehaviour
             BC.ActivateInstantBark("That weapon type is \"unbeatable\". It wins against all other types.");
         } 
         //Give tutorial for useless
-        else if (actualReward.GetComponent<Weapon>().type == MainController.Choise.hyödytön && !MC.GetComponent<StoryCheckList>().useless_explained)
+        else if (actualReward.GetComponent<Weapon>().type == MainController.Choise.useless && !MC.GetComponent<StoryCheckList>().useless_explained)
         {
             MC.GetComponent<StoryCheckList>().useless_explained = true;
             BC.ActivateInstantBark("That weapon type is \"useless\". It loses to all other types");

@@ -28,7 +28,7 @@ public class DisposableHead : MonoBehaviour
     public void Lose()
     {
         GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
-        GetComponent<Weapon>().type = MainController.Choise.hyödytön;
+        GetComponent<Weapon>().type = MainController.Choise.useless;
         for(int i = 0; i < RIE.transform.childCount; i++)
         {
             if(RIE.transform.GetChild(i).gameObject == this.gameObject)
@@ -53,7 +53,7 @@ public class DisposableHead : MonoBehaviour
         int amount = 0;
         for (int i = 0; i < RIE.transform.childCount; i++)
         {
-            if (RIE.transform.GetChild(i).GetComponent<DisposableHead>() && RIE.transform.GetChild(i).GetComponent<Weapon>().type != MainController.Choise.hyödytön)
+            if (RIE.transform.GetChild(i).GetComponent<DisposableHead>() && RIE.transform.GetChild(i).GetComponent<Weapon>().type != MainController.Choise.useless)
             {
                 amount++;
             }

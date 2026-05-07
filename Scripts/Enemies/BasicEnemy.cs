@@ -129,6 +129,9 @@ public class BasicEnemy : MonoBehaviour
                     {
                         weapon_found = true;
                     }
+                } else
+                {
+                    weapon_found = true;
                 }
             }
         }

@@ -51,7 +51,7 @@ public class Leetche : MonoBehaviour
     //Gaze
     public void GazeDraw()
     {
-        if(GetComponent<Weapon>().opponent.type != MainController.Choise.hyödytön)
+        if(GetComponent<Weapon>().opponent.type != MainController.Choise.useless)
         {
             GetComponent<PermanentDebuffer>().MakeOpposingWeaponUseless();
             GetComponent<Stacking>().IncreaseStacks(1);

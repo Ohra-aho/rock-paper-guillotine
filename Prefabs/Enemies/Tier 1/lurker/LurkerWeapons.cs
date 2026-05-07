@@ -12,7 +12,7 @@ public class LurkerWeapons : MonoBehaviour
         new_buff.id = GetComponent<Weapon>().name + "_2";
         new_buff.temporary = true;
         new_buff.timer = 1;
-        new_buff.type_change = MainController.Choise.hyödytön;
+        new_buff.type_change = MainController.Choise.useless;
         new_buff.AddBuff();
     }
 }

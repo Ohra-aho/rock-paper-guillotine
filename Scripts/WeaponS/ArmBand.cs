@@ -7,6 +7,6 @@ public class ArmBand : MonoBehaviour
     private void Awake()
     {
         GetComponent<BuffController>().armor_bonus = 1;
-        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.type == MainController.Choise.hyödytön; };
+        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.type == MainController.Choise.useless; };
     }
 }

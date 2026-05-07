@@ -14,7 +14,7 @@ public class Cards : MonoBehaviour
                 GetComponent<Weapon>().type = MainController.Choise.paperi;
                 break;
             case 2:
-                GetComponent<Weapon>().type = MainController.Choise.hyödytön;
+                GetComponent<Weapon>().type = MainController.Choise.useless;
                 break;
             case 3:
                 GetComponent<Weapon>().type = MainController.Choise.voittamaton;

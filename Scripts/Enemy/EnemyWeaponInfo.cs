@@ -33,7 +33,7 @@ public class EnemyWeaponInfo : MonoBehaviour
                 case MainController.Choise.sakset:
                     info.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = symbols[2];
                     break;
-                case MainController.Choise.hyödytön:
+                case MainController.Choise.useless:
                     info.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = symbols[3];
                     break;
                 case MainController.Choise.voittamaton:

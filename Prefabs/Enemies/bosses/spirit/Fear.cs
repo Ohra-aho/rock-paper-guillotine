@@ -29,7 +29,7 @@ public class Fear : MonoBehaviour
                 {
                     GameObject weapon = RI.transform.GetChild(i).gameObject;
                     GameObject new_buff = Instantiate(GetComponent<BuffController>().buff, weapon.transform);
-                    new_buff.GetComponent<Buff>().type_change = MainController.Choise.hyödytön;
+                    new_buff.GetComponent<Buff>().type_change = MainController.Choise.useless;
                     new_buff.GetComponent<Buff>().id = GetComponent<Weapon>().name;
                     new_buff.GetComponent<Buff>().AddBuff();
                 }

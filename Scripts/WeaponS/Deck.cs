@@ -36,7 +36,7 @@ public class Deck : MonoBehaviour
             case 2:
                 GameObject new_buff_3 = Instantiate(buff, GetRandomEquippedWeapon().transform);
                 new_buff_3.GetComponent<Buff>().id = GetComponent<Weapon>().name + "_2";
-                new_buff_3.GetComponent<Buff>().type_change = MainController.Choise.hyödytön;
+                new_buff_3.GetComponent<Buff>().type_change = MainController.Choise.useless;
                 new_buff_3.GetComponent<Buff>().temporary = true;
                 new_buff_3.GetComponent<Buff>().timer = 2;
                 new_buff_3.GetComponent<Buff>().AddBuff();

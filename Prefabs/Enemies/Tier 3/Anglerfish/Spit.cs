@@ -11,7 +11,7 @@ public class Spit : MonoBehaviour
         GameObject new_buff = Instantiate(buff, GetComponent<Weapon>().opponent.transform);
         new_buff.GetComponent<Buff>().id = GetComponent<Weapon>().name;
         new_buff.GetComponent<Buff>().until_used = true;
-        new_buff.GetComponent<Buff>().type_change = MainController.Choise.hyödytön;
+        new_buff.GetComponent<Buff>().type_change = MainController.Choise.useless;
         new_buff.GetComponent<Buff>().AddBuff();
     }
 }

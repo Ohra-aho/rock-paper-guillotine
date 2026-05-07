@@ -69,7 +69,7 @@ public class ClaimedWeapon : MonoBehaviour
             case MainController.Choise.sakset:
                 transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = symbols[2];
                 break;
-            case MainController.Choise.hyödytön:
+            case MainController.Choise.useless:
                 transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = symbols[3];
                 break;
             case MainController.Choise.voittamaton:

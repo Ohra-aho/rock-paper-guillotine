@@ -35,14 +35,14 @@ public class Hydra : MonoBehaviour
                 {
                     if (dead_head_chance <= dead_heads)
                     {
-                        if (child.GetComponent<Weapon>().type == MainController.Choise.hyödytön)
+                        if (child.GetComponent<Weapon>().type == MainController.Choise.useless)
                         {
                             return i;
                         }
                     }
                     else
                     {
-                        if (child.GetComponent<Weapon>().type != MainController.Choise.hyödytön)
+                        if (child.GetComponent<Weapon>().type != MainController.Choise.useless)
                         {
                             return i;
                         }
@@ -62,7 +62,7 @@ public class Hydra : MonoBehaviour
         for(int i = 0; i < RIE.transform.childCount; i++)
         {
             Transform child = RIE.transform.GetChild(i);
-            if (child.GetComponent<DisposableHead>() && child.GetComponent<Weapon>().type == MainController.Choise.hyödytön)
+            if (child.GetComponent<DisposableHead>() && child.GetComponent<Weapon>().type == MainController.Choise.useless)
             {
                 amount++;
             }

@@ -21,7 +21,7 @@ public class Abomination : MonoBehaviour
                     if (RIE.transform.GetChild(i).GetComponent<Weapon>().name != GetComponent<Weapon>().name && !RIE.transform.GetChild(i).GetComponent<Weapon>().FindCertainBuff(GetComponent<Weapon>().name))
                     {
                         Buff new_buff = Instantiate(buff, RIE.transform.GetChild(i)).GetComponent<Buff>();
-                        new_buff.type_change = MainController.Choise.hyödytön;
+                        new_buff.type_change = MainController.Choise.useless;
                         new_buff.id = GetComponent<Weapon>().name;
                         new_buff.temporary = true;
                         new_buff.timer = 3;

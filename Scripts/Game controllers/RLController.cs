@@ -58,7 +58,7 @@ public class RLController : MonoBehaviour
         }
     }
 
-    //Lisää tähän jokin miehen kommentti, kun on ekan kerran
+    //Lisï¿½ï¿½ tï¿½hï¿½n jokin miehen kommentti, kun on ekan kerran
     public void ActivateAchievements()
     {
         for(int i = 0; i < achievements.Count; i++)
@@ -200,7 +200,7 @@ public class RLController : MonoBehaviour
             {
                 if(wheel_holder.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
                 {
-                    if (wheel_holder.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().type == MainController.Choise.hyödytön)
+                    if (wheel_holder.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().type == MainController.Choise.useless)
                     {
                         amount++;
                     }

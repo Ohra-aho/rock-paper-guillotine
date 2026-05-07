@@ -23,7 +23,7 @@ public class Hand : MonoBehaviour
                     case MainController.Choise.kivi: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[0]; break;
                     case MainController.Choise.paperi: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[1]; break;
                     case MainController.Choise.sakset: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[2]; break;
-                    case MainController.Choise.hyödytön: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[3]; break;
+                    case MainController.Choise.useless: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[3]; break;
                     case MainController.Choise.voittamaton: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[4]; break;
                 }
                 

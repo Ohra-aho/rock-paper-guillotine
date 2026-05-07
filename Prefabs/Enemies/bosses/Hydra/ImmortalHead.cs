@@ -23,7 +23,7 @@ public class ImmortalHead : MonoBehaviour
         for(int i = 0; i < RIE.transform.childCount; i++)
         {
             GameObject child = RIE.transform.GetChild(i).gameObject;
-            if(child.GetComponent<Weapon>().type == MainController.Choise.hyödytön)
+            if(child.GetComponent<Weapon>().type == MainController.Choise.useless)
             {
                 child.GetComponent<Weapon>().type = child.GetComponent<DisposableHead>().og_type;
                 break;

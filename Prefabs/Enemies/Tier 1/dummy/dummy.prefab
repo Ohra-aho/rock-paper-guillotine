@@ -65,12 +65,11 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 12529e89447752c43a73d5c0f3cd6062, type: 3}
   - {fileID: 1944698211339908181, guid: d775991c7ddf20649aece642fa9a3b43, type: 3}
   - {fileID: 1944698211339908181, guid: 618b7b69980b1ce43908d4faac838168, type: 3}
-  plan_1: 000000000100000002000000
-  plan_2: 000000000100000002000000
+  plan_1: 00000000
+  plan_2: 00000000
   weapon_pairs:
-  - pair: 0000000001000000
-  - pair: 0100000002000000
-  - pair: 0000000002000000
+  - pair: 00000000
+  - pair: 00000000
   off_balance_choises: 
   advanced: 0
   victory_barks: []

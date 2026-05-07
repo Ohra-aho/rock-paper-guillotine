@@ -40,7 +40,7 @@ public class WeaponInfo : MonoBehaviour
             case MainController.Choise.sakset:
                 transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = icons[2];
                 break;
-            case MainController.Choise.hyödytön:
+            case MainController.Choise.useless:
                 transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = icons[3];
                 break;
             case MainController.Choise.voittamaton:

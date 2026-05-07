@@ -20,7 +20,7 @@ public class Damnation : MonoBehaviour
     public void DebuffOpposingWeapon()
     {
         Buff new_buff = Instantiate(GetComponent<BuffController>().buff, GetComponent<Weapon>().opponent.transform).GetComponent<Buff>();
-        new_buff.type_change = MainController.Choise.hyödytön;
+        new_buff.type_change = MainController.Choise.useless;
         new_buff.until_used = true;
         new_buff.used = false;
         new_buff.AddBuff();

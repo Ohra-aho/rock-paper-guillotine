@@ -19,7 +19,7 @@ public class WeaponData
             case MainController.Choise.kivi: type = "kivi"; break;
             case MainController.Choise.paperi: type = "paperi"; break;
             case MainController.Choise.sakset: type = "sakset"; break;
-            case MainController.Choise.hyödytön: type = "hyödytön"; break;
+            case MainController.Choise.useless: type = "useless"; break;
             case MainController.Choise.voittamaton: type = "voittamaton"; break;
         }
         if(weapon.GetComponent<Stacking>()) stacks = weapon.GetComponent<Stacking>().stacks;
