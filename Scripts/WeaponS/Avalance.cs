@@ -6,12 +6,8 @@ public class Avalance : MonoBehaviour
 {
     public void Use()
     {
-        GetComponent<HealthIncrease>().DecreaseSetAmount(1);
+		GetComponent<EffectDamage>().amount = GetComponent<Weapon>().player_owner.HB.GiveCurrentHealth() / 2;
         GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
-        GetComponent<HealthIncrease>().amount--;
-        if(GetComponent<HealthIncrease>().amount < 0)
-        {
-            GetComponent<HealthIncrease>().amount = 0;
-        }
+        GetComponent<SelfDestruct>().Destruct();
     }
 }

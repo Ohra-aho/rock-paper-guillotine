@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 588893069576751674}
   - component: {fileID: 3234056374793999739}
   - component: {fileID: -1588361536695442013}
+  - component: {fileID: -4627739864903255956}
   m_Layer: 5
   m_Name: Avalance
   m_TagString: Untagged
@@ -105,7 +106,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Avalance
-  description: +2 HP. After use, -1 HP and deals 1 damage.
+  description: +2 HP. After use, deals damage equal to half of your current health
+    and destroys itself.
   sprite: {fileID: 21300000, guid: 77c8f67adf3c9094ea3e21ba227b6dfa, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -273,5 +275,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
+  amount: 0
   armor_piercing: 0
+--- !u!114 &-4627739864903255956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyed: 0
+  disabled: 0
+  toughness: 0
