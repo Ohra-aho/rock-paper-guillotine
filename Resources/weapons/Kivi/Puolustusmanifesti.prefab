@@ -91,19 +91,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Defence manifest
-  description: +1 damage for each armor you have equipped.
+  description: +X damage where X is the total amount of armor your equipped weapons
+    have.
   sprite: {fileID: 21300000, guid: 909701237a89e394fa88097ef372cd99, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -147,6 +148,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -175,6 +179,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0

@@ -90,20 +90,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
-  dead: 0
+  spammable: 0
   type: 2
   damage: 4
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Glass shard
-  description: If you take damage, destroys itself.
+  description: If you take damage throught this weapon, destroys itself.
   sprite: {fileID: 21300000, guid: 6ccc57a1eb08a40489bb27a69b46d7b7, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -136,6 +141,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -149,6 +157,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   heal:
+    m_PersistentCalls:
+      m_Calls: []
+  gain_points:
     m_PersistentCalls:
       m_Calls: []
   equip:
@@ -166,6 +177,15 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 1
   healing: 0
   health: 0
@@ -176,6 +196,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - It will be fun while it lasts.
+  executioner_comment: 
+  damage_soft_cap: 7
 --- !u!114 &7825775738186712243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,5 +210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used_ones: 0
   destroyed: 0
+  disabled: 0
+  toughness: 0

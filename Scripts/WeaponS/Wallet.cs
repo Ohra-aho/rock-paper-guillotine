@@ -12,7 +12,7 @@ public class Wallet : MonoBehaviour
         {
             if(weapons[i].GetComponent<Stacking>())
             {
-                weapons[i].GetComponent<Stacking>().IncreaseStacks(1);
+                weapons[i].GetComponent<Stacking>().IncreaseStacks(2);
             }
         }
     }

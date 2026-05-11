@@ -103,7 +103,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Blood blade
-  description: -1 damage for each life remaining.
+  description: -X damage where X is your current HP.
   sprite: {fileID: 21300000, guid: 66c4bbf186a3bff48bf3c88f8fa71b8c, type: 3}
   first_turn:
     m_PersistentCalls:

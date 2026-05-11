@@ -16,7 +16,7 @@ public class Star : MonoBehaviour
     {
         HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
         previous_HP_gap = HB.HP_gap;
-        HB.HP_gap = 1;
+        HB.HP_gap = 5;
         HB.DecreaseHealthBar(0, false);
         //previous_max_hp = HB.GiveMaxHealth();
         //int HPbonus = HB.GiveMaxHealth() - 1;

@@ -95,6 +95,7 @@ MonoBehaviour:
   damage_bonus: 0
   armor_bonus: 0
   effect_damage_bonus: 0
+  toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
   always_on: 1
@@ -111,16 +112,19 @@ MonoBehaviour:
   win: 0
   lose: 0
   heal: 0
+  gain_points: 0
   equip: 0
   unEquip: 0
   constant: 0
   onDestruction: 0
   awake: 0
+  on_death: 0
   temporary: 0
   timer: 0
   penetrating: 0
   draw_winner: 0
   health_buff: 0
+  until_used: 0
   destructive: 0
   heal_disabler: 0
 --- !u!114 &1415664320520306304
@@ -135,7 +139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f533a8f85beee47ae1cde74dbc4546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
 --- !u!114 &3098424137161797902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,18 +153,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
-  dead: 0
+  spammable: 0
   type: 1
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Holy text
-  description: Each time you heal, deals 1 damage. (Continuous)
+  description: Whenever you heal, deals 1 damage.
   sprite: {fileID: 21300000, guid: cb5421596bf1f7242accc24cbb23b466, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -203,6 +207,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   heal:
+    m_PersistentCalls:
+      m_Calls: []
+  gain_points:
     m_PersistentCalls:
       m_Calls: []
   equip:
@@ -259,6 +266,12 @@ MonoBehaviour:
   unequipped:
     m_PersistentCalls:
       m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 1
   health: 0
@@ -269,6 +282,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Ready to confess?
+  executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &-4890876596102729932
 MonoBehaviour:

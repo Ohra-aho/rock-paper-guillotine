@@ -98,15 +98,14 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Holy symbol
-  description: +1 point at the start of each fight. When have accumulated 3 points,
-    uses them and gives one "Miracle" to your inventory.
+  description: +1 point at the start of each fight. When has 3 points, uses them
+    and gives one "Miracle" to your inventory.
   sprite: {fileID: 21300000, guid: 0cc34a2dc800c64479085e3ed686f0d6, type: 3}
   first_turn:
     m_PersistentCalls:

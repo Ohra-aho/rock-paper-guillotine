@@ -51,4 +51,12 @@ public class EffectDamage : MonoBehaviour
     {
         GetComponent<Weapon>().SelfDamage(amount);
     }
+
+	public void ForcedDamage()
+	{
+		if(GetComponent<Weapon>().player)
+		{
+			GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.TakeDamage(amount);
+		}
+	}
 }

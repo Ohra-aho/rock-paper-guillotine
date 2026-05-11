@@ -100,15 +100,14 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Dynamo
-  description: Whenever you deal effect damage, gains 1 point. (Continuous) After
-    use, uses all points and heals 1 for each 2 points used.
+  description: Whenever you deal effect damage, gains 1 point. After use, uses all
+    points and heals 1 for point used.
   sprite: {fileID: 21300000, guid: 52d42ef59ae3d3d4db182afc22491d5f, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -290,10 +289,12 @@ MonoBehaviour:
   constant: 0
   onDestruction: 0
   awake: 0
+  on_death: 0
   temporary: 0
   timer: 0
   penetrating: 0
   draw_winner: 0
   health_buff: 0
+  until_used: 0
   destructive: 0
   heal_disabler: 0

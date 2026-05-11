@@ -13,12 +13,12 @@ public class Dynamo : MonoBehaviour
 
     public void UseStacks()
     {
-        if(GetComponent<Stacking>().stacks >= 2)
+        if(GetComponent<Stacking>().stacks > 0)
         {
-            int heal = GetComponent<Stacking>().stacks / 2;
+            int heal = GetComponent<Stacking>().stacks;
             GetComponent<Healing>().amount = heal;
             GetComponent<Healing>().Heal();
-            GetComponent<Stacking>().stacks = GetComponent<Stacking>().stacks % 2;
+            GetComponent<Stacking>().stacks = 0;
         }
     }
 

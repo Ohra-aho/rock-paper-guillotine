@@ -15,11 +15,16 @@ public class Pickaxe : MonoBehaviour
     public void Activate(Weapon w)
     {
         GetComponent<Stacking>().IncreaseStacks(1);
-        if(GetComponent<Stacking>().stacks > 0 && GetComponent<Stacking>().stacks % 3 == 0)
+    }
+
+	public void Use()
+	{
+		if(GetComponent<Stacking>().stacks >= 3)
         {
             List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
             int index = Random.Range(0, weapons.Count);
             weapons[index].damage++;
+			GetComponent<Stacking>().DecreaseStacks(3);
         }
-    }
+	}
 }

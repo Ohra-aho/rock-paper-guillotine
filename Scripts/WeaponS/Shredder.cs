@@ -6,16 +6,15 @@ public class Shredder : MonoBehaviour
 {
     private void Awake()
     {
-        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
-        GetComponent<BuffController>().dealDamage = true;
         GetComponent<BuffController>().special_apply = true;
-        GetComponent<BuffController>().special = DealDamage;
-        GetComponent<BuffController>().temporary = true;
-        GetComponent<BuffController>().timer = 2;
     }
 
-    public void DealDamage(Weapon w)
-    {
-        GameObject.FindGameObjectWithTag("EnemyHealth").GetComponent<HealthBar>().TakeDamage(GetComponent<EffectDamage>().amount);
-    }
+    public void AddBuff()
+	{
+		Buff new_buff = Instantiate(GetComponent<BuffController>().buff, transform).GetComponent<Buff>();
+		new_buff.damage_buff = 1;
+		new_buff.temporary = true;
+		new_buff.timer = 1000;
+		new_buff.AddBuff();
+	}
 }

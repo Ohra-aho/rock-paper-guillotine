@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Rituaali : MonoBehaviour
 {
-    public int damage;
     private void Awake()
     {
         GetComponent<BuffController>().special = DealDamage;

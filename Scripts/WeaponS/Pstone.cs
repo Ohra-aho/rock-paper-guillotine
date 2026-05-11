@@ -10,7 +10,7 @@ public class Pstone : MonoBehaviour
     {
         HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
         previous_HP_gap = HB.HP_gap;
-        HB.HP_gap = 3;
+        HB.HP_gap = 5;
         HB.DecreaseHealthBar(0, false);
     }
 
