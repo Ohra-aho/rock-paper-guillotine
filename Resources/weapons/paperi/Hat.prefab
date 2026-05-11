@@ -91,20 +91,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 1
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Hat
-  description: At the start of each fight, gives +1 damage to one random weapon until
-    the end of the fight.
+  description: At the start of each fight, gives +1 damage to your weakest weapon
+    until the end of the fight.
   sprite: {fileID: 21300000, guid: 1bad85555d9c2274f90eaa4ac9aad987, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -160,6 +160,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -178,6 +181,12 @@ MonoBehaviour:
   unequipped:
     m_PersistentCalls:
       m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -187,6 +196,7 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks: []
+  executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &-1069737194206843748
 MonoBehaviour:

@@ -6,12 +6,14 @@ public class CrystalScissors : MonoBehaviour
 {
     public void HalfDamage()
     {
-        if(GetComponent<Weapon>().damage <= 1)
-        {
-            GetComponent<SelfDestruct>().Destruct();
-        } else
-        {
-            GetComponent<Weapon>().damage = GetComponent<Weapon>().damage / 2;
-        }
+        if(GetComponent<Weapon>().damage > 0)
+		{
+			GetComponent<Weapon>().damage--;
+			GetComponent<WeaponSpawner>().SpawnOnlyWeapon();
+		}
+		if(GetComponent<Weapon>().damage <= 0)
+		{
+			GetComponent<SelfDestruct>().Destruct();
+		}
     }
 }

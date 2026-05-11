@@ -31,9 +31,9 @@ public class Bleed : MonoBehaviour
         Weapon strongest = weapons[0];
         for(int i = 0; i < weapons.Count; i++)
         {
-            Buff buff_already = CheckIfDebuffExists(weapons[0].transform);
+            Buff buff_already = CheckIfDebuffExists(weapons[i].transform);
 
-            int damage = weapons[0].GetComponent<Weapon>().damage;
+            int damage = weapons[i].GetComponent<Weapon>().damage;
             if(buff_already != null)
             {
                 damage += buff_already.damage_buff;

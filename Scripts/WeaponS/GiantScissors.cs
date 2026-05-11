@@ -4,23 +4,27 @@ using UnityEngine;
 
 public class GiantScissors : MonoBehaviour
 {
+	public Buff buff;
     int previous_equips = 0;
     GameObject player;
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
-    public void CalculateDamage()
+    public void DebuffGiantScissors()
     {
         List<Weapon> weapons = player.GetComponent<PlayerContoller>().GetWeapons();
-        int current_equips = weapons.Count;
-        if (weapons.Contains(GetComponent<Weapon>())) current_equips--;
-
-        if(current_equips != previous_equips)
-        {
-            GetComponent<Weapon>().damage += previous_equips;
-            previous_equips = current_equips;
-            GetComponent<Weapon>().damage -= previous_equips;
-        }
+        for(int i = 0; i < weapons.Count; i++)
+		{
+			if(weapons[i].name == "Giant Scissors")
+			{
+				Buff new_buff = Instantiate(buff, weapons[i].transform);
+				new_buff.id = GetComponent<Weapon>().name;
+				new_buff.damage_buff = -4;
+				new_buff.temporary = true;
+				new_buff.timer = 1000;
+				new_buff.AddBuff();
+			}
+		}
     }
 }
