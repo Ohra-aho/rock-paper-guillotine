@@ -44,6 +44,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874c3528463792b4ca69dbe49ebfd99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
   id: 
   damage_buff: 0
   armor_buff: 0
+  effect_damage_buff: 0
+  toughness_buff: 0
+  used: 1
+  choisePhase: 0
+  resultPhase: 0
+  endPhase: 0
+  victory: 0
+  takeDamage: 0
+  takeNoDamage: 0
+  dealDamage: 0
+  deal_effect_damage: 0
+  draw: 0
+  win: 0
+  lose: 0
+  heal: 0
+  gain_points: 0
+  equip: 0
+  unEquip: 0
+  constant: 0
+  awake: 0
+  onDestruction: 0
+  on_death: 0
+  temporary: 0
+  timer: 0
+  penetrating: 0
+  draw_winner: 0
+  health_buff: 0
+  until_used: 0
+  destructive: 0
+  heal_disabler: 0
+  desruction_buffer: 0
+  og_type: 0

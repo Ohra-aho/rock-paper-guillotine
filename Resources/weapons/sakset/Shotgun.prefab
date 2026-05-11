@@ -104,7 +104,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Shotgun
-  description: At the beginning of each battle, deals 1 damage to both.
+  description: At the beginning of each battle, deals 1 damage. Has a chance to deal
+    1 damage to you.
   sprite: {fileID: 21300000, guid: f4e741da19cc05f4494735b9cda20439, type: 3}
   first_turn:
     m_PersistentCalls:

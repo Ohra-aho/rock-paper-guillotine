@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -1488876996524214490}
   - component: {fileID: -5332810274612760702}
+  - component: {fileID: -2824872158357557172}
   m_Layer: 5
   m_Name: "Ter\xE4myrsky"
   m_TagString: Untagged
@@ -104,7 +105,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Blade storm
-  description: +2 to damage to all other weapons, but they destroy itself after use.
+  description: All other weapons deal 2 damage after use and destroy themselves.
   sprite: {fileID: 21300000, guid: 2bb30eedefc09114696fba69a7ab674c, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -248,3 +249,17 @@ MonoBehaviour:
   until_used: 0
   destructive: 0
   heal_disabler: 0
+--- !u!114 &-2824872158357557172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 2
+  armor_piercing: 0

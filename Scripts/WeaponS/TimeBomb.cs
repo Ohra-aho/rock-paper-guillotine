@@ -7,22 +7,28 @@ public class TimeBomb : MonoBehaviour
     private void Awake()
     {
         GetComponent<BuffController>().special = IncreaseDamage;
-        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name != GetComponent<Weapon>().name; };
-        GetComponent<BuffController>().endPhase = true;
+        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name == GetComponent<Weapon>().name; };
+        GetComponent<BuffController>().each_turn = true;
+		GetComponent<BuffController>().temporary = true;
+		GetComponent<BuffController>().timer = 4;
+		GetComponent<BuffController>().special_apply = true;
     }
 
     public void IncreaseDamage(Weapon w)
     {
-        GetComponent<Stacking>().IncreaseStacks(1);
+        GetComponent<Stacking>().DecreaseStacks(1);
+		if(GetComponent<Stacking>().stacks == 0)
+		{
+			GetComponent<EffectDamage>().DealDamage(GameObject.Find("EventSystem").GetComponent<MainController>().playerChoise);
+		}
     }
 
-    public void ResetDamage()
-    {
-        GetComponent<Stacking>().stacks = 0;
-    }
-
-    public void CalculateDamage()
-    {
-        GetComponent<Weapon>().damage = GetComponent<Stacking>().stacks;
-    }
+	public void Activate()
+	{
+		if(!GetComponent<Weapon>().FindCertainBuff(GetComponent<Weapon>().name))
+		{
+			GetComponent<Stacking>().stacks = 4;
+			GetComponent<BuffController>().Equip();
+		}
+	}
 }

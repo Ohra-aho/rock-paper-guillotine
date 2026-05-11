@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
+  - component: {fileID: 7709308725537152726}
   m_Layer: 5
   m_Name: Pora
   m_TagString: Untagged
@@ -89,20 +90,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 1
   draw_winner: 0
-  dead: 0
+  spammable: 0
   type: 2
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Drill
-  description: Pierces armor
+  description: Pierces armor. -1 armor to the weapon used against this.
   sprite: {fileID: 21300000, guid: 9771147d1e0ae3241a8cffaa12410636, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -113,7 +119,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7709308725537152726}
+        m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
+        m_MethodName: DebuffOpposingWeaponArmor
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -121,6 +139,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
   takeNoDamage:
@@ -138,6 +159,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -153,6 +177,15 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -163,3 +196,17 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Just play around the armor. It's not that hard.
+  executioner_comment: 
+  damage_soft_cap: 7
+--- !u!114 &7709308725537152726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b84c21e8388ac64da2a85039d59a1b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

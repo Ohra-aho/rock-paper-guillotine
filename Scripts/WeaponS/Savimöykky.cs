@@ -4,43 +4,46 @@ using UnityEngine;
 
 public class Savimöykky : MonoBehaviour
 {
-    private int damage_mod;
-    private int armor_mod;
+	void Awake()
+	{
+		GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+		GetComponent<BuffController>().temporary = true;
+		GetComponent<BuffController>().timer = 2;
+		GetComponent<BuffController>().endPhase = true;
+		GetComponent<BuffController>().special = CopyWeapon;
+		GetComponent<BuffController>().special_apply = true;
+	}
 
-    private void Awake()
-    {
-        damage_mod = 1;
-        armor_mod = 0;
-        GetComponent<Weapon>().damage = damage_mod;
-        GetComponent<Weapon>().armor = armor_mod;
-    }
+	public void Activate()
+	{
+		if(GetComponent<Stacking>().stacks >= 5)
+		{
+			GetComponent<Stacking>().DecreaseStacks(5);
+			GetComponent<BuffController>().Equip();
+		}
+	}
 
-    public void TakingDamage()
-    {
-        armor_mod++;
-        damage_mod--;
-        if(armor_mod > 3) armor_mod = 3;
-        if(damage_mod > 3) damage_mod = 3;
-        if (damage_mod < 1) damage_mod = 1;
-        if (armor_mod < 0) armor_mod = 0;
-        
-        GetComponent<Weapon>().damage = damage_mod;
-        GetComponent<Weapon>().armor = armor_mod;
-        Debug.Log("Damage: " + GetComponent<Weapon>().damage);
-        Debug.Log("Armor: " + GetComponent<Weapon>().armor);
-    }
+	public void CopyWeapon(Weapon w)
+	{
+		GameObject copy = Instantiate(w.gameObject, GameObject.FindGameObjectWithTag("RI").transform);
+		copy.GetComponent<Weapon>().player = true;
 
-    public void DealingDamage()
-    {
-        armor_mod--;
-        damage_mod++;
-        if (armor_mod > 3) armor_mod = 3;
-        if (damage_mod > 3) damage_mod = 3;
-        if (damage_mod < 0) damage_mod = 0;
-        if (armor_mod < 0) armor_mod = 0;
-        GetComponent<Weapon>().damage = damage_mod;
-        GetComponent<Weapon>().armor = armor_mod;
-        Debug.Log("Damage: " + GetComponent<Weapon>().damage);
-        Debug.Log("Armor: " + GetComponent<Weapon>().armor);
-    }
+		copy.GetComponent<Weapon>().InisiateTypeEffects();
+		PlayerInventory PI = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+		PI.items.Add(copy);
+		
+		PI.AddBuffToNewWeapon(copy);
+		GameObject event_system = GameObject.Find("EventSystem");
+		event_system.GetComponent<RLController>().CheckCollector();
+		event_system.GetComponent<RLController>().CheckForNeurotic();
+		event_system.GetComponent<RLController>().CheckForPicky();
+		event_system.GetComponent<RLController>().ApplyBuffs();
+
+		if(GameObject.FindGameObjectWithTag("Inventory") != null)
+		{
+			InventoryMenu IM = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryMenu>();
+			IM.ReconstructInventory();
+		}
+	
+	}
 }

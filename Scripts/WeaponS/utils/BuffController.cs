@@ -30,6 +30,7 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public bool choisePhase;
     [HideInInspector] public bool resultPhase;
     [HideInInspector] public bool endPhase;
+    [HideInInspector] public bool each_turn;
     [HideInInspector] public bool victory;
     [HideInInspector] public bool special_apply;
 
@@ -173,6 +174,7 @@ public class BuffController : MonoBehaviour
             new_buff.gain_points = gain_points;
             new_buff.until_used = until_used;
             new_buff.on_death = on_death;
+			new_buff.each_turn = each_turn;
             if (special != null) new_buff.GetComponent<Buff>().special = special;
             if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
             new_buff.GetComponent<Buff>().AddBuff();
