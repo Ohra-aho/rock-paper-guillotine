@@ -76,107 +76,108 @@ public class Buff : MonoBehaviour
 
     public void AddBuff()
     {
-        if (effect_damage_buff != 0)
-        {
-            if (effect_damage_buff < 0 && -effect_damage_buff > transform.parent.GetComponent<EffectDamage>().amount)
-            {
-                effect_damage_buff = -transform.parent.GetComponent<EffectDamage>().amount;
-            }
-            transform.parent.GetComponent<EffectDamage>().amount += effect_damage_buff;
-        }
+		if (effect_damage_buff != 0)
+		{
+			if (effect_damage_buff < 0 && -effect_damage_buff > transform.parent.GetComponent<EffectDamage>().amount)
+			{
+				effect_damage_buff = -transform.parent.GetComponent<EffectDamage>().amount;
+			}
+			transform.parent.GetComponent<EffectDamage>().amount += effect_damage_buff;
+		}
 
-        if(toughness_buff != 0)
-        {
-            if (toughness_buff < 0 && -toughness_buff > transform.parent.GetComponent<SelfDestruct>().toughness)
-            {
-                toughness_buff = -transform.parent.GetComponent<SelfDestruct>().toughness;
-            }
-            transform.parent.GetComponent<SelfDestruct>().toughness += toughness_buff;
-        }
+		if(toughness_buff != 0)
+		{
+			if (toughness_buff < 0 && -toughness_buff > transform.parent.GetComponent<SelfDestruct>().toughness)
+			{
+				toughness_buff = -transform.parent.GetComponent<SelfDestruct>().toughness;
+			}
+			transform.parent.GetComponent<SelfDestruct>().toughness += toughness_buff;
+		}
 
-        GetOGs();
+		GetOGs();
 
-        if(choisePhase)
-            transform.parent.GetComponent<Weapon>().choisePhase.AddListener(() => special(weapon));
-        if (resultPhase)
-            transform.parent.GetComponent<Weapon>().resultPhase.AddListener(() => special(weapon));
-        if (endPhase)
-            transform.parent.GetComponent<Weapon>().endPhase.AddListener(() => special(weapon));
-        if (victory)
-            transform.parent.GetComponent<Weapon>().victory.AddListener(() => special(weapon));
-        if (takeDamage)
-            transform.parent.GetComponent<Weapon>().takeDamage.AddListener(() => special(weapon));
-        if (takeNoDamage)
-            transform.parent.GetComponent<Weapon>().takeNoDamage.AddListener(() => special(weapon));
-        if (dealDamage)
-            transform.parent.GetComponent<Weapon>().dealDamage.AddListener(() => special(weapon));
-        if (deal_effect_damage)
-            transform.parent.GetComponent<Weapon>().deal_effect_damage.AddListener(() => special(weapon));
-        if (draw)
-            transform.parent.GetComponent<Weapon>().draw.AddListener(() => special(weapon));
-        if (heal)
-            transform.parent.GetComponent<Weapon>().heal.AddListener(() => special(weapon));
-        if (constant)
-            transform.parent.GetComponent<Weapon>().constant.AddListener(() => special(weapon));
-        if (onDestruction)
-            transform.parent.GetComponent<Weapon>().onDestruction.AddListener(() => special(weapon));
-        if (awake)
-            special(weapon);
-        if(win)
-            transform.parent.GetComponent<Weapon>().win.AddListener(() => special(weapon));
-        if (lose)
-            transform.parent.GetComponent<Weapon>().lose.AddListener(() => special(weapon));
-        if (gain_points) 
-            transform.parent.GetComponent<Weapon>().gain_points.AddListener(() => special(weapon));
-        if (on_death)
-            transform.parent.GetComponent<Weapon>().on_death.AddListener(() => special(weapon));
+		if(choisePhase)
+			transform.parent.GetComponent<Weapon>().choisePhase.AddListener(() => special(weapon));
+		if (resultPhase)
+			transform.parent.GetComponent<Weapon>().resultPhase.AddListener(() => special(weapon));
+		if (endPhase)
+			transform.parent.GetComponent<Weapon>().endPhase.AddListener(() => special(weapon));
+		if (victory)
+			transform.parent.GetComponent<Weapon>().victory.AddListener(() => special(weapon));
+		if (takeDamage)
+			transform.parent.GetComponent<Weapon>().takeDamage.AddListener(() => special(weapon));
+		if (takeNoDamage)
+			transform.parent.GetComponent<Weapon>().takeNoDamage.AddListener(() => special(weapon));
+		if (dealDamage)
+			transform.parent.GetComponent<Weapon>().dealDamage.AddListener(() => special(weapon));
+		if (deal_effect_damage)
+			transform.parent.GetComponent<Weapon>().deal_effect_damage.AddListener(() => special(weapon));
+		if (draw)
+			transform.parent.GetComponent<Weapon>().draw.AddListener(() => special(weapon));
+		if (heal)
+			transform.parent.GetComponent<Weapon>().heal.AddListener(() => special(weapon));
+		if (constant)
+			transform.parent.GetComponent<Weapon>().constant.AddListener(() => special(weapon));
+		if (onDestruction)
+			transform.parent.GetComponent<Weapon>().onDestruction.AddListener(() => special(weapon));
+		if (awake)
+			special(weapon);
+		if(win)
+			transform.parent.GetComponent<Weapon>().win.AddListener(() => special(weapon));
+		if (lose)
+			transform.parent.GetComponent<Weapon>().lose.AddListener(() => special(weapon));
+		if (gain_points) 
+			transform.parent.GetComponent<Weapon>().gain_points.AddListener(() => special(weapon));
+		if (on_death)
+			transform.parent.GetComponent<Weapon>().on_death.AddListener(() => special(weapon));
 		if (each_turn)
-            transform.parent.GetComponent<Weapon>().eachTurn.AddListener(() => special(weapon));
+			transform.parent.GetComponent<Weapon>().eachTurn.AddListener(() => special(weapon));
 
-        if (type_change != null)
-            transform.parent.GetComponent<Weapon>().type = type_change ?? og_type;   
-        if (penetrating)
-            transform.parent.GetComponent<Weapon>().penetrating = true;
-        if (draw_winner)
-            transform.parent.GetComponent<Weapon>().draw_winner = true;
-        if (destructive)
-        {
-            transform.parent.gameObject.AddComponent<SelfDestruct>();
-            transform.parent.GetComponent<Weapon>().endPhase.AddListener(transform.parent.GetComponent<SelfDestruct>().Destruct);
-        }
-        if(health_buff > 0)
-        {
-            transform.parent.gameObject.AddComponent<HealthIncrease>();
-            transform.parent.GetComponent<HealthIncrease>().amount = health_buff;
-            transform.parent.GetComponent<Weapon>().equip.AddListener(transform.parent.GetComponent<HealthIncrease>().Increase);
-            transform.parent.GetComponent<Weapon>().unEquip.AddListener(transform.parent.GetComponent<HealthIncrease>().Decrease);
-        }
-        if(heal_disabler)
-        {
-            if(transform.parent.GetComponent<Healing>())
-            {
-                if(!transform.parent.GetComponent<Healing>().disabled)
-                {
-                    transform.parent.GetComponent<Healing>().disabled = true;
-                } else
-                {
-                    healing_disabled = true;
-                }
-            }
-        }
-        if(until_used)
-        {
-            transform.parent.GetComponent<Weapon>().endPhase.AddListener(() => {
-                if(used)
-                {
-                    RemoveBuff();
-                    Destroy(this.gameObject);
-                } else
-                {
-                    used = true;
-                }
-            });
-        }
+		if (type_change != null)
+			transform.parent.GetComponent<Weapon>().type = type_change ?? og_type;   
+		if (penetrating)
+			transform.parent.GetComponent<Weapon>().penetrating = true;
+		if (draw_winner)
+			transform.parent.GetComponent<Weapon>().draw_winner = true;
+		if (destructive)
+		{
+			transform.parent.gameObject.AddComponent<SelfDestruct>();
+			transform.parent.GetComponent<Weapon>().endPhase.AddListener(transform.parent.GetComponent<SelfDestruct>().Destruct);
+		}
+		if(health_buff > 0)
+		{
+			transform.parent.gameObject.AddComponent<HealthIncrease>();
+			transform.parent.GetComponent<HealthIncrease>().amount = health_buff;
+			transform.parent.GetComponent<Weapon>().equip.AddListener(transform.parent.GetComponent<HealthIncrease>().Increase);
+			transform.parent.GetComponent<Weapon>().unEquip.AddListener(transform.parent.GetComponent<HealthIncrease>().Decrease);
+		}
+		if(heal_disabler)
+		{
+			if(transform.parent.GetComponent<Healing>())
+			{
+				if(!transform.parent.GetComponent<Healing>().disabled)
+				{
+					transform.parent.GetComponent<Healing>().disabled = true;
+				} else
+				{
+					healing_disabled = true;
+				}
+			}
+		}
+		if(until_used)
+		{
+			transform.parent.GetComponent<Weapon>().endPhase.AddListener(() => {
+				if(used)
+				{
+					RemoveBuff();
+					Destroy(this.gameObject);
+				} else
+				{
+					used = true;
+				}
+			});
+		}	
+		
     }
 
     public void RemoveBuff()

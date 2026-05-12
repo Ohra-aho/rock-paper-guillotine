@@ -272,6 +272,23 @@ public class Weapon : MonoBehaviour
             HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
             dead = hb.GetComponent<HealthBar>().CheckIfDead();
             if(dead) on_death.Invoke();
+			//Tick down temporary buffs
+			List<Weapon> weapons = GetComponent<Weapon>().player_owner.GetWeapons();
+			for(int i = 0; i < weapons.Count; i++)
+			{
+				GameObject weapon = weapons[i].gameObject;
+				if (weapon.transform.childCount > 0)
+				{
+					for(int j = 0; j < weapon.transform.childCount; j++)
+					{
+						if(weapon.transform.GetChild(j).GetComponent<Buff>().timer > 0)
+						{
+							weapon.transform.GetChild(j).GetComponent<Buff>().TickDown();
+						}
+					}
+				}
+			}
+
             if(hb.GetComponent<HealthBar>().dead)
             {
                 GameObject.Find("EventSystem").GetComponent<MainController>().Loose();

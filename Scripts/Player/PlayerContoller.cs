@@ -275,7 +275,7 @@ public class PlayerContoller : MonoBehaviour
     {
         if (chosenWeapon != null) chosenWeapon.GetComponent<Weapon>().endPhase.Invoke();
 
-        for(int i = 0; i < TrueInventory.transform.childCount; i++)
+        /*for(int i = 0; i < TrueInventory.transform.childCount; i++)
         {
             GameObject weapon = TrueInventory.transform.GetChild(i).gameObject;
             if (weapon.transform.childCount > 0)
@@ -288,7 +288,7 @@ public class PlayerContoller : MonoBehaviour
                     }
                 }
             }
-        }
+        }*/
         
         if(MC.first_turn)
         {
