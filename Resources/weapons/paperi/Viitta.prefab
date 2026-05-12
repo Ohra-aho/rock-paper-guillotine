@@ -234,6 +234,7 @@ MonoBehaviour:
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
+  each_turn: 0
   victory: 0
   special_apply: 0
   takeDamage: 0

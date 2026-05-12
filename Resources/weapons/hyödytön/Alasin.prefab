@@ -91,20 +91,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
-  dead: 0
+  spammable: 0
   type: 4
   damage: 0
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Anvil
-  description: +1 damage to one random equipped weapon after use. Destroys itself.
+  description: After use, +1 damage to your weakest weapon. Destroys itself.
   sprite: {fileID: 21300000, guid: 8b1ad240ae2886944a14c01e2b788377, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -149,6 +154,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -162,6 +170,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   heal:
+    m_PersistentCalls:
+      m_Calls: []
+  gain_points:
     m_PersistentCalls:
       m_Calls: []
   equip:
@@ -179,6 +190,15 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 1
   healing: 0
   health: 0
@@ -189,6 +209,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - This might get out of hand fast.
+  executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &5755444230686218645
 MonoBehaviour:
@@ -202,8 +223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used_ones: 0
   destroyed: 0
+  disabled: 0
+  toughness: 0
 --- !u!114 &-1617206338357757752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,3 +238,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3cf5858ab372af47a1ba624bb0c37c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff: {fileID: 6801857526931469561, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}

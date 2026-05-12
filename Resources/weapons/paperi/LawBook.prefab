@@ -99,7 +99,6 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 1
   damage: 1
   armor: 0
@@ -238,6 +237,7 @@ MonoBehaviour:
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
+  each_turn: 0
   victory: 0
   special_apply: 0
   takeDamage: 0

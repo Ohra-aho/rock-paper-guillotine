@@ -11,7 +11,7 @@ public class SelfDestruct : MonoBehaviour
 
     public void Destruct()
     {
-        if(!disabled && GetComponent<Weapon>().name != "Diamond")
+        if(!disabled && GetComponent<Weapon>().name != "Diamond" && !GetComponent<Weapon>().GetCertainBuff("Ducktape"))
         {
             bool nessessary = false;
             bool play_animation = true;

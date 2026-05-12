@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 5460494944857187336}
-  - component: {fileID: -2545923008516002973}
   - component: {fileID: -8165146615769782829}
   - component: {fileID: -4115350253474921807}
   m_Layer: 5
@@ -106,8 +105,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Gun
-  description: Uses one point to deal 1 damage. When last point is used, destroys
-    itself.
+  description: After use, uses one point to deal 1 damage.
   sprite: {fileID: 21300000, guid: fb3f64a9df7a0f244bcde7be6bfafdeb, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -214,21 +212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cffef8fa34fece4cbc55c1cef3c886f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-2545923008516002973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyed: 0
-  disabled: 0
-  toughness: 0
 --- !u!114 &-8165146615769782829
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -90,11 +90,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 1
-  dead: 0
+  spammable: 0
   type: 1
   damage: 1
   armor: 0
@@ -145,6 +146,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -163,6 +167,12 @@ MonoBehaviour:
   unequipped:
     m_PersistentCalls:
       m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -173,4 +183,5 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Not that flashy, but effective.
+  executioner_comment: 
   damage_soft_cap: 7

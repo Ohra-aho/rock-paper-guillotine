@@ -90,11 +90,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff_data: []
+  owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
-  dead: 0
+  spammable: 0
   type: 1
   damage: 3
   armor: 0
@@ -104,6 +106,9 @@ MonoBehaviour:
   description: -2 to damage if you are not at full health.
   sprite: {fileID: 21300000, guid: 67d1539dec5167746a0ed85e8a37ed24, type: 3}
   first_turn:
+    m_PersistentCalls:
+      m_Calls: []
+  end_of_fight:
     m_PersistentCalls:
       m_Calls: []
   choisePhase:
@@ -124,6 +129,9 @@ MonoBehaviour:
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -137,6 +145,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   heal:
+    m_PersistentCalls:
+      m_Calls: []
+  gain_points:
     m_PersistentCalls:
       m_Calls: []
   equip:
@@ -166,6 +177,15 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 1
   health: 0
@@ -176,6 +196,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Let's see how long will that stay up.
+  executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &409352218259904777
 MonoBehaviour:

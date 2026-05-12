@@ -91,12 +91,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 1
   damage: 2
   armor: 0
@@ -178,6 +178,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0

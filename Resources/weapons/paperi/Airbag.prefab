@@ -98,14 +98,13 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 1
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Airbag
-  description: If you end a turn with 1 HP, heal 1. (Continuous)
+  description: If you end a turn with 1 HP, heal 1.
   sprite: {fileID: 21300000, guid: 04518826754efb24cafeee52b1da65ac, type: 3}
   first_turn:
     m_PersistentCalls:
