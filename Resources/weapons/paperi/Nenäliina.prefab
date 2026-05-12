@@ -93,20 +93,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 1
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Handkerchief
-  description: Gains points equal to life you have lost. If used at 10 points, uses
-    all points to deal 2 damage.
+  description: Gains points equal to life you have lost. When at 6 points, uses all
+    points to deal 2 damage.
   sprite: {fileID: 21300000, guid: 1ca9bc8b5371dcf48b50c8dc17938594, type: 3}
   first_turn:
     m_PersistentCalls:
@@ -162,6 +162,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -180,6 +183,12 @@ MonoBehaviour:
   unequipped:
     m_PersistentCalls:
       m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 1
@@ -190,6 +199,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - To wipe away the blood.
+  executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &6873274728737089563
 MonoBehaviour:
@@ -230,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stacks: 0
-  stack_limit: 10
+  stack_limit: 6
   LoadFunction:
     m_PersistentCalls:
       m_Calls: []
@@ -239,4 +249,16 @@ MonoBehaviour:
       m_Calls: []
   after_stacking:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6873274728737089563}
+        m_TargetAssemblyTypeName: Handcerchife, Assembly-CSharp
+        m_MethodName: UseStacks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

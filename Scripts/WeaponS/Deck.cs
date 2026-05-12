@@ -36,7 +36,7 @@ public class Deck : MonoBehaviour
             case 2:
                 GameObject new_buff_3 = Instantiate(buff, GetRandomEquippedWeapon().transform);
                 new_buff_3.GetComponent<Buff>().id = GetComponent<Weapon>().name + "_2";
-                new_buff_3.GetComponent<Buff>().type_change = MainController.Choise.useless;
+				new_buff_3.GetComponent<Buff>().armor_buff = 2;
                 new_buff_3.GetComponent<Buff>().temporary = true;
                 new_buff_3.GetComponent<Buff>().timer = 2;
                 new_buff_3.GetComponent<Buff>().AddBuff();
@@ -47,6 +47,11 @@ public class Deck : MonoBehaviour
     public Weapon GetRandomEquippedWeapon()
     {
         List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
-        return weapons[Random.Range(0, weapons.Count)];
+		int index = Random.Range(0, weapons.Count);
+		while(weapons[index].name == GetComponent<Weapon>().name)
+		{
+			index = Random.Range(0, weapons.Count);
+		}
+        return weapons[index];
     }
 }

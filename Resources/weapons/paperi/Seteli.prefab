@@ -103,11 +103,23 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Bill
-  description: Each weapon gains one point.
+  description: At the start of each fight, one random weapon gains 1 point.
   sprite: {fileID: 21300000, guid: 6f54d77bf32883d40aa52cea431557a2, type: 3}
   first_turn:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -773870869169075467}
+        m_TargetAssemblyTypeName: Seteli, Assembly-CSharp
+        m_MethodName: GivePoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   end_of_fight:
     m_PersistentCalls:
       m_Calls: []
@@ -152,52 +164,16 @@ MonoBehaviour:
       m_Calls: []
   equip:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -773870869169075467}
-        m_TargetAssemblyTypeName: Seteli, Assembly-CSharp
-        m_MethodName: Equip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   unEquip:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -773870869169075467}
-        m_TargetAssemblyTypeName: Seteli, Assembly-CSharp
-        m_MethodName: UnEquip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   constant:
     m_PersistentCalls:
       m_Calls: []
   onDestruction:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -773870869169075467}
-        m_TargetAssemblyTypeName: Seteli, Assembly-CSharp
-        m_MethodName: UnEquip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
