@@ -100,6 +100,7 @@ public class TableController : MonoBehaviour
                 player.GetComponent<PlayerContoller>().HB.TakeDamage(player_damage);
             }
             player_damage = 0;
+			player.GetComponent<PlayerContoller>().HB.dead = player.GetComponent<PlayerContoller>().HB.CheckIfDead();
         }
 
 
@@ -110,6 +111,7 @@ public class TableController : MonoBehaviour
                 enemy.GetComponent<EnemyController>().HB.TakeDamage(enemy_damage);
             }
             enemy_damage = 0;
+			enemy.GetComponent<EnemyController>().HB.dead = enemy.GetComponent<EnemyController>().HB.CheckIfDead();
         }
     }
 

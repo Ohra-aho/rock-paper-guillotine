@@ -8,7 +8,7 @@ public class HealthBar : MonoBehaviour
     public List<GameObject> hearts;
     public GameObject heart;
     public GameObject heart_slot;
-    public bool dead;
+    [HideInInspector] public bool dead = false;
     [HideInInspector] public bool damage_taken = false;
     public int HP_gap = 15;
     private int slots = 15;
@@ -28,6 +28,7 @@ public class HealthBar : MonoBehaviour
     private void Awake()
     {
         MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
+		dead = false;
     }
 
     private void Update()
@@ -57,9 +58,9 @@ public class HealthBar : MonoBehaviour
                 }
             }
         }
-        dead = CheckIfDead();
+        //dead = CheckIfDead();
         damage_taken = true;
-        if (gameObject.CompareTag("PlayerHealth") && !dead) {
+        if (gameObject.CompareTag("PlayerHealth") && !CheckIfAtZeroHP()) {
             //Damage animations
             if(!MC.GetComponent<StoryController>().executioner)
             {
@@ -80,12 +81,12 @@ public class HealthBar : MonoBehaviour
             LowHealthReaction();
         } else if(gameObject.CompareTag("PlayerHealth"))
         {
-            if (dead && !MC.GetComponent<StoryController>().executioner)
+            if (CheckIfAtZeroHP() && !MC.GetComponent<StoryController>().executioner)
             {
                 Camera.main.GetComponent<Test>().PlayAnimation("dead react");
             }
         }
-        if(!dead) HighDamageReaction(damage);
+        //if(!dead) HighDamageReaction(damage); Move somewhere else (table controller)
         
     }
 
@@ -107,7 +108,7 @@ public class HealthBar : MonoBehaviour
                 }
             }
         }
-        dead = CheckIfDead();
+        //dead = CheckIfDead();
     }
 
     public void HealToFull()
@@ -142,20 +143,40 @@ public class HealthBar : MonoBehaviour
 
     public bool CheckIfDead()
     {
-        bool found = true;
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            if (transform.GetChild(i).GetComponent<Heart>())
-            {
-                if (transform.GetChild(i).GetComponent<Heart>().healthy)
-                {
-                    found = false;
-                    break;
-                }
-            }
-        }
-        return found;
+        if(transform.parent.name == "LeftSide")
+		{
+			if(GameObject.Find("Table").GetComponent<TableController>().player_damage == 0)
+			{
+				return CheckIfAtZeroHP();
+			}
+			return GiveCurrentHealth() <= GameObject.Find("Table").GetComponent<TableController>().player_damage;
+		} 
+		else
+		{
+			if(GameObject.Find("Table").GetComponent<TableController>().enemy_damage == 0)
+			{
+				return CheckIfAtZeroHP();
+			}
+			return GiveCurrentHealth() <= GameObject.Find("Table").GetComponent<TableController>().enemy_damage;
+		} 
     }
+
+	public bool CheckIfAtZeroHP()
+	{
+		bool found = true;
+		for (int i = 0; i < transform.childCount; i++)
+		{
+			if (transform.GetChild(i).GetComponent<Heart>())
+			{
+				if (transform.GetChild(i).GetComponent<Heart>().healthy)
+				{
+					found = false;
+					break;
+				}
+			}
+		}
+		return found;
+	}
 
     public void DisplayHealthBar(int? maxHealth)
     {
@@ -247,7 +268,7 @@ public class HealthBar : MonoBehaviour
         if(current_health > max_health) current_health = max_health;
         if (max_health <= 0)
         {
-            if(MC.game_state == MainController.State.in_battle) MC.Loose();//Lisää jokin kommentti
+            if(MC.game_state == MainController.State.in_battle) MC.Loose();//Lisï¿½ï¿½ jokin kommentti
             else
             {
                 int x = max_health;

@@ -11,18 +11,18 @@ public class SelfDestruct : MonoBehaviour
 
     public void Destruct()
     {
-        if(!disabled && GetComponent<Weapon>().name != "Diamond" && !GetComponent<Weapon>().GetCertainBuff("Ducktape"))
+        if(!disabled && GetComponent<Weapon>().name != "Diamond" && !GetComponent<Weapon>().FindCertainBuff("Ducktape"))
         {
-            bool nessessary = false;
-            bool play_animation = true;
+            bool nessessary = true;
             if (GetComponent<Weapon>().player)
             {
-                if(!GetComponent<Weapon>().player_owner.HB.dead) nessessary = true;
+                if(GetComponent<Weapon>().player_owner.HB.CheckIfDead()) nessessary = false;
             } else
             {
-                if (!GetComponent<Weapon>().owner.HB.dead) nessessary = true;
+                if (GetComponent<Weapon>().owner.HB.CheckIfDead()) nessessary = false;
+				if (GetComponent<Weapon>().opponent.player_owner.HB.CheckIfDead()) nessessary = false;
 
-                for (int i = 0; i < GetComponent<Weapon>().owner.weapons.Count; i++)
+                /*for (int i = 0; i < GetComponent<Weapon>().owner.weapons.Count; i++)
                 {
                     if(GetComponent<Weapon>().owner.weapons[i] != null)
                     {
@@ -35,7 +35,7 @@ public class SelfDestruct : MonoBehaviour
                     {
                         play_animation = false;
                     }
-                }
+                }*/
             }
 
             if (toughness > 0) nessessary = false;
@@ -52,12 +52,9 @@ public class SelfDestruct : MonoBehaviour
                 }
                 else
                 {
-                    if (!GetComponent<Weapon>().owner.HB.dead)
-                    {
-                        if(play_animation) GameObject.Find("Destruction hand e").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
-                        if(play_animation) GameObject.Find("Destruction hand e").GetComponent<Test>().PlayAnimation("grab2");
-                        destroyed = true;
-                    }
+					GameObject.Find("Destruction hand e").GetComponent<Hand>().weapon_to_destroy = this.gameObject;
+					GameObject.Find("Destruction hand e").GetComponent<Test>().PlayAnimation("grab2");
+					destroyed = true;
                 }
             }
             toughness--;

@@ -156,7 +156,7 @@ public class BasicEnemy : MonoBehaviour
                     break;
                 }
             }
-
+			
             while (!valid_weapon_found)
             {
                 planIndex++;
