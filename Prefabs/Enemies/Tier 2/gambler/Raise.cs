@@ -45,7 +45,7 @@ public class Raise : MonoBehaviour
         {
             if(RIE.transform.GetChild(i).GetComponent<Weapon>().name == "Jackpot")
             {
-                RIE.transform.GetChild(i).GetComponent<Stacking>().IncreaseStacks(1);
+                RIE.transform.GetChild(i).GetComponent<Stacking>().IncreaseStacks(2);
                 break;
             }
         }

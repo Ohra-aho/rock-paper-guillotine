@@ -14,7 +14,7 @@ public class Leetche : MonoBehaviour
     {
         if(GetComponent<Stacking>().stacks > 0)
         {
-            GetComponent<Weapon>().opponent.player_owner.HB.DecreaseHealthBar(1, true);
+            GetComponent<Weapon>().opponent.player_owner.HB.IncreaseHealthBar(1, true);
             GetComponent<Stacking>().DecreaseStacks(1);
         }
     }
