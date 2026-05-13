@@ -23,7 +23,7 @@ public class PlayerWheelHolder : MonoBehaviour
 
     private void Update()
     {
-        if(MC.CompareState(MainController.State.idle) || MC.CompareState(MainController.State.re_arming))
+        if(MC.CompareState(MainController.State.idle) || MC.CompareState(MainController.State.re_arming) || MC.CompareState(MainController.State.reward))
         {
             if(!GetComponent<NonUIButton>().interactable)
             {
