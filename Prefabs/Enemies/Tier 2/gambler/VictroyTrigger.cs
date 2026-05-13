@@ -6,6 +6,6 @@ public class VictroyTrigger : MonoBehaviour
 {
     public void VictoryTrigger()
     {
-        GameObject.Find("Gambler(Clone)").GetComponent<Gambler>().won = true;
+        //GameObject.Find("Gambler(Clone)").GetComponent<Gambler>().won = true;
     }
 }

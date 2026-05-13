@@ -99,7 +99,7 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  type: 0
+  type: 3
   damage: 1
   armor: 0
   real_damage: 0

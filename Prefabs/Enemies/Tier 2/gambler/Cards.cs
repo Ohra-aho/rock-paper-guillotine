@@ -21,4 +21,10 @@ public class Cards : MonoBehaviour
                 break;
         }
     }
+
+	public void ChangeDamage()
+	{
+		int damage = Random.Range(0, 5);
+		GetComponent<Weapon>().damage = damage;
+	}
 }
