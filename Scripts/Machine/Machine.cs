@@ -68,6 +68,8 @@ public class Machine : MonoBehaviour
 
     public void AnimationStart()
     {
+		GameObject.Find("PlayerHealth").GetComponent<HealthBar>().DestroyHealthBar();
+		GameObject.Find("PlayerHealth").GetComponent<HealthBar>().UpdateHealthBar(false);
         InvokeBossGearChange();
         rightSide.transform.GetChild(3).GetComponent<EnemyController>().HandleEnemy();
         ToggleIdle();

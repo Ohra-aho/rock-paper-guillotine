@@ -92,19 +92,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
-  penetrating: 1
+  penetrating: 0
   draw_winner: 0
   spammable: 1
-  dead: 0
   type: 2
   damage: 2
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Bite
-  description: When deals damage or draws, heals 1. Pierces armor.
+  description: When deals damage or draws, heals 1.
   sprite: {fileID: 21300000, guid: 7e77726f54a940a47a61d5189adcd709, type: 3}
   first_turn:
     m_PersistentCalls:

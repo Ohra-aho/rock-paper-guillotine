@@ -237,8 +237,8 @@ public class HealthBar : MonoBehaviour
 
         if (!FullHealthBar())
         {
-            if (MC.game_state == MainController.State.in_battle) {
-                transform.parent.GetChild(4).GetComponent<Test>().PlayAnimation("Change health"); 
+            if (MC.game_state == MainController.State.in_battle && !CheckIfDead() && !GameObject.Find("EnemyHealth").GetComponent<HealthBar>().CheckIfDead()) {
+                transform.parent.GetChild(4).GetComponent<Test>().PlayAnimation("Change health");
             } else
             {
                 int x = max_health;
@@ -286,11 +286,11 @@ public class HealthBar : MonoBehaviour
             if (x > HP_gap) x = HP_gap;
             if (y > HP_gap) y = HP_gap;
 
-            if (MC.game_state == MainController.State.in_battle)
+            if (MC.game_state == MainController.State.in_battle && !CheckIfDead() && !GameObject.Find("EnemyHealth").GetComponent<HealthBar>().CheckIfDead())
             {
                 transform.parent.GetChild(4).GetComponent<Test>().PlayAnimation("Change health");
             }
-            else
+            else if(MC.game_state != MainController.State.in_battle)
             {
                 DestroyHealthBar();
                 RecostructHealthBar(x, y, in_view);
@@ -298,6 +298,15 @@ public class HealthBar : MonoBehaviour
         }
     }
 
+	public void UpdateHealthBar(bool in_view)
+	{
+		int x = max_health;
+		int y = current_health;
+		if (x > HP_gap) x = HP_gap;
+		if (y > HP_gap) y = HP_gap;
+		DestroyHealthBar();
+		RecostructHealthBar(x, y, in_view);
+	}
 
     public int GiveCurrentHealth()
     {
