@@ -134,7 +134,7 @@ public class StartingWeapons : MonoBehaviour
         new string[] { "Recycler", "Paper", "Rock" },
         new string[] { "Chainsaw", "Paper", "Rock" }, /// Tee chainsaw
         new string[] { "Teeth", "Reinforced glass", "Barricade" },
-        new string[] { "Law Book", "Medical supplies", "Ruin" },
+        new string[] { "Law Book", "Monument", "Ruin" },
 
         //Story 11
         new string[] { "Archnode", "Recipe", "Battery" },
