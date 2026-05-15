@@ -10,8 +10,8 @@ public class Bubble : MonoBehaviour
     }
 
 	public void IncreaseHealth() {
-		if(GetComponent<HealthIncrease>().amount < 2) {
-			GetComponent<HealthIncrease>().IncreaseSetAmount(1);
+		if(GetComponent<HealthIncrease>().amount < 2 && !GetComponent<Weapon>().player_owner.HB.CheckIfDead() && !GetComponent<Weapon>().opponent.owner.HB.CheckIfDead()) {
+			GetComponent<HealthIncrease>().GiveSetTemporaryHealth(1);
 			GetComponent<HealthIncrease>().amount++;
 		}
 	}

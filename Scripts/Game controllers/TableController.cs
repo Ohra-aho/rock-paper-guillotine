@@ -19,6 +19,8 @@ public class TableController : MonoBehaviour
     [HideInInspector] public int enemy_damage = 0;
     [HideInInspector] public int player_healing = 0;
     [HideInInspector] public int enemy_healing = 0;
+	[HideInInspector] public int health_increase = 0;
+	[HideInInspector] public int health_decrease = 0;
 
     private void Update()
     {
@@ -65,6 +67,9 @@ public class TableController : MonoBehaviour
 
         HandleDamage();
         HandleHealing();
+
+		HandleHealthDecrease();
+		HandleHealthIncrease();
 
         player.GetComponent<PlayerContoller>().HB.damage_taken = false;
         enemy.GetComponent<EnemyController>().HB.damage_taken = false;
@@ -134,4 +139,16 @@ public class TableController : MonoBehaviour
             enemy_healing = 0;
         }
     }
+
+	private void HandleHealthIncrease()
+	{
+		if(health_increase > 0) player.GetComponent<PlayerContoller>().HB.IncreaseHealthBar(health_increase, true);
+		health_increase = 0;
+	}
+
+	private void HandleHealthDecrease()
+	{
+		if(health_decrease > 0) player.GetComponent<PlayerContoller>().HB.DecreaseHealthBar(health_decrease, true);
+		health_decrease = 0;
+	}
 }

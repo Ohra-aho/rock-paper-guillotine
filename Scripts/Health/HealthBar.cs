@@ -59,7 +59,6 @@ public class HealthBar : MonoBehaviour
                 }
             }
         }
-        //dead = CheckIfDead();
         damage_taken = true;
         if (gameObject.CompareTag("PlayerHealth") && !CheckIfAtZeroHP()) {
             //Damage animations
@@ -87,7 +86,6 @@ public class HealthBar : MonoBehaviour
                 Camera.main.GetComponent<Test>().PlayAnimation("dead react");
             }
         }
-        //if(!dead) HighDamageReaction(damage); Move somewhere else (table controller)
         
     }
 
@@ -109,7 +107,6 @@ public class HealthBar : MonoBehaviour
                 }
             }
         }
-        //dead = CheckIfDead();
     }
 
     public void HealToFull()
@@ -320,10 +317,33 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-	 public void RemoveTemporaryHealth(int amount, bool in_view)
+	public void GiveTemporaryHealth(int amount, bool in_view)
+    {
+        if(!CheckIfDead() && !GameObject.Find("EnemyHealth").GetComponent<HealthBar>().CheckIfDead())
+		{
+			max_health += amount;
+			current_health += amount;
+
+			if (!FullHealthBar())
+			{
+				if (MC.game_state == MainController.State.in_battle && !CheckIfDead() && !GameObject.Find("EnemyHealth").GetComponent<HealthBar>().CheckIfDead()) {
+					transform.parent.GetChild(4).GetComponent<Test>().PlayAnimation("Change health");
+				} else
+				{
+					int x = max_health;
+					int y = current_health;
+					if (x > HP_gap) x = HP_gap;
+					if (y > HP_gap) y = HP_gap;
+					DestroyHealthBar();
+					RecostructHealthBar(x, y, in_view);
+				}
+			}
+		}
+    }
+
+	public void RemoveTemporaryHealth(int amount, bool in_view)
     {
         max_health -= amount;
-
         if(current_health > max_health) current_health = max_health;
 
         if (max_health <= 0)
