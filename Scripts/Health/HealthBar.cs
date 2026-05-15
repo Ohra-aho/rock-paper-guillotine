@@ -20,6 +20,7 @@ public class HealthBar : MonoBehaviour
 
     public List<string> exe_high_damage_barks;
     public List<string> exe_low_health;
+	private int removed_damage = 0;
 
     //Bark stoppers
     [HideInInspector] public bool warning_given = false;
@@ -233,7 +234,15 @@ public class HealthBar : MonoBehaviour
     {
         max_health += amount;
         current_health += amount;
-        int damage_taken = max_health - current_health;
+        if(amount >= removed_damage)
+		{
+			current_health -= removed_damage;
+			removed_damage = 0;
+		} else
+		{
+			current_health -= amount;
+			removed_damage -= amount;
+		}
 
         if (!FullHealthBar())
         {
@@ -264,8 +273,59 @@ public class HealthBar : MonoBehaviour
 
     public void DecreaseHealthBar(int amount, bool in_view)
     {
+		int damage = max_health - current_health;
+		if(damage > 0)
+		{
+			if(amount <= damage)
+			{
+				removed_damage += amount;
+			} else
+			{
+				removed_damage += damage;
+			}
+		}
         max_health -= amount;
+
         if(current_health > max_health) current_health = max_health;
+
+        if (max_health <= 0)
+        {
+            if(MC.game_state == MainController.State.in_battle) MC.Loose();//Lis�� jokin kommentti
+            else
+            {
+                int x = max_health;
+                int y = current_health;
+                if (x > HP_gap) x = HP_gap;
+                if (y > HP_gap) y = HP_gap;
+                DestroyHealthBar();
+                RecostructHealthBar(x, y, in_view);
+            }
+        }
+        else if (max_health < 15)
+        {
+            int x = max_health;
+            int y = current_health;
+            if (x > HP_gap) x = HP_gap;
+            if (y > HP_gap) y = HP_gap;
+
+            if (MC.game_state == MainController.State.in_battle && !CheckIfDead() && !GameObject.Find("EnemyHealth").GetComponent<HealthBar>().CheckIfDead())
+            {
+                transform.parent.GetChild(4).GetComponent<Test>().PlayAnimation("Change health");
+            }
+            else if(MC.game_state != MainController.State.in_battle)
+            {
+                DestroyHealthBar();
+                RecostructHealthBar(x, y, in_view);
+            }
+        }
+    }
+
+	 public void RemoveTemporaryHealth(int amount, bool in_view)
+    {
+        max_health -= amount;
+
+        if(current_health > max_health) current_health = max_health;
+
         if (max_health <= 0)
         {
             if(MC.game_state == MainController.State.in_battle) MC.Loose();//Lis�� jokin kommentti
