@@ -17,7 +17,7 @@ public class Healing : MonoBehaviour
                 HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
                 if(!HB.CheckIfDead())
                 {
-                    valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
+                    valid_heal = HB.GiveCurrentHealth() - GameObject.Find("Table").GetComponent<TableController>().player_damage < HB.GiveMaxHealth();
                     GameObject.Find("Table").GetComponent<TableController>().player_healing += amount;
                     if (valid_heal)
                     {
@@ -31,7 +31,7 @@ public class Healing : MonoBehaviour
                 HealthBar HB = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
                 if (!HB.CheckIfDead())
                 {
-                    valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
+                    valid_heal = HB.GiveCurrentHealth() - GameObject.Find("Table").GetComponent<TableController>().enemy_damage < HB.GiveMaxHealth();
                     GameObject.Find("Table").GetComponent<TableController>().enemy_healing += amount;
                     if (valid_heal) GetComponent<Weapon>().heal.Invoke();
                 }
