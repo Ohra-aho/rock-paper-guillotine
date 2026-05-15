@@ -70,6 +70,7 @@ public class TableController : MonoBehaviour
 
 		HandleHealthDecrease();
 		HandleHealthIncrease();
+		player.GetComponent<PlayerContoller>().HB.LowHealthReaction();
 
         player.GetComponent<PlayerContoller>().HB.damage_taken = false;
         enemy.GetComponent<EnemyController>().HB.damage_taken = false;

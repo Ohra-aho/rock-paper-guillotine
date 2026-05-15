@@ -78,7 +78,7 @@ public class HealthBar : MonoBehaviour
                 }
             }
 
-            LowHealthReaction();
+            //LowHealthReaction();
         } else if(gameObject.CompareTag("PlayerHealth"))
         {
             if (CheckIfAtZeroHP() && !MC.GetComponent<StoryController>().executioner)
