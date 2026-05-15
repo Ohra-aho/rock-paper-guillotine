@@ -102,7 +102,7 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Vuori
+  name: Mountain
   description: +4 HP
   sprite: {fileID: 21300000, guid: 2676b53b5e768a04c8ee94af143243b5, type: 3}
   first_turn:

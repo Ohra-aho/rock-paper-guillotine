@@ -109,7 +109,7 @@ public class StartingWeapons : MonoBehaviour
 
         new string[] { "Rock", "Paper", "Scissors" },
         new string[] { "Recycler", "Rock", "Bladestorm", "Paper" },
-        new string[] { "Pickaxe", "Smoke", "Medipack" },
+        new string[] { "Pickaxe", "Smoke", "Medical supplies" },
         new string[] { "Middle finger", "Hit list", "Handkerchief" },
 
         //Story 8

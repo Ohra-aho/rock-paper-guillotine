@@ -239,17 +239,8 @@ public class StartButton : MonoBehaviour
     {
         List<Weapon> weapons = player.transform.GetChild(1).GetComponent<PlayerContoller>().GetWeapons();
         int weapon_slots = player.transform.GetChild(1).GetComponent<PlayerContoller>().WheelHolder.transform.GetChild(0).childCount - 1;
-        bool giant_scissors_equipped = false;
 
-        for(int i = 0; i < weapons.Count; i++)
-        {
-            if(weapons[i].name == "Giant scissors")
-            {
-                giant_scissors_equipped = true;
-            }
-        }
-
-        if (weapons.Count < weapon_slots && !giant_scissors_equipped && weapons.Count > 0)
+        if (weapons.Count < weapon_slots && GameObject.FindGameObjectWithTag("RI").transform.childCount >= weapon_slots)
         {
             if (!empty_regard)
             {
