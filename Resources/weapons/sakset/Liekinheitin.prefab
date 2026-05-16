@@ -106,7 +106,9 @@ MonoBehaviour:
   name: Flamethrower
   description: Weapon used against this deals 1 damage to its owner after use for
     4 turns.
-  sprite: {fileID: 21300000, guid: b03abd526bcf7df45aeded222c6b89a9, type: 3}
+  sprite: {fileID: 21300000, guid: 72b68a017367b1645b0e8d61325d3601, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

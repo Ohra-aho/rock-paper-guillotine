@@ -106,7 +106,9 @@ MonoBehaviour:
   name: Armor
   description: At the start of each fight +2 armor to all weapons until they are
     used.
-  sprite: {fileID: 21300000, guid: 76660b8bd1c37c849b4353d6d3677ba0, type: 3}
+  sprite: {fileID: 21300000, guid: 3e06785e5592ec3499984a891503c6dd, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls:

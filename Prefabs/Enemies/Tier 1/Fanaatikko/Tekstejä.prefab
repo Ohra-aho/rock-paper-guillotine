@@ -92,12 +92,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 1
   damage: 1
   armor: 0
@@ -105,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Muttering
   description: If loses, takes 1 damage.
-  sprite: {fileID: 21300000, guid: c82e7b27756c7ba498ed066a3df37f35, type: 3}
+  sprite: {fileID: 21300000, guid: 9661dcab37403354689f5a11778f3e25, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

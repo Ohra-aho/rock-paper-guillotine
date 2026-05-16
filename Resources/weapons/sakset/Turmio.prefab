@@ -105,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Ruin
   description: Deals 1 damage to both after use.
-  sprite: {fileID: 21300000, guid: 915b1dba63e4b964fa76d79a418bea64, type: 3}
+  sprite: {fileID: 21300000, guid: f3e671672bb5ff344a1199889639a05f, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

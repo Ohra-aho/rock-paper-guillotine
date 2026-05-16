@@ -105,7 +105,12 @@ MonoBehaviour:
   real_armor: 0
   name: Manual
   description: Self-destructing weapons can be used an additional time.
-  sprite: {fileID: 21300000, guid: 703719a375780f345a9c22cfaa822c5f, type: 3}
+  sprite: {fileID: 21300000, guid: 2c8c3ef482b092848a23537e0e8d9289, type: 3}
+  tiers:
+  - {fileID: 21300000, guid: 97b5b00782b0b474fa59e2cb07562f1a, type: 3}
+  - {fileID: 21300000, guid: 3a240671df9813341b93bf5e6caeb7eb, type: 3}
+  - {fileID: 21300000, guid: 4bfec1fcc837111449725ed56728ceac, type: 3}
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

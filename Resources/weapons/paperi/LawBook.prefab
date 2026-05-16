@@ -106,7 +106,9 @@ MonoBehaviour:
   real_armor: 0
   name: Law Book
   description: The first time you would die, you instead heal 3.
-  sprite: {fileID: 21300000, guid: d88564a0424476b409061512e74e3508, type: 3}
+  sprite: {fileID: 21300000, guid: 12eebd42a29d5494296cf7755ab0dfa9, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

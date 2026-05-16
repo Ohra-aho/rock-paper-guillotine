@@ -105,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Singularity
   description: 
-  sprite: {fileID: 21300000, guid: b031cfc5fc508fa499586b798b40d8d1, type: 3}
+  sprite: {fileID: 21300000, guid: dda822ec4ec7f854a868d5290d612a42, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

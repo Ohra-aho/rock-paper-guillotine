@@ -105,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Bandade
   description: Heals 2 and destroys itself.
-  sprite: {fileID: 21300000, guid: 8bfa3ea6e8fa7ad41bbcada09e83ca6a, type: 3}
+  sprite: {fileID: 21300000, guid: 9d0796ea8f825ca4aa1c1b8aecce592f, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

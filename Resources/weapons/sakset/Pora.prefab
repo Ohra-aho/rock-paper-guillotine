@@ -104,7 +104,9 @@ MonoBehaviour:
   real_armor: 0
   name: Drill
   description: Pierces armor. -1 armor to the weapon used against this.
-  sprite: {fileID: 21300000, guid: 9771147d1e0ae3241a8cffaa12410636, type: 3}
+  sprite: {fileID: 21300000, guid: ce9093e3ce53da84f9cf799e56774ca1, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

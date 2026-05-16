@@ -104,7 +104,9 @@ MonoBehaviour:
   real_armor: 0
   name: Newspaper
   description: Whenever wins, -1 damage until the end of the fight.
-  sprite: {fileID: 21300000, guid: 02e9d229332af7341952b474e221310c, type: 3}
+  sprite: {fileID: 21300000, guid: 753faf83cfdcdea40b9535c2095501c5, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

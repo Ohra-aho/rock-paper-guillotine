@@ -106,7 +106,9 @@ MonoBehaviour:
   real_armor: 0
   name: Shard
   description: Next weapon used gains +2 damage until the end of the fight. Self-destucts
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: c186e711c2353834b8b4038b9e4feecb, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -262,6 +264,7 @@ MonoBehaviour:
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
+  each_turn: 0
   victory: 0
   special_apply: 0
   takeDamage: 0

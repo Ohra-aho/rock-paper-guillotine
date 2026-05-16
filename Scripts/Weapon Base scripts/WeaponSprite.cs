@@ -18,29 +18,31 @@ public class WeaponSprite : MonoBehaviour
     {
         if(weapon != null)
         {
-            GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
+            transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
+			GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().tiers[weapon.GetComponent<Weapon>().tier];
             switch(weapon.GetComponent<Weapon>().type)
             {
                 case MainController.Choise.kivi:
-                    transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = symbols[0];
+                    transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = symbols[0];
                     break;
                 case MainController.Choise.paperi:
-                    transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = symbols[1];
+                    transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = symbols[1];
                     break;
                 case MainController.Choise.sakset:
-                    transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = symbols[2];
+                    transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = symbols[2];
                     break;
                 case MainController.Choise.useless:
-                    transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = symbols[3];
+                    transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = symbols[3];
                     break;
                 case MainController.Choise.voittamaton:
-                    transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = symbols[4];
+                    transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = symbols[4];
                     break;
             }
         } else
         {
             GetComponent<SpriteRenderer>().sprite = null;
             transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+            transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = null;
         }
     }
 
@@ -49,6 +51,7 @@ public class WeaponSprite : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = null;
         transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+        transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = null;
     }
 
     void OnMouseDown()

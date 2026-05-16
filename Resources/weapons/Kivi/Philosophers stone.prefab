@@ -105,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Philosopher's stone
   description: Max HP is capped at 5, but heals all damage at the start of each battle.
-  sprite: {fileID: 21300000, guid: fb824dac12b5f6b44880692ed7e37464, type: 3}
+  sprite: {fileID: 21300000, guid: b18143876b1de434f8c2c410e4363b74, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls:

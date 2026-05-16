@@ -105,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Cardboard
   description: All weapons get +1 to armor during the first turn.
-  sprite: {fileID: 21300000, guid: c20264b1018f9d845a4786bb09ddd443, type: 3}
+  sprite: {fileID: 21300000, guid: e2e4f5645a1ff14439a64658fa206521, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls:

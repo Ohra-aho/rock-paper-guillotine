@@ -107,7 +107,9 @@ MonoBehaviour:
   name: Voodoo doll
   description: At the end of each turn, if you took damage, deals 1 damage. Pierces
     armor.
-  sprite: {fileID: 21300000, guid: ac20e9c17feaa814d97cf0e654c05389, type: 3}
+  sprite: {fileID: 21300000, guid: 121bc48acb5baec46b81e5ca28fdcc8a, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

@@ -104,7 +104,9 @@ MonoBehaviour:
   real_armor: 0
   name: Joker
   description: After use, destroys itself.
-  sprite: {fileID: 21300000, guid: 96e547a411406a44c82e558aa65e439d, type: 3}
+  sprite: {fileID: 21300000, guid: a162f9c5d17c4e14585b27a1938a0c06, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

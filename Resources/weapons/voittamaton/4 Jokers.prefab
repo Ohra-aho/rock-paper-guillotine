@@ -92,20 +92,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 3
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: 4 Jokers
+  name: Four Jokers
   description: Gives 3 Jokers to your inventory and destroys itself after use.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 4452c24eb2e6f214593c6136b1169fe7, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -223,9 +225,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  used_ones: 0
   destroyed: 0
   disabled: 0
+  toughness: 0
 --- !u!114 &7032581243681828747
 MonoBehaviour:
   m_ObjectHideFlags: 0

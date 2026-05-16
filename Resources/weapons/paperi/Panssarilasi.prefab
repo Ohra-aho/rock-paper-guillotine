@@ -104,7 +104,9 @@ MonoBehaviour:
   real_armor: 0
   name: Reinforced glass
   description: If you take damage, desrtoys itself.
-  sprite: {fileID: 21300000, guid: 95a679c4c401d9d45b8014da2457fb85, type: 3}
+  sprite: {fileID: 21300000, guid: e2f98cf03d783634d8473cb57a398ae9, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

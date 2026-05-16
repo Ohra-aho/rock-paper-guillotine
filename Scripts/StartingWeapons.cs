@@ -75,7 +75,7 @@ public class StartingWeapons : MonoBehaviour
         new string[] { "Law Book", "Scissors", "Rock" },
         new string[] { "Paper", "Scissors", "Time Bomb" },
         new string[] { "Manual", "Rock", "Scissors" },
-        new string[] { "4 Jokers", "Sithe" },
+        new string[] { "Four Jokers", "Sithe" },
         new string[] { "Altar", "Mirror", "Holy text"},
 
         //Story 4

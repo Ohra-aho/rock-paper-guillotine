@@ -107,7 +107,9 @@ MonoBehaviour:
   name: Jackpot
   description: When Raise is used, gain 2 points. If dies using this weapon, you
     get a price.
-  sprite: {fileID: 21300000, guid: 9780c758d211b8d4792dfc6414cb5a2c, type: 3}
+  sprite: {fileID: 21300000, guid: 8e91aed68d4bf6c4badc50a89720641c, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

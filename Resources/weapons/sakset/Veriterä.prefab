@@ -104,7 +104,9 @@ MonoBehaviour:
   real_armor: 0
   name: Blood blade
   description: -X damage where X is your current HP.
-  sprite: {fileID: 21300000, guid: 66c4bbf186a3bff48bf3c88f8fa71b8c, type: 3}
+  sprite: {fileID: 21300000, guid: 057e79bf4fa033b438296bc6d58fe296, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

@@ -104,7 +104,9 @@ MonoBehaviour:
   real_armor: 0
   name: Book
   description: +1 armor for every other "paper" you have equipped.
-  sprite: {fileID: 21300000, guid: 359fb2764748cb048a898e0a35a1298b, type: 3}
+  sprite: {fileID: 21300000, guid: 34e3e244d74991241b6800a2c43e7ebe, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

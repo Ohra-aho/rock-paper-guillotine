@@ -105,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Brass Knuckles
   description: Weapon used against this becomes "useless" for one turn.
-  sprite: {fileID: 21300000, guid: fcd6866a9ac412744996d6b67ec9a459, type: 3}
+  sprite: {fileID: 21300000, guid: 10eedb0b9b506e44db682409888a119b, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

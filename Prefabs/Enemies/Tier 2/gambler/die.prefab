@@ -105,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Dice
   description: This weapons damage is anything from 0 to 4.
-  sprite: {fileID: 21300000, guid: 9780c758d211b8d4792dfc6414cb5a2c, type: 3}
+  sprite: {fileID: 21300000, guid: d15aa283d249c6847a57ab87a11c5321, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

@@ -104,7 +104,9 @@ MonoBehaviour:
   real_armor: 0
   name: Thumb
   description: Heals 1 after use.
-  sprite: {fileID: 21300000, guid: 9516ee749ea9b1043b48136f8d6fbdc7, type: 3}
+  sprite: {fileID: 21300000, guid: 9dde555204b4ca748b6cea9afc9e7f48, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

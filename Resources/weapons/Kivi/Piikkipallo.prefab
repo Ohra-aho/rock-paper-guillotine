@@ -104,7 +104,9 @@ MonoBehaviour:
   real_armor: 0
   name: Spike ball
   description: If you lose, deals 1 damage.
-  sprite: {fileID: 21300000, guid: 5d98066317e2fa94cbe8f69fee01af35, type: 3}
+  sprite: {fileID: 21300000, guid: 514e451d8c32bfd40a3831ea95212fff, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

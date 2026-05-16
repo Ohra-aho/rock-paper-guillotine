@@ -107,7 +107,9 @@ MonoBehaviour:
   name: Trashcan
   description: Collects destroyed weapons. After use, gives you a copy of all collected
     weapons and destroys itself.
-  sprite: {fileID: 21300000, guid: 2764eb45a1da90d489f74da52424decd, type: 3}
+  sprite: {fileID: 21300000, guid: 066cbec547d40154a851a331c4ea74be, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

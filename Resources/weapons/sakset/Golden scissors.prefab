@@ -104,7 +104,9 @@ MonoBehaviour:
   real_armor: 0
   name: Golden scissors
   description: All weapons have always at least 1 point.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: 92b0d53570d76e9448ea79c51ed2a80d, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

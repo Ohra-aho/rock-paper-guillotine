@@ -99,7 +99,6 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 0
   damage: 1
   armor: 0
@@ -107,7 +106,9 @@ MonoBehaviour:
   real_armor: 0
   name: Black powder
   description: Each time one of your weapons is destroyed, deal 2 damage. (Continuous)
-  sprite: {fileID: 21300000, guid: 41d16a9c9614d144e9851b6ea2e759aa, type: 3}
+  sprite: {fileID: 21300000, guid: 7ca4904f4e50f734c902e27e6447a8fb, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -212,6 +213,7 @@ MonoBehaviour:
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
+  each_turn: 0
   victory: 0
   special_apply: 0
   takeDamage: 0
@@ -228,6 +230,7 @@ MonoBehaviour:
   constant: 0
   onDestruction: 0
   awake: 0
+  on_death: 0
   temporary: 0
   timer: 0
   penetrating: 0

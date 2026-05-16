@@ -98,7 +98,6 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 1
   damage: 2
   armor: 1
@@ -106,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Cards
   description: This weapons type is ether paper, useless or undeatable.
-  sprite: {fileID: 21300000, guid: b1876ddce42e87f4b98fc692f84b5ed2, type: 3}
+  sprite: {fileID: 21300000, guid: 111d6198e9e1f71478807594127cf741, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

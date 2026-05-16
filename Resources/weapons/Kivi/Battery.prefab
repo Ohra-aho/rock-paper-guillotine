@@ -92,12 +92,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 0
   damage: 1
   armor: 0
@@ -105,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Battery
   description: After use, uses 1 point to give 2 random weapons 1 point.
-  sprite: {fileID: 21300000, guid: e9fbbef3e2c9b594c8132d8a01622217, type: 3}
+  sprite: {fileID: 21300000, guid: c186e711c2353834b8b4038b9e4feecb, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -179,6 +181,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0

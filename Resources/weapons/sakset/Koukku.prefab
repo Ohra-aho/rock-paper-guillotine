@@ -105,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Hook
   description: If you kill with this weapon, heal 3. Pierces armor
-  sprite: {fileID: 21300000, guid: 2ee79b7c164a29948adc776b8eb22d4a, type: 3}
+  sprite: {fileID: 21300000, guid: 8672e98f0be76b044ab39f5056de7d6d, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

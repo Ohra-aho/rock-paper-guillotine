@@ -91,12 +91,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 0
   damage: 1
   armor: 0
@@ -104,7 +104,9 @@ MonoBehaviour:
   real_armor: 0
   name: Body
   description: If loses, dies.
-  sprite: {fileID: 21300000, guid: 770dc4e948498fd46839dbcb2f57440b, type: 3}
+  sprite: {fileID: 21300000, guid: 6e8a771d01cb4aa4aafd6f1302642488, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

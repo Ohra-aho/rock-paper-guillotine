@@ -99,7 +99,6 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 1
   damage: 1
   armor: 0
@@ -108,7 +107,9 @@ MonoBehaviour:
   name: Grab
   description: If draws, weapon used against this destroys itself after use until
     the end of the fight.
-  sprite: {fileID: 21300000, guid: 2303fa37f28b47442bd19b2e25d8b24a, type: 3}
+  sprite: {fileID: 21300000, guid: 5c16845ff67773a4cb24c8f4f993b874, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

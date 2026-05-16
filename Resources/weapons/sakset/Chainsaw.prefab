@@ -105,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Chainsaw
   description: 'After use, uses 1 point. Is "unbeatable" while has points. '
-  sprite: {fileID: 21300000, guid: 450adc5cd317429448b2ba8ad209c42d, type: 3}
+  sprite: {fileID: 21300000, guid: cd0b556c8992f6a4f8b263c3ad9c7031, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

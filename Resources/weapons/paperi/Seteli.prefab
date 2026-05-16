@@ -104,7 +104,9 @@ MonoBehaviour:
   real_armor: 0
   name: Bill
   description: At the start of each fight, one random weapon gains 1 point.
-  sprite: {fileID: 21300000, guid: 6f54d77bf32883d40aa52cea431557a2, type: 3}
+  sprite: {fileID: 21300000, guid: ba18a203de1d47f4094e14ff0720dee4, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls:

@@ -104,7 +104,9 @@ MonoBehaviour:
   real_armor: 0
   name: Access code
   description: All of your weapons pierce armor.
-  sprite: {fileID: 21300000, guid: 54cb32d6859e3e644b13fa71e8c42a70, type: 3}
+  sprite: {fileID: 21300000, guid: a6c59c3d8536df7449719431d4d61225, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

@@ -118,7 +118,9 @@ MonoBehaviour:
   real_armor: 0
   name: Fireball
   description: Deals 3 damage and destroys itself.
-  sprite: {fileID: 21300000, guid: 4f0b59fe0f430a646b3a561c73ca8ccc, type: 3}
+  sprite: {fileID: 21300000, guid: adb08b2bcba747f4b89de82783c6d35a, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

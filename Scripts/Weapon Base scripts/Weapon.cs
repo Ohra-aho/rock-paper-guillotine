@@ -23,6 +23,8 @@ public class Weapon : MonoBehaviour
     public string name;
     public string description;
     public Sprite sprite;
+	[HideInInspector] public List<Sprite> tiers = new List<Sprite>();
+	public int tier = 0;
 
     public UnityEvent first_turn;
     public UnityEvent end_of_fight;
@@ -79,12 +81,21 @@ public class Weapon : MonoBehaviour
         real_armor = armor;
         real_damage = damage;
         endPhase.AddListener(ToggleLoopStropper);
+		FindTierSprites();
     }
 
     private void Update()
     {
         if (constant != null) constant.Invoke();
     }
+
+	public void FindTierSprites()
+	{
+		if(tiers.Count == 0)
+		{
+			tiers.AddRange(Resources.LoadAll<Sprite>("backgrounds"));
+		}
+	}
 
     public void InisiateTypeEffects()
     {

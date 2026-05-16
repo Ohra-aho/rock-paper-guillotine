@@ -104,7 +104,9 @@ MonoBehaviour:
   real_armor: 0
   name: Mountain
   description: +4 HP
-  sprite: {fileID: 21300000, guid: 2676b53b5e768a04c8ee94af143243b5, type: 3}
+  sprite: {fileID: 21300000, guid: 8965124cc100b46408ec61bd1b357794, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

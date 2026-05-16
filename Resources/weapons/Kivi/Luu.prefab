@@ -105,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Bone
   description: All healing turns into damage.
-  sprite: {fileID: 21300000, guid: 32dcef5c12fd6b542bd77899bd6c4b93, type: 3}
+  sprite: {fileID: 21300000, guid: 03da657e595bbb440bd20f3d6222b3cf, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

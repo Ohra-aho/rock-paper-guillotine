@@ -91,12 +91,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 2
   damage: 1
   armor: 0
@@ -104,7 +104,9 @@ MonoBehaviour:
   real_armor: 0
   name: Needle
   description: Heal 1 damage after use.
-  sprite: {fileID: 21300000, guid: 29e37166a8eaa3c46ab07ccd4d220f7c, type: 3}
+  sprite: {fileID: 21300000, guid: f2ae555fbc4020244893c5a4cff6c76c, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -178,6 +180,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0

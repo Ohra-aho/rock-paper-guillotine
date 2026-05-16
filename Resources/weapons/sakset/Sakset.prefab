@@ -96,7 +96,6 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 2
   damage: 1
   armor: 0
@@ -104,7 +103,9 @@ MonoBehaviour:
   real_armor: 0
   name: Scissors
   description: (All "scissors" deal 1 damage on draws.)
-  sprite: {fileID: 21300000, guid: 450adc5cd317429448b2ba8ad209c42d, type: 3}
+  sprite: {fileID: 21300000, guid: 2a3f8c3cc78346d4090fffc01e5318af, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

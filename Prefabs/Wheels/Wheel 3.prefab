@@ -160,7 +160,9 @@ MonoBehaviour:
   trigger:
     m_PersistentCalls:
       m_Calls: []
+  multiple_triggers: []
   reverse: 0
+  state_requirement: 0
 --- !u!95 &712072892537418735
 Animator:
   serializedVersion: 5

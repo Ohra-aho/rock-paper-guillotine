@@ -105,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Anvil
   description: After use, +1 damage to your weakest weapon. Destroys itself.
-  sprite: {fileID: 21300000, guid: 8b1ad240ae2886944a14c01e2b788377, type: 3}
+  sprite: {fileID: 21300000, guid: d370add584778464381ccb41b63d25bb, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

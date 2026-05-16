@@ -104,7 +104,9 @@ MonoBehaviour:
   real_armor: 0
   name: Greatsword
   description: '+X damage, where X is half of your current HP:'
-  sprite: {fileID: 21300000, guid: 4e45eb24f1a53834596f00abeeb4e31b, type: 3}
+  sprite: {fileID: 21300000, guid: 1131c617e6e1c4a43817f2d8b6d26db2, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

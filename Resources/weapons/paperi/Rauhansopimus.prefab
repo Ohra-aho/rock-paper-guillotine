@@ -105,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Peace treaty
   description: After each turn, if you or enemy took no damage, heal 1.
-  sprite: {fileID: 21300000, guid: 582ef63cd44095c49a7f829819444e29, type: 3}
+  sprite: {fileID: 21300000, guid: ec1095485a0b0ec4ebe2420568709a2d, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

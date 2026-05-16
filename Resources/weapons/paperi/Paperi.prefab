@@ -103,7 +103,9 @@ MonoBehaviour:
   real_armor: 0
   name: Paper
   description: (All "Papers" give all weapons +1 armor for one turn on draws.)
-  sprite: {fileID: 21300000, guid: 1cb1e2e16af8cb446b4c407484e7cfd4, type: 3}
+  sprite: {fileID: 21300000, guid: 4dd597b3198446c439ad1ee618ee26e1, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

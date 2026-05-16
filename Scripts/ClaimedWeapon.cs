@@ -34,46 +34,54 @@ public class ClaimedWeapon : MonoBehaviour
     {
         DestroyInfo();
         GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
+		transform.GetChild(0).GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
+		transform.GetChild(1).GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
         FixSorting1();
     }
 
     public void OnEndDrag()
     {
         GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+		transform.GetChild(0).GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+		transform.GetChild(1).GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
         FixSorting2();
     }
 
     public void FixSorting1()
     {
         GetComponent<SpriteRenderer>().sortingOrder += 2;
+        transform.GetChild(1).GetComponent<SpriteRenderer>().sortingOrder += 2;
         transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder += 2;
+
     }
 
     public void FixSorting2()
     {
         GetComponent<SpriteRenderer>().sortingOrder -= 2;
+        transform.GetChild(1).GetComponent<SpriteRenderer>().sortingOrder -= 2;
         transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder -= 2;
     }
 
     public void DispalyWeapon()
     {
-        GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
+        transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
+		GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().tiers[weapon.GetComponent<Weapon>().tier];
         switch(weapon.GetComponent<Weapon>().type)
         {
             case MainController.Choise.kivi:
-                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = symbols[0];
+                transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = symbols[0];
                 break;
             case MainController.Choise.paperi:
-                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = symbols[1];
+                transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = symbols[1];
                 break;
             case MainController.Choise.sakset:
-                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = symbols[2];
+                transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = symbols[2];
                 break;
             case MainController.Choise.useless:
-                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = symbols[3];
+                transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = symbols[3];
                 break;
             case MainController.Choise.voittamaton:
-                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = symbols[4];
+                transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = symbols[4];
                 break;
         }
     }

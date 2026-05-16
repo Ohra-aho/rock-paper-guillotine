@@ -167,7 +167,9 @@ MonoBehaviour:
   real_armor: 0
   name: Holy text
   description: Whenever you heal, deals 1 damage.
-  sprite: {fileID: 21300000, guid: cb5421596bf1f7242accc24cbb23b466, type: 3}
+  sprite: {fileID: 21300000, guid: 66f7ed2e6b8af094398ab562ed545f1c, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

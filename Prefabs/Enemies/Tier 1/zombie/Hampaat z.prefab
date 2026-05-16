@@ -105,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Bite
   description: When deals damage or draws, heals 1.
-  sprite: {fileID: 21300000, guid: 7e77726f54a940a47a61d5189adcd709, type: 3}
+  sprite: {fileID: 21300000, guid: 7a998fc16bc85de4693c1cfaecd09494, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

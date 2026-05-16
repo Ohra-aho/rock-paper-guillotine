@@ -105,7 +105,9 @@ MonoBehaviour:
   real_armor: 0
   name: Sandpaper
   description: +1 to damage to all "rocks".
-  sprite: {fileID: 21300000, guid: 34bf091d1ec4c5b4d9ab167f19f3bb7c, type: 3}
+  sprite: {fileID: 21300000, guid: ca2d1ea240ac7dc4a8f436e93441a84c, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
