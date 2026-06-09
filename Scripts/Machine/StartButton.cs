@@ -114,8 +114,9 @@ public class StartButton : MonoBehaviour
 
     public void Activate()
     {
-        if(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.GiveCurrentHealth() > 0)
+        if(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.GiveCurrentHealth() > 0 && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons().Count > 0)
         {
+			PlayAudio();
             MC.victory = false;
             GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().defeat = false;
             GameObject ec = GameObject.Find("EnemyHolder");

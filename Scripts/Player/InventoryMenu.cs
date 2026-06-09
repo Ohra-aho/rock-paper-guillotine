@@ -6,6 +6,7 @@ public class InventoryMenu : MonoBehaviour
 {
     [SerializeField] GameObject WeaponPref;
     // Start is called before the first frame update
+	MainController MC;
     void Start()
     {
         displayWeapons();
@@ -13,9 +14,18 @@ public class InventoryMenu : MonoBehaviour
         transform.GetChild(0).GetComponent<NonUIScroll>().CalculateStartAndEndPoint();
         transform.GetChild(0).GetComponent<NonUIScroll>().DetermineInitialLocation();
         transform.parent.GetComponent<Test>().PlayAnimation("OpenDrawer");
+		MC = GameObject.Find("EventSystem").GetComponent<MainController>();
     }
 
-    private void displayWeapons()
+	void Update()
+	{
+		if(MC.game_state != MainController.State.reward && MC.game_state != MainController.State.re_arming)
+		{
+			MC.game_state = MainController.State.re_arming;
+		}
+	}
+
+	private void displayWeapons()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player").gameObject;
         List<GameObject> items = player.GetComponent<PlayerInventory>().items;

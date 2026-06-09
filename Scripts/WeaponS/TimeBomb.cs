@@ -31,4 +31,9 @@ public class TimeBomb : MonoBehaviour
 			GetComponent<BuffController>().Equip();
 		}
 	}
+
+	public void EmptyStack()
+	{
+			GetComponent<Stacking>().stacks = 0;
+	}
 }

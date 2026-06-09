@@ -16507,18 +16507,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 401144639}
         m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
-        m_MethodName: PlayAudio
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 401144639}
-        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
         m_MethodName: press
         m_Mode: 1
         m_Arguments:
@@ -30201,7 +30189,7 @@ MonoBehaviour:
   story_event_holder: {fileID: 710133546}
   firstRewardMenu: 0
   playthroughts:
-  - {fileID: 4163066812587896230, guid: 815fa85bc2b2f534faa2e5ae2c1c5333, type: 3}
+  - {fileID: 4163066812587896230, guid: 0db93014473a88d4a884a2acf424b7dd, type: 3}
   buttons_active: 1
   reward_tier: 1
   rewards_disabled: 0
@@ -43876,7 +43864,7 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: 7dbcfb748d9038140987f46ff98b2830, type: 3}
+  - {fileID: 1944698211339908181, guid: bbae5713bb75e8243bb0796c9b101904, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
