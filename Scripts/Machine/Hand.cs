@@ -7,6 +7,7 @@ public class Hand : MonoBehaviour
     public GameObject weapon_to_destroy;
     Sprite weapon_sprite;
     public List<Sprite> icons;
+	public List<Sprite> backs;
     MainController.State previous_state = MainController.State.in_battle;
 
 
@@ -17,14 +18,15 @@ public class Hand : MonoBehaviour
             if(collision.GetComponent<WeaponSprite>().weapon == weapon_to_destroy)
             {
                 weapon_sprite = collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().sprite;
-                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon_sprite;
+				transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = backs[collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().tier];
+                transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = weapon_sprite;
                 switch (collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().type)
                 {
-                    case MainController.Choise.kivi: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[0]; break;
-                    case MainController.Choise.paperi: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[1]; break;
-                    case MainController.Choise.sakset: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[2]; break;
-                    case MainController.Choise.useless: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[3]; break;
-                    case MainController.Choise.voittamaton: transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[4]; break;
+                    case MainController.Choise.kivi: transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[0]; break;
+                    case MainController.Choise.paperi: transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[1]; break;
+                    case MainController.Choise.sakset: transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[2]; break;
+                    case MainController.Choise.useless: transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[3]; break;
+                    case MainController.Choise.voittamaton: transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[4]; break;
                 }
                 
                 //Required if weapon to destroy doesn't have SelfDestruct (Possible with debuffs)
@@ -64,7 +66,8 @@ public class Hand : MonoBehaviour
     {
         weapon_sprite = null;
         transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
-        transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+        transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = null;
+        transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
     }
 
     public void ChangeState(int i)

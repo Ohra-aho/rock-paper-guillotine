@@ -11,7 +11,7 @@ public class EldritchPower : MonoBehaviour
     {
         if(!health_increased)
         {
-            GetComponent<HealthIncrease>().Increase();
+            GetComponent<HealthIncrease>().ForceHealthIncrease();
             health_increased = true;
         }
     }

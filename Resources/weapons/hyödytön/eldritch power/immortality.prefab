@@ -106,6 +106,8 @@ MonoBehaviour:
   name: Immortality
   description: When this weapon is not equipped, +1 HP
   sprite: {fileID: 21300000, guid: 5108218310bb6ea429e7c3627f4a480c, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
