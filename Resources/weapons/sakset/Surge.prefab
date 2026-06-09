@@ -105,7 +105,7 @@ MonoBehaviour:
   real_armor: 0
   name: Surge
   description: Whenever you heal, +1 damage until the end of the fight.
-  sprite: {fileID: 21300000, guid: c186e711c2353834b8b4038b9e4feecb, type: 3}
+  sprite: {fileID: 21300000, guid: 5f9fc2c32b8f50f40bc0f85509439fb0, type: 3}
   tiers: []
   tier: 0
   first_turn:

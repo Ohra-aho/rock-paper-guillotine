@@ -105,7 +105,7 @@ MonoBehaviour:
   real_armor: 0
   name: Wire
   description: Whenever you heal, weapon with the least points gains 1 point.
-  sprite: {fileID: 21300000, guid: c186e711c2353834b8b4038b9e4feecb, type: 3}
+  sprite: {fileID: 21300000, guid: d745a0183b968ef44a8eefcc5715fac4, type: 3}
   tiers: []
   tier: 0
   first_turn:

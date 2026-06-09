@@ -105,7 +105,7 @@ MonoBehaviour:
   real_armor: 0
   name: Resonator
   description: After use, during the next turn "after use"-effects will trigger twice.
-  sprite: {fileID: 21300000, guid: c186e711c2353834b8b4038b9e4feecb, type: 3}
+  sprite: {fileID: 21300000, guid: 9bc7c37804039d24fae978de7d4beea4, type: 3}
   tiers: []
   tier: 0
   first_turn:

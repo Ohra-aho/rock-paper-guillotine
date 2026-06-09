@@ -106,7 +106,9 @@ MonoBehaviour:
   name: Dept
   description: If not equipped, gives your strongest weapon -1 damage. Destroys itself
     after use.
-  sprite: {fileID: 21300000, guid: 77c8f67adf3c9094ea3e21ba227b6dfa, type: 3}
+  sprite: {fileID: 21300000, guid: 84a9c4c50c29eba4ba70878cfe0a7775, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

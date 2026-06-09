@@ -94,8 +94,8 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
-  draw_winner: 0
-  spammable: 1
+  draw_winner: 1
+  spammable: 0
   type: 2
   damage: 1
   armor: 0

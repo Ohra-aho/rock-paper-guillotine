@@ -29,6 +29,15 @@ public class PermanentDebuffer : MonoBehaviour
         new_buff.AddBuff();
     }
 
+	public void BuffOpposingWeaponArmor(int amount)
+    {
+        Weapon opponent = GetComponent<Weapon>().opponent;
+        Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+        new_buff.armor_buff = amount;
+        new_buff.id = GetComponent<Weapon>() + "_buff";
+        new_buff.AddBuff();
+    }
+
     public void MakeOpposingWeaponUselessTemporarily(int turns)
     {
         Weapon opponent = GetComponent<Weapon>().opponent;

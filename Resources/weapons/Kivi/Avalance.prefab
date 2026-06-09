@@ -108,7 +108,7 @@ MonoBehaviour:
   name: Avalance
   description: +2 HP. After use, deals damage equal to half of your current health
     and destroys itself.
-  sprite: {fileID: 21300000, guid: c186e711c2353834b8b4038b9e4feecb, type: 3}
+  sprite: {fileID: 21300000, guid: abe08fccc15d51e4eb8605de0a45828a, type: 3}
   tiers: []
   tier: 0
   first_turn:

@@ -4,29 +4,47 @@ using UnityEngine;
 
 public class WeaponSpawner : MonoBehaviour
 {
+	public int spawn_limit = 0;
+	int spawns = 0;
     public List<GameObject> weapons;
 
     public void SpawnRandomWeapon()
     {
-        int index = Random.Range(0, weapons.Count);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapons[index]);
+		if(spawns < spawn_limit && spawn_limit != 0)
+		{
+			int index = Random.Range(0, weapons.Count);
+        	GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapons[index]);	
+		}
+		spawns++;
     }
 
     public void SpawnSpecificWeapon(int i)
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapons[i]);
+		if(spawns < spawn_limit && spawn_limit != 0)
+		{
+        	GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapons[i]);
+		}
+		spawns++;
     }
 
     public void SpawnOnlyWeapon()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapons[0]);
+		if(spawns < spawn_limit && spawn_limit != 0)
+		{
+        	GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapons[0]);
+		}
+		spawns++;
     }
 
     public void SpawnMultipleWeapons(int amount)
     {
         for(int i = 0; i < amount; i++)
         {
-            SpawnOnlyWeapon();
+			if(spawns < spawn_limit && spawn_limit != 0)
+			{
+				SpawnOnlyWeapon();
+			}
+			spawns++;
         }
     }
 
@@ -34,7 +52,11 @@ public class WeaponSpawner : MonoBehaviour
     {
         for(int i = 0; i < amount; i++)
         {
-            SpawnSpecificWeapon(Random.Range(0, weapons.Count));
+			if(spawns < spawn_limit && spawn_limit != 0)
+			{
+            	SpawnSpecificWeapon(Random.Range(0, weapons.Count));
+			}
+			spawns++;
         }
     }
 }

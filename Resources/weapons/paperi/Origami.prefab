@@ -104,7 +104,7 @@ MonoBehaviour:
   real_armor: 0
   name: Origami
   description: After use, -2 damage and +2 armor. Resets when used again.
-  sprite: {fileID: 21300000, guid: c186e711c2353834b8b4038b9e4feecb, type: 3}
+  sprite: {fileID: 21300000, guid: 269754a3542437345ab70bd34a613a3f, type: 3}
   tiers: []
   tier: 0
   first_turn:

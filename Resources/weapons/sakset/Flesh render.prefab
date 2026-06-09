@@ -105,7 +105,7 @@ MonoBehaviour:
   real_armor: 0
   name: Flesh render
   description: After use, deals 3 damage and -1 HP.
-  sprite: {fileID: 21300000, guid: c186e711c2353834b8b4038b9e4feecb, type: 3}
+  sprite: {fileID: 21300000, guid: 1869310db4a4b004ab301337312e9bd8, type: 3}
   tiers: []
   tier: 0
   first_turn:

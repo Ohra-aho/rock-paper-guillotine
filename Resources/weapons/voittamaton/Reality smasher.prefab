@@ -105,7 +105,7 @@ MonoBehaviour:
   real_armor: 0
   name: Reality Smasher
   description: After use, the next weapon you use is destroyed.
-  sprite: {fileID: 21300000, guid: c186e711c2353834b8b4038b9e4feecb, type: 3}
+  sprite: {fileID: 21300000, guid: b272f21e64a6c2749b9a7bf89ea85a83, type: 3}
   tiers: []
   tier: 0
   first_turn:

@@ -105,7 +105,7 @@ MonoBehaviour:
   real_armor: 0
   name: Challenge
   description: +1 damage to all of your and your enemys weapons.
-  sprite: {fileID: 21300000, guid: c186e711c2353834b8b4038b9e4feecb, type: 3}
+  sprite: {fileID: 21300000, guid: a880ac797d7a1b04294ca994448f140c, type: 3}
   tiers: []
   tier: 0
   first_turn:
