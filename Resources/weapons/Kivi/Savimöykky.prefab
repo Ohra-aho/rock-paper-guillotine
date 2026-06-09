@@ -105,8 +105,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Clay
-  description: After use, uses 5 points to give a copy of the next weapon you use
-    to your inventory.
+  description: After use, uses 5 points to give you a copy of the next weapon you
+    use.
   sprite: {fileID: 21300000, guid: 862db27304a761341aaf13a91f1e8a5c, type: 3}
   tiers: []
   tier: 0
