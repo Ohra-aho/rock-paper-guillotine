@@ -53,7 +53,6 @@ public class StoryCheckList : MonoBehaviour
     public void LoadStoryCheckList()
     {
         CheckList data = SaveSystem.LoadStoryChecklist();
-		Debug.Log(data.first_boss_met);
         if(data != null)
         {
             first_forfeit = data.first_forfeit;

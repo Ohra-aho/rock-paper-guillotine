@@ -43,7 +43,7 @@ public class Machine : MonoBehaviour
                     RLC.chosen_buffs[i].GetComponent<Slow>().ApplyBuff();
                 }
             }
-            player.GetComponent<PlayerContoller>().GetWeapons()[0].GetComponent<Weapon>().CheckUp();
+            if(player.GetComponent<PlayerContoller>().GetWeapons().Count > 0) player.GetComponent<PlayerContoller>().GetWeapons()[0].GetComponent<Weapon>().CheckUp();
             enemy.GetComponent<EnemyController>().currentEnemy.GetComponent<BasicEnemy>().weapons[0].GetComponent<Weapon>().CheckUp();
         }
     }

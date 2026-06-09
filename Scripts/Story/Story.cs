@@ -28,7 +28,6 @@ public class Story : MonoBehaviour
 				//tutorial
 				if (boss_index == 0 && !SCL.first_boss_met && !SC.executioner)
 				{
-					Debug.Log(SCL.first_boss_met +" : "+SC.executioner);
 					InsertEvent(SC.first_boss_intro, i - 1);
 					i++;
 					InsertEvent(SC.first_boss_victory, i);
