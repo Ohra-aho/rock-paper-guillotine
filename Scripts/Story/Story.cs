@@ -20,52 +20,51 @@ public class Story : MonoBehaviour
     public void AddBossSpeetches()
     {
         int boss_index = 0;
-        if(narrative.boss_introduxtions != null && narrative.boss_introduxtions.Count > 0)
-        {
-            for (int i = 0; i < events.Count; i++)
-            {
-                if (events[i].name.Contains("Boss"))
-                {
-                    //tutorial
-                    if (boss_index == 0 && !SCL.first_boss_met && !SC.executioner)
-                    {
-                        InsertEvent(SC.first_boss_intro, i - 1);
-                        i++;
-                        InsertEvent(SC.first_boss_victory, i);
-                        i++;
-                        
-                        boss_index++;
-                    }
-                    else if (boss_index == 0 && !SCL.first_boss_beaten && !SC.executioner)
-                    {
-                        InsertEvent(narrative.boss_introduxtions[boss_index].gameObject, i - 1);
-                        i++;
-                        InsertEvent(SC.first_boss_victory, i);
-                        i++;
+       
+		for (int i = 0; i < events.Count; i++)
+		{
+			if (events[i].name.Contains("Boss"))
+			{
+				//tutorial
+				if (boss_index == 0 && !SCL.first_boss_met && !SC.executioner)
+				{
+					Debug.Log(SCL.first_boss_met +" : "+SC.executioner);
+					InsertEvent(SC.first_boss_intro, i - 1);
+					i++;
+					InsertEvent(SC.first_boss_victory, i);
+					i++;
+					
+					boss_index++;
+				}
+				else if (boss_index == 0 && !SCL.first_boss_beaten && !SC.executioner)
+				{
+					InsertEvent(narrative.GiveRandomBossIntro(boss_index), i - 1);
+					i++;
+					InsertEvent(SC.first_boss_victory, i);
+					i++;
 
-                        boss_index++;
-                    }
-                    //Non tutorial
-                    else if(!SC.executioner)
-                    {
-                        InsertEvent(narrative.boss_introduxtions[boss_index].gameObject, i - 1);
-                        i++;
-                        InsertEvent(narrative.boss_victories[boss_index].gameObject, i);
-                        i++;
+					boss_index++;
+				}
+				//Non tutorial
+				else if(!SC.executioner)
+				{
+					InsertEvent(narrative.GiveRandomBossIntro(boss_index), i - 1);
+					i++;
+					InsertEvent(narrative.GiveRandomBossVictory(boss_index), i);
+					i++;
 
-                        boss_index++;
-                    } else
-                    {
-                        InsertEvent(narrative.exe_boss_intros[boss_index].gameObject, i - 1);
-                        i++;
-                        InsertEvent(narrative.exe_boss_victories[boss_index].gameObject, i);
-                        i++;
+					boss_index++;
+				} else
+				{
+					InsertEvent(narrative.exe_boss_intros[boss_index].gameObject, i - 1);
+					i++;
+					InsertEvent(narrative.exe_boss_victories[boss_index].gameObject, i);
+					i++;
 
-                        boss_index++;
-                    }
-                }
-            }
-        }
+					boss_index++;
+				}
+			}
+		}
     }
 
     public void AddIntroSpeeches()
@@ -77,7 +76,7 @@ public class Story : MonoBehaviour
             
             for (int i = 0; i < events.Count; i++)
             {
-                if(events[i].name.Contains("FirstEncounter"))
+                if(events[i].name.Contains("Tier 1 encounter"))
                 {
                     //Turorials
                     if (!SCL.first_achievement && transform.parent.GetComponent<RLController>().achievements.Count > 0)
@@ -113,7 +112,6 @@ public class Story : MonoBehaviour
                         if (intro_index >= narrative.before_first_encounter.Count)
                         {
                             break;
-                            i++;
                         }
                     }
                     
@@ -142,7 +140,6 @@ public class Story : MonoBehaviour
         temp_start.AddRange(temp_end);
         events.Clear();
         events.AddRange(temp_start);
-        
     }
 
     public void CreateDeathBark()

@@ -48,7 +48,7 @@ MonoBehaviour:
   possible_enemies:
   - {fileID: 6979226803842198351, guid: 870ed2e832e03c24390913ab1fe726e7, type: 3}
   - {fileID: 6979226803842198351, guid: 2cce5fed51c0f454e800ac673cc52432, type: 3}
-  - {fileID: 6979226803842198351, guid: 8705371f5c6e303408e7ea00714d7e08, type: 3}
+  - {fileID: 6979226803842198351, guid: ce296caf6d061c149a9177df86a8db11, type: 3}
   - {fileID: 6979226803842198351, guid: b3b3780a257db94429cdb19c45240e04, type: 3}
   - {fileID: 6979226803842198351, guid: d722de004dc09094fbd764dea7158d79, type: 3}
   enemies: []

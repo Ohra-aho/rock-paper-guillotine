@@ -50,7 +50,7 @@ MonoBehaviour:
   - I decided to remember them.
   - I wonder if you will be as interesting.
   - 'Anyway:'
-  sprite_frames: 000000000000000000000000
+  sprite_frames: 00000000000000000000000000000000
   activated: 0
   executioner: 0
 --- !u!114 &1705922441453647033

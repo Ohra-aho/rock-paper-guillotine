@@ -46,11 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Now it's time fo your last battle.
+  - Now it's time for your last battle.
   - Attach your weapons to the gear and put it back in it's place. (Drag and drop
     or double click)
   sprite_frames: 0200000000000000
   activated: 0
+  executioner: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0

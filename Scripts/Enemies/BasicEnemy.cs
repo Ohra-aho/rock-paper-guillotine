@@ -67,6 +67,11 @@ public class BasicEnemy : MonoBehaviour
 
         HB = GameObject.Find("EnemyHealth").GetComponent<HealthBar>();
         GameObject.Find("light holder").GetComponent<Test>().PlayAnimation("balance");
+
+		if(name == "boss")
+		{
+			GameObject.Find("EventSystem").GetComponent<StoryCheckList>().first_boss_met = true;
+		}
     }
 
     public void TransferInfo()

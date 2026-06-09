@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Contaminator
+  name: boss
   image: {fileID: 21300000, guid: 48dbf993ef156ad4aadfc83fb6402d00, type: 3}
   maxHealth: 6
   weapons:

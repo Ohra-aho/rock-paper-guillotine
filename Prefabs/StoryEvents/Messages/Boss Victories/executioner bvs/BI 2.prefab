@@ -46,8 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - How did this one work again?
-  - Nah. Who cares.
+  - This might be painful.
   sprite_frames: 00000000
   activated: 0
   executioner: 1
