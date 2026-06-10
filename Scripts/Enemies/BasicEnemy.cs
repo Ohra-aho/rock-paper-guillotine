@@ -278,18 +278,8 @@ public class BasicEnemy : MonoBehaviour
 
     public void TelegraphWeaponPair()
     {
-        GameObject EVI = GameObject.Find("EnemyWeaponInfo");
-        for(int i = 0; i < EVI.transform.childCount; i++)
-        {
-            EVI.transform.GetChild(i).GetComponent<Image>().color = new Color(255, 255, 255);
-            for (int j = 0; j < current_pair.Count; j++)
-            {
-                if (weapons[current_pair[j]].GetComponent<Weapon>().name == EVI.transform.GetChild(i).GetComponent<EnemyWeaponInfo>().weapon.name)
-                {
-                    EVI.transform.GetChild(i).GetComponent<Image>().color = new Color(150, 0, 0);
-                }
-            }
-        }
+        GameObject EVI = GameObject.Find("enemy weapon rack");
+		EVI.GetComponent<WeaponInfoRack>().TelegraphWeapons(current_pair);
     }
 
     public int PickWeaponFromPair()

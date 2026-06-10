@@ -81,7 +81,7 @@ public class EnemyController : MonoBehaviour
     {
         HB.DestroyHealthBar();
         ClearRealInventory();
-        GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
+        GameObject infoHolder = GameObject.Find("enemy weapon rack");
         infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
         Destroy(transform.GetChild(0).gameObject);
     }
@@ -220,7 +220,7 @@ public class EnemyController : MonoBehaviour
 
     public void SpawnWeaponInfo()
     {
-        GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
+        GameObject infoHolder = GameObject.Find("enemy weapon rack");
         for (int i = 0; i < true_weapon_holder.transform.childCount; i++)
         {
             infoHolder.GetComponent<WeaponInfoRack>().SpawnWeaponInfo(true_weapon_holder.transform.GetChild(i).GetComponent<Weapon>());

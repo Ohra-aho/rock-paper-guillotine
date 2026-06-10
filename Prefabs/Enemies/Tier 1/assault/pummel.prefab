@@ -102,8 +102,8 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Granade
-  description: If wins, deals 2 damage to self. Otherwise; deals 2 damage to both.
+  name: Pummel
+  description: If loses, +1 damage.
   sprite: {fileID: 21300000, guid: 04963f0279358b440ad297403963e19d, type: 3}
   tiers: []
   tier: 0

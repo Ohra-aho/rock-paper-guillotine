@@ -5,23 +5,68 @@ using UnityEngine;
 public class WeaponInfoRack : MonoBehaviour
 {
     public GameObject info;
+	public bool open = false;
+	bool to_be_cleared = false;
+    // Start is called before the first frame update
 
+	public void ToggleOpen()
+	{
+		open = !open;
+	}
     public void SpawnWeaponInfo(Weapon weapon)
     {
-        GameObject infoBox = Instantiate(info, transform);
-        infoBox.GetComponent<EnemyWeaponInfo>().weapon = weapon;
-        infoBox.GetComponent<EnemyWeaponInfo>().Initiate();
+		for(int i = 0; i < transform.childCount; i++)
+		{
+			if(transform.GetChild(i).GetComponent<WeaponWard>().weapon == null)
+			{
+				transform.GetChild(i).GetComponent<WeaponWard>().weapon = weapon;
+				transform.GetChild(i).GetComponent<WeaponWard>().DisplayWeapon();
+				break;
+			}
+		}
     }
 
     public void ClearInfoRack()
     {
-        if(transform.childCount > 0)
-        {
-            for (int i = 0; i < transform.childCount; i++)
-            {
-                Destroy(transform.GetChild(i).gameObject);
-            }
-        }
+		//to_be_cleared = true;
     }
+
+	public void TrueClear()
+	{
+		if(to_be_cleared)
+		{
+			for (int i = 0; i < transform.childCount; i++)
+			{
+				transform.GetChild(i).GetComponent<WeaponWard>().ClearWeapon();
+			}
+		}
+		to_be_cleared = false;
+	}
+
+	public void TelegraphWeapons(List<int> pair)
+	{
+		for(int i = 0; i < transform.childCount; i++)
+		{
+			if(transform.GetChild(i).GetComponent<WeaponWard>().telegraphing)
+			{
+				transform.GetChild(i).GetComponent<WeaponWard>().ResetTelegraph();
+			}
+		}
+		for(int i = 0; i < pair.Count; i++)
+		{
+			transform.GetChild(pair[i]).GetComponent<WeaponWard>().Telegraph();
+		}
+	}
+
+	public void ResetTelegraphs()
+	{
+		for(int i = 0; i < transform.childCount; i++)
+		{
+			if(transform.GetChild(i).GetComponent<WeaponWard>().telegraphing)
+			{
+				transform.GetChild(i).GetComponent<WeaponWard>().ResetTelegraph();
+			}
+		}
+	}
 
 }

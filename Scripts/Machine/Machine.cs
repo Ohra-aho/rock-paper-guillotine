@@ -16,6 +16,8 @@ public class Machine : MonoBehaviour
 
     public GameObject player;
 
+	public GameObject weapon_rack;
+
     public bool choise_panel_active = true;
 
     public List<GameObject> sparks;
@@ -160,4 +162,33 @@ public class Machine : MonoBehaviour
         BasicEnemy enemy = GameObject.Find("EnemyHolder").GetComponent<EnemyController>().currentEnemy.GetComponent<BasicEnemy>();
         enemy.ExecutionerComment();
     }
+
+	public void RevealWeaponRack()
+	{
+		BasicEnemy enemy = GameObject.Find("EnemyHolder").GetComponent<EnemyController>().currentEnemy.GetComponent<BasicEnemy>();
+		int weapon_count = enemy.weapons.Count;
+
+		switch(weapon_count)
+		{
+			case 3: 
+				if(!weapon_rack.GetComponent<WeaponInfoRack>().open) weapon_rack.GetComponent<Test>().PlayAnimation("Rack1");
+				else weapon_rack.GetComponent<Test>().PlayAnimation("Rack1Close");
+				break;
+			case 4: 
+				if(!weapon_rack.GetComponent<WeaponInfoRack>().open) weapon_rack.GetComponent<Test>().PlayAnimation("Rack2");
+				else weapon_rack.GetComponent<Test>().PlayAnimation("Rack2Close");
+				break;
+			case 5: 
+				if(!weapon_rack.GetComponent<WeaponInfoRack>().open) weapon_rack.GetComponent<Test>().PlayAnimation("Rack3");
+				else weapon_rack.GetComponent<Test>().PlayAnimation("Rack3Close");
+				break;
+			case 6: 
+				if(!weapon_rack.GetComponent<WeaponInfoRack>().open) weapon_rack.GetComponent<Test>().PlayAnimation("Rack4");
+				else weapon_rack.GetComponent<Test>().PlayAnimation("Rack4Close");
+				break;
+		}
+
+		
+		
+	}
 }

@@ -267,7 +267,8 @@ public class Weapon : MonoBehaviour
             dead = hb.GetComponent<HealthBar>().CheckIfDead();
             if (dead)
             {
-                GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
+                GameObject infoHolder = GameObject.Find("enemy weapon rack");
+				infoHolder.GetComponent<WeaponInfoRack>().ResetTelegraphs();
                 infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
                 GameObject.Find("EventSystem").GetComponent<MainController>().Win();
                 if(on_death != null) on_death.Invoke();
