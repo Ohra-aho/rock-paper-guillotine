@@ -110,15 +110,15 @@ public class StoryController : MonoBehaviour
 
     string[][] messages =
     {
-        new string[] { "I know how and when,", "but why...", "I did not bother to figure that one out." },
-        new string[] { "It is funny to think that in situations like this, everyone is still innocent.", "Well, until proven, I suppose. 3"},
+        new string[] { "I know how and when,", "but why...10", "I did not bother to figure that one out." },
+        new string[] { "It is funny to think that in situations like this, everyone is still innocent.", "Well, until proven, I suppose. 7"},
         new string[] { "Was it worth it?" },
 
         //Story 1
         new string[] { "Whoah... The Shadow of Gial in the flesh.", "I almost rooted for you, but I guess life has a price in the end.", "Shame. Reading about your heists was quite entertaining.", "This should be interesting." },
         
         //Abyssal twin 1
-        new string[] { "You look terrible.", " No matter what, you didn�t tell where your brother was. That�s commendable.", "I would die to have that close relationship with my brother." },
+        new string[] { "You look terrible.", "No matter what, you didn�t tell where your brother was. That�s commendable.", "I would die to have that close relationship with my brother." },
         new string[] { "No last meal, no talk, no nothing.", "Strange fella, you are. Strange one indeed." },
         new string[] { "Oh. I was wondering, if you would end up here. What happened to that other one?", "That case about the statue. Few years in prison?", "It's interesting, how one child can change ones fate.", "Regardless. Shall we?" },
         //Abyssal twin 2

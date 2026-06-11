@@ -119,7 +119,7 @@ public class ManAnimator : MonoBehaviour
                     {
                         //If last part of animation played
                         dialog_box.GetComponent<DialogBox>().StartAnimation(1);
-                        ChangeSprite(man_sheet[0]);
+                        ChangeSprite(man_sheet[6]);
 
                         controller.buttons_active = true;
                         for (int i = 0; i < event_holder.transform.childCount; i++)
@@ -183,7 +183,7 @@ public class ManAnimator : MonoBehaviour
             return man_sheet[test];
         } catch
         {
-            return man_sheet[0];
+            return man_sheet[6];
         }
     }
 
@@ -197,7 +197,7 @@ public class ManAnimator : MonoBehaviour
             ChangeSprite(current_bark.sprite);
             yield return new WaitWhile(() => bark_box.GetComponent<DialogBox>().text_anim_playing);
             yield return new WaitForSeconds(1.5f);
-            ChangeSprite(man_sheet[0]);
+            ChangeSprite(man_sheet[6]);
             bark_box.GetComponent<DialogBox>().StartAnimation(1);
             yield return new WaitWhile(() => bark_box.GetComponent<DialogBox>().animation_playing);
             StopCoroutine(bark_cr);

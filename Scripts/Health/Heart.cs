@@ -49,6 +49,12 @@ public class Heart : MonoBehaviour
         GetComponent<Test>().PlayAnimation("Heal");
     }
 
+	public void HeavyDamage()
+	{
+		healthy = false;
+        GetComponent<Test>().PlayAnimation("HeavyDamage");
+	}
+
     public void UtilEmpty()
     {
         GetComponent<SpriteRenderer>().color = new Color(0.39f, 0.39f, 0.39f);

@@ -53,7 +53,6 @@ public class WeaponInfoRack : MonoBehaviour
 				{
 					if(i != pair[j])
 					{
-						Debug.Log(i);
 						transform.GetChild(i).GetComponent<WeaponWard>().ResetTelegraph();
 						break;
 					}

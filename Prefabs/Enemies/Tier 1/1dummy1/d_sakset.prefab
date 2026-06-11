@@ -95,7 +95,7 @@ MonoBehaviour:
   player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
-  penetrating: 0
+  penetrating: 1
   draw_winner: 0
   spammable: 0
   type: 2

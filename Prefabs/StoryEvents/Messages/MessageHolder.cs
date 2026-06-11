@@ -73,7 +73,8 @@ public class MessageHolder : MonoBehaviour
                     {
                         string line = messages[index][i];
                         int test = Int32.Parse(line[line.Length-1].ToString());
-                        temp.Add(line.Substring(0, line.Length-1));
+						string number = GetNumber(line);
+                        temp.Add(line.Substring(0, line.Length-number.Length));
                     } catch
                     {
                         temp.Add(messages[index][i]);
@@ -101,13 +102,37 @@ public class MessageHolder : MonoBehaviour
         {
             try
             {
-                int frame = Int32.Parse(messages[index][i][messages[index][i].Length - 1].ToString());
+                //int frame = Int32.Parse(messages[index][i][messages[index][i].Length - 1].ToString());
+				string proto_frame = GetNumber(messages[index][i]);
+				int frame = Int32.Parse(proto_frame);
                 temp.Add(frame);
             } catch
             {
-                temp.Add(0);
+                temp.Add(6);
             }
         }
         return temp;
     }
+
+	private string GetNumber(string message)
+	{
+		string whole = "";
+		string reverse_whole = "";
+		for(int i = message.Length-1; i >= 0; i--)
+		{
+			try
+			{
+				int temp = Int32.Parse(message[i].ToString());
+				whole += message[i];
+			} catch
+			{
+				break;
+			}
+		}
+		for(int i = whole.Length-1; i >= 0; i--)
+		{
+			reverse_whole += whole[i];
+		}
+		return reverse_whole;
+	}
 }

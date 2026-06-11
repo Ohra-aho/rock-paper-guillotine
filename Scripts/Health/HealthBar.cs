@@ -45,6 +45,18 @@ public class HealthBar : MonoBehaviour
     {
         current_health -= damage;
         if (current_health < 0) current_health = 0;
+		if(damage > 0)  
+		{
+			if(damage >= 5)
+			{
+				GetComponent<AudioSource>().Play();
+			} else
+			{
+				GetComponent<AudioSource>().Play();
+			}
+		}
+
+
         for(int i = 0; i < damage; i++)
         {
             for(int j = transform.childCount-1; j >= 0; j--)
@@ -53,7 +65,13 @@ public class HealthBar : MonoBehaviour
                 {
                     if (transform.GetChild(j).GetComponent<Heart>().healthy)
                     {
-                        transform.GetChild(j).GetComponent<Heart>().damage();
+						if(damage >= 5)
+						{
+							transform.GetChild(j).GetComponent<Heart>().HeavyDamage();
+						} else
+						{
+                        	transform.GetChild(j).GetComponent<Heart>().damage();
+						}
                         break;
                     }
                 }
