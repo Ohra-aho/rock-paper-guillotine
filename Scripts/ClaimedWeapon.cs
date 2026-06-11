@@ -35,6 +35,7 @@ public class ClaimedWeapon : MonoBehaviour
         DestroyInfo();
         GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
 		transform.GetChild(0).GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
+		transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
 		transform.GetChild(1).GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
         FixSorting1();
     }
@@ -43,6 +44,7 @@ public class ClaimedWeapon : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
 		transform.GetChild(0).GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+		transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
 		transform.GetChild(1).GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
         FixSorting2();
     }
@@ -52,7 +54,7 @@ public class ClaimedWeapon : MonoBehaviour
         GetComponent<SpriteRenderer>().sortingOrder += 2;
         transform.GetChild(1).GetComponent<SpriteRenderer>().sortingOrder += 2;
         transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder += 2;
-
+        transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sortingOrder += 2;
     }
 
     public void FixSorting2()
@@ -60,11 +62,13 @@ public class ClaimedWeapon : MonoBehaviour
         GetComponent<SpriteRenderer>().sortingOrder -= 2;
         transform.GetChild(1).GetComponent<SpriteRenderer>().sortingOrder -= 2;
         transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder -= 2;
+        transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sortingOrder -= 2;
     }
 
     public void DispalyWeapon()
     {
         transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
+        transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
 		GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().tiers[weapon.GetComponent<Weapon>().tier];
         switch(weapon.GetComponent<Weapon>().type)
         {

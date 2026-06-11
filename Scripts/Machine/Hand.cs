@@ -20,6 +20,7 @@ public class Hand : MonoBehaviour
                 weapon_sprite = collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().sprite;
 				transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = backs[collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().tier];
                 transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = weapon_sprite;
+                transform.GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = weapon_sprite;
                 switch (collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().type)
                 {
                     case MainController.Choise.kivi: transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[0]; break;
@@ -67,6 +68,7 @@ public class Hand : MonoBehaviour
         weapon_sprite = null;
         transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
         transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = null;
+        transform.GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = null;
         transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
     }
 

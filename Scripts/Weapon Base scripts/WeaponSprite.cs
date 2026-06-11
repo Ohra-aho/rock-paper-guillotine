@@ -19,6 +19,7 @@ public class WeaponSprite : MonoBehaviour
         if(weapon != null)
         {
             transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
+            transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
 			GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().tiers[weapon.GetComponent<Weapon>().tier];
             switch(weapon.GetComponent<Weapon>().type)
             {
@@ -42,6 +43,7 @@ public class WeaponSprite : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = null;
             transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+            transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
             transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = null;
         }
     }
@@ -51,6 +53,7 @@ public class WeaponSprite : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = null;
         transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+        transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
         transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = null;
     }
 
