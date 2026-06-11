@@ -110,7 +110,13 @@ public class TableController : MonoBehaviour
         {
             if(!player.GetComponent<PlayerContoller>().HB.dead)
             {
-                player.GetComponent<PlayerContoller>().HB.TakeDamage(player_damage);
+				if(MC.enemyChoise.penetrating)
+				{
+                	player.GetComponent<PlayerContoller>().HB.TakeDamage(player_damage);
+				} else
+				{
+					player.GetComponent<PlayerContoller>().HB.TakeDamage(player_damage - MC.playerChoise.GiveEffectiveArmor());
+				}
             }
             player_damage = 0;
 			player.GetComponent<PlayerContoller>().HB.dead = player.GetComponent<PlayerContoller>().HB.CheckIfDead();
@@ -121,7 +127,14 @@ public class TableController : MonoBehaviour
         {
             if(!enemy.GetComponent<EnemyController>().HB.dead)
             {
-                enemy.GetComponent<EnemyController>().HB.TakeDamage(enemy_damage);
+				if(MC.playerChoise.penetrating)
+				{
+					enemy.GetComponent<EnemyController>().HB.TakeDamage(enemy_damage);
+				} else
+				{
+					enemy.GetComponent<EnemyController>().HB.TakeDamage(enemy_damage - MC.enemyChoise.GiveEffectiveArmor());
+				}
+                
             }
             enemy_damage = 0;
 			enemy.GetComponent<EnemyController>().HB.dead = enemy.GetComponent<EnemyController>().HB.CheckIfDead();

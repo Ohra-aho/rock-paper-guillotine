@@ -60,7 +60,7 @@ public class HealthBar : MonoBehaviour
             }
         }
         damage_taken = true;
-        if (gameObject.CompareTag("PlayerHealth") && !CheckIfAtZeroHP()) {
+        if (gameObject.CompareTag("PlayerHealth") && !CheckIfAtZeroHP() && damage > 0) {
             //Damage animations
             if(!MC.GetComponent<StoryController>().executioner)
             {

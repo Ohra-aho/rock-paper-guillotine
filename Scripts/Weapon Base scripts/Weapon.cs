@@ -155,8 +155,8 @@ public class Weapon : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        int armor_bonus = GiveEffectiveArmor();
-       
+        //int armor_bonus = GiveEffectiveArmor();
+		int armor_bonus = 0;
         int realDamage = 0;
         if(!opponent.penetrating)
         {
@@ -185,7 +185,7 @@ public class Weapon : MonoBehaviour
             {
                 if (GetComponent<EffectDamage>().armor_piercing || GetComponent<Weapon>().penetrating)
                 {
-                    amount += opponent.GiveEffectiveArmor();
+                    //amount += opponent.GiveEffectiveArmor();
                 }
             }
             opponent.TakeDamage(amount);
@@ -207,14 +207,14 @@ public class Weapon : MonoBehaviour
         int realDamage;
         if (!penetrating)
         {
-            realDamage = amount - GiveEffectiveArmor();
+            realDamage = amount; //- GiveEffectiveArmor();
             if (realDamage < 0) realDamage = 0;
         } 
         if(GetComponent<EffectDamage>())
         {
             if(!GetComponent<EffectDamage>().armor_piercing && !GetComponent<Weapon>().penetrating)
             {
-                realDamage = amount - GiveEffectiveArmor();
+                realDamage = amount; //- GiveEffectiveArmor();
                 if (realDamage < 0) realDamage = 0;
             } else
             {
