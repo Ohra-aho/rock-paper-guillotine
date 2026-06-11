@@ -49,7 +49,15 @@ public class WeaponInfoRack : MonoBehaviour
 		{
 			if(transform.GetChild(i).GetComponent<WeaponWard>().telegraphing)
 			{
-				transform.GetChild(i).GetComponent<WeaponWard>().ResetTelegraph();
+				for(int j = 0; j < pair.Count; j++)
+				{
+					if(i != pair[j])
+					{
+						Debug.Log(i);
+						transform.GetChild(i).GetComponent<WeaponWard>().ResetTelegraph();
+						break;
+					}
+				}
 			}
 		}
 		for(int i = 0; i < pair.Count; i++)

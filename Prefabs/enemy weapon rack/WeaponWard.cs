@@ -49,7 +49,7 @@ public class WeaponWard : MonoBehaviour
 
 	public void Telegraph()
 	{
-		if(weapon != null && MC.game_state == MainController.State.in_battle)
+		if(weapon != null && MC.game_state == MainController.State.in_battle && !telegraphing)
 		{
 			GetComponent<Test>().PlayAnimation("Telegraph");
 			telegraphing = true;
@@ -58,7 +58,7 @@ public class WeaponWard : MonoBehaviour
 
 	public void ResetTelegraph()
 	{
-		if(weapon != null)
+		if(weapon != null && telegraphing)
 		{
 			GetComponent<Test>().PlayAnimation("Reset telegraph");
 			telegraphing = false;
