@@ -108,7 +108,7 @@ MonoBehaviour:
   name: Gladiator mark
   description: After each turn, if you took damage, deals 1 damage to you. If you
     dealt damage this turn, deals 1 damage.
-  sprite: {fileID: 21300000, guid: c186e711c2353834b8b4038b9e4feecb, type: 3}
+  sprite: {fileID: 21300000, guid: cc839e77f95e47f4ca10331337029c30, type: 3}
   tiers: []
   tier: 0
   first_turn:

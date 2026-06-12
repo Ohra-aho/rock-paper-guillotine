@@ -239,15 +239,15 @@ public class Weapon : MonoBehaviour
             if (player)
             {
                 TC.player_damage += realDamage;
-                if (effect) opponent.dealDamage.Invoke();
-                takeDamage.Invoke();
+                //if (effect) opponent.dealDamage.Invoke();
+                //takeDamage.Invoke();
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().damage_taken = true;
             }
             else
             {
                 TC.enemy_damage += realDamage;
-                if (effect) opponent.dealDamage.Invoke();
-                takeDamage.Invoke();
+                //if (effect) opponent.dealDamage.Invoke();
+                //takeDamage.Invoke();
                 GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().damage_taken = true;
             }
         }

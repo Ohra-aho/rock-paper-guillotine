@@ -106,7 +106,7 @@ MonoBehaviour:
   name: Victory streak
   description: Whenever you win, all your weapons gain +1 damage, until you lose
     or draw.
-  sprite: {fileID: 21300000, guid: fced6f8bbe42bc44cbd12b479285c17e, type: 3}
+  sprite: {fileID: 21300000, guid: 376f18bd2b167904ea94390e7c720e32, type: 3}
   tiers: []
   tier: 0
   first_turn:

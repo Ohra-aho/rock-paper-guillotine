@@ -113,9 +113,16 @@ public class TableController : MonoBehaviour
 				if(MC.enemyChoise.penetrating)
 				{
                 	player.GetComponent<PlayerContoller>().HB.TakeDamage(player_damage);
+					MC.playerChoise.takeDamage.Invoke();
+					MC.enemyChoise.dealDamage.Invoke();	
 				} else
 				{
-					player.GetComponent<PlayerContoller>().HB.TakeDamage(player_damage - MC.playerChoise.GiveEffectiveArmor());
+					if(player_damage - MC.playerChoise.GiveEffectiveArmor() > 0)
+					{
+						player.GetComponent<PlayerContoller>().HB.TakeDamage(player_damage - MC.playerChoise.GiveEffectiveArmor());
+						MC.playerChoise.takeDamage.Invoke();
+						MC.enemyChoise.dealDamage.Invoke();	
+					}
 				}
             }
             player_damage = 0;
@@ -130,9 +137,16 @@ public class TableController : MonoBehaviour
 				if(MC.playerChoise.penetrating)
 				{
 					enemy.GetComponent<EnemyController>().HB.TakeDamage(enemy_damage);
+					MC.enemyChoise.takeDamage.Invoke();
+					MC.playerChoise.dealDamage.Invoke();
 				} else
 				{
-					enemy.GetComponent<EnemyController>().HB.TakeDamage(enemy_damage - MC.enemyChoise.GiveEffectiveArmor());
+					if(enemy_damage - MC.enemyChoise.GiveEffectiveArmor() > 0)
+					{
+						enemy.GetComponent<EnemyController>().HB.TakeDamage(enemy_damage - MC.enemyChoise.GiveEffectiveArmor());
+						MC.enemyChoise.takeDamage.Invoke();
+						MC.playerChoise.dealDamage.Invoke();
+					}
 				}
                 
             }

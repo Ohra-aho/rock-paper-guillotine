@@ -107,6 +107,8 @@ MonoBehaviour:
   description: +1 HP until the end of the fight after use. You can gain up to 2 additional
     health this way.
   sprite: {fileID: 21300000, guid: a348c90cb4a60a24398e753810ed78b7, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []

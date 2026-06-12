@@ -17,7 +17,10 @@ public class Bubble : MonoBehaviour
 	}
 
 	public void ResetHealth() {
-		GetComponent<HealthIncrease>().RemoveTemporaryHealth();
-		GetComponent<HealthIncrease>().amount = 0;
+		if(!GetComponent<Weapon>().player_owner.HB.CheckIfDead())
+		{
+			GetComponent<HealthIncrease>().RemoveTemporaryHealth();
+			GetComponent<HealthIncrease>().amount = 0;
+		}
 	}
 }
