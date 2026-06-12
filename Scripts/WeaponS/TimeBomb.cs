@@ -10,7 +10,7 @@ public class TimeBomb : MonoBehaviour
         GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name == GetComponent<Weapon>().name; };
         GetComponent<BuffController>().each_turn = true;
 		GetComponent<BuffController>().temporary = true;
-		GetComponent<BuffController>().timer = 4;
+		GetComponent<BuffController>().timer = 3;
 		GetComponent<BuffController>().special_apply = true;
     }
 
@@ -27,7 +27,7 @@ public class TimeBomb : MonoBehaviour
 	{
 		if(!GetComponent<Weapon>().FindCertainBuff(GetComponent<Weapon>().name))
 		{
-			GetComponent<Stacking>().stacks = 4;
+			GetComponent<Stacking>().stacks = 3;
 			GetComponent<BuffController>().Equip();
 		}
 	}

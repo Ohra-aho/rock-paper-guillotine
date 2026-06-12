@@ -106,7 +106,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Time Bomb
-  description: After use, waits for 3 turns and deals 2 damage.
+  description: After use, waits for 2 turns and deals 2 damage.
   sprite: {fileID: 21300000, guid: 4db0bcf9c6022cc4eb82b34d96fec4ca, type: 3}
   tiers: []
   tier: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stacks: 0
-  stack_limit: 4
+  stack_limit: 3
   LoadFunction:
     m_PersistentCalls:
       m_Calls: []
