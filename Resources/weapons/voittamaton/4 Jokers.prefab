@@ -104,7 +104,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Four Jokers
-  description: Gives 3 Jokers to your inventory and destroys itself after use.
+  description: After use, gives 3 Jokers to your inventory and destroys itself.
   sprite: {fileID: 21300000, guid: 4452c24eb2e6f214593c6136b1169fe7, type: 3}
   tiers: []
   tier: 0
@@ -240,5 +240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawn_limit: 0
   weapons:
   - {fileID: 1944698211339908181, guid: 50b9cc5b77e73c74e89ab208e1d2b5b7, type: 3}

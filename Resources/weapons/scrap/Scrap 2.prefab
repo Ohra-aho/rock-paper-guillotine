@@ -106,7 +106,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Scrap
-  description: Heal 1 after use. Destroys itself.
+  description: After use, heal 1. Destroys itself.
   sprite: {fileID: 21300000, guid: f3033b3c542399d428d6c95f15a173ff, type: 3}
   tiers: []
   tier: 0

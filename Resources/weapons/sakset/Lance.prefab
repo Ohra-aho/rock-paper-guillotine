@@ -104,10 +104,13 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Lance
-  description: +1 damage during the first turn and deals 1 damage after use. Pierces
+  description: During the first turn, +1 damage and deals 1 damage after use. Pierces
     armor.
   sprite: {fileID: 21300000, guid: 0527eebb5a4ad8e4badc4473f00cf20d, type: 3}
-  tiers: []
+  tiers:
+  - {fileID: 21300000, guid: 97b5b00782b0b474fa59e2cb07562f1a, type: 3}
+  - {fileID: 21300000, guid: 3a240671df9813341b93bf5e6caeb7eb, type: 3}
+  - {fileID: 21300000, guid: 4bfec1fcc837111449725ed56728ceac, type: 3}
   tier: 0
   first_turn:
     m_PersistentCalls:

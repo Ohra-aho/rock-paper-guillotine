@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stacks: 4
+  stacks: 6
   stack_limit: 0
   LoadFunction:
     m_PersistentCalls:

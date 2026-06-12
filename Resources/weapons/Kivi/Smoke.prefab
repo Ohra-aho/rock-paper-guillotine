@@ -91,20 +91,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Smoke
-  description: -1 damage to all enemies' weapons for one turn after use.
+  description: After use, -1 damage to all enemies' weapons for one turn.
   sprite: {fileID: 21300000, guid: 03bee612b201c464cb757217af0b96cc, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -159,6 +161,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -175,6 +180,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0

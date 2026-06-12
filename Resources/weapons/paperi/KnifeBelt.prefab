@@ -103,7 +103,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Knife belt
-  description: Get 1 Throwing knife to your inventory after use.
+  description: After use, get 1 a "Throwing knife" to your inventory.
   sprite: {fileID: 21300000, guid: 09659e4f6945db145a71dcc8f9b14a54, type: 3}
   tiers: []
   tier: 0

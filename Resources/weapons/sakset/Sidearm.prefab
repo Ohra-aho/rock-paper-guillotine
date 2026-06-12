@@ -105,9 +105,11 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Sidearm
-  description: Starts each fight with 1 point. Uses 1 point to deal 1 damage. If
-    has points at the end of a fight, gives 1 point to another weapon.
+  description: Starts each fight with 1 point. After use, uses 1 point to deal 1
+    damage. If has points at the end of a fight, gives 1 point to another weapon.
   sprite: {fileID: 21300000, guid: 20478618e23c0b34daef3fb9cd76308d, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls:

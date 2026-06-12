@@ -105,7 +105,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Ender
-  description: Your HP drops to 1. Destroys itself after use. Pierces armor. Wins
+  description: After use, your HP drops to 1. Destroys itself. Pierces armor. Wins
     draws.
   sprite: {fileID: 21300000, guid: 636689bfe763bcd4e979ffbc41ae54a5, type: 3}
   tiers: []

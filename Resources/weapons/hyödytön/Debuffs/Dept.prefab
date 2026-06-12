@@ -103,9 +103,9 @@ MonoBehaviour:
   armor: 1
   real_damage: 0
   real_armor: 0
-  name: Dept
-  description: If not equipped, gives your strongest weapon -1 damage. Destroys itself
-    after use.
+  name: Weakness
+  description: If not equipped, gives your strongest weapon -1 damage until the end
+    of the fight. Destroyed after use.
   sprite: {fileID: 21300000, guid: 84a9c4c50c29eba4ba70878cfe0a7775, type: 3}
   tiers: []
   tier: 0

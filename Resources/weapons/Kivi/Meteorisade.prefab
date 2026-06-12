@@ -105,7 +105,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Meteor swarm
-  description: Deals 1 damage for each "rock" you own after use and destroys itself.
+  description: After use, deals 1 damage for each "rock" you own and destroys itself.
   sprite: {fileID: 21300000, guid: 4ef17831000f73749aacd8de3de32cb2, type: 3}
   tiers: []
   tier: 0

@@ -106,8 +106,10 @@ MonoBehaviour:
   real_armor: 0
   name: Pickaxe
   description: Whenever you take damage, gains 1 point. After use, uses 3 points
-    to give one random equipped weapon +1 damage.
+    to give one random weapon +1 damage.
   sprite: {fileID: 21300000, guid: 6f3ee77e33bd3084cb4c9f3fd6e45c4d, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -259,6 +261,7 @@ MonoBehaviour:
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
+  each_turn: 0
   victory: 0
   special_apply: 0
   takeDamage: 0

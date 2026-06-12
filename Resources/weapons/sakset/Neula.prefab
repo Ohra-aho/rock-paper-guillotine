@@ -103,7 +103,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Needle
-  description: Heal 1 damage after use.
+  description: After use, heal 1.
   sprite: {fileID: 21300000, guid: f2ae555fbc4020244893c5a4cff6c76c, type: 3}
   tiers: []
   tier: 0

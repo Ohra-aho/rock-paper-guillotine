@@ -103,8 +103,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Defence manifest
-  description: +X damage where X is the total amount of armor your equipped weapons
-    have.
+  description: +X damage where X is the total amount of armor on your equipped weapons.
   sprite: {fileID: 21300000, guid: 53a05d1d23e646042adb4a3512cfb85e, type: 3}
   tiers: []
   tier: 0

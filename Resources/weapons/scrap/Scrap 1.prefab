@@ -106,7 +106,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Scrap
-  description: +1 damage to all other weapons for 2 turns after use. Destroys itself.
+  description: After use, +1 damage to all other weapons for 2 turns. Destroys itself.
   sprite: {fileID: 21300000, guid: 9d339fe8b3f0a264b8c7d1f1c3f089e0, type: 3}
   tiers: []
   tier: 0

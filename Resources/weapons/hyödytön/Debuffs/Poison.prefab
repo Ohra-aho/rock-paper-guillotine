@@ -104,7 +104,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Poison
-  description: When you acquire Poison, you take 1 damage. After use, destroys itself.
+  description: When you acquire Poison, you take 1 damage. Destroyed after use.
   sprite: {fileID: 21300000, guid: 242a0c8b7833d2845850f1d43921e677, type: 3}
   tiers: []
   tier: 0

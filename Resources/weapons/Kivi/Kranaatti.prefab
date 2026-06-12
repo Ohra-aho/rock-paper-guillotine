@@ -95,16 +95,17 @@ MonoBehaviour:
   player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
-  penetrating: 0
+  penetrating: 1
   draw_winner: 0
   spammable: 0
   type: 0
   damage: 0
-  armor: 0
+  armor: 1
   real_damage: 0
   real_armor: 0
   name: Granade
-  description: Deals 2 damage to enemy and 1 damage to you. Destroys itself.
+  description: Deals 2 damage to enemy and 1 damage to you. Destroys itself. Pierces
+    armor.
   sprite: {fileID: 21300000, guid: 9b13da2eaff71b648b3f743ad1110006, type: 3}
   tiers: []
   tier: 0

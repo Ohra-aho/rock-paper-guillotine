@@ -93,21 +93,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Altar
-  description: Whenever you take damage gains 1 point. Uses 5 points after use to
-    give one random "Eldritch power" to your inventory.
+  description: Whenever you take damage with any weapon, gains 1 point. Uses 5 points
+    after use to give you one random "Eldritch power".
   sprite: {fileID: 21300000, guid: c6ed8ce54727be24aa6ed9b94b68eeb8, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -162,6 +164,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -178,6 +183,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
+    m_PersistentCalls:
+      m_Calls: []
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
     m_PersistentCalls:
       m_Calls: []
   self_destructive: 0
@@ -223,12 +234,14 @@ MonoBehaviour:
   damage_bonus: 0
   armor_bonus: 0
   effect_damage_bonus: 0
+  toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
   always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
+  each_turn: 0
   victory: 0
   special_apply: 0
   takeDamage: 0
@@ -239,16 +252,19 @@ MonoBehaviour:
   win: 0
   lose: 0
   heal: 0
+  gain_points: 0
   equip: 0
   unEquip: 0
   constant: 0
   onDestruction: 0
   awake: 0
+  on_death: 0
   temporary: 0
   timer: 0
   penetrating: 0
   draw_winner: 0
   health_buff: 0
+  until_used: 0
   destructive: 0
   heal_disabler: 0
 --- !u!114 &2426040337145588873

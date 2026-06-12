@@ -104,7 +104,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Buckshot
-  description: After use, +2 to all effect damage during the next turn.
+  description: After use, +2 to all effect damage for one turn.
   sprite: {fileID: 21300000, guid: b24559ae82064b043bc78337b12a910d, type: 3}
   tiers: []
   tier: 0

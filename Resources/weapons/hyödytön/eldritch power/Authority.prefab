@@ -92,21 +92,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buff_data: []
   owner: {fileID: 0}
+  player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  dead: 0
   type: 4
   damage: 0
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Authority
-  description: When this weapon is not equipped, one random weapon becomes "unbeatable"
-    for the first turn of the fight..
+  description: When not equipped, one random weapon becomes "unbeatable" for the
+    first turn of the fight.
   sprite: {fileID: 21300000, guid: a9b6b4df44f366344a920a728d0a3e37, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -149,6 +151,9 @@ MonoBehaviour:
   heal:
     m_PersistentCalls:
       m_Calls: []
+  gain_points:
+    m_PersistentCalls:
+      m_Calls: []
   equip:
     m_PersistentCalls:
       m_Calls: []
@@ -179,6 +184,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  on_pick:
+    m_PersistentCalls:
+      m_Calls: []
+  on_death:
+    m_PersistentCalls:
+      m_Calls: []
   self_destructive: 0
   healing: 0
   health: 0
@@ -189,6 +200,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - This should not be here.
+  executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &-249106101545597668
 MonoBehaviour:
