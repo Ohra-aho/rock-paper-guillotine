@@ -96,14 +96,14 @@ MonoBehaviour:
   opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   penetrating: 0
   draw_winner: 0
-  spammable: 1
+  spammable: 0
   type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Hammer
-  description: If wins, you get a bigger reward from the Spoils.
+  description: If draws, Long nails loses 2 points.
   sprite: {fileID: 21300000, guid: ba13347c532d6844c8b433b039e88a63, type: 3}
   tiers: []
   tier: 0
@@ -139,10 +139,16 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
+  draw:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -3478831684347174041}
         m_TargetAssemblyTypeName: Wanderer, Assembly-CSharp
-        m_MethodName: IncreaseRewardTier
+        m_MethodName: Hammer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -152,12 +158,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  lose:
-    m_PersistentCalls:
-      m_Calls: []
-  draw:
-    m_PersistentCalls:
-      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -211,4 +211,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e6bc5c449d70d4a822c584509303f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward_tier: 1
+  buff: {fileID: 0}

@@ -34,6 +34,7 @@ public class WeaponWard : MonoBehaviour
 	{
 		if(weapon != null && MC.game_state == MainController.State.in_battle)
 		{
+			DisplayWeapon();
 			if(!telegraphing) GetComponent<Test>().PlayAnimation("CardInfoReveal");
 			else GetComponent<Test>().PlayAnimation("InfoReveal");
 		}

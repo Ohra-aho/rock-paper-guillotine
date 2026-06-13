@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PermanentDebuffer : MonoBehaviour
@@ -77,4 +78,11 @@ public class PermanentDebuffer : MonoBehaviour
         new_buff.type_change = MainController.Choise.useless;
         new_buff.AddBuff();
     }
+
+	public void DestroyOpposingWeapon()
+	{
+		Weapon opponent = GetComponent<Weapon>().opponent;
+        opponent.AddComponent<SelfDestruct>();
+		opponent.GetComponent<SelfDestruct>().Destruct();
+	}
 }

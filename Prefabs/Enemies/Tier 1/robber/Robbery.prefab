@@ -122,9 +122,9 @@ MonoBehaviour:
   plan_2: 02000000000000000100000003000000
   weapon_pairs:
   - pair: 0000000002000000
+  - pair: 01000000
   - pair: 0000000001000000
   - pair: 0100000002000000
-  - pair: 00000000
   off_balance_choises: 00000000
   advanced: 0
   victory_barks:
@@ -152,4 +152,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e6bc5c449d70d4a822c584509303f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward_tier: 1
+  buff: {fileID: 0}
