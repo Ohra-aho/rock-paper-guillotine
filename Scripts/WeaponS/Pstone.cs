@@ -5,12 +5,13 @@ using UnityEngine;
 public class Pstone : MonoBehaviour
 {
     int previous_HP_gap = 0;
+	public int hp_gap;
 
     public void Equip()
     {
         HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
         previous_HP_gap = HB.HP_gap;
-        HB.HP_gap = 5;
+        HB.HP_gap = hp_gap;
         HB.DecreaseHealthBar(0, false);
     }
 

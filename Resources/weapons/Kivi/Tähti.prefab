@@ -223,6 +223,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Just want to get it over with? You know you can just pull the lever.
+  - True glass cannon. 18
+  - Shine bright but fast.
   executioner_comment: 11111111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &-5764463972135550294

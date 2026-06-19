@@ -197,7 +197,10 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks: []
+  pick_barks:
+  - That will shred some enemies. 21
+  - I used to hunt sometimes. Friendly fire is fun. 4
+  - Little bit more stopping power.
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &8722674177556910542

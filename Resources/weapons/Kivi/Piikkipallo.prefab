@@ -198,6 +198,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Bark and bite. A good pick.
+  - Here is your participation award. 18
+  - That was actually one of the first weapons I made.
   executioner_comment: 111111111111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &2865161422314870810

@@ -211,7 +211,9 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks:
-  - I look forward to see how hard you hit with that.
+  - I look forward to see how hard you hit with that. 1
+  - Just a couple more rocks. 17
+  - That could be devastating. 4
   executioner_comment: 11111111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &2599368974187006231

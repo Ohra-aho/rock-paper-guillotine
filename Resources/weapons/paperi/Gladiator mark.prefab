@@ -191,7 +191,10 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks: []
+  pick_barks:
+  - Pain for pain. Blood for blood. 14
+  - How bored can you be, that you make slaughter into an entertainment? 16
+  - Maybe we should just make you fight other inmates. 5
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &1074014957905367367

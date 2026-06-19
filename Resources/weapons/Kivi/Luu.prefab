@@ -199,6 +199,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Glass cannon are we?
+  - That could become a problem.
+  - You will miss the heals. 21
   executioner_comment: 111111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &-6147641570670005687

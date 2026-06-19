@@ -197,7 +197,10 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks: []
+  pick_barks:
+  - I sometimes wondered why those were outlawed. 7
+  - That's right! Punch horrors to the face! 15
+  - That could give you some openings.
   executioner_comment: 111111111111111111
   damage_soft_cap: 7
 --- !u!114 &5492391501288459758

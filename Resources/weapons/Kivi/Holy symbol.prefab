@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -794109146025331787}
   - component: {fileID: 7832676479104829237}
+  - component: {fileID: -3766730020890610404}
   m_Layer: 5
   m_Name: Holy symbol
   m_TagString: Untagged
@@ -212,6 +213,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Pray while you still can.
+  - Some solace in the face of death.
+  - Hope? There is no hope for you. 11
   executioner_comment: 1111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &-794109146025331787
@@ -230,19 +233,7 @@ MonoBehaviour:
   stack_limit: 3
   LoadFunction:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7832676479104829237}
-        m_TargetAssemblyTypeName: HolySymbol, Assembly-CSharp
-        m_MethodName: LoadEvent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   before_stacking:
     m_PersistentCalls:
       m_Calls: []
@@ -261,7 +252,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c405e445633be2c42b8072eac6137a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miracles:
+--- !u!114 &-3766730020890610404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn_limit: 0
+  weapons:
   - {fileID: 1944698211339908181, guid: bf44e920d974a204589742366b914b99, type: 3}
   - {fileID: 1944698211339908181, guid: 5b41f0edba9bf1e4e8fd39f7636b42ae, type: 3}
   - {fileID: 1944698211339908181, guid: 9a70c67ed37840641afc7537eb6cbf38, type: 3}

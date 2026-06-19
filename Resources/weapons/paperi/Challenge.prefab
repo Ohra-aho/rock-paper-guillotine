@@ -209,7 +209,11 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks: []
+  pick_barks:
+  - Living on the edge. 16
+  - One guy was actually so scared of seeing that flag, that he basically exiled
+    himself. Family never recovered.
+  - Even one more damage can be devastating. Be careful.
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &-2100047889804213751

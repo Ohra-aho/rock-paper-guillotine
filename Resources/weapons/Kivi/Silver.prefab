@@ -187,6 +187,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - That could serve you well.
+  - Let scissors shine.
+  - Have you red that story about the miner? Quite inspirational. 9
   executioner_comment: 1111111111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &-419641696005657725

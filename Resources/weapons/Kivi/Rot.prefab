@@ -106,6 +106,8 @@ MonoBehaviour:
   name: Rot
   description: +6 HP. -1 HP at the beginning of each fight.
   sprite: {fileID: 21300000, guid: 32316206308949541966fd2a728fcfb4, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls:
@@ -231,7 +233,10 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks: []
+  pick_barks:
+  - Quite a nasty disease.
+  - It is intersting what a little damage to genes can do. 10
+  - You will dissolve regardless.
   executioner_comment: 11111111111111111111
   damage_soft_cap: 7
 --- !u!114 &-705646538289296385

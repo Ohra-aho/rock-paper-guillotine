@@ -222,6 +222,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - You have more room for errors now. Lets see if you need them.
+  - That should be enough.
+  - The ultimate rock. 2
   executioner_comment: 11111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &8317546583071739834

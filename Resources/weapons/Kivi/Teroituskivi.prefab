@@ -187,6 +187,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Basic, but effective.
+  - Scissors will hit that little bit harder.
+  - A rock slot for that? 5
   executioner_comment: 111111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &1268165458918428530

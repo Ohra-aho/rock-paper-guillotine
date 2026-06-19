@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HolySymbol : MonoBehaviour
 {
-    public List<GameObject> miracles;
   
     public void Worship()
     {
@@ -16,8 +15,7 @@ public class HolySymbol : MonoBehaviour
         if (GetComponent<Stacking>().stacks >= 3)
         {
             GetComponent<Stacking>().stacks = 0;
-            PlayerInventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
-            inventory.AddItem(miracles[Random.Range(0, miracles.Count)]);
+            GetComponent<WeaponSpawner>().SpawnRandomWeapon();
         }
     }
 }

@@ -228,6 +228,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Now you will be a little harder to kill.
+  - Clunky, but gets the job done.
+  - There actually is a box of bandages in the back room. Wierd regualtion.
   executioner_comment: 11111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &-3206155839901610199

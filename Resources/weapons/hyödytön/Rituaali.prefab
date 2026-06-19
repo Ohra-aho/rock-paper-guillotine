@@ -105,6 +105,8 @@ MonoBehaviour:
   name: Ritual stone
   description: Deals 1 damage at the start of each fight.
   sprite: {fileID: 21300000, guid: 23d5b756c5a3970469d38fdd23a6c9f7, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls:
@@ -195,7 +197,9 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks:
-  - Maybe that will compensate to your lack of skill.
+  - Maybe that will compensate to your lack of skill. 16
+  - You can just stop playing you know. 17
+  - This will be a long day. 19
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &3340032112998808106

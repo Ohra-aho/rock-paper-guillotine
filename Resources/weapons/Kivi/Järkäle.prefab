@@ -225,6 +225,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Another turtle build?
+  - That is quite popular.
+  - What rocks do best.
   executioner_comment: 111111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &-4730871935511348176

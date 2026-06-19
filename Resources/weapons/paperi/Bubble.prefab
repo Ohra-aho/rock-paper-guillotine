@@ -210,7 +210,10 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks: []
+  pick_barks:
+  - Could protect you from a hit or two. 17
+  - I need to oil the bulb inserting mechanism. 4
+  - That's what the rock are for.
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &-2619552347752533035

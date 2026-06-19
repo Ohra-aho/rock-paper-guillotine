@@ -236,7 +236,10 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks: []
+  pick_barks:
+  - Are you just going to use that as a HP buff?
+  - Rock and roll. 15
+  - Will the damage be worth it?
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &588893069576751674

@@ -224,6 +224,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Going out in a blaze of glory? I like that.
+  - Quite a few people have died from that. 9
+  - I sometimes wonder is people actually get pushed away by those things. 7
   executioner_comment: 1111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &5755444230686218645

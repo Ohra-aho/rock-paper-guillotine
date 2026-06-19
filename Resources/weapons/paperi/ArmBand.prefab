@@ -185,7 +185,10 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks: []
+  pick_barks:
+  - Radical are we? 16
+  - Everyone likes the underdog.
+  - Now some weapons won't sting so much.
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &5823301112484596032

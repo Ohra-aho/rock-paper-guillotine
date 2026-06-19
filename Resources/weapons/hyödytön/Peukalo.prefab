@@ -198,6 +198,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - That's mostly useless don't you think?
+  - Going for a grindbuild? 5
+  - Just use rocks. They actually do something. 9
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &-269037213622380836

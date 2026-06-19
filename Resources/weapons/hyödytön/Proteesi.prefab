@@ -198,7 +198,9 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks:
-  - How original pick.
+  - How original pick. 18
+  - I just hope the machine won't give that to you like 4 times in a row.
+  - So you take one hit to be able to take another hit? 5
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &3505358551842523247

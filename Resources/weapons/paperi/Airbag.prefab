@@ -106,6 +106,8 @@ MonoBehaviour:
   name: Airbag
   description: If you end a turn with 1 HP, heal 1.
   sprite: {fileID: 21300000, guid: 04518826754efb24cafeee52b1da65ac, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -196,7 +198,9 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks:
-  - You better hope you won't need that.
+  - You better hope you won't need that. 21
+  - Great at the early game. Later? Not so much.
+  - That is somethimes quite easy to loop. 9
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &7590223199371593637

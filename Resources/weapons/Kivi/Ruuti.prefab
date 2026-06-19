@@ -188,6 +188,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Most people don't live long enough to see that shine.
+  - Let's make your build blow up. 16
+  - Explosive entry but runs out of ammo fast. 17
   executioner_comment: 111111111111111111
   damage_soft_cap: 7
 --- !u!114 &-7783867195882298360

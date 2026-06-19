@@ -187,7 +187,9 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks:
-  - If you want to get hit, just say so.
+  - If you want to get hit, just say so. 17
+  - I have seen a couple of good comebacks with that.
+  - That will hurt.
   executioner_comment: My heart won't stand still.
   damage_soft_cap: 7
 --- !u!114 &-2366777321143017962

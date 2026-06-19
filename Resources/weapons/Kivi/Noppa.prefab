@@ -210,7 +210,9 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks:
-  - What? This isn't enough gambling for you?
+  - What? This isn't enough gambling for you? 5
+  - That can be enough to win you a couple of encounters.
+  - All or nothing. 15
   executioner_comment: 1111111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &-8405036362851658125

@@ -184,6 +184,8 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks:
-  - Do you want to just sit down and chat or something?
+  - Do you want to just sit down and chat or something? 5
+  - 'The most boring weapon if you ask me. '
+  - If you spam that, I will cut this game short. 11
   executioner_comment: 
   damage_soft_cap: 7

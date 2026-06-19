@@ -199,7 +199,11 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks: []
+  pick_barks:
+  - Now you can do something with those weapons you don't want to use.
+  - It's funny that you can fire a catapult out of the catapult.
+  - They actually used to sometimes use whole lot of things as ammo in ancient times.
+    9
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &7511640265576175850

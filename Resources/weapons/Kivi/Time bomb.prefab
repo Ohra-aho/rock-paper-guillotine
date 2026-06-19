@@ -211,7 +211,11 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks: []
+  pick_barks:
+  - I ones tried to make one that could work with old fasioned alarm clock. Didn't
+    end well. 10
+  - A tool for demolitionists and those with little faith.
+  - Light the fuse and watch the fireworks. 16
   executioner_comment: 1111111111111111111111
   damage_soft_cap: 7
 --- !u!114 &-1193178395430050966
