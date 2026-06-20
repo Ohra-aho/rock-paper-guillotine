@@ -105,8 +105,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Trashcan
-  description: Collects destroyed weapons. After use, gives you a copy of all collected
-    weapons and destroys itself.
+  description: Collects destroyed weapons. After use, gives you a copy of each collected
+    weapon and destroys itself.
   sprite: {fileID: 21300000, guid: 066cbec547d40154a851a331c4ea74be, type: 3}
   tiers: []
   tier: 0
@@ -200,7 +200,9 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks:
-  - Might be an ok payoff.
+  - Might be an ok payoff. 17
+  - Let's see if you are a hoarder or not. 1
+  - The mechanism for that was annoying to make.
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &-732074612584006314

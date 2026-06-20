@@ -209,8 +209,10 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks:
-  - To be hoonest, it actually took me a while to think of anything for the newspaper.
+  - To be honest, it actually took me a while to think of anything for the newspaper.
     Then I found a fly in my coffee.
+  - It is good to stay informed.
+  - From information to mostly entertainment.
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &-6143591333916454339

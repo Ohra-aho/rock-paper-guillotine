@@ -198,6 +198,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - May your hope never shatter.
+  - At least it will take the worst sting away.
+  - That will srug off most hits.
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &-2515683739492090602

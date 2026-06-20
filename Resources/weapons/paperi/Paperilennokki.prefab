@@ -185,5 +185,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Not that flashy, but effective.
+  - You don't like a challenge, do you? 5
+  - Propably the most well known origami in the world.
   executioner_comment: 
   damage_soft_cap: 7

@@ -198,7 +198,10 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks: []
+  pick_barks:
+  - What are you cooking up?
+  - Little hard to make work, but effective when it triggers. 9
+  - You have a favourite food?
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &2737496747128900489

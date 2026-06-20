@@ -199,9 +199,9 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks:
-  - That won't stop the blade.
-  - That won't stop the blade.
-  - That won't stop the blade.
+  - That won't stop the blade. 11
+  - That will only make your death happen slower.
+  - Why play if there is no risk?
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &7190082579369157821

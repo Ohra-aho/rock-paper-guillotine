@@ -210,6 +210,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - I know that armor can be frustrating.
+  - Yeah, just ignore a part of the game.
+  - Little bit more freedom.
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &3410846685529990821

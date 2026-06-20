@@ -284,7 +284,9 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks:
-  - Ready to confess?
+  - Ready to confess? 5
+  - Hope means nothing without damnation.
+  - Smite them sinners. 14
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &-4890876596102729932
