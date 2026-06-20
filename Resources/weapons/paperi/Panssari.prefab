@@ -200,6 +200,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - That won't stop the blade.
+  - That won't stop the blade.
+  - That won't stop the blade.
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &7190082579369157821

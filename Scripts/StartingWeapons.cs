@@ -63,7 +63,7 @@ public class StartingWeapons : MonoBehaviour
         //Story 2
         new string[] { "Blowtorch", "Throwing knife", "Smoke" },
 
-        new string[] { "Double edged sword", "Bone", "Bandade" },
+        new string[] { "Double edged sword", "Bone", "Bandaid" },
         new string[] { "Spike ball", "Pickaxe", "Thumb" },
         new string[] { "Drill", "Medicine", "Rot" },
         new string[] { "Middle finger" },

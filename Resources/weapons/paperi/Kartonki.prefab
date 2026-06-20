@@ -199,6 +199,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - Not too sure about yourself are you?
+  - A little buffer.
+  - It's good to be prepared for surprises.
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &7867560462465972330

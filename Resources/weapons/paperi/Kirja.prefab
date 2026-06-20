@@ -198,6 +198,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - That will take a while to be any good.
+  - Do you plan to fill your gear with papers?
+  - Knowledge is power. 9
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &8104029208489123361

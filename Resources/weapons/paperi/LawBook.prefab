@@ -187,7 +187,10 @@ MonoBehaviour:
   points: 0
   used_this_game: 0
   pick_barks:
-  - And when you die the second time?
+  - And when you die the second time? What then?
+  - You should have read that earlier, you know. 17
+  - It's funny that there needs to be a people whos job is to understand that stuff.
+    7
   executioner_comment: I won't need that.
   damage_soft_cap: 7
 --- !u!114 &-2450754519343006674

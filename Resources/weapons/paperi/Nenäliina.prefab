@@ -201,6 +201,8 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks:
   - To wipe away the blood.
+  - You should always keep one on you. Just in case. 9
+  - Do you think anyone will cry for you?
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &6873274728737089563
