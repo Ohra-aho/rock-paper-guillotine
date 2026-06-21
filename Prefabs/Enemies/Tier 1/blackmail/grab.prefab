@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 2771997909833561724}
+  - component: {fileID: 4188325291106683125}
+  - component: {fileID: -5957484309045315119}
   m_Layer: 5
   m_Name: grab
   m_TagString: Untagged
@@ -103,7 +104,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Grab
-  description: If loses; takes 2 damage.
+  description: If loses, takes 2 additional damage. -1 damage to the weapon used
+    agains this until the end of the fight.
   sprite: {fileID: 21300000, guid: 0a8a0b7a9fc4be5498b6536d6cec08ce, type: 3}
   tiers: []
   tier: 0
@@ -121,7 +123,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4188325291106683125}
+        m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
+        m_MethodName: DebuffOpposingDamageTemporarily
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -143,13 +157,13 @@ MonoBehaviour:
   lose:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2771997909833561724}
-        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
-        m_MethodName: SpawnOnlyWeapon
-        m_Mode: 1
+      - m_Target: {fileID: -5957484309045315119}
+        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
+        m_MethodName: SelfDamage
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 3098424137161797902}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -199,7 +213,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &2771997909833561724
+--- !u!114 &4188325291106683125
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,9 +222,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b84c21e8388ac64da2a85039d59a1b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn_limit: 0
-  weapons:
-  - {fileID: 1944698211339908181, guid: 5afa3debf1022954cb256b712fdc9a39, type: 3}
+  trigger_ones: 0
+--- !u!114 &-5957484309045315119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 2
+  armor_piercing: 0

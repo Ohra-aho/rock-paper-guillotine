@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class FanaticWeapons : MonoBehaviour
 {
-    public void TurnGranadeUseless()
-    {
-        GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
-        for(int i = 0; i < RIE.transform.childCount; i++)
-        {
-            if(RIE.transform.GetChild(i).GetComponent<Weapon>().name == "Granade")
-            {
-                RIE.transform.GetChild(i).GetComponent<Weapon>().type = MainController.Choise.useless;
-                break;
-            }
-        }
-    }
+	void Awake()
+	{
+		if(GetComponent<BuffController>())
+		{
+			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+			GetComponent<BuffController>().special_apply = true;
+			GetComponent<BuffController>().damage_bonus = 1;
+			GetComponent<BuffController>().temporary = true;
+			GetComponent<BuffController>().timer = 2;
+		}
+	}
 }

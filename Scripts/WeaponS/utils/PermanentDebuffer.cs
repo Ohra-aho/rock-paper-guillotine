@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PermanentDebuffer : MonoBehaviour
 {
+	public bool trigger_ones = false;
+	bool triggered = false;
     GameObject buff;
 
     private void Awake()
@@ -12,77 +14,172 @@ public class PermanentDebuffer : MonoBehaviour
         buff = Resources.Load<GameObject>("buff/buff");
     }
 
+	private bool HandleTrgger()
+	{
+		if(!trigger_ones)
+		{
+			return true;
+		}
+		else if(!triggered)
+		{
+			triggered = true;
+			return true;
+		} else
+		{
+			return false;
+		}
+	}
+
     public void DebuffOpposingWeaponDamage(int amount)
     {
-        Weapon opponent = GetComponent<Weapon>().opponent;
-        Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-        new_buff.damage_buff = -amount;
-        new_buff.id = GetComponent<Weapon>() + "_debuff";
-        new_buff.AddBuff();
+		if(HandleTrgger())
+		{
+			Weapon opponent = GetComponent<Weapon>().opponent;
+			Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+			new_buff.damage_buff = -amount;
+			new_buff.id = GetComponent<Weapon>() + "_debuff";
+			new_buff.AddBuff();	
+		}
     }
 
     public void DebuffOpposingWeaponArmor(int amount)
     {
-        Weapon opponent = GetComponent<Weapon>().opponent;
-        Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-        new_buff.armor_buff = -amount;
-        new_buff.id = GetComponent<Weapon>() + "_debuff";
-        new_buff.AddBuff();
+		if(HandleTrgger())
+		{
+			Weapon opponent = GetComponent<Weapon>().opponent;
+			Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+			new_buff.armor_buff = -amount;
+			new_buff.id = GetComponent<Weapon>() + "_debuff";
+			new_buff.AddBuff();	
+		}
     }
 
 	public void BuffOpposingWeaponArmor(int amount)
     {
-        Weapon opponent = GetComponent<Weapon>().opponent;
-        Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-        new_buff.armor_buff = amount;
-        new_buff.id = GetComponent<Weapon>() + "_buff";
-        new_buff.AddBuff();
+		if(HandleTrgger())
+		{
+			Weapon opponent = GetComponent<Weapon>().opponent;
+			Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+			new_buff.armor_buff = amount;
+			new_buff.id = GetComponent<Weapon>() + "_buff";
+			new_buff.AddBuff();	
+		}
+    }
+
+	public void BuffOpposingWeaponDamage(int amount)
+    {
+		if(HandleTrgger())
+		{
+			Weapon opponent = GetComponent<Weapon>().opponent;
+			Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+			new_buff.damage_buff = amount;
+			new_buff.id = GetComponent<Weapon>() + "_buff";
+			new_buff.AddBuff();	
+		}
     }
 
     public void MakeOpposingWeaponUselessTemporarily(int turns)
     {
-        Weapon opponent = GetComponent<Weapon>().opponent;
-        Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-        new_buff.id = GetComponent<Weapon>().name + "_debuff";
-        new_buff.type_change = MainController.Choise.useless;
-        new_buff.temporary = true;
-        new_buff.timer = turns;
-        new_buff.AddBuff();
+		if(HandleTrgger())
+		{
+			Weapon opponent = GetComponent<Weapon>().opponent;
+			Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+			new_buff.id = GetComponent<Weapon>().name + "_debuff";
+			new_buff.type_change = MainController.Choise.useless;
+			new_buff.temporary = true;
+			new_buff.timer = turns;
+			new_buff.AddBuff();	
+		}
+    }
+
+	public void MakeOpposingWeaponUselessUntilUsed()
+    {
+		if(HandleTrgger())
+		{
+			Weapon opponent = GetComponent<Weapon>().opponent;
+			Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+			new_buff.id = GetComponent<Weapon>().name + "_debuff";
+			new_buff.type_change = MainController.Choise.useless;
+			new_buff.temporary = true;
+			new_buff.timer = 1000;
+			new_buff.until_used = true;
+			new_buff.AddBuff();	
+		}
     }
 
     public void DecreaseOpposingHealth(int amount)
     {
-        GetComponent<Weapon>().opponent.player_owner.HB.DecreaseHealthBar(amount, true);
+		if(HandleTrgger())
+		{
+        	GetComponent<Weapon>().opponent.player_owner.HB.DecreaseHealthBar(amount, true);
+		}
     }
 
     public void MakeOpposingWeaponSelfDestructive(int turns)
     {
-        Weapon opponent = GetComponent<Weapon>().opponent;
-        Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-        new_buff.id = GetComponent<Weapon>().name + "_debuff";
-        new_buff.destructive = true;
-        new_buff.desruction_buffer = true;
-        if(turns > 0)
-        {
-            new_buff.temporary = true;
-            new_buff.timer = turns;
-        }
-        new_buff.AddBuff();
+		if(HandleTrgger())
+		{
+			Weapon opponent = GetComponent<Weapon>().opponent;
+			Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+			new_buff.id = GetComponent<Weapon>().name + "_debuff";
+			new_buff.destructive = true;
+			new_buff.desruction_buffer = true;
+			if(turns > 0)
+			{
+				new_buff.temporary = true;
+				new_buff.timer = turns;
+			}
+			new_buff.AddBuff();	
+		}
     }
 
     public void MakeOpposingWeaponUseless()
     {
-        Weapon opponent = GetComponent<Weapon>().opponent;
-        Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-        new_buff.id = GetComponent<Weapon>().name + "_debuff";
-        new_buff.type_change = MainController.Choise.useless;
-        new_buff.AddBuff();
+		if(HandleTrgger())
+		{
+			Weapon opponent = GetComponent<Weapon>().opponent;
+			Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+			new_buff.id = GetComponent<Weapon>().name + "_debuff";
+			new_buff.type_change = MainController.Choise.useless;
+			new_buff.AddBuff();	
+		}
     }
 
 	public void DestroyOpposingWeapon()
 	{
-		Weapon opponent = GetComponent<Weapon>().opponent;
-        opponent.AddComponent<SelfDestruct>();
-		opponent.GetComponent<SelfDestruct>().Destruct();
+		if(HandleTrgger())
+		{
+			Weapon opponent = GetComponent<Weapon>().opponent;
+			opponent.AddComponent<SelfDestruct>();
+			opponent.GetComponent<SelfDestruct>().Destruct();	
+		}
 	}
+
+	public void DebuffOpposingDamageTemporarily(int amount)
+    {
+		if(HandleTrgger())
+		{
+			Weapon opponent = GetComponent<Weapon>().opponent;
+			Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+			new_buff.damage_buff = -amount;
+			new_buff.id = GetComponent<Weapon>() + "_debuff";
+			new_buff.temporary = true;
+			new_buff.timer = 1000;
+			new_buff.AddBuff();	
+		}
+    }
+
+    public void DebuffOpposingArmorTemporarily(int amount)
+    {
+		if(HandleTrgger())
+		{
+			Weapon opponent = GetComponent<Weapon>().opponent;
+			Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+			new_buff.armor_buff = -amount;
+			new_buff.id = GetComponent<Weapon>() + "_debuff";
+			new_buff.temporary = true;
+			new_buff.timer = 1000;
+			new_buff.AddBuff();	
+		}
+    }
 }

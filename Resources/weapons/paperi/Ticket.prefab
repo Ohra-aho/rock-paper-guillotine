@@ -198,7 +198,8 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks: []
+  pick_barks:
+  - 
   executioner_comment: 
   damage_soft_cap: 7
 --- !u!114 &-7712328934299092260

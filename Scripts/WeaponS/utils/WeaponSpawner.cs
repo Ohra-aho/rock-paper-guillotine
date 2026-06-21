@@ -14,6 +14,10 @@ public class WeaponSpawner : MonoBehaviour
 		{
 			int index = Random.Range(0, weapons.Count);
         	GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapons[index]);	
+		} else if(spawn_limit == 0)
+		{
+			int index = Random.Range(0, weapons.Count);
+        	GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapons[index]);	
 		}
 		spawns++;
     }
@@ -21,6 +25,9 @@ public class WeaponSpawner : MonoBehaviour
     public void SpawnSpecificWeapon(int i)
     {
 		if(spawns < spawn_limit && spawn_limit != 0)
+		{
+        	GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapons[i]);
+		} else if(spawn_limit == 0)
 		{
         	GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapons[i]);
 		}
@@ -32,6 +39,9 @@ public class WeaponSpawner : MonoBehaviour
 		if(spawns < spawn_limit && spawn_limit != 0)
 		{
         	GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapons[0]);
+		} else if(spawn_limit == 0)
+		{
+        	GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapons[0]);
 		}
 		spawns++;
     }
@@ -41,6 +51,9 @@ public class WeaponSpawner : MonoBehaviour
         for(int i = 0; i < amount; i++)
         {
 			if(spawns < spawn_limit && spawn_limit != 0)
+			{
+				SpawnOnlyWeapon();
+			} else if(spawn_limit == 0)
 			{
 				SpawnOnlyWeapon();
 			}
@@ -55,6 +68,9 @@ public class WeaponSpawner : MonoBehaviour
 			if(spawns < spawn_limit && spawn_limit != 0)
 			{
             	SpawnSpecificWeapon(Random.Range(0, weapons.Count));
+			} else if(spawn_limit == 0)
+			{
+				SpawnSpecificWeapon(Random.Range(0, weapons.Count));
 			}
 			spawns++;
         }

@@ -21,6 +21,8 @@ public class TableController : MonoBehaviour
     [HideInInspector] public int enemy_healing = 0;
 	[HideInInspector] public int health_increase = 0;
 	[HideInInspector] public int health_decrease = 0;
+	[HideInInspector] public int player_armor = 0;
+	[HideInInspector] public int enemy_armor = 0;
 
     private void Update()
     {
@@ -53,6 +55,10 @@ public class TableController : MonoBehaviour
         MC.DisplayConsequenses(result);
 
         //Might need something...
+
+		player_armor = MC.playerChoise.GiveEffectiveArmor();
+		enemy_armor = MC.enemyChoise.GiveEffectiveArmor();
+
         player.GetComponent<PlayerContoller>().ResultPhase();
         enemy.GetComponent<EnemyController>().ResultPhase();
 
@@ -117,9 +123,9 @@ public class TableController : MonoBehaviour
 					MC.enemyChoise.dealDamage.Invoke();	
 				} else
 				{
-					if(player_damage - MC.playerChoise.GiveEffectiveArmor() > 0)
+					if(player_damage - player_armor > 0)
 					{
-						player.GetComponent<PlayerContoller>().HB.TakeDamage(player_damage - MC.playerChoise.GiveEffectiveArmor());
+						player.GetComponent<PlayerContoller>().HB.TakeDamage(player_damage - player_armor);
 						MC.playerChoise.takeDamage.Invoke();
 						MC.enemyChoise.dealDamage.Invoke();	
 					}
@@ -141,9 +147,9 @@ public class TableController : MonoBehaviour
 					MC.playerChoise.dealDamage.Invoke();
 				} else
 				{
-					if(enemy_damage - MC.enemyChoise.GiveEffectiveArmor() > 0)
+					if(enemy_damage - enemy_armor > 0)
 					{
-						enemy.GetComponent<EnemyController>().HB.TakeDamage(enemy_damage - MC.enemyChoise.GiveEffectiveArmor());
+						enemy.GetComponent<EnemyController>().HB.TakeDamage(enemy_damage - enemy_armor);
 						MC.enemyChoise.takeDamage.Invoke();
 						MC.playerChoise.dealDamage.Invoke();
 					}

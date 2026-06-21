@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class LurkerWeapons : MonoBehaviour
 {
-    public GameObject buff;
-    public void DebuffOpposingWeapon()
-    {
-        Weapon opponent = GetComponent<Weapon>().opponent;
-        Buff new_buff = Instantiate(buff, opponent.gameObject.transform).GetComponent<Buff>();
-        new_buff.id = GetComponent<Weapon>().name + "_2";
-        new_buff.temporary = true;
-        new_buff.timer = 2;
-        new_buff.type_change = MainController.Choise.useless;
-        new_buff.AddBuff();
-    }
+	void Awake()
+	{
+		if(GetComponent<Weapon>().name == "Embrace")
+		{
+			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name == "Maws"; };
+			GetComponent<BuffController>().type_change = MainController.Choise.voittamaton;
+			GetComponent<BuffController>().special_apply = true;
+		}
+		if(GetComponent<Weapon>().name == "Shell")
+		{
+			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+			GetComponent<BuffController>().armor_bonus = 1; 
+			GetComponent<BuffController>().special_apply = true;
+			GetComponent<BuffController>().timer = 2;
+			GetComponent<BuffController>().temporary = true;
+		}
+	}
 }

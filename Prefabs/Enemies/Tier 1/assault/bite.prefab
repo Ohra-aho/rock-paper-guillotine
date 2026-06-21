@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 6692209001246967875}
+  - component: {fileID: -3145113925113272542}
   m_Layer: 5
   m_Name: bite
   m_TagString: Untagged
@@ -103,7 +104,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Bite
-  description: If wins; you get a rage.
+  description: If wins, +1 damage to the opposing weapon. Triggers only ones.
   sprite: {fileID: 21300000, guid: ca67d2f52a4fa3141a7936277a314582, type: 3}
   tiers: []
   tier: 0
@@ -140,14 +141,14 @@ MonoBehaviour:
   win:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6692209001246967875}
-        m_TargetAssemblyTypeName: FanaticWeapons, Assembly-CSharp
-        m_MethodName: TurnGranadeUseless
-        m_Mode: 1
+      - m_Target: {fileID: -3145113925113272542}
+        m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
+        m_MethodName: BuffOpposingWeaponDamage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -157,19 +158,7 @@ MonoBehaviour:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6692209001246967875}
-        m_TargetAssemblyTypeName: FanaticWeapons, Assembly-CSharp
-        m_MethodName: TurnGranadeUseless
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -223,3 +212,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e00bc2b2a0414d47a07410df7916971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3145113925113272542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b84c21e8388ac64da2a85039d59a1b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger_ones: 1
