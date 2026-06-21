@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -1890592321957323744}
-  - component: {fileID: 6429928196547165759}
-  - component: {fileID: -7735554364248039996}
+  - component: {fileID: -7753379296105350909}
   m_Layer: 5
   m_Name: tap in
   m_TagString: Untagged
@@ -125,9 +123,9 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -1890592321957323744}
-        m_TargetAssemblyTypeName: Mutation, Assembly-CSharp
-        m_MethodName: ResetMutationCounter
+      - m_Target: {fileID: -7753379296105350909}
+        m_TargetAssemblyTypeName: Mawmonster, Assembly-CSharp
+        m_MethodName: TapIn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -160,19 +158,7 @@ MonoBehaviour:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -7735554364248039996}
-        m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
-        m_MethodName: MakeOpposingWeaponSelfDestructive
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1000
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -214,7 +200,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &-1890592321957323744
+--- !u!114 &-7753379296105350909
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,31 +209,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dda3d387ecc752c49b3ca4301142425f, type: 3}
+  m_Script: {fileID: 11500000, guid: 111a4b5cbad9a444da9842d8d296ccce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mutation_counter: 0
---- !u!114 &6429928196547165759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c5665f5f93a7f649bffbb97d7b763bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-7735554364248039996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b84c21e8388ac64da2a85039d59a1b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}

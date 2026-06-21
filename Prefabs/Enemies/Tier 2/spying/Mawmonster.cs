@@ -4,30 +4,28 @@ using UnityEngine;
 
 public class Mawmonster : MonoBehaviour
 {
-    GameObject controller;
-
-    private void Awake()
-    {
-        controller = GameObject.FindGameObjectWithTag("EnemyHolder");
-        controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
-    }
-
-    private int MakeChoise(MainController.Choise playerChoise)
-    {
-        if(!GetComponent<BasicEnemy>().off_balance)
-        {
-           /* int mutate = Random.Range(0, 6);
-            if (mutate == 0)
-            {
-                return 0;
-            }
-            else
-            {*/
-                return GetComponent<BasicEnemy>().MakeChoise(MainController.Choise.kivi);
-            //}
-        } else
-        {
-            return 0;
-        }
-    }
+	public GameObject buff;
+    public void TapIn()
+	{
+		GameObject RI = GameObject.FindGameObjectWithTag("RI");
+		Weapon choise = GameObject.Find("EventSystem").GetComponent<MainController>().playerChoise;
+		for(int i = 0; i < RI.transform.childCount; i++)
+		{
+			if(RI.transform.GetChild(i).GetComponent<Weapon>() != choise)
+			{
+				if(!RI.transform.GetChild(i).GetComponent<Weapon>().FindCertainBuff(GetComponent<Weapon>().name))
+				{
+					Buff new_buff = Instantiate(buff, RI.transform.GetChild(i)).GetComponent<Buff>();
+					new_buff.type_change = MainController.Choise.useless;
+					new_buff.temporary = true; 
+					new_buff.timer = 2;
+					new_buff.id = GetComponent<Weapon>().name;
+					new_buff.AddBuff();	
+				} else
+				{
+					RI.transform.GetChild(i).GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name).GetComponent<Buff>().timer = 2;
+				}
+			}
+		}
+	}
 }
