@@ -4,56 +4,34 @@ using UnityEngine;
 
 public class Anglerfish : MonoBehaviour
 {
-    public bool bait = false;
-    public bool spit = false;
-    public MainController.Choise baited_type;
-    public MainController.Choise spitted_type;
+	public GameObject buff;
+    public void Breath()
+	{
+		List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
+		for(int i = 0; i < weapons.Count; i++)
+		{
+			Buff new_buff = Instantiate(buff, weapons[i].transform).GetComponent<Buff>();
+			new_buff.id = GetComponent<Weapon>().name;
+			new_buff.damage_buff = -2;
+			new_buff.temporary = true;
+			new_buff.timer = 2;
+			new_buff.AddBuff();
+		}
+	}
 
-    private void Awake()
-    {
-        GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().choiseMaker = MakeChoise;
-    }
+	public void Weight()
+	{
+		GetComponent<Stacking>().IncreaseStacks(1);
+		GetComponent<WeaponSpawner>().SpawnSpecificWeapon(0);
+		if(GetComponent<Stacking>().stacks >= 3)
+		{
+			GetComponent<WeaponSpawner>().SpawnSpecificWeapon(1);
+			GetComponent<Weapon>().owner.HB.InstaKill();
+		}
+	}
 
-    public int MakeChoise(MainController.Choise choise)
-    {
-        if(bait)
-        {
-            bait = false;
-            switch(baited_type)
-            {
-                case MainController.Choise.kivi:
-                    if (Chance(4)) return 2;
-                    else return 1;
-                case MainController.Choise.paperi:
-                    if (Chance(4)) return 1;
-                    else return 0;
-                case MainController.Choise.sakset:
-                    if (Chance(4)) return 0;
-                    else return 2;
-            }
-        }
-
-        if(spit)
-        {
-            switch(spitted_type)
-            {
-                case MainController.Choise.kivi:
-                    if (Chance(3)) return 0;
-                    return 1;
-                case MainController.Choise.paperi:
-                    if (Chance(3)) return 2;
-                    return 0;
-                case MainController.Choise.sakset:
-                    if (Chance(3)) return 1;
-                    return 2;
-            }
-        }
-
-        return GetComponent<BasicEnemy>().MakeChoise(choise);
-    }
-
-    private bool Chance(int max)
-    {
-        return Random.Range(1, max) == 1;
-    }
+	public void WeightTwo()
+	{
+		GetComponent<Stacking>().DecreaseStacks(1);
+	}
 }

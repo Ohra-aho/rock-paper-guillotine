@@ -60,14 +60,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Zombie
   image: {fileID: 21300000, guid: 1dd9bc1b5f1f4fa49a03389b50acc81f, type: 3}
-  maxHealth: 3
+  maxHealth: 5
   weapons:
   - {fileID: 1944698211339908181, guid: 12529e89447752c43a73d5c0f3cd6062, type: 3}
   - {fileID: 1944698211339908181, guid: d775991c7ddf20649aece642fa9a3b43, type: 3}
   - {fileID: 1944698211339908181, guid: 618b7b69980b1ce43908d4faac838168, type: 3}
-  - {fileID: 1944698211339908181, guid: d4b190ce4a034834683f70897e9b487b, type: 3}
-  plan_1: 0100000001000000
-  plan_2: 0100000001000000
+  - {fileID: 1944698211339908181, guid: 34cd79fcaba0d914bba22b6212bbfa80, type: 3}
+  - {fileID: 1944698211339908181, guid: 84d6557d0103dbb46befb5e793188f14, type: 3}
+  plan_1: 0000000001000000
+  plan_2: 0000000001000000
   weapon_pairs:
   - pair: 04000000
   - pair: 03000000

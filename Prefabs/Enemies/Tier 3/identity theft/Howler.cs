@@ -4,42 +4,52 @@ using UnityEngine;
 
 public class Howler : MonoBehaviour
 {
-    public bool howl_active;
-    public MainController.Choise howled_weapon;
+    public void Stitch()
+	{
+		GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+		if(GetComponent<Weapon>().owner.HB.GiveCurrentHealth() < GetComponent<Weapon>().owner.HB.GiveMaxHealth())
+		{
+			for(int i = 0; i < RIE.transform.childCount; i++)
+			{
+				if(RIE.transform.GetChild(i).GetComponent<Weapon>().name == "Onslaught")
+				{
+					if(RIE.transform.GetChild(i).GetComponent<Stacking>().stacks > 0)
+					{
+						GetComponent<Healing>().Heal();
+					}
+					RIE.transform.GetChild(i).GetComponent<Stacking>().DecreaseStacks(1);
+					break;
+				}
+			}
+		}
+	}
 
-    private void Awake()
-    {
-        GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().choiseMaker = MakeChoise;
-    }
+	public void Collapse()
+	{
+		GetComponent<Weapon>().owner.HB.InstaKill();
+	}
 
-    public int MakeChoise(MainController.Choise choise)
-    {
-        if(howl_active)
-        {
-            howl_active = false;
-            switch (howled_weapon)
-            {
-                case MainController.Choise.kivi:
-                    if (Chance(4)) return 1;
-                    return 0;
-                case MainController.Choise.paperi:
-                    if (Chance(4)) return 2;
-                    return 1;
-                case MainController.Choise.sakset:
-                    if (Chance(2)) return 0;
-                    return 2;
-                default:
-                    return GetComponent<BasicEnemy>().MakeChoise(choise);
-            }
-        }
+	public void Tear()
+	{
+		GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+		for(int i = 0; i < RIE.transform.childCount; i++)
+		{
+			if(RIE.transform.GetChild(i).GetComponent<Weapon>().name == "Onslaught")
+			{
+				RIE.transform.GetChild(i).GetComponent<Stacking>().IncreaseStacks(1);
+				break;
+			}
+		}
+	}
 
-        return GetComponent<BasicEnemy>().MakeChoise(choise);
-    }
-
-    public bool Chance(int max)
-    {
-        int x = Random.Range(1, max);
-        if (x == 1) return true;
-        else return false;
-    }
+	public void Onslaugth()
+	{
+		if(GetComponent<Stacking>().stacks <= 0)
+		{
+			GetComponent<Weapon>().type = MainController.Choise.sakset;
+		} else
+		{
+			GetComponent<Weapon>().type = MainController.Choise.voittamaton;
+		}
+	}
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 4556199177695299868}
+  - component: {fileID: -2659192792915616742}
   m_Layer: 5
   m_Name: breath
   m_TagString: Untagged
@@ -103,7 +103,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Breath
-  description: You get a weakness.
+  description: If wins or draws, -2 damage to all of your weapons for one turn.
   sprite: {fileID: 21300000, guid: 49929c01a6abebb4aa0fb555aee99b1c, type: 3}
   tiers: []
   tier: 0
@@ -121,19 +121,7 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4556199177695299868}
-        m_TargetAssemblyTypeName: Spit, Assembly-CSharp
-        m_MethodName: DebuffOpposingWeapon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -151,13 +139,37 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -2659192792915616742}
+        m_TargetAssemblyTypeName: Anglerfish, Assembly-CSharp
+        m_MethodName: Breath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   lose:
     m_PersistentCalls:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -2659192792915616742}
+        m_TargetAssemblyTypeName: Anglerfish, Assembly-CSharp
+        m_MethodName: Breath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -199,7 +211,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &4556199177695299868
+--- !u!114 &-2659192792915616742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,7 +220,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f2a259ad29d89841a0bcfdab57f9743, type: 3}
+  m_Script: {fileID: 11500000, guid: 20a525f2639e33948988854fb05bc5e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}

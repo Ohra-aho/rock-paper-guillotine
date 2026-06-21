@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -5141482461320767321}
-  - component: {fileID: 2659253156554191149}
+  - component: {fileID: -7983463553697852181}
+  - component: {fileID: 2879466454331950758}
   m_Layer: 5
   m_Name: devour
   m_TagString: Untagged
@@ -104,7 +104,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Devour
-  description: If wins, -1 HP and heals 2.
+  description: If draws, heals 2 and you get -1 HP.
   sprite: {fileID: 21300000, guid: d1697d26284c792419d0a32c8798fe53, type: 3}
   tiers: []
   tier: 0
@@ -140,10 +140,16 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
+  draw:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -5141482461320767321}
-        m_TargetAssemblyTypeName: Chomp, Assembly-CSharp
-        m_MethodName: DealDamage
+      - m_Target: {fileID: 2879466454331950758}
+        m_TargetAssemblyTypeName: Healing, Assembly-CSharp
+        m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -153,20 +159,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  lose:
-    m_PersistentCalls:
-      m_Calls: []
-  draw:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -5141482461320767321}
-        m_TargetAssemblyTypeName: Chomp, Assembly-CSharp
-        m_MethodName: DealDamage
-        m_Mode: 1
+      - m_Target: {fileID: -7983463553697852181}
+        m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
+        m_MethodName: DecreaseOpposingHealth
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &-5141482461320767321
+--- !u!114 &-7983463553697852181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,10 +221,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bce7fc0a95103fd4db08260fdcbd8622, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b84c21e8388ac64da2a85039d59a1b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2659253156554191149
+  trigger_ones: 0
+--- !u!114 &2879466454331950758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,8 +234,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
-  armor_piercing: 0
+  disabled: 0
+  amount: 2
