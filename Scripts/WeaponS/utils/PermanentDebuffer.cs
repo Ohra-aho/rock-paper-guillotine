@@ -115,6 +115,14 @@ public class PermanentDebuffer : MonoBehaviour
 		}
     }
 
+	public void IncreaseOpposingHealth(int amount)
+    {
+		if(HandleTrgger())
+		{
+        	GetComponent<Weapon>().opponent.player_owner.HB.IncreaseHealthBar(amount, true);
+		}
+    }
+
     public void MakeOpposingWeaponSelfDestructive(int turns)
     {
 		if(HandleTrgger())

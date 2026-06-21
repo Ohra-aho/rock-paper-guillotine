@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 7433461143960683672}
-  - component: {fileID: -6628121649409603770}
-  - component: {fileID: 5511001710853072675}
+  - component: {fileID: -7219122627726181007}
   m_Layer: 5
   m_Name: jar
   m_TagString: Untagged
@@ -105,13 +103,26 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Jar
-  description: Whenever draws with any weapon, deals 1 damage. (Always on)
+  description: "At the start of each turn, one of your weapons becomes \u201Duseless\u201D
+    for that turn. If wins, disables this effect."
   sprite: {fileID: 21300000, guid: 3ef7a930978907d448eb42ce31fbfd4c, type: 3}
   tiers: []
   tier: 0
   first_turn:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7219122627726181007}
+        m_TargetAssemblyTypeName: Army, Assembly-CSharp
+        m_MethodName: Jar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   end_of_fight:
     m_PersistentCalls:
       m_Calls: []
@@ -141,7 +152,19 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7219122627726181007}
+        m_TargetAssemblyTypeName: Army, Assembly-CSharp
+        m_MethodName: JarDisabled
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   lose:
     m_PersistentCalls:
       m_Calls: []
@@ -168,7 +191,19 @@ MonoBehaviour:
       m_Calls: []
   eachTurn:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7219122627726181007}
+        m_TargetAssemblyTypeName: Army, Assembly-CSharp
+        m_MethodName: Jar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -189,7 +224,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &7433461143960683672
+--- !u!114 &-7219122627726181007
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,69 +233,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0743f1d11593834fbfbff87f492aa7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-6628121649409603770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disabled: 0
-  amount: 1
---- !u!114 &5511001710853072675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d3097e08e9118b4d8bf02cb619d1f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
-  damage_bonus: 0
-  armor_bonus: 0
-  effect_damage_bonus: 0
-  toughness_buff: 0
-  set_a_to_zero: 0
-  set_d_to_zero: 0
-  always_on: 1
-  choisePhase: 0
-  resultPhase: 0
-  endPhase: 0
-  each_turn: 0
-  victory: 0
-  special_apply: 0
-  takeDamage: 0
-  takeNoDamage: 0
-  dealDamage: 0
-  deal_effect_damage: 0
-  draw: 0
-  win: 0
-  lose: 0
-  heal: 0
-  gain_points: 0
-  equip: 0
-  unEquip: 0
-  constant: 0
-  onDestruction: 0
-  awake: 0
-  on_death: 0
-  temporary: 0
-  timer: 0
-  penetrating: 0
-  draw_winner: 0
-  health_buff: 0
-  until_used: 0
-  destructive: 0
-  heal_disabler: 0

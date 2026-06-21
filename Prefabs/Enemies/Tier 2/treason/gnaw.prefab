@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 3601139505978016097}
-  - component: {fileID: -7524400799980183109}
-  - component: {fileID: 7402237119204173579}
+  - component: {fileID: -5680318015819087366}
   m_Layer: 5
   m_Name: gnaw
   m_TagString: Untagged
@@ -124,7 +122,7 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3601139505978016097}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Beetle, Assembly-CSharp
         m_MethodName: NoDamageTaken
         m_Mode: 1
@@ -201,7 +199,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &3601139505978016097
+--- !u!114 &-5680318015819087366
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,32 +209,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98561385c4bd245438e24d050ddb8aac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  armor_bonus: 1
---- !u!114 &-7524400799980183109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 1
-  armor_piercing: 0
---- !u!114 &7402237119204173579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c5665f5f93a7f649bffbb97d7b763bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

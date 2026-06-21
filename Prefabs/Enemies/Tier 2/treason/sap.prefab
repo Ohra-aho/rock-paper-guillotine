@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 395466286827957940}
+  - component: {fileID: -790354722444978812}
   m_Layer: 5
   m_Name: sap
   m_TagString: Untagged
@@ -145,19 +145,7 @@ MonoBehaviour:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 395466286827957940}
-        m_TargetAssemblyTypeName: Beetle, Assembly-CSharp
-        m_MethodName: SetArmorToPermanent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -172,19 +160,7 @@ MonoBehaviour:
       m_Calls: []
   constant:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 395466286827957940}
-        m_TargetAssemblyTypeName: Beetle, Assembly-CSharp
-        m_MethodName: ScaleDamageFromArmor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
@@ -211,7 +187,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &395466286827957940
+--- !u!114 &-790354722444978812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,4 +199,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98561385c4bd245438e24d050ddb8aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armor_bonus: 1
