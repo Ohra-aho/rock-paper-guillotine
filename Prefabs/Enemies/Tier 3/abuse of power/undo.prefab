@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -2773251061414799500}
-  - component: {fileID: 5254062391248081410}
+  - component: {fileID: 4286222579009159444}
+  - component: {fileID: -6463347446740967733}
+  - component: {fileID: 2786160817998487646}
   m_Layer: 5
   m_Name: undo
   m_TagString: Untagged
@@ -99,7 +100,7 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
-  damage: 3
+  damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
@@ -140,16 +141,22 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls: []
-  lose:
-    m_PersistentCalls:
-      m_Calls: []
-  draw:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -2773251061414799500}
-        m_TargetAssemblyTypeName: Greataxe, Assembly-CSharp
-        m_MethodName: Tenacity
+      - m_Target: {fileID: 4286222579009159444}
+        m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
+        m_MethodName: DecreaseOpposingHealth
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -6463347446740967733}
+        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
+        m_MethodName: SpawnRandomWeapon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -159,6 +166,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
+  draw:
+    m_PersistentCalls:
+      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -200,7 +213,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &-2773251061414799500
+--- !u!114 &4286222579009159444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,10 +222,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0f11134cf181764583dc389218fba1b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b84c21e8388ac64da2a85039d59a1b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5254062391248081410
+  trigger_ones: 0
+--- !u!114 &-6463347446740967733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,8 +235,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
-  armor_piercing: 0
+  spawn_limit: 0
+  weapons:
+  - {fileID: 1944698211339908181, guid: bf44e920d974a204589742366b914b99, type: 3}
+  - {fileID: 1944698211339908181, guid: 5b41f0edba9bf1e4e8fd39f7636b42ae, type: 3}
+  - {fileID: 1944698211339908181, guid: 9a70c67ed37840641afc7537eb6cbf38, type: 3}
+--- !u!114 &2786160817998487646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 472e521bb8a394943949fcd2f8980dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

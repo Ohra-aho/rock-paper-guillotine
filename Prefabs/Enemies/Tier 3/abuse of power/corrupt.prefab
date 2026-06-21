@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 1216413739860460067}
-  - component: {fileID: 4497851502426654764}
+  - component: {fileID: -8993213942094031185}
+  - component: {fileID: -1017998129170239206}
   m_Layer: 5
   m_Name: corrupt
   m_TagString: Untagged
@@ -99,7 +99,7 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
-  damage: 2
+  damage: 3
   armor: 0
   real_damage: 0
   real_armor: 0
@@ -140,16 +140,10 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls: []
-  lose:
-    m_PersistentCalls:
-      m_Calls: []
-  draw:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1216413739860460067}
-        m_TargetAssemblyTypeName: Nyrkki, Assembly-CSharp
-        m_MethodName: SelfDamage
+      - m_Target: {fileID: -8993213942094031185}
+        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
+        m_MethodName: SpawnOnlyWeapon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -159,6 +153,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -1017998129170239206}
+        m_TargetAssemblyTypeName: Raivo, Assembly-CSharp
+        m_MethodName: Corrupt
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
+  draw:
+    m_PersistentCalls:
+      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -200,7 +212,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &1216413739860460067
+--- !u!114 &-8993213942094031185
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,10 +221,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bf3c317a802e1742a87d20422ca8287, type: 3}
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4497851502426654764
+  spawn_limit: 0
+  weapons:
+  - {fileID: 1944698211339908181, guid: 40596934a9b747343ab7ddad3f9536f5, type: 3}
+--- !u!114 &-1017998129170239206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,8 +236,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Script: {fileID: 11500000, guid: 472e521bb8a394943949fcd2f8980dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
-  armor_piercing: 0
