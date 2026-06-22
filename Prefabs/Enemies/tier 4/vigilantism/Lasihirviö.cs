@@ -4,45 +4,54 @@ using UnityEngine;
 
 public class Lasihirviö : MonoBehaviour
 {
-    GameObject controller;
+	public GameObject buff;
+	public void ConscrictLoss()
+	{
+		GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+		RIE.GetComponent<Realinventory>().FindWeapon("Vindicate").GetComponent<Weapon>().damage--;
+	} 
 
-    bool hurt;
-    bool retaliated;
-    int not_working = 0;
+	public void ConscrictDraw()
+	{
+		string buff_1 = "Strike";
+		string buff_2 = "Gaze_debuff";
+		List<Weapon> weapons = GetComponent<Weapon>().opponent.player_owner.GetComponent<PlayerContoller>().GetWeapons();
+		for(int i = 0; i < weapons.Count; i++)
+		{
+			if(weapons[i].FindCertainBuff(buff_1))
+			{
+				weapons[i].GetCertainBuff(buff_1).GetComponent<Buff>().temporary = false;
+				weapons[i].GetCertainBuff(buff_1).GetComponent<Buff>().timer = 0;
+			}
+			if(weapons[i].FindCertainBuff(buff_2))
+			{
+				weapons[i].GetCertainBuff(buff_2).GetComponent<Buff>().temporary = false;
+				weapons[i].GetCertainBuff(buff_2).GetComponent<Buff>().timer = 0;
+				weapons[i].GetCertainBuff(buff_2).GetComponent<Buff>().until_used = false;
+			}
+		}
+	}
 
-    private void Awake()
-    {
-        controller = GameObject.FindGameObjectWithTag("EnemyHolder");
-        controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
-        controller.GetComponent<EnemyController>().damageEffect = TakeDamage;
-    }
-
-    public int MakeChoise(MainController.Choise playerChoise)
-    {
-        if(!hurt)
-        {
-            not_working++;
-            retaliated = false;
-            if(not_working >= 3)
-            {
-                not_working = 0;
-                return 1;
-            }
-            return 0;
-        } else if(!retaliated)
-        {
-            retaliated = true;
-            return 1;
-        } else
-        {
-            hurt = false;
-            retaliated = false;
-            return 2;
-        }
-    }
-
-    public void TakeDamage()
-    {
-        hurt = true;
-    }
+	public void StrikePassive()
+	{
+		if(GetComponent<Weapon>().opponent.type == MainController.Choise.sakset)
+		{
+			List<Weapon> weapons = GetComponent<Weapon>().opponent.player_owner.GetComponent<PlayerContoller>().GetWeapons();
+			for(int i = 0; i < weapons.Count; i++)
+			{
+				if(weapons[i].FindCertainBuff("Strike"))
+				{
+					weapons[i].GetCertainBuff("Strike").GetComponent<Buff>().armor_buff--;
+				} else
+				{
+					Buff new_buff = Instantiate(buff, weapons[i].transform).GetComponent<Buff>();
+					new_buff.id = "Strike";
+					new_buff.temporary = true;
+					new_buff.timer = 1000;
+					new_buff.armor_buff = -1;
+					new_buff.AddBuff();
+				}
+			}
+		}
+	}
 }

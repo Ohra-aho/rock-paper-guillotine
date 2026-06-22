@@ -14,15 +14,18 @@ public class Bleed : MonoBehaviour
     {
         GameObject RI = GameObject.FindGameObjectWithTag("RI");
         int poisons = -1;
+		List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
         for(int i = 0; i < RI.transform.childCount; i++)
         {
             if(RI.transform.GetChild(i).GetComponent<Weapon>().name == "Poison")
             {
-                poisons++;
+				if(!weapons.Contains(RI.transform.GetChild(i).GetComponent<Weapon>()))
+				{
+                	poisons++;
+				}
             }
         }
         GameObject.Find("Table").GetComponent<TableController>().player_damage += poisons;
-        //GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.TakeDamage(poisons);
     }
 
     public void DebuffDamage(int amount)

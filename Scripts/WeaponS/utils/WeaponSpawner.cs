@@ -50,14 +50,7 @@ public class WeaponSpawner : MonoBehaviour
     {
         for(int i = 0; i < amount; i++)
         {
-			if(spawns < spawn_limit && spawn_limit != 0)
-			{
-				SpawnOnlyWeapon();
-			} else if(spawn_limit == 0)
-			{
-				SpawnOnlyWeapon();
-			}
-			spawns++;
+			SpawnOnlyWeapon();
         }
     }
 

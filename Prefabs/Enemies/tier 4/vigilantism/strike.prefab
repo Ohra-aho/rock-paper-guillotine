@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 3150370162779012732}
+  - component: {fileID: 12729949803027990}
   m_Layer: 5
   m_Name: strike
   m_TagString: Untagged
@@ -103,7 +103,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Strike
-  description: 
+  description: "Whenever you use \u201Dscissors\u201D, -1 armor to all of your weapons
+    until the end of the fight."
   sprite: {fileID: 21300000, guid: 30d5dd54e9bed30428ec021964b09992, type: 3}
   tiers: []
   tier: 0
@@ -121,16 +122,10 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
-  victory:
-    m_PersistentCalls:
-      m_Calls: []
-  takeDamage:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3150370162779012732}
-        m_TargetAssemblyTypeName: Sirpaleet, Assembly-CSharp
-        m_MethodName: OnDeath
+      - m_Target: {fileID: 12729949803027990}
+        m_TargetAssemblyTypeName: "Lasihirvi\xF6, Assembly-CSharp"
+        m_MethodName: StrikePassive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -140,6 +135,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  victory:
+    m_PersistentCalls:
+      m_Calls: []
+  takeDamage:
+    m_PersistentCalls:
+      m_Calls: []
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -199,7 +200,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &3150370162779012732
+--- !u!114 &12729949803027990
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,7 +209,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 617672784b3fb8448aac8bdc3067e515, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fc42a4ed5c2a9441b98892bd58e09cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}

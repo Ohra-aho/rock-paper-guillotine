@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 6200450456243347352}
+  - component: {fileID: 525898423352125643}
   m_Layer: 5
   m_Name: conscrict
   m_TagString: Untagged
@@ -103,7 +103,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Constrict
-  description: If loses, -1 damage to Vindicate.
+  description: 'If loses, -1 damage to Judicate. If draws, all weapon modifiers given
+    by the enemy become permanent. '
   sprite: {fileID: 21300000, guid: 35c22fddfdef8b94e8e720233d7f5986, type: 3}
   tiers: []
   tier: 0
@@ -122,9 +123,9 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6200450456243347352}
-        m_TargetAssemblyTypeName: Healing, Assembly-CSharp
-        m_MethodName: Heal
+      - m_Target: {fileID: 525898423352125643}
+        m_TargetAssemblyTypeName: "Lasihirvi\xF6, Assembly-CSharp"
+        m_MethodName: StrikePassive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -154,10 +155,34 @@ MonoBehaviour:
       m_Calls: []
   lose:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 525898423352125643}
+        m_TargetAssemblyTypeName: "Lasihirvi\xF6, Assembly-CSharp"
+        m_MethodName: ConscrictLoss
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   draw:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 525898423352125643}
+        m_TargetAssemblyTypeName: "Lasihirvi\xF6, Assembly-CSharp"
+        m_MethodName: ConscrictDraw
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -199,7 +224,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &6200450456243347352
+--- !u!114 &525898423352125643
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,8 +233,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fc42a4ed5c2a9441b98892bd58e09cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disabled: 0
-  amount: 4
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
