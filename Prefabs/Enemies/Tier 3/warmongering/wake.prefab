@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -3470480356065589785}
-  - component: {fileID: 8148992089103089434}
   - component: {fileID: 1934008209786845313}
-  - component: {fileID: 4042581367318644536}
+  - component: {fileID: -2912600101946458056}
+  - component: {fileID: 8593194926876044486}
   m_Layer: 5
   m_Name: wake
   m_TagString: Untagged
@@ -106,7 +105,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Wake
-  description: Takes 1 damage for each empty slot on your gear.
+  description: After use, you get a Poison and enemy takes 1 damage for each empty
+    slot on your gear.
   sprite: {fileID: 21300000, guid: 7183cc8b45d4e3f49b9d4081090e1567, type: 3}
   tiers: []
   tier: 0
@@ -125,9 +125,21 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8148992089103089434}
+      - m_Target: {fileID: -2912600101946458056}
+        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
+        m_MethodName: SpawnOnlyWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8593194926876044486}
         m_TargetAssemblyTypeName: Doll, Assembly-CSharp
-        m_MethodName: Retaliate
+        m_MethodName: Wake
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -145,19 +157,7 @@ MonoBehaviour:
       m_Calls: []
   dealDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4042581367318644536}
-        m_TargetAssemblyTypeName: Healing, Assembly-CSharp
-        m_MethodName: Heal
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   deal_effect_damage:
     m_PersistentCalls:
       m_Calls: []
@@ -214,30 +214,6 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &-3470480356065589785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c5665f5f93a7f649bffbb97d7b763bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8148992089103089434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ee88c6161aec044a87d53f52380bf71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1934008209786845313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,9 +226,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
+  amount: 0
   armor_piercing: 0
---- !u!114 &4042581367318644536
+--- !u!114 &-2912600101946458056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -261,8 +237,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disabled: 0
-  amount: 2
+  spawn_limit: 0
+  weapons:
+  - {fileID: 1944698211339908181, guid: a47ba23783ff33d44ac4df8e5ce9a434, type: 3}
+--- !u!114 &8593194926876044486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ee88c6161aec044a87d53f52380bf71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

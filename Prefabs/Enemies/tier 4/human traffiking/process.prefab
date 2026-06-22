@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -3743485907992275058}
+  - component: {fileID: 4720671536092033297}
+  - component: {fileID: 7281252295946806159}
   m_Layer: 5
   m_Name: process
   m_TagString: Untagged
@@ -98,12 +99,12 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
-  damage: 3
+  damage: 2
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Process
-  description: Utilize gains 1 point.
+  description: Uses all points to give Utilize 1 point for every 2 points used.
   sprite: {fileID: 21300000, guid: fda7b54734c6ec04ab1e42651295d8e0, type: 3}
   tiers: []
   tier: 0
@@ -121,7 +122,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4720671536092033297}
+        m_TargetAssemblyTypeName: Demon, Assembly-CSharp
+        m_MethodName: Process
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -145,19 +158,7 @@ MonoBehaviour:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -3743485907992275058}
-        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
-        m_MethodName: SpawnRandomWeapon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -199,7 +200,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &-3743485907992275058
+--- !u!114 &4720671536092033297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,11 +209,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Script: {fileID: 11500000, guid: aeb8c2dbd6dfb9b43bbc41c399ba9115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn_limit: 0
-  weapons:
-  - {fileID: 1944698211339908181, guid: 4492c883f91842f4aba3694b19038665, type: 3}
-  - {fileID: 1944698211339908181, guid: 4492c883f91842f4aba3694b19038665, type: 3}
-  - {fileID: 1944698211339908181, guid: 4492c883f91842f4aba3694b19038665, type: 3}
+--- !u!114 &7281252295946806159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stacks: 0
+  stack_limit: 0
+  LoadFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
+    m_PersistentCalls:
+      m_Calls: []

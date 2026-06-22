@@ -25498,6 +25498,8 @@ MonoBehaviour:
   enemy_healing: 0
   health_increase: 0
   health_decrease: 0
+  player_armor: 0
+  enemy_armor: 0
 --- !u!1 &968527332
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 2856670220802805572}
-  - component: {fileID: 1283580776779177612}
+  - component: {fileID: 8287697506024547334}
   m_Layer: 5
   m_Name: infest
   m_TagString: Untagged
@@ -104,7 +104,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Infest
-  description: If does not take damage, you get a parasite.
+  description: If does not take damage, you get a Parasite.
   sprite: {fileID: 21300000, guid: f91d51b188f38794092856642003648a, type: 3}
   tiers: []
   tier: 0
@@ -137,16 +137,10 @@ MonoBehaviour:
       m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
-      m_Calls: []
-  win:
-    m_PersistentCalls:
-      m_Calls: []
-  lose:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2856670220802805572}
-        m_TargetAssemblyTypeName: Abomination, Assembly-CSharp
-        m_MethodName: Unbeateble
+      - m_Target: {fileID: 8287697506024547334}
+        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
+        m_MethodName: SpawnOnlyWeapon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -156,6 +150,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -212,8 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937a63662b3757843b09b500ca057d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
---- !u!114 &1283580776779177612
+--- !u!114 &8287697506024547334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,8 +221,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
-  armor_piercing: 0
+  spawn_limit: 0
+  weapons:
+  - {fileID: 1944698211339908181, guid: bb0177d58d0e7b6498827e7ef37db465, type: 3}

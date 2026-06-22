@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 4484109387737831917}
-  - component: {fileID: -3963823261236505932}
-  - component: {fileID: -1018639183154437033}
+  - component: {fileID: -7647009164761552739}
   m_Layer: 5
   m_Name: crush
   m_TagString: Untagged
@@ -105,7 +103,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Crush
-  description: If wins, destroys the weapon used against this.
+  description: If wins, destroys the opposing weapon.
   sprite: {fileID: 21300000, guid: b966ffc5295a6024b9351e6f623899a2, type: 3}
   tiers: []
   tier: 0
@@ -120,46 +118,10 @@ MonoBehaviour:
       m_Calls: []
   resultPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4484109387737831917}
-        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
-        m_MethodName: SelfDamage
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 3098424137161797902}
-          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4484109387737831917}
-        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
-        m_MethodName: DealDamage
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 3098424137161797902}
-          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -3963823261236505932}
-        m_TargetAssemblyTypeName: Doll, Assembly-CSharp
-        m_MethodName: Retaliate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -177,7 +139,19 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7647009164761552739}
+        m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
+        m_MethodName: DestroyOpposingWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   lose:
     m_PersistentCalls:
       m_Calls: []
@@ -225,7 +199,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &4484109387737831917
+--- !u!114 &-7647009164761552739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -234,32 +208,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b84c21e8388ac64da2a85039d59a1b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
-  armor_piercing: 0
---- !u!114 &-3963823261236505932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ee88c6161aec044a87d53f52380bf71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-1018639183154437033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c5665f5f93a7f649bffbb97d7b763bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  trigger_ones: 0

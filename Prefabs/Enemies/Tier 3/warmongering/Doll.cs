@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Doll : MonoBehaviour
 {
-    public void Retaliate()
-    {
-        if(GameObject.Find("Table").GetComponent<TableController>().enemy_damage > 0)
-        {
-            GetComponent<EffectDamage>().DealDamage(null);
-        }
-    }
+    public void Wake()
+	{
+		List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
+		GetComponent<EffectDamage>().amount = 5 - weapons.Count;
+		GetComponent<EffectDamage>().SelfDamage(GetComponent<Weapon>());
+	}
 }

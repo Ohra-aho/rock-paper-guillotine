@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 4066374944790547228}
+  - component: {fileID: 2523911495719896158}
   m_Layer: 5
   m_Name: burst
   m_TagString: Untagged
@@ -103,7 +104,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Burst
-  description: Dies. You get 3 parasites.
+  description: Dies. You get 3 Parasites.
   sprite: {fileID: 21300000, guid: fc6ac732cd46b8c4391e37ac2b3fac4a, type: 3}
   tiers: []
   tier: 0
@@ -124,7 +125,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4066374944790547228}
         m_TargetAssemblyTypeName: Abomination, Assembly-CSharp
-        m_MethodName: UseAdapt
+        m_MethodName: Burst
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -211,4 +212,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937a63662b3757843b09b500ca057d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+--- !u!114 &2523911495719896158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn_limit: 0
+  weapons:
+  - {fileID: 1944698211339908181, guid: bb0177d58d0e7b6498827e7ef37db465, type: 3}

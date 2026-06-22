@@ -4,26 +4,21 @@ using UnityEngine;
 
 public class Shell : MonoBehaviour
 {
-    public void Retaliate()
-    {
-        GetComponent<EffectDamage>().DealDamage(null);
-    }
+	void Awake()
+	{
+		if(GetComponent<BuffController>())
+		{
+			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+			GetComponent<BuffController>().draw_winner = true;
+			GetComponent<BuffController>().penetrating = true;
+			GetComponent<BuffController>().temporary = true;
+			GetComponent<BuffController>().timer = 2;
+			GetComponent<BuffController>().special_apply = true;
+		}
+	}
 
-    public void ShellBreak()
-    {
-        GameObject.Find("Table").GetComponent<TableController>().enemy_damage += 3;
-        GetComponent<EffectDamage>().DealSetDamage(1);
-        GetComponent<SelfDestruct>().Destruct();
-    }
-
-    public void Fist()
-    {
-        GetComponent<Weapon>().damage++;
-    }
-
-    public void Spikes()
-    {
-        GetComponent<EffectDamage>().DealDamage(null);
-        GameObject.Find("Table").GetComponent<TableController>().enemy_damage += 1;
-    }
+	public void Rend()
+	{
+		GetComponent<Weapon>().damage += 1;
+	}
 }

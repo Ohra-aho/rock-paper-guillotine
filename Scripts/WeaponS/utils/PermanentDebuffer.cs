@@ -190,4 +190,25 @@ public class PermanentDebuffer : MonoBehaviour
 			new_buff.AddBuff();	
 		}
     }
+
+	public void ChangeOpposingWeaponType(int type)
+	{
+		if(HandleTrgger())
+		{
+			Weapon opponent = GetComponent<Weapon>().opponent;
+			Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+			new_buff.id = GetComponent<Weapon>().name + "_debuff";
+			switch(type)
+			{
+				case 1: new_buff.type_change = MainController.Choise.kivi; break;
+				case 2: new_buff.type_change = MainController.Choise.paperi; break;
+				case 3: new_buff.type_change = MainController.Choise.sakset; break;
+				case 4: new_buff.type_change = MainController.Choise.voittamaton; break;
+				case 5: new_buff.type_change = MainController.Choise.useless; break;
+			}
+			
+			new_buff.AddBuff();	
+		}
+	}
+
 }

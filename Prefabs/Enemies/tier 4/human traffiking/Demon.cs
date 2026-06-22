@@ -4,39 +4,73 @@ using UnityEngine;
 
 public class Demon : MonoBehaviour
 {
-    public bool flames_active;
-    public MainController.Choise effected_type;
-    private void Awake()
-    {
-        GameObject controller = GameObject.FindGameObjectWithTag("EnemyHolder");
-        controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
-    }
+	void Awake()
+	{
+		if(GetComponent<BuffController>())
+		{
+			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+			GetComponent<BuffController>().type_change = MainController.Choise.voittamaton;
+			GetComponent<BuffController>().temporary = true;
+			GetComponent<BuffController>().timer = 0;
+			GetComponent<BuffController>().special_apply = true;
+		}
+	}
 
-    public int MakeChoise(MainController.Choise choise)
-    {
-        if(flames_active)
-        {
-            flames_active = false;
-            switch(effected_type)
-            {
-                case MainController.Choise.kivi:
-                    return 2;
-                case MainController.Choise.paperi:
-                    return 1;
-                case MainController.Choise.sakset:
-                    return 0;
-            }
-        }
+	public void Process()
+	{
+		if(GetComponent<Stacking>().stacks >= 2)
+		{
+			int amount = GetComponent<Stacking>().stacks;
+			GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+			RIE.GetComponent<Realinventory>().FindWeapon("Utilize").GetComponent<Stacking>().IncreaseStacks(amount / 2);
+			GetComponent<Stacking>().DecreaseStacks(amount);
+		}
+	}
 
-        GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
-        for(int i = 0; i < RIE.transform.childCount; i++)
-        {
-            if(RIE.transform.GetChild(i).GetComponent<Weapon>().type == MainController.Choise.voittamaton)
-            {
-                return 0;
-            }
-        }
+	public void Trap(int tier)
+	{
+		GameObject RI = GameObject.FindGameObjectWithTag("RI");
+		List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
+		List<GameObject> weapons_to_destroy = new List<GameObject>();
 
-        return GetComponent<BasicEnemy>().MakeChoise(choise);
-    }
+		if(RI.transform.childCount - weapons.Count < tier) tier = RI.transform.childCount - weapons.Count;
+
+		if(weapons.Count < RI.transform.childCount)
+		{
+			while(weapons_to_destroy.Count < tier)
+			{
+				for(int i = 0; i < RI.transform.childCount; i++)
+				{
+					if(!weapons.Contains(RI.transform.GetChild(i).GetComponent<Weapon>()))
+					{
+						int rand = Random.Range(0, 2);
+						if(rand == 0)
+						{
+							weapons_to_destroy.Add(RI.transform.GetChild(i).gameObject);
+						}
+					}
+				}
+			}
+		}
+		GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+		for(int i = 0; i < weapons_to_destroy.Count; i++)
+		{
+			Destroy(weapons_to_destroy[i]);
+			RIE.GetComponent<Realinventory>().FindWeapon("Process").GetComponent<Stacking>().IncreaseStacks(1);
+		}
+	}
+
+	public void Utilize()
+	{
+		int amount = GetComponent<Stacking>().stacks;
+		GetComponent<WeaponSpawner>().SpawnMultipleWeapons(amount);
+		GetComponent<Stacking>().DecreaseStacks(amount);
+	}
+
+	public void UtilizeTwo()
+	{
+		int amount = GetComponent<Stacking>().stacks;
+		GetComponent<BuffController>().timer = amount + 1;
+		GetComponent<BuffController>().Equip();
+	}
 }

@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -5292889363836287203}
-  - component: {fileID: 4359384120706584436}
+  - component: {fileID: 1943732860799206268}
+  - component: {fileID: -3933177729899229088}
+  - component: {fileID: 817267033935479413}
+  - component: {fileID: -416344381773603521}
   m_Layer: 5
   m_Name: utilize
   m_TagString: Untagged
@@ -104,7 +106,9 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Utilize
-  description: Gives a random debuff for each point.
+  description: "If wins, uses all points to give you 1 Thrall for each point used.
+    Otherwise all weapons become \u201Dunbeatable\u201D for amount of turns equal
+    to the amount of points used."
   sprite: {fileID: 21300000, guid: 4d08ad8afa555bc46a10a73daa47681a, type: 3}
   tiers: []
   tier: 0
@@ -141,9 +145,9 @@ MonoBehaviour:
   win:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -5292889363836287203}
-        m_TargetAssemblyTypeName: Damnation, Assembly-CSharp
-        m_MethodName: AddBuffs
+      - m_Target: {fileID: 1943732860799206268}
+        m_TargetAssemblyTypeName: Demon, Assembly-CSharp
+        m_MethodName: Utilize
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -155,13 +159,25 @@ MonoBehaviour:
         m_CallState: 2
   lose:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943732860799206268}
+        m_TargetAssemblyTypeName: Demon, Assembly-CSharp
+        m_MethodName: UtilizeTwo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   draw:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -5292889363836287203}
-        m_TargetAssemblyTypeName: Damnation, Assembly-CSharp
-        m_MethodName: DebuffOpposingWeapon
+      - m_Target: {fileID: 1943732860799206268}
+        m_TargetAssemblyTypeName: Demon, Assembly-CSharp
+        m_MethodName: UtilizeTwo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -212,7 +228,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &-5292889363836287203
+--- !u!114 &1943732860799206268
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,10 +237,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c62de1fc15b4b394c82fdbc3cd05e86f, type: 3}
+  m_Script: {fileID: 11500000, guid: aeb8c2dbd6dfb9b43bbc41c399ba9115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4359384120706584436
+--- !u!114 &-3933177729899229088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn_limit: 0
+  weapons:
+  - {fileID: 1944698211339908181, guid: e3948a761d752404eb0760de3b735480, type: 3}
+--- !u!114 &817267033935479413
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+  buff: {fileID: 0}
   damage_bonus: 0
   armor_bonus: 0
   effect_damage_bonus: 0
@@ -273,3 +304,26 @@ MonoBehaviour:
   until_used: 0
   destructive: 0
   heal_disabler: 0
+--- !u!114 &-416344381773603521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stacks: 0
+  stack_limit: 0
+  LoadFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
+    m_PersistentCalls:
+      m_Calls: []
