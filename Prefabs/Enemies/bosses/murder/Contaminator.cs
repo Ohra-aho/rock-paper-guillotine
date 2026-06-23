@@ -4,49 +4,19 @@ using UnityEngine;
 
 public class Contaminator : MonoBehaviour
 {
-    EnemyController controller;
-    public bool net;
-    public int netted_burst = 0;
-    bool granade_used = false;
-    public bool mask_active = false;
+	void Awake()
+	{
+		if(GetComponent<BuffController>())
+		{
+			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+			GetComponent<BuffController>().temporary = true;
+			GetComponent<BuffController>().timer = 2;
+			GetComponent<BuffController>().damage_bonus = 1;
+		}
+	}
 
-    private void Awake()
-    {
-        controller = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>();
-        controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
-        GameObject.Find("EventSystem").GetComponent<StoryCheckList>().first_boss_met = true;
-    }
-
-    private int MakeChoise(MainController.Choise choise)
-    {
-        if(controller.HB.GiveCurrentHealth() <= 3 && !granade_used && mask_active)
-        {
-            granade_used = true;
-            return 3;
-        } 
-        else if(controller.HB.GiveCurrentHealth() <= 3 && !granade_used && !mask_active)
-        {
-            return 0;
-        }
-        else
-        {
-            if (!net)
-            {
-                return GetComponent<BasicEnemy>().MakeChoise(choise);
-            }
-            else
-            {
-                netted_burst--;
-                if (netted_burst <= 0)
-                {
-                    net = false;
-                    return GetComponent<BasicEnemy>().MakeChoise(choise);
-                }
-                else
-                {
-                    return 2;
-                }
-            }
-        }  
-    }
+	public void Die()
+	{
+		GetComponent<Weapon>().owner.HB.InstaKill();
+	}
 }

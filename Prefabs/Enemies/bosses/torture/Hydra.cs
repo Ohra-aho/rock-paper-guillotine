@@ -4,70 +4,64 @@ using UnityEngine;
 
 public class Hydra : MonoBehaviour
 {
-    GameObject controller;
-    GameObject RIE;
-    private void Awake()
-    {
-        controller = GameObject.FindGameObjectWithTag("EnemyHolder");
-        RIE = GameObject.FindGameObjectWithTag("RIE");
-        controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
-    }
+    public GameObject buff;
 
-    public int MakeChoise(MainController.Choise c)
-    {
-        int immortal_head_chance = Random.Range(1, 5);
-        int dead_heads = CalculateDeadHeads();
-        int current_choise = GetComponent<BasicEnemy>().MakeChoise(c);
+	public void Crush()
+	{
+		Buff new_buff = Instantiate(buff, GetComponent<Weapon>().opponent.transform).GetComponent<Buff>();
+		new_buff.id = GetComponent<Weapon>().name;
+		new_buff.destructive = true;
+		new_buff.until_used = true;
+		new_buff.temporary = true;
+		new_buff.timer = 1000;
+		new_buff.AddBuff();
+	}
 
-        if (immortal_head_chance <= dead_heads)
-        {
-            return 0;
-        }
+	public void Hang()
+	{
+		Buff new_buff = Instantiate(buff, GetComponent<Weapon>().opponent.transform).GetComponent<Buff>();
+		new_buff.id = GetComponent<Weapon>().name;
+		new_buff.endPhase = true;
+		new_buff.special = (Weapon w) => { GetComponent<EffectDamage>().DealSetDamage(1); };
+		new_buff.until_used = true;
+		new_buff.temporary = true;
+		new_buff.timer = 1000;
+		new_buff.AddBuff();
+	}
 
-        if (current_choise == 2)
-        {
-            int dead_head_chance = Random.Range(1, 5);
-            
-            for (int i = 0; i < RIE.transform.childCount; i++)
-            {
-                Transform child = RIE.transform.GetChild(i);
-                if(child.GetComponent<DisposableHead>())
-                {
-                    if (dead_head_chance <= dead_heads)
-                    {
-                        if (child.GetComponent<Weapon>().type == MainController.Choise.useless)
-                        {
-                            return i;
-                        }
-                    }
-                    else
-                    {
-                        if (child.GetComponent<Weapon>().type != MainController.Choise.useless)
-                        {
-                            return i;
-                        }
-                    }
-                }
-            }
-            
-        }
+	public void Impale()
+	{
+		Buff new_buff = Instantiate(buff, GetComponent<Weapon>().opponent.transform).GetComponent<Buff>();
+		new_buff.id = GetComponent<Weapon>().name;
+		new_buff.endPhase = true;
+		new_buff.special = (Weapon w) => { GetComponent<Healing>().Heal(); };
+		new_buff.until_used = true;
+		new_buff.temporary = true;
+		new_buff.timer = 1000;
+		new_buff.AddBuff();
+	}
 
-        return current_choise;
-    }
+	public void Rack()
+	{
+		Buff new_buff = Instantiate(buff, GetComponent<Weapon>().opponent.transform).GetComponent<Buff>();
+		new_buff.id = GetComponent<Weapon>().name;
+		new_buff.endPhase = true;
+		new_buff.special = (Weapon w) => { w.damage--; if(w.damage < 0) w.damage = 0; };
+		new_buff.until_used = true;
+		new_buff.temporary = true;
+		new_buff.timer = 1000;
+		new_buff.AddBuff();
+	}
 
-    public int CalculateDeadHeads()
-    {
-        int amount = 0;
-
-        for(int i = 0; i < RIE.transform.childCount; i++)
-        {
-            Transform child = RIE.transform.GetChild(i);
-            if (child.GetComponent<DisposableHead>() && child.GetComponent<Weapon>().type == MainController.Choise.useless)
-            {
-                amount++;
-            }
-        }
-
-        return amount;
-    }
+	public void Skin()
+	{
+		Buff new_buff = Instantiate(buff, GetComponent<Weapon>().opponent.transform).GetComponent<Buff>();
+		new_buff.id = GetComponent<Weapon>().name;
+		new_buff.endPhase = true;
+		new_buff.special = (Weapon w) => { GetComponent<WeaponSpawner>().SpawnOnlyWeapon(); };
+		new_buff.until_used = true;
+		new_buff.temporary = true;
+		new_buff.timer = 1000;
+		new_buff.AddBuff();
+	}
 }

@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -7013455797175084396}
-  - component: {fileID: 8375994472976794866}
-  - component: {fileID: -1835799385000962141}
-  - component: {fileID: -2684754711179893793}
+  - component: {fileID: -4801655503642869997}
+  - component: {fileID: -8193762410651689735}
+  - component: {fileID: 2580939085539868937}
   m_Layer: 5
   m_Name: smog
   m_TagString: Untagged
@@ -106,7 +105,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Smog
-  description: If draws; you get 2 poison.
+  description: After use, you get a Poison for each point on Grind. If Grind has
+    no points, +3 armor to all weapons for one turn.
   sprite: {fileID: 21300000, guid: fe97ee598e8244d49a5ad693f3bd80c3, type: 3}
   tiers: []
   tier: 0
@@ -125,9 +125,9 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8375994472976794866}
-        m_TargetAssemblyTypeName: Lantern, Assembly-CSharp
-        m_MethodName: DealDamage
+      - m_Target: {fileID: -4801655503642869997}
+        m_TargetAssemblyTypeName: Spirit, Assembly-CSharp
+        m_MethodName: Smog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -202,7 +202,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &-7013455797175084396
+--- !u!114 &-4801655503642869997
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,10 +211,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c5665f5f93a7f649bffbb97d7b763bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c7ff5562ab19bd43b23e82dc9eb17af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8375994472976794866
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+--- !u!114 &-8193762410651689735
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,10 +224,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1b2ba97f9ead3f48a08df256f98661b, type: 3}
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-1835799385000962141
+  spawn_limit: 0
+  weapons:
+  - {fileID: 1944698211339908181, guid: a47ba23783ff33d44ac4df8e5ce9a434, type: 3}
+--- !u!114 &2580939085539868937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,31 +239,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
+  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stacks: 0
-  stack_limit: 3
-  LoadFunction:
-    m_PersistentCalls:
-      m_Calls: []
-  before_stacking:
-    m_PersistentCalls:
-      m_Calls: []
-  after_stacking:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &-2684754711179893793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 2
-  armor_piercing: 0
+  buff: {fileID: 0}
+  damage_bonus: 0
+  armor_bonus: 0
+  effect_damage_bonus: 0
+  toughness_buff: 0
+  set_a_to_zero: 0
+  set_d_to_zero: 0
+  always_on: 1
+  choisePhase: 0
+  resultPhase: 0
+  endPhase: 0
+  each_turn: 0
+  victory: 0
+  special_apply: 0
+  takeDamage: 0
+  takeNoDamage: 0
+  dealDamage: 0
+  deal_effect_damage: 0
+  draw: 0
+  win: 0
+  lose: 0
+  heal: 0
+  gain_points: 0
+  equip: 0
+  unEquip: 0
+  constant: 0
+  onDestruction: 0
+  awake: 0
+  on_death: 0
+  temporary: 0
+  timer: 0
+  penetrating: 0
+  draw_winner: 0
+  health_buff: 0
+  until_used: 0
+  destructive: 0
+  heal_disabler: 0

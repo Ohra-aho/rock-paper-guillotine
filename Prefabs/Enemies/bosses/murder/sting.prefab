@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 6876197979469568079}
-  - component: {fileID: -5078120061115472904}
   - component: {fileID: -2036526830350792608}
+  - component: {fileID: -9153943653925817904}
   m_Layer: 5
   m_Name: sting
   m_TagString: Untagged
@@ -105,7 +104,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Sting
-  description: If wins; dies and you get a spawn.
+  description: If wins, dies and you get a Spawn.
   sprite: {fileID: 21300000, guid: 6a611286e073f8045bb7e3dfe62ca407, type: 3}
   tiers: []
   tier: 0
@@ -123,19 +122,7 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6876197979469568079}
-        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
-        m_MethodName: SelfDamage
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 3098424137161797902}
-          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -166,24 +153,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -9153943653925817904}
+        m_TargetAssemblyTypeName: Contaminator, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   lose:
     m_PersistentCalls:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6876197979469568079}
-        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
-        m_MethodName: DealSetDamage
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -225,32 +212,6 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &6876197979469568079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 1
-  armor_piercing: 0
---- !u!114 &-5078120061115472904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: def19445eb45dc841b29d89d90699394, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-2036526830350792608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,3 +227,15 @@ MonoBehaviour:
   spawn_limit: 0
   weapons:
   - {fileID: 1944698211339908181, guid: a47ba23783ff33d44ac4df8e5ce9a434, type: 3}
+--- !u!114 &-9153943653925817904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34da6cd04c51c38448aee9f9204012e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

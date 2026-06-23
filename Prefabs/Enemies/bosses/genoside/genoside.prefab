@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 1165865232959651390}
   - component: {fileID: 4809575014415415317}
-  - component: {fileID: -5354147664273966625}
   m_Layer: 5
   m_Name: genoside
   m_TagString: Enemy
@@ -143,21 +142,3 @@ MonoBehaviour:
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0
---- !u!114 &-5354147664273966625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c7ff5562ab19bd43b23e82dc9eb17af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debuff_active: 0
-  debuffed_type: 0
-  active_mask: 0
-  fear_plan: 0200000002000000010000000200000000000000
-  anger_plan: 01000000000000000000000002000000010000000000000000000000
-  arrogance_plan: 0000000001000000020000000000000001000000

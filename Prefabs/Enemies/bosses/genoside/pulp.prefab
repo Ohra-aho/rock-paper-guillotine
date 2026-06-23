@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -4986672271813520885}
-  - component: {fileID: 5614607197470614939}
-  - component: {fileID: -3030195264346361527}
+  - component: {fileID: 7777064113322092457}
   m_Layer: 5
   m_Name: pulp
   m_TagString: Untagged
@@ -101,11 +99,11 @@ MonoBehaviour:
   spammable: 0
   type: 1
   damage: 2
-  armor: 2
+  armor: 0
   real_damage: 0
   real_armor: 0
   name: Pulp
-  description: If win; removes all poison from you.
+  description: If wins, removes all Poison from you.
   sprite: {fileID: 21300000, guid: 231da3ab249c6094bb4e3ce43549034c, type: 3}
   tiers: []
   tier: 0
@@ -123,19 +121,7 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -3030195264346361527}
-        m_TargetAssemblyTypeName: MistScript, Assembly-CSharp
-        m_MethodName: TakeDamage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -153,7 +139,19 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7777064113322092457}
+        m_TargetAssemblyTypeName: Spirit, Assembly-CSharp
+        m_MethodName: Pulp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   lose:
     m_PersistentCalls:
       m_Calls: []
@@ -201,7 +199,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &-4986672271813520885
+--- !u!114 &7777064113322092457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -210,67 +208,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c5665f5f93a7f649bffbb97d7b763bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5614607197470614939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c7ff5562ab19bd43b23e82dc9eb17af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
-  damage_bonus: 0
-  armor_bonus: 0
-  effect_damage_bonus: 0
-  toughness_buff: 0
-  set_a_to_zero: 0
-  set_d_to_zero: 0
-  always_on: 1
-  choisePhase: 0
-  resultPhase: 0
-  endPhase: 0
-  each_turn: 0
-  victory: 0
-  special_apply: 0
-  takeDamage: 0
-  takeNoDamage: 0
-  dealDamage: 0
-  deal_effect_damage: 0
-  draw: 0
-  win: 0
-  lose: 0
-  heal: 0
-  gain_points: 0
-  equip: 0
-  unEquip: 0
-  constant: 0
-  onDestruction: 0
-  awake: 0
-  on_death: 0
-  temporary: 0
-  timer: 0
-  penetrating: 0
-  draw_winner: 0
-  health_buff: 0
-  until_used: 0
-  destructive: 0
-  heal_disabler: 0
---- !u!114 &-3030195264346361527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0da6f34f19c750646ad321dba54b7acb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

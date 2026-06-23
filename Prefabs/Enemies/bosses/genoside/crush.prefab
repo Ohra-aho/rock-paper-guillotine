@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 2203614858412318446}
-  - component: {fileID: 4577985790337020352}
-  - component: {fileID: 2422801466574285265}
+  - component: {fileID: -4340890615951967483}
+  - component: {fileID: -6796196436530463592}
+  - component: {fileID: -3845424173083122036}
   m_Layer: 5
   m_Name: crush
   m_TagString: Untagged
@@ -97,15 +97,16 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 3098424137161797902, guid: 2826f2348a26d184b911b96cdb6a8b1a, type: 3}
   penetrating: 0
-  draw_winner: 1
+  draw_winner: 0
   spammable: 0
   type: 0
-  damage: 3
+  damage: 2
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Grind
-  description: Weapon used against this is destroyed if used again.
+  description: Uses all points to heal equal to the amount of points used. If has
+    no points, +1 damage to Collect.
   sprite: {fileID: 21300000, guid: b7c714139ed1dd24cbc001f87d9289fe, type: 3}
   tiers: []
   tier: 0
@@ -117,10 +118,16 @@ MonoBehaviour:
       m_Calls: []
   choisePhase:
     m_PersistentCalls:
+      m_Calls: []
+  resultPhase:
+    m_PersistentCalls:
+      m_Calls: []
+  endPhase:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4577985790337020352}
-        m_TargetAssemblyTypeName: Claws, Assembly-CSharp
-        m_MethodName: DrawTrigger
+      - m_Target: {fileID: -4340890615951967483}
+        m_TargetAssemblyTypeName: Spirit, Assembly-CSharp
+        m_MethodName: Grind
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -130,12 +137,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  resultPhase:
-    m_PersistentCalls:
-      m_Calls: []
-  endPhase:
-    m_PersistentCalls:
-      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -153,19 +154,7 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4577985790337020352}
-        m_TargetAssemblyTypeName: Claws, Assembly-CSharp
-        m_MethodName: DealHalfDamage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   lose:
     m_PersistentCalls:
       m_Calls: []
@@ -213,7 +202,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &2203614858412318446
+--- !u!114 &-4340890615951967483
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,10 +211,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c5665f5f93a7f649bffbb97d7b763bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c7ff5562ab19bd43b23e82dc9eb17af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4577985790337020352
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+--- !u!114 &-6796196436530463592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -234,10 +224,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 360312a501409cc45b7b856dff1e0c7d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2422801466574285265
+  stacks: 2
+  stack_limit: 0
+  LoadFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-3845424173083122036
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -246,8 +247,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disabled: 0
   amount: 0
-  armor_piercing: 0

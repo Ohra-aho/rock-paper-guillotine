@@ -4,139 +4,131 @@ using UnityEngine;
 
 public class Spirit : MonoBehaviour
 {
-    public bool debuff_active = false;
-    public MainController.Choise debuffed_type;
+	public GameObject buff;
 
-    public int active_mask = 0;
-    private int last_mask = 0;
+	void Awake()
+	{
+		if(GetComponent<Weapon>().name == "Collect")
+		{
+			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+			GetComponent<BuffController>().damage_bonus = 2;
+			GetComponent<BuffController>().temporary = true;
+			GetComponent<BuffController>().timer = 2;
+			GetComponent<BuffController>().special_apply = true;
+		}
+		if(GetComponent<Weapon>().name == "Hunger")
+		{
+			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+			GetComponent<BuffController>().type_change = MainController.Choise.voittamaton;
+			GetComponent<BuffController>().temporary = true;
+			GetComponent<BuffController>().timer = 2;
+			GetComponent<BuffController>().special_apply = true;
+		}
+		if(GetComponent<Weapon>().name == "Smog")
+		{
+			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+			GetComponent<BuffController>().armor_bonus = 3;
+			GetComponent<BuffController>().temporary = true;
+			GetComponent<BuffController>().timer = 2;
+			GetComponent<BuffController>().special_apply = true;
+		}
+	}
 
-    public List<int> fear_plan; //1
-    public List<int> anger_plan; //2
-    public List<int> arrogance_plan; //3
+	public void Cacophony()
+	{
+		List<int> indexes = new List<int>();
+		List<Weapon> weapons = GetComponent<Weapon>().opponent.player_owner.GetWeapons();
+		if(weapons.Count > 3)
+		{
+			for(int i = 0; i < 3; i++)
+			{
+				int index = Random.Range(0, weapons.Count);
+				while(indexes.Contains(index))
+				{
+					index = Random.Range(0, weapons.Count);
+				}
+				indexes.Add(index);
+			}
+		} else if(weapons.Count <= 3)
+		{
+			for(int i = 0; i < weapons.Count; i++)
+			{
+				indexes.Add(i);
+			}
+		}
 
-    private int fear_index = 0;
-    private int anger_index = 0;
-    private int arrogance_index = 0;
+		for(int i = 0; i < indexes.Count; i++)
+		{
+			Buff new_buff = Instantiate(buff, weapons[indexes[i]].transform).GetComponent<Buff>();
+			new_buff.type_change = MainController.Choise.useless;
+			new_buff.endPhase = true;
+			new_buff.temporary = true;
+			new_buff.timer = 2;
+			new_buff.special = (Weapon w) =>
+			{
+				GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+				RIE.GetComponent<Realinventory>().FindWeapon("Grind").GetComponent<Stacking>().IncreaseStacks(2);	
+			};
+			new_buff.AddBuff();
+		}
+	}
 
-    private int mask_timer = 0;
-    private int previous_health = 12;
+	public void Collect()
+	{
+		GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+		RIE.GetComponent<Realinventory>().FindWeapon("Grind").GetComponent<Stacking>().IncreaseStacks(2);	
+	}
 
-    GameObject controller;
+	public void Grind()
+	{
+		if(GetComponent<Stacking>().stacks > 0)
+		{
+			GetComponent<Healing>().amount = GetComponent<Stacking>().stacks;
+			GetComponent<Healing>().Heal();
+			GetComponent<Stacking>().stacks = 0; 
+		} else
+		{
+			GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+			RIE.GetComponent<Realinventory>().FindWeapon("Collect").GetComponent<Weapon>().damage++;
+		}
+	}
 
-    private void Awake()
-    {
-        controller = GameObject.FindGameObjectWithTag("EnemyHolder");
-        controller.GetComponent<EnemyController>().choiseMaker = MakeChoise;
-    }
+	public void Hunger()
+	{
+		GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+		if(RIE.GetComponent<Realinventory>().FindWeapon("Grind").GetComponent<Stacking>().stacks == 0)
+		{
+			GetComponent<BuffController>().Equip();
+		}
+	}
 
-    public int MakeChoise(MainController.Choise c)
-    {
-        int health = controller.GetComponent<EnemyController>().HB.GetComponent<HealthBar>().GiveCurrentHealth();
-        if (health < previous_health)
-        {
-            if (previous_health > 8 && health <= 8 && health > 4)
-            {
-                active_mask = 0;
-            }
-            else if (previous_health > 4 && health <= 4)
-            {
-                active_mask = 0;
-            }
-        }
-        previous_health = health;
+	public void Pulp()
+	{
+		GameObject RI = GameObject.FindGameObjectWithTag("RI");
+		List<GameObject> poison = new List<GameObject>();
+		for(int i = 0; i < RI.transform.childCount; i++)
+		{
+			if(RI.transform.GetChild(i).GetComponent<Weapon>().name == "Poison")
+			{
+				poison.Add(RI.transform.GetChild(i).gameObject);
+			}
+		}
+		for(int i = 0; i < poison.Count; i++)
+		{
+			Destroy(poison[i]);
+		}
+	}
 
-        switch (active_mask)
-        {
-            case 0:
-                /*int mask = 0;
-                while (mask == last_mask)
-                {
-                    mask = Random.Range(3, 6);
-                }
-                mask_timer = Random.Range(3, 7);
-                last_mask = mask;
-                active_mask = mask;*/
-                //return last_mask;
-                int choise = GetComponent<BasicEnemy>().MakeChoise(c);
-                active_mask = choise;
-                return choise;
-            case 3:
-                return ContinuePlan(1);
-            case 4:
-                return ContinuePlan(2);
-            case 5:
-                return ContinuePlan(3);
-            default: 
-                return GetComponent<BasicEnemy>().MakeChoise(c);
-        }
-    }
-
-    private int ContinuePlan(int plan)
-    {
-        switch(plan)
-        {
-            case 1:
-                //int? choise = FearChoise();
-                return ComputePlan(anger_plan, 1);
-            case 2: return ComputePlan(arrogance_plan, 2);
-            case 3: return ComputePlan(fear_plan, 3);
-            default: return 0;
-        }
-    }
-
-    private int ComputePlan(List<int> plan, int mask)
-    {
-
-        /*mask_timer--;
-        if(mask_timer <= 0)
-        {
-            active_mask = 0;
-        }*/
-        //Ei toimi
-        
-        switch (mask)
-        {
-            case 1:
-                int i = anger_index;
-                anger_index++;
-                if (anger_index >= plan.Count) anger_index = 0;
-                return plan[i];
-            case 2:
-                int j = arrogance_index;
-                arrogance_index++;
-                if (arrogance_index >= plan.Count) arrogance_index = 0;
-                return plan[j];
-            case 3:
-                int k = fear_index;
-                fear_index++;
-                if (fear_index >= plan.Count) fear_index = 0;
-                return plan[k];
-            default: return 0; //Should never happen
-        }
-       
-    }
-
-    // Needs to account for multiple debuffed weapons
-    private int? FearChoise()
-    {
-        switch(debuffed_type)
-        {
-            case MainController.Choise.kivi:
-                if (Chance()) return 1;
-                else return 0;
-            case MainController.Choise.paperi:
-                if (Chance()) return 0;
-                else return 2;
-            case MainController.Choise.sakset:
-                if (Chance()) return 2;
-                else return 1;
-            default: return null;
-        }
-    }
-
-    private bool Chance()
-    {
-        int chance = Random.Range(0, 3);
-        return chance == 0;
-    }
+	public void Smog()
+	{
+		GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+		int x = RIE.GetComponent<Realinventory>().FindWeapon("Grind").GetComponent<Stacking>().stacks;
+		if(x > 0)
+		{
+			GetComponent<WeaponSpawner>().SpawnMultipleWeapons(x);
+		} else
+		{
+			GetComponent<BuffController>().Equip();
+		}
+	}
 }

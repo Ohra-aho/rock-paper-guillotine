@@ -12,10 +12,8 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 1067512433452261523}
-  - component: {fileID: 8666164448043514053}
-  - component: {fileID: 1470279712137312320}
-  - component: {fileID: -135848512725008941}
+  - component: {fileID: 1721922200108044610}
+  - component: {fileID: -4334144910540812054}
   m_Layer: 5
   m_Name: hunger
   m_TagString: Untagged
@@ -106,7 +104,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Hunger
-  description: If loses, -1 damage to all weapons.
+  description: "After use, if Grind has no points, all weapons become \u201Dunbeatable\u201D
+    for one turn."
   sprite: {fileID: 21300000, guid: cdc356cb33cde0d418af7377d2fe0bb7, type: 3}
   tiers: []
   tier: 0
@@ -125,9 +124,9 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -135848512725008941}
-        m_TargetAssemblyTypeName: SpiritMask, Assembly-CSharp
-        m_MethodName: WearMask
+      - m_Target: {fileID: 1721922200108044610}
+        m_TargetAssemblyTypeName: Spirit, Assembly-CSharp
+        m_MethodName: Hunger
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -202,7 +201,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &1067512433452261523
+--- !u!114 &1721922200108044610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,10 +210,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 930ca71277c732a448f3aaebec84f6f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c7ff5562ab19bd43b23e82dc9eb17af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8666164448043514053
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+--- !u!114 &-4334144910540812054
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+  buff: {fileID: 0}
   damage_bonus: 0
   armor_bonus: 0
   effect_damage_bonus: 0
@@ -263,27 +263,3 @@ MonoBehaviour:
   until_used: 0
   destructive: 0
   heal_disabler: 0
---- !u!114 &1470279712137312320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c5665f5f93a7f649bffbb97d7b763bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-135848512725008941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48c64bd3701e4be408a7f1d46460531e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

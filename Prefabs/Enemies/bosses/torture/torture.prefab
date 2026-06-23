@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
   - component: {fileID: 3076687715594733710}
-  - component: {fileID: -7325174725438133791}
   m_Layer: 5
   m_Name: torture
   m_TagString: Enemy
@@ -136,15 +135,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-7325174725438133791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ed6daf21e3590544af5034c51bf06eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

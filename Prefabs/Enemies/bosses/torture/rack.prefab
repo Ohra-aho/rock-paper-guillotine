@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -7043858955958875271}
-  - component: {fileID: -110356560401366732}
+  - component: {fileID: -4717176918082485198}
+  - component: {fileID: -6155343645785227242}
   m_Layer: 5
   m_Name: rack
   m_TagString: Untagged
@@ -104,7 +104,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Rack
-  description: If wins; takes 1 damage and you get a weakness.
+  description: If wins, takes 2 damage. Ones the opposing weapon is used again, it
+    gets -1 damage.
   sprite: {fileID: 21300000, guid: 2b1f5100e7cdff94eaecf71e9bd7398b, type: 3}
   tiers: []
   tier: 0
@@ -123,9 +124,9 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -7043858955958875271}
-        m_TargetAssemblyTypeName: DisposableHead, Assembly-CSharp
-        m_MethodName: CalculateDamage
+      - m_Target: {fileID: -4717176918082485198}
+        m_TargetAssemblyTypeName: Hydra, Assembly-CSharp
+        m_MethodName: Rack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -152,22 +153,22 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls: []
-  lose:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -7043858955958875271}
-        m_TargetAssemblyTypeName: DisposableHead, Assembly-CSharp
-        m_MethodName: Lose
-        m_Mode: 1
+      - m_Target: {fileID: -6155343645785227242}
+        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
+        m_MethodName: SelfDamage
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 3098424137161797902}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -185,19 +186,7 @@ MonoBehaviour:
       m_Calls: []
   constant:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -7043858955958875271}
-        m_TargetAssemblyTypeName: DisposableHead, Assembly-CSharp
-        m_MethodName: CalculateDamage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
@@ -224,7 +213,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &-7043858955958875271
+--- !u!114 &-4717176918082485198
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,12 +222,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f28f937427c1cdd4b8c2f81181ee08d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ed6daf21e3590544af5034c51bf06eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
-  og_type: 0
---- !u!114 &-110356560401366732
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+--- !u!114 &-6155343645785227242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,9 +235,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyed: 0
-  disabled: 0
-  toughness: 0
+  amount: 2
+  armor_piercing: 0

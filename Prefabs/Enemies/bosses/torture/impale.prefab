@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -7043858955958875271}
-  - component: {fileID: -110356560401366732}
+  - component: {fileID: 7545988379698222994}
+  - component: {fileID: -7419192916564089205}
+  - component: {fileID: 5772670832540037264}
   m_Layer: 5
   m_Name: impale
   m_TagString: Untagged
@@ -104,7 +105,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Impale
-  description: If wins; takes 2 damage.
+  description: If wins, takes 2 damage. Ones the opposing weapon is used again, the
+    enemy heals 2.
   sprite: {fileID: 21300000, guid: 41377fba19fd98e4191dfeb2624b6307, type: 3}
   tiers: []
   tier: 0
@@ -123,9 +125,9 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -7043858955958875271}
-        m_TargetAssemblyTypeName: DisposableHead, Assembly-CSharp
-        m_MethodName: CalculateDamage
+      - m_Target: {fileID: 7545988379698222994}
+        m_TargetAssemblyTypeName: Hydra, Assembly-CSharp
+        m_MethodName: Impale
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -152,22 +154,22 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls: []
-  lose:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -7043858955958875271}
-        m_TargetAssemblyTypeName: DisposableHead, Assembly-CSharp
-        m_MethodName: Lose
-        m_Mode: 1
+      - m_Target: {fileID: -7419192916564089205}
+        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
+        m_MethodName: SelfDamage
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 3098424137161797902}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  lose:
+    m_PersistentCalls:
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -185,19 +187,7 @@ MonoBehaviour:
       m_Calls: []
   constant:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -7043858955958875271}
-        m_TargetAssemblyTypeName: DisposableHead, Assembly-CSharp
-        m_MethodName: CalculateDamage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
@@ -224,7 +214,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &-7043858955958875271
+--- !u!114 &7545988379698222994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,12 +223,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f28f937427c1cdd4b8c2f81181ee08d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ed6daf21e3590544af5034c51bf06eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
-  og_type: 0
---- !u!114 &-110356560401366732
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+--- !u!114 &-7419192916564089205
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,9 +236,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyed: 0
+  amount: 2
+  armor_piercing: 0
+--- !u!114 &5772670832540037264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   disabled: 0
-  toughness: 0
+  amount: 2

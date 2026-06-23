@@ -104,6 +104,8 @@ MonoBehaviour:
   name: Nothing
   description: ...
   sprite: {fileID: 21300000, guid: 4452c24eb2e6f214593c6136b1169fe7, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
