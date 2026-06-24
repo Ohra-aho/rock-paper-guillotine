@@ -104,7 +104,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Offer
-  description: If wins, you get +1 HP and 1 poison.
+  description: If wins, you get +1 HP and 1 Poison.
   sprite: {fileID: 21300000, guid: 308d2c5bbdd081b428955961eafed017, type: 3}
   tiers: []
   tier: 0

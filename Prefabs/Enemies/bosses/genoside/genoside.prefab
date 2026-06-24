@@ -112,25 +112,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Spirit
   image: {fileID: 21300000, guid: 3ff537b3de3cd4a438b3f3fddbac78b1, type: 3}
-  maxHealth: 12
+  maxHealth: 15
   weapons:
-  - {fileID: 1944698211339908181, guid: dbff7b47a184fb541a2fde7b687b1539, type: 3}
-  - {fileID: 1944698211339908181, guid: 267a080433af2de408a79c5c49b89da6, type: 3}
-  - {fileID: 1944698211339908181, guid: 5c9a9f67ab2ed7445bbdf1c0cf7cba20, type: 3}
   - {fileID: 1944698211339908181, guid: 971812e4dd1d816439d780f117d9711d, type: 3}
   - {fileID: 1944698211339908181, guid: 34284e9a13ac27140b35a43ad24246de, type: 3}
+  - {fileID: 1944698211339908181, guid: 267a080433af2de408a79c5c49b89da6, type: 3}
+  - {fileID: 1944698211339908181, guid: 5c9a9f67ab2ed7445bbdf1c0cf7cba20, type: 3}
   - {fileID: 1944698211339908181, guid: 7b6392ce5a2cb6a4cbdc1cead10b287f, type: 3}
-  plan_1: 000000000100000002000000030000000400000005000000
-  plan_2: 000000000100000002000000030000000400000005000000
+  - {fileID: 1944698211339908181, guid: dbff7b47a184fb541a2fde7b687b1539, type: 3}
+  plan_1: 00000000010000000200000003000000040000000500000006000000
+  plan_2: 01000000000000000300000002000000050000000400000006000000
   weapon_pairs:
-  - pair: 00000000
-  - pair: 01000000
-  - pair: 02000000
-  - pair: 03000000
+  - pair: 0000000001000000
+  - pair: 0000000003000000
+  - pair: 0100000002000000
+  - pair: 0500000002000000
+  - pair: 0400000005000000
   - pair: 04000000
-  - pair: 05000000
-  off_balance_choises: 00000000
-  advanced: 1
+  - pair: 0400000002000000
+  advanced: 0
   victory_barks: []
   executioner_comment: Placeholder
   victory_message: {fileID: 0}

@@ -65,14 +65,12 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 29029fa3291fa83458520265e62d02ac, type: 3}
   - {fileID: 1944698211339908181, guid: baf68adbb72db144997ce162f6b2a6b9, type: 3}
   - {fileID: 1944698211339908181, guid: 6ff2410eea4fdba47b7a44e3f1405dba, type: 3}
-  plan_1: 01000000020000000300000000000000
-  plan_2: 02000000010000000300000000000000
+  plan_1: 010000000200000000000000
+  plan_2: 020000000000000001000000
   weapon_pairs:
-  - pair: 0200000003000000
-  - pair: 0100000002000000
-  - pair: 0000000003000000
   - pair: 0000000001000000
-  off_balance_choises: 
+  - pair: 0100000002000000
+  - pair: 0000000002000000
   advanced: 0
   victory_barks: []
   executioner_comment: Should I just take it to the chin to bait the Raise?

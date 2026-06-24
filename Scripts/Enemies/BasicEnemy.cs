@@ -23,7 +23,7 @@ public class BasicEnemy : MonoBehaviour
     public class WeaponPair { public List<int> pair; }
     private List<int> current_pair = new List<int>();
 
-    public List<int> off_balance_choises;
+    //public List<int> off_balance_choises;
 
     public bool advanced = false;
 
@@ -33,7 +33,7 @@ public class BasicEnemy : MonoBehaviour
 
     private List<int> chosen_plan = new List<int>();
     private int planIndex = 0;
-    private int off_balance_plan_index = 0;
+    //private int off_balance_plan_index = 0;
     private int previous_pair = -1;
 
     [HideInInspector] public Weapon previous_weapon;
@@ -85,41 +85,10 @@ public class BasicEnemy : MonoBehaviour
 
     public int MakeChoise(MainController.Choise playerChoise)
     {
-
-        if (!off_balance)
-        {
-            return PickWeaponFromPair();
-        } else
-        {
-            return MakeOffBalanceChoise();
-        }
+		return PickWeaponFromPair();
     }
 
-    public int MakeOffBalanceChoise()
-    {
-        int step = off_balance_choises[off_balance_plan_index];
-        off_balance_plan_index++;
-        if (off_balance_plan_index >= off_balance_choises.Count)
-        {
-            off_balance_pattern_done = true;
-            off_balance_plan_index = 0;
-            planIndex = 0; //Might need revision
-        }
-
-        //If weapon is destroyed, skip it in plan
-        while (!CheckIfWeaponExists(step))
-        {
-            step = off_balance_choises[off_balance_plan_index];
-            off_balance_plan_index++;
-            if (off_balance_plan_index >= off_balance_choises.Count)
-            {
-                off_balance_pattern_done = true;
-                off_balance_plan_index = 0;
-                planIndex = 0; //Might need revision
-            }
-        }
-        return step;
-    }
+    
 
     public void StikToPlan()
     {

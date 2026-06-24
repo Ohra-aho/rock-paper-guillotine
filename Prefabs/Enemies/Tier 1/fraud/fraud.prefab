@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
   - component: {fileID: 8687217563175998695}
-  - component: {fileID: -4662255334357816252}
   m_Layer: 5
   m_Name: fraud
   m_TagString: Enemy
@@ -66,14 +65,12 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 8df209879b8327343b6df07fbcc4efe4, type: 3}
   - {fileID: 1944698211339908181, guid: 51ea9930548be084d845381301215245, type: 3}
   - {fileID: 1944698211339908181, guid: 58d61df4140868e4ab804d57a8900a3b, type: 3}
-  plan_1: 02000000000000000100000003000000
-  plan_2: 03000000000000000200000001000000
+  plan_1: 020000000000000001000000
+  plan_2: 010000000000000002000000
   weapon_pairs:
   - pair: 0000000002000000
-  - pair: 0100000002000000
-  - pair: 01000000
   - pair: 0000000001000000
-  off_balance_choises: 00000000
+  - pair: 0100000002000000
   advanced: 0
   victory_barks: []
   executioner_comment: Scissors and paper and that's that.
@@ -138,17 +135,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4662255334357816252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cc9a5a3def99df4e8ff168d3d8bd243, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taken_damage: 0
-  tail_hit: 0

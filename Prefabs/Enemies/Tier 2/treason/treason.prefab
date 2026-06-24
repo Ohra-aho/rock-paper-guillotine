@@ -60,18 +60,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Kovakuoriainen
   image: {fileID: 21300000, guid: 2be2d60604e8fbe4ca4f254d86472923, type: 3}
-  maxHealth: 3
+  maxHealth: 4
   weapons:
   - {fileID: 1944698211339908181, guid: e6f5dacd513cf4949b52db9ae88cf4f5, type: 3}
   - {fileID: 1944698211339908181, guid: 49489f57f67496948b2aa55953450bbb, type: 3}
   - {fileID: 1944698211339908181, guid: 431167f948e211743a8be33abd7d9f34, type: 3}
-  plan_1: 020000000000000001000000
-  plan_2: 020000000100000000000000
+  plan_1: 02000000000000000100000003000000
+  plan_2: 02000000010000000000000003000000
   weapon_pairs:
   - pair: 0000000001000000
   - pair: 0000000002000000
   - pair: 0100000002000000
-  off_balance_choises: 01000000
+  - pair: 00000000
   advanced: 0
   victory_barks: []
   executioner_comment: 

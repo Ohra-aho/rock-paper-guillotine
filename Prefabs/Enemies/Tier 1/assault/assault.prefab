@@ -60,19 +60,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Fanaatikko
   image: {fileID: 21300000, guid: 6a65368fa7f59ec4987ac902209ecbe0, type: 3}
-  maxHealth: 2
+  maxHealth: 3
   weapons:
   - {fileID: 1944698211339908181, guid: 276c4073638e62b44be99117a6594fce, type: 3}
   - {fileID: 1944698211339908181, guid: 02645376508861b46a13df03159ea590, type: 3}
   - {fileID: 1944698211339908181, guid: 4e2f6e2de2f6d6445bed3b02d3b29ce9, type: 3}
-  plan_1: 00000000
-  plan_2: 00000000
+  plan_1: 00000000020000000100000003000000
+  plan_2: 01000000040000000000000003000000
   weapon_pairs:
-  - pair: 00000000
+  - pair: 01000000
+  - pair: 02000000
+  - pair: 0000000001000000
+  - pair: 0000000002000000
+  - pair: 0100000002000000
   off_balance_choises: 00000000
   advanced: 0
   victory_barks: []
-  executioner_comment: Ok... Let's not blow up.
+  executioner_comment: Calm down buddy.
   victory_message: {fileID: 0}
   previous_weapon: {fileID: 0}
   weapon_streak: 0

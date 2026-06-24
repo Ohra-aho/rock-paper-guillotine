@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6291404997652609654}
   - component: {fileID: 4809575014415415317}
   - component: {fileID: 9126511307194648938}
-  - component: {fileID: 6288610888441367405}
   m_Layer: 5
   m_Name: blackmail
   m_TagString: Enemy
@@ -61,17 +60,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Nuijamies
   image: {fileID: 21300000, guid: 36c0ec5a563188044834794905a7092b, type: 3}
-  maxHealth: 4
+  maxHealth: 6
   weapons:
-  - {fileID: 1944698211339908181, guid: 8b287c35bd3379a4ca96391abac805bb, type: 3}
   - {fileID: 1944698211339908181, guid: 362936202b2a6c24f88d6e143414531d, type: 3}
+  - {fileID: 1944698211339908181, guid: 8b287c35bd3379a4ca96391abac805bb, type: 3}
   - {fileID: 1944698211339908181, guid: eff4e64083f9c8f4188421ce2db482c4, type: 3}
   plan_1: 000000000100000002000000
-  plan_2: 020000000000000001000000
+  plan_2: 000000000100000003000000
   weapon_pairs:
+  - pair: 00000000
   - pair: 0200000001000000
-  - pair: 0100000000000000
   - pair: 0200000000000000
+  - pair: 0100000000000000
   off_balance_choises: 0100000001000000
   advanced: 0
   victory_barks: []
@@ -137,15 +137,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6288610888441367405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 377c93c1bce40e941b95474a31fb2e71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
