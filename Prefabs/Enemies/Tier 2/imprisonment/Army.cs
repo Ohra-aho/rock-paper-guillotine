@@ -7,7 +7,33 @@ public class Army : MonoBehaviour
 	public GameObject buff;
 	bool disabled = false;
 
-    public void Chain()
+	void Awake()
+	{
+		if(GetComponent<Weapon>().name == "Hedgehog")
+		{
+			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+			GetComponent<BuffController>().endPhase = true;
+			GetComponent<BuffController>().special = (Weapon w) =>
+			{
+				TableController TC = GameObject.Find("Table").GetComponent<TableController>();
+				int damage = TC.player_damage;
+				int armor = TC.player_armor;
+				bool pierce = w.opponent.penetrating;
+				if(damage > 0)
+				{
+					if(damage > armor || pierce)
+					{
+						GameObject.Find("Table").GetComponent<TableController>().player_damage = 0;
+						GetComponent<EffectDamage>().DealDamage(w);
+						GetComponent<BuffController>().Unequip();	
+					}
+				}
+			};
+			GetComponent<BuffController>().special_apply = true;
+		}
+	}
+
+	public void Chain()
 	{
 		List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
 		for(int i = 0; i < weapons.Count; i++)
@@ -41,4 +67,7 @@ public class Army : MonoBehaviour
 	{
 		disabled = true;
 	}
+
+
+
 }
