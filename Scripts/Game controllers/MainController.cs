@@ -168,7 +168,13 @@ public class MainController : MonoBehaviour
             case Choise.useless:
                 if (enemyChoise.type != Choise.useless)
                 {
-                    won = false;
+					if(enemyChoise.type == Choise.voittamaton && playerChoise.name == "Promise")
+					{
+						won = true;
+					} else
+					{
+                    	won = false;
+					}	
                 }
                 else
                 {
