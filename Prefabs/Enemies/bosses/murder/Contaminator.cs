@@ -19,4 +19,27 @@ public class Contaminator : MonoBehaviour
 	{
 		GetComponent<Weapon>().owner.HB.InstaKill();
 	}
+
+
+	public void Spawn()
+	{
+		if(GetComponent<Stacking>().stacks >= 3)
+		{
+			GetComponent<EffectDamage>().SelfDamage(GameObject.Find("EventSystem").GetComponent<MainController>().playerChoise);
+			GetComponent<EffectDamage>().DealDamage(GameObject.Find("EventSystem").GetComponent<MainController>().playerChoise);
+			GetComponent<SelfDestruct>().Destruct();
+		}
+	}
+
+
+	public void Spawnunequipped()
+	{
+		if(GetComponent<Stacking>().stacks >= 3)
+		{
+        	GameObject.Find("EnemyHealth").GetComponent<HealthBar>().TakeDamage(GetComponent<EffectDamage>().amount);
+        	GameObject.Find("PlayerHealth").GetComponent<HealthBar>().TakeDamage(GetComponent<EffectDamage>().amount);
+			GetComponent<Weapon>().CheckUp();
+			Destroy(gameObject);
+		}
+	}
 }

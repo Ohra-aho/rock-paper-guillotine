@@ -16,7 +16,9 @@ public class TableController : MonoBehaviour
     Coroutine table;
 
     [HideInInspector] public int player_damage = 0;
+    [HideInInspector] public int player_direct_damage = 0;
     [HideInInspector] public int enemy_damage = 0;
+    [HideInInspector] public int enemy_direct_damage = 0;
     [HideInInspector] public int player_healing = 0;
     [HideInInspector] public int enemy_healing = 0;
 	[HideInInspector] public int health_increase = 0;
@@ -112,51 +114,41 @@ public class TableController : MonoBehaviour
 
     private void HandleDamage()
     {
-        if(player_damage > 0)
+        if(player_damage > 0 || player_direct_damage > 0)
         {
             if(!player.GetComponent<PlayerContoller>().HB.dead)
             {
-				if(MC.enemyChoise.penetrating)
+				int true_damage = player_damage - player_armor;
+				if(true_damage < 0) true_damage = 0;
+
+				if(true_damage + player_direct_damage > 0)
 				{
-                	player.GetComponent<PlayerContoller>().HB.TakeDamage(player_damage);
+					player.GetComponent<PlayerContoller>().HB.TakeDamage(true_damage + player_direct_damage);
 					MC.playerChoise.takeDamage.Invoke();
 					MC.enemyChoise.dealDamage.Invoke();	
-				} else
-				{
-					if(player_damage - player_armor > 0)
-					{
-						player.GetComponent<PlayerContoller>().HB.TakeDamage(player_damage - player_armor);
-						MC.playerChoise.takeDamage.Invoke();
-						MC.enemyChoise.dealDamage.Invoke();	
-					}
 				}
             }
             player_damage = 0;
+			player_direct_damage = 0;
 			player.GetComponent<PlayerContoller>().HB.dead = player.GetComponent<PlayerContoller>().HB.CheckIfDead();
         }
 
 
-        if(enemy_damage > 0)
+        if(enemy_damage > 0 || enemy_direct_damage > 0)
         {
             if(!enemy.GetComponent<EnemyController>().HB.dead)
             {
-				if(MC.playerChoise.penetrating)
+				int true_damage = enemy_damage - enemy_armor;
+				if(true_damage < 0) true_damage = 0;
+				if(true_damage + enemy_direct_damage > 0)
 				{
-					enemy.GetComponent<EnemyController>().HB.TakeDamage(enemy_damage);
+					enemy.GetComponent<EnemyController>().HB.TakeDamage(true_damage + enemy_direct_damage);
 					MC.enemyChoise.takeDamage.Invoke();
-					MC.playerChoise.dealDamage.Invoke();
-				} else
-				{
-					if(enemy_damage - enemy_armor > 0)
-					{
-						enemy.GetComponent<EnemyController>().HB.TakeDamage(enemy_damage - enemy_armor);
-						MC.enemyChoise.takeDamage.Invoke();
-						MC.playerChoise.dealDamage.Invoke();
-					}
+					MC.playerChoise.dealDamage.Invoke();	
 				}
-                
             }
-            enemy_damage = 0;
+           	enemy_damage = 0;
+			enemy_direct_damage = 0;
 			enemy.GetComponent<EnemyController>().HB.dead = enemy.GetComponent<EnemyController>().HB.CheckIfDead();
         }
     }

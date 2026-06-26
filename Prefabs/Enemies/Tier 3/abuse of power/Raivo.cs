@@ -27,9 +27,5 @@ public class Raivo : MonoBehaviour
 		GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
 		GetComponent<EffectDamage>().SelfDamage(GetComponent<Weapon>());
 	}
-
-	public void Untouch()
-	{
-		
-	}
+	
 }

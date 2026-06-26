@@ -21,21 +21,6 @@ public class SelfDestruct : MonoBehaviour
             {
                 if (GetComponent<Weapon>().owner.HB.CheckIfDead()) nessessary = false;
 				if (GetComponent<Weapon>().opponent.player_owner.HB.CheckIfDead()) nessessary = false;
-
-                /*for (int i = 0; i < GetComponent<Weapon>().owner.weapons.Count; i++)
-                {
-                    if(GetComponent<Weapon>().owner.weapons[i] != null)
-                    {
-                        if (GetComponent<Weapon>().owner.weapons[i].GetComponent<Weapon>().name != GetComponent<Weapon>().name)
-                        {
-                            play_animation = true;
-                            break;
-                        }
-                    } else
-                    {
-                        play_animation = false;
-                    }
-                }*/
             }
 
             if (toughness > 0) nessessary = false;

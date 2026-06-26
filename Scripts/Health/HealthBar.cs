@@ -159,21 +159,26 @@ public class HealthBar : MonoBehaviour
 
     public bool CheckIfDead()
     {
+		TableController TC = GameObject.Find("Table").GetComponent<TableController>();
         if(transform.parent.name == "LeftSide")
 		{
-			if(GameObject.Find("Table").GetComponent<TableController>().player_damage == 0)
+			if(TC.player_damage == 0 && TC.player_direct_damage == 0)
 			{
 				return CheckIfAtZeroHP();
 			}
-			return GiveCurrentHealth() <= GameObject.Find("Table").GetComponent<TableController>().player_damage;
+			int true_damage = TC.player_damage - TC.player_armor;
+			if(true_damage < 0) true_damage = 0;
+			return GiveCurrentHealth() <= true_damage + TC.player_direct_damage;
 		} 
 		else
 		{
-			if(GameObject.Find("Table").GetComponent<TableController>().enemy_damage == 0)
+			if(TC.enemy_damage == 0 && TC.enemy_direct_damage == 0)
 			{
 				return CheckIfAtZeroHP();
 			}
-			return GiveCurrentHealth() <= GameObject.Find("Table").GetComponent<TableController>().enemy_damage;
+			int true_damage = TC.enemy_damage - TC.enemy_armor;
+			if(true_damage < 0) true_damage = 0;
+			return GiveCurrentHealth() <= true_damage + TC.enemy_direct_damage;
 		} 
     }
 

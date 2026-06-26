@@ -12,11 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -3761719305772998615}
-  - component: {fileID: 3858497147456321410}
-  - component: {fileID: -8951952148103464126}
+  - component: {fileID: -7868316853223251621}
   m_Layer: 5
-  m_Name: weight
+  m_Name: faceless
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,15 +97,14 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  type: 0
-  damage: 2
+  type: 1
+  damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Weight
-  description: If takes damage, gains 1 point and you get 1 Weakness. When has 3
-    points , dies and you get a price. If takes no damage loses 1 point.
-  sprite: {fileID: 21300000, guid: 57d2aeae63180dc46af23835030424fc, type: 3}
+  name: Faceless
+  description: 
+  sprite: {fileID: 21300000, guid: 5c3c93e87b52ce34f8c354bfdc6b9e16, type: 3}
   tiers: []
   tier: 0
   first_turn:
@@ -124,16 +121,10 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
-  victory:
-    m_PersistentCalls:
-      m_Calls: []
-  takeDamage:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -8951952148103464126}
-        m_TargetAssemblyTypeName: Anglerfish, Assembly-CSharp
-        m_MethodName: Weight
+      - m_Target: {fileID: -7868316853223251621}
+        m_TargetAssemblyTypeName: FacelessS, Assembly-CSharp
+        m_MethodName: RemoveDebuffs
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -143,6 +134,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  victory:
+    m_PersistentCalls:
+      m_Calls: []
+  takeDamage:
+    m_PersistentCalls:
+      m_Calls: []
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -151,19 +148,7 @@ MonoBehaviour:
       m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8951952148103464126}
-        m_TargetAssemblyTypeName: Anglerfish, Assembly-CSharp
-        m_MethodName: WeightTwo
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   win:
     m_PersistentCalls:
       m_Calls: []
@@ -214,7 +199,7 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &-3761719305772998615
+--- !u!114 &-7868316853223251621
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,46 +208,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
+  m_Script: {fileID: 11500000, guid: e61ea023dd146a94a827872fd1fc0730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stacks: 0
-  stack_limit: 3
-  LoadFunction:
-    m_PersistentCalls:
-      m_Calls: []
-  before_stacking:
-    m_PersistentCalls:
-      m_Calls: []
-  after_stacking:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &3858497147456321410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawn_limit: 0
-  weapons:
-  - {fileID: 1944698211339908181, guid: 754148e55473539499ec52bc16344300, type: 3}
-  - {fileID: 1944698211339908181, guid: f080ba45986659349a036cf3c6cd7c02, type: 3}
---- !u!114 &-8951952148103464126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20a525f2639e33948988854fb05bc5e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buff: {fileID: 0}

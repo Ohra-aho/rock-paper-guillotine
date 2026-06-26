@@ -155,20 +155,8 @@ public class Weapon : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        //int armor_bonus = GiveEffectiveArmor();
-		int armor_bonus = 0;
-        int realDamage = 0;
-        if(!opponent.penetrating)
-        {
-            realDamage = amount - armor_bonus;
-            if (realDamage < 0) realDamage = 0;
-        } else
-        {
-            realDamage = amount;
-            if (realDamage < 0) realDamage = 0;
-        }
+        int realDamage = amount;
         HandleDamageTaking(realDamage, true);
-        //if (dead) on_death.Invoke(); //Place to Table controller
     }
 
     public void DealDamage(Weapon target)
@@ -181,22 +169,18 @@ public class Weapon : MonoBehaviour
     {
         if(opponent != null)
         {
-            if(GetComponent<EffectDamage>())
-            {
-                if (GetComponent<EffectDamage>().armor_piercing || GetComponent<Weapon>().penetrating)
-                {
-                    //amount += opponent.GiveEffectiveArmor();
-                }
-            }
             opponent.TakeDamage(amount);
         } else
         {
             if(player)
             {
-                GameObject.Find("Table").GetComponent<TableController>().enemy_damage += amount;
+				if(penetrating) GameObject.Find("Table").GetComponent<TableController>().enemy_direct_damage += amount;
+				else GameObject.Find("Table").GetComponent<TableController>().enemy_damage += amount;
+                
             } else
             {
-                GameObject.Find("Table").GetComponent<TableController>().player_damage += amount;
+                if(penetrating) GameObject.Find("Table").GetComponent<TableController>().player_direct_damage += amount;
+				else GameObject.Find("Table").GetComponent<TableController>().player_damage += amount;
             }
         }
     }
@@ -204,31 +188,21 @@ public class Weapon : MonoBehaviour
     //Used in effects. Doesn't trigger enemies damage effects
     public void SelfDamage(int amount)
     {
-        int realDamage;
-        if (!penetrating)
+        int realDamage = amount;
+        TableController TC = GameObject.Find("Table").GetComponent<TableController>();
+        if (realDamage > 0)
         {
-            realDamage = amount; //- GiveEffectiveArmor();
-            if (realDamage < 0) realDamage = 0;
-        } 
-        if(GetComponent<EffectDamage>())
-        {
-            if(!GetComponent<EffectDamage>().armor_piercing && !GetComponent<Weapon>().penetrating)
+            if (player)
             {
-                realDamage = amount; //- GiveEffectiveArmor();
-                if (realDamage < 0) realDamage = 0;
-            } else
+                if(penetrating) TC.player_direct_damage += realDamage;
+				else TC.player_damage += realDamage;
+            }
+            else
             {
-                realDamage = amount;
-                if (realDamage < 0) realDamage = 0;
+				if(penetrating) TC.enemy_direct_damage += realDamage;
+                else TC.enemy_damage += realDamage;
             }
         }
-        else
-        {
-            realDamage = amount;
-            if (realDamage < 0) realDamage = 0;
-        }
-
-        HandleDamageTaking(realDamage, false);
     }
 
     public void HandleDamageTaking(int realDamage, bool effect)
@@ -238,16 +212,14 @@ public class Weapon : MonoBehaviour
         {
             if (player)
             {
-                TC.player_damage += realDamage;
-                //if (effect) opponent.dealDamage.Invoke();
-                //takeDamage.Invoke();
+                if(opponent.penetrating) TC.player_direct_damage += realDamage;
+				else TC.player_damage += realDamage;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().damage_taken = true;
             }
             else
             {
-                TC.enemy_damage += realDamage;
-                //if (effect) opponent.dealDamage.Invoke();
-                //takeDamage.Invoke();
+				if(opponent.penetrating) TC.enemy_direct_damage += realDamage;
+                else TC.enemy_damage += realDamage;
                 GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().damage_taken = true;
             }
         }
@@ -283,6 +255,7 @@ public class Weapon : MonoBehaviour
         {
             HealthBar hb = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
             dead = hb.GetComponent<HealthBar>().CheckIfDead();
+
             if(dead) on_death.Invoke();
 			//Tick down temporary buffs
 			List<Weapon> weapons = GetComponent<Weapon>().player_owner.GetWeapons();
@@ -301,7 +274,7 @@ public class Weapon : MonoBehaviour
 				}
 			}
 
-            if(hb.GetComponent<HealthBar>().dead)
+            if(dead)
             {
                 GameObject.Find("EventSystem").GetComponent<MainController>().Loose();
             }

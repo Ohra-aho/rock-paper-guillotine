@@ -213,4 +213,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawn_limit: 1
   weapons:
-  - {fileID: 1944698211339908181, guid: e3948a761d752404eb0760de3b735480, type: 3}
+  - {fileID: 1944698211339908181, guid: d0b5de8d9824b7e46b28c799012012bc, type: 3}

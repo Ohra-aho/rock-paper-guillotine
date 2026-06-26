@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b84c21e8388ac64da2a85039d59a1b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trigger_ones: 0
 --- !u!114 &-8746704239180943675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,5 +244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawn_limit: 0
   weapons:
   - {fileID: 1944698211339908181, guid: a47ba23783ff33d44ac4df8e5ce9a434, type: 3}
