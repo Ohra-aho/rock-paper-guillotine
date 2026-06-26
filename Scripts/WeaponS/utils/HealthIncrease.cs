@@ -88,4 +88,10 @@ public class HealthIncrease : MonoBehaviour
 		HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
 		HB.IncreaseHealthBar(amount, in_view);	
 	}
+
+	public void ForceHealthDecrease()
+	{
+		HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
+		HB.DecreaseHealthBar(amount, in_view);	
+	}
 }

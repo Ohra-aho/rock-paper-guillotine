@@ -5,16 +5,81 @@ using UnityEngine;
 public class AScript : MonoBehaviour
 {
     List<Weapon> learned = new List<Weapon>();
+	int previous_x = 0;
 
 	void Awake()
 	{
-		GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name != GetComponent<Weapon>().name; };
+		//GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name != GetComponent<Weapon>().name; };
+		GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
 		GetComponent<BuffController>().onDestruction = true;
 		GetComponent<BuffController>().destructive = true;
 		GetComponent<BuffController>().special_apply = true;
 		GetComponent<BuffController>().temporary = true;
 		GetComponent<BuffController>().timer = 2;
-		GetComponent<BuffController>().special = Learn;
+		GetComponent<BuffController>().special = Benefit;
+	}
+
+	public void Benefit(Weapon w)
+	{
+		int x = Random.Range(1, 4);
+		if(x == previous_x)
+		{
+			x = Random.Range(1, 4);
+		}
+		previous_x = x;
+		x = 3;
+		switch(x)
+		{
+			case 1:
+				MakeStronger(w);
+				break;
+			case 2:
+				DealDamage(w);
+				break;
+			case 3:
+				HealOrGiveArmor(w);
+				break;
+			
+		}
+	}
+
+	public void MakeStronger(Weapon w)
+	{
+		List<Weapon> weapons = GetComponent<Weapon>().player_owner.GetWeapons();
+		int x = Random.Range(0, weapons.Count);
+		if(weapons.Count > 1)
+		{
+			while(w == weapons[x])
+			{
+				x = Random.Range(0, weapons.Count);
+			}	
+		}
+		weapons[x].GetComponent<Weapon>().damage++;
+	}
+
+	public void DealDamage(Weapon w)
+	{
+		GetComponent<EffectDamage>().DealDamage(w);
+	}
+
+	public void HealOrGiveArmor(Weapon w)
+	{
+		if(GetComponent<Weapon>().player_owner.HB.GiveCurrentHealth() < GetComponent<Weapon>().player_owner.HB.GiveMaxHealth())
+		{
+			GetComponent<Healing>().Heal();
+		} else
+		{
+			List<Weapon> weapons = GetComponent<Weapon>().player_owner.GetWeapons();
+			for(int i = 0; i < weapons.Count; i++)
+			{
+				Buff new_buff = Instantiate(GetComponent<BuffController>().buff, weapons[i].transform).GetComponent<Buff>();
+				new_buff.id = GetComponent<Weapon>().name + "_buff";
+				new_buff.armor_buff = 2;
+				new_buff.temporary = true;
+				new_buff.timer = 5;
+				new_buff.AddBuff();
+			}
+		}
 	}
 
 	public void Learn(Weapon w)

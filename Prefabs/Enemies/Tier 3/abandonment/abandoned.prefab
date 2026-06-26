@@ -12,11 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -3761719305772998615}
   - component: {fileID: -5020577489463505278}
   - component: {fileID: -229509614925852805}
   - component: {fileID: 973079896037169983}
-  - component: {fileID: -6847953085255053044}
   - component: {fileID: -3997331798148702016}
   m_Layer: 5
   m_Name: abandoned
@@ -108,8 +106,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Abandoned
-  description: After use, uses 1 point. The next weapon used is destroyed and this
-    weapon gains its effects.
+  description: After use, the next weapon used is detroyed and you get a random benefit.
   sprite: {fileID: 21300000, guid: 57d2aeae63180dc46af23835030424fc, type: 3}
   tiers: []
   tier: 0
@@ -205,29 +202,6 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &-3761719305772998615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stacks: 3
-  stack_limit: 3
-  LoadFunction:
-    m_PersistentCalls:
-      m_Calls: []
-  before_stacking:
-    m_PersistentCalls:
-      m_Calls: []
-  after_stacking:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &-5020577489463505278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabled: 0
-  amount: 0
+  amount: 3
 --- !u!114 &973079896037169983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,23 +240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
+  amount: 4
   armor_piercing: 0
---- !u!114 &-6847953085255053044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyed: 0
-  disabled: 0
-  toughness: 0
 --- !u!114 &-3997331798148702016
 MonoBehaviour:
   m_ObjectHideFlags: 0
