@@ -12,6 +12,7 @@ public class Recipe : MonoBehaviour
         GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.GetComponent<Stacking>(); };
         GetComponent<BuffController>().temporary = true;
         GetComponent<BuffController>().timer = 2;
+		GetComponent<BuffController>().reminder = "If gains points, gains 2 additional points.";
     }
 
     public void AddPoints(Weapon w)

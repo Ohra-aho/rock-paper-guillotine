@@ -13,6 +13,7 @@ public class Chip : MonoBehaviour
         GetComponent<BuffController>().special = (Weapon w) => { GetComponent<EffectDamage>().SelfDamage(w); };
         GetComponent<BuffController>().temporary = true;
         GetComponent<BuffController>().timer = 2;
+		GetComponent<BuffController>().reminder = "If loses or draws, you take 1 damage.";
     }
 
     public void ApplyBuffs()

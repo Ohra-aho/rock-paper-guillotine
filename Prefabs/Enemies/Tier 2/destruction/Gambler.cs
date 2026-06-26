@@ -17,6 +17,7 @@ public class Gambler : MonoBehaviour
 			new_buff.special = (Weapon w) => { GetComponent<EffectDamage>().SelfDamage(w); };
 			new_buff.temporary = true;
 			new_buff.timer = 1000;
+			new_buff.reminder = "After use, deals 1 damage to you. Lasts until the end of the fight.";
 			new_buff.AddBuff();
 		}
 	}

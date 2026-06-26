@@ -58,7 +58,7 @@ public class CHoisePanel : MonoBehaviour
 
             char[] characters = {
                 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-                'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'å', 'ä', 'ö'
+                'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ï¿½', 'ï¿½', 'ï¿½'
             };
             char[] divided_name = weapon_name.ToLower().ToCharArray();
             for (int i = 0; i < transform.GetChild(2).childCount; i++)
@@ -144,41 +144,6 @@ public class CHoisePanel : MonoBehaviour
         {
             GameObject info = GameObject.Find("Canvas").transform.GetChild(10).gameObject;
             info.GetComponent<WeaponInfo>().weapon = weapon;
-            /*info.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon_name;
-            info.transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.GiveEffectiveDamage().ToString();
-            info.transform.GetChild(1).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.GiveEffectiveArmor().ToString();
-            if (weapon.GetComponent<Stacking>()) {
-                info.transform.GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(200f, 40f);
-                info.transform.GetChild(1).GetComponent<RectTransform>().localScale = new Vector2(0.75f, 0.75f);
-                info.transform.GetChild(1).GetChild(2).gameObject.SetActive(true);
-                info.transform.GetChild(1).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Stacking>().stacks.ToString(); 
-            } else
-            {
-                info.transform.GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(144f, 40f);
-                info.transform.GetChild(1).GetComponent<RectTransform>().localScale = new Vector2(1f, 1f);
-                info.transform.GetChild(1).GetChild(2).gameObject.SetActive(false);
-            }
-            info.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = weapon.description;
-
-            switch(weapon.type)
-            {
-                case MainController.Choise.kivi:
-                    info.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = icons[0];
-                    break;
-                case MainController.Choise.paperi:
-                    info.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = icons[1];
-                    break;
-                case MainController.Choise.sakset:
-                    info.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = icons[2];
-                    break;
-                case MainController.Choise.hyödytön:
-                    info.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = icons[3];
-                    break;
-                case MainController.Choise.voittamaton:
-                    info.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = icons[4];
-                    break;
-            }*/
-
             info.SetActive(true);
         }
     }

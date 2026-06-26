@@ -69,6 +69,7 @@ public class Spirit : MonoBehaviour
 				GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
 				RIE.GetComponent<Realinventory>().FindWeapon("Grind").GetComponent<Stacking>().IncreaseStacks(2);	
 			};
+			new_buff.reminder = "\"Made useless\". After use, Grind gains 2 points.";
 			new_buff.AddBuff();
 		}
 	}

@@ -13,6 +13,7 @@ public class Catapult : MonoBehaviour
         GetComponent<BuffController>().special = DealDamage;
         GetComponent<BuffController>().endPhase = true;
         GetComponent<BuffController>().destructive = true;
+		GetComponent<BuffController>().reminder = "After use, deals 2 damage and destroys itself.";
     }
 
     public void AppluBuffs()

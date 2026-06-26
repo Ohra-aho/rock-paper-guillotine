@@ -10,5 +10,6 @@ public class Ducktape : MonoBehaviour
 		GetComponent<BuffController>().temporary = true;
 		GetComponent<BuffController>().timer = 2;
 		GetComponent<BuffController>().special_apply = true;
+		GetComponent<BuffController>().reminder = "Can't be destroyed.";
 	}
 }

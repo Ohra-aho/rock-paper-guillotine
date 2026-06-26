@@ -54,7 +54,7 @@ public class BuffController : MonoBehaviour
 
     //Other
     [HideInInspector] public bool temporary;
-    [HideInInspector] public int timer; //used for temporary buffs
+    [HideInInspector] public int timer;
 
     [HideInInspector] public bool penetrating;
     [HideInInspector] public bool draw_winner;
@@ -63,10 +63,11 @@ public class BuffController : MonoBehaviour
 
     [HideInInspector] public bool until_used;
 
+	[HideInInspector] public string reminder;
+
     //Debuffs
     [HideInInspector] public bool destructive;
     [HideInInspector] public bool heal_disabler;
-
 
 
     private void Awake()
@@ -175,6 +176,7 @@ public class BuffController : MonoBehaviour
             new_buff.until_used = until_used;
             new_buff.on_death = on_death;
 			new_buff.each_turn = each_turn;
+			new_buff.reminder = reminder;
             if (special != null) new_buff.GetComponent<Buff>().special = special;
             if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
             new_buff.GetComponent<Buff>().AddBuff();

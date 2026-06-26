@@ -22,12 +22,14 @@ public class Lasihirviö : MonoBehaviour
 			{
 				weapons[i].GetCertainBuff(buff_1).GetComponent<Buff>().temporary = false;
 				weapons[i].GetCertainBuff(buff_1).GetComponent<Buff>().timer = 0;
+				weapons[i].GetCertainBuff(buff_1).GetComponent<Buff>().reminder = "";
 			}
 			if(weapons[i].FindCertainBuff(buff_2))
 			{
 				weapons[i].GetCertainBuff(buff_2).GetComponent<Buff>().temporary = false;
 				weapons[i].GetCertainBuff(buff_2).GetComponent<Buff>().timer = 0;
 				weapons[i].GetCertainBuff(buff_2).GetComponent<Buff>().until_used = false;
+				weapons[i].GetCertainBuff(buff_2).GetComponent<Buff>().reminder = "";
 			}
 		}
 	}
@@ -49,6 +51,7 @@ public class Lasihirviö : MonoBehaviour
 					new_buff.temporary = true;
 					new_buff.timer = 1000;
 					new_buff.armor_buff = -1;
+					new_buff.reminder = "-"+new_buff.armor_buff+" armor until the end of the fight.";
 					new_buff.AddBuff();
 				}
 			}

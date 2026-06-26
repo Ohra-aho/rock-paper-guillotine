@@ -88,6 +88,7 @@ public class PermanentDebuffer : MonoBehaviour
 			new_buff.type_change = MainController.Choise.useless;
 			new_buff.temporary = true;
 			new_buff.timer = turns;
+			new_buff.reminder = "Made \"useless\".";
 			new_buff.AddBuff();	
 		}
     }
@@ -103,6 +104,7 @@ public class PermanentDebuffer : MonoBehaviour
 			new_buff.temporary = true;
 			new_buff.timer = 1000;
 			new_buff.until_used = true;
+			new_buff.reminder = "\"Useless\" until used again or until end of the fight.";
 			new_buff.AddBuff();	
 		}
     }
@@ -132,6 +134,7 @@ public class PermanentDebuffer : MonoBehaviour
 			new_buff.id = GetComponent<Weapon>().name + "_debuff";
 			new_buff.destructive = true;
 			new_buff.desruction_buffer = true;
+			new_buff.reminder = "After use, destroys itself.";
 			if(turns > 0)
 			{
 				new_buff.temporary = true;
@@ -173,6 +176,7 @@ public class PermanentDebuffer : MonoBehaviour
 			new_buff.id = GetComponent<Weapon>() + "_debuff";
 			new_buff.temporary = true;
 			new_buff.timer = 1000;
+			new_buff.reminder = "-"+amount+" to damage until the end of the fight.";
 			new_buff.AddBuff();	
 		}
     }
@@ -187,6 +191,7 @@ public class PermanentDebuffer : MonoBehaviour
 			new_buff.id = GetComponent<Weapon>() + "_debuff";
 			new_buff.temporary = true;
 			new_buff.timer = 1000;
+			new_buff.reminder = "-"+amount+" to armor until the end of the fight.";
 			new_buff.AddBuff();	
 		}
     }

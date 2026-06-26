@@ -14,6 +14,8 @@ public class MustaRitari : MonoBehaviour
 		GetComponent<Weapon>().opponent.type = MainController.Choise.voittamaton;
 		GetComponent<Weapon>().opponent.AddComponent<SelfDestruct>();
 		GetComponent<Weapon>().opponent.endPhase.AddListener(GetComponent<Weapon>().opponent.GetComponent<SelfDestruct>().Destruct);
+		Buff reminding_buff = Instantiate(buff, GetComponent<Weapon>().opponent.transform).GetComponent<Buff>();
+		reminding_buff.reminder = "After use, destroys itself.";
 	}
 
 	public void Trample()

@@ -11,6 +11,7 @@ public class Buckshot : MonoBehaviour
         GetComponent<BuffController>().temporary = true;
         GetComponent<BuffController>().timer = 2;
         GetComponent<BuffController>().effect_damage_bonus = 2;
+		GetComponent<BuffController>().reminder = "+2 to effect damage";
     }
 
 

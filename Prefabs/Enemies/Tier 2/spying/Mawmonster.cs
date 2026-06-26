@@ -20,6 +20,7 @@ public class Mawmonster : MonoBehaviour
 					new_buff.temporary = true; 
 					new_buff.timer = 2;
 					new_buff.id = GetComponent<Weapon>().name;
+					new_buff.reminder = "Made \"useless\"";
 					new_buff.AddBuff();	
 				} else
 				{

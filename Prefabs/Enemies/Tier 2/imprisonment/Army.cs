@@ -43,6 +43,7 @@ public class Army : MonoBehaviour
 			new_buff.temporary = true;
 			new_buff.timer = 2;
 			new_buff.damage_buff = -1;
+			new_buff.reminder = "-1 damage";
 			new_buff.AddBuff();
 		}
 	}
@@ -59,6 +60,7 @@ public class Army : MonoBehaviour
 			new_buff.temporary = true;
 			new_buff.timer = 2;
 			new_buff.type_change = MainController.Choise.useless;
+			new_buff.reminder = "Made \"useless\"";
 			new_buff.AddBuff();
 		}
 	}

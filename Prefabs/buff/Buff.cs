@@ -58,6 +58,8 @@ public class Buff : MonoBehaviour
 
     public bool until_used;
 
+	public string reminder;
+
     //Debuffs
     public bool destructive;
     public bool heal_disabler;

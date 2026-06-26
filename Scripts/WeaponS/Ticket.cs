@@ -13,6 +13,7 @@ public class Ticket : MonoBehaviour
 		GetComponent<BuffController>().temporary = true;
 		GetComponent<BuffController>().timer = 2;
 		GetComponent<BuffController>().special_apply= true;
+		GetComponent<BuffController>().reminder = "Weapons base effect will trigger regardless of the result of the turn.";
 	}
 
 	public void ActivateBaseEffect(Weapon w)

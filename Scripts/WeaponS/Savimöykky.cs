@@ -12,6 +12,7 @@ public class Savimöykky : MonoBehaviour
 		GetComponent<BuffController>().endPhase = true;
 		GetComponent<BuffController>().special = CopyWeapon;
 		GetComponent<BuffController>().special_apply = true;
+		GetComponent<BuffController>().reminder = "After use, gives you a copy of itself.";
 	}
 
 	public void Activate()

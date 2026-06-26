@@ -11,5 +11,6 @@ public class Miracles : MonoBehaviour
         GetComponent<BuffController>().temporary = true;
         GetComponent<BuffController>().timer = 4;
         GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name != GetComponent<Weapon>().name; };
+		GetComponent<BuffController>().reminder = "+3 armor.";
     }
 }

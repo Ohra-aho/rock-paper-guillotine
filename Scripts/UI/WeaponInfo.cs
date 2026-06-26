@@ -8,6 +8,9 @@ public class WeaponInfo : MonoBehaviour
 {
     public Weapon weapon;
 
+	public GameObject reminder;
+	public GameObject reminders;
+
     public List<Sprite> icons;
     private void Update()
     {
@@ -47,5 +50,29 @@ public class WeaponInfo : MonoBehaviour
                 transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = icons[4];
                 break;
         }
+
+		DisplayReminders();
     }
+
+	public void DisplayReminders()
+	{
+		for(int i = reminders.transform.childCount-1; i >= 0; i--) {
+			Destroy(reminders.transform.GetChild(i).gameObject);
+		}
+		if(weapon.transform.childCount > 0)
+		{
+			for(int i = 0; i < weapon.transform.childCount; i++)
+			{
+				if(weapon.transform.GetChild(i).GetComponent<Buff>().reminder != null && weapon.transform.GetChild(i).GetComponent<Buff>().reminder != "")
+				{
+					GameObject new_reminder = Instantiate(reminder, reminders.transform);
+					new_reminder.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.transform.GetChild(i).GetComponent<Buff>().reminder;
+					if(weapon.transform.GetChild(i).GetComponent<Buff>().temporary && weapon.transform.GetChild(i).GetComponent<Buff>().timer < 100)
+					{
+						new_reminder.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Turns: " + weapon.transform.GetChild(i).GetComponent<Buff>().timer;
+					}
+				}
+			}
+		}
+	}
 }

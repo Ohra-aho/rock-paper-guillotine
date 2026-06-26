@@ -15,6 +15,7 @@ public class Anglerfish : MonoBehaviour
 			new_buff.damage_buff = -2;
 			new_buff.temporary = true;
 			new_buff.timer = 2;
+			new_buff.reminder = "-2 damage";
 			new_buff.AddBuff();
 		}
 	}

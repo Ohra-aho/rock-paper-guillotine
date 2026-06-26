@@ -11,6 +11,7 @@ public class RealitySmasher : MonoBehaviour
         GetComponent<BuffController>().temporary = true;
         GetComponent<BuffController>().timer = 2;
         GetComponent<BuffController>().special_apply = true;
+		GetComponent<BuffController>().reminder = "After use, destroys itself.";
     }
 
     private void OnDestroy()

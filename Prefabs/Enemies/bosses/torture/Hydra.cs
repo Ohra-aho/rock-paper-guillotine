@@ -14,6 +14,7 @@ public class Hydra : MonoBehaviour
 		new_buff.until_used = true;
 		new_buff.temporary = true;
 		new_buff.timer = 1000;
+		new_buff.reminder = "After use, destroys itself. Lasts until the end of the fight.";
 		new_buff.AddBuff();
 	}
 
@@ -26,6 +27,7 @@ public class Hydra : MonoBehaviour
 		new_buff.until_used = true;
 		new_buff.temporary = true;
 		new_buff.timer = 1000;
+		new_buff.reminder = "Next time when used, deals 1 damage to you.";
 		new_buff.AddBuff();
 	}
 
@@ -38,6 +40,7 @@ public class Hydra : MonoBehaviour
 		new_buff.until_used = true;
 		new_buff.temporary = true;
 		new_buff.timer = 1000;
+		new_buff.reminder = "Next time when used, enemy heals 2.";
 		new_buff.AddBuff();
 	}
 
@@ -50,6 +53,7 @@ public class Hydra : MonoBehaviour
 		new_buff.until_used = true;
 		new_buff.temporary = true;
 		new_buff.timer = 1000;
+		new_buff.reminder = "Next time when used, -1 damage.";
 		new_buff.AddBuff();
 	}
 
@@ -62,6 +66,7 @@ public class Hydra : MonoBehaviour
 		new_buff.until_used = true;
 		new_buff.temporary = true;
 		new_buff.timer = 1000;
+		new_buff.reminder = "Next time when used, you get a Bleed.";
 		new_buff.AddBuff();
 	}
 }
