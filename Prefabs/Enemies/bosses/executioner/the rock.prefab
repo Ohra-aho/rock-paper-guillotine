@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
+  - component: {fileID: 6799964917637838455}
+  - component: {fileID: 4517122491037364846}
   m_Layer: 5
-  m_Name: Bunkkeri
+  m_Name: the rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,14 +98,14 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  type: 4
-  damage: 1
-  armor: 3
+  type: 0
+  damage: 2
+  armor: 0
   real_damage: 0
   real_armor: 0
-  name: Bunker
-  description: 
-  sprite: {fileID: 21300000, guid: 862a509c4609a8540881e50f868dfaef, type: 3}
+  name: The Rock
+  description: After use, heals 1. If does not lose, increases healing by 1.
+  sprite: {fileID: 21300000, guid: bfad6f89f7636184db7872a1c4922160, type: 3}
   tiers: []
   tier: 0
   first_turn:
@@ -120,7 +122,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6799964917637838455}
+        m_TargetAssemblyTypeName: Healing, Assembly-CSharp
+        m_MethodName: Heal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -138,13 +152,37 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4517122491037364846}
+        m_TargetAssemblyTypeName: Execution, Assembly-CSharp
+        m_MethodName: Rock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   lose:
     m_PersistentCalls:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4517122491037364846}
+        m_TargetAssemblyTypeName: Execution, Assembly-CSharp
+        m_MethodName: Rock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -183,9 +221,32 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks:
-  - Do you want to just sit down and chat or something? 5
-  - 'The most boring weapon if you ask me. '
-  - If you spam that, I will cut this game short. 11
+  pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
+--- !u!114 &6799964917637838455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabled: 0
+  amount: 1
+--- !u!114 &4517122491037364846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e755f5ada360dac41b3a578ff0543888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

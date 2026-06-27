@@ -119,7 +119,6 @@ public class WeaponSprite : MonoBehaviour
                     visibleInfo.transform.GetChild(1).GetChild(2)
                         .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Stacking>().stacks.ToString();
                 }
-
                 visibleInfo.transform.GetChild(2)
                     .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().description;
             }

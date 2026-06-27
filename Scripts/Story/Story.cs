@@ -33,7 +33,7 @@ public class Story : MonoBehaviour
 					InsertEvent(SC.first_boss_victory, i);
 					i++;
 					
-					boss_index++;
+					boss_index += 2;
 				}
 				else if (boss_index == 0 && !SCL.first_boss_beaten && !SC.executioner)
 				{
@@ -42,7 +42,7 @@ public class Story : MonoBehaviour
 					InsertEvent(SC.first_boss_victory, i);
 					i++;
 
-					boss_index++;
+					boss_index += 2;
 				}
 				//Non tutorial
 				else if(!SC.executioner)

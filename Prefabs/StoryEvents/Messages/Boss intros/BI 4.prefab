@@ -46,9 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Next foe is one of my persional favourites.
-  - This ought to be interesting.
-  sprite_frames: 0000000000000000
+  - The next foe should provide a challenge.
+  sprite_frames: 00000000
   activated: 0
   executioner: 0
 --- !u!114 &1705922441453647033

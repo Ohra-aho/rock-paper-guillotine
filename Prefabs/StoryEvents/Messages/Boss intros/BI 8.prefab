@@ -9,11 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7010574343782720544}
-  - component: {fileID: 3800092539451632345}
+  - component: {fileID: -3775906259973895794}
   - component: {fileID: 1705922441453647033}
-  - component: {fileID: 6579391441425394134}
   m_Layer: 0
-  m_Name: Final_Boss
+  m_Name: BI 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3800092539451632345
+--- !u!114 &-3775906259973895794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,16 +42,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3768069680275742937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1dae76cc67909a4f92310d2f43edf15, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ed939c76aa0cf147bfc77bc68207605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possible_enemies:
-  - {fileID: 6979226803842198351, guid: d21a92ec33b854a489a8057c39a64a0d, type: 3}
-  enemies: []
-  amount: 1
-  immideate_over: 0
-  last: 0
-  surprices: []
+  lines:
+  - If you can beat the next one, you might be able to get to the end.
+  - Let's see what you are made of.
+  sprite_frames: 0000000000000000
+  activated: 0
+  executioner: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,9 +67,9 @@ MonoBehaviour:
   eventFunction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3800092539451632345}
-        m_TargetAssemblyTypeName: Encounter, Assembly-CSharp
-        m_MethodName: Victory
+      - m_Target: {fileID: -3775906259973895794}
+        m_TargetAssemblyTypeName: Message, Assembly-CSharp
+        m_MethodName: PlayMessage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -81,16 +79,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6579391441425394134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3768069680275742937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8aced1cd02a4324daac37546927eca9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tier: 4

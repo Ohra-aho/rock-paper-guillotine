@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6943869333779220170}
   - component: {fileID: 6291404997652609654}
+  - component: {fileID: 1165865232959651390}
   - component: {fileID: 4809575014415415317}
-  - component: {fileID: 9126511307194648938}
   m_Layer: 5
-  m_Name: dummy
+  m_Name: executioner
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,45 +46,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6979226803842198351}
   m_CullTransparentMesh: 1
---- !u!114 &4809575014415415317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6979226803842198351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Zombie
-  image: {fileID: 21300000, guid: 1dd9bc1b5f1f4fa49a03389b50acc81f, type: 3}
-  maxHealth: 4
-  weapons:
-  - {fileID: 1944698211339908181, guid: 12529e89447752c43a73d5c0f3cd6062, type: 3}
-  - {fileID: 1944698211339908181, guid: d775991c7ddf20649aece642fa9a3b43, type: 3}
-  - {fileID: 1944698211339908181, guid: 618b7b69980b1ce43908d4faac838168, type: 3}
-  - {fileID: 1944698211339908181, guid: c23cedd8b0967794f9471d27faceb7a2, type: 3}
-  plan_1: 0000000001000000
-  plan_2: 0000000001000000
-  weapon_pairs:
-  - pair: 03000000
-  - pair: 01000000
-  - pair: 00000000
-  advanced: 0
-  victory_barks: []
-  executioner_comment: Don't look at me like that.
-  victory_message: {fileID: 0}
-  previous_weapon: {fileID: 0}
-  weapon_streak: 0
-  off_balance: 0
-  nearDeath: 0
-  off_balance_pattern_done: 0
-  commented: 0
-  HB: {fileID: 0}
-  off_balance_triggered: 0
---- !u!212 &9126511307194648938
+--- !u!212 &1165865232959651390
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,3 +98,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4809575014415415317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979226803842198351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f227d38b12b177d44a6464a2e330df78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Executioner
+  image: {fileID: 21300000, guid: 3ff537b3de3cd4a438b3f3fddbac78b1, type: 3}
+  maxHealth: 15
+  weapons:
+  - {fileID: 1944698211339908181, guid: 7bea7f220a2e66f4aa98df7663d8a28f, type: 3}
+  - {fileID: 1944698211339908181, guid: 393d3f29bda70a4408fc8c8c8d063530, type: 3}
+  - {fileID: 1944698211339908181, guid: 67d3cd33fbd8a73448ae145dedfc2869, type: 3}
+  - {fileID: 1944698211339908181, guid: 38eb5494ddeb3de4cada1694ce4a687c, type: 3}
+  - {fileID: 1944698211339908181, guid: b5c71a041412f1f46ab2c28b42b55f4d, type: 3}
+  - {fileID: 1944698211339908181, guid: c23cedd8b0967794f9471d27faceb7a2, type: 3}
+  plan_1: 0000000003000000040000000a0000000500000009000000060000000700000002000000010000000b00000008000000
+  plan_2: 00000000020000000900000007000000040000000b000000050000000a00000006000000030000000100000008000000
+  weapon_pairs:
+  - pair: 000000000100000002000000
+  - pair: 0000000001000000
+  - pair: 0000000002000000
+  - pair: 0100000002000000
+  - pair: 03000000
+  - pair: 04000000
+  - pair: 0100000005000000
+  - pair: 0000000005000000
+  - pair: 0000000004000000
+  - pair: 0100000003000000
+  - pair: 0200000004000000
+  - pair: 0200000003000000
+  advanced: 0
+  victory_barks: []
+  executioner_comment: Placeholder
+  victory_message: {fileID: 0}
+  previous_weapon: {fileID: 0}
+  weapon_streak: 0
+  off_balance: 0
+  nearDeath: 0
+  off_balance_pattern_done: 0
+  commented: 0
+  HB: {fileID: 0}
+  off_balance_triggered: 0

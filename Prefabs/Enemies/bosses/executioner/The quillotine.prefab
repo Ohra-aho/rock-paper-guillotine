@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
+  - component: {fileID: 8723207103683505287}
+  - component: {fileID: -6545948779322140261}
   m_Layer: 5
-  m_Name: Bunkkeri
+  m_Name: The quillotine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,16 +96,17 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
-  draw_winner: 0
+  draw_winner: 1
   spammable: 0
-  type: 4
-  damage: 1
-  armor: 3
+  type: 2
+  damage: 10
+  armor: 0
   real_damage: 0
   real_armor: 0
-  name: Bunker
-  description: 
-  sprite: {fileID: 21300000, guid: 862a509c4609a8540881e50f868dfaef, type: 3}
+  name: Guillotine
+  description: At the end of each turn, gains 1 point. Is "unbeatable" while has
+    10 or more points. Wins draws.
+  sprite: {fileID: 21300000, guid: bfad6f89f7636184db7872a1c4922160, type: 3}
   tiers: []
   tier: 0
   first_turn:
@@ -165,7 +168,19 @@ MonoBehaviour:
       m_Calls: []
   eachTurn:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8723207103683505287}
+        m_TargetAssemblyTypeName: Execution, Assembly-CSharp
+        m_MethodName: Guilliotien
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -183,9 +198,42 @@ MonoBehaviour:
   sakset_synergy: 0
   points: 0
   used_this_game: 0
-  pick_barks:
-  - Do you want to just sit down and chat or something? 5
-  - 'The most boring weapon if you ask me. '
-  - If you spam that, I will cut this game short. 11
+  pick_barks: []
   executioner_comment: 
   damage_soft_cap: 7
+--- !u!114 &8723207103683505287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e755f5ada360dac41b3a578ff0543888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  judged: {fileID: 0}
+--- !u!114 &-6545948779322140261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stacks: 0
+  stack_limit: 10
+  LoadFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
+    m_PersistentCalls:
+      m_Calls: []

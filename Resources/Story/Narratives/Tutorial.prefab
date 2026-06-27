@@ -52,17 +52,17 @@ MonoBehaviour:
   - {fileID: 3768069680275742937, guid: 1538014c1a584a647ae75befab5c32f0, type: 3}
   - {fileID: 503840598905201475, guid: 0263b2b182f9d0b419999914aab8d22f, type: 3}
   boss_introduxtions_1:
+  - {fileID: 3768069680275742937, guid: 9f52767a369a8a9498b261fb484acf96, type: 3}
+  - {fileID: 3768069680275742937, guid: 38121014adeb1b143824f573effe7279, type: 3}
+  boss_introduxtions_2:
   - {fileID: 3768069680275742937, guid: 4ff63472b445b0748bfbec5fee5e5087, type: 3}
   - {fileID: 3768069680275742937, guid: 8fd0eeeda0adb1f4ba57ecd7dfdfb7e7, type: 3}
-  boss_introduxtions_2:
-  - {fileID: 3768069680275742937, guid: 9f52767a369a8a9498b261fb484acf96, type: 3}
-  - {fileID: 3768069680275742937, guid: 38121014adeb1b143824f573effe7279, type: 3}
   boss_introduxtions_3:
-  - {fileID: 3768069680275742937, guid: 9f52767a369a8a9498b261fb484acf96, type: 3}
-  - {fileID: 3768069680275742937, guid: 38121014adeb1b143824f573effe7279, type: 3}
+  - {fileID: 3768069680275742937, guid: 06d9d69fffea8404b886d07ae8e51ad8, type: 3}
+  - {fileID: 3768069680275742937, guid: e8c5cd5768a180446a7adce967cb2dad, type: 3}
   boss_introduxtions_4:
-  - {fileID: 3768069680275742937, guid: 9f52767a369a8a9498b261fb484acf96, type: 3}
-  - {fileID: 3768069680275742937, guid: 4ff63472b445b0748bfbec5fee5e5087, type: 3}
+  - {fileID: 3768069680275742937, guid: c9bdf4fe3f3934e44bad4ee52a9bd868, type: 3}
+  - {fileID: 3768069680275742937, guid: 5876d18343d72c947bcd2f8dc2e29705, type: 3}
   boss_victories_1:
   - {fileID: 3768069680275742937, guid: 597fff1c9b372624996ed305049d3b28, type: 3}
   - {fileID: 3768069680275742937, guid: 1231b5293c5b95146ba81f5cf4bdc6d5, type: 3}
@@ -72,7 +72,9 @@ MonoBehaviour:
   boss_victories_3:
   - {fileID: 3768069680275742937, guid: 04637cb40be01b141a16e09d9fbdfcd9, type: 3}
   - {fileID: 3768069680275742937, guid: 0cc0e7163201f2c41aa4f81f840568eb, type: 3}
-  end: []
+  end:
+  - {fileID: 3768069680275742937, guid: db02cb83b7812b54187a83a07e3bb68e, type: 3}
+  - {fileID: 3768069680275742937, guid: 7b7632a15e9a91a469ec374460f73fab, type: 3}
   exe_boss_victories:
   - {fileID: 3768069680275742937, guid: b15bd4a8ad82ccd49abebcd8cc66aa5d, type: 3}
   - {fileID: 3768069680275742937, guid: c74dcfb5a3d191f45b43777b5365dd1d, type: 3}

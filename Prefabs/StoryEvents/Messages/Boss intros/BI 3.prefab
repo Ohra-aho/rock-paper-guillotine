@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - Give it your all for the next fight.
-  - I believe in you.
+  - I think you can do this.
   sprite_frames: 0000000000000000
   activated: 0
   executioner: 0

@@ -41,6 +41,7 @@ public class Narrative : MonoBehaviour
 			case 1: return boss_victories_1[Random.Range(0, boss_victories_1.Count)];
 			case 2: return boss_victories_2[Random.Range(0, boss_victories_2.Count)];
 			case 3: return boss_victories_3[Random.Range(0, boss_victories_3.Count)];
+			case 4: return end[Random.Range(0, end.Count)];
 			default: return boss_victories_1[Random.Range(0, boss_victories_1.Count)];
 		}
 	}
