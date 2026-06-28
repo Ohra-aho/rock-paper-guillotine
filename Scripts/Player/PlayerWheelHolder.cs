@@ -47,7 +47,6 @@ public class PlayerWheelHolder : MonoBehaviour
         {
             DetachWheel();
         }
-        DisableAchievements();
     }
 
     public void DisableAchievements()

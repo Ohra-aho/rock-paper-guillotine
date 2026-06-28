@@ -12,7 +12,6 @@ public class Collector : MonoBehaviour
 
     private void GainRandomWeapon()
     {
-        int index = Random.Range(0, possible_weapons.Count);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(possible_weapons[index]);
+        GameObject.Find("EventSystem").GetComponent<MainController>().collector = true;
     }
 }

@@ -108,7 +108,10 @@ MonoBehaviour:
   description: Whenever you take damage with any weapon, gains 1 point. Uses 5 points
     after use to give you one random "Eldritch power".
   sprite: {fileID: 21300000, guid: c6ed8ce54727be24aa6ed9b94b68eeb8, type: 3}
-  tiers: []
+  tiers:
+  - {fileID: 21300000, guid: 97b5b00782b0b474fa59e2cb07562f1a, type: 3}
+  - {fileID: 21300000, guid: 3a240671df9813341b93bf5e6caeb7eb, type: 3}
+  - {fileID: 21300000, guid: 4bfec1fcc837111449725ed56728ceac, type: 3}
   tier: 0
   first_turn:
     m_PersistentCalls:
@@ -268,6 +271,7 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   until_used: 0
+  reminder: 
   destructive: 0
   heal_disabler: 0
 --- !u!114 &2426040337145588873

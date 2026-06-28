@@ -167,22 +167,16 @@ public class Weapon : MonoBehaviour
 
     public void EffectDamage(int amount)
     {
-        if(opponent != null)
-        {
-            opponent.TakeDamage(amount);
-        } else
-        {
-            if(player)
-            {
-				if(penetrating) GameObject.Find("Table").GetComponent<TableController>().enemy_direct_damage += amount;
-				else GameObject.Find("Table").GetComponent<TableController>().enemy_damage += amount;
-                
-            } else
-            {
-                if(penetrating) GameObject.Find("Table").GetComponent<TableController>().player_direct_damage += amount;
-				else GameObject.Find("Table").GetComponent<TableController>().player_damage += amount;
-            }
-        }
+		if(player)
+		{
+			if(penetrating || GetComponent<EffectDamage>().armor_piercing) GameObject.Find("Table").GetComponent<TableController>().enemy_direct_damage += amount;
+			else GameObject.Find("Table").GetComponent<TableController>().enemy_damage += amount;
+			
+		} else
+		{
+			if(penetrating || GetComponent<EffectDamage>().armor_piercing) GameObject.Find("Table").GetComponent<TableController>().player_direct_damage += amount;
+			else GameObject.Find("Table").GetComponent<TableController>().player_damage += amount;
+		}
     }
 
     //Used in effects. Doesn't trigger enemies damage effects
@@ -194,12 +188,12 @@ public class Weapon : MonoBehaviour
         {
             if (player)
             {
-                if(penetrating) TC.player_direct_damage += realDamage;
+                if(penetrating || GetComponent<EffectDamage>().armor_piercing) TC.player_direct_damage += realDamage;
 				else TC.player_damage += realDamage;
             }
             else
             {
-				if(penetrating) TC.enemy_direct_damage += realDamage;
+				if(penetrating || GetComponent<EffectDamage>().armor_piercing) TC.enemy_direct_damage += realDamage;
                 else TC.enemy_damage += realDamage;
             }
         }

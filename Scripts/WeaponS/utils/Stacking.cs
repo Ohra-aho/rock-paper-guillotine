@@ -22,8 +22,6 @@ public class Stacking : MonoBehaviour
                 if (before_stacking != null) before_stacking.Invoke();
                 stacks += amount;
                 GameObject RLC = GameObject.Find("EventSystem");
-                RLC.GetComponent<RLController>().hoard_counter++;
-                RLC.GetComponent<RLController>().CheckForHoarder();
                 if (after_stacking != null) after_stacking.Invoke();
             }
             if (stacks > stack_limit)
@@ -41,8 +39,6 @@ public class Stacking : MonoBehaviour
             if (after_stacking != null) after_stacking.Invoke();
             GetComponent<Weapon>().gain_points.Invoke();
             GameObject RLC = GameObject.Find("EventSystem");
-            RLC.GetComponent<RLController>().hoard_counter++;
-            RLC.GetComponent<RLController>().CheckForHoarder();
         }
 
     }

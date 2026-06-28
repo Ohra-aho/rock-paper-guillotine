@@ -23,7 +23,7 @@ public class Hoarder : MonoBehaviour
                 GameObject new_buff = Instantiate(buff, weapon.transform);
                 new_buff.GetComponent<Buff>().id = name;
                 new_buff.GetComponent<Buff>().AddBuff();
-                weapon.GetComponent<Stacking>().IncreaseStacks(1);
+                weapon.GetComponent<Stacking>().IncreaseStacks(2);
             }
         }
     }

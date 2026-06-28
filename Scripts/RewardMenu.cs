@@ -29,7 +29,8 @@ public class RewardMenu : MonoBehaviour
         real_inventory = GameObject.Find("Real inventory");
 
         RemovePossibleRewards();
-        makeRewardList();
+        if(transform.childCount == 3) makeRewardList();
+		else CollectorRewardList();
 
         //GetComponent<RewardBarks>().InstanciateRewardBarks();
         rope = GameObject.Find("Roope");
@@ -109,14 +110,12 @@ public class RewardMenu : MonoBehaviour
     {
         //Achievement check
         bool neurotic = false;
-        Neurotic the_neurotic = null;
-
+		
         for (int i = 0; i < MC.GetComponent<RLController>().chosen_buffs.Count; i++)
         {
             if(MC.GetComponent<RLController>().chosen_buffs[i].GetComponent<Neurotic>())
             {
                 neurotic = true;
-                the_neurotic = MC.GetComponent<RLController>().chosen_buffs[i].GetComponent<Neurotic>();
                 break;
             }
         }
@@ -146,43 +145,9 @@ public class RewardMenu : MonoBehaviour
             }
         } else
         {
-            the_neurotic.MakeTrueRewardLists();
-            if (CheckIfPlayerIsHurt())
-            {
-                int heal_chance = Random.Range(1, 4);
-                if(heal_chance == 3)
-                {
-                    int heal = Random.Range(1, 4);
-                    switch (heal)
-                    {
-                        case 1:
-                            rewards.Add(the_neurotic.rock_heal);
-                            rewards.Add(the_neurotic.GiveRandomPaper(MC.reward_tier));
-                            rewards.Add(the_neurotic.GiveRandomScissors(MC.reward_tier));
-                            break;
-                        case 2:
-                            rewards.Add(the_neurotic.GiveRandomRock(MC.reward_tier));
-                            rewards.Add(the_neurotic.paper_heal);
-                            rewards.Add(the_neurotic.GiveRandomScissors(MC.reward_tier));
-                            break;
-                        case 3:
-                            rewards.Add(the_neurotic.GiveRandomRock(MC.reward_tier));
-                            rewards.Add(the_neurotic.GiveRandomPaper(MC.reward_tier));
-                            rewards.Add(the_neurotic.scissors_heal);
-                            break;
-                    }
-                } else
-                {
-                    rewards.Add(the_neurotic.GiveRandomRock(MC.reward_tier));
-                    rewards.Add(the_neurotic.GiveRandomPaper(MC.reward_tier));
-                    rewards.Add(the_neurotic.GiveRandomScissors(MC.reward_tier));
-                }
-            } else
-            {
-                rewards.Add(the_neurotic.GiveRandomRock(MC.reward_tier));
-                rewards.Add(the_neurotic.GiveRandomPaper(MC.reward_tier));
-                rewards.Add(the_neurotic.GiveRandomScissors(MC.reward_tier));
-            }
+            rewards.Add(GetRandomRewardByType(MainController.Choise.kivi));
+            rewards.Add(GetRandomRewardByType(MainController.Choise.paperi));
+            rewards.Add(GetRandomRewardByType(MainController.Choise.sakset));
         }
         for (int i = 0; i < rewards.Count; i++)
         {
@@ -191,6 +156,51 @@ public class RewardMenu : MonoBehaviour
         }
 
     }
+
+	public void CollectorRewardList()
+	{
+		bool neurotic = false;
+		
+        for (int i = 0; i < MC.GetComponent<RLController>().chosen_buffs.Count; i++)
+        {
+            if(MC.GetComponent<RLController>().chosen_buffs[i].GetComponent<Neurotic>())
+            {
+                neurotic = true;
+                break;
+            }
+        }
+
+		if(!neurotic)
+        {
+            //Get at least one random reward
+            rewards.Add(GetRandomReward());
+            rewards.Add(GetRandomReward());
+            rewards.Add(GetRandomReward());
+
+            //Change to get at least one healing weapon
+            if (CheckIfPlayerIsHurt())
+            {
+                int heal_chance = Random.Range(1, 4);
+                if (heal_chance == 3) rewards.Add(SubChooseRandomWeapon(healing));
+                else rewards.Add(GetRandomReward());
+            }
+            else
+            {
+                rewards.Add(GetRandomReward());
+            }
+        } else
+        {
+            rewards.Add(GetRandomRewardByType(MainController.Choise.kivi));
+            rewards.Add(GetRandomRewardByType(MainController.Choise.paperi));
+            rewards.Add(GetRandomRewardByType(MainController.Choise.sakset));
+            rewards.Add(GetRandomReward());
+        }
+        for (int i = 0; i < rewards.Count; i++)
+        {
+            transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards[i];
+            transform.GetChild(i).GetChild(0).GetComponent<Revard>().Invoke();
+        }
+	}
 
     private bool CheckIfPlayerIsHurt()
     {
@@ -236,6 +246,21 @@ public class RewardMenu : MonoBehaviour
         }
         return null;
     }
+
+	private GameObject GetRandomRewardByType(MainController.Choise type)
+    {
+        switch (MC.reward_tier)
+        {
+            case 1:
+                return SubChooseRandomWeaponByType(rewards1, type); 
+            case 2:
+                return SubChooseRandomWeaponByType(rewards2, type); 
+            case 3:
+                return SubChooseRandomWeaponByType(rewards3, type); 
+        }
+        return null;
+    }
+
     //Used in function above
     private GameObject SubChooseRandomWeapon(List<GameObject> list)
     {
@@ -252,11 +277,34 @@ public class RewardMenu : MonoBehaviour
             {
                 temp = list[Random.Range(0, list.Count)];
                 safe++;
+				if(safe == 500)
+				{
+					break;
+				}
             }
             if (safe >= 500) Debug.Log("Safe");
             return temp;
         }
 
+    }
+
+	private GameObject SubChooseRandomWeaponByType(List<GameObject> list, MainController.Choise type)
+    {
+        //Get random reward which is not alrady chosen
+        //
+		GameObject temp = list[Random.Range(0, list.Count)];
+		int safe = 0;
+		while (rewards.Contains(temp) || temp.GetComponent<Weapon>().type != type)
+		{
+			temp = list[Random.Range(0, list.Count)];
+			safe++;
+			if(safe == 1000)
+			{
+				break;
+			}
+		}
+		if (safe >= 1000) Debug.Log("Safe");
+		return temp;
     }
 
     private List<GameObject> GiveCurrentRewardTier()

@@ -220,6 +220,14 @@ public class PlayerContoller : MonoBehaviour
                 }
             }
         }
+
+		for(int i = 0; i < MC.GetComponent<RLController>().chosen_buffs.Count; i++)
+		{
+			if(MC.GetComponent<RLController>().chosen_buffs[i].GetComponent<Relentless>())
+			{
+				MC.GetComponent<RLController>().chosen_buffs[i].GetComponent<Relentless>().DealDamage();
+			}
+		}
     }
 
     //Combat functions
@@ -274,27 +282,6 @@ public class PlayerContoller : MonoBehaviour
     public void EndPhase()
     {
         if (chosenWeapon != null) chosenWeapon.GetComponent<Weapon>().endPhase.Invoke();
-
-        /*for(int i = 0; i < TrueInventory.transform.childCount; i++)
-        {
-            GameObject weapon = TrueInventory.transform.GetChild(i).gameObject;
-            if (weapon.transform.childCount > 0)
-            {
-                for(int j = 0; j < weapon.transform.childCount; j++)
-                {
-                    if(weapon.transform.GetChild(j).GetComponent<Buff>().timer > 0)
-                    {
-                        weapon.transform.GetChild(j).GetComponent<Buff>().TickDown();
-                    }
-                }
-            }
-        }*/
-        
-        if(MC.first_turn)
-        {
-            MC.GetComponent<RLController>().CheckForSlow();
-            MC.first_turn = false;
-        }
     }
 
 

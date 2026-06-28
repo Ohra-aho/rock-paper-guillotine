@@ -10,6 +10,7 @@ public class MainController : MonoBehaviour
     [HideInInspector] public bool? won;
     [HideInInspector] public bool victory = false;
     [HideInInspector] public bool endTriggered;
+	[HideInInspector] public bool collector;
     public bool stop;
 
     public TableController TC;
@@ -25,6 +26,7 @@ public class MainController : MonoBehaviour
     public GameObject startButton;
     public GameObject rewardmenuHolder;
     public GameObject rewardMenu;
+    public GameObject rewardMenu2;
 
     public GameObject quilliotine;
     public GameObject story_event_holder;
@@ -299,13 +301,11 @@ public class MainController : MonoBehaviour
 
         //Achievement checks
         GetComponent<RLController>().CHeckHPMaster();
-        GetComponent<RLController>().CheckForSlautherer();
-        GetComponent<RLController>().CheckForMadman();
-        GetComponent<RLController>().CheckForTraditionalist();
+        GetComponent<RLController>().CheckForMadman();		
         GetComponent<RLController>().CheckForRiskTaker();
         GetComponent<RLController>().CheckForPlotter();
         GetComponent<RLController>().CheckForSurvivor();
-        GetComponent<RLController>().CheckForLucky();
+		GetComponent<RLController>().CheckForHoarder();
         GetComponent<RLController>().unyielding_counter = 0;
         GameObject.Find("Reward reroll").GetComponent<RewardReroll>().used = false;
 
@@ -313,11 +313,13 @@ public class MainController : MonoBehaviour
             !story_event_holder.transform.GetChild(0).GetComponent<Encounter>().last && 
             !player.GetComponent<PlayerContoller>().HB.dead && 
             !rewards_disabled
-            ) SpawnRewardMenu();
+            )
+		{
+			SpawnRewardMenu();
+		} 
 
         //Barks
         DisplayVictoryBark();
-
     }
 
     
@@ -345,7 +347,13 @@ public class MainController : MonoBehaviour
 
     public void SpawnRewardMenu()
     {
-        Instantiate(rewardMenu, rewardmenuHolder.transform);
+		if(!collector)
+		{
+        	Instantiate(rewardMenu, rewardmenuHolder.transform);
+		} else
+		{
+			Instantiate(rewardMenu2, rewardmenuHolder.transform);
+		}
     }
 
 

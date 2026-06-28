@@ -146,6 +146,7 @@ public class StartButton : MonoBehaviour
 
     public void Deactivate()
     {
+        MC.GetComponent<RLController>().CheckForMartyr();
         DisplayForfeitBark(!MC.GetComponent<StoryCheckList>().first_forfeit);
         GetComponent<SpriteRenderer>().sprite = inactive;
 

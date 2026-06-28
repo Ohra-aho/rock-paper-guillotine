@@ -45,7 +45,7 @@ public class WeaponInfoRack : MonoBehaviour
 
 	public void TelegraphWeapons(List<int> pair)
 	{
-		for(int i = 0; i < transform.childCount; i++)
+		for(int i = 0; i < 6; i++)
 		{
 			if(transform.GetChild(i).GetComponent<WeaponWard>().telegraphing)
 			{

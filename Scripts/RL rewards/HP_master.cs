@@ -6,7 +6,7 @@ public class HP_master : MonoBehaviour
 {
     public void Chosen()
     {
-         IncreaseHP();
+        IncreaseHP();
     }
 
     private void IncreaseHP()

@@ -19,7 +19,7 @@ public class Slow : MonoBehaviour
                 new_buff.GetComponent<Buff>().id = name;
                 new_buff.GetComponent<Buff>().armor_buff = 2;
                 new_buff.GetComponent<Buff>().temporary = true;
-                new_buff.GetComponent<Buff>().timer = 1;
+                new_buff.GetComponent<Buff>().timer = 2;
                 new_buff.GetComponent<Buff>().AddBuff();
             }
         }
