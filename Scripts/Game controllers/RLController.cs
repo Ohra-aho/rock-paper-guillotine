@@ -42,12 +42,13 @@ public class RLController : MonoBehaviour
 
         background = GameObject.Find("main screen background");
 
-        ActivateAchievements();
-
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
+		player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
         RI = GameObject.FindGameObjectWithTag("RI");
         wheel_holder = GameObject.Find("PlayerWheelHolder");
         MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
+
+        ActivateAchievements();
+		RemoveMartyrWeapons();
     }
 
     public void ApplyBuffs()
@@ -83,24 +84,56 @@ public class RLController : MonoBehaviour
                 case "Picky": background.transform.GetChild(13).gameObject.SetActive(true); break;
                 case "Hoarder": background.transform.GetChild(14).gameObject.SetActive(true); break;
 				default:
-					List<GameObject> all_weapons = new List<GameObject>();
-					//all_weapons.AddRange(Resources.LoadAll<GameObject>("weapons/hyödytön"));
-					//all_weapons.AddRange(Resources.LoadAll<GameObject>("weapons/Kivi"));
-					//all_weapons.AddRange(Resources.LoadAll<GameObject>("weapons/paperi"));
-					//all_weapons.AddRange(Resources.LoadAll<GameObject>("weapons/sakset"));
-					//all_weapons.AddRange(Resources.LoadAll<GameObject>("weapons/voittamaton"));
-					for(int j = 0; j < all_weapons.Count; j++)
+					char type = achievements[i][0];
+					string path = "weapons/";
+					switch(type)
 					{
-						if(all_weapons[j].GetComponent<Weapon>().name == achievements[i])
-						{
-							GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(all_weapons[j]);
-							break;
-						}
+						case 'k': path += "Kivi";  break;
+						case 'p': path += "paperi";  break;
+						case 's': path += "sakset";  break;
+						case 'v': path += "voittamaton";  break;
+						case 'h': path += "hyödytön";  break;
+					}
+					GameObject weapon = Resources.Load<GameObject>(path + "/" + achievements[i].Substring(1, achievements[i].Length-1));
+					if(weapon != null)
+					{
+						GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().items.Add(weapon);	
 					}
 					break;
             }
         }
     }
+
+	private void RemoveMartyrWeapons()
+	{
+		bool found = false;
+		for (int i = 0; i < achievements.Count; i++)
+		{
+			switch(achievements[i])
+            {
+                case "Tough": break;
+                case "Collector": break;
+                case "Slaughterer": break;
+                case "Slow": break;
+                case "Experimentor": break;
+                case "Madman": break;
+                case "Martyr": break;
+                case "Risk taker": break;
+                case "Neurotic": break;
+                case "Plotter": break;
+                case "Survivor": break;
+                case "Relentless": break;
+                case "Unyielding": break;
+                case "Picky": break;
+                case "Hoarder": break;
+				default:
+					achievements.RemoveAt(i);
+					found = true;
+					break;
+            }
+			if(found) break;
+		}
+	}
 
     public void ActivateWinEffects()
     {

@@ -174,7 +174,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -7525784373397673617}
         m_TargetAssemblyTypeName: EldritchPower, Assembly-CSharp
-        m_MethodName: BuffDamage
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -21965,7 +21965,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Martyr
-  description: If you give, the next person gets one of your equipped weapons.
+  description: If you give up, the next person gets the last weapon you have used.
+    If no weapon has been used,, the weapon given will be random.
   buffing:
     m_PersistentCalls:
       m_Calls: []
