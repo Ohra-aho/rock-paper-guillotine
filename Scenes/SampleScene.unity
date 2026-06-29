@@ -17334,6 +17334,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 138571110}
+        m_TargetAssemblyTypeName: PlayerWheelHolder, Assembly-CSharp
+        m_MethodName: MarkUsedWeapons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -65988,9 +66000,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f0e41909c0d6d6a48a5d4b8e19513d8b, type: 3}
   - {fileID: 21300000, guid: 7a63350e1538e1e4eb79323b1d08d629, type: 3}
   backs:
-  - {fileID: 21300000, guid: a12c7157bb516bc4db48df2e1cf7aa79, type: 3}
-  - {fileID: 21300000, guid: 895b44f0f18c64b4c931cf01f6a527a6, type: 3}
-  - {fileID: 21300000, guid: c6206a1f37d66b14c984da18c377ef64, type: 3}
+  - {fileID: 21300000, guid: 83fc2a79bceb4c249bcf68be3aa43d9a, type: 3}
+  - {fileID: 21300000, guid: 8977aab7d46fd6b44856657c7c365274, type: 3}
+  - {fileID: 21300000, guid: eff7c6c3752222d46a24cfff4f967015, type: 3}
 --- !u!114 &1668795461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83368,9 +83380,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f0e41909c0d6d6a48a5d4b8e19513d8b, type: 3}
   - {fileID: 21300000, guid: 7a63350e1538e1e4eb79323b1d08d629, type: 3}
   backs:
-  - {fileID: 21300000, guid: a12c7157bb516bc4db48df2e1cf7aa79, type: 3}
-  - {fileID: 21300000, guid: 895b44f0f18c64b4c931cf01f6a527a6, type: 3}
-  - {fileID: 21300000, guid: c6206a1f37d66b14c984da18c377ef64, type: 3}
+  - {fileID: 21300000, guid: 83fc2a79bceb4c249bcf68be3aa43d9a, type: 3}
+  - {fileID: 21300000, guid: 8977aab7d46fd6b44856657c7c365274, type: 3}
+  - {fileID: 21300000, guid: eff7c6c3752222d46a24cfff4f967015, type: 3}
 --- !u!1 &2086864011
 GameObject:
   m_ObjectHideFlags: 0

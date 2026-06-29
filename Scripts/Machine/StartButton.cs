@@ -121,7 +121,6 @@ public class StartButton : MonoBehaviour
             GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().defeat = false;
             GameObject ec = GameObject.Find("EnemyHolder");
             ec.GetComponent<EnemyController>().victory = false;
-            //ec.GetComponent<EnemyController>().HandleEnemy();
 
             GetComponent<SpriteRenderer>().sprite = active;
             machine.GetComponent<Test>().PlayAnimation("CloseMachine");
