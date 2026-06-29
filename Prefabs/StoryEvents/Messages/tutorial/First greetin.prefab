@@ -51,7 +51,7 @@ MonoBehaviour:
   - I have to say, this is a little bit too harsh for you,
   - but I don't make decisions.
   - Detach the gear and we can begin.
-  sprite_frames: 0300000000000000070000000000000008000000
+  sprite_frames: 0300000006000000070000000600000008000000
   activated: 0
   executioner: 0
 --- !u!114 &1705922441453647033

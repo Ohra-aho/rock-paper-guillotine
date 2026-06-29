@@ -50,7 +50,7 @@ MonoBehaviour:
   - You are not bad at this.
   - You have beaten the one with four slots.
   - Now you shall be the one with four slots.
-  sprite_frames: 020000000c000000000000000c000000
+  sprite_frames: 0f0000000c0000000600000015000000
   activated: 0
   executioner: 0
 --- !u!114 &1705922441453647033

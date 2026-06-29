@@ -474,6 +474,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1f343e7416db9ca4b8ba4dae9a4b2af1, type: 3}
   - {fileID: 21300000, guid: f0e41909c0d6d6a48a5d4b8e19513d8b, type: 3}
   - {fileID: 21300000, guid: 7a63350e1538e1e4eb79323b1d08d629, type: 3}
+  tiers:
+  - {fileID: 21300000, guid: 83fc2a79bceb4c249bcf68be3aa43d9a, type: 3}
+  - {fileID: 21300000, guid: 8977aab7d46fd6b44856657c7c365274, type: 3}
+  - {fileID: 21300000, guid: eff7c6c3752222d46a24cfff4f967015, type: 3}
   disabled: 0
 --- !u!114 &7725548519680719197
 MonoBehaviour:

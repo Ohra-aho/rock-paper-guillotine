@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - Well. It wasn't so bad. Was it?
-  sprite_frames: 00000000
+  sprite_frames: 06000000
   activated: 0
   executioner: 0
 --- !u!114 &1705922441453647033

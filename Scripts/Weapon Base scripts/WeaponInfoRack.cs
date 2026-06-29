@@ -51,7 +51,7 @@ public class WeaponInfoRack : MonoBehaviour
 			{
 				for(int j = 0; j < pair.Count; j++)
 				{
-					if(i != pair[j])
+					if(!pair.Contains(i))
 					{
 						transform.GetChild(i).GetComponent<WeaponWard>().ResetTelegraph();
 						break;
@@ -63,16 +63,17 @@ public class WeaponInfoRack : MonoBehaviour
 		{
 			transform.GetChild(pair[i]).GetComponent<WeaponWard>().Telegraph();
 		}
+		for(int i = 0; i < transform.childCount; i++)
+		{
+			transform.GetChild(i).GetComponent<WeaponWard>().TrueTelegrpah();
+		}
 	}
 
-	public void ResetTelegraphs()
+	public void TrueReset()
 	{
 		for(int i = 0; i < transform.childCount; i++)
 		{
-			if(transform.GetChild(i).GetComponent<WeaponWard>().telegraphing)
-			{
-				transform.GetChild(i).GetComponent<WeaponWard>().ResetTelegraph();
-			}
+			transform.GetChild(i).GetComponent<WeaponWard>().TrueTelegrpah();
 		}
 	}
 

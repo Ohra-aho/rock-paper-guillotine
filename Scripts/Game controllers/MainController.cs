@@ -48,9 +48,9 @@ public class MainController : MonoBehaviour
     GameObject RI;
 
     private string[] executioner_loss = {
-           "Well that's embarasing.",
-           "End of the line, I suppose",
-           "And that's the game."
+		"Well that's embarasing.",
+		"End of the line, I suppose",
+		"And that's the game."
     };
 
 
@@ -289,6 +289,7 @@ public class MainController : MonoBehaviour
 
     public void Win()
     {
+		GetComponent<RLController>().martyr_counter++;
         victory = true;
         if (!GetComponent<StoryCheckList>().first_victory) GetComponent<StoryCheckList>().first_victory = true;
         //Achievement victory effects

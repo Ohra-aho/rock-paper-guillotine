@@ -93,7 +93,7 @@ public class Weapon : MonoBehaviour
 	{
 		if(tiers.Count == 0)
 		{
-			tiers.AddRange(Resources.LoadAll<Sprite>("backgrounds"));
+			//tiers.AddRange(Resources.LoadAll<Sprite>("backgrounds"));
 		}
 	}
 
@@ -234,7 +234,7 @@ public class Weapon : MonoBehaviour
             if (dead)
             {
                 GameObject infoHolder = GameObject.Find("enemy weapon rack");
-				infoHolder.GetComponent<WeaponInfoRack>().ResetTelegraphs();
+				infoHolder.GetComponent<WeaponInfoRack>().TrueReset();
                 infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
                 GameObject.Find("EventSystem").GetComponent<MainController>().Win();
                 if(on_death != null) on_death.Invoke();

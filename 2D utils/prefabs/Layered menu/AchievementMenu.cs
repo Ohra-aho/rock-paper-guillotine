@@ -9,21 +9,21 @@ public class AchievementMenu : MonoBehaviour
 
     string[][] achievements =
     {
-        new string[] { "Tough", "Win an encounter with 10 or more max HP" },
-        new string[] { "Collector", "Own 13 or more weapons." },
-        new string[] { "Slaughterer", "Win a fight while owning a weapon with 7 or more damage." },
-        new string[] { "Slow", "Take damage on the first turn 3 times in a row." },
-        new string[] { "Experimentor", "Use 13 different weapons during." },
-        new string[] { "Madman", "Win a fight with at least 2 'useless' weapons equipped." },
-        new string[] { "Traditionalist", "Win a fight with the original rock, paper or sciccors after the first boss." },
+        new string[] { "Tough", "Win an encounter with 10 or more max hp" },
+        new string[] { "Collector", "Own 12 or more weapons." },
+        new string[] { "Slaughterer", "Deal 5 or more damage during a single round" },
+        new string[] { "Slow", "Take damage on the first turn 4 times during a single game." },
+        new string[] { "Experimentor", "Use 13 different weapons during a single game." },
+        new string[] { "Madman", "Win a fight with at least 2 \"useless\" weapons equipped." },
+        new string[] { "Martyr", "Give up after defeating at least 5 enemies." },
         new string[] { "Risk taker", "Win a fight with no weapons left equipped." },
         new string[] { "Neurotic", "Own 4 rocks, 4 sicssors and 4 papers."},
-        new string[] { "Plotter", "Win an fight with only effect damage dealing weapons equipped." },
-        new string[] { "Survivor", "Win 3 fights with 1 HP." },
-        new string[] { "Relentless", "Win a fight with a draw." },
+        new string[] { "Plotter", "Win 4 fights with only effect damage dealing weapons equipped in a single game." },
+        new string[] { "Survivor", "Win 3 fights with 1 HP during a single game." },
+        new string[] { "Relentless", "Deal damage 5 times in a row." },
         new string[] { "Unyielding", "Heal 3 times during a one fight." },
         new string[] { "Picky", "After the first boss, own 7 weapons you have never brought to a fight." },
-        new string[] { "Hoarder", "Collect total of 20 points." },
+        new string[] { "Hoarder", "Win a fight with at least 10 points on your equipped weapons." },
     };
 
     private void Awake()

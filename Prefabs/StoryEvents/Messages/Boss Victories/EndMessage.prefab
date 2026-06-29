@@ -50,7 +50,7 @@ MonoBehaviour:
   - You made it through.
   - I honestly didn't think you would.
   - Did you have a favourite weapon?
-  sprite_frames: 00000000000000000000000000000000
+  sprite_frames: 06000000060000000600000006000000
   activated: 0
   executioner: 0
 --- !u!114 &1705922441453647033

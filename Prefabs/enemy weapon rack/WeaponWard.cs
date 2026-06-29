@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Microsoft.Unity.VisualStudio.Editor;
 
 public class WeaponWard : MonoBehaviour
 {
@@ -22,6 +21,7 @@ public class WeaponWard : MonoBehaviour
 	public GameObject damage;
 	public GameObject armor;
 	public GameObject description;
+	public bool move;
 
 	MainController MC;
 
@@ -52,8 +52,8 @@ public class WeaponWard : MonoBehaviour
 	{
 		if(weapon != null && MC.game_state == MainController.State.in_battle && !telegraphing)
 		{
-			GetComponent<Test>().PlayAnimation("Telegraph");
 			telegraphing = true;
+			move = true;
 		}
 	}
 
@@ -61,8 +61,22 @@ public class WeaponWard : MonoBehaviour
 	{
 		if(weapon != null && telegraphing)
 		{
-			GetComponent<Test>().PlayAnimation("Reset telegraph");
+			Debug.Log(weapon.name);
 			telegraphing = false;
+			move = true;
+		}
+	}
+
+	public void TrueTelegrpah()
+	{
+		if(telegraphing && move)
+		{
+			move = false;
+			GetComponent<Test>().PlayAnimation("Telegraph");
+		} else if(move)
+		{
+			move = false;
+			GetComponent<Test>().PlayAnimation("Reset telegraph");
 		}
 	}
 

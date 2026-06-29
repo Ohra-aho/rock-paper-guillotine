@@ -48,7 +48,7 @@ MonoBehaviour:
   lines:
   - You have fought through everything I have to throw at you.
   - But this is where it ends.
-  sprite_frames: 000000000b000000
+  sprite_frames: 060000000b000000
   activated: 0
   executioner: 0
 --- !u!114 &1705922441453647033

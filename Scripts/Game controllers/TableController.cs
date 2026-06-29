@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEditor.Networking.PlayerConnection;
 
 public class TableController : MonoBehaviour
 {
@@ -95,17 +94,15 @@ public class TableController : MonoBehaviour
         MC.enemyChoise.GetComponent<Weapon>().CheckUp();
 
         //New battle mechanics
-        //enemy.transform.GetChild(0).GetComponent<BasicEnemy>().SelectWeaponPair();
 		if(!MC.victory)
 		{
 			enemy.transform.GetChild(0).GetComponent<BasicEnemy>().StikToPlan();
         	enemy.transform.GetChild(0).GetComponent<BasicEnemy>().TelegraphWeaponPair();
 		} else
 		{
-			GameObject.Find("enemy weapon rack").GetComponent<WeaponInfoRack>().ResetTelegraphs();
+			GameObject.Find("enemy weapon rack").GetComponent<WeaponInfoRack>().TrueReset();
 		}
         
-
         if (table != null) StopCoroutine(table);
     }
 

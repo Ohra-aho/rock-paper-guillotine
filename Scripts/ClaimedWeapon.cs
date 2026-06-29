@@ -11,6 +11,7 @@ public class ClaimedWeapon : MonoBehaviour
     private GameObject visibleInfo;
     public GameObject Info;
     public List<Sprite> symbols;
+    public List<Sprite> tiers;
 
     GameObject wheel;
 
@@ -69,7 +70,7 @@ public class ClaimedWeapon : MonoBehaviour
     {
         transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
         transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
-		GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().tiers[weapon.GetComponent<Weapon>().tier];
+		GetComponent<SpriteRenderer>().sprite = tiers[weapon.GetComponent<Weapon>().tier];
         switch(weapon.GetComponent<Weapon>().type)
         {
             case MainController.Choise.kivi:

@@ -48,7 +48,7 @@ MonoBehaviour:
   lines:
   - If you can beat the next one, you might be able to get to the end.
   - Let's see what you are made of.
-  sprite_frames: 0000000000000000
+  sprite_frames: 0600000006000000
   activated: 0
   executioner: 0
 --- !u!114 &1705922441453647033

@@ -16,6 +16,7 @@ public class Revard : MonoBehaviour
     private MainController MC;
 
     public List<Sprite> symbols;
+	public List<Sprite> tiers;
 
     public GameObject message;
 
@@ -40,7 +41,7 @@ public class Revard : MonoBehaviour
 			actualReward.GetComponent<Weapon>().FindTierSprites();
 			transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = actualReward.GetComponent<Weapon>().sprite;
 			transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = actualReward.GetComponent<Weapon>().sprite;
-			GetComponent<SpriteRenderer>().sprite = actualReward.GetComponent<Weapon>().tiers[actualReward.GetComponent<Weapon>().tier];
+			GetComponent<SpriteRenderer>().sprite = tiers[actualReward.GetComponent<Weapon>().tier];
         }
     }
 

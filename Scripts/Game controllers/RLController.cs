@@ -22,6 +22,7 @@ public class RLController : MonoBehaviour
     int slow_counter = 0;
     int survivor_counter = 0;
     public int unyielding_counter = 0;
+	public int martyr_counter = 0;
 	int plotter_counter = 0;
     [HideInInspector] public int previous_health = 0;
     [HideInInspector] public int bosses_killed = 0;
@@ -177,7 +178,7 @@ public class RLController : MonoBehaviour
             if (RI.transform.childCount >= 12)
             {
                 AddAchievement("Collector");
-                Bark("You have amassed a sizable collection of weapons. How many you plan to use?");
+                Bark("You have amassed a sizable collection of weapons. How many you plan to use? 7");
             }
         }
     }
@@ -189,7 +190,7 @@ public class RLController : MonoBehaviour
         if(!achievements.Contains("Slaughterer"))
         {
 			AddAchievement("Slaughterer");
-			Bark("That was a lot of damage. But can you pull that off again?");
+			Bark("That was a lot of damage. But can you pull that off again? 5");
         }
     }
 
@@ -203,7 +204,7 @@ public class RLController : MonoBehaviour
 			if (slow_counter >= 4)
 			{
 				AddAchievement("Slow");
-				Bark("That's the third time you have taken hit right away. Unlucky I guess.");
+				Bark("That's the third time you have taken hit right away. Unlucky I guess. 17");
 			}
 			GetComponent<MainController>().first_turn = false;
         }
@@ -218,7 +219,7 @@ public class RLController : MonoBehaviour
             if (wheel_holder.GetComponent<PlayerWheelHolder>().used_weapons.Count >= 13)
             {
                 AddAchievement("Experimentor");
-                Bark("You have been using a lot of different weapons. I like your style.");
+                Bark("You have been using a lot of different weapons. I like your style. 16");
             }
         }
     }
@@ -243,18 +244,18 @@ public class RLController : MonoBehaviour
             if(amount >= 2)
             {
                 AddAchievement("Madman");
-                Bark("You are one of the few who actually makes use of those \"useless\" weapons. Or maybe you just like losing.");
+                Bark("You are one of the few who actually makes use of those \"useless\" weapons. Or maybe you just like losing. 17");
             }
         }
     }
 
-    //Give up
+    //Give up after defeating at least 5 enemies.
     //If you give up, the next person gets one of your equipped weapons.
     public void CheckForMartyr()
     {
         if(!achievements.Contains("Martyr"))
         {
-			if(GetComponent<StoryController>().storyIndex > 5)
+			if(martyr_counter >= 5)
 			{
 				AddAchievement("Martyr");
 			}
@@ -298,7 +299,7 @@ public class RLController : MonoBehaviour
             if(amount == 0)
             {
                 AddAchievement("Risk taker");
-                Bark("Well that's beautiful. One more turn and it would have been over. Just beautiful.");
+                Bark("Well that's beautiful. One more turn and it would have been over. Just beautiful. 15");
             }
         }
     }
@@ -325,7 +326,7 @@ public class RLController : MonoBehaviour
             if(rocks == 4 && papers == 4 && scissors == 4)
             {
                 AddAchievement("Neurotic");
-                Bark("Perfectly balanced selection I guess. But can you select the correct combination?");
+                Bark("Perfectly balanced selection I guess. But can you select the correct combination? 5");
             }
         }
     }
@@ -353,7 +354,7 @@ public class RLController : MonoBehaviour
             if(plotter_counter >= 4)
             {
                 AddAchievement("Plotter");
-                Bark("It seems you are prepared to deal damage no matter what. Seems to be working.");
+                Bark("It seems you are prepared to deal damage no matter what. Seems to be working. 1");
             }
         }
     }
@@ -388,7 +389,7 @@ public class RLController : MonoBehaviour
 			if (relentless_count >= 5)
 			{
 				AddAchievement("Relentless");
-				Bark("You just keep on beating them up.");
+				Bark("You just keep on beating them up. 15");
 			}
         }
     }
@@ -403,7 +404,7 @@ public class RLController : MonoBehaviour
             if(unyielding_counter == 3)
             {
                 AddAchievement("Unyielding");
-                Bark("You just go up and down like a yo-yo. Quit taking damage and you maybe don't need to heal so much.");
+                Bark("You just go up and down like a yo-yo. Quit taking damage and you maybe don't need to heal so much. 16");
             }
         }
     }
@@ -425,7 +426,7 @@ public class RLController : MonoBehaviour
 			if(amount >= 7)
 			{
 				AddAchievement("Picky");
-				Bark("Maybe I shold disable the reward mechanism. You are not using the weapons you pick anyway.");
+				Bark("Maybe I shold disable the reward mechanism. You are not using the weapons you pick anyway. 16");
 			}
         }
     }
@@ -447,7 +448,7 @@ public class RLController : MonoBehaviour
             if(hoard_counter >= 10)
             {
                 AddAchievement("Hoarder");
-                Bark("You have collected quite a lot of poinst for your weapons. You just like seeing a number to go up don't you.");
+                Bark("You have collected quite a lot of points for your weapons. You just like seeing a number to go up don't you.");
             }
 			hoard_counter = 0;
         }

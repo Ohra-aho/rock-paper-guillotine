@@ -51,7 +51,7 @@ MonoBehaviour:
     one of the remembered ones.
   - Their accomplishment will aid you in battle.
   - 'Regardless:'
-  sprite_frames: 00000000070000000000000000000000
+  sprite_frames: 06000000070000000600000006000000
   activated: 0
   executioner: 0
 --- !u!114 &1705922441453647033

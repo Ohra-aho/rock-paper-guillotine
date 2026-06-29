@@ -7035,6 +7035,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1f343e7416db9ca4b8ba4dae9a4b2af1, type: 3}
   - {fileID: 21300000, guid: f0e41909c0d6d6a48a5d4b8e19513d8b, type: 3}
   - {fileID: 21300000, guid: 7a63350e1538e1e4eb79323b1d08d629, type: 3}
+  tiers:
+  - {fileID: 21300000, guid: 83fc2a79bceb4c249bcf68be3aa43d9a, type: 3}
+  - {fileID: 21300000, guid: 8977aab7d46fd6b44856657c7c365274, type: 3}
+  - {fileID: 21300000, guid: eff7c6c3752222d46a24cfff4f967015, type: 3}
   weapon: {fileID: 0}
   id: 1
   Info: {fileID: 0}
@@ -17140,6 +17144,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1f343e7416db9ca4b8ba4dae9a4b2af1, type: 3}
   - {fileID: 21300000, guid: f0e41909c0d6d6a48a5d4b8e19513d8b, type: 3}
   - {fileID: 21300000, guid: 7a63350e1538e1e4eb79323b1d08d629, type: 3}
+  tiers: []
   weapon: {fileID: 0}
   id: 2
   Info: {fileID: 0}
@@ -20124,6 +20129,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1f343e7416db9ca4b8ba4dae9a4b2af1, type: 3}
   - {fileID: 21300000, guid: f0e41909c0d6d6a48a5d4b8e19513d8b, type: 3}
   - {fileID: 21300000, guid: 7a63350e1538e1e4eb79323b1d08d629, type: 3}
+  tiers:
+  - {fileID: 21300000, guid: 83fc2a79bceb4c249bcf68be3aa43d9a, type: 3}
+  - {fileID: 21300000, guid: 8977aab7d46fd6b44856657c7c365274, type: 3}
+  - {fileID: 21300000, guid: eff7c6c3752222d46a24cfff4f967015, type: 3}
   weapon: {fileID: 0}
   id: 3
   Info: {fileID: 0}
@@ -32176,6 +32185,7 @@ MonoBehaviour:
   picks: 0
   chosen_buffs: []
   unyielding_counter: 0
+  martyr_counter: 0
   previous_health: 0
   bosses_killed: 0
   hoard_counter: 0
@@ -46143,7 +46153,6 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: d13bf3d6526630c4db5fb05ebdbbd059, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
@@ -59111,6 +59120,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1f343e7416db9ca4b8ba4dae9a4b2af1, type: 3}
   - {fileID: 21300000, guid: f0e41909c0d6d6a48a5d4b8e19513d8b, type: 3}
   - {fileID: 21300000, guid: 7a63350e1538e1e4eb79323b1d08d629, type: 3}
+  tiers: []
   weapon: {fileID: 0}
   id: 3
   Info: {fileID: 0}
@@ -65294,6 +65304,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1f343e7416db9ca4b8ba4dae9a4b2af1, type: 3}
   - {fileID: 21300000, guid: f0e41909c0d6d6a48a5d4b8e19513d8b, type: 3}
   - {fileID: 21300000, guid: 7a63350e1538e1e4eb79323b1d08d629, type: 3}
+  tiers:
+  - {fileID: 21300000, guid: 83fc2a79bceb4c249bcf68be3aa43d9a, type: 3}
+  - {fileID: 21300000, guid: 8977aab7d46fd6b44856657c7c365274, type: 3}
+  - {fileID: 21300000, guid: eff7c6c3752222d46a24cfff4f967015, type: 3}
   weapon: {fileID: 0}
   id: 2
   Info: {fileID: 0}
@@ -80095,6 +80109,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1f343e7416db9ca4b8ba4dae9a4b2af1, type: 3}
   - {fileID: 21300000, guid: f0e41909c0d6d6a48a5d4b8e19513d8b, type: 3}
   - {fileID: 21300000, guid: 7a63350e1538e1e4eb79323b1d08d629, type: 3}
+  tiers: []
   weapon: {fileID: 0}
   id: 1
   Info: {fileID: 0}
