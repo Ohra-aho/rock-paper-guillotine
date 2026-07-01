@@ -61,7 +61,6 @@ public class WeaponWard : MonoBehaviour
 	{
 		if(weapon != null && telegraphing)
 		{
-			Debug.Log(weapon.name);
 			telegraphing = false;
 			move = true;
 		}

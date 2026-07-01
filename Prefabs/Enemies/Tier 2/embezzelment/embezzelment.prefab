@@ -72,7 +72,7 @@ MonoBehaviour:
   - pair: 0100000002000000
   - pair: 0000000002000000
   - pair: 0000000001000000
-  advanced: 1
+  advanced: 0
   victory_barks: []
   executioner_comment: I think rock was the best to start with. 2 "fans" in a row.
     Always at least 2.

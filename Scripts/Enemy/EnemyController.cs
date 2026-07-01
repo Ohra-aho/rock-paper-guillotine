@@ -180,7 +180,6 @@ public class EnemyController : MonoBehaviour
             EnemyWheel.transform.GetChild(i).GetChild(0)
                 .GetComponent<WeaponSprite>().displaySprite();
         }
-
         for(int i = 0; i < true_weapon_holder.transform.childCount; i++)
         {
             if(true_weapon_holder.transform.GetChild(i).GetComponent<BuffController>())

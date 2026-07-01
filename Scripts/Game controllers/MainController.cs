@@ -259,17 +259,19 @@ public class MainController : MonoBehaviour
         for(int i = 0; i < RI.transform.childCount; i++)
         {
             GameObject weapon = RI.transform.GetChild(i).gameObject;
+			if(weapon.GetComponent<Weapon>())
+			{
+				if(weapon.GetComponent<Weapon>().end_of_fight != null) weapon.GetComponent<Weapon>().end_of_fight.Invoke();
 
-            if(weapon.GetComponent<Weapon>().end_of_fight != null) weapon.GetComponent<Weapon>().end_of_fight.Invoke();
-
-            for (int j = weapon.transform.childCount-1; j >= 0; j--)
-            {
-                if(weapon.transform.GetChild(j).GetComponent<Buff>().temporary || weapon.transform.GetChild(j).GetComponent<Buff>().timer > 0)
-                {
-                    weapon.transform.GetChild(j).GetComponent<Buff>().RemoveBuff();
-                    Destroy(weapon.transform.GetChild(j).gameObject);
-                }
-            }
+				for (int j = weapon.transform.childCount-1; j >= 0; j--)
+				{
+					if(weapon.transform.GetChild(j).GetComponent<Buff>().temporary || weapon.transform.GetChild(j).GetComponent<Buff>().timer > 0)
+					{
+						weapon.transform.GetChild(j).GetComponent<Buff>().RemoveBuff();
+						Destroy(weapon.transform.GetChild(j).gameObject);
+					}
+				}	
+			}
         }
     }
 

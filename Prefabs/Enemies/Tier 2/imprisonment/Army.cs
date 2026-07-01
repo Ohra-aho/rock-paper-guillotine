@@ -54,14 +54,22 @@ public class Army : MonoBehaviour
 		{
 			List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
 			int index = Random.Range(0, weapons.Count);
-			
-			Buff new_buff = Instantiate(buff, weapons[index].transform).GetComponent<Buff>();
-			new_buff.id = GetComponent<Weapon>().name;
-			new_buff.temporary = true;
-			new_buff.timer = 2;
-			new_buff.type_change = MainController.Choise.useless;
-			new_buff.reminder = "Made \"useless\"";
-			new_buff.AddBuff();
+
+			GameObject existing_buff = weapons[index].GetCertainBuff(GetComponent<Weapon>().name);
+			if(existing_buff != null)
+			{
+				existing_buff.GetComponent<Buff>().timer = 2;
+			}
+			else
+			{
+				Buff new_buff = Instantiate(buff, weapons[index].transform).GetComponent<Buff>();
+				new_buff.id = GetComponent<Weapon>().name;
+				new_buff.temporary = true;
+				new_buff.timer = 2;
+				new_buff.type_change = MainController.Choise.useless;
+				new_buff.reminder = "Made \"useless\"";
+				new_buff.AddBuff();	
+			}
 		}
 	}
 
