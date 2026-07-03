@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 2120291191654528003}
   - component: {fileID: -4228527785483944349}
+  - component: {fileID: 2317037729994822782}
   m_Layer: 5
   m_Name: Recycler
   m_TagString: Untagged
@@ -236,6 +237,7 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   until_used: 0
+  reminder: 
   destructive: 0
   heal_disabler: 0
 --- !u!114 &-4228527785483944349
@@ -251,6 +253,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scraps:
+  - {fileID: 1944698211339908181, guid: e33e9c9b5ed2ebb459098082609b4366, type: 3}
+  - {fileID: 1944698211339908181, guid: 8fd2084be21106d4083860c7cbf40be9, type: 3}
+  - {fileID: 1944698211339908181, guid: 93fabd162c95ff04aa7bb4fdba41010e, type: 3}
+--- !u!114 &2317037729994822782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn_limit: 0
+  weapons:
   - {fileID: 1944698211339908181, guid: e33e9c9b5ed2ebb459098082609b4366, type: 3}
   - {fileID: 1944698211339908181, guid: 8fd2084be21106d4083860c7cbf40be9, type: 3}
   - {fileID: 1944698211339908181, guid: 93fabd162c95ff04aa7bb4fdba41010e, type: 3}

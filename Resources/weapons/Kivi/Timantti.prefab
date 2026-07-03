@@ -98,7 +98,7 @@ MonoBehaviour:
   spammable: 0
   type: 0
   damage: 1
-  armor: 0
+  armor: 3
   real_damage: 0
   real_armor: 0
   name: Diamond

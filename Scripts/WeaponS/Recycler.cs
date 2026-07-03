@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Recycler : MonoBehaviour
 {
-    int previous_index = -1;
-    public List<GameObject> scraps;
 
     private void Awake()
     {
@@ -16,13 +14,6 @@ public class Recycler : MonoBehaviour
 
     public void GainScrap(Weapon w)
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        int index = Random.Range(0, scraps.Count);
-        while(index == previous_index)
-        {
-            index = Random.Range(0, scraps.Count);
-        }
-        previous_index = index;
-        player.GetComponent<PlayerInventory>().AddItem(scraps[index]);
+        GetComponent<WeaponSpawner>().SpawnRandomWeapon();
     }
 }

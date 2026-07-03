@@ -70,8 +70,8 @@ public class TableController : MonoBehaviour
         ActivateEachTurnEffects(GameObject.FindGameObjectWithTag("RI"));
         ActivateEachTurnEffects(GameObject.FindGameObjectWithTag("RIE"));
 
-        if(player_damage <= 0) MC.playerChoise.takeNoDamage.Invoke();
-        if(enemy_damage <= 0) MC.enemyChoise.takeNoDamage.Invoke();
+        if(GiveEffectivePlayerDamage() <= 0) MC.playerChoise.takeNoDamage.Invoke();
+        if(GiveEffectiveEnemyDamage() <= 0) MC.enemyChoise.takeNoDamage.Invoke();
 
         HandleDamage();
         HandleHealing();
@@ -195,5 +195,27 @@ public class TableController : MonoBehaviour
 	{
 		if(health_decrease > 0) player.GetComponent<PlayerContoller>().HB.DecreaseHealthBar(health_decrease, true);
 		health_decrease = 0;
+	}
+
+	public int GiveEffectivePlayerDamage()
+	{
+		int damage = player_damage - player_armor;
+		if(damage < 0)
+		{
+			damage = 0;
+		}
+		damage += player_direct_damage;
+		return damage;
+	}
+
+	public int GiveEffectiveEnemyDamage()
+	{
+		int damage = enemy_damage - enemy_armor;
+		if(damage < 0)
+		{
+			damage = 0;
+		}
+		damage += enemy_direct_damage;
+		return damage;
 	}
 }

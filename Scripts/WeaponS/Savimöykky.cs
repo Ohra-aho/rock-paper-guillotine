@@ -6,7 +6,7 @@ public class Savimöykky : MonoBehaviour
 {
 	void Awake()
 	{
-		GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+		GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name != GetComponent<Weapon>().name; };
 		GetComponent<BuffController>().temporary = true;
 		GetComponent<BuffController>().timer = 2;
 		GetComponent<BuffController>().endPhase = true;
@@ -34,7 +34,7 @@ public class Savimöykky : MonoBehaviour
 		PlayerInventory PI = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
 		PI.items.Add(copy);
 		
-		PI.AddBuffToNewWeapon(copy);
+		PI.AddBuffToNewWeapon();
 		GameObject event_system = GameObject.Find("EventSystem");
 		event_system.GetComponent<RLController>().CheckCollector();
 		event_system.GetComponent<RLController>().CheckForNeurotic();

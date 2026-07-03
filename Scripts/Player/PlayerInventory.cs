@@ -26,6 +26,15 @@ public class PlayerInventory : MonoBehaviour
     public void AddItem(GameObject newItem)
     {
         GameObject the_item = Instantiate(newItem, GetComponent<PlayerContoller>().TrueInventory.transform);
+		
+		if(the_item.transform.childCount > 0)
+		{
+			for(int i = the_item.transform.childCount-1; i >= 0; i--)
+			{
+				DestroyImmediate(the_item.transform.GetChild(i).gameObject);
+			}	
+		}
+
         the_item.GetComponent<Weapon>().player = true;
         if(the_item.GetComponent<BuffController>())
         {
@@ -35,7 +44,7 @@ public class PlayerInventory : MonoBehaviour
         the_item.GetComponent<Weapon>().InisiateTypeEffects();
         items.Add(the_item);
         
-        AddBuffToNewWeapon(newItem);
+        AddBuffToNewWeapon();
         GameObject event_system = GameObject.Find("EventSystem");
         event_system.GetComponent<RLController>().CheckCollector();
         event_system.GetComponent<RLController>().CheckForNeurotic();
@@ -55,7 +64,7 @@ public class PlayerInventory : MonoBehaviour
         items.Clear();
     }
 
-    public void AddBuffToNewWeapon(GameObject weapon)
+    public void AddBuffToNewWeapon()
     {
         List<Weapon> equipped_weapons = GetComponent<PlayerContoller>().GetWeapons();
         for(int i = 0; i < equipped_weapons.Count; i++)

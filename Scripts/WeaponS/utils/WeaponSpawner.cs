@@ -8,15 +8,26 @@ public class WeaponSpawner : MonoBehaviour
 	int spawns = 0;
     public List<GameObject> weapons;
 
+	int previous_index = -1;
+
     public void SpawnRandomWeapon()
     {
 		if(spawns < spawn_limit && spawn_limit != 0)
 		{
 			int index = Random.Range(0, weapons.Count);
+			while(index == previous_index)
+			{
+				index = Random.Range(0, weapons.Count);
+			}
+			previous_index = index;
         	GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapons[index]);	
 		} else if(spawn_limit == 0)
 		{
 			int index = Random.Range(0, weapons.Count);
+			while(index == previous_index)
+			{
+				index = Random.Range(0, weapons.Count);
+			}
         	GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapons[index]);	
 		}
 		spawns++;

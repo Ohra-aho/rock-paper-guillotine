@@ -20,22 +20,11 @@ public class Battery : MonoBehaviour
                 }
             }
 
-            if(possible_weapons.Count > 2)
-            {
-                int index = Random.Range(0, possible_weapons.Count);
-                possible_weapons[index].GetComponent<Stacking>().IncreaseStacks(1);
-                possible_weapons.RemoveAt(index);
-
-                index = Random.Range(0, possible_weapons.Count);
-                possible_weapons[index].GetComponent<Stacking>().IncreaseStacks(1);
-                possible_weapons.RemoveAt(index);
-            } else
-            {
-                for(int i = 0; i < possible_weapons.Count; i++)
-                {
-                    possible_weapons[i].GetComponent<Stacking>().IncreaseStacks(1);
-                }
-            }
+			if(possible_weapons.Count > 0)
+			{
+				int index = Random.Range(0, possible_weapons.Count);
+				possible_weapons[index].GetComponent<Stacking>().IncreaseStacks(2);
+			}
         }
     }
 }

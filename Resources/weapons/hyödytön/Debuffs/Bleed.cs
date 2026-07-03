@@ -7,7 +7,25 @@ public class Bleed : MonoBehaviour
     public GameObject buff;
     public void TakeDamage()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.TakeDamage(1);
+		HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
+        HB.TakeDamage(1);
+		if(!HB.CheckIfDead())
+		{
+			List<Weapon> weapons = GetComponent<Weapon>().player_owner.GetComponent<PlayerContoller>().GetWeapons();
+			if(weapons.Count > 0)
+			{
+				if(weapons[0].transform.childCount > 0)
+				{
+					for(int i = 0; i < weapons[0].transform.childCount; i++)
+					{
+						if(weapons[0].transform.GetChild(i).GetComponent<Buff>().takeDamage)
+						{
+							weapons[0].transform.GetChild(i).GetComponent<Buff>().special.Invoke(weapons[0]);
+						}
+					}
+				}
+			}	
+		}
     }
 
     public void DealPoisonDamage()
