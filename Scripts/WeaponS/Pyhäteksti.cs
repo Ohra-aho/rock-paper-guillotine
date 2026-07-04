@@ -13,6 +13,7 @@ public class Pyhäteksti : MonoBehaviour
 
     public void DamageOnHeal(Weapon weapon)
     {
-        GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
+		HealthBar HB = GameObject.Find("EnemyHealth").GetComponent<HealthBar>();
+		HB.TakeDamage(GetComponent<EffectDamage>().amount);
     }
 }

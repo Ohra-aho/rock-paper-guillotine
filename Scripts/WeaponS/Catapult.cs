@@ -23,6 +23,6 @@ public class Catapult : MonoBehaviour
 
     public void DealDamage(Weapon w)
     {
-        GetComponent<EffectDamage>().DealDamage(w);
+        GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
     }
 }

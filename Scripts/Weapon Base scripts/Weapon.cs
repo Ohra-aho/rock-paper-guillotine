@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -58,15 +59,6 @@ public class Weapon : MonoBehaviour
 
     private bool loop_stopper = false; //Helps counteract infinite loops 
 
-    //Types iguess
-    public bool self_destructive; //Weapons which synergize with self destruction
-    public bool healing; //Weapons which heal or synergice with it
-    public bool health; //Weapons which give health or care about it
-    public bool kivi_synegry; //Weapons which synergize with other stones
-    public bool paperi_synergy;
-    public bool sakset_synergy;
-    public bool points; //Weapons which collect points or synergize with them.
-
     //Needed for achievements
     [HideInInspector] public bool used_this_game;
 
@@ -99,22 +91,25 @@ public class Weapon : MonoBehaviour
 
     public void InisiateTypeEffects()
     {
-        if (player)
+        if (player )
         {
-            player_owner = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
-            gameObject.AddComponent<TypeEffects>();
-            switch (type)
-            {
-                case MainController.Choise.kivi:
-                    GetComponent<TypeEffects>().InisiateRock();
-                    break;
-                case MainController.Choise.paperi:
-                    GetComponent<TypeEffects>().InisiatePaper();
-                    break;
-                case MainController.Choise.sakset:
-                    GetComponent<TypeEffects>().InisiateScissors();
-                    break;
-            }
+			if(!GetComponent<TypeEffects>())
+			{
+				player_owner = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
+				gameObject.AddComponent<TypeEffects>();
+				switch (type)
+				{
+					case MainController.Choise.kivi:
+						GetComponent<TypeEffects>().InisiateRock();
+						break;
+					case MainController.Choise.paperi:
+						GetComponent<TypeEffects>().InisiatePaper();
+						break;
+					case MainController.Choise.sakset:
+						GetComponent<TypeEffects>().InisiateScissors();
+						break;
+				}	
+			}
         }
     }
 

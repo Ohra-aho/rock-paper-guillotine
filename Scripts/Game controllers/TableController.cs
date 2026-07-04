@@ -174,6 +174,7 @@ public class TableController : MonoBehaviour
             if (!player.GetComponent<PlayerContoller>().HB.dead)
             {
                 player.GetComponent<PlayerContoller>().HB.HealDamage(player_healing);
+				MC.playerChoise.heal.Invoke();
             }
             player_healing = 0;
         }
@@ -182,6 +183,7 @@ public class TableController : MonoBehaviour
             if (!enemy.GetComponent<EnemyController>().HB.dead)
             {
                 enemy.GetComponent<EnemyController>().HB.HealDamage(enemy_healing);
+				MC.enemyChoise.heal.Invoke();
             }
             enemy_healing = 0;
         }

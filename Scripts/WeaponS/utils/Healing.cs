@@ -22,7 +22,7 @@ public class Healing : MonoBehaviour
                     if (valid_heal)
                     {
                         GameObject.FindGameObjectWithTag("GameController").GetComponent<RLController>().CheckForUnyielding();
-                        GetComponent<Weapon>().heal.Invoke();
+                        //GetComponent<Weapon>().heal.Invoke();
                     }
                 }
             }
@@ -33,7 +33,7 @@ public class Healing : MonoBehaviour
                 {
                     valid_heal = HB.GiveCurrentHealth() - GameObject.Find("Table").GetComponent<TableController>().enemy_damage < HB.GiveMaxHealth();
                     GameObject.Find("Table").GetComponent<TableController>().enemy_healing += amount;
-                    if (valid_heal) GetComponent<Weapon>().heal.Invoke();
+                    //if (valid_heal) GetComponent<Weapon>().heal.Invoke();
                 }
             }
         }
@@ -51,7 +51,7 @@ public class Healing : MonoBehaviour
         if (valid_heal)
         {
             GameObject.FindGameObjectWithTag("GameController").GetComponent<RLController>().CheckForUnyielding();
-            GetComponent<Weapon>().heal.Invoke();
+            //GetComponent<Weapon>().heal.Invoke();
         }
     }
 
@@ -71,7 +71,7 @@ public class Healing : MonoBehaviour
                     if (valid_heal)
                     {
                         GameObject.FindGameObjectWithTag("GameController").GetComponent<RLController>().CheckForUnyielding();
-                        GetComponent<Weapon>().heal.Invoke();
+                        //GetComponent<Weapon>().heal.Invoke();
                     }
                 }
             }
@@ -83,7 +83,7 @@ public class Healing : MonoBehaviour
                     valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
                     GameObject.Find("Table").GetComponent<TableController>().enemy_healing += amount;
 
-                    if (valid_heal) GetComponent<Weapon>().heal.Invoke();
+                    //if (valid_heal) GetComponent<Weapon>().heal.Invoke();
                 }
             }
         }
@@ -101,7 +101,7 @@ public class Healing : MonoBehaviour
                 {
                     valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
                     GameObject.Find("Table").GetComponent<TableController>().enemy_healing += amount;
-                    if (valid_heal) GetComponent<Weapon>().heal.Invoke();
+                    //if (valid_heal) GetComponent<Weapon>().heal.Invoke();
                 }
             }
             else
@@ -111,7 +111,7 @@ public class Healing : MonoBehaviour
                 {
                     valid_heal = HB.GiveCurrentHealth() < HB.GiveMaxHealth();
                     GameObject.Find("Table").GetComponent<TableController>().player_healing += amount;
-                    if (valid_heal) GetComponent<Weapon>().heal.Invoke();
+                    //if (valid_heal) GetComponent<Weapon>().heal.Invoke();
                 }
             }
         }

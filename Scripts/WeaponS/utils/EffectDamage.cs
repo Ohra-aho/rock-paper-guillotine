@@ -44,7 +44,7 @@ public class EffectDamage : MonoBehaviour
     {
         GetComponent<Weapon>().EffectDamage(amount);
         if (GetComponent<Weapon>().deal_effect_damage != null)
-            GetComponent<Weapon>().deal_effect_damage.Invoke();   
+            GetComponent<Weapon>().deal_effect_damage.Invoke();
     }
 
     public void SetSelfDamage(int amount)

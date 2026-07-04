@@ -46165,10 +46165,9 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: 4a9d80f01ec933c44b5cc5cd1e67ba27, type: 3}
-  - {fileID: 1944698211339908181, guid: f9e684b84fc563443b5381b14e3c445b, type: 3}
+  - {fileID: 1944698211339908181, guid: 5bf2caa5b1d1b674eaf6f4aa92450c4d, type: 3}
   all: []
-  all_weapons: 0
+  all_weapons: 1
 --- !u!114 &1366762623
 MonoBehaviour:
   m_ObjectHideFlags: 0

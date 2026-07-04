@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 7066133070963563329}
   - component: {fileID: 1841428768365020520}
   m_Layer: 5
   m_Name: "Kaksiter\xE4inen"
@@ -104,7 +103,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Double edged sword
-  description: When deals damage, you take 1 damage.
+  description: If wins, you take 1 damage.
   sprite: {fileID: 21300000, guid: bc2c5687dcce0ed4ca8dc30ec8426c94, type: 3}
   tiers: []
   tier: 0
@@ -131,6 +130,15 @@ MonoBehaviour:
       m_Calls: []
   dealDamage:
     m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1841428768365020520}
         m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
@@ -144,15 +152,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  deal_effect_damage:
-    m_PersistentCalls:
-      m_Calls: []
-  takeNoDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  win:
-    m_PersistentCalls:
-      m_Calls: []
   lose:
     m_PersistentCalls:
       m_Calls: []
@@ -189,31 +188,11 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 1
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - Everyone has an appetite for a little risk it seems.
   executioner_comment: 
   damage_soft_cap: 7
---- !u!114 &7066133070963563329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a470f37104d53a94389c7d579a2e0580, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
 --- !u!114 &1841428768365020520
 MonoBehaviour:
   m_ObjectHideFlags: 0
