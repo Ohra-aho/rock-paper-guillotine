@@ -93,6 +93,8 @@ public class TableController : MonoBehaviour
         MC.playerChoise.GetComponent<Weapon>().CheckUp();
         MC.enemyChoise.GetComponent<Weapon>().CheckUp();
 
+		MC.first_turn = false;
+
         //New battle mechanics
 		if(!MC.victory)
 		{

@@ -106,7 +106,7 @@ MonoBehaviour:
   real_armor: 0
   name: Rage
   description: Whenever you lose with any weapon, gains 1 point. Is "unbeatable"
-    when has 3 or more points. Uses 1 point after use.
+    when has 3 or more points. While "unbeatable", uses 1 point after use.
   sprite: {fileID: 21300000, guid: f1da9df3ab7d8b4468570ec31478ec99, type: 3}
   tiers: []
   tier: 0
@@ -249,6 +249,7 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   until_used: 0
+  reminder: 
   destructive: 0
   heal_disabler: 0
 --- !u!114 &-4628480966622643912

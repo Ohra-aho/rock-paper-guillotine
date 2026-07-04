@@ -13,6 +13,7 @@ public class Resonator : MonoBehaviour
 		GetComponent<BuffController>().special = ReTriggerEffect;
 		GetComponent<BuffController>().endPhase = true;
 		GetComponent<BuffController>().reminder = "\"After use\" effect will trigger twice.";
+		GetComponent<BuffController>().special_apply = true;
 	}
 
 	public void ReTriggerEffect(Weapon w)

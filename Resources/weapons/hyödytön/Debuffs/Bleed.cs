@@ -5,7 +5,13 @@ using UnityEngine;
 public class Bleed : MonoBehaviour
 {
     public GameObject buff;
-    public void TakeDamage()
+
+	void OnDestroy()
+	{
+		if(GetComponent<Weapon>().name == "Weakness") RemoveBuffs();
+	}
+
+	public void TakeDamage()
     {
 		HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
         HB.TakeDamage(1);
@@ -99,4 +105,18 @@ public class Bleed : MonoBehaviour
         }
         return null;
     }
+
+	public void RemoveBuffs()
+	{
+		List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
+		for(int i = 0; i < weapons.Count; i++)
+		{
+			GameObject buff = weapons[i].GetCertainBuff(GetComponent<Weapon>().name);
+			if(buff != null)
+			{
+				buff.GetComponent<Buff>().RemoveBuff();
+				Destroy(buff);
+			}
+		}
+	}
 }

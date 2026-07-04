@@ -22,7 +22,7 @@ public class Rage : MonoBehaviour
 
     public void UseStaks()
     {
-        GetComponent<Stacking>().DecreaseStacks(1);
+        if(GetComponent<Weapon>().type == MainController.Choise.voittamaton) GetComponent<Stacking>().DecreaseStacks(1);
         if (GetComponent<Stacking>().stacks < 3)
         {
             GetComponent<Weapon>().type = MainController.Choise.sakset;
