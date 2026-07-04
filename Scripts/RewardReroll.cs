@@ -17,6 +17,7 @@ public class RewardReroll : MonoBehaviour
     private void Update()
     {
         GetComponent<NonUIButton>().interactable = MC.game_state == MainController.State.reward && reward_open && unlocked && !used;
+		GetComponent<NonUIButton>().interactable = true; // Debug
     }
 
     public void Reroll()
@@ -28,5 +29,6 @@ public class RewardReroll : MonoBehaviour
         }
         MC.SpawnRewardMenu();
         used = true;
+		used = false; //Debug
     }
 }
