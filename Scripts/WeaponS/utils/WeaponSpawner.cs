@@ -28,6 +28,7 @@ public class WeaponSpawner : MonoBehaviour
 			{
 				index = Random.Range(0, weapons.Count);
 			}
+			previous_index = index;
         	GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapons[index]);	
 		}
 		spawns++;

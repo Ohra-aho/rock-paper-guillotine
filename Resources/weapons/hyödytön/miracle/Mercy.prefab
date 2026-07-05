@@ -125,7 +125,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -6120689980113799607}
         m_TargetAssemblyTypeName: Healing, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -201,13 +201,6 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - This should not be here.

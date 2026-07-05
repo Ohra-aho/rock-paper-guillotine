@@ -13,6 +13,6 @@ public class Teramyrsky : MonoBehaviour
             if (!weapon.gameObject.GetComponent<SelfDestruct>() && weapon.name != this.GetComponent<Weapon>().name) return true;
             else return false;
         };
-		GetComponent<BuffController>().special = (Weapon w) => { GetComponent<EffectDamage>().DealDamage(w); };
+		GetComponent<BuffController>().special = (Weapon w) => { GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>()); };
     }
 }

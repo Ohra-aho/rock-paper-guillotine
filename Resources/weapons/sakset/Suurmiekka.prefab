@@ -103,7 +103,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Greatsword
-  description: '+X damage, where X is half of your current HP:'
+  description: +X damage, where X is half of your current HP.
   sprite: {fileID: 21300000, guid: 1131c617e6e1c4a43817f2d8b6d26db2, type: 3}
   tiers: []
   tier: 0
@@ -188,13 +188,6 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 1
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - 'Unstopabble force meets imovable object. '

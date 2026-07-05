@@ -171,7 +171,7 @@ public class TableController : MonoBehaviour
     {
         if (player_healing > 0)
         {
-            if (!player.GetComponent<PlayerContoller>().HB.dead)
+            if (!player.GetComponent<PlayerContoller>().HB.dead && player.GetComponent<PlayerContoller>().HB.GiveCurrentHealth() < player.GetComponent<PlayerContoller>().HB.GiveMaxHealth())
             {
                 player.GetComponent<PlayerContoller>().HB.HealDamage(player_healing);
 				MC.playerChoise.heal.Invoke();
@@ -180,7 +180,7 @@ public class TableController : MonoBehaviour
         }
         if (enemy_healing > 0)
         {
-            if (!enemy.GetComponent<EnemyController>().HB.dead)
+            if (!enemy.GetComponent<EnemyController>().HB.dead && enemy.GetComponent<EnemyController>().HB.GiveCurrentHealth() < enemy.GetComponent<EnemyController>().HB.GiveMaxHealth())
             {
                 enemy.GetComponent<EnemyController>().HB.HealDamage(enemy_healing);
 				MC.enemyChoise.heal.Invoke();

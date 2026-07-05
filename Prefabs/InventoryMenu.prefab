@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 532259585310109256}
   - component: {fileID: 4083328929243028549}
   - component: {fileID: 5211580441867743584}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Scroll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -181,7 +181,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.5450692, y: -0.039504647}
+  m_Offset: {x: 2.5559769, y: -0.039504528}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -192,7 +192,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.66816807, y: 6.8842154}
+  m_Size: {x: 0.6463525, y: 6.8842154}
   m_EdgeRadius: 0
 --- !u!1 &2924485296591961343
 GameObject:
@@ -204,7 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2442251257640000529}
   - component: {fileID: 4696847452671820161}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,14 +379,14 @@ RectTransform:
   m_GameObject: {fileID: 6094261777882164591}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.9449673, y: 5.9939, z: 5.9939}
+  m_LocalScale: {x: 4.9449673, y: 6.2935944, z: 5.9939}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4748468266118458538}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.39}
   m_SizeDelta: {x: 5, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!331 &4684536177118023375

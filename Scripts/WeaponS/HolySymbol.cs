@@ -7,7 +7,7 @@ public class HolySymbol : MonoBehaviour
   
     public void Worship()
     {
-        GetComponent<Stacking>().IncreaseStacks(1);
+        GetComponent<Stacking>().IncreaseStacks(3);
     }
 
     public void Miracle()

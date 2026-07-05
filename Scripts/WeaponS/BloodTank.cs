@@ -10,9 +10,10 @@ public class BloodTank : MonoBehaviour
         GetComponent<Stacking>().IncreaseStacks(1);
         if(current_health_bonus < 15)
         {
-            if (GetComponent<Stacking>().stacks > 0 && GetComponent<Stacking>().stacks % 5 == 0)
+            if (GetComponent<Stacking>().stacks >= 5)
             {
                 current_health_bonus++;
+				GetComponent<Stacking>().stacks = 0;
                 IncreaseHealth(1, true);
             }
         }
