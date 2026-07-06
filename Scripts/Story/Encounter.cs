@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class Encounter : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Encounter : MonoBehaviour
     public bool last; //Needs immideate over to work
 
     public List<GameObject> surprices;
+
+	public GameObject first_vistory;
 
     private void Awake()
     {
@@ -48,6 +51,11 @@ public class Encounter : MonoBehaviour
             if(immideate_over) GetComponent<StoryEvent>().over = true;
         }
     }
+
+	public void FirstVictory()
+	{
+		Instantiate(first_vistory, transform.parent);
+	}
 
     public void ChangeGear(int index)
     {

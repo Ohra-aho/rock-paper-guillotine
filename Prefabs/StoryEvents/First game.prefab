@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7409016484711983391}
   - component: {fileID: 8246740616767108304}
   m_Layer: 0
-  m_Name: Playthrough
+  m_Name: First game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,18 +45,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   events:
+  - {fileID: 2090958671281753362, guid: 4aa4afe92caad8645893a4e48ed9c2df, type: 3}
+  - {fileID: 2090958671281753362, guid: 55acd8e3f986d8a4686226fd23f4817a, type: 3}
+  - {fileID: 3768069680275742937, guid: 9d288646989498142a1a742376887c9d, type: 3}
+  - {fileID: 503840598905201475, guid: 98948caa7d9070243bff93c7194f7b5c, type: 3}
+  - {fileID: 3768069680275742937, guid: 709beb3810c7e1b4ab5ca3f36b4198d4, type: 3}
+  - {fileID: 503840598905201475, guid: 98948caa7d9070243bff93c7194f7b5c, type: 3}
+  - {fileID: 3768069680275742937, guid: 1538014c1a584a647ae75befab5c32f0, type: 3}
+  - {fileID: 503840598905201475, guid: 0263b2b182f9d0b419999914aab8d22f, type: 3}
+  - {fileID: 3768069680275742937, guid: 39f18392b560873498f5453f7b28b616, type: 3}
   - {fileID: 3768069680275742937, guid: 16cf27ca0dfbaef4a8b9e21f42cb300a, type: 3}
+  - {fileID: 2090958671281753362, guid: d0afe275390476c49a528afb57db1a8e, type: 3}
   - {fileID: 3768069680275742937, guid: 96c8eca7b6514304785359a15c16a307, type: 3}
+  - {fileID: 2090958671281753362, guid: 8f077e1c3942a4e45b790f2e720103c6, type: 3}
   - {fileID: 2090958671281753362, guid: e4ca6ef6d21912c45bcb16a6e99af15f, type: 3}
   - {fileID: 3768069680275742937, guid: 99bab9f7a716200478e60957cd0e886b, type: 3}
   - {fileID: 3768069680275742937, guid: f57f3373d0ec3534dae133a7bc6ef164, type: 3}
+  - {fileID: 2090958671281753362, guid: fb170f6a22657624e97b520f5d9875a8, type: 3}
   - {fileID: 3768069680275742937, guid: 651bbe5d19af3054abf0f63f9da81a07, type: 3}
+  - {fileID: 2090958671281753362, guid: 8e18d544442099d4daebd9a44c082d73, type: 3}
   - {fileID: 2090958671281753362, guid: e4ca6ef6d21912c45bcb16a6e99af15f, type: 3}
   - {fileID: 3768069680275742937, guid: 99bab9f7a716200478e60957cd0e886b, type: 3}
   - {fileID: 3768069680275742937, guid: 7e6351ad9cf95dc49a92b51116b64556, type: 3}
+  - {fileID: 2090958671281753362, guid: 339c2f0dcdb570a489b69b4e71c4ea78, type: 3}
   - {fileID: 3768069680275742937, guid: 371334e6ee60b0e409d87bf1722d5f6f, type: 3}
+  - {fileID: 2090958671281753362, guid: 813193d86dd44ae4681f117a6744414e, type: 3}
   - {fileID: 2090958671281753362, guid: e4ca6ef6d21912c45bcb16a6e99af15f, type: 3}
   - {fileID: 3768069680275742937, guid: 331004574afa4fb48910df2eb748027f, type: 3}
+  - {fileID: 2090958671281753362, guid: 1a06636880077a446a43e1b30598ada6, type: 3}
   - {fileID: 3768069680275742937, guid: 26f1177c12133cb419c17b9f5a775bcb, type: 3}
+  - {fileID: 2090958671281753362, guid: 2435a6aa5f30a1a4fa2e7af8f1c69d6d, type: 3}
   - {fileID: 2090958671281753362, guid: 10894f81daa3116438400bac77c78a34, type: 3}
-  narrative: {fileID: 5296195073172914956, guid: d1030034bc3215b4d9814bed5939ca9a, type: 3}
+  - {fileID: 2090958671281753362, guid: 10894f81daa3116438400bac77c78a34, type: 3}

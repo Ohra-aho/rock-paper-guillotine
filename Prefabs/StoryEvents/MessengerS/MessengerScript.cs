@@ -1,14 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+using UnityEngine.Events;
 
-public class MessageHolder : MonoBehaviour
+public class MessengerScript : MonoBehaviour
 {
-    //public  List<GameObject> messages;
-    public GameObject message;
-    [HideInInspector] public bool activated = false;
-    public List<ManAnimator.Frame> frames;
+	public List<Message> possible_messages;
+	public Message tutorial;
+
+	public UnityEvent tutorial_requirement;	
+
+	bool tutorial_needed = false;
+
+	public List<ManAnimator.Frame> frames;
 
     MainController MC;
 
@@ -18,16 +23,34 @@ public class MessageHolder : MonoBehaviour
 
     string[] executioner_message = { };
 
-    public GameObject guillotine;
+	StoryCheckList SCL;
+	StoryController SC;
+	GameObject main_controller;
 
-    private void Update()
-    {
-        if (MC.game_state != MainController.State.dialog) MC.game_state = MainController.State.dialog;
-    }
+	void Awake()
+	{
+		main_controller = GameObject.Find("EventSystem");
+		SCL = main_controller.GetComponent<StoryCheckList>();
+        SC = main_controller.GetComponent<StoryController>();
 
-    private void Awake()
-    {
-        MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+		if(tutorial_requirement != null) tutorial_requirement.Invoke();
+		if(tutorial_needed)
+		{
+			Instantiate(tutorial, transform.parent);
+		} else
+		{
+			if(possible_messages.Count > 0)
+			{
+				int index = UnityEngine.Random.Range(0, possible_messages.Count);
+				Instantiate(possible_messages[index], transform.parent);
+			}
+		}
+		GetComponent<StoryEvent>().over = true;
+	}
+
+	public void Greetings()
+	{
+		MainController MC = main_controller.GetComponent<MainController>();
         messages = MC.GetComponent<StoryController>().GiveMessages();
         executioner_message = MC.GetComponent<StoryController>().GiveExecutionerMessage();
         executioner = MC.GetComponent<StoryController>().executioner;
@@ -36,24 +59,12 @@ public class MessageHolder : MonoBehaviour
 
         //This is ok for now
         int index = MC.GetComponent<StoryCheckList>().greeting_index;
-        GameObject new_message = Instantiate(message, transform.parent);
         List<string> temp = new List<string>();
         MC.GetComponent<StoryCheckList>().greeting_index = index + 1;
-
-        //Add new starting weapons
-        List<GameObject> starting_weapons = MC.GetComponent<StartingWeapons>().GiveStartingWeapons();
-        if(starting_weapons.Count > 0)
-        {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().ClearInventory();
-            for (int i = 0; i < starting_weapons.Count; i++)
-            {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(starting_weapons[i]);
-            }
-        }
         
         if(executioner)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(guillotine);
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(guillotine); Make this work later
             for (int i = 0; i < executioner_message.Length; i++)
             {
                 temp.Add(executioner_message[i]);
@@ -85,16 +96,10 @@ public class MessageHolder : MonoBehaviour
         }
         if(temp.Count > 0)
         {
-            new_message.GetComponent<Message>().lines = temp;
-            new_message.GetComponent<Message>().sprite_frames = ExtractFrameSprites(index);
-            if (executioner) new_message.GetComponent<Message>().executioner = true;
-            new_message.GetComponent<Message>().Inisiate();
-        } else
-        {
-            Destroy(new_message);
-        }
-        GetComponent<StoryEvent>().over = true;
-    }
+            possible_messages[0].GetComponent<Message>().lines = temp;
+            possible_messages[0].GetComponent<Message>().sprite_frames = ExtractFrameSprites(index);
+		}
+	}
 
     private List<int> ExtractFrameSprites(int index)
     {
@@ -103,7 +108,6 @@ public class MessageHolder : MonoBehaviour
         {
             try
             {
-                //int frame = Int32.Parse(messages[index][i][messages[index][i].Length - 1].ToString());
 				string proto_frame = GetNumber(messages[index][i]);
 				int frame = Int32.Parse(proto_frame);
                 temp.Add(frame);
@@ -135,5 +139,51 @@ public class MessageHolder : MonoBehaviour
 			reverse_whole += whole[i];
 		}
 		return reverse_whole;
+	}
+
+	public void Achievement()
+	{
+		if (!SCL.first_achievement && main_controller.GetComponent<RLController>().achievements.Count > 0)
+		{
+			SCL.first_achievement = true;
+			tutorial_needed = true;
+		} else
+		{
+			tutorial_needed = false;
+		}
+	}
+
+	public void AchievementPick()
+	{
+		if (!SCL.first_achievement_pick && main_controller.GetComponent<RLController>().picks > 0)
+		{
+			SCL.first_achievement_pick = true;
+			tutorial_needed = true;
+		} else
+		{
+			tutorial_needed = false;
+		}
+	}
+
+	public void FirstBoss()
+	{
+		if(!SCL.first_boss_met)
+		{
+			tutorial_needed = true;
+		} else
+		{
+			tutorial_needed = false;
+		}
+	}
+
+	public void FirstBossVictory()
+	{
+		if(!SCL.first_boss_beaten)
+		{
+			tutorial_needed = true;
+		} else
+		{
+			tutorial_needed = false;
+		}
 	}
 }

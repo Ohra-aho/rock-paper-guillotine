@@ -22,6 +22,8 @@ public class StartButton : MonoBehaviour
 
     BarkController BC;
 
+	public bool end;
+
     private string[] forfeit_barks =
     {
         "Suit yourself.",
@@ -114,7 +116,11 @@ public class StartButton : MonoBehaviour
 
     public void Activate()
     {
-        if(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.GiveCurrentHealth() > 0 && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons().Count > 0)
+		if(end)
+		{
+			MC.EndGame();
+		}
+        else if(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.GiveCurrentHealth() > 0 && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons().Count > 0)
         {
 			PlayAudio();
             MC.victory = false;
@@ -137,9 +143,6 @@ public class StartButton : MonoBehaviour
             MC.GetComponent<RLController>().ActivateChosen();
             DisplayEmptyGearBark();
 
-            //LoadoutBarks
-            GiantScissorsFull();
-            BackToBasics();
         } 
     }
 

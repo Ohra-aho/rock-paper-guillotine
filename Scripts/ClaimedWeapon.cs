@@ -21,15 +21,28 @@ public class ClaimedWeapon : MonoBehaviour
 
     public bool disabled;
 
+	[HideInInspector] public MainController MC;
+
     private void Awake()
     {
         wheel = GameObject.Find("PlayerWheelHolder").transform.GetChild(0).gameObject;
+		MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+		if(MC.game_state == MainController.State.favourite_pick)
+		{
+			disabled = true;
+		}
     }
 
     private void Update()
     {
-        disabled = !GameObject.Find("PlayerWheelHolder").GetComponent<PlayerWheelHolder>().detached;
-    }
+		if(MC.game_state != MainController.State.favourite_pick)
+		{
+			disabled = !GameObject.Find("PlayerWheelHolder").GetComponent<PlayerWheelHolder>().detached;
+		} else
+		{
+			disabled = true;
+		}
+	}
 
     public void OnBegingDrag()
     {

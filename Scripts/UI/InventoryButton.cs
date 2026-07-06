@@ -15,12 +15,11 @@ public class InventoryButton : MonoBehaviour
             MC.game_state != MainController.State.dead &&
             MC.game_state != MainController.State.stalling &&
             MC.game_state != MainController.State.dialog &&
-            MC.game_state != MainController.State.dead &&
             MC.game_state != MainController.State.transition &&
             MC.game_state != MainController.State.in_battle
         )
         {
-            MC.SetNewState(MainController.State.re_arming);
+            if(MC.game_state != MainController.State.favourite_pick) MC.SetNewState(MainController.State.re_arming);
             if (open)
             {
                 PWH.CloseDrawer();

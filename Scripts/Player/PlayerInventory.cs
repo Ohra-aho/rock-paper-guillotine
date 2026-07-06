@@ -56,11 +56,18 @@ public class PlayerInventory : MonoBehaviour
             InventoryMenu IM = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryMenu>();
             IM.ReconstructInventory();
         }
-        
     }
 
     public void ClearInventory()
     {
+		GameObject RI = GameObject.FindGameObjectWithTag("RI");
+		if(RI.transform.childCount > 0)
+		{
+			for(int i = RI.transform.childCount-1; i >= 0; i--)
+			{
+				Destroy(RI.transform.GetChild(i).gameObject);
+			}	
+		}
         items.Clear();
     }
 

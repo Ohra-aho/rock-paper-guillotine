@@ -13,7 +13,7 @@ public class WheelController : MonoBehaviour
 
     public void DetachingWheel()
     {
-        if(!MC.CompareState(MainController.State.re_arming))
+        if(!MC.CompareState(MainController.State.re_arming) && !MC.CompareState(MainController.State.favourite_pick))
         {
             MC.SetNewState(MainController.State.re_arming);
         }

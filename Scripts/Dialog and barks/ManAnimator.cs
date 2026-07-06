@@ -93,7 +93,7 @@ public class ManAnimator : MonoBehaviour
             }
             GetComponent<AudioSource>().Play();
         }
-        else if ((!dialog_box.GetComponent<DialogBox>().text_anim_playing && !bark_box.GetComponent<DialogBox>().text_anim_playing) && GetComponent<AudioSource>().isPlaying)
+        else if (!dialog_box.GetComponent<DialogBox>().text_anim_playing && !bark_box.GetComponent<DialogBox>().text_anim_playing && GetComponent<AudioSource>().isPlaying)
         {
             GetComponent<AudioSource>().Stop();
         }

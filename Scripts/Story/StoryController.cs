@@ -49,21 +49,24 @@ public class StoryController : MonoBehaviour
         //executioner = true; ///////Debug
 
         //Set base for the playthrough (at this point there is just one)
-        story = Instantiate(GetComponent<MainController>().playthroughts[0], transform);
 
         //If its the first playthrough, set the tutorial
-        if (playthroughts == 0)
+        if(executioner)
+		{
+	        story = Instantiate(GetComponent<MainController>().playthroughts[2], transform);
+		}
+		else if (playthroughts == 0)
         {
-            story.GetComponent<Story>().narrative = Resources.Load<GameObject>("Story/Narratives/Tutorial").GetComponent<Narrative>();
+            //story.GetComponent<Story>().narrative = Resources.Load<GameObject>("Story/Narratives/Tutorial").GetComponent<Narrative>();
+	        story = Instantiate(GetComponent<MainController>().playthroughts[0], transform);
         }
         else if (narrative_index == -1)
 		{
-            story.GetComponent<Story>().narrative = Resources.Load<GameObject>("Story/Narratives/Game_1").GetComponent<Narrative>();
+            //story.GetComponent<Story>().narrative = Resources.Load<GameObject>("Story/Narratives/Game_1").GetComponent<Narrative>();
+	        story = Instantiate(GetComponent<MainController>().playthroughts[1], transform);
 		}
+		
             
-        story.GetComponent<Story>().AddBossSpeetches();
-        story.GetComponent<Story>().AddIntroSpeeches();
-        story.GetComponent<Story>().CreateDeathBark();
         events.AddRange(story.GetComponent<Story>().events);
     }
 
@@ -72,7 +75,7 @@ public class StoryController : MonoBehaviour
         if(story_event_holder.transform.childCount == 0 && storyIndex < events.Count-1)
         {
             storyIndex++;
-            GameObject new_event = Instantiate(events[storyIndex], story_event_holder.transform);
+            Instantiate(events[storyIndex], story_event_holder.transform);
         } 
     }
 

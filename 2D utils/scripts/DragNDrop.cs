@@ -55,6 +55,11 @@ public class DragNDrop : MonoBehaviour
                 drag_begin = true;
             }
         }
+		if(MC.game_state == MainController.State.favourite_pick)
+		{
+			GameObject.Find("Favourite weapon").GetComponent<FavouriteWeaponScript>()
+				.DisplayFavouriteWeapon(GetComponent<ClaimedWeapon>().weapon.GetComponent<Weapon>());
+		}
     }
 
     private void OnMouseDrag()

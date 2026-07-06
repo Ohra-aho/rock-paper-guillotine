@@ -413,7 +413,7 @@ public class RLController : MonoBehaviour
     //You can reroll rewards ones per encounter
     public void CheckForPicky()
     {
-        if(!achievements.Contains("Picky"))
+        if(!achievements.Contains("Picky") && GetComponent<StoryController>().storyIndex > 2)
         {
 			int amount = 0;
 			for(int i = 0; i < RI.transform.childCount; i++)
