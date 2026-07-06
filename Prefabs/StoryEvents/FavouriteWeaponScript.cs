@@ -73,7 +73,7 @@ public class FavouriteWeaponScript : MonoBehaviour
 	{
 		GameObject.Find("PlayerWheelHolder").GetComponent<NonUIButton>().press.Invoke();
 
-		GameObject.Find("Favourite weapon").GetComponent<StoryEvent>().over = true;
+		GameObject.Find("Favourite weapon(Clone)").GetComponent<StoryEvent>().over = true;
 		GameObject.Find("StartButton").GetComponent<StartButton>().end = true;
 		UI.SetActive(false);
 		favourite.SetActive(false);

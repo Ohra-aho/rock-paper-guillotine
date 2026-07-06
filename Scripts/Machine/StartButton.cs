@@ -118,7 +118,9 @@ public class StartButton : MonoBehaviour
     {
 		if(end)
 		{
-			MC.EndGame();
+			PlayAudio();
+            GetComponent<SpriteRenderer>().sprite = active;
+			GameObject.Find("The Q").GetComponent<Test>().PlayAnimation("Lose");
 		}
         else if(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.GiveCurrentHealth() > 0 && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons().Count > 0)
         {
