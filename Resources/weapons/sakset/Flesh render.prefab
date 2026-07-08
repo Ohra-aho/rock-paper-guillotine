@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -9096494956178864306}
   - component: {fileID: 9209208359118813567}
+  - component: {fileID: 3883643081729518032}
   m_Layer: 5
   m_Name: Flesh render
   m_TagString: Untagged
@@ -201,16 +202,10 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-9096494956178864306
 MonoBehaviour:
@@ -240,3 +235,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 1
   in_view: 0
+--- !u!114 &3883643081729518032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

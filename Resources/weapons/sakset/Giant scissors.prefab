@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 5125933731921651048}
   - component: {fileID: 7127496758009734999}
+  - component: {fileID: 5196864154691478020}
   m_Layer: 5
   m_Name: Giant scissors
   m_TagString: Untagged
@@ -106,6 +107,8 @@ MonoBehaviour:
   name: Giant Scissors
   description: Takes 2 slots in your gear.
   sprite: {fileID: 21300000, guid: e8c1e185d7465c443b5f96f5d06bdf7e, type: 3}
+  tiers: []
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -187,17 +190,11 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - You plan to win with just that?
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &5125933731921651048
 MonoBehaviour:
@@ -211,6 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6406ee05689a7245927ff0621f23bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff: {fileID: 0}
 --- !u!114 &7127496758009734999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,5 +221,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawn_limit: 0
   weapons:
   - {fileID: 1944698211339908181, guid: 1445f553c3dc6a049a11f6bfbd5670b5, type: 3}
+--- !u!114 &5196864154691478020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

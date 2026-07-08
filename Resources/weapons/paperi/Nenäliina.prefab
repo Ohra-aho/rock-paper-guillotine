@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6873274728737089563}
   - component: {fileID: 7393566699563639282}
   - component: {fileID: 4649406059305924212}
+  - component: {fileID: 8969603142638634423}
   m_Layer: 5
   m_Name: "Nen\xE4liina"
   m_TagString: Untagged
@@ -191,19 +192,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 1
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - To wipe away the blood.
   - You should always keep one on you. Just in case. 9
   - Do you think anyone will cry for you?
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &6873274728737089563
 MonoBehaviour:
@@ -266,3 +261,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8969603142638634423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

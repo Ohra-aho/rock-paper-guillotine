@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -7783867195882298360}
   - component: {fileID: 5810372262768151894}
+  - component: {fileID: 5513074038567969840}
   m_Layer: 5
   m_Name: Desinfiointi
   m_TagString: Untagged
@@ -183,6 +184,7 @@ MonoBehaviour:
   - That can make you almost unkillable. 16
   - Rocks will get out of hand.
   executioner_comment: 11111111111111111111
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-7783867195882298360
 MonoBehaviour:
@@ -244,5 +246,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e79a37c31551acc40bfe81dfd87c0934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5513074038567969840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

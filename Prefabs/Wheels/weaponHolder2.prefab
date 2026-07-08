@@ -495,6 +495,7 @@ MonoBehaviour:
   weapon: {fileID: 0}
   id: 1
   Info: {fileID: 3827492144287251575, guid: 41d786849bf95294db81c7960312bfc9, type: 3}
+  reminder: {fileID: 6421246692502957818, guid: 1c8aaf540d4127640bc37b477b013390, type: 3}
 --- !u!114 &4882718026938182619
 MonoBehaviour:
   m_ObjectHideFlags: 0

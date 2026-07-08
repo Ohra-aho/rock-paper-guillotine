@@ -10,7 +10,7 @@ public class Chip : MonoBehaviour
         GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
         GetComponent<BuffController>().draw = true;
         GetComponent<BuffController>().lose = true;
-        GetComponent<BuffController>().special = (Weapon w) => { GetComponent<EffectDamage>().SelfDamage(w); };
+        GetComponent<BuffController>().special = (Weapon w) => { GetComponent<EffectDamage>().SelfDamage(GetComponent<Weapon>()); };
         GetComponent<BuffController>().temporary = true;
         GetComponent<BuffController>().timer = 2;
 		GetComponent<BuffController>().reminder = "If loses or draws, you take 1 damage.";

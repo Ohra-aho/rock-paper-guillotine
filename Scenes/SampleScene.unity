@@ -7042,6 +7042,7 @@ MonoBehaviour:
   weapon: {fileID: 0}
   id: 1
   Info: {fileID: 0}
+  reminder: {fileID: 0}
 --- !u!50 &90268212
 Rigidbody2D:
   serializedVersion: 4
@@ -17233,6 +17234,7 @@ MonoBehaviour:
   weapon: {fileID: 0}
   id: 2
   Info: {fileID: 0}
+  reminder: {fileID: 0}
 --- !u!50 &394855598
 Rigidbody2D:
   serializedVersion: 4
@@ -20234,6 +20236,7 @@ MonoBehaviour:
   weapon: {fileID: 0}
   id: 3
   Info: {fileID: 0}
+  reminder: {fileID: 0}
 --- !u!50 &590252584
 Rigidbody2D:
   serializedVersion: 4
@@ -21289,7 +21292,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d24d6efe99de94c418faa3eed1af9a8b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e719e40b029360f4dabc6a54a900e5dc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -32376,6 +32379,7 @@ MonoBehaviour:
   - {fileID: 4163066812587896230, guid: 815fa85bc2b2f534faa2e5ae2c1c5333, type: 3}
   - {fileID: 4163066812587896230, guid: 30f2cc8a86e48c343bf5132f70b1ea52, type: 3}
   - {fileID: 4163066812587896230, guid: 0db93014473a88d4a884a2acf424b7dd, type: 3}
+  - {fileID: 4163066812587896230, guid: 0db93014473a88d4a884a2acf424b7dd, type: 3}
   buttons_active: 1
   reward_tier: 1
   rewards_disabled: 0
@@ -32457,7 +32461,7 @@ MonoBehaviour:
   first_achievement: {fileID: 3768069680275742937, guid: 99006f26adc5acd49abd06638b7162b1, type: 3}
   first_achievement_pick: {fileID: 3768069680275742937, guid: 39c82e93799bfb144b2ce049b6338ea2, type: 3}
   executioner: 0
-  debug: 0
+  debug: 1
   cellar: {fileID: 606367767}
   museum: {fileID: 1591042066}
 --- !u!114 &1066024792
@@ -46656,6 +46660,11 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
   - {fileID: 1944698211339908181, guid: ac12ceb07bb5ecf4183b4ae2792bff55, type: 3}
   - {fileID: 1944698211339908181, guid: 67c6e0a030e2be7468a6aeead01f4fc2, type: 3}
+  - {fileID: 1944698211339908181, guid: dafce7e0a17a8d74c9fcd0c4b8876986, type: 3}
+  - {fileID: 1944698211339908181, guid: ed7d386f6d0a349449026fcf16276f57, type: 3}
+  - {fileID: 1944698211339908181, guid: a5a7e4dab1970aa4eb91d881a39969e5, type: 3}
+  - {fileID: 1944698211339908181, guid: 7387d0d9f83a54a4d93908a1256d1225, type: 3}
+  - {fileID: 1944698211339908181, guid: 1555180087b55f6429ba6e87264a53d2, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
@@ -59824,6 +59833,7 @@ MonoBehaviour:
   weapon: {fileID: 0}
   id: 3
   Info: {fileID: 0}
+  reminder: {fileID: 0}
 --- !u!50 &1538974272
 Rigidbody2D:
   serializedVersion: 4
@@ -66011,6 +66021,7 @@ MonoBehaviour:
   weapon: {fileID: 0}
   id: 2
   Info: {fileID: 0}
+  reminder: {fileID: 0}
 --- !u!50 &1641378580
 Rigidbody2D:
   serializedVersion: 4
@@ -80509,6 +80520,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6130807265776425373, guid: 1ca244630d06a134bb97f1f3b88cb43b, type: 3}
+      propertyPath: reminder
+      value: 
+      objectReference: {fileID: 6421246692502957818, guid: 1c8aaf540d4127640bc37b477b013390, type: 3}
     - target: {fileID: 8141092044132247438, guid: 1ca244630d06a134bb97f1f3b88cb43b, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -80898,6 +80913,7 @@ MonoBehaviour:
   weapon: {fileID: 0}
   id: 1
   Info: {fileID: 0}
+  reminder: {fileID: 0}
 --- !u!50 &1889759981
 Rigidbody2D:
   serializedVersion: 4

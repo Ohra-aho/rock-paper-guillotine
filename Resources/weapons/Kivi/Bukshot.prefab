@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 8722674177556910542}
   - component: {fileID: -3380187326076328509}
+  - component: {fileID: -7388901142859580611}
   m_Layer: 5
   m_Name: Bukshot
   m_TagString: Untagged
@@ -189,19 +190,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - That will shred some enemies. 21
   - I used to hunt sometimes. Friendly fire is fun. 4
   - Little bit more stopping power.
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &8722674177556910542
 MonoBehaviour:
@@ -250,6 +245,7 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   until_used: 0
+  reminder: 
   destructive: 0
   heal_disabler: 0
 --- !u!114 &-3380187326076328509
@@ -262,5 +258,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7857a42d8875df40a636549d8fe242c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7388901142859580611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

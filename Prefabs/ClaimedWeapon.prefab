@@ -468,6 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
   Info: {fileID: 3827492144287251575, guid: 41d786849bf95294db81c7960312bfc9, type: 3}
+  reminder: {fileID: 6421246692502957818, guid: 1c8aaf540d4127640bc37b477b013390, type: 3}
   symbols:
   - {fileID: 21300000, guid: 95f724b909ecdb94d88fa04576f68942, type: 3}
   - {fileID: 21300000, guid: 216225b3908260c40a1f393d0f86ddf8, type: 3}
@@ -479,6 +480,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8977aab7d46fd6b44856657c7c365274, type: 3}
   - {fileID: 21300000, guid: eff7c6c3752222d46a24cfff4f967015, type: 3}
   disabled: 0
+  MC: {fileID: 0}
 --- !u!114 &7725548519680719197
 MonoBehaviour:
   m_ObjectHideFlags: 0

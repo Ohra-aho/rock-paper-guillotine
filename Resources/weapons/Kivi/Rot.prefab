@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -705646538289296385}
   - component: {fileID: 4628298187469378980}
+  - component: {fileID: -1171901651179013297}
   m_Layer: 5
   m_Name: Rot
   m_TagString: Untagged
@@ -225,19 +226,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - Quite a nasty disease.
   - It is intersting what a little damage to genes can do. 10
   - You will dissolve regardless.
   executioner_comment: 11111111111111111111
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-705646538289296385
 MonoBehaviour:
@@ -263,5 +258,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3694b6ec94d39a64bad3fdf25549d740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1171901651179013297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

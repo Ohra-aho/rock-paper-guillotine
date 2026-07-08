@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 8275983422765185356}
   - component: {fileID: -1239369351795343715}
+  - component: {fileID: -3339478922336896671}
   m_Layer: 5
   m_Name: Airbag
   m_TagString: Untagged
@@ -202,19 +203,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 1
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - You better hope you won't need that. 21
   - Great at the early game. Later? Not so much.
   - That is somethimes quite easy to loop. 9
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &8275983422765185356
 MonoBehaviour:
@@ -278,3 +273,15 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
+--- !u!114 &-3339478922336896671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

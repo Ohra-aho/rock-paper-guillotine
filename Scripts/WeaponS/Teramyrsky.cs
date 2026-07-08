@@ -14,5 +14,6 @@ public class Teramyrsky : MonoBehaviour
             else return false;
         };
 		GetComponent<BuffController>().special = (Weapon w) => { GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>()); };
+		GetComponent<BuffController>().reminder = "After use, deals 2 damage and destroys itself.";
     }
 }

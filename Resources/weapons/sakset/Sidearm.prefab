@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1895750179673793303}
   - component: {fileID: 1110346224626437905}
   - component: {fileID: 7616871562490263763}
+  - component: {fileID: 7897473551710360809}
   m_Layer: 5
   m_Name: Sidearm
   m_TagString: Untagged
@@ -215,16 +216,10 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &1895750179673793303
 MonoBehaviour:
@@ -275,3 +270,15 @@ MonoBehaviour:
   after_stacking:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7897473551710360809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

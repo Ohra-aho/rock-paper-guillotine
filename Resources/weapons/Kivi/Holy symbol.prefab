@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -794109146025331787}
   - component: {fileID: 7832676479104829237}
   - component: {fileID: -3766730020890610404}
+  - component: {fileID: -2088998025025714819}
   m_Layer: 5
   m_Name: Holy symbol
   m_TagString: Untagged
@@ -203,19 +204,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - Pray while you still can.
   - Some solace in the face of death.
   - Hope? There is no hope for you. 11
   executioner_comment: 1111111111111111111111
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-794109146025331787
 MonoBehaviour:
@@ -269,3 +264,15 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: bf44e920d974a204589742366b914b99, type: 3}
   - {fileID: 1944698211339908181, guid: 5b41f0edba9bf1e4e8fd39f7636b42ae, type: 3}
   - {fileID: 1944698211339908181, guid: 9a70c67ed37840641afc7537eb6cbf38, type: 3}
+--- !u!114 &-2088998025025714819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

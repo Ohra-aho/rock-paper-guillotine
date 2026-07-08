@@ -10,6 +10,7 @@ public class ClaimedWeapon : MonoBehaviour
     public GameObject weapon;
     private GameObject visibleInfo;
     public GameObject Info;
+	public GameObject reminder;
     public List<Sprite> symbols;
     public List<Sprite> tiers;
 
@@ -140,6 +141,18 @@ public class ClaimedWeapon : MonoBehaviour
 
             visibleInfo.transform.GetChild(2)
                 .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().description;
+			
+			if(weapon.transform.childCount > 0)
+			{
+				for(int i = 0; i < weapon.transform.childCount; i++)
+				{
+					if(weapon.transform.GetChild(0).GetComponent<Buff>().reminder != "")
+					{
+						GameObject new_reminder =  Instantiate(reminder, visibleInfo.transform.GetChild(4));
+						new_reminder.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.transform.GetChild(0).GetComponent<Buff>().reminder;
+					}
+				}
+			}
         }
 
     }

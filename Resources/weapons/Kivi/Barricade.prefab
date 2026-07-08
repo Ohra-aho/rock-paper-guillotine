@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8720878166752751734}
   - component: {fileID: 4214345292257643583}
   - component: {fileID: -4572197309911487649}
+  - component: {fileID: 1074360141642218033}
   m_Layer: 5
   m_Name: Barricade
   m_TagString: Untagged
@@ -178,19 +179,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - I dare you to make that work without the Bunker.
   - You might need a bigger paper. 10
   - May everything bounce off your impenetrable fortress.
   executioner_comment: 11111111111
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &8720878166752751734
 MonoBehaviour:
@@ -265,5 +260,18 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   until_used: 0
+  reminder: 
   destructive: 0
   heal_disabler: 0
+--- !u!114 &1074360141642218033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

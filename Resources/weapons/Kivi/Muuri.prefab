@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 2278583403661379804}
   - component: {fileID: 7710786801712310586}
+  - component: {fileID: -3957945392066612939}
   m_Layer: 5
   m_Name: Muuri
   m_TagString: Untagged
@@ -225,19 +226,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 1
-  kivi_synegry: 1
-  paperi_synergy: 0
-  sakset_synergy: 1
-  points: 0
   used_this_game: 0
   pick_barks:
   - You know, HP won't help you win by itself. 17
   - Just a couple more HP giving rocks and you will be near immortal.
   - That's right. Build a wall around your problems. 16
   executioner_comment: 111111111111111111111111111111111111
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &2278583403661379804
 MonoBehaviour:
@@ -265,3 +260,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 0
   in_view: 0
+--- !u!114 &-3957945392066612939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -2450754519343006674}
   - component: {fileID: 5823936447778791152}
   - component: {fileID: -7323939120587586244}
+  - component: {fileID: 861681394725197410}
   m_Layer: 5
   m_Name: LawBook
   m_TagString: Untagged
@@ -179,13 +180,6 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - And when you die the second time? What then?
@@ -193,6 +187,7 @@ MonoBehaviour:
   - It's funny that there needs to be a people whos job is to understand that stuff.
     7
   executioner_comment: I won't need that.
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-2450754519343006674
 MonoBehaviour:
@@ -270,3 +265,15 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
+--- !u!114 &861681394725197410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

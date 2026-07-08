@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2120291191654528003}
   - component: {fileID: -4228527785483944349}
   - component: {fileID: 2317037729994822782}
+  - component: {fileID: -8480478467109394250}
   m_Layer: 5
   m_Name: Recycler
   m_TagString: Untagged
@@ -179,16 +180,10 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &2120291191654528003
 MonoBehaviour:
@@ -252,10 +247,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f465d3e5c58da42953707f5768f37a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scraps:
-  - {fileID: 1944698211339908181, guid: e33e9c9b5ed2ebb459098082609b4366, type: 3}
-  - {fileID: 1944698211339908181, guid: 8fd2084be21106d4083860c7cbf40be9, type: 3}
-  - {fileID: 1944698211339908181, guid: 93fabd162c95ff04aa7bb4fdba41010e, type: 3}
 --- !u!114 &2317037729994822782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,3 +264,15 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: e33e9c9b5ed2ebb459098082609b4366, type: 3}
   - {fileID: 1944698211339908181, guid: 8fd2084be21106d4083860c7cbf40be9, type: 3}
   - {fileID: 1944698211339908181, guid: 93fabd162c95ff04aa7bb4fdba41010e, type: 3}
+--- !u!114 &-8480478467109394250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

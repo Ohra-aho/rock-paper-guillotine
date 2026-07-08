@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -2515683739492090602}
+  - component: {fileID: -114064825214814029}
   m_Layer: 5
   m_Name: Panssarilasi
   m_TagString: Untagged
@@ -188,19 +189,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 1
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - May your hope never shatter.
   - At least it will take the worst sting away.
   - That will srug off most hits.
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-2515683739492090602
 MonoBehaviour:
@@ -217,3 +212,15 @@ MonoBehaviour:
   destroyed: 0
   disabled: 0
   toughness: 0
+--- !u!114 &-114064825214814029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

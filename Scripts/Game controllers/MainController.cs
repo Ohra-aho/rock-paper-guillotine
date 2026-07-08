@@ -301,7 +301,8 @@ public class MainController : MonoBehaviour
         TC = GameObject.FindGameObjectWithTag("Table").GetComponent<TableController>();
         TC.ClearDisplay();
         EndRound();
-        GameObject.Find("Death Barks(Clone)").GetComponent<DeathBark>().IncreaseRounds();
+		GameObject death_bark = GameObject.Find("Death Barks(Clone)");
+        if(death_bark != null) death_bark.GetComponent<DeathBark>().IncreaseRounds();
 
         //Achievement checks
         GetComponent<RLController>().CHeckHPMaster();

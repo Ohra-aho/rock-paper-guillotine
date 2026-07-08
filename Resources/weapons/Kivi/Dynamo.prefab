@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -2695257146004975807}
   - component: {fileID: -4328773028666174033}
   - component: {fileID: -7283034188812466474}
+  - component: {fileID: 1128447834419944383}
   m_Layer: 5
   m_Name: Dynamo
   m_TagString: Untagged
@@ -192,19 +193,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - Slow, but can be effective.
   - No pain, no gain. 1
   - Simple insurance policy.
   executioner_comment: 1111111111111111111111111
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &4076657417891745610
 MonoBehaviour:
@@ -302,5 +297,18 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   until_used: 0
+  reminder: 
   destructive: 0
   heal_disabler: 0
+--- !u!114 &1128447834419944383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

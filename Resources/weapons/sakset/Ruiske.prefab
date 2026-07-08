@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -186217803599990264}
   - component: {fileID: 9178696264602828713}
+  - component: {fileID: 7708671726883162096}
   m_Layer: 5
   m_Name: Ruiske
   m_TagString: Untagged
@@ -201,17 +202,11 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 1
-  healing: 1
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - That's right. Fight back.
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-186217803599990264
 MonoBehaviour:
@@ -242,3 +237,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disabled: 0
   amount: 2
+--- !u!114 &7708671726883162096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

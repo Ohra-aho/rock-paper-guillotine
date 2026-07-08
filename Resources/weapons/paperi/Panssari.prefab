@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 7190082579369157821}
   - component: {fileID: -8567610660144874844}
+  - component: {fileID: 8246582621823997693}
   m_Layer: 5
   m_Name: Panssari
   m_TagString: Untagged
@@ -196,6 +197,7 @@ MonoBehaviour:
   - That will only make your death happen slower.
   - Why play if there is no risk?
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &7190082579369157821
 MonoBehaviour:
@@ -257,5 +259,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e00a179a4aefcc4eb3cf75ac0435918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8246582621823997693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

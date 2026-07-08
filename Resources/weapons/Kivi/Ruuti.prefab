@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -7783867195882298360}
   - component: {fileID: 1820794659969030995}
   - component: {fileID: 7789464747019772537}
+  - component: {fileID: 8207124411275809834}
   m_Layer: 5
   m_Name: Ruuti
   m_TagString: Untagged
@@ -184,6 +185,7 @@ MonoBehaviour:
   - Let's make your build blow up. 16
   - Explosive entry but runs out of ammo fast. 17
   executioner_comment: 111111111111111111
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-7783867195882298360
 MonoBehaviour:
@@ -261,3 +263,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 2
   armor_piercing: 1
+--- !u!114 &8207124411275809834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

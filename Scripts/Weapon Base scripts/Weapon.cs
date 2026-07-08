@@ -74,7 +74,6 @@ public class Weapon : MonoBehaviour
         real_armor = armor;
         real_damage = damage;
         endPhase.AddListener(ToggleLoopStropper);
-		FindTierSprites();
     }
 
     private void Update()
@@ -82,36 +81,24 @@ public class Weapon : MonoBehaviour
         if (constant != null) constant.Invoke();
     }
 
-	public void FindTierSprites()
-	{
-		if(tiers.Count == 0)
-		{
-			//tiers.AddRange(Resources.LoadAll<Sprite>("backgrounds"));
-		}
-	}
-
     public void InisiateTypeEffects()
     {
-        if (player )
-        {
-			if(!GetComponent<TypeEffects>())
+		if(player) player_owner = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
+		if(GetComponent<TypeEffects>())
+		{
+			switch (type)
 			{
-				player_owner = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
-				gameObject.AddComponent<TypeEffects>();
-				switch (type)
-				{
-					case MainController.Choise.kivi:
-						GetComponent<TypeEffects>().InisiateRock();
-						break;
-					case MainController.Choise.paperi:
-						GetComponent<TypeEffects>().InisiatePaper();
-						break;
-					case MainController.Choise.sakset:
-						GetComponent<TypeEffects>().InisiateScissors();
-						break;
-				}	
-			}
-        }
+				case MainController.Choise.kivi:
+					GetComponent<TypeEffects>().InisiateRock();
+					break;
+				case MainController.Choise.paperi:
+					GetComponent<TypeEffects>().InisiatePaper();
+					break;
+				case MainController.Choise.sakset:
+					GetComponent<TypeEffects>().InisiateScissors();
+					break;
+			}	
+		}
     }
 
     public bool? GetVictory()

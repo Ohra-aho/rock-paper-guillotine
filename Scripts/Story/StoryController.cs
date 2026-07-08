@@ -52,23 +52,27 @@ public class StoryController : MonoBehaviour
 
         //Set base for the playthrough (at this point there is just one)
 
-        //If its the first playthrough, set the tutorial
 		if(debug)
 		{
-			story = Instantiate(GetComponent<MainController>().playthroughts[3], transform);
+			story = Instantiate(GetComponent<MainController>().playthroughts[4], transform);
 		}
         else if(executioner)
 		{
+			//Set executioner game
 	        story = Instantiate(GetComponent<MainController>().playthroughts[2], transform);
 		}
 		else if (playthroughts == 0)
         {
-            //story.GetComponent<Story>().narrative = Resources.Load<GameObject>("Story/Narratives/Tutorial").GetComponent<Narrative>();
+	        //If its the first playthrough, set the tutorial
 	        story = Instantiate(GetComponent<MainController>().playthroughts[0], transform);
         }
-        else
+        else if(GetComponent<StoryCheckList>().executioner_dead)
 		{
-            //story.GetComponent<Story>().narrative = Resources.Load<GameObject>("Story/Narratives/Game_1").GetComponent<Narrative>();
+			//Set museum game
+	        story = Instantiate(GetComponent<MainController>().playthroughts[3], transform);
+		} else
+		{
+			//Set main game
 	        story = Instantiate(GetComponent<MainController>().playthroughts[1], transform);
 		}
 		

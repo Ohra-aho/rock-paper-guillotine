@@ -119,6 +119,9 @@ MonoBehaviour:
       m_Calls: []
   resultPhase:
     m_PersistentCalls:
+      m_Calls: []
+  endPhase:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -1617206338357757752}
         m_TargetAssemblyTypeName: Anvil, Assembly-CSharp
@@ -144,9 +147,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  endPhase:
-    m_PersistentCalls:
-      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -207,6 +207,7 @@ MonoBehaviour:
   - 'That''s quite good. You only might die. '
   - That could be funny with the Monument. 16
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &5755444230686218645
 MonoBehaviour:

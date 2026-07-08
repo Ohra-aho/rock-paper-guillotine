@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -3206155839901610199}
   - component: {fileID: 1500121449105238411}
   - component: {fileID: -6527680081690857036}
+  - component: {fileID: -5432916130006146911}
   m_Layer: 5
   m_Name: Medical supplies
   m_TagString: Untagged
@@ -224,6 +225,7 @@ MonoBehaviour:
   - Clunky, but gets the job done.
   - There actually is a box of bandages in the back room. Wierd regualtion.
   executioner_comment: 11111111111111111111111
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-3206155839901610199
 MonoBehaviour:
@@ -269,3 +271,15 @@ MonoBehaviour:
   spawn_limit: 0
   weapons:
   - {fileID: 1944698211339908181}
+--- !u!114 &-5432916130006146911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

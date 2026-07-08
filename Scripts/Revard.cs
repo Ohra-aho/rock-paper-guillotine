@@ -38,7 +38,6 @@ public class Revard : MonoBehaviour
     {
         if (actualReward.GetComponent<Weapon>())
         {
-			actualReward.GetComponent<Weapon>().FindTierSprites();
 			transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = actualReward.GetComponent<Weapon>().sprite;
 			transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = actualReward.GetComponent<Weapon>().sprite;
 			GetComponent<SpriteRenderer>().sprite = tiers[actualReward.GetComponent<Weapon>().tier];

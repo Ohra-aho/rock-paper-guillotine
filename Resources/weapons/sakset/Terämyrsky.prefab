@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -1488876996524214490}
   - component: {fileID: -5332810274612760702}
   - component: {fileID: -2824872158357557172}
+  - component: {fileID: -291357933955135909}
   m_Layer: 5
   m_Name: "Ter\xE4myrsky"
   m_TagString: Untagged
@@ -178,17 +179,11 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 1
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - You will run out of weapons with that one.
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-1488876996524214490
 MonoBehaviour:
@@ -250,6 +245,7 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   until_used: 0
+  reminder: 
   destructive: 0
   heal_disabler: 0
 --- !u!114 &-2824872158357557172
@@ -266,3 +262,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 2
   armor_piercing: 0
+--- !u!114 &-291357933955135909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

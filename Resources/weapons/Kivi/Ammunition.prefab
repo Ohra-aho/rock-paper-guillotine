@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -7783867195882298360}
   - component: {fileID: 1874179476810424537}
+  - component: {fileID: 7032757778006671625}
   m_Layer: 5
   m_Name: Ammunition
   m_TagString: Untagged
@@ -189,19 +190,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 1
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - 'Going for quick kills? 5 '
   - Risk-takers choise.
   - It takes 2 to tango you know. 17
   executioner_comment: Maybe I could speedrun this.
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-7783867195882298360
 MonoBehaviour:
@@ -263,5 +258,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7404b5b41f09484d961473c762007f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7032757778006671625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

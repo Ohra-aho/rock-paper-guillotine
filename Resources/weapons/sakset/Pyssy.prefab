@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5460494944857187336}
   - component: {fileID: -8165146615769782829}
   - component: {fileID: -4115350253474921807}
+  - component: {fileID: -2333782518230558013}
   m_Layer: 5
   m_Name: Pyssy
   m_TagString: Untagged
@@ -193,17 +194,11 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 1
   used_this_game: 0
   pick_barks:
   - You brought a gun to a scissor fight? Just bad sportsmaship.
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &5460494944857187336
 MonoBehaviour:
@@ -266,3 +261,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 1
   armor_piercing: 0
+--- !u!114 &-2333782518230558013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

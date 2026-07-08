@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2131917852590219947}
   - component: {fileID: 8377459506818662379}
   - component: {fileID: 380605038598251597}
+  - component: {fileID: -5826417876289901}
   m_Layer: 5
   m_Name: Picaxe
   m_TagString: Untagged
@@ -191,17 +192,11 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - Haven't got enough beating already?
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &2131917852590219947
 MonoBehaviour:
@@ -285,5 +280,18 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   until_used: 0
+  reminder: 
   destructive: 0
   heal_disabler: 0
+--- !u!114 &-5826417876289901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

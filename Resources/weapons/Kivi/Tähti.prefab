@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -5764463972135550294}
   - component: {fileID: -712852383344296015}
+  - component: {fileID: -4988485617809789055}
   m_Layer: 5
   m_Name: "T\xE4hti"
   m_TagString: Untagged
@@ -283,3 +284,15 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
+--- !u!114 &-4988485617809789055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

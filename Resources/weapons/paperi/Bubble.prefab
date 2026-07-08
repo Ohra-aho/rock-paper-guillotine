@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -2619552347752533035}
   - component: {fileID: 6375381239054729671}
+  - component: {fileID: 2971231728089459357}
   m_Layer: 5
   m_Name: Bubble
   m_TagString: Untagged
@@ -202,19 +203,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - Could protect you from a hit or two. 17
   - I need to oil the bulb inserting mechanism. 4
   - That's what the rock are for.
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-2619552347752533035
 MonoBehaviour:
@@ -242,3 +237,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 0
   in_view: 0
+--- !u!114 &2971231728089459357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

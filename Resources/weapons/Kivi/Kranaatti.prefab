@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 5755444230686218645}
   - component: {fileID: -4740210523757410787}
+  - component: {fileID: 410015210283467974}
   m_Layer: 5
   m_Name: Kranaatti
   m_TagString: Untagged
@@ -214,19 +215,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 1
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - Going out in a blaze of glory? I like that.
   - Quite a few people have died from that. 9
   - I sometimes wonder is people actually get pushed away by those things. 7
   executioner_comment: 1111111111111111111111
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &5755444230686218645
 MonoBehaviour:
@@ -257,3 +252,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 2
   armor_piercing: 0
+--- !u!114 &410015210283467974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

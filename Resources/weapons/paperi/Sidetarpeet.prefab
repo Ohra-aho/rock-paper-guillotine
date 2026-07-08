@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 2484647238378204995}
+  - component: {fileID: -3481770584052172398}
   m_Layer: 5
   m_Name: Sidetarpeet
   m_TagString: Untagged
@@ -212,19 +213,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 1
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - All the possible papers, and that's what you go with? 17
   - Just a tank, through and through.
   - I hope that's just an early pick.
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &2484647238378204995
 MonoBehaviour:
@@ -240,3 +235,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 1
   in_view: 0
+--- !u!114 &-3481770584052172398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
