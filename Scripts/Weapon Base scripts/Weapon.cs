@@ -65,6 +65,7 @@ public class Weapon : MonoBehaviour
     //Displayed maybe when picked
     public List<string> pick_barks;
     public string executioner_comment;
+	public string favourite;
 
     [HideInInspector] public int damage_soft_cap = 7;
 

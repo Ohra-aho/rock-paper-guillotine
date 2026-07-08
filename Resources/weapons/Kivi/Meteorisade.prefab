@@ -108,7 +108,7 @@ MonoBehaviour:
   description: After use, deals 1 damage for each "rock" you own and destroys itself.
   sprite: {fileID: 21300000, guid: 4ef17831000f73749aacd8de3de32cb2, type: 3}
   tiers: []
-  tier: 0
+  tier: 2
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -202,19 +202,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 1
-  healing: 0
-  health: 0
-  kivi_synegry: 1
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - I look forward to see how hard you hit with that. 1
   - Just a couple more rocks. 17
   - That could be devastating. 4
   executioner_comment: 11111111111111111111111111
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &2599368974187006231
 MonoBehaviour:

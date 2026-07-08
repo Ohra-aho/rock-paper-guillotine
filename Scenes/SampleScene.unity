@@ -32372,9 +32372,10 @@ MonoBehaviour:
   story_event_holder: {fileID: 710133546}
   firstRewardMenu: 0
   playthroughts:
-  - {fileID: 4163066812587896230, guid: 0db93014473a88d4a884a2acf424b7dd, type: 3}
   - {fileID: 4163066812587896230, guid: 21c16ef28e3571046b5f7293f0b40539, type: 3}
   - {fileID: 4163066812587896230, guid: 815fa85bc2b2f534faa2e5ae2c1c5333, type: 3}
+  - {fileID: 4163066812587896230, guid: 30f2cc8a86e48c343bf5132f70b1ea52, type: 3}
+  - {fileID: 4163066812587896230, guid: 0db93014473a88d4a884a2acf424b7dd, type: 3}
   buttons_active: 1
   reward_tier: 1
   rewards_disabled: 0
@@ -32456,6 +32457,7 @@ MonoBehaviour:
   first_achievement: {fileID: 3768069680275742937, guid: 99006f26adc5acd49abd06638b7162b1, type: 3}
   first_achievement_pick: {fileID: 3768069680275742937, guid: 39c82e93799bfb144b2ce049b6338ea2, type: 3}
   executioner: 0
+  debug: 0
   cellar: {fileID: 606367767}
   museum: {fileID: 1591042066}
 --- !u!114 &1066024792
@@ -47449,6 +47451,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1f343e7416db9ca4b8ba4dae9a4b2af1, type: 3}
   - {fileID: 21300000, guid: f0e41909c0d6d6a48a5d4b8e19513d8b, type: 3}
   - {fileID: 21300000, guid: 7a63350e1538e1e4eb79323b1d08d629, type: 3}
+  weapon: {fileID: 0}
   UI: {fileID: 640640612}
   favourite: {fileID: 1416194257}
   favourite_2: {fileID: 2120854071}
@@ -84904,6 +84907,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2120854073}
   - component: {fileID: 2120854072}
+  - component: {fileID: 2120854074}
   m_Layer: 0
   m_Name: Favourite weapon 2
   m_TagString: Untagged
@@ -84980,6 +84984,24 @@ Transform:
   - {fileID: 1507886513}
   m_Father: {fileID: 606367768}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2120854074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120854071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac7055b1c6f5e9419dfd9cb3173f701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgrounds: []
+  icons: []
+  weapon: {fileID: 0}
+  UI: {fileID: 0}
+  favourite: {fileID: 0}
+  favourite_2: {fileID: 0}
 --- !u!1 &2124406998
 GameObject:
   m_ObjectHideFlags: 0

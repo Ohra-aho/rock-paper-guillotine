@@ -107,7 +107,7 @@ MonoBehaviour:
   description: After use, deals 1 damage to you and your enemy.
   sprite: {fileID: 21300000, guid: f3e671672bb5ff344a1199889639a05f, type: 3}
   tiers: []
-  tier: 0
+  tier: 1
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -201,17 +201,11 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 1
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - That was one of my earliest creations actually.
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &4253422903725897790
 MonoBehaviour:

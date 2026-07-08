@@ -19,7 +19,6 @@ public class InventoryButton : MonoBehaviour
             MC.game_state != MainController.State.in_battle
         )
         {
-            if(MC.game_state != MainController.State.favourite_pick) MC.SetNewState(MainController.State.re_arming);
             if (open)
             {
                 PWH.CloseDrawer();

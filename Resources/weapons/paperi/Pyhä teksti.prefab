@@ -170,7 +170,7 @@ MonoBehaviour:
   description: Whenever you heal, deals 1 damage.
   sprite: {fileID: 21300000, guid: 66f7ed2e6b8af094398ab562ed545f1c, type: 3}
   tiers: []
-  tier: 0
+  tier: 1
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -276,19 +276,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 1
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - Ready to confess? 5
   - Hope means nothing without damnation.
   - Smite them sinners. 14
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-4890876596102729932
 MonoBehaviour:

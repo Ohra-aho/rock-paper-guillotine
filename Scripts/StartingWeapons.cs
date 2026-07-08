@@ -35,7 +35,6 @@ public class StartingWeapons : MonoBehaviour
                     if (all_weapons[i].GetComponent<Weapon>().name == weapon_names[j])
                     {
                         temp.Add(all_weapons[i]);
-                        //break;
                     }
                 }
             }

@@ -12,7 +12,7 @@ public class End : MonoBehaviour
     };
     public void Inisiate()
     {
-        GameObject event_system = GameObject.Find("EventSystem");
+        /*GameObject event_system = GameObject.Find("EventSystem");
         int ends = event_system.GetComponent<StoryCheckList>().end_counter;
         ends++;
         if(ends > 0 && !event_system.GetComponent<StoryController>().executioner)
@@ -45,7 +45,7 @@ public class End : MonoBehaviour
                 GetComponent<Message>().sprite_frames.Add(0);
             }
         }
-        event_system.GetComponent<StoryCheckList>().end_counter++;
+        event_system.GetComponent<StoryCheckList>().end_counter++;*/
 
     }
 }

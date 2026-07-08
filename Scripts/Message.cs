@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class Message : MonoBehaviour
     ManAnimator MA;
     MainController MC;
 
-    public bool executioner = false;
+    //public bool executioner = false;
 
 
     private void Update()
@@ -37,12 +38,12 @@ public class Message : MonoBehaviour
     public void Inisiate()
     {
         MC = GameObject.Find("EventSystem").GetComponent<MainController>();
-        if (!executioner && !MC.GetComponent<StoryController>().executioner)
+        if (!MC.GetComponent<StoryController>().executioner)
         {
             if (GameObject.Find("man") != null) HandleMessage();
             else GetComponent<StoryEvent>().over = true;
         }
-        else if(executioner && MC.GetComponent<StoryController>().executioner)
+        else if(MC.GetComponent<StoryController>().executioner)
         {
             if (GameObject.Find("man") != null) HandleMessage();
             else GetComponent<StoryEvent>().over = true;
@@ -53,8 +54,92 @@ public class Message : MonoBehaviour
         }
     }
 
+
+	public void CreateMessage(List<string> messages)
+	{
+        frames = new List<ManAnimator.Frame>();
+
+        //This is ok for now
+        List<string> temp = new List<string>();
+        
+		for (int i = 0; i < messages.Count; i++)
+		{
+			if(messages[i].Contains("[kill]"))
+			{
+				MC.game_state = MainController.State.dead;
+				GameObject.Find("man").GetComponent<SpriteRenderer>().sprite = GameObject.Find("man").GetComponent<ManAnimator>().man_sheet[20];
+				GameObject.Find("Machine").GetComponent<Machine>().EndTheGame();
+				break;
+			} else
+			{
+				try
+				{
+					string line = messages[i];
+					int test = Int32.Parse(line[line.Length-1].ToString());
+					string number = GetNumber(line);
+					temp.Add(line.Substring(0, line.Length-number.Length));
+				} catch
+				{
+					temp.Add(messages[i]);
+				}
+			}
+		}
+        
+        if(temp.Count > 0)
+        {
+            lines = temp;
+            sprite_frames = ExtractFrameSprites(messages);
+		}
+	}
+
+    private List<int> ExtractFrameSprites(List<string> messages)
+    {
+        List<int> temp = new List<int>();
+        for(int i = 0; i < messages.Count; i++)
+        {
+            try
+            {
+				string proto_frame = GetNumber(messages[i]);
+				int frame = Int32.Parse(proto_frame);
+                temp.Add(frame);
+            } catch
+            {
+                temp.Add(6);
+            }
+        }
+        return temp;
+    }
+
+	private string GetNumber(string message)
+	{
+		string whole = "";
+		string reverse_whole = "";
+		for(int i = message.Length-1; i >= 0; i--)
+		{
+			try
+			{
+				int temp = Int32.Parse(message[i].ToString());
+				whole += message[i];
+			} catch
+			{
+				break;
+			}
+		}
+		for(int i = whole.Length-1; i >= 0; i--)
+		{
+			reverse_whole += whole[i];
+		}
+		return reverse_whole;
+	}
+
+
     private void HandleMessage()
     {
+		if(sprite_frames.Count == 0 && lines.Count > 0)
+		{
+			CreateMessage(lines);
+		}
+		
         MA = GameObject.Find("man").GetComponent<ManAnimator>();
 
         frames = new List<ManAnimator.Frame>();
@@ -102,4 +187,6 @@ public class Message : MonoBehaviour
         if(man != null) man.GetComponent<ManAnimator>().ManMessage(frames);
         activated = true;
     }
+
+	
 }

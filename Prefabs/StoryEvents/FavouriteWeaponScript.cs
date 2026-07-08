@@ -6,7 +6,7 @@ public class FavouriteWeaponScript : MonoBehaviour
 {
 	public List<Sprite> backgrounds;
 	public List<Sprite> icons;
-	Weapon weapon;
+	public Weapon weapon;
 	public GameObject UI;
 	public GameObject favourite;
 	public GameObject favourite_2;
@@ -53,6 +53,9 @@ public class FavouriteWeaponScript : MonoBehaviour
 			favourite_2.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.sprite;
 			favourite_2.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.sprite;
 			favourite_2.GetComponent<SpriteRenderer>().sprite = backgrounds[weapon.tier];
+			favourite_2.GetComponent<FavouriteWeaponScript>().weapon = weapon;
+			weapon.tier++;
+			if(weapon.tier > 2) weapon.tier = 2;
 			switch(weapon.type)
 			{
 				case MainController.Choise.kivi: favourite_2.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = icons[0]; break;
@@ -73,10 +76,12 @@ public class FavouriteWeaponScript : MonoBehaviour
 	{
 		GameObject.Find("PlayerWheelHolder").GetComponent<NonUIButton>().press.Invoke();
 
-		GameObject.Find("Favourite weapon(Clone)").GetComponent<StoryEvent>().over = true;
-		GameObject.Find("StartButton").GetComponent<StartButton>().end = true;
 		UI.SetActive(false);
 		favourite.SetActive(false);
+		favourite_2.SetActive(true);
+
+		GameObject.Find("Favourite weapon(Clone)").GetComponent<StoryEvent>().over = true;
+		GameObject.Find("StartButton").GetComponent<StartButton>().end = true;
 	}
 
 }

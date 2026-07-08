@@ -24,6 +24,8 @@ public class StoryController : MonoBehaviour
 
     public bool executioner = false;
 
+	public bool debug = false;
+
     //Scenes
     public GameObject cellar;
     public GameObject museum;
@@ -51,7 +53,11 @@ public class StoryController : MonoBehaviour
         //Set base for the playthrough (at this point there is just one)
 
         //If its the first playthrough, set the tutorial
-        if(executioner)
+		if(debug)
+		{
+			story = Instantiate(GetComponent<MainController>().playthroughts[3], transform);
+		}
+        else if(executioner)
 		{
 	        story = Instantiate(GetComponent<MainController>().playthroughts[2], transform);
 		}
@@ -60,7 +66,7 @@ public class StoryController : MonoBehaviour
             //story.GetComponent<Story>().narrative = Resources.Load<GameObject>("Story/Narratives/Tutorial").GetComponent<Narrative>();
 	        story = Instantiate(GetComponent<MainController>().playthroughts[0], transform);
         }
-        else if (narrative_index == -1)
+        else
 		{
             //story.GetComponent<Story>().narrative = Resources.Load<GameObject>("Story/Narratives/Game_1").GetComponent<Narrative>();
 	        story = Instantiate(GetComponent<MainController>().playthroughts[1], transform);

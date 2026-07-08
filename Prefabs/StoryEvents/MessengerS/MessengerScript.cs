@@ -50,95 +50,18 @@ public class MessengerScript : MonoBehaviour
 
 	public void Greetings()
 	{
-		MainController MC = main_controller.GetComponent<MainController>();
-        messages = MC.GetComponent<StoryController>().GiveMessages();
-        executioner_message = MC.GetComponent<StoryController>().GiveExecutionerMessage();
-        executioner = MC.GetComponent<StoryController>().executioner;
-
-        frames = new List<ManAnimator.Frame>();
-
-        //This is ok for now
-        int index = MC.GetComponent<StoryCheckList>().greeting_index;
-        List<string> temp = new List<string>();
-        MC.GetComponent<StoryCheckList>().greeting_index = index + 1;
-        
-        if(executioner)
-        {
-            //GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(guillotine); Make this work later
-            for (int i = 0; i < executioner_message.Length; i++)
-            {
-                temp.Add(executioner_message[i]);
-            }
-        } else
-        {
-            for (int i = 0; i < messages[index].Length; i++)
-            {
-                if(messages[index][i].Contains("[kill]"))
-                {
-                    MC.game_state = MainController.State.dead;
-					GameObject.Find("man").GetComponent<SpriteRenderer>().sprite = GameObject.Find("man").GetComponent<ManAnimator>().man_sheet[20];
-                    GameObject.Find("Machine").GetComponent<Machine>().EndTheGame();
-                    break;
-                } else
-                {
-                    try
-                    {
-                        string line = messages[index][i];
-                        int test = Int32.Parse(line[line.Length-1].ToString());
-						string number = GetNumber(line);
-                        temp.Add(line.Substring(0, line.Length-number.Length));
-                    } catch
-                    {
-                        temp.Add(messages[index][i]);
-                    }
-                }
-            }
-        }
-        if(temp.Count > 0)
-        {
-            possible_messages[0].GetComponent<Message>().lines = temp;
-            possible_messages[0].GetComponent<Message>().sprite_frames = ExtractFrameSprites(index);
-		}
-	}
-
-    private List<int> ExtractFrameSprites(int index)
-    {
-        List<int> temp = new List<int>();
-        for(int i = 0; i < messages[index].Length; i++)
-        {
-            try
-            {
-				string proto_frame = GetNumber(messages[index][i]);
-				int frame = Int32.Parse(proto_frame);
-                temp.Add(frame);
-            } catch
-            {
-                temp.Add(6);
-            }
-        }
-        return temp;
-    }
-
-	private string GetNumber(string message)
-	{
-		string whole = "";
-		string reverse_whole = "";
-		for(int i = message.Length-1; i >= 0; i--)
+		messages = main_controller.GetComponent<StoryController>().GiveMessages();
+		executioner_message = main_controller.GetComponent<StoryController>().GiveExecutionerMessage();
+		int index = main_controller.GetComponent<StoryCheckList>().greeting_index;
+		possible_messages[0].lines.Clear();
+		if(main_controller.GetComponent<StoryController>().executioner)
 		{
-			try
-			{
-				int temp = Int32.Parse(message[i].ToString());
-				whole += message[i];
-			} catch
-			{
-				break;
-			}
-		}
-		for(int i = whole.Length-1; i >= 0; i--)
+			possible_messages[0].lines.AddRange(executioner_message);
+		} else
 		{
-			reverse_whole += whole[i];
+			possible_messages[0].lines.AddRange(messages[index]);
+			main_controller.GetComponent<StoryCheckList>().greeting_index++;
 		}
-		return reverse_whole;
 	}
 
 	public void Achievement()
@@ -184,6 +107,36 @@ public class MessengerScript : MonoBehaviour
 		} else
 		{
 			tutorial_needed = false;
+		}
+	}
+
+	public void FavouriteWeapon()
+	{
+		GameObject weapon = GameObject.Find("Favourite weapon 2");
+		if(weapon != null) 
+		{
+			Weapon w = weapon.GetComponent<FavouriteWeaponScript>().weapon;
+			if(w != null)
+			{
+				if(w.favourite != "")
+				{
+					tutorial.lines.Clear();
+					tutorial.lines.Add(w.favourite);
+					tutorial_needed = true;
+				} 
+				else tutorial_needed = false;
+
+				for(int i = possible_messages.Count-1; i >= 3; i--)
+				{
+					possible_messages.RemoveAt(i);
+				}
+			} else
+			{
+				for(int i = 0; i < 3; i++)
+				{
+					possible_messages.RemoveAt(0);
+				}
+			}
 		}
 	}
 }

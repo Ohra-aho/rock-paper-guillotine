@@ -23,6 +23,8 @@ public class PlayerWheelHolder : MonoBehaviour
 
     private void Update()
     {
+		Debug.Log(MC.game_state);
+
         if(MC.CompareState(MainController.State.idle) || MC.CompareState(MainController.State.re_arming) || MC.CompareState(MainController.State.reward))
         {
             if(!GetComponent<NonUIButton>().interactable)
@@ -35,17 +37,6 @@ public class PlayerWheelHolder : MonoBehaviour
             {
                 GetComponent<NonUIButton>().interactable = false;
             }
-        }
-    }
-
-    public void press()
-    {
-        if(detached)
-        {
-            AttachWheel();
-        } else
-        {
-            DetachWheel();
         }
     }
 

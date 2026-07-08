@@ -111,6 +111,10 @@ public class StartButton : MonoBehaviour
         {
             GetComponent<NonUIButton>().interactable = false;
         }
+		if(end)
+		{
+            GetComponent<NonUIButton>().interactable = true;
+		}
 
     }
 

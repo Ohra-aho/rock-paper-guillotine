@@ -107,7 +107,7 @@ MonoBehaviour:
   description: Your max HP is capped at 4. +2 damage to all weapons.
   sprite: {fileID: 21300000, guid: 52253f2da442e654c9773289cad6c297, type: 3}
   tiers: []
-  tier: 0
+  tier: 2
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -219,6 +219,7 @@ MonoBehaviour:
   - True glass cannon. 18
   - Shine bright but fast.
   executioner_comment: 11111111111111111111111111
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-5764463972135550294
 MonoBehaviour:
