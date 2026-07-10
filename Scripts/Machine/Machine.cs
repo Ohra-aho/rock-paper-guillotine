@@ -45,6 +45,13 @@ public class Machine : MonoBehaviour
                     RLC.chosen_buffs[i].GetComponent<Slow>().ApplyBuff();
                 }
             }
+
+			TableController TC = GameObject.Find("Table").GetComponent<TableController>();
+			TC.HandleDamage();
+			TC.HandleHealing();
+			TC.HandleHealthDecrease();
+			TC.HandleHealthIncrease();
+
             if(player.GetComponent<PlayerContoller>().GetWeapons().Count > 0) player.GetComponent<PlayerContoller>().GetWeapons()[0].GetComponent<Weapon>().CheckUp();
             enemy.GetComponent<EnemyController>().currentEnemy.GetComponent<BasicEnemy>().weapons[0].GetComponent<Weapon>().CheckUp();
         }

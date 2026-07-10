@@ -26,7 +26,12 @@ public class TableController : MonoBehaviour
 	[HideInInspector] public int player_armor = 0;
 	[HideInInspector] public int enemy_armor = 0;
 
-    private void Update()
+	void Awake()
+	{
+        MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
+	}
+
+	private void Update()
     {
         table = null;
         if (resultsVisible > 0 && !resulting)
@@ -51,7 +56,6 @@ public class TableController : MonoBehaviour
     }
 
     IEnumerator DisplayAll() {
-        MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
 
         yield return new WaitForSeconds(0.2f);
         MC.DisplayConsequenses(result);
@@ -78,6 +82,7 @@ public class TableController : MonoBehaviour
 
 		HandleHealthDecrease();
 		HandleHealthIncrease();
+
 		int true_damage = player_damage - player_armor;
 		if(true_damage < 0) true_damage = 0;
 		if(true_damage + player_direct_damage > 0)
@@ -119,7 +124,7 @@ public class TableController : MonoBehaviour
         }
     }
 
-    private void HandleDamage()
+    public void HandleDamage()
     {
         if(player_damage > 0 || player_direct_damage > 0)
         {
@@ -131,8 +136,8 @@ public class TableController : MonoBehaviour
 				if(true_damage + player_direct_damage > 0)
 				{
 					player.GetComponent<PlayerContoller>().HB.TakeDamage(true_damage + player_direct_damage);
-					MC.playerChoise.takeDamage.Invoke();
-					MC.enemyChoise.dealDamage.Invoke();	
+					if(MC.enemyChoise != null) MC.playerChoise.takeDamage.Invoke();
+					if(MC.playerChoise != null) MC.enemyChoise.dealDamage.Invoke();	
 
 					//Achievements
 					if(MC.first_turn) MC.GetComponent<RLController>().CheckForSlow();
@@ -149,8 +154,8 @@ public class TableController : MonoBehaviour
 				if(true_damage + enemy_direct_damage > 0)
 				{
 					enemy.GetComponent<EnemyController>().HB.TakeDamage(true_damage + enemy_direct_damage);
-					MC.enemyChoise.takeDamage.Invoke();
-					MC.playerChoise.dealDamage.Invoke();
+					if(MC.enemyChoise != null) MC.enemyChoise.takeDamage.Invoke();
+					if(MC.playerChoise != null) MC.playerChoise.dealDamage.Invoke();
 
 					//Achievements
 					if(enemy_damage + enemy_direct_damage >= 5) MC.GetComponent<RLController>().CheckForSlautherer(); 	 
@@ -167,7 +172,7 @@ public class TableController : MonoBehaviour
 		}
     }
 
-    private void HandleHealing()
+    public void HandleHealing()
     {
         if (player_healing > 0)
         {
@@ -189,13 +194,13 @@ public class TableController : MonoBehaviour
         }
     }
 
-	private void HandleHealthIncrease()
+	public void HandleHealthIncrease()
 	{
 		if(health_increase > 0) player.GetComponent<PlayerContoller>().HB.IncreaseHealthBar(health_increase, true);
 		health_increase = 0;
 	}
 
-	private void HandleHealthDecrease()
+	public void HandleHealthDecrease()
 	{
 		if(health_decrease > 0) player.GetComponent<PlayerContoller>().HB.DecreaseHealthBar(health_decrease, true);
 		health_decrease = 0;

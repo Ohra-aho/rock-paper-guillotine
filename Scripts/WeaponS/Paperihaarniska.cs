@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class Paperihaarniska : MonoBehaviour
 {
-    public void IncreaseStack()
+	public GameObject buff;
+
+	void Awake()
+	{
+		Buff own_buff = Instantiate(buff, transform).GetComponent<Buff>();
+		own_buff.armor_buff = GetComponent<Stacking>().stacks;
+		own_buff.id = GetComponent<Weapon>().name;
+	}
+
+	public void IncreaseStack()
     {
-        if(GetComponent<Weapon>().armor > 0 && GetComponent<Weapon>().GiveEffectiveArmor() > 0)
-        {
-            GetComponent<Stacking>().DecreaseStacks(1);
-        } else
-        {
+		GetComponent<Stacking>().DecreaseStacks(1);
+		if(GetComponent<Stacking>().stacks == 0)
+		{
             GetComponent<SelfDestruct>().Destruct();
-        }
+		}
     }
 
-    public void CalculateArmor()
-    {
-        GetComponent<Weapon>().armor = GetComponent<Stacking>().stacks;
-    }
+	public void CalculateArmor()
+	{
+		GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name).GetComponent<Buff>().armor_buff = GetComponent<Stacking>().stacks;
+	}
 }

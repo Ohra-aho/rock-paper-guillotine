@@ -110,7 +110,6 @@ public class Weapon : MonoBehaviour
 
     public bool? GetDead()
     {
-        //return GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().dead;
         return false;
     }
 

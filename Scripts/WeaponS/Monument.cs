@@ -10,7 +10,7 @@ public class Monument : MonoBehaviour
 		bool destroy = false;
         for(int i = 0; i < weapons.Count; i++)
         {
-            if(weapons[i].name != GetComponent<Weapon>().name)
+            if(weapons[i].name != GetComponent<Weapon>().name && weapons[i].name != GetComponent<Weapon>().name+" (Copy)")
             {
                 if (weapons[i].endPhase != null)
                 {

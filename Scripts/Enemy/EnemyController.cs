@@ -297,7 +297,6 @@ public class EnemyController : MonoBehaviour
                 RIE.transform.GetChild(i).GetComponent<Weapon>().first_turn.Invoke();
             }
         }
-        //transform.GetChild(0).GetComponent<BasicEnemy>().SelectWeaponPair();
         transform.GetChild(0).GetComponent<BasicEnemy>().StikToPlan();
         transform.GetChild(0).GetComponent<BasicEnemy>().TelegraphWeaponPair();
     }

@@ -113,7 +113,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -1696805691321598520}
         m_TargetAssemblyTypeName: Healing, Assembly-CSharp
-        m_MethodName: TrueHeal
+        m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

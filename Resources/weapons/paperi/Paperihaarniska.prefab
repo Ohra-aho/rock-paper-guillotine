@@ -102,11 +102,12 @@ MonoBehaviour:
   spammable: 0
   type: 1
   damage: 1
-  armor: 4
+  armor: 0
   real_damage: 0
   real_armor: 0
   name: Paper armor
-  description: -1 to armor after use. When used at 0 armor, destroys itself.
+  description: After use, uses 1 point. When the last point is used, destroys itself.
+    This weapons armor is equal to its points.
   sprite: {fileID: 21300000, guid: 69208b79ab32b494bb9f664ec6c4e379, type: 3}
   tiers: []
   tier: 0
@@ -211,6 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27f4aa6440f5f448b1be98efe9662c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff: {fileID: 810763803538858438, guid: c28dfd92411732c4bb8a69c06bbf1fd6, type: 3}
 --- !u!114 &-1253519416060159144
 MonoBehaviour:
   m_ObjectHideFlags: 0

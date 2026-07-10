@@ -28,7 +28,7 @@ public class Savimöykky : MonoBehaviour
 	{
 		GameObject copy = Instantiate(w.gameObject, GameObject.FindGameObjectWithTag("RI").transform);
 		copy.GetComponent<Weapon>().player = true;
-		copy.GetComponent<Weapon>().name += " (Copy)";
+		if(!copy.GetComponent<Weapon>().name.Contains("(Copy)")) copy.GetComponent<Weapon>().name += " (Copy)";
 
 		copy.GetComponent<Weapon>().InisiateTypeEffects();
 		PlayerInventory PI = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();

@@ -25,6 +25,8 @@ public class Pstone : MonoBehaviour
     public void Heal()
     {
         HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
-        HB.HealToFull();
+		int damage = HB.GiveMaxHealth() - HB.GiveCurrentHealth();
+		GetComponent<Healing>().amount = damage;
+        GetComponent<Healing>().Heal();
     }
 }
