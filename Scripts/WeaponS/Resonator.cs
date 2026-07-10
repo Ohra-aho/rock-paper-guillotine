@@ -7,7 +7,7 @@ public class Resonator : MonoBehaviour
 	bool activated = false;
 	void Awake()
 	{
-		GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name != GetComponent<Weapon>().name; };
+		GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name != GetComponent<Weapon>().name && w.name != "Monument"; };
 		GetComponent<BuffController>().temporary = true;
 		GetComponent<BuffController>().timer = 2;
 		GetComponent<BuffController>().special = ReTriggerEffect;

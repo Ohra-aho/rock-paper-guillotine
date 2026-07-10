@@ -16,9 +16,9 @@ public class Monument : MonoBehaviour
                 {
                     if (weapons[i].GetComponent<SelfDestruct>())
                     {
-						destroy = true;
                         if (!weapons[i].GetComponent<SelfDestruct>().disabled)
                         {
+							destroy = true;
                             weapons[i].GetComponent<SelfDestruct>().disabled = true;
                             weapons[i].endPhase.Invoke();
                             weapons[i].GetComponent<SelfDestruct>().disabled = false;

@@ -19,7 +19,7 @@ public class TimeBomb : MonoBehaviour
         GetComponent<Stacking>().DecreaseStacks(1);
 		if(GetComponent<Stacking>().stacks == 0)
 		{
-			GetComponent<EffectDamage>().DealDamage(GameObject.Find("EventSystem").GetComponent<MainController>().playerChoise);
+			GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
 		}
     }
 

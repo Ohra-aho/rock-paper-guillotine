@@ -20,9 +20,6 @@ public class Beer : MonoBehaviour
             GetComponent<Stacking>().DecreaseStacks(1);
             GetComponent<BuffController>().Equip();
             GetComponent<Healing>().Heal();
-        } else
-        {
-            GetComponent<SelfDestruct>().Destruct();
         }
     }
 }

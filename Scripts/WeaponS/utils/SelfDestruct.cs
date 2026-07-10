@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Weapon))]
 public class SelfDestruct : MonoBehaviour
 {
     //[HideInInspector] public bool used_ones = true;
@@ -11,6 +12,7 @@ public class SelfDestruct : MonoBehaviour
 
     public void Destruct()
     {
+
         if(!disabled && GetComponent<Weapon>().name != "Diamond" && !GetComponent<Weapon>().FindCertainBuff("Ducktape"))
         {
             bool nessessary = true;
