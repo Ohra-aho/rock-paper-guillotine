@@ -9,7 +9,7 @@ public class Savimöykky : MonoBehaviour
 		GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name != GetComponent<Weapon>().name; };
 		GetComponent<BuffController>().temporary = true;
 		GetComponent<BuffController>().timer = 2;
-		GetComponent<BuffController>().endPhase = true;
+		GetComponent<BuffController>().choisePhase = true;
 		GetComponent<BuffController>().special = CopyWeapon;
 		GetComponent<BuffController>().special_apply = true;
 		GetComponent<BuffController>().reminder = "After use, gives you a copy of itself.";

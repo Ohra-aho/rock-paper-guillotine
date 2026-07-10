@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -3416217034105915706}
+  - component: {fileID: 8254196496202367177}
+  - component: {fileID: 3990579666272389731}
   m_Layer: 5
   m_Name: Monument
   m_TagString: Untagged
@@ -103,7 +105,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Monument
-  description: After use, triggers all after use effects of all equipped weapons.
+  description: After use, triggers "after use" effects of all equipped weapons. Self
+    destruction of those weapons will be applied to this weapon.
   sprite: {fileID: 21300000, guid: 43b482c4520ef354fbeff698bbca6dc3, type: 3}
   tiers: []
   tier: 0
@@ -188,19 +191,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - Will you manage to break the game with that?
   - That took a little testing.
   - Oh o... 11
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-3416217034105915706
 MonoBehaviour:
@@ -214,3 +211,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994b104cb41910d4a999b781a6a08c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8254196496202367177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3990579666272389731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyed: 0
+  disabled: 0
+  toughness: 0

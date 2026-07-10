@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(TypeEffects))]
 public class Weapon : MonoBehaviour
 {
     public BuffData[] buff_data; //Used in buff loading
@@ -97,6 +98,7 @@ public class Weapon : MonoBehaviour
 				case MainController.Choise.sakset:
 					GetComponent<TypeEffects>().InisiateScissors();
 					break;
+				default: break;
 			}	
 		}
     }

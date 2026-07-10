@@ -7,6 +7,7 @@ public class Monument : MonoBehaviour
     public void TriggerAllEndTurnEffects()
     {
         List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
+		bool destroy = false;
         for(int i = 0; i < weapons.Count; i++)
         {
             if(weapons[i].name != GetComponent<Weapon>().name)
@@ -15,6 +16,7 @@ public class Monument : MonoBehaviour
                 {
                     if (weapons[i].GetComponent<SelfDestruct>())
                     {
+						destroy = true;
                         if (!weapons[i].GetComponent<SelfDestruct>().disabled)
                         {
                             weapons[i].GetComponent<SelfDestruct>().disabled = true;
@@ -33,5 +35,6 @@ public class Monument : MonoBehaviour
                 }
             }
         }
+		if(destroy) GetComponent<SelfDestruct>().Destruct(); 
     }
 }
