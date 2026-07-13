@@ -180,6 +180,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []

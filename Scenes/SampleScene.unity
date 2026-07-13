@@ -46660,6 +46660,7 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
   - {fileID: 1944698211339908181, guid: 3cc24bd43cd78af478822fb8f5ff3d0d, type: 3}
   - {fileID: 1944698211339908181, guid: bb288ef175fa3d94e8ddbd6ba441974f, type: 3}
+  - {fileID: 1944698211339908181, guid: eb6f3c8fe95323240a3ff312b7dd6598, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623

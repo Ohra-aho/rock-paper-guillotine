@@ -60,11 +60,6 @@ public class TableController : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         MC.DisplayConsequenses(result);
 
-        //Might need something...
-
-		player_armor = MC.playerChoise.GiveEffectiveArmor();
-		enemy_armor = MC.enemyChoise.GiveEffectiveArmor();
-
         player.GetComponent<PlayerContoller>().ResultPhase();
         enemy.GetComponent<EnemyController>().ResultPhase();
 
@@ -73,6 +68,9 @@ public class TableController : MonoBehaviour
 
         ActivateEachTurnEffects(GameObject.FindGameObjectWithTag("RI"));
         ActivateEachTurnEffects(GameObject.FindGameObjectWithTag("RIE"));
+
+		player_armor = MC.playerChoise.GiveEffectiveArmor();
+		enemy_armor = MC.enemyChoise.GiveEffectiveArmor();
 
         if(GiveEffectivePlayerDamage() <= 0) MC.playerChoise.takeNoDamage.Invoke();
         if(GiveEffectiveEnemyDamage() <= 0) MC.enemyChoise.takeNoDamage.Invoke();
@@ -113,6 +111,22 @@ public class TableController : MonoBehaviour
         if (table != null) StopCoroutine(table);
     }
 
+	public void ApplyModifiers(GameObject weapon_holder)
+	{
+		for(int i = 0; i < weapon_holder.transform.childCount; i++)
+        {
+			if(weapon_holder.transform.GetChild(i).GetComponent<Weapon>().heal_modifier != null)
+			{
+				weapon_holder.transform.GetChild(i).GetComponent<Weapon>().heal_modifier.Invoke();
+			}
+
+			if(weapon_holder.transform.GetChild(i).GetComponent<Weapon>().damage_modifier != null)
+			{
+				weapon_holder.transform.GetChild(i).GetComponent<Weapon>().damage_modifier.Invoke();
+			}
+		}
+	}
+
     private void ActivateEachTurnEffects(GameObject weapon_holder)
     {
         for(int i = 0; i < weapon_holder.transform.childCount; i++)
@@ -121,6 +135,8 @@ public class TableController : MonoBehaviour
             {
                 weapon_holder.transform.GetChild(i).GetComponent<Weapon>().eachTurn.Invoke();
             }
+
+			ApplyModifiers(weapon_holder);
         }
     }
 

@@ -111,19 +111,7 @@ MonoBehaviour:
   tier: 0
   first_turn:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5810372262768151894}
-        m_TargetAssemblyTypeName: Disinfectant, Assembly-CSharp
-        m_MethodName: ExtraHeal
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 3098424137161797902}
-          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   end_of_fight:
     m_PersistentCalls:
       m_Calls: []
@@ -181,6 +169,24 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5810372262768151894}
+        m_TargetAssemblyTypeName: Disinfectant, Assembly-CSharp
+        m_MethodName: ExtraHeal
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3098424137161797902}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unequipped:
     m_PersistentCalls:
       m_Calls: []

@@ -52,6 +52,8 @@ public class Weapon : MonoBehaviour
     public UnityEvent constant;
     public UnityEvent onDestruction;
     public UnityEvent eachTurn;
+	public UnityEvent damage_modifier;
+	public UnityEvent heal_modifier;
 
     public UnityEvent unequipped;
 

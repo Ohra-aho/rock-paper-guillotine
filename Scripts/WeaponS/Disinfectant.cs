@@ -13,13 +13,10 @@ public class Disinfectant : MonoBehaviour
 
     public void ExtraHeal(Weapon weapon)
     {
-        if(weapon.player)
-        {
-			TableController TC = GameObject.Find("Table").GetComponent<TableController>();
-			if(TC.player_healing > 0)
-			{
-            	GameObject.Find("Table").GetComponent<TableController>().player_healing++;
-			}
-        }
+		TableController TC = GameObject.Find("Table").GetComponent<TableController>();
+		if(TC.player_healing > 0)
+		{
+			GameObject.Find("Table").GetComponent<TableController>().player_healing++;
+		}
     }
 }

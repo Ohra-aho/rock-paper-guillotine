@@ -204,6 +204,15 @@ public class PlayerContoller : MonoBehaviour
             {
                 equipped_weapons[i].first_turn.Invoke();
             }
+			if (equipped_weapons[i].heal_modifier != null)
+            {
+                equipped_weapons[i].heal_modifier.Invoke();
+            }
+			if (equipped_weapons[i].damage_modifier != null)
+            {
+                equipped_weapons[i].damage_modifier.Invoke();
+            }
+
         }
     }
 
