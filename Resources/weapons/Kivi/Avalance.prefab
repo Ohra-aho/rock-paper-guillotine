@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 588893069576751674}
   - component: {fileID: 3234056374793999739}
   - component: {fileID: -1588361536695442013}
   - component: {fileID: -4627739864903255956}
@@ -107,8 +106,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Avalance
-  description: +2 HP. After use, deals damage equal to half of your current health
-    and destroys itself.
+  description: After use, deals damage equal to half of your current health and destroys
+    itself.
   sprite: {fileID: 21300000, guid: abe08fccc15d51e4eb8605de0a45828a, type: 3}
   tiers: []
   tier: 0
@@ -171,53 +170,23 @@ MonoBehaviour:
       m_Calls: []
   equip:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 588893069576751674}
-        m_TargetAssemblyTypeName: HealthIncrease, Assembly-CSharp
-        m_MethodName: Increase
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   unEquip:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 588893069576751674}
-        m_TargetAssemblyTypeName: HealthIncrease, Assembly-CSharp
-        m_MethodName: Decrease
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   constant:
     m_PersistentCalls:
       m_Calls: []
   onDestruction:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 588893069576751674}
-        m_TargetAssemblyTypeName: HealthIncrease, Assembly-CSharp
-        m_MethodName: Decrease
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
@@ -237,20 +206,6 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   damage_soft_cap: 7
---- !u!114 &588893069576751674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b528c9add8506e74192aac87c7001b8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 2
-  in_view: 0
 --- !u!114 &3234056374793999739
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 24049621770383846}
   - component: {fileID: 2990761805401394327}
   - component: {fileID: -269277187564629926}
+  - component: {fileID: -8852025435948710148}
   m_Layer: 5
   m_Name: Meteorisade
   m_TagString: Untagged
@@ -106,10 +107,11 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Meteor swarm
-  description: After use, deals 1 damage for each "rock" you own and destroys itself.
+  description: After use, deals 2 damage, gives you 2 copies of itself and destroys
+    itself.
   sprite: {fileID: 21300000, guid: 4ef17831000f73749aacd8de3de32cb2, type: 3}
   tiers: []
-  tier: 2
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -122,13 +124,25 @@ MonoBehaviour:
   resultPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2599368974187006231}
-        m_TargetAssemblyTypeName: MeteoriSade, Assembly-CSharp
-        m_MethodName: DealDamageToAmountOfStones
-        m_Mode: 1
+      - m_Target: {fileID: -8852025435948710148}
+        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
+        m_MethodName: SpawnMultipleWeapons
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2990761805401394327}
+        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
+        m_MethodName: DealDamage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3098424137161797902}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -194,6 +208,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -250,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
+  amount: 2
   armor_piercing: 0
 --- !u!114 &-269277187564629926
 MonoBehaviour:
@@ -264,3 +284,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8852025435948710148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn_limit: 0
+  weapons:
+  - {fileID: 1944698211339908181}

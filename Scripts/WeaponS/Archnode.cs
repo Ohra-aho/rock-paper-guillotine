@@ -21,10 +21,11 @@ public class Archnode : MonoBehaviour
                 }
             }
         }
-
+		int amount = GameObject.Find("Table").GetComponent<TableController>().GiveEffectiveEnemyDamage();
+		Debug.Log(amount);
         if(least != null)
         {
-            least.GetComponent<Stacking>().IncreaseStacks(1);
+            least.GetComponent<Stacking>().IncreaseStacks(amount);
         }
     }
 }

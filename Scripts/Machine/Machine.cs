@@ -47,7 +47,6 @@ public class Machine : MonoBehaviour
             }
 
 			TableController TC = GameObject.Find("Table").GetComponent<TableController>();
-			TC.ApplyModifiers(GameObject.FindGameObjectWithTag("RI"));
 			TC.HandleDamage();
 			TC.HandleHealing();
 			TC.HandleHealthDecrease();

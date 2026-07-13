@@ -104,7 +104,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Archnode
-  description: If wins, the weapon with least points gains 1 point.
+  description: After use, the weapon with least points gains as many points as you
+    dealt damage.
   sprite: {fileID: 21300000, guid: 34014014edb9c3248afd24ab65d36259, type: 3}
   tiers: []
   tier: 0
@@ -131,15 +132,6 @@ MonoBehaviour:
       m_Calls: []
   dealDamage:
     m_PersistentCalls:
-      m_Calls: []
-  deal_effect_damage:
-    m_PersistentCalls:
-      m_Calls: []
-  takeNoDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  win:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4739459723233419879}
         m_TargetAssemblyTypeName: Archnode, Assembly-CSharp
@@ -153,6 +145,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
   lose:
     m_PersistentCalls:
       m_Calls: []
@@ -178,6 +179,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
