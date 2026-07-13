@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 2131917852590219947}
   - component: {fileID: 8377459506818662379}
   - component: {fileID: 380605038598251597}
   - component: {fileID: -5826417876289901}
@@ -106,8 +105,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Pickaxe
-  description: Whenever you take damage, gains 1 point. After use, uses 3 points
-    to give one random weapon +1 damage.
+  description: Whenever you take damage with any weapon, one random weapon gains
+    1 point.
   sprite: {fileID: 21300000, guid: 6f3ee77e33bd3084cb4c9f3fd6e45c4d, type: 3}
   tiers: []
   tier: 0
@@ -125,19 +124,7 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8377459506818662379}
-        m_TargetAssemblyTypeName: Pickaxe, Assembly-CSharp
-        m_MethodName: Use
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -183,6 +170,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -198,29 +191,6 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   damage_soft_cap: 7
---- !u!114 &2131917852590219947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stacks: 0
-  stack_limit: 0
-  LoadFunction:
-    m_PersistentCalls:
-      m_Calls: []
-  before_stacking:
-    m_PersistentCalls:
-      m_Calls: []
-  after_stacking:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &8377459506818662379
 MonoBehaviour:
   m_ObjectHideFlags: 0

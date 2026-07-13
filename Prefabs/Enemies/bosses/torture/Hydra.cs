@@ -11,7 +11,6 @@ public class Hydra : MonoBehaviour
 		Buff new_buff = Instantiate(buff, GetComponent<Weapon>().opponent.transform).GetComponent<Buff>();
 		new_buff.id = GetComponent<Weapon>().name;
 		new_buff.destructive = true;
-		new_buff.until_used = true;
 		new_buff.temporary = true;
 		new_buff.timer = 1000;
 		new_buff.reminder = "After use, destroys itself. Lasts until the end of the fight.";
@@ -24,10 +23,9 @@ public class Hydra : MonoBehaviour
 		new_buff.id = GetComponent<Weapon>().name;
 		new_buff.endPhase = true;
 		new_buff.special = (Weapon w) => { GetComponent<EffectDamage>().DealSetDamage(1); };
-		new_buff.until_used = true;
 		new_buff.temporary = true;
 		new_buff.timer = 1000;
-		new_buff.reminder = "Next time when used, deals 1 damage to you.";
+		new_buff.reminder = "After use, deals 1 damage to you. Lasts until the end of the fight.";
 		new_buff.AddBuff();
 	}
 
@@ -37,10 +35,9 @@ public class Hydra : MonoBehaviour
 		new_buff.id = GetComponent<Weapon>().name;
 		new_buff.endPhase = true;
 		new_buff.special = (Weapon w) => { GetComponent<Healing>().Heal(); };
-		new_buff.until_used = true;
 		new_buff.temporary = true;
 		new_buff.timer = 1000;
-		new_buff.reminder = "Next time when used, enemy heals 2.";
+		new_buff.reminder = "After use, enemy heals 2. Lasts until the end of the fight.";
 		new_buff.AddBuff();
 	}
 
@@ -50,10 +47,9 @@ public class Hydra : MonoBehaviour
 		new_buff.id = GetComponent<Weapon>().name;
 		new_buff.endPhase = true;
 		new_buff.special = (Weapon w) => { w.damage--; if(w.damage < 0) w.damage = 0; };
-		new_buff.until_used = true;
 		new_buff.temporary = true;
 		new_buff.timer = 1000;
-		new_buff.reminder = "Next time when used, -1 damage.";
+		new_buff.reminder = "After use, -1 damage. Lasts until the end of the fight.";
 		new_buff.AddBuff();
 	}
 
@@ -63,10 +59,9 @@ public class Hydra : MonoBehaviour
 		new_buff.id = GetComponent<Weapon>().name;
 		new_buff.endPhase = true;
 		new_buff.special = (Weapon w) => { GetComponent<WeaponSpawner>().SpawnOnlyWeapon(); };
-		new_buff.until_used = true;
 		new_buff.temporary = true;
 		new_buff.timer = 1000;
-		new_buff.reminder = "Next time when used, you get a Bleed.";
+		new_buff.reminder = "After use, you get a Bleed. Lasts until the end of the fight.";
 		new_buff.AddBuff();
 	}
 }

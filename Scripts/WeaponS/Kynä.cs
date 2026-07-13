@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class Kynä : MonoBehaviour
 {
-    public int damage_buff;
-    public int armor_buff;
     private void Awake()
     {
-        GetComponent<BuffController>().damage_bonus = damage_buff;
-        GetComponent<BuffController>().armor_bonus = armor_buff;
         GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return weapon.type == MainController.Choise.paperi; };
+		GetComponent<BuffController>().draw = true;
+		GetComponent<BuffController>().special = Extend;
     }
 
-
+	public void Extend(Weapon w)
+	{
+		GameObject RI = GameObject.FindGameObjectWithTag("RI");
+        for (int i = 0; i < RI.transform.childCount; i++)
+        {
+			GameObject buff = RI.transform.GetChild(i).GetComponent<Weapon>().GetCertainBuff(w.name + "_base");
+            buff.GetComponent<Buff>().timer += 1;
+			buff.GetComponent<Buff>().reminder = "+1 armor.";
+        }
+	}
 }

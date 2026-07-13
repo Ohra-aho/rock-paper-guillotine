@@ -104,7 +104,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Needle
-  description: After use, heal 1.
+  description: If draws, heals 1.
   sprite: {fileID: 21300000, guid: f2ae555fbc4020244893c5a4cff6c76c, type: 3}
   tiers: []
   tier: 0
@@ -122,19 +122,7 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -4155978701443049850}
-        m_TargetAssemblyTypeName: Healing, Assembly-CSharp
-        m_MethodName: Heal
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -158,7 +146,19 @@ MonoBehaviour:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -4155978701443049850}
+        m_TargetAssemblyTypeName: Healing, Assembly-CSharp
+        m_MethodName: Heal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -178,6 +178,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
     m_PersistentCalls:
       m_Calls: []
   unequipped:

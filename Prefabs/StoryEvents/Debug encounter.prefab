@@ -46,12 +46,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possible_enemies:
-  - {fileID: 6979226803842198351, guid: 60d3e0fffb5809546b80a7fdd51a9075, type: 3}
+  - {fileID: 6979226803842198351, guid: a83c0229905e1d747b5af0c5c38ece71, type: 3}
   enemies: []
   amount: 1
   immideate_over: 0
   last: 0
   surprices: []
+  first_vistory: {fileID: 0}
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0

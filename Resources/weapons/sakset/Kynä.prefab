@@ -105,7 +105,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Pencil
-  description: +1 damage to all "papers".
+  description: '"Papers''" base effect lasts for an additional round.'
   sprite: {fileID: 21300000, guid: 07d02b3fc8e2c734080aadc765d1fb19, type: 3}
   tiers: []
   tier: 0
@@ -167,6 +167,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
     m_PersistentCalls:
       m_Calls: []
   unequipped:

@@ -559,7 +559,11 @@ public class HealthBar : MonoBehaviour
             }
         } else if(GiveCurrentHealth() <= 0)
         {
-            GameObject.Find("Death Barks(Clone)").GetComponent<DeathBark>().Bark();
+            GameObject death_bark = GameObject.Find("Death Barks(Clone)");
+			if(death_bark != null)
+			{
+				death_bark.GetComponent<DeathBark>().Bark();
+			}
         }
     }
 

@@ -100,12 +100,13 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
-  damage: 1
+  damage: 2
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Shredder
-  description: After use, +1 damage until the end of fight.
+  description: After use, +1 damage until the end of the fight. When not used, -1
+    damage until the end of the fight.
   sprite: {fileID: 21300000, guid: ed6afa4e4f3274743a171bf52d6d8f39, type: 3}
   tiers: []
   tier: 0
@@ -127,6 +128,18 @@ MonoBehaviour:
       - m_Target: {fileID: -6169268825566707884}
         m_TargetAssemblyTypeName: Shredder, Assembly-CSharp
         m_MethodName: AddBuff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -6169268825566707884}
+        m_TargetAssemblyTypeName: Shredder, Assembly-CSharp
+        m_MethodName: Use
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -179,6 +192,24 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -6169268825566707884}
+        m_TargetAssemblyTypeName: Shredder, Assembly-CSharp
+        m_MethodName: NotUsed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
     m_PersistentCalls:
       m_Calls: []
   unequipped:

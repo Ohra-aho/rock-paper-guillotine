@@ -6,6 +6,7 @@ public class Army : MonoBehaviour
 {
 	public GameObject buff;
 	bool disabled = false;
+	int disable_counter = 0;
 
 	void Awake()
 	{
@@ -70,12 +71,21 @@ public class Army : MonoBehaviour
 				new_buff.reminder = "Made \"useless\"";
 				new_buff.AddBuff();	
 			}
+		} else
+		{
+			disable_counter--;
+			if(disable_counter <= 0)
+			{
+				disabled = false;
+				disable_counter = 0;
+			}
 		}
 	}
 
 	public void JarDisabled()
 	{
 		disabled = true;
+		disable_counter = 2;
 	}
 
 

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(TypeEffects))]
 public class Weapon : MonoBehaviour
 {
     public BuffData[] buff_data; //Used in buff loading
@@ -86,23 +85,26 @@ public class Weapon : MonoBehaviour
 
     public void InisiateTypeEffects()
     {
-		if(player) player_owner = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
-		if(GetComponent<TypeEffects>())
-		{
-			switch (type)
+		if(player)
+		{	
+			player_owner = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
+			if(GetComponent<TypeEffects>())
 			{
-				case MainController.Choise.kivi:
-					GetComponent<TypeEffects>().InisiateRock();
-					break;
-				case MainController.Choise.paperi:
-					GetComponent<TypeEffects>().InisiatePaper();
-					break;
-				case MainController.Choise.sakset:
-					GetComponent<TypeEffects>().InisiateScissors();
-					break;
-				default: break;
-			}	
-		}
+				switch (type)
+				{
+					case MainController.Choise.kivi:
+						GetComponent<TypeEffects>().InisiateRock();
+						break;
+					case MainController.Choise.paperi:
+						GetComponent<TypeEffects>().InisiatePaper();
+						break;
+					case MainController.Choise.sakset:
+						GetComponent<TypeEffects>().InisiateScissors();
+						break;
+					default: break;
+				}	
+			}
+		} 
     }
 
     public bool? GetVictory()

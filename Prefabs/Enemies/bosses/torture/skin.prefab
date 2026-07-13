@@ -105,7 +105,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Skin
-  description: If wins, takes 2 damage. Ones the opposing weapon is used again, you
+  description: If wins, takes 2 damage. If the opposing weapon is used again, you
     get a Bleed.
   sprite: {fileID: 21300000, guid: 1880a60f39997064d889cc6e1cd7ce0f, type: 3}
   tiers: []
@@ -194,6 +194,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -203,16 +209,10 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-1716394839736237276
 MonoBehaviour:

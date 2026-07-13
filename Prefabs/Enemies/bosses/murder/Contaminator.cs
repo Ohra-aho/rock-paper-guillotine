@@ -12,6 +12,7 @@ public class Contaminator : MonoBehaviour
 			GetComponent<BuffController>().temporary = true;
 			GetComponent<BuffController>().timer = 2;
 			GetComponent<BuffController>().damage_bonus = 1;
+			GetComponent<BuffController>().special_apply = true;
 		}
 	}
 

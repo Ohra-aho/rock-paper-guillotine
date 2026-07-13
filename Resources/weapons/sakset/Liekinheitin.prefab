@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 6405204930903503939}
-  - component: {fileID: -1057998824033377352}
   - component: {fileID: -8112011954470954435}
+  - component: {fileID: 8480334173133562166}
+  - component: {fileID: -7555496881461211133}
   m_Layer: 5
   m_Name: Liekinheitin
   m_TagString: Untagged
@@ -105,8 +106,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Flamethrower
-  description: Weapon used against this deals 1 damage to its owner after use for
-    4 turns.
+  description: After use, uses 2 points to give you 1 Fireball.
   sprite: {fileID: 21300000, guid: 72b68a017367b1645b0e8d61325d3601, type: 3}
   tiers: []
   tier: 0
@@ -182,6 +182,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -209,21 +215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36fa8312503993c44b2407d80a41b7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff: {fileID: 810763803538858438, guid: c28dfd92411732c4bb8a69c06bbf1fd6, type: 3}
---- !u!114 &-1057998824033377352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 1
-  armor_piercing: 0
 --- !u!114 &-8112011954470954435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,3 +227,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8480334173133562166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stacks: 4
+  stack_limit: 0
+  LoadFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-7555496881461211133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn_limit: 0
+  weapons:
+  - {fileID: 1944698211339908181, guid: de1047f4737e01a45800c28cb183e804, type: 3}

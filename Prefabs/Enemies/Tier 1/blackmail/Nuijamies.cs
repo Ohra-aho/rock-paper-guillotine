@@ -14,8 +14,15 @@ public class Nuijamies : MonoBehaviour
 		}
 	}
 
-	public void Die()
+	public void DrawDemand()
 	{
-		GameObject.Find("EnemyHealth").GetComponent<HealthBar>().InstaKill();
+		GetComponent<EffectDamage>().amount = 2;
+		GetComponent<EffectDamage>().SelfDamage(GetComponent<Weapon>());
+	}
+
+	public void WinDemand()
+	{
+		GetComponent<EffectDamage>().amount = 4;
+		GetComponent<EffectDamage>().SelfDamage(GetComponent<Weapon>());
 	}
 }
