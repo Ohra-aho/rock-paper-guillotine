@@ -44,7 +44,7 @@ public class StartingWeapons : MonoBehaviour
 
     string[][] weapon_collections =
     {
-        new string[] { "Scissors", "Paper", "Rock" },
+        //new string[] { "Scissors", "Paper", "Rock" },
         new string[] { "Scissors", "Cardboard", "Rock" },
         new string[] { "Sword", "Paper", "Rock" },
         new string[] { "Scissors", "Hat", "Wall" },
