@@ -4,21 +4,13 @@ using UnityEngine;
 
 public class AccessCode : MonoBehaviour
 {
-    public void Equip()
-    {
-        Transform RI = GameObject.FindGameObjectWithTag("RI").transform;
-        for(int i = 0; i < RI.childCount; i++)
-        {
-            RI.GetChild(i).GetComponent<Weapon>().penetrating = true;
-        }
-    }
-
-    public void UnEquip()
-    {
-        Transform RI = GameObject.FindGameObjectWithTag("RI").transform;
-        for (int i = 0; i < RI.childCount; i++)
-        {
-            RI.GetChild(i).GetComponent<Weapon>().penetrating = false;
-        }
-    }
+	void Awake()
+	{
+		GetComponent<BuffController>().penetrating = true;
+		GetComponent<BuffController>().timer = 3;
+		GetComponent<BuffController>().temporary = true;
+		GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+		GetComponent<BuffController>().special_apply = true;
+		GetComponent<BuffController>().reminder = "Pierces armor.";
+ 	}
 }

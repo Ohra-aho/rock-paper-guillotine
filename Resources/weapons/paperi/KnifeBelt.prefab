@@ -104,23 +104,11 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Knife belt
-  description: After use, get 1 a "Throwing knife" to your inventory.
+  description: At the start of each fight, get 1 a "Throwing knife" to your inventory.
   sprite: {fileID: 21300000, guid: 09659e4f6945db145a71dcc8f9b14a54, type: 3}
   tiers: []
   tier: 0
   first_turn:
-    m_PersistentCalls:
-      m_Calls: []
-  end_of_fight:
-    m_PersistentCalls:
-      m_Calls: []
-  choisePhase:
-    m_PersistentCalls:
-      m_Calls: []
-  resultPhase:
-    m_PersistentCalls:
-      m_Calls: []
-  endPhase:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6685880983201037068}
@@ -135,6 +123,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  end_of_fight:
+    m_PersistentCalls:
+      m_Calls: []
+  choisePhase:
+    m_PersistentCalls:
+      m_Calls: []
+  resultPhase:
+    m_PersistentCalls:
+      m_Calls: []
+  endPhase:
+    m_PersistentCalls:
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -178,6 +178,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
     m_PersistentCalls:
       m_Calls: []
   unequipped:

@@ -90,11 +90,6 @@ public class PlayerInventory : MonoBehaviour
                 {
                     equipped_weapons[i].GetComponent<Laava>().Equip();
                 }
-
-                if (equipped_weapons[i].GetComponent<AccessCode>())
-                {
-                    equipped_weapons[i].GetComponent<AccessCode>().Equip();
-                }
             }
         }
     }

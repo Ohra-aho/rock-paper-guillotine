@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 3410846685529990821}
   - component: {fileID: -4301725252953782211}
+  - component: {fileID: 3085994741014443493}
   m_Layer: 5
   m_Name: "P\xE4\xE4sykoodi"
   m_TagString: Untagged
@@ -104,7 +105,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Access code
-  description: All of your weapons pierce armor.
+  description: After use, all weapons pierce armor for 2 turns.
   sprite: {fileID: 21300000, guid: a6c59c3d8536df7449719431d4d61225, type: 3}
   tiers: []
   tier: 0
@@ -122,7 +123,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3085994741014443493}
+        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
+        m_MethodName: Equip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -155,34 +168,10 @@ MonoBehaviour:
       m_Calls: []
   equip:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3410846685529990821}
-        m_TargetAssemblyTypeName: AccessCode, Assembly-CSharp
-        m_MethodName: Equip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   unEquip:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3410846685529990821}
-        m_TargetAssemblyTypeName: AccessCode, Assembly-CSharp
-        m_MethodName: UnEquip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   constant:
     m_PersistentCalls:
       m_Calls: []
@@ -190,6 +179,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
@@ -233,3 +228,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3085994741014443493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff: {fileID: 0}
+  damage_bonus: 0
+  armor_bonus: 0
+  effect_damage_bonus: 0
+  toughness_buff: 0
+  set_a_to_zero: 0
+  set_d_to_zero: 0
+  always_on: 1
+  choisePhase: 0
+  resultPhase: 0
+  endPhase: 0
+  each_turn: 0
+  victory: 0
+  special_apply: 0
+  takeDamage: 0
+  takeNoDamage: 0
+  dealDamage: 0
+  deal_effect_damage: 0
+  draw: 0
+  win: 0
+  lose: 0
+  heal: 0
+  gain_points: 0
+  equip: 0
+  unEquip: 0
+  constant: 0
+  onDestruction: 0
+  awake: 0
+  on_death: 0
+  temporary: 0
+  timer: 0
+  penetrating: 0
+  draw_winner: 0
+  health_buff: 0
+  until_used: 0
+  reminder: 
+  destructive: 0
+  heal_disabler: 0
