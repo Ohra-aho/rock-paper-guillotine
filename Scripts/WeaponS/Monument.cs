@@ -12,27 +12,24 @@ public class Monument : MonoBehaviour
         {
             if(weapons[i].name != GetComponent<Weapon>().name && weapons[i].name != GetComponent<Weapon>().name+" (Copy)")
             {
-                if (weapons[i].endPhase.GetPersistentEventCount() > 0)
-                {
-                    if (weapons[i].GetComponent<SelfDestruct>())
-                    {
-                        if (!weapons[i].GetComponent<SelfDestruct>().disabled)
-                        {
-							destroy = true;
-                            weapons[i].GetComponent<SelfDestruct>().disabled = true;
-                            weapons[i].endPhase.Invoke();
-                            weapons[i].GetComponent<SelfDestruct>().disabled = false;
-                        }
-                        else
-                        {
-                            weapons[i].endPhase.Invoke();
-                        }
-                    }
-                    else
-                    {
-                        weapons[i].endPhase.Invoke();
-                    }
-                }
+				if (weapons[i].GetComponent<SelfDestruct>())
+				{
+					if (!weapons[i].GetComponent<SelfDestruct>().disabled)
+					{
+						destroy = true;
+						weapons[i].GetComponent<SelfDestruct>().disabled = true;
+						weapons[i].endPhase.Invoke();
+						weapons[i].GetComponent<SelfDestruct>().disabled = false;
+					}
+					else
+					{
+						weapons[i].endPhase.Invoke();
+					}
+				}
+				else
+				{
+					weapons[i].endPhase.Invoke();
+				}
             }
         }
 		if(destroy) GetComponent<SelfDestruct>().Destruct(); 

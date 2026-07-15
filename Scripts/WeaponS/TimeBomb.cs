@@ -34,6 +34,6 @@ public class TimeBomb : MonoBehaviour
 
 	public void EmptyStack()
 	{
-			GetComponent<Stacking>().stacks = 0;
+		GetComponent<Stacking>().stacks = 0;
 	}
 }

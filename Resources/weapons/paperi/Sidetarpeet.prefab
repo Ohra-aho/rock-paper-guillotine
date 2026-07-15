@@ -104,7 +104,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Bandages
-  description: +1 HP
+  description: +1 HP. Buff remains if this weapon is destroyed.
   sprite: {fileID: 21300000, guid: 47a4a441b0018e4409e1f356f0eab32a, type: 3}
   tiers: []
   tier: 0
@@ -188,20 +188,14 @@ MonoBehaviour:
       m_Calls: []
   onDestruction:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2484647238378204995}
-        m_TargetAssemblyTypeName: HealthIncrease, Assembly-CSharp
-        m_MethodName: Decrease
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
     m_PersistentCalls:
       m_Calls: []
   unequipped:

@@ -11,15 +11,13 @@ public class EffectDamage : MonoBehaviour
         if (weapon != null)
         {
             weapon.EffectDamage(amount);
-            if(weapon.deal_effect_damage.GetPersistentEventCount() > 0)
-                weapon.deal_effect_damage.Invoke();
+			weapon.deal_effect_damage.Invoke();
             
         }
         else
         {
             GetComponent<Weapon>().EffectDamage(amount);
-            if (GetComponent<Weapon>().deal_effect_damage.GetPersistentEventCount() > 0)
-                GetComponent<Weapon>().deal_effect_damage.Invoke();
+			GetComponent<Weapon>().deal_effect_damage.Invoke();
         }
     }
 
@@ -28,23 +26,20 @@ public class EffectDamage : MonoBehaviour
         if (weapon != null)
         {
             weapon.SelfDamage(amount);
-            if (weapon.deal_effect_damage.GetPersistentEventCount() > 0)
-                weapon.deal_effect_damage.Invoke();
+			weapon.deal_effect_damage.Invoke();
 
         }
         else
         {
             GetComponent<Weapon>().SelfDamage(amount);
-            if (GetComponent<Weapon>().deal_effect_damage.GetPersistentEventCount() > 0)
-                GetComponent<Weapon>().deal_effect_damage.Invoke();
+			GetComponent<Weapon>().deal_effect_damage.Invoke();
         }
     }
 
     public void DealSetDamage(int amount)
     {
         GetComponent<Weapon>().EffectDamage(amount);
-        if (GetComponent<Weapon>().deal_effect_damage.GetPersistentEventCount() > 0)
-            GetComponent<Weapon>().deal_effect_damage.Invoke();
+		GetComponent<Weapon>().deal_effect_damage.Invoke();
     }
 
     public void SetSelfDamage(int amount)

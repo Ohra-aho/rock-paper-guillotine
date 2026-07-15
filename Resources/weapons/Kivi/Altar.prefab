@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -8037816972097706396}
   - component: {fileID: 2426040337145588873}
   - component: {fileID: -2524954868899436238}
+  - component: {fileID: 564001648072539446}
   m_Layer: 5
   m_Name: Altar
   m_TagString: Untagged
@@ -186,6 +187,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -202,7 +209,6 @@ MonoBehaviour:
   - Eternity. A dreadful thing.
   executioner_comment: No. I won't give it to you.
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &6361541160200024083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,11 +244,12 @@ MonoBehaviour:
   toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
-  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
   each_turn: 0
+  damage_modifier: 0
+  heal_modifier: 0
   victory: 0
   special_apply: 0
   takeDamage: 0
@@ -304,3 +311,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &564001648072539446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn_limit: 0
+  weapons:
+  - {fileID: 1944698211339908181, guid: 60283fdf5fc01854fb91fb5b7934a477, type: 3}
+  - {fileID: 1944698211339908181, guid: e3948a761d752404eb0760de3b735480, type: 3}
+  - {fileID: 1944698211339908181, guid: 40596934a9b747343ab7ddad3f9536f5, type: 3}

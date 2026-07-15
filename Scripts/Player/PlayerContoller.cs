@@ -200,19 +200,9 @@ public class PlayerContoller : MonoBehaviour
         List<Weapon> equipped_weapons = GetWeapons();
         for(int i = 0; i < equipped_weapons.Count; i++)
         {
-            if (equipped_weapons[i].first_turn.GetPersistentEventCount() > 0)
-            {
-                equipped_weapons[i].first_turn.Invoke();
-            }
-			if (equipped_weapons[i].heal_modifier.GetPersistentEventCount() > 0)
-            {
-                equipped_weapons[i].heal_modifier.Invoke();
-            }
-			if (equipped_weapons[i].damage_modifier.GetPersistentEventCount() > 0)
-            {
-                equipped_weapons[i].damage_modifier.Invoke();
-            }
-
+			equipped_weapons[i].first_turn.Invoke();
+			equipped_weapons[i].heal_modifier.Invoke();
+			equipped_weapons[i].damage_modifier.Invoke();
         }
     }
 
@@ -221,13 +211,10 @@ public class PlayerContoller : MonoBehaviour
         List<Weapon> equipped_weapons = GetWeapons();
         for (int i = 0; i < RI.transform.childCount; i++)
         {
-            if(RI.transform.GetChild(i).GetComponent<Weapon>().unequipped.GetPersistentEventCount() > 0)
-            {
-                if(!equipped_weapons.Contains(RI.transform.GetChild(i).GetComponent<Weapon>()))
-                {
-                    RI.transform.GetChild(i).GetComponent<Weapon>().unequipped.Invoke();
-                }
-            }
+			if(!equipped_weapons.Contains(RI.transform.GetChild(i).GetComponent<Weapon>()))
+			{
+				RI.transform.GetChild(i).GetComponent<Weapon>().unequipped.Invoke();
+			}
         }
 
 		for(int i = 0; i < MC.GetComponent<RLController>().chosen_buffs.Count; i++)

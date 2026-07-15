@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 3131440090839854460}
   - component: {fileID: -8746704239180943675}
   - component: {fileID: -8923054260420660409}
-  - component: {fileID: 8254196496202367177}
   m_Layer: 5
   m_Name: d_paperi
   m_TagString: Untagged
@@ -190,7 +189,6 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &-3743861753717257825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,15 +246,3 @@ MonoBehaviour:
   spawn_limit: 0
   weapons:
   - {fileID: 1944698211339908181, guid: a47ba23783ff33d44ac4df8e5ce9a434, type: 3}
---- !u!114 &8254196496202367177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

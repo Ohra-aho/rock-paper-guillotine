@@ -69,8 +69,6 @@ public class Weapon : MonoBehaviour
     public string executioner_comment;
 	public string favourite;
 
-    [HideInInspector] public int damage_soft_cap = 7;
-
     private void Awake()
     {
         real_armor = armor;
@@ -80,7 +78,7 @@ public class Weapon : MonoBehaviour
 
     private void Update()
     {
-        if (constant.GetPersistentEventCount() > 0) constant.Invoke();
+        constant.Invoke();
     }
 
     public void InisiateTypeEffects()
@@ -246,7 +244,7 @@ public class Weapon : MonoBehaviour
 				infoHolder.GetComponent<WeaponInfoRack>().TrueReset();
                 infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
                 GameObject.Find("EventSystem").GetComponent<MainController>().Win();
-                if(on_death.GetPersistentEventCount() > 0) on_death.Invoke();
+                on_death.Invoke();
                 hb.dead = false;
                 if (dead)
                 {

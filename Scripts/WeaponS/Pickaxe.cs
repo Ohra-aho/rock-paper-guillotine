@@ -23,6 +23,6 @@ public class Pickaxe : MonoBehaviour
 				possible_weapons.Add(weapons[i]);
 			}
 		}
-		possible_weapons[Random.Range(0, possible_weapons.Count)].GetComponent<Stacking>().IncreaseStacks(1);
+		if(possible_weapons.Count > 0) possible_weapons[Random.Range(0, possible_weapons.Count)].GetComponent<Stacking>().IncreaseStacks(1);
     }
 }
