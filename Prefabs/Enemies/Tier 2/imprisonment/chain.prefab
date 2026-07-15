@@ -103,7 +103,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Chain
-  description: After use, -1 damage to all of your weapons for one turn.
+  description: After use, -1 damage to all of your weapons for one turn. If wins,
+    this effect is disabled for 3 turns.
   sprite: {fileID: 21300000, guid: 1bb3823f209981e419bd5ef3821fb86e, type: 3}
   tiers: []
   tier: 0
@@ -151,7 +152,19 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -5200432842179264749}
+        m_TargetAssemblyTypeName: Army, Assembly-CSharp
+        m_MethodName: ChainDisable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   lose:
     m_PersistentCalls:
       m_Calls: []
@@ -178,6 +191,24 @@ MonoBehaviour:
       m_Calls: []
   eachTurn:
     m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -5200432842179264749}
+        m_TargetAssemblyTypeName: Army, Assembly-CSharp
+        m_MethodName: CountDownDisabled
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
       m_Calls: []
   unequipped:
     m_PersistentCalls:
@@ -188,16 +219,10 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-5200432842179264749
 MonoBehaviour:

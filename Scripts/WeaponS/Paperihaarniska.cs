@@ -24,6 +24,16 @@ public class Paperihaarniska : MonoBehaviour
 
 	public void CalculateArmor()
 	{
-		GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name).GetComponent<Buff>().armor_buff = GetComponent<Stacking>().stacks;
+		GameObject own_buff = GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name);
+		if(own_buff != null)
+		{
+			own_buff.GetComponent<Buff>().armor_buff = GetComponent<Stacking>().stacks;	
+		} else
+		{
+			
+			Buff new_buff = Instantiate(buff, transform).GetComponent<Buff>();
+			new_buff.armor_buff = GetComponent<Stacking>().stacks;
+			new_buff.id = GetComponent<Weapon>().name;
+		}
 	}
 }

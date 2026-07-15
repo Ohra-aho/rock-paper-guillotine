@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -915748003629455221}
   - component: {fileID: 728901231638690517}
   - component: {fileID: 6799964917637838455}
+  - component: {fileID: -7297550448490360099}
   m_Layer: 5
   m_Name: d_kivi
   m_TagString: Untagged
@@ -169,6 +170,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -181,6 +188,7 @@ MonoBehaviour:
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
+  favourite: 
   damage_soft_cap: 7
 --- !u!114 &-915748003629455221
 MonoBehaviour:
@@ -225,3 +233,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disabled: 0
   amount: 1
+--- !u!114 &-7297550448490360099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn_limit: 0
+  weapons:
+  - {fileID: 1944698211339908181, guid: a47ba23783ff33d44ac4df8e5ce9a434, type: 3}

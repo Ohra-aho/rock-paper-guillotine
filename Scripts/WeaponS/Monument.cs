@@ -12,7 +12,7 @@ public class Monument : MonoBehaviour
         {
             if(weapons[i].name != GetComponent<Weapon>().name && weapons[i].name != GetComponent<Weapon>().name+" (Copy)")
             {
-                if (weapons[i].endPhase != null)
+                if (weapons[i].endPhase.GetPersistentEventCount() > 0)
                 {
                     if (weapons[i].GetComponent<SelfDestruct>())
                     {

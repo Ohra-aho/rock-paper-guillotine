@@ -13,39 +13,37 @@ public class Army : MonoBehaviour
 		if(GetComponent<Weapon>().name == "Hedgehog")
 		{
 			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
-			GetComponent<BuffController>().endPhase = true;
+			GetComponent<BuffController>().damage_modifier = true;
 			GetComponent<BuffController>().special = (Weapon w) =>
 			{
 				TableController TC = GameObject.Find("Table").GetComponent<TableController>();
-				int damage = TC.player_damage;
-				int armor = TC.player_armor;
-				bool pierce = w.opponent.penetrating;
-				if(damage > 0)
+				if(TC.GiveEffectivePlayerDamage() > 0)
 				{
-					if(damage > armor || pierce)
-					{
-						GameObject.Find("Table").GetComponent<TableController>().player_damage = 0;
-						GetComponent<EffectDamage>().DealDamage(w);
-						GetComponent<BuffController>().Unequip();	
-					}
+					GameObject.Find("Table").GetComponent<TableController>().player_damage = 0;
+					GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
+					GetComponent<BuffController>().Unequip();	
 				}
 			};
 			GetComponent<BuffController>().special_apply = true;
+			GetComponent<BuffController>().reminder = "Prevent first damage taken and deal 1 damage.";
 		}
 	}
 
 	public void Chain()
 	{
-		List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
-		for(int i = 0; i < weapons.Count; i++)
+		if(!disabled)
 		{
-			Buff new_buff = Instantiate(buff, weapons[i].transform).GetComponent<Buff>();
-			new_buff.id = GetComponent<Weapon>().name;
-			new_buff.temporary = true;
-			new_buff.timer = 2;
-			new_buff.damage_buff = -1;
-			new_buff.reminder = "-1 damage";
-			new_buff.AddBuff();
+			List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
+			for(int i = 0; i < weapons.Count; i++)
+			{
+				Buff new_buff = Instantiate(buff, weapons[i].transform).GetComponent<Buff>();
+				new_buff.id = GetComponent<Weapon>().name;
+				new_buff.temporary = true;
+				new_buff.timer = 2;
+				new_buff.damage_buff = -1;
+				new_buff.reminder = "-1 damage";
+				new_buff.AddBuff();
+			}
 		}
 	}
 
@@ -88,6 +86,20 @@ public class Army : MonoBehaviour
 		disable_counter = 2;
 	}
 
+	public void ChainDisable()
+	{
+		disabled = true;
+		disable_counter = 3;
+	}
 
+	public void CountDownDisabled()
+	{
+		disable_counter--;
+		if(disable_counter <= 0)
+		{
+			disabled = false;
+			disable_counter = 0;
+		}
+	}
 
 }

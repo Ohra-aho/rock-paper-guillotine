@@ -80,7 +80,7 @@ public class PlayerInventory : MonoBehaviour
             {
                 if (equipped_weapons[i].GetComponent<BuffController>())
                 {
-                    if(equipped_weapons[i].GetComponent<BuffController>().always_on)
+                    if(!equipped_weapons[i].GetComponent<BuffController>().special_apply)
                     {
                         equipped_weapons[i].GetComponent<BuffController>().Equip();
                     }

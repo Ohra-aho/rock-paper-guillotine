@@ -14,7 +14,7 @@ public class Gambler : MonoBehaviour
 			Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
 			new_buff.endPhase = true;
 			new_buff.id = GetComponent<Weapon>().name;
-			new_buff.special = (Weapon w) => { GetComponent<EffectDamage>().SelfDamage(w); };
+			new_buff.special = (Weapon w) => { GetComponent<EffectDamage>().SelfDamage(GetComponent<Weapon>()); };
 			new_buff.temporary = true;
 			new_buff.timer = 1000;
 			new_buff.reminder = "After use, deals 1 damage to you. Lasts until the end of the fight.";

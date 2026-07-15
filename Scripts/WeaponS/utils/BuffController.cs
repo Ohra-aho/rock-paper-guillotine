@@ -18,7 +18,7 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public int toughness_buff = 0;
     [HideInInspector] public bool set_a_to_zero = false;
     [HideInInspector] public bool set_d_to_zero = false;
-    public bool always_on = true;
+    //public bool always_on = true;
 
     public delegate void Special(Weapon weapon);
     public Special special;
@@ -31,6 +31,8 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public bool resultPhase;
     [HideInInspector] public bool endPhase;
     [HideInInspector] public bool each_turn;
+	[HideInInspector] public bool damage_modifier;
+	[HideInInspector] public bool heal_modifier;
     [HideInInspector] public bool victory;
     [HideInInspector] public bool special_apply;
 
@@ -152,6 +154,8 @@ public class BuffController : MonoBehaviour
             new_buff.choisePhase = choisePhase;
             new_buff.resultPhase = resultPhase;
             new_buff.endPhase = endPhase;
+            new_buff.damage_modifier = damage_modifier;
+            new_buff.heal_modifier = heal_modifier;
             new_buff.victory = victory;
             new_buff.takeDamage = takeDamage;
             new_buff.takeNoDamage = takeNoDamage;

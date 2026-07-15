@@ -51,13 +51,6 @@ public class Laava : MonoBehaviour
             new_buff.GetComponent<Buff>().id = GetComponent<Weapon>().name;
             new_buff.GetComponent<Buff>().damage_buff = weapon.GetComponent<Weapon>().GiveEffectiveArmor();
             new_buff.GetComponent<Buff>().armor_buff = -weapon.GetComponent<Weapon>().GiveEffectiveArmor();
-            //new_buff.GetComponent<Buff>().endPhase = true;
-            /*new_buff.GetComponent<Buff>().special = (Weapon w) =>
-            {
-                new_buff.GetComponent<Buff>().RemoveBuff();
-                new_buff.GetComponent<Buff>().damage_buff = w.GetComponent<Weapon>().GiveEffectiveArmor();
-                new_buff.GetComponent<Buff>().armor_buff = -w.GetComponent<Weapon>().GiveEffectiveArmor();
-            };*/
             new_buff.GetComponent<Buff>().AddBuff();
         }
     }

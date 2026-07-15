@@ -22,6 +22,8 @@ public class Buff : MonoBehaviour
     public bool resultPhase;
     public bool endPhase;
 	public bool each_turn;
+	public bool damage_modifier;
+	public bool heal_modifier;
     public bool victory;
 
     public bool takeDamage;
@@ -104,6 +106,10 @@ public class Buff : MonoBehaviour
 			transform.parent.GetComponent<Weapon>().resultPhase.AddListener(() => special(weapon));
 		if (endPhase)
 			transform.parent.GetComponent<Weapon>().endPhase.AddListener(() => special(weapon));
+		if (damage_modifier)
+			transform.parent.GetComponent<Weapon>().damage_modifier.AddListener(() => special(weapon));
+		if (heal_modifier)
+			transform.parent.GetComponent<Weapon>().heal_modifier.AddListener(() => special(weapon));
 		if (victory)
 			transform.parent.GetComponent<Weapon>().victory.AddListener(() => special(weapon));
 		if (takeDamage)
@@ -218,6 +224,10 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().resultPhase.RemoveListener(() => special(weapon));
         if (endPhase)
             transform.parent.GetComponent<Weapon>().endPhase.RemoveListener(() => special(weapon));
+		if (damage_modifier)
+			transform.parent.GetComponent<Weapon>().damage_modifier.RemoveListener(() => special(weapon));
+		if (heal_modifier)
+			transform.parent.GetComponent<Weapon>().heal_modifier.RemoveListener(() => special(weapon));
         if (victory)
             transform.parent.GetComponent<Weapon>().victory.RemoveListener(() => special(weapon));
         if (takeDamage)

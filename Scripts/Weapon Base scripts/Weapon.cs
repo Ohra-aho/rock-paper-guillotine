@@ -80,7 +80,7 @@ public class Weapon : MonoBehaviour
 
     private void Update()
     {
-        if (constant != null) constant.Invoke();
+        if (constant.GetPersistentEventCount() > 0) constant.Invoke();
     }
 
     public void InisiateTypeEffects()
@@ -219,13 +219,34 @@ public class Weapon : MonoBehaviour
         {
             HealthBar hb = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
             dead = hb.GetComponent<HealthBar>().CheckIfDead();
+
+			//Advance temporary buffs
+			GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+			for (int i = 0; i < RIE.transform.childCount; i++)
+			{
+				Transform child = RIE.transform.GetChild(i);
+				if (child.childCount > 0)
+				{
+					for (int j = 0; j < child.childCount; j++)
+					{
+						if (child.GetChild(j).GetComponent<Buff>())
+						{
+							if (child.GetChild(j).GetComponent<Buff>().timer > 0)
+							{
+								child.GetChild(j).GetComponent<Buff>().TickDown();
+							}
+						}
+					}
+				}
+			}
+			
             if (dead)
             {
                 GameObject infoHolder = GameObject.Find("enemy weapon rack");
 				infoHolder.GetComponent<WeaponInfoRack>().TrueReset();
                 infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
                 GameObject.Find("EventSystem").GetComponent<MainController>().Win();
-                if(on_death != null) on_death.Invoke();
+                if(on_death.GetPersistentEventCount() > 0) on_death.Invoke();
                 hb.dead = false;
                 if (dead)
                 {

@@ -66,11 +66,14 @@ public class TableController : MonoBehaviour
         player.GetComponent<PlayerContoller>().EndPhase();
         enemy.GetComponent<EnemyController>().EndPhase();
 
-        ActivateEachTurnEffects(GameObject.FindGameObjectWithTag("RI"));
-        ActivateEachTurnEffects(GameObject.FindGameObjectWithTag("RIE"));
+		List<Weapon> player_weapons = player.GetComponent<PlayerContoller>().GetWeapons();
+		List<Weapon> enemy_weapons = enemy.GetComponent<EnemyController>().GetWeapons();
+        ActivateEachTurnEffects(player_weapons);
+        ActivateEachTurnEffects(enemy_weapons);
 
 		player_armor = MC.playerChoise.GiveEffectiveArmor();
 		enemy_armor = MC.enemyChoise.GiveEffectiveArmor();
+		Debug.Log("Enemy armor 1:" + enemy_armor);
 
         if(GiveEffectivePlayerDamage() <= 0) MC.playerChoise.takeNoDamage.Invoke();
         if(GiveEffectiveEnemyDamage() <= 0) MC.enemyChoise.takeNoDamage.Invoke();
@@ -111,33 +114,33 @@ public class TableController : MonoBehaviour
         if (table != null) StopCoroutine(table);
     }
 
-	public void ApplyModifiers(GameObject weapon_holder)
+	public void ApplyModifiers(List<Weapon> weapons)
 	{
-		for(int i = 0; i < weapon_holder.transform.childCount; i++)
+		for(int i = 0; i < weapons.Count; i++)
         {
-			if(weapon_holder.transform.GetChild(i).GetComponent<Weapon>().heal_modifier != null)
+			if(weapons[i].heal_modifier.GetPersistentEventCount() > 0)
 			{
-				weapon_holder.transform.GetChild(i).GetComponent<Weapon>().heal_modifier.Invoke();
+				weapons[i].heal_modifier.Invoke();
 			}
 
-			if(weapon_holder.transform.GetChild(i).GetComponent<Weapon>().damage_modifier != null)
+			if(weapons[i].damage_modifier.GetPersistentEventCount() > 0)
 			{
-				weapon_holder.transform.GetChild(i).GetComponent<Weapon>().damage_modifier.Invoke();
+				weapons[i].damage_modifier.Invoke();
 			}
 		}
 	}
 
-    private void ActivateEachTurnEffects(GameObject weapon_holder)
+    private void ActivateEachTurnEffects(List<Weapon> weapons)
     {
-        for(int i = 0; i < weapon_holder.transform.childCount; i++)
+        for(int i = 0; i < weapons.Count; i++)
         {
-            if(weapon_holder.transform.GetChild(i).GetComponent<Weapon>().eachTurn != null)
+            if(weapons[i].eachTurn.GetPersistentEventCount() > 0)
             {
-                weapon_holder.transform.GetChild(i).GetComponent<Weapon>().eachTurn.Invoke();
+                weapons[i].eachTurn.Invoke();
             }
-
-			ApplyModifiers(weapon_holder);
         }
+
+		ApplyModifiers(weapons);
     }
 
     public void HandleDamage()
@@ -165,6 +168,7 @@ public class TableController : MonoBehaviour
         {
             if(!enemy.GetComponent<EnemyController>().HB.dead)
             {
+				Debug.Log("Enemy armor 2: "+enemy_armor);
 				int true_damage = enemy_damage - enemy_armor;
 				if(true_damage < 0) true_damage = 0;
 				if(true_damage + enemy_direct_damage > 0)

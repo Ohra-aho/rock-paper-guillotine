@@ -9,7 +9,7 @@ public class CrystalScissors : MonoBehaviour
 	void Awake()
 	{
 		Buff own_buff = Instantiate(buff, transform).GetComponent<Buff>();
-		own_buff.damage_buff += GetComponent<Stacking>().stacks;
+		own_buff.damage_buff = GetComponent<Stacking>().stacks;
 		own_buff.id = GetComponent<Weapon>().name;
 	}
 
@@ -29,6 +29,16 @@ public class CrystalScissors : MonoBehaviour
 
 	public void CalculateDamage()
 	{
-		GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name).GetComponent<Buff>().damage_buff = GetComponent<Stacking>().stacks;
+		GameObject own_buff = GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name);
+		if(own_buff != null)
+		{
+			own_buff.GetComponent<Buff>().damage_buff = GetComponent<Stacking>().stacks;	
+		} else
+		{
+			
+			Buff new_buff = Instantiate(buff, transform).GetComponent<Buff>();
+			new_buff.damage_buff = GetComponent<Stacking>().stacks;
+			new_buff.id = GetComponent<Weapon>().name;
+		}
 	}
 }

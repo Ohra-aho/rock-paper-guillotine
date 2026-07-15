@@ -8,7 +8,7 @@ public class Rauhansopimus : MonoBehaviour
     {
         TableController TC = GameObject.Find("Table").GetComponent<TableController>();
 
-        if (TC.enemy_damage == 0 && TC.player_damage == 0)
+        if (TC.GiveEffectiveEnemyDamage() == 0 && TC.GiveEffectivePlayerDamage() == 0)
         {
             GetComponent<Healing>().Heal();
         }

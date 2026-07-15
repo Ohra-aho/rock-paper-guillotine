@@ -176,11 +176,29 @@ MonoBehaviour:
       m_Calls: []
   constant:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8578841849468338333}
+        m_TargetAssemblyTypeName: Paperihaarniska, Assembly-CSharp
+        m_MethodName: CalculateArmor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
@@ -244,19 +262,7 @@ MonoBehaviour:
   stack_limit: 0
   LoadFunction:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8578841849468338333}
-        m_TargetAssemblyTypeName: Paperihaarniska, Assembly-CSharp
-        m_MethodName: CalculateArmor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   before_stacking:
     m_PersistentCalls:
       m_Calls: []

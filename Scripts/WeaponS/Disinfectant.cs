@@ -7,8 +7,9 @@ public class Disinfectant : MonoBehaviour
     private void Awake()
     {
         GetComponent<BuffController>().special = ExtraHeal;
-        GetComponent<BuffController>().endPhase = true;
+        //GetComponent<BuffController>().heal_modifier = true;
         GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return true; };
+		GetComponent<BuffController>().special_apply = true;
     }
 
     public void ExtraHeal(Weapon weapon)

@@ -228,14 +228,7 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage()
     {
-        //dead = HB.GetComponent<HealthBar>().CheckIfDead();
         if(damageEffect != null) damageEffect.Invoke();
-       /* if(dead)
-        {
-            GameObject infoHolder = GameObject.Find("EnemyWeaponInfo");
-            infoHolder.GetComponent<WeaponInfoRack>().ClearInfoRack();
-            HB.dead = false;
-        }*/
     }
 
     // Rock, Paper, scissors
@@ -260,26 +253,6 @@ public class EnemyController : MonoBehaviour
         if (endEffect != null) endEffect();
         
         chosenWeapon.GetComponent<Weapon>().endPhase.Invoke();
-
-        //Advance temporary buffs
-        GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
-        for (int i = 0; i < RIE.transform.childCount; i++)
-        {
-            Transform child = RIE.transform.GetChild(i);
-            if (child.childCount > 0)
-            {
-                for (int j = 0; j < child.childCount; j++)
-                {
-                    if (child.GetChild(j).GetComponent<Buff>())
-                    {
-                        if (child.GetChild(j).GetComponent<Buff>().timer > 0)
-                        {
-                            child.GetChild(j).GetComponent<Buff>().TickDown();
-                        }
-                    }
-                }
-            }
-        }
     }
 
     public int GiveCurrentHealth()

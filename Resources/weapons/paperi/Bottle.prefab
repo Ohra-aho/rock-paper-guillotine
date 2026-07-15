@@ -105,7 +105,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Bottle
-  description: After use, gives "Glass Shard" to inventory and destroys itself.
+  description: If you take damage through, gives "Glass Shard" to inventory and destroys
+    itself.
   sprite: {fileID: 21300000, guid: e7241872e938d9844a1b94e794af2409, type: 3}
   tiers: []
   tier: 0
@@ -122,6 +123,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   endPhase:
+    m_PersistentCalls:
+      m_Calls: []
+  victory:
+    m_PersistentCalls:
+      m_Calls: []
+  takeDamage:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1690945544247164510}
@@ -148,12 +155,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  victory:
-    m_PersistentCalls:
-      m_Calls: []
-  takeDamage:
-    m_PersistentCalls:
-      m_Calls: []
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -191,6 +192,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
     m_PersistentCalls:
       m_Calls: []
   unequipped:

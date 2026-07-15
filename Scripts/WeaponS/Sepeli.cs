@@ -16,7 +16,7 @@ public class Sepeli : MonoBehaviour
 		GetComponent<BuffController>().reminder = "After use, the weapon with least points gains 2 points and this weapon destroys itself.";
     }
 
-	 public void GivePoints(Weapon w)
+	public void GivePoints(Weapon w)
     {
         List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
         Weapon least = null;
