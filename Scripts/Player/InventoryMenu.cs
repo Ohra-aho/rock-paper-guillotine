@@ -85,5 +85,7 @@ public class InventoryMenu : MonoBehaviour
     {
         clearInventory();
         displayWeapons();
+		transform.GetChild(0).GetComponent<NonUIScroll>().CalculateHeight();
+        transform.GetChild(0).GetComponent<NonUIScroll>().CalculateStartAndEndPoint();
     }
 }

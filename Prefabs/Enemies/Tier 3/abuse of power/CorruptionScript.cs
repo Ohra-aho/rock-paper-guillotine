@@ -26,6 +26,7 @@ public class CorruptionScript : MonoBehaviour
 		new_buff.temporary = true;
 		new_buff.timer = 1000;
 		new_buff.AddBuff();
+		new_buff.reminder = "Made useless.";
 	}
 
 	public void Equipped(Weapon w)

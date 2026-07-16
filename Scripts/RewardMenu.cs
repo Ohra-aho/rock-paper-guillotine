@@ -88,6 +88,7 @@ public class RewardMenu : MonoBehaviour
         re_re.GetComponent<Test>().PauseAnimation();
         re_re.GetComponent<Test>().StopAudio(0);
         EndAudio();
+		DestroyAllInfos();
         Destroy(gameObject);
     }
 
@@ -335,5 +336,20 @@ public class RewardMenu : MonoBehaviour
         }
     }
 
-   
+	public void DestroyAllInfos()
+	{
+		List<GameObject> all = new List<GameObject>();
+		all.AddRange(GameObject.FindGameObjectsWithTag("reward_info"));
+		if(all.Count > 1)
+		{
+			for(int i = all.Count-1; i >= all.Count; i--)
+			{
+				Destroy(all[i]);
+			}	
+		} else
+		{
+			Destroy(all[0]);
+		}
+
+	}
 }

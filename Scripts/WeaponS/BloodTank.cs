@@ -12,37 +12,9 @@ public class BloodTank : MonoBehaviour
         {
             if (GetComponent<Stacking>().stacks >= 5)
             {
-                current_health_bonus++;
 				GetComponent<Stacking>().stacks = 0;
-                IncreaseHealth(1, true);
+                GetComponent<HealthIncrease>().Increase();
             }
         }
-    }
-
-    public void IncreaseHealth(int bonus, bool in_view)
-    {
-        HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
-        HB.IncreaseHealthBar(bonus, in_view);
-    }
-
-    public void DecreaseHealth(int bonus, bool in_view)
-    {
-        HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
-        HB.DecreaseHealthBar(bonus, in_view);
-    }
-
-    public void Equip()
-    {
-        IncreaseHealth(current_health_bonus, false);
-    }
-
-    public void UnEquip()
-    {
-        DecreaseHealth(current_health_bonus, false);
-    }
-
-    public void LoadHealth()
-    {
-        current_health_bonus = GetComponent<Stacking>().GiveAmountOfStackDividedBy(3);
     }
 }
