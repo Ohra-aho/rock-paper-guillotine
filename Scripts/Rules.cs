@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
 public class Rules : MonoBehaviour
 {
+	public GameObject rulesheet;
+	public GameObject rulesheet_table;
     bool revealed = false;
 
-	public void Press()
+	public void TablePress()
 	{
-		if(revealed)
-		{
-			GetComponent<Test>().PlayAnimation("Hide");
-			revealed = false;
-		} else
-		{
-			GetComponent<Test>().PlayAnimation("Reveal");
-			revealed = true;
-		}
+		rulesheet.SetActive(true);
+		gameObject.SetActive(false);
 	}
+
+	public void SheetPress()
+	{
+		rulesheet_table.SetActive(true);
+		gameObject.SetActive(false);
+	}
+
 }
