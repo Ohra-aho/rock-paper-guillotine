@@ -40,6 +40,7 @@ public class RewardMenu : MonoBehaviour
         re_re.GetComponent<Test>().UnPauseAnimation();
         re_re.GetComponent<Test>().PlayAudio(1);
         re_re.GetComponent<Test>().PlayAudio(0);
+		re_re.GetComponent<RewardReroll>().reward_open = false;
     }
 
     private void Update()
@@ -63,7 +64,8 @@ public class RewardMenu : MonoBehaviour
     {
         GameObject re_re = GameObject.Find("Reward reroll");
         re_re.GetComponent<Test>().StopAudio(0);
-        GameObject.Find("Reward reroll").GetComponent<Test>().PauseAnimation();
+        re_re.GetComponent<Test>().PauseAnimation();
+		re_re.GetComponent<RewardReroll>().reward_open = true;
         for (int i = 0; i < 3; i++)
         {
             transform.GetChild(i).GetChild(0).GetComponent<Revard>().disabled = false;
@@ -346,7 +348,7 @@ public class RewardMenu : MonoBehaviour
 			{
 				Destroy(all[i]);
 			}	
-		} else
+		} else if(all.Count > 0)
 		{
 			Destroy(all[0]);
 		}
