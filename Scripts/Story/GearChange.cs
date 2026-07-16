@@ -15,6 +15,7 @@ public class GearChange : MonoBehaviour
 
         if(MC.game_state == MainController.State.idle)
         {
+			MC.SetNewState(MainController.State.transition);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().unlocked_wheel++;
             GameObject.Find("Machine").GetComponent<Test>().PlayAnimation("gearChange");
             GetComponent<StoryEvent>().over = true;

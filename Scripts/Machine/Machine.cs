@@ -62,6 +62,11 @@ public class Machine : MonoBehaviour
         player.GetComponent<PlayerContoller>().ChangeWheel();
     }
 
+	public void SetIdle()
+	{
+		MC.GetComponent<MainController>().SetNewState(MainController.State.idle);
+	}
+
     public void CheckAnimation()
     {
         AnimatorStateInfo stateInfo = GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
