@@ -101,13 +101,14 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 1
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Catapult
-  description: After use, all weapons gain "Deals 2 damage after use and destroys
-    itself" for one turn.
+  description: After use, all other weapons gain "After use, deals 2 damage and destroys
+    itself". Lasts for one turn.
   sprite: {fileID: 21300000, guid: ac9752e3fea28aa4d99a87d64f9dd9fb, type: 3}
   tiers: []
   tier: 0
@@ -183,6 +184,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -200,7 +207,6 @@ MonoBehaviour:
     9
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &7511640265576175850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,11 +226,12 @@ MonoBehaviour:
   toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
-  always_on: 0
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
   each_turn: 0
+  damage_modifier: 0
+  heal_modifier: 0
   victory: 0
   special_apply: 0
   takeDamage: 0

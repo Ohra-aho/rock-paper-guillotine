@@ -17,12 +17,13 @@ public class Weapon : MonoBehaviour
     public bool draw_winner = false;
     public bool spammable = false; //For enemy behaviour
     public MainController.Choise type;
+	[HideInInspector] public MainController.Choise og_type;
     public int damage;
     public int armor;
     [HideInInspector] public int real_damage;
     [HideInInspector] public int real_armor;
     public string name;
-    public string description;
+    [TextArea] public string description;
     public Sprite sprite;
 	[HideInInspector] public List<Sprite> tiers = new List<Sprite>();
 	public int tier = 0;
@@ -73,6 +74,7 @@ public class Weapon : MonoBehaviour
     {
         real_armor = armor;
         real_damage = damage;
+		og_type = type;
         endPhase.AddListener(ToggleLoopStropper);
     }
 

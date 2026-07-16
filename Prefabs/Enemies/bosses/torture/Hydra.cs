@@ -37,7 +37,7 @@ public class Hydra : MonoBehaviour
 		new_buff.special = (Weapon w) => { GetComponent<Healing>().Heal(); };
 		new_buff.temporary = true;
 		new_buff.timer = 1000;
-		new_buff.reminder = "After use, enemy heals 2. Lasts until the end of the fight.";
+		new_buff.reminder = "After use, enemy heals 1. Lasts until the end of the fight.";
 		new_buff.AddBuff();
 	}
 

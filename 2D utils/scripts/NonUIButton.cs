@@ -20,14 +20,6 @@ public class NonUIButton : MonoBehaviour
         MC = GameObject.Find("EventSystem").GetComponent<MainController>();
     }
 
-    private void Update()
-    {
-        /*if(MC == null)
-        {
-            MC = GameObject.Find("EventSystem").GetComponent<MainController>();
-        }*/
-    }
-
     private void OnMouseDown()
     {
         

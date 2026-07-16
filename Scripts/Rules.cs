@@ -12,12 +12,14 @@ public class Rules : MonoBehaviour
 	public void TablePress()
 	{
 		rulesheet.SetActive(true);
+		GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
 		gameObject.SetActive(false);
 	}
 
 	public void SheetPress()
 	{
 		rulesheet_table.SetActive(true);
+		GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
 		gameObject.SetActive(false);
 	}
 

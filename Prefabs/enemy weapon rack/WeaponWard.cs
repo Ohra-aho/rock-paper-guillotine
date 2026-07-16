@@ -12,6 +12,8 @@ public class WeaponWard : MonoBehaviour
 	public GameObject image_1;
 	public GameObject image_2;
 	public GameObject icon;
+	public GameObject new_icon;
+	public GameObject icon_changer;
 	public GameObject title;
 	public GameObject point_stats;
 	public GameObject point_damage;
@@ -22,6 +24,8 @@ public class WeaponWard : MonoBehaviour
 	public GameObject armor;
 	public GameObject description;
 	public bool move;
+
+	private bool type_changed = false;
 
 	MainController MC;
 
@@ -35,16 +39,39 @@ public class WeaponWard : MonoBehaviour
 		if(weapon != null && MC.game_state == MainController.State.in_battle)
 		{
 			DisplayWeapon();
-			if(!telegraphing) GetComponent<Test>().PlayAnimation("CardInfoReveal");
-			else GetComponent<Test>().PlayAnimation("InfoReveal");
+			if(!telegraphing) 
+			{
+				GetComponent<Test>().PlayAnimation("CardInfoReveal");
+				if(weapon.type != weapon.og_type)
+				{
+					ChangeTypeChangerIcon();
+					icon_changer.GetComponent<Test>().PlayAnimation("TypeReveal");
+					type_changed = true;
+				}
+			}
+			else 
+			{
+				GetComponent<Test>().PlayAnimation("InfoReveal");
+			}
 		}
 	}
 	public void HideInfo()
 	{
 		if(weapon != null)
 		{
-			if(!telegraphing) GetComponent<Test>().PlayAnimation("CardInfoHide");
-			else GetComponent<Test>().PlayAnimation("InfoHide");
+			if(!telegraphing)
+			{
+				GetComponent<Test>().PlayAnimation("CardInfoHide");
+				if(weapon.type != weapon.og_type)
+				{
+					if(type_changed) icon_changer.GetComponent<Test>().PlayAnimation("TypeHide");
+					type_changed = false;
+				}
+			} 
+			else
+			{
+				GetComponent<Test>().PlayAnimation("InfoHide");
+			} 
 		}
 	}
 
@@ -72,10 +99,25 @@ public class WeaponWard : MonoBehaviour
 		{
 			move = false;
 			GetComponent<Test>().PlayAnimation("Telegraph");
+			if(weapon.type != weapon.og_type)
+			{
+				ChangeTypeChangerIcon();
+				icon_changer.GetComponent<Test>().PlayAnimation("TypeReveal");
+				type_changed = true;
+			}
 		} else if(move)
 		{
 			move = false;
 			GetComponent<Test>().PlayAnimation("Reset telegraph");
+			if(weapon.type != weapon.og_type)
+			{
+				if(type_changed) icon_changer.GetComponent<Test>().PlayAnimation("TypeHide");
+				type_changed = false;
+			} else
+			{
+				if(type_changed) icon_changer.GetComponent<Test>().PlayAnimation("TypeHide");
+				type_changed = false;
+			}
 		}
 	}
 
@@ -83,7 +125,7 @@ public class WeaponWard : MonoBehaviour
 	{
 		image_1.GetComponent<SpriteRenderer>().sprite = weapon.sprite;
 		image_2.GetComponent<SpriteRenderer>().sprite = weapon.sprite;
-		switch(weapon.type)
+		switch(weapon.og_type)
 		{
 			case MainController.Choise.kivi:
 				icon.GetComponent<SpriteRenderer>().sprite = icons[0];
@@ -101,6 +143,8 @@ public class WeaponWard : MonoBehaviour
 				icon.GetComponent<SpriteRenderer>().sprite = icons[4];
 				break;
 		}
+
+		ChangeTypeChangerIcon();
 
 		title.GetComponent<TextMeshPro>().text = weapon.name;
 		if(weapon.GetComponent<Stacking>())
@@ -120,6 +164,28 @@ public class WeaponWard : MonoBehaviour
 			armor.GetComponent<TextMeshPro>().text = weapon.GiveEffectiveArmor().ToString();
 		}
 		description.GetComponent<TextMeshPro>().text = weapon.description;
+	}
+
+	private void ChangeTypeChangerIcon()
+	{
+		switch(weapon.type)
+		{
+			case MainController.Choise.kivi:
+				new_icon.GetComponent<SpriteRenderer>().sprite = icons[0];
+				break;
+			case MainController.Choise.paperi:
+				new_icon.GetComponent<SpriteRenderer>().sprite = icons[1];
+				break;
+			case MainController.Choise.sakset:
+				new_icon.GetComponent<SpriteRenderer>().sprite = icons[2];
+				break;
+			case MainController.Choise.useless:
+				new_icon.GetComponent<SpriteRenderer>().sprite = icons[3];
+				break;
+			case MainController.Choise.voittamaton:
+				new_icon.GetComponent<SpriteRenderer>().sprite = icons[4];
+				break;
+		}
 	}
 
 	public void ClearWeapon()

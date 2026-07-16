@@ -85,7 +85,7 @@ public class ClaimedWeapon : MonoBehaviour
         transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
         transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
 		GetComponent<SpriteRenderer>().sprite = tiers[weapon.GetComponent<Weapon>().tier];
-        switch(weapon.GetComponent<Weapon>().type)
+        switch(weapon.GetComponent<Weapon>().og_type)
         {
             case MainController.Choise.kivi:
                 transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = symbols[0];

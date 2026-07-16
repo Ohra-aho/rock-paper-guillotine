@@ -100,13 +100,14 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 3
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Impale
   description: If wins, takes 2 damage. If the opposing weapon is used again, the
-    enemy heals 2.
+    enemy heals 1.
   sprite: {fileID: 21300000, guid: 41377fba19fd98e4191dfeb2624b6307, type: 3}
   tiers: []
   tier: 0
@@ -213,7 +214,6 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &7545988379698222994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,4 +254,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabled: 0
-  amount: 2
+  amount: 1

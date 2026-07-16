@@ -21,7 +21,7 @@ public class Hand : MonoBehaviour
 				transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = backs[collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().tier];
                 transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = weapon_sprite;
                 transform.GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = weapon_sprite;
-                switch (collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().type)
+                switch (collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().og_type)
                 {
                     case MainController.Choise.kivi: transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[0]; break;
                     case MainController.Choise.paperi: transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>().sprite = icons[1]; break;
