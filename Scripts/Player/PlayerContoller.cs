@@ -166,6 +166,7 @@ public class PlayerContoller : MonoBehaviour
         PlayerWheels[unlocked_wheel].transform.SetAsFirstSibling();
         GameObject.Find("PlayerWeaponDetector").GetComponent<WeaponDetector>().weaponWheel = PlayerWheels[unlocked_wheel];
         maxHealth = unlocked_wheel + 1;
+		HB.removed_damage = 0;
         HB.IncreaseHealthBar(1, false);
         HB.HealToFull();
     }

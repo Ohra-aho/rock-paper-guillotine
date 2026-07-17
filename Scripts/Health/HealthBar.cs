@@ -20,7 +20,7 @@ public class HealthBar : MonoBehaviour
 
     public List<string> exe_high_damage_barks;
     public List<string> exe_low_health;
-	private int removed_damage = 0;
+	public int removed_damage = 0;
 
     //Bark stoppers
     [HideInInspector] public bool warning_given = false;

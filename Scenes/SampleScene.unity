@@ -11944,6 +11944,7 @@ MonoBehaviour:
   - Be still my heart. I need to think.
   - This just got interesting.
   - Oh no.
+  removed_damage: 0
   warning_given: 0
   low_health: 0
 --- !u!114 &370411302
@@ -44190,6 +44191,7 @@ MonoBehaviour:
   - Slow down a little. Circuits might fry.
   exe_high_damage_barks: []
   exe_low_health: []
+  removed_damage: 0
   warning_given: 0
   low_health: 0
 --- !u!114 &1238540700
@@ -46741,7 +46743,11 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: 67c6e0a030e2be7468a6aeead01f4fc2, type: 3}
+  - {fileID: 1944698211339908181, guid: 00983909a0b300247abe179c1ceb79e9, type: 3}
+  - {fileID: 1944698211339908181, guid: 754148e55473539499ec52bc16344300, type: 3}
+  - {fileID: 1944698211339908181, guid: 754148e55473539499ec52bc16344300, type: 3}
+  - {fileID: 1944698211339908181, guid: 754148e55473539499ec52bc16344300, type: 3}
+  - {fileID: 1944698211339908181, guid: 754148e55473539499ec52bc16344300, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
@@ -47383,6 +47389,7 @@ MonoBehaviour:
   - Don't worry. if you lose here, you are not the first.
   exe_high_damage_barks: []
   exe_low_health: []
+  removed_damage: 0
   warning_given: 0
   low_health: 0
 --- !u!114 &1394640657
@@ -66661,6 +66668,7 @@ MonoBehaviour:
   - Slow down a little. Circuits might fry.
   exe_high_damage_barks: []
   exe_low_health: []
+  removed_damage: 0
   warning_given: 0
   low_health: 0
 --- !u!114 &1657881650

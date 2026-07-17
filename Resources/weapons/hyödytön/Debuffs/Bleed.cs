@@ -55,43 +55,42 @@ public class Bleed : MonoBehaviour
     public void DebuffDamage(int amount)
     {
         List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
-        Weapon strongest = weapons[0];
-        for(int i = 0; i < weapons.Count; i++)
-        {
-            Buff buff_already = CheckIfDebuffExists(weapons[i].transform);
+		List<Weapon> possible_weapons = new List<Weapon>();
 
-            int damage = weapons[i].GetComponent<Weapon>().damage;
-            if(buff_already != null)
-            {
-                damage += buff_already.damage_buff;
-            }
+		for(int i = 0; i < weapons.Count; i++)
+		{
+			if(!weapons[i].FindCertainBuff(GetComponent<Weapon>().name))
+			{
+				possible_weapons.Add(weapons[i]);
+			}
+		}
 
-            if (damage > strongest.damage)
-            {
-                strongest = weapons[i];
-            } else if(damage == strongest.damage)
-            {
-                int chance = Random.Range(0, 2);
-                if(chance == 1)
-                {
-                    strongest = weapons[i];
-                }
-            }
-        }
+		if(possible_weapons.Count > 0)
+		{
+			Weapon strongest = possible_weapons[0];
+			for(int i = 0; i < possible_weapons.Count; i++)
+			{
+				int damage = possible_weapons[i].GetComponent<Weapon>().GiveEffectiveDamage();
+				if (damage > strongest.GiveEffectiveDamage())
+				{
+					strongest = possible_weapons[i];
+				} else if(damage == strongest.GiveEffectiveDamage())
+				{
+					int chance = Random.Range(0, 2);
+					if(chance == 1)
+					{
+						strongest = possible_weapons[i];
+					}
+				}
+			}
 
-        Buff old_buff = CheckIfDebuffExists(strongest.transform);
-        if(old_buff != null)
-        {
-            old_buff.damage_buff -= amount;
-        } else
-        {
-            Buff new_buff = Instantiate(buff, strongest.transform).GetComponent<Buff>();
-            new_buff.id = GetComponent<Weapon>().name;
-            new_buff.damage_buff = -amount;
-            new_buff.temporary = true;
-            new_buff.timer = 1000;
-            new_buff.AddBuff();
-        }
+			Buff new_buff = Instantiate(buff, strongest.transform).GetComponent<Buff>();
+			new_buff.id = GetComponent<Weapon>().name;
+			new_buff.damage_buff = -amount;
+			new_buff.temporary = true;
+			new_buff.timer = 1000;
+			new_buff.AddBuff();
+		}
     }
 
     public Buff CheckIfDebuffExists(Transform weapon)
