@@ -100,12 +100,13 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Victory streak
-  description: Whenever you win with any weapon, all weapons gain +1 damage, until
+  description: Whenever you win with any weapon, +1 damage to all weapons, until
     you lose or draw.
   sprite: {fileID: 21300000, guid: 376f18bd2b167904ea94390e7c720e32, type: 3}
   tiers: []
@@ -170,6 +171,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -186,7 +193,6 @@ MonoBehaviour:
   - Some unbeatables will like that.
   executioner_comment: 11111111111111111111
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &-6867594184265076172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,11 +224,12 @@ MonoBehaviour:
   toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
-  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
   each_turn: 0
+  damage_modifier: 0
+  heal_modifier: 0
   victory: 0
   special_apply: 0
   takeDamage: 0

@@ -100,6 +100,7 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
@@ -217,6 +218,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -233,7 +240,6 @@ MonoBehaviour:
   - Eternal life and endless riches. Sounds boring.
   executioner_comment: 11111111111111111111111
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &-6065403328400625817
 MonoBehaviour:
   m_ObjectHideFlags: 0

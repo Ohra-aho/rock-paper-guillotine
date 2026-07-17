@@ -99,12 +99,13 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Smoke
-  description: After use, -1 damage to all enemies' weapons for one turn.
+  description: After use, -1 damage to all enemy weapons for one turn.
   sprite: {fileID: 21300000, guid: 03bee612b201c464cb757217af0b96cc, type: 3}
   tiers: []
   tier: 0
@@ -180,6 +181,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -196,7 +203,6 @@ MonoBehaviour:
   - More space to take risks.
   executioner_comment: 111111111111111111111
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &-6239510560893176992
 MonoBehaviour:
   m_ObjectHideFlags: 0

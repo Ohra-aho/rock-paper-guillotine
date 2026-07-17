@@ -106,7 +106,7 @@ MonoBehaviour:
   real_armor: 0
   name: Weakness
   description: If not equipped, gives one of your weapons -1 damage until the end
-    of the fight. Starting from the stringest. Does not stack. Destroyed after use.
+    of the fight. Starting from the stringest. Does not stack. After use, self-destructs
   sprite: {fileID: 21300000, guid: 84a9c4c50c29eba4ba70878cfe0a7775, type: 3}
   tiers: []
   tier: 0

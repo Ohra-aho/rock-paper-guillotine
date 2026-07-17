@@ -98,12 +98,13 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 3
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Joker
-  description: After use, destroys itself.
+  description: After use, self-destructs.
   sprite: {fileID: 21300000, guid: a162f9c5d17c4e14585b27a1938a0c06, type: 3}
   tiers: []
   tier: 0
@@ -179,6 +180,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -188,18 +195,11 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - Funny you shoud pick that.
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
 --- !u!114 &3603452539436064434
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -98,12 +98,13 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Scissors
-  description: (All "scissors" deal 1 damage on draws.)
+  description: 
   sprite: {fileID: 21300000, guid: 2a3f8c3cc78346d4090fffc01e5318af, type: 3}
   tiers: []
   tier: 0
@@ -167,6 +168,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -180,7 +187,6 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &7112666532829987355
 MonoBehaviour:
   m_ObjectHideFlags: 0

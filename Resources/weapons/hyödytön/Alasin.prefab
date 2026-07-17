@@ -106,7 +106,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Anvil
-  description: After use, +1 damage to the next weapon you use. Destroys itself.
+  description: After use, +1 damage to the next weapon you use. Self-destructs.
   sprite: {fileID: 21300000, guid: d370add584778464381ccb41b63d25bb, type: 3}
   tiers: []
   tier: 0

@@ -100,13 +100,14 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 1
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Bottle
-  description: If you take damage through, gives "Glass Shard" to inventory and destroys
-    itself.
+  description: If you take damage through this weapon, gives you a "Glass Shard"
+    and self-destructs.
   sprite: {fileID: 21300000, guid: e7241872e938d9844a1b94e794af2409, type: 3}
   tiers: []
   tier: 0
@@ -216,7 +217,6 @@ MonoBehaviour:
   - Sip and stab.
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &1690945544247164510
 MonoBehaviour:
   m_ObjectHideFlags: 0

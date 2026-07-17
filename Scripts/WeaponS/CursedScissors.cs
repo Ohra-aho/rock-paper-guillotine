@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class CursedScissors : MonoBehaviour
 {
+	public GameObject buff;
     string[] debuff_names = {
 		"Poison",
-		"Dept",
+		"Weakness",
 		"Bleed",
 		"#XG5J\"$P",
-		"Hadle"
+		"Handle"
 	};
 	int damage_buff = 0;
+
+	void Awake()
+	{
+		Buff own_buff = Instantiate(buff, transform).GetComponent<Buff>();
+		own_buff.damage_buff = 0;
+		own_buff.id = GetComponent<Weapon>().name;
+	}
 
 	public void CalculateDamage()
 	{
 		GameObject RI = GameObject.FindGameObjectWithTag("RI");
-		GetComponent<Weapon>().damage -= damage_buff;
+		GameObject own_buff = GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name);
 		damage_buff = 0;
 		for(int i = 0; i < RI.transform.childCount; i++)
 		{
@@ -25,7 +33,7 @@ public class CursedScissors : MonoBehaviour
 				damage_buff++;
 			}
 		}
-		GetComponent<Weapon>().damage += damage_buff;
+		own_buff.GetComponent<Buff>().damage_buff = damage_buff;
 	}
 
 	public bool RecognizeDebuff(Weapon w)

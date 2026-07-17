@@ -102,12 +102,13 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Lightning
-  description: If has points, deals damage equal to points held and destroys itself.
+  description: If has points, deals damage equal to the amount of points and self-destructs.
   sprite: {fileID: 21300000, guid: 1b6b3a29e6a3e1b4b9d24297fa36211b, type: 3}
   tiers: []
   tier: 0
@@ -183,6 +184,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -196,7 +203,6 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &-96212619047660622
 MonoBehaviour:
   m_ObjectHideFlags: 0

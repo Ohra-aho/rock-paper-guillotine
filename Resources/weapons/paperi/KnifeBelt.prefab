@@ -99,12 +99,13 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 1
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Knife belt
-  description: At the start of each fight, get 1 a "Throwing knife" to your inventory.
+  description: At the start of each fight, gives you a "Throwing knife".
   sprite: {fileID: 21300000, guid: 09659e4f6945db145a71dcc8f9b14a54, type: 3}
   tiers: []
   tier: 0
@@ -202,7 +203,6 @@ MonoBehaviour:
   - You'd like to play a ninja or something?
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &6685880983201037068
 MonoBehaviour:
   m_ObjectHideFlags: 0

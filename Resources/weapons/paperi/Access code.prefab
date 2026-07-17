@@ -11,13 +11,12 @@ GameObject:
   - component: {fileID: 5442967482381830314}
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
-  - component: {fileID: 6279085910599654247}
-  - component: {fileID: 1415664320520306304}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -4890876596102729932}
-  - component: {fileID: 1224110201460410934}
+  - component: {fileID: 3410846685529990821}
+  - component: {fileID: -4301725252953782211}
+  - component: {fileID: 3085994741014443493}
   m_Layer: 5
-  m_Name: "Pyh\xE4 teksti"
+  m_Name: Access code
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,68 +79,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6279085910599654247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
-  damage_bonus: 0
-  armor_bonus: 0
-  effect_damage_bonus: 0
-  toughness_buff: 0
-  set_a_to_zero: 0
-  set_d_to_zero: 0
-  always_on: 1
-  choisePhase: 0
-  resultPhase: 0
-  endPhase: 0
-  each_turn: 0
-  victory: 0
-  special_apply: 0
-  takeDamage: 0
-  takeNoDamage: 0
-  dealDamage: 0
-  deal_effect_damage: 0
-  draw: 0
-  win: 0
-  lose: 0
-  heal: 0
-  gain_points: 0
-  equip: 0
-  unEquip: 0
-  constant: 0
-  onDestruction: 0
-  awake: 0
-  on_death: 0
-  temporary: 0
-  timer: 0
-  penetrating: 0
-  draw_winner: 0
-  health_buff: 0
-  until_used: 0
-  reminder: 
-  destructive: 0
-  heal_disabler: 0
---- !u!114 &1415664320520306304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1f533a8f85beee47ae1cde74dbc4546, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3098424137161797902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,11 +104,11 @@ MonoBehaviour:
   armor: 0
   real_damage: 0
   real_armor: 0
-  name: Holy text
-  description: Whenever you heal, deals 1 damage.
-  sprite: {fileID: 21300000, guid: 66f7ed2e6b8af094398ab562ed545f1c, type: 3}
+  name: Access code
+  description: After use, all weapons pierce armor for 2 turns.
+  sprite: {fileID: 21300000, guid: a6c59c3d8536df7449719431d4d61225, type: 3}
   tiers: []
-  tier: 1
+  tier: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -186,7 +123,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3085994741014443493}
+        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
+        m_MethodName: Equip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -219,53 +168,23 @@ MonoBehaviour:
       m_Calls: []
   equip:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6279085910599654247}
-        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
-        m_MethodName: Equip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   unEquip:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6279085910599654247}
-        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
-        m_MethodName: Unequip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   constant:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6279085910599654247}
-        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
-        m_MethodName: AddBuffs
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDestruction:
     m_PersistentCalls:
       m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
@@ -279,13 +198,13 @@ MonoBehaviour:
       m_Calls: []
   used_this_game: 0
   pick_barks:
-  - Ready to confess? 5
-  - Hope means nothing without damnation.
-  - Smite them sinners. 14
+  - I know that armor can be frustrating.
+  - Yeah, just ignore a part of the game.
+  - Little bit more freedom.
   executioner_comment: 
   favourite: 
   damage_soft_cap: 7
---- !u!114 &-4890876596102729932
+--- !u!114 &3410846685529990821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,12 +213,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e1eda1a130495a4881fa61092934cc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
-  armor_piercing: 0
---- !u!114 &1224110201460410934
+--- !u!114 &-4301725252953782211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -311,3 +228,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3085994741014443493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff: {fileID: 0}
+  damage_bonus: 0
+  armor_bonus: 0
+  effect_damage_bonus: 0
+  toughness_buff: 0
+  set_a_to_zero: 0
+  set_d_to_zero: 0
+  always_on: 0
+  choisePhase: 0
+  resultPhase: 0
+  endPhase: 0
+  each_turn: 0
+  victory: 0
+  special_apply: 0
+  takeDamage: 0
+  takeNoDamage: 0
+  dealDamage: 0
+  deal_effect_damage: 0
+  draw: 0
+  win: 0
+  lose: 0
+  heal: 0
+  gain_points: 0
+  equip: 0
+  unEquip: 0
+  constant: 0
+  onDestruction: 0
+  awake: 0
+  on_death: 0
+  temporary: 0
+  timer: 0
+  penetrating: 0
+  draw_winner: 0
+  health_buff: 0
+  until_used: 0
+  reminder: 
+  destructive: 0
+  heal_disabler: 0

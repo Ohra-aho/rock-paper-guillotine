@@ -102,12 +102,14 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Scalpel
-  description: Whenever you heal, +1 point. After use, uses one point to deal 1 damage.
+  description: Whenever you heal, gains 1 point. After use, uses one point to deal
+    1 damage.
   sprite: {fileID: 21300000, guid: ebf4e3d83d4038d4881b4a4e7fd7ec0b, type: 3}
   tiers: []
   tier: 0
@@ -183,6 +185,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -196,7 +204,6 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &5279255629380853632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,11 +246,12 @@ MonoBehaviour:
   toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
-  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
   each_turn: 0
+  damage_modifier: 0
+  heal_modifier: 0
   victory: 0
   special_apply: 0
   takeDamage: 0

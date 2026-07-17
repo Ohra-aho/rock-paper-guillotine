@@ -100,12 +100,13 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 1
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Painkiller
-  description: After use, heal 2 and -1 HP.
+  description: After use, heal 3 and -1 HP.
   sprite: {fileID: 21300000, guid: 16e0e73c85f760643a139fa06ada8014, type: 3}
   tiers: []
   tier: 0
@@ -193,6 +194,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -209,7 +216,6 @@ MonoBehaviour:
   - Not many people use that.
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &5235243321378818865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disabled: 0
-  amount: 2
+  amount: 3
 --- !u!114 &3765294846615599215
 MonoBehaviour:
   m_ObjectHideFlags: 0

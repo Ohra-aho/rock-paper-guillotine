@@ -100,12 +100,13 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 2
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Ruin
-  description: After use, deals 1 damage to you and your enemy.
+  description: After use, deals 1 damage to you and the enemy.
   sprite: {fileID: 21300000, guid: f3e671672bb5ff344a1199889639a05f, type: 3}
   tiers: []
   tier: 1
@@ -193,6 +194,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -207,7 +214,6 @@ MonoBehaviour:
   - That was one of my earliest creations actually.
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &4253422903725897790
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class Star : MonoBehaviour
 
     private void Awake()
     {
-        GetComponent<BuffController>().damage_bonus = 2;
+        GetComponent<BuffController>().damage_bonus = 1;
         GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
     }
 
@@ -18,16 +18,11 @@ public class Star : MonoBehaviour
         previous_HP_gap = HB.HP_gap;
         HB.HP_gap = 4;
         HB.DecreaseHealthBar(0, false);
-        //previous_max_hp = HB.GiveMaxHealth();
-        //int HPbonus = HB.GiveMaxHealth() - 1;
-        //HB.DecreaseHealthBar(HPbonus);
-
     }
 
     public void Unequip()
     {
         HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
-        //int HPbonus = previous_max_hp - 1;
         HB.HP_gap = previous_HP_gap;
         HB.IncreaseHealthBar(0, false);
     }

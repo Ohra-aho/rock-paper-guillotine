@@ -101,13 +101,14 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Holy symbol
-  description: +1 point at the start of each fight. When has 3 points, uses them
-    and gives you one random "Miracle".
+  description: Gains 1 point at the start of each fight. When has 3 points, uses
+    them and gives you one random "Miracle".
   sprite: {fileID: 21300000, guid: 0cc34a2dc800c64479085e3ed686f0d6, type: 3}
   tiers: []
   tier: 0
@@ -195,6 +196,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -211,7 +218,6 @@ MonoBehaviour:
   - Hope? There is no hope for you. 11
   executioner_comment: 1111111111111111111111
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &-794109146025331787
 MonoBehaviour:
   m_ObjectHideFlags: 0

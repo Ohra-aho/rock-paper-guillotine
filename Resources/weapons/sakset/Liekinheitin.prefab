@@ -101,12 +101,13 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Flamethrower
-  description: After use, uses 2 points to give you 1 Fireball.
+  description: After use, uses 2 points to give you 1 "Fireball".
   sprite: {fileID: 21300000, guid: 72b68a017367b1645b0e8d61325d3601, type: 3}
   tiers: []
   tier: 0
@@ -202,7 +203,6 @@ MonoBehaviour:
   - Raost them.
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &6405204930903503939
 MonoBehaviour:
   m_ObjectHideFlags: 0

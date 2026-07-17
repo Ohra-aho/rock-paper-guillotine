@@ -98,12 +98,13 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 4
+  og_type: 0
   damage: 0
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Thumb
-  description: Heals 1 after use.
+  description: After use, heal 1.
   sprite: {fileID: 21300000, guid: 9dde555204b4ca748b6cea9afc9e7f48, type: 3}
   tiers: []
   tier: 0
@@ -179,6 +180,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -188,20 +195,13 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 1
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
   used_this_game: 0
   pick_barks:
   - That's mostly useless don't you think?
   - Going for a grindbuild? 5
   - Just use rocks. They actually do something. 9
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
 --- !u!114 &-269037213622380836
 MonoBehaviour:
   m_ObjectHideFlags: 0

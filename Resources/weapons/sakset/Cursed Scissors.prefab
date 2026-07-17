@@ -99,12 +99,13 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Sin eater
-  description: +1 damage for each debuff in your inventory.
+  description: +1 damage for each "Bleed", "Weakness" and "Poison" you have.
   sprite: {fileID: 21300000, guid: 235fd8040ae3b574e8ab0ae1430e8a7e, type: 3}
   tiers: []
   tier: 0
@@ -173,12 +174,6 @@ MonoBehaviour:
       m_Calls: []
   constant:
     m_PersistentCalls:
-      m_Calls: []
-  onDestruction:
-    m_PersistentCalls:
-      m_Calls: []
-  eachTurn:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6317542729122416242}
         m_TargetAssemblyTypeName: CursedScissors, Assembly-CSharp
@@ -192,6 +187,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onDestruction:
+    m_PersistentCalls:
+      m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -205,7 +212,6 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &6317542729122416242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15feb97804b49c64c9affd1cb37c121e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff: {fileID: 810763803538858438, guid: c28dfd92411732c4bb8a69c06bbf1fd6, type: 3}
 --- !u!114 &429841502663203182
 MonoBehaviour:
   m_ObjectHideFlags: 0

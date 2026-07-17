@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8275983422765185356}
   - component: {fileID: -1239369351795343715}
   - component: {fileID: -3339478922336896671}
+  - component: {fileID: -3808298146236775807}
   m_Layer: 5
   m_Name: Airbag
   m_TagString: Untagged
@@ -100,19 +101,31 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 1
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Airbag
-  description: If you survive damage with 1 HP left, you get +1 armor to all weapons
-    for 3 turns.
+  description: If you survive damage with 1 HP left, heal 1. Triggers once each fight.
   sprite: {fileID: 21300000, guid: 04518826754efb24cafeee52b1da65ac, type: 3}
   tiers: []
   tier: 0
   first_turn:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8275983422765185356}
+        m_TargetAssemblyTypeName: Airbag, Assembly-CSharp
+        m_MethodName: ResetTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   end_of_fight:
     m_PersistentCalls:
       m_Calls: []
@@ -130,19 +143,7 @@ MonoBehaviour:
       m_Calls: []
   takeDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8275983422765185356}
-        m_TargetAssemblyTypeName: Airbag, Assembly-CSharp
-        m_MethodName: Cushion
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -181,19 +182,13 @@ MonoBehaviour:
       m_Calls: []
   eachTurn:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8275983422765185356}
-        m_TargetAssemblyTypeName: Airbag, Assembly-CSharp
-        m_MethodName: Cushion
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -210,7 +205,6 @@ MonoBehaviour:
   - That is somethimes quite easy to loop. 9
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &8275983422765185356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,11 +236,12 @@ MonoBehaviour:
   toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
-  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
   each_turn: 0
+  damage_modifier: 0
+  heal_modifier: 0
   victory: 0
   special_apply: 0
   takeDamage: 0
@@ -285,3 +280,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3808298146236775807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887b60ef131f09747a7e830915c05a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disabled: 0
+  amount: 1

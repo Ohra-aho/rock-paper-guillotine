@@ -100,12 +100,13 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 2
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Throwing knife
-  description: After use, deals 1 damage and destroys itself.
+  description: After use, deals 1 damage and self-destructs.
   sprite: {fileID: 21300000, guid: 4921abe491ed6c1458bddf7f9b7f1a8a, type: 3}
   tiers: []
   tier: 0
@@ -193,6 +194,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -207,7 +214,6 @@ MonoBehaviour:
   - Yeah. Sure. Just throw your weapons away.
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &3174986441044653427
 MonoBehaviour:
   m_ObjectHideFlags: 0

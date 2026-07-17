@@ -16,9 +16,8 @@ public class Dynamo : MonoBehaviour
         if(GetComponent<Stacking>().stacks > 0)
         {
             int heal = GetComponent<Stacking>().stacks;
-            GetComponent<Healing>().amount = heal;
             GetComponent<Healing>().Heal();
-            GetComponent<Stacking>().stacks = 0;
+            GetComponent<Stacking>().DecreaseStacks(1);
         }
     }
 

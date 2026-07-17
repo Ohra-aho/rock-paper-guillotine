@@ -99,12 +99,13 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 4
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Glass shard
-  description: If you take damage throught this weapon, destroys itself.
+  description: If you take damage throught this weapon, it self-destructs.
   sprite: {fileID: 21300000, guid: df73b5ff97e1ad74da6e7cc537b73c20, type: 3}
   tiers: []
   tier: 0
@@ -200,7 +201,6 @@ MonoBehaviour:
   - It will be fun while it lasts.
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &7825775738186712243
 MonoBehaviour:
   m_ObjectHideFlags: 0
