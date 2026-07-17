@@ -100,7 +100,8 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
-  damage: 4
+  og_type: 0
+  damage: 3
   armor: 0
   real_damage: 0
   real_armor: 0
@@ -169,6 +170,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -195,7 +202,6 @@ MonoBehaviour:
   - You plan to win with just that?
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &5125933731921651048
 MonoBehaviour:
   m_ObjectHideFlags: 0

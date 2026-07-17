@@ -108,8 +108,8 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Crystal Scissors
-  description: After use, uses 1 point to give you 1 "Shard". This weapons damage
-    is equal to its points. When the last point is used, self-destructs.
+  description: After use, uses 1 point. This weapons damage is equal to its points.
+    When the last point is used, self-destructs.
   sprite: {fileID: 21300000, guid: 61c45304f7d12e64281ab71052b601f3, type: 3}
   tiers: []
   tier: 0

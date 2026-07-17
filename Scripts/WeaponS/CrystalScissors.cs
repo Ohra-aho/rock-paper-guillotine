@@ -19,7 +19,7 @@ public class CrystalScissors : MonoBehaviour
 		if(GetComponent<Stacking>().stacks > 0)
 		{
 			GetComponent<Stacking>().DecreaseStacks(1);
-			GetComponent<WeaponSpawner>().SpawnOnlyWeapon();
+			//GetComponent<WeaponSpawner>().SpawnOnlyWeapon();
 			if(GetComponent<Stacking>().stacks == 0)
 			{
 				GetComponent<SelfDestruct>().Destruct();
@@ -35,7 +35,6 @@ public class CrystalScissors : MonoBehaviour
 			own_buff.GetComponent<Buff>().damage_buff = GetComponent<Stacking>().stacks;	
 		} else
 		{
-			
 			Buff new_buff = Instantiate(buff, transform).GetComponent<Buff>();
 			new_buff.damage_buff = GetComponent<Stacking>().stacks;
 			new_buff.id = GetComponent<Weapon>().name;

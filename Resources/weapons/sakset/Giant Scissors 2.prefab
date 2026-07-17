@@ -105,7 +105,7 @@ MonoBehaviour:
   real_damage: 0
   real_armor: 0
   name: Handle
-  description: If not equipped, -4 damage to Giant Scissors.
+  description: If not equipped, -3 damage to Giant Scissors.
   sprite: {fileID: 21300000, guid: 8079ea8aaec100743a2a5bdcf6c38154, type: 3}
   tiers: []
   tier: 0

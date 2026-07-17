@@ -57,13 +57,13 @@ public class StartingWeapons : MonoBehaviour
         new string[] { "Scissors", "Rock", "Newspaper" },
         new string[] { "Adrenaline", "Voodoo doll", "Scissors" },
         new string[] { "Beer", "Bottle", "Paper" },
-        new string[] { "Gun", "Ammunition", "Bill" },
+        new string[] { "Gun", "Ammunition", "Wallet" },
 
         //Story 2
         new string[] { "Blowtorch", "Throwing knife", "Smoke" },
 
         new string[] { "Double edged sword", "Bone", "Bandaid" },
-        new string[] { "Spike ball", "Pickaxe", "Thumb" },
+        new string[] { "Spike ball", "Pickaxe", "Paper" },
         new string[] { "Drill", "Medicine", "Rot" },
         new string[] { "Middle finger" },
         new string[] { "Catapult", "Rock", "Rock", "Rock", "Rock", "Rock", "Rock"},
@@ -75,21 +75,21 @@ public class StartingWeapons : MonoBehaviour
         new string[] { "Paper", "Scissors", "Time Bomb" },
         new string[] { "Manual", "Rock", "Scissors" },
         new string[] { "Four Jokers", "Sithe" },
-        new string[] { "Altar", "Mirror", "Holy text"},
+        new string[] { "Altar", "Mirror", "Holy symbol"},
 
         //Story 4
         new string[] { "Flag", "Cape", "Peace treaty" },
 
         new string[] { "Dynamo", "Hit list", "Scalpel" },
-        new string[] { "Sin eater", "Prosthesis", "Sandpaper" },
+        new string[] { "Sin eater", "Prosthesis", "Paper" },
         new string[] { "Gun", "Shotgun", "Granade" },
-        new string[] { "Blood blade", "Victory sign", "Bandages" },
+        new string[] { "Blood blade", "Victory sign", "Paper" },
         new string[] { "Silver", "Cardboard", "Scalpel" },
 
         //Story 5
         new string[] { "Scissors", "Paper", "Star" },
 
-        new string[] { "Sithe", "Paper armor", "Beer" },
+        new string[] { "Scissors", "Paper armor", "Beer" },
         new string[] { "Crystal Scissors", "Paper armor", "Ice cube" },
         new string[] { "Scissors", "Paper", "Rock" },
         new string[] { "Chip", "Deck", "Die" },
@@ -104,7 +104,7 @@ public class StartingWeapons : MonoBehaviour
         new string[] { "Scissors", "Paper", "Mountain" },
 
         //Story 7
-        new string[] { "Gun", "Archnode", "Wallet", "Wallet" },
+        new string[] { "Gun", "Archnode", "Paper" },
 
         new string[] { "Rock", "Paper", "Scissors" },
         new string[] { "Recycler", "Rock", "Bladestorm", "Paper" },
@@ -140,14 +140,14 @@ public class StartingWeapons : MonoBehaviour
 
         new string[] { "Flesh render", "Wall", "Origami" },
         new string[] { "Pencil", "Whetstone", "Sandpaper" },
-        new string[] { "Deck", "Teeth", "Monument" },
+        new string[] { "Deck", "Teeth", "Clay" },
 
         //Story 12
         new string[] { "Beer", "Chip", "Buckshot" },
 
-        new string[] { "Meteor swarm", "Meteor swarm", "Meteor swarm", "Meteor swarm", "Meteor swarm" },
+        new string[] { "Ender", "Ender", "Ender" },
         new string[] { "Barricade", "Bubble", "Avalance" },
-        new string[] { "Ender", "Middle finger", "Painkiller" },
+        new string[] { "Joker", "Middle finger", "Painkiller" },
         new string[] { "Time bomb", "Joker", "Rage" },
         new string[] { "Barricade", "Sidearm", "Rage" },
 
