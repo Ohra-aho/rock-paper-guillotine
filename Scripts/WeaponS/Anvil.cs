@@ -5,47 +5,24 @@ using UnityEngine;
 public class Anvil : MonoBehaviour
 {
 	public Buff buff;
-    public void IcreaseDamage()
-    {
-        Weapon weakest = FindWeakestWeapon();
-		Buff new_buff = Instantiate(buff, weakest.transform);
-		new_buff.id = GetComponent<Weapon>().name;
-		new_buff.damage_buff = 1;
-		new_buff.AddBuff();
-    }
 
-	public Weapon FindWeakestWeapon()
+	public void ApplyBuff()
 	{
-        List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
-		if(weapons.Count > 0)
+		GameObject RI = GameObject.FindGameObjectWithTag("RI");
+		for(int i = 0; i < RI.transform.childCount; i++)
 		{
-			Weapon weakest = weapons[0];
-			for(int i = 0; i < weapons.Count; i++)
+			Buff new_buff = Instantiate(buff, RI.transform.GetChild(i)).GetComponent<Buff>();
+			new_buff.temporary = true;
+			new_buff.timer = 2;
+			new_buff.endPhase = true;
+			new_buff.special = (Weapon w) =>
 			{
-				if(weapons[i].name != GetComponent<Weapon>().name)
-				{
-					weakest = weapons[i];
-					break;
-				}
-			}
-			for(int i = 0; i < weapons.Count; i++)
-			{
-				if(weapons[i].name != GetComponent<Weapon>().name)
-				{
-					if(weapons[i].GiveEffectiveDamage() < weakest.GiveEffectiveDamage())
-					{
-						weakest = weapons[i];
-					} else if(weapons[i].GiveEffectiveDamage() == weakest.GiveEffectiveDamage())
-					{
-						if(Random.Range(0, 2) == 0)
-						{
-							weakest = weapons[i];
-						}
-					}	
-				}
-			}
-			return weakest;
+				new_buff.temporary = false;
+				new_buff.timer = 0;
+				new_buff.damage_buff = 1;	
+			};
+			new_buff.id = GetComponent<Weapon>().name;
+			new_buff.AddBuff();
 		}
-		return GetComponent<Weapon>();
 	}
 }

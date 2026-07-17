@@ -101,6 +101,7 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
@@ -210,6 +211,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -226,7 +233,6 @@ MonoBehaviour:
   - There actually is a box of bandages in the back room. Wierd regualtion.
   executioner_comment: 11111111111111111111111
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &-3206155839901610199
 MonoBehaviour:
   m_ObjectHideFlags: 0

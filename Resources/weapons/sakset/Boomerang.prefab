@@ -101,13 +101,13 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Boomerang
-  description: 'After use, deals 1 damage, gives you a copy of itself and destroys
-    itself. '
+  description: After use, deals 1 damage, gives you a copy of itself self-destructs.
   sprite: {fileID: 21300000, guid: e2eeec3f1ba5cc746820663cb3a439f7, type: 3}
   tiers: []
   tier: 0
@@ -133,6 +133,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 3098424137161797902}
           m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -4737891733591073241}
+        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
+        m_MethodName: SpawnOnlyWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -191,20 +203,14 @@ MonoBehaviour:
       m_Calls: []
   onDestruction:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -4737891733591073241}
-        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
-        m_MethodName: SpawnOnlyWeapon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
@@ -220,7 +226,6 @@ MonoBehaviour:
   pick_barks: []
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &8046109909000621213
 MonoBehaviour:
   m_ObjectHideFlags: 0
