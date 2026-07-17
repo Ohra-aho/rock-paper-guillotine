@@ -138,7 +138,7 @@ public class BuffController : MonoBehaviour
         }
     }
 
-    private void AddBuff(Transform weapon)
+    public void AddBuff(Transform weapon)
     {
         if (!IfOwnBuffExists(weapon))
         {

@@ -17,7 +17,28 @@ public class Die : MonoBehaviour
 
     public void RandomiceDamage()
     {
-        int damage = Random.Range(0, max);
-        GetComponent<BuffController>().damage_bonus = damage;
+        //int damage = Random.Range(0, max);
+		//Debug.Log(damage);
+        //GetComponent<BuffController>().damage_bonus = damage;
     }
+
+	public void ReapplyDamage()
+	{
+		GameObject RI = GameObject.FindGameObjectWithTag("RI");
+		int damage = Random.Range(0, max);
+		GetComponent<BuffController>().damage_bonus = damage;
+
+		for(int i = 0; i < RI.transform.childCount; i++)
+		{
+			GameObject buff = RI.transform.GetChild(i).GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name);
+			if(buff != null)
+			{
+				buff.GetComponent<Buff>().damage_buff = damage;
+				buff.GetComponent<Buff>().timer = 2;
+			} else
+			{
+				GetComponent<BuffController>().AddBuff(RI.transform.GetChild(i));
+			}
+		}
+	}
 }
