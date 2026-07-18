@@ -34,7 +34,7 @@ public class BuffController : MonoBehaviour
 	[HideInInspector] public bool damage_modifier;
 	[HideInInspector] public bool heal_modifier;
     [HideInInspector] public bool victory;
-    [HideInInspector] public bool special_apply;
+    public bool special_apply;
 
     [HideInInspector] public bool takeDamage;
     [HideInInspector] public bool takeNoDamage;

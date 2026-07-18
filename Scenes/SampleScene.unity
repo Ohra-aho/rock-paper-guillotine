@@ -32544,7 +32544,7 @@ MonoBehaviour:
   first_achievement: {fileID: 3768069680275742937, guid: 99006f26adc5acd49abd06638b7162b1, type: 3}
   first_achievement_pick: {fileID: 3768069680275742937, guid: 39c82e93799bfb144b2ce049b6338ea2, type: 3}
   executioner: 0
-  debug: 1
+  debug: 0
   cellar: {fileID: 606367767}
   museum: {fileID: 1591042066}
 --- !u!114 &1066024792
@@ -46743,9 +46743,7 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: 7922d993f75b6174f8fc5ba3d5c1ce96, type: 3}
-  - {fileID: 1944698211339908181, guid: 02faeedc78bf44e408a7b9177f5fe424, type: 3}
-  - {fileID: 1944698211339908181, guid: 3cc24bd43cd78af478822fb8f5ff3d0d, type: 3}
+  - {fileID: 1944698211339908181, guid: 3b29511a9d5470c46a8d00ea2e902842, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
