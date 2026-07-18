@@ -269,4 +269,39 @@ public class BuffController : MonoBehaviour
     {
         RemoveBuffs();
     }
+
+
+	public void PointsToLowest(int amount)
+	{
+		List<Weapon> weapons = GetComponent<Weapon>().player_owner.GetWeapons();
+		List<Weapon> possible_weapons = new List<Weapon>();
+		for(int i = 0; i < weapons.Count; i++)
+		{
+			if(weapons[i].GetComponent<Stacking>())
+			{
+				possible_weapons.Add(weapons[i]);
+			}
+		}
+
+		if(possible_weapons.Count > 0)
+		{
+			Weapon lowest = possible_weapons[Random.Range(0, possible_weapons.Count)];
+			for(int i = 0; i < possible_weapons.Count; i++)
+			{
+				if(possible_weapons[i].GetComponent<Stacking>().stacks < lowest.GetComponent<Stacking>().stacks)
+				{
+					lowest = possible_weapons[i];
+				}
+				if(possible_weapons[i].GetComponent<Stacking>().stacks == lowest.GetComponent<Stacking>().stacks)
+				{
+					int chance = Random.Range(0, 2);
+					if (chance == 1)
+					{
+						lowest = possible_weapons[i];
+					}
+				}
+			}
+			lowest.GetComponent<Stacking>().IncreaseStacks(amount);
+		}
+	}
 }

@@ -12,23 +12,26 @@ public class Kirja : MonoBehaviour
 
     private void Awake()
     {
-        ri = GameObject.Find("Real inventory");
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
+        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+		GetComponent<BuffController>().temporary = true;
+		GetComponent<BuffController>().timer = 2;
+		GetComponent<BuffController>().draw = true;
+		GetComponent<BuffController>().special = ApplyBuff;
+		GetComponent<BuffController>().special_apply = true;
+		GetComponent<BuffController>().reminder = "If draws, +1 armor to all weapons for two turns.";
     }
 
-    public void CalculateHP()
+    public void ApplyBuff(Weapon w)
     {
-        int amount = 0;
-        GetComponent<Weapon>().armor -= armor_bonus;
-        List<Weapon> weapons = player.GetWeapons();
-        for (int i = 0; i < weapons.Count; i++)
-        {
-            if (weapons[i].type == MainController.Choise.paperi && weapons[i].name != GetComponent<Weapon>().name)
-            {
-                amount++;
-            }
-        }
-        armor_bonus = amount;
-        GetComponent<Weapon>().armor += armor_bonus;
+        GameObject RI = GameObject.FindGameObjectWithTag("RI");
+		for(int i = 0; i < RI.transform.childCount; i++)
+		{
+			Buff new_buff = Instantiate(GetComponent<BuffController>().buff, RI.transform.GetChild(i)).GetComponent<Buff>();
+			new_buff.armor_buff = 1;
+			new_buff.temporary = true;
+			new_buff.timer = 3;
+			new_buff.id = GetComponent<Weapon>().name + "_two";
+			new_buff.reminder = "+"+new_buff.armor_buff+" armor.";
+		}
     }
 }

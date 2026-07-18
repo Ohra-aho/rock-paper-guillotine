@@ -14,11 +14,16 @@ public class Rage : MonoBehaviour
     public void GainStack(Weapon w)
     {
         GetComponent<Stacking>().IncreaseStacks(1);
-        if(GetComponent<Stacking>().stacks >= 3)
+       
+    }
+
+	public void SetType()
+	{
+		if(GetComponent<Stacking>().stacks >= 3)
         {
             GetComponent<Weapon>().type = MainController.Choise.voittamaton;
         }
-    }
+	}
 
     public void UseStaks()
     {

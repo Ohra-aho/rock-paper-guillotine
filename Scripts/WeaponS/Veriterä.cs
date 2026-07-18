@@ -1,36 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Veriterä : MonoBehaviour
 {
     private void Awake()
     {
-		if(GetComponent<BuffController>()) {
-			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name == GetComponent<Weapon>().name; };
-			GetComponent<BuffController>().temporary = true;
-			GetComponent<BuffController>().timer = 3;
-			GetComponent<BuffController>().type_change = MainController.Choise.voittamaton;
-			GetComponent<BuffController>().special_apply = true;
+		GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+		GetComponent<BuffController>().takeDamage = true;
+		GetComponent<BuffController>().special = BuffThis;
+    }
+
+	public void BuffThis(Weapon w)
+	{
+		GameObject old_buff = GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name);
+		if(old_buff != null)
+		{
+			old_buff.GetComponent<Buff>().damage_buff++;
+		} else
+		{
+			Buff own_buff = Instantiate(GetComponent<BuffController>().buff, transform).GetComponent<Buff>();
+			own_buff.damage_buff = 1;
+			own_buff.id = GetComponent<Weapon>().name;
 		}
-    }
+	}	
 
-    public void CalculateDamage()
-    {
-        if(GetComponent<Weapon>().player)
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            GetComponent<Weapon>().damage = (player.GetComponent<PlayerContoller>().HB.GiveMaxHealth() - player.GetComponent<PlayerContoller>().HB.GiveCurrentHealth()) / 2;
-        }
-        else
-        {
-            GetComponent<Weapon>().damage = 
-                1 + (GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.GiveMaxHealth() - GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.GiveCurrentHealth());
-        }
-    }
 
-	public void PlayerEffect() {
-		GameObject player = GameObject.FindGameObjectWithTag("Player");
-		GetComponent<Weapon>().damage = 7 - GetComponent<Weapon>().player_owner.GetComponent<PlayerContoller>().HB.GiveCurrentHealth();
-	}
 }
