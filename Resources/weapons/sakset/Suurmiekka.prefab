@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -1840290319814650153}
   - component: {fileID: -2170673007828329409}
+  - component: {fileID: 7763745035501172384}
   m_Layer: 5
   m_Name: Suurmiekka
   m_TagString: Untagged
@@ -99,12 +100,13 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
-  damage: 0
+  og_type: 0
+  damage: 1
   armor: 0
   real_damage: 0
   real_armor: 0
   name: Greatsword
-  description: +X damage, where X is half of your current HP.
+  description: If you are at full health and would heal, deal 1 damage.
   sprite: {fileID: 21300000, guid: 1131c617e6e1c4a43817f2d8b6d26db2, type: 3}
   tiers: []
   tier: 0
@@ -161,10 +163,19 @@ MonoBehaviour:
       m_Calls: []
   constant:
     m_PersistentCalls:
+      m_Calls: []
+  onDestruction:
+    m_PersistentCalls:
+      m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -1840290319814650153}
         m_TargetAssemblyTypeName: GreatSword, Assembly-CSharp
-        m_MethodName: CheckMaxHealth
+        m_MethodName: DealDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -174,10 +185,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onDestruction:
-    m_PersistentCalls:
-      m_Calls: []
-  eachTurn:
+  heal_modifier:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
@@ -194,7 +202,6 @@ MonoBehaviour:
   - 'Unstopabble force meets imovable object. '
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
 --- !u!114 &-1840290319814650153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,3 +226,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7763745035501172384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 1
+  armor_piercing: 0

@@ -4,23 +4,15 @@ using UnityEngine;
 
 public class GreatSword : MonoBehaviour
 {
-    int damage_buff = 0;
-    public void CheckMaxHealth()
-    {
-        GetComponent<Weapon>().damage -= damage_buff;
-        damage_buff = 0;
-        HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
-        damage_buff = HB.GiveCurrentHealth() / 2;
-        GetComponent<Weapon>().damage += damage_buff;
+	public void DealDamage()
+	{
+		TableController TC = GameObject.Find("Table").GetComponent<TableController>();
+		int current_hp = GetComponent<Weapon>().player_owner.HB.GiveCurrentHealth();
+		int max_hp =  GetComponent<Weapon>().player_owner.HB.GiveMaxHealth();
 
-    }
-
-    public void EnemyEffect()
-    {
-        GetComponent<Weapon>().damage -= damage_buff;
-        damage_buff = 0;
-        HealthBar HB = GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().HB;
-        damage_buff = HB.GiveCurrentHealth() / 3;
-        GetComponent<Weapon>().damage += damage_buff;
-    }
+		if(TC.player_healing > 0 && max_hp == current_hp - TC.GiveEffectivePlayerDamage())
+		{
+			GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
+		}
+	}
 }

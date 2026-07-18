@@ -68,7 +68,7 @@ MonoBehaviour:
   plan_1: 000000000100000002000000
   plan_2: 000000000100000002000000
   weapon_pairs:
-  - pair: 00000000
+  - pair: 01000000
   - pair: 01000000
   - pair: 02000000
   advanced: 0
