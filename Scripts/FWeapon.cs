@@ -26,8 +26,7 @@ public class FWeapon : MonoBehaviour
     {
         transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
         transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
-		GetComponent<SpriteRenderer>().sprite = tiers[weapon.GetComponent<Weapon>().tier];
-		Debug.Log(weapon.GetComponent<Weapon>().og_type);
+		GetComponent<SpriteRenderer>().sprite = tiers[weapon.GetComponent<Weapon>().GetAscension()];
         switch(weapon.GetComponent<Weapon>().type)
         {
             case MainController.Choise.kivi:

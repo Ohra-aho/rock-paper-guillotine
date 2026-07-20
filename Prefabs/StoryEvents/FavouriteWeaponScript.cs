@@ -32,7 +32,7 @@ public class FavouriteWeaponScript : MonoBehaviour
 	{
 		transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = w.sprite;
 		transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = w.sprite;
-		GetComponent<SpriteRenderer>().sprite = backgrounds[w.tier];
+		GetComponent<SpriteRenderer>().sprite = backgrounds[w.GetAscension()];
 		switch(w.type)
 		{
 			case MainController.Choise.kivi: transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = icons[0]; break;
@@ -48,15 +48,24 @@ public class FavouriteWeaponScript : MonoBehaviour
 	{
 		if(weapon != null)
 		{
+			string true_name = weapon.gameObject.name.Replace("Clone", "");
 			GameObject.Find("PlayerWheelHolder").GetComponent<NonUIButton>().press.Invoke();
 
 			favourite_2.SetActive(true);
 			favourite_2.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.sprite;
 			favourite_2.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.sprite;
-			favourite_2.GetComponent<SpriteRenderer>().sprite = backgrounds[weapon.tier];
+			favourite_2.GetComponent<SpriteRenderer>().sprite = backgrounds[weapon.GetAscension()];
 			favourite_2.GetComponent<FavouriteWeaponScript>().weapon = weapon;
 			weapon.tier++;
 			if(weapon.tier > 2) weapon.tier = 2;
+			RLController RLC = GameObject.Find("EventSystem").GetComponent<RLController>();
+			if(!RLC.ascended_weapons.ContainsKey(weapon.name))
+			{
+				RLC.ascended_weapons.Add(weapon.name, weapon.tier);
+			} else
+			{
+				RLC.ascended_weapons[weapon.name] = weapon.tier;
+			}
 			switch(weapon.type)
 			{
 				case MainController.Choise.kivi: favourite_2.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = icons[0]; break;
@@ -65,6 +74,7 @@ public class FavouriteWeaponScript : MonoBehaviour
 				case MainController.Choise.useless: favourite_2.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = icons[3]; break;
 				case MainController.Choise.voittamaton: favourite_2.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = icons[4]; break;
 			}
+
 
 			UI.SetActive(false);
 			favourite.SetActive(false);

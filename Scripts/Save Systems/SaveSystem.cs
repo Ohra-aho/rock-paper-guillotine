@@ -114,11 +114,6 @@ public static class SaveSystem
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = OpenFileStream(player_weapon_data, FileMode.Create);
 
-        if (dead)
-        {
-            //Some sort of rogue lite shit
-        }
-
         formatter.Serialize(stream, weapons);
         stream.Close();
     }

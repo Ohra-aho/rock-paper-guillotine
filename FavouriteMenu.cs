@@ -19,9 +19,10 @@ public class FavouriteMenu : MonoBehaviour
 	public void LoadFavourites()
 	{
 		StartingWeapons SW = GameObject.Find("EventSystem").GetComponent<StartingWeapons>();
+		
 		for(int i = 0; i < SW.all_weapons.Count; i++)
 		{
-			if(SW.all_weapons[i].GetComponent<Weapon>().tier > 0)
+			if(SW.all_weapons[i].GetComponent<Weapon>().tier > 0 || SW.GetComponent<RLController>().ascended_weapons.ContainsKey(SW.all_weapons[i].GetComponent<Weapon>().name))
 			{
 				favourites.Add(SW.all_weapons[i]);
 			}
@@ -32,9 +33,13 @@ public class FavouriteMenu : MonoBehaviour
 	{
 		for(int i = 0; i < favourites.Count; i++)
 		{
-			GameObject FW = Instantiate(pick, transform);
-			FW.GetComponent<FWeapon>().weapon = favourites[i];
-			FW.GetComponent<FWeapon>().DispalyWeapon();
+			GameObject RI = GameObject.FindGameObjectWithTag("RI");
+			if(RI.GetComponent<Realinventory>().FindWeapon(favourites[i].GetComponent<Weapon>().name) == null)
+			{
+				GameObject FW = Instantiate(pick, transform);
+				FW.GetComponent<FWeapon>().weapon = favourites[i];
+				FW.GetComponent<FWeapon>().DispalyWeapon();	
+			}
 		}
 	}
 

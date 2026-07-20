@@ -18,7 +18,7 @@ public class Hand : MonoBehaviour
             if(collision.GetComponent<WeaponSprite>().weapon == weapon_to_destroy)
             {
                 weapon_sprite = collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().sprite;
-				transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = backs[collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().tier];
+				transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = backs[collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().GetAscension()];
                 transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = weapon_sprite;
                 transform.GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = weapon_sprite;
                 switch (collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().og_type)

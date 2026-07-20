@@ -76,12 +76,39 @@ public class Weapon : MonoBehaviour
         real_damage = damage;
 		og_type = type;
         endPhase.AddListener(ToggleLoopStropper);
+		Ascend();
     }
 
     private void Update()
     {
         constant.Invoke();
     }
+
+	public void Ascend()
+	{
+		RLController RLC = GameObject.Find("EventSystem").GetComponent<RLController>();
+		try
+		{
+			int new_tier = RLC.ascended_weapons[name];
+			tier = new_tier;
+		} catch
+		{
+			//No ascend
+		}
+	}
+
+	public int GetAscension()
+	{
+		RLController RLC = GameObject.Find("EventSystem").GetComponent<RLController>();
+		try
+		{
+			int new_tier = RLC.ascended_weapons[name];
+			return new_tier;
+		} catch
+		{
+			return tier;
+		}
+	}
 
     public void InisiateTypeEffects()
     {

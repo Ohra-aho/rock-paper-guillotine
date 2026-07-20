@@ -5,6 +5,7 @@ using UnityEngine;
 public class RLController : MonoBehaviour
 {
     public List<string> achievements = new List<string>();
+	[HideInInspector] public Dictionary<string, int> ascended_weapons = new Dictionary<string, int>();
     public int picks = 0;
 
     GameObject background;
@@ -39,6 +40,10 @@ public class RLController : MonoBehaviour
         {
             achievements.AddRange(data.achievements);
             picks = data.picks;
+			for(int i = 0; i < data.ascended_1.Length; i++)
+			{
+				ascended_weapons.Add(data.ascended_1[i], data.ascended_2[i]);
+			}
         }
 
         background = GameObject.Find("main screen background");
@@ -470,7 +475,9 @@ public class RLController : MonoBehaviour
  
     public void SaveAchievements()
     {
-        SaveSystem.SaveAchievements(new RL(achievements.ToArray(), picks));
+		List<string> names = new List<string>(ascended_weapons.Keys);
+		List<int> tiers = new List<int>(ascended_weapons.Values);
+        SaveSystem.SaveAchievements(new RL(achievements.ToArray(), picks, names.ToArray(), tiers.ToArray()));
     }
 
     public void AddAchievement(string name)
@@ -486,10 +493,14 @@ public class RLController : MonoBehaviour
     {
         public string[] achievements;
         public int picks;
-        public RL(string[] a, int p)
+		public string[] ascended_1;
+		public int[] ascended_2;
+        public RL(string[] a, int p, string[] ascended_1, int[] ascended_2)
         {
             achievements = a;
             picks = p;
+			this.ascended_1 = ascended_1;
+			this.ascended_2 = ascended_2;
         }
     }
 }

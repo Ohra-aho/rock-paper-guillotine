@@ -22,7 +22,7 @@ public class WeaponSprite : MonoBehaviour
         {
             transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
             transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
-			GetComponent<SpriteRenderer>().sprite = tiers[weapon.GetComponent<Weapon>().tier];
+			GetComponent<SpriteRenderer>().sprite = tiers[weapon.GetComponent<Weapon>().GetAscension()];
             switch(weapon.GetComponent<Weapon>().og_type)
             {
                 case MainController.Choise.kivi:
