@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyWheelHolder : MonoBehaviour
 {
+	public Sprite museum_holder;
     public void RemoveWeapon(GameObject weapon)
     {
         for (int i = 0; i < transform.GetChild(0).childCount; i++)
@@ -19,4 +20,9 @@ public class EnemyWheelHolder : MonoBehaviour
             }
         }
     }
+
+	public void ChangeToMuseum()
+	{
+		GetComponent<SpriteRenderer>().sprite = museum_holder;
+	}
 }

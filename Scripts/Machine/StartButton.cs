@@ -17,6 +17,10 @@ public class StartButton : MonoBehaviour
 
     public bool deactivated; //If start button needs to be deactivated individually
 
+	public Sprite museum_1;
+	public Sprite museum_2;
+	private bool museum = false;
+
     MainController MC;
     PlayerWheelHolder PWH;
 
@@ -51,26 +55,8 @@ public class StartButton : MonoBehaviour
         "Is this too easy for you? You have to handicap yourself?"
     };
 
-    //Load out comments
-    /*
-     Full = all other slots are used
-     */
-
     bool loadout_commented = false;
     List<string> previous_loadout = new List<string>();
-
-    private string[] giant_scissors_full = {
-        "You are not using those scissors to their full potential.",
-        "You may as well use any other scissors.",
-        "You could just oneshot enemies with a little risk taking."
-    };
-
-    private string[] back_to_basics =
-    {
-        "Back to basics.",
-        "Why use the starting weapons? You have other options.",
-        "What? New weapons not good enough for you?"
-    };
 
 
     private void Awake()
@@ -84,6 +70,12 @@ public class StartButton : MonoBehaviour
     {
         FindEncounter();
     }
+
+	public void ChangeToMuseum()
+	{
+		museum = true;
+		GetComponent<SpriteRenderer>().sprite = museum_1;	
+	}
 
     public void FindEncounter()
     {
@@ -123,7 +115,10 @@ public class StartButton : MonoBehaviour
 		if(end)
 		{
 			PlayAudio();
-            GetComponent<SpriteRenderer>().sprite = active;
+            
+			if(!museum) GetComponent<SpriteRenderer>().sprite = active;
+			else GetComponent<SpriteRenderer>().sprite = museum_2;
+
 			GameObject.Find("The Q").GetComponent<Test>().PlayAnimation("Lose");
 		}
         else if(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.GiveCurrentHealth() > 0 && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons().Count > 0)
@@ -134,7 +129,9 @@ public class StartButton : MonoBehaviour
             GameObject ec = GameObject.Find("EnemyHolder");
             ec.GetComponent<EnemyController>().victory = false;
 
-            GetComponent<SpriteRenderer>().sprite = active;
+            if(!museum) GetComponent<SpriteRenderer>().sprite = active;
+			else GetComponent<SpriteRenderer>().sprite = museum_2;
+
             machine.GetComponent<Test>().PlayAnimation("CloseMachine");
             isActive = true;
             GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarUp();
@@ -156,7 +153,8 @@ public class StartButton : MonoBehaviour
     {
         MC.GetComponent<RLController>().CheckForMartyr();
         DisplayForfeitBark(!MC.GetComponent<StoryCheckList>().first_forfeit);
-        GetComponent<SpriteRenderer>().sprite = inactive;
+        if(!museum) GetComponent<SpriteRenderer>().sprite = inactive;
+		else GetComponent<SpriteRenderer>().sprite = museum_1;
 
         machine.GetComponent<Test>().PlayAnimation("OpenMachine");
         GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarDown();
@@ -354,22 +352,6 @@ public class StartButton : MonoBehaviour
     private string GiveRandomComment(string[] array)
     {
         return array[Random.Range(0, array.Length)];
-    }
-
-    //Loadout comment functions 
-    private void GiantScissorsFull()
-    {
-        if (HasWeapon("Giant scissors") && FullWheel())
-            if(LoadoutCommentChance())
-                BC.ActivateInstantBark(GiveRandomComment(giant_scissors_full));
-    }
-
-    private void BackToBasics()
-    {
-        if (HasWeapon("Rock") && HasWeapon("Paper") && HasWeapon("Scissors") && previous_loadout.Count > 0)
-            if(!previous_loadout.Contains("Rock") || !previous_loadout.Contains("Paper") || !previous_loadout.Contains("Scissors"))
-                if (LoadoutCommentChance())
-                    BC.ActivateInstantBark(GiveRandomComment(back_to_basics));
     }
 
     //Achievement aids

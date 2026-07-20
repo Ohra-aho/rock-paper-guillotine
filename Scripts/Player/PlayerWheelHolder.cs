@@ -13,6 +13,8 @@ public class PlayerWheelHolder : MonoBehaviour
     [SerializeField] private GameObject InventoryMenu;
     MainController MC;
 
+	public Sprite museum_holder;
+
     //Achievement aids
     [HideInInspector] public List<Weapon> used_weapons = new List<Weapon>(); //experimentor
 
@@ -20,6 +22,11 @@ public class PlayerWheelHolder : MonoBehaviour
     {
         MC = GameObject.Find("EventSystem").GetComponent<MainController>();
     }
+
+	public void ChangeToMuseum()
+	{
+		GetComponent<SpriteRenderer>().sprite = museum_holder;
+	}
 
     private void Update()
     {

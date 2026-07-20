@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class StoryController : MonoBehaviour
 {
@@ -25,10 +26,33 @@ public class StoryController : MonoBehaviour
     public bool executioner = false;
 
 	public bool debug = false;
+	public bool museum_active = false;
 
     //Scenes
     public GameObject cellar;
-    public GameObject museum;
+
+	public GameObject the_q;
+	public GameObject main_background;
+	public GameObject museum_background;
+	public GameObject table;
+	public Sprite museum_table;
+	public GameObject machine_1;
+	public Sprite machine_1_sprite;
+	public GameObject machine_2;
+	public Sprite machine_2_sprite;
+	public GameObject player_wheel_holder;
+	public GameObject enemy_wheel_holder;
+
+	public List<GameObject> wheels;
+	public Sprite museum_wheel;
+	public GameObject start_button;
+	public GameObject lamp;
+	public GameObject man;
+	public GameObject light_changer;
+	public Sprite museum_light_changer;
+
+
+	
 
     public void Inisiate()
     {
@@ -39,14 +63,28 @@ public class StoryController : MonoBehaviour
             executioner = true;
             GameObject.Find("man").GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
         } 
-        if(GetComponent<StoryCheckList>().executioner_dead)
+        if(museum_active)
         {
-            cellar.SetActive(false);
-            museum.SetActive(true);
+			the_q.GetComponent<CameraNQuilliotine>().ChangeToMuseum();
+			the_q.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingLayerID = SortingLayer.NameToID("background");
+			the_q.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 1;
+			table.GetComponent<SpriteRenderer>().sprite = museum_table;
+			machine_1.GetComponent<SpriteRenderer>().sprite = machine_1_sprite;
+			machine_2.GetComponent<SpriteRenderer>().sprite = machine_2_sprite;
+			main_background.SetActive(false);
+			museum_background.SetActive(true);
+			player_wheel_holder.GetComponent<PlayerWheelHolder>().ChangeToMuseum();
+			enemy_wheel_holder.GetComponent<EnemyWheelHolder>().ChangeToMuseum();
 
-            TableController table = GameObject.Find("Table").GetComponent<TableController>();
-            table.enemy = GameObject.Find("EnemyHolder");
-            table.player = GameObject.FindGameObjectWithTag("Player");
+			for(int i = 0; i < wheels.Count; i++)
+			{
+				wheels[i].GetComponent<SpriteRenderer>().sprite = museum_wheel;
+			}
+			start_button.GetComponent<StartButton>().ChangeToMuseum();
+			lamp.transform.position = new Vector2(lamp.transform.position.x, 9);
+			lamp.transform.GetChild(0).GetComponent<Light2D>().pointLightOuterRadius = 14;
+			man.SetActive(false);
+			light_changer.GetComponent<SpriteRenderer>().sprite = museum_light_changer;
         }
         //executioner = true; ///////Debug
 

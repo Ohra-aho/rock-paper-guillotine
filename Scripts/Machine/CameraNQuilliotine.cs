@@ -9,10 +9,17 @@ public class CameraNQuilliotine : MonoBehaviour
     public GameObject event_system;
     public GameObject museum_deathScreen;
 
-    public void RevealDeathScreen()
+	public Sprite museum_guillotine;
+
+	public void ChangeToMuseum()
+	{
+		transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = museum_guillotine;
+	}
+
+	public void RevealDeathScreen()
     {
         GameObject es = GameObject.Find("EventSystem");
-        if(!es.GetComponent<StoryCheckList>().executioner_dead)
+        if(!es.GetComponent<StoryController>().museum_active)
         {
             if (es.GetComponent<StoryController>().executioner)
             {
@@ -34,7 +41,7 @@ public class CameraNQuilliotine : MonoBehaviour
     public void PlayDeathAnimation()
     {
         GameObject es = GameObject.Find("EventSystem");
-        if (es.GetComponent<StoryCheckList>().executioner_dead)
+        if (es.GetComponent<StoryController>().museum_active)
         {
             GetComponent<Test>().PlayAnimation("Lose_2");
         } else
