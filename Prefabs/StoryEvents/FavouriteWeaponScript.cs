@@ -22,6 +22,7 @@ public class FavouriteWeaponScript : MonoBehaviour
 			GameObject.Find("Canvas").transform.GetChild(17).gameObject.SetActive(true);
 			GameObject.Find("cellar scene").transform.GetChild(5).gameObject.SetActive(true);
 			GameObject.Find("PlayerWheelHolder").GetComponent<NonUIButton>().press.Invoke();
+			MC.GetComponent<RLController>().achievements.Add("Winner");
 		}
 	}
 

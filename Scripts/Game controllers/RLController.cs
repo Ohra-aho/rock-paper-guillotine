@@ -84,6 +84,7 @@ public class RLController : MonoBehaviour
                 case "Unyielding": background.transform.GetChild(12).gameObject.SetActive(true); break;
                 case "Picky": background.transform.GetChild(13).gameObject.SetActive(true); break;
                 case "Hoarder": background.transform.GetChild(14).gameObject.SetActive(true); break;
+				case "Winner": background.transform.GetChild(15).gameObject.SetActive(true); break;
 				default:
 					char type = achievements[i][0];
 					string path = "weapons/";

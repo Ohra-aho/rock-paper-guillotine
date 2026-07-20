@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StartingWeapons : MonoBehaviour
 {
-    List<GameObject> all_weapons = new List<GameObject>();
+    [HideInInspector] public List<GameObject> all_weapons = new List<GameObject>();
 
     private void Awake()
     {
