@@ -5,11 +5,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 public static class SaveSystem
 {
     public static string story_data = "story_data";
-    public static string bark_data = "bark_data";
     public static string player_weapon_data = "player_weapon_data";
     public static string player_data = "player_data";
-    public static string achievement_data = "achievement_data";
-    public static string story_checklist_data = "story_checklist_data";
     public static string sound_setting_data = "sound_settings_data";
 
     //Utilities
@@ -36,14 +33,14 @@ public static class SaveSystem
     }
 
     public static void DeathDeletion()
-    {
-        DeleteFile(bark_data);
-    } 
+	{
+		
+	} 
 
     //Specific functions
 
     //Story Data
-    public static void SaveStoryData(StoryController story_controller, RLController rl_controller, bool dead)
+    public static void SaveStoryData(StoryController story_controller, RLController rl_controller, StoryCheckList checklist, bool dead)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = OpenFileStream(story_data, FileMode.Create);
@@ -52,7 +49,7 @@ public static class SaveSystem
             story_controller.storyIndex = -1;
         }
 
-        StoryData data = new StoryData(story_controller, rl_controller);
+        StoryData data = new StoryData(story_controller, rl_controller, checklist);
 
         formatter.Serialize(stream, data);
         stream.Close();
@@ -66,30 +63,6 @@ public static class SaveSystem
         if(stream != null)
         {
             StoryData data = formatter.Deserialize(stream) as StoryData;
-            stream.Close();
-            return data;
-        }
-        return null;
-    }
-
-    //Story checklist
-    public static void SaveStoryChecklist(StoryCheckList.CheckList check_list)
-    {
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream stream = OpenFileStream(story_checklist_data, FileMode.Create);
-
-        formatter.Serialize(stream, check_list);
-        stream.Close();
-    }
-
-    public static StoryCheckList.CheckList LoadStoryChecklist()
-    {
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream stream = OpenFileStream(story_checklist_data, FileMode.Open);
-
-        if (stream != null)
-        {
-            StoryCheckList.CheckList data = formatter.Deserialize(stream) as StoryCheckList.CheckList;
             stream.Close();
             return data;
         }

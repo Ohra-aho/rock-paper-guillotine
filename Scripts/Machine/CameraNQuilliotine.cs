@@ -57,23 +57,18 @@ public class CameraNQuilliotine : MonoBehaviour
 
     public void DeathSave()
     {
-        SaveSystem.SaveStoryData(eventSystem.GetComponent<StoryController>(), eventSystem.GetComponent<RLController>(), true);
-        event_system.GetComponent<StoryCheckList>().SaveStoryCheckList();
+        SaveSystem.SaveStoryData(eventSystem.GetComponent<StoryController>(), eventSystem.GetComponent<RLController>(), eventSystem.GetComponent<StoryCheckList>(), true);
         event_system.GetComponent<SoundSettings>().SaveSoundSettings();
 
         SaveSystem.DeleteFile(SaveSystem.player_weapon_data);
         SaveSystem.DeleteFile(SaveSystem.player_data);
-        SaveSystem.DeleteFile(SaveSystem.bark_data);
     }
 
     public void DeleteSaveFile()
     {
         SaveSystem.DeleteFile(SaveSystem.story_data);
-        SaveSystem.DeleteFile(SaveSystem.bark_data);
         SaveSystem.DeleteFile(SaveSystem.player_weapon_data);
         SaveSystem.DeleteFile(SaveSystem.player_data);
-        SaveSystem.DeleteFile(SaveSystem.achievement_data);
-        SaveSystem.DeleteFile(SaveSystem.story_checklist_data);
     }
 
     public void HeadFalls()

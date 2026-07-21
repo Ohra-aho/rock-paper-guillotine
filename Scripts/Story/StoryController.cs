@@ -56,7 +56,6 @@ public class StoryController : MonoBehaviour
     public void Inisiate()
     {
         LoadStory();
-        GetComponent<StoryCheckList>().LoadStoryCheckList();
         if(GetComponent<StoryCheckList>().greeting_index >= messages.Length) 
         {
             executioner = true;
@@ -137,9 +136,11 @@ public class StoryController : MonoBehaviour
 				storyIndex = story_data.encounter_index - 1;
 			}
 			GetComponent<RLController>().Insiate(story_data);
+	        GetComponent<StoryCheckList>().LoadStoryCheckList(story_data);
         } else
 		{
 			GetComponent<RLController>().Insiate(null);
+	        GetComponent<StoryCheckList>().LoadStoryCheckList(null);
 		}
     }
 

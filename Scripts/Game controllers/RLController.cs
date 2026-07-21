@@ -44,7 +44,10 @@ public class RLController : MonoBehaviour
 			{
 				ascended_weapons.Add(data.ascended_1[i], data.ascended_2[i]);
 			}
-        }
+        } else
+		{
+			achievements = new List<string>();
+		}
 
         background = GameObject.Find("main screen background");
 

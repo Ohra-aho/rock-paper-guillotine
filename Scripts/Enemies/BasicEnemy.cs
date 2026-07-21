@@ -278,21 +278,6 @@ public class BasicEnemy : MonoBehaviour
         planIndex = 0;
     }
 
-    public void OffBalance()
-    {
-        off_balance_triggered = true;
-        if (!HB.dead && !off_balance)
-        {
-            off_balance = true;
-            GameObject.Find("light holder").GetComponent<Test>().PlayAnimation("offBalance");
-            if(!GameObject.Find("EventSystem").GetComponent<StoryCheckList>().off_balance_explained)
-            {
-                GameObject.Find("EventSystem").GetComponent<StoryCheckList>().off_balance_explained = true;
-                GameObject.Find("BarkHolder").GetComponent<BarkController>().ActivateInstantBark("Enemy is now off balance. Their strategy might change or some effects may activate.");
-            }
-        }
-    }
-
     public void Balance()
     {
         if(off_balance && !off_balance_triggered)

@@ -30,7 +30,6 @@ public class PauseController : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "MainMenu")
         {
-            GetComponent<StoryCheckList>().LoadStoryCheckList();
             if (GetComponent<StoryCheckList>().executioner_dead)
             {
                 main_menu.SetActive(false);
