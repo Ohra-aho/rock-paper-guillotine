@@ -12,7 +12,6 @@ public class StoryController : MonoBehaviour
     //For save system
     /*[HideInInspector]*/ public int playthroughts = 0;
     [HideInInspector] public int storyIndex = -1;
-    [HideInInspector] public int narrative_index = -1;
 
     //Tutorial messages
     public GameObject first_victory;
@@ -65,6 +64,7 @@ public class StoryController : MonoBehaviour
         } 
         if(museum_active)
         {
+			//Change scene to museum
 			the_q.GetComponent<CameraNQuilliotine>().ChangeToMuseum();
 			the_q.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingLayerID = SortingLayer.NameToID("background");
 			the_q.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = 1;
@@ -132,21 +132,15 @@ public class StoryController : MonoBehaviour
         if (story_data != null)
         {
             playthroughts = story_data.playthroughs;
-            if (story_data.encounter_index == -1)
-            {
-                narrative_index = -1;
-            }
-            else
-            {
-                storyIndex = story_data.encounter_index - 1;
-                narrative_index = story_data.narrative_index;
-            }
-        }
-    }
-
-    public void BuildNarrativeFromStoryChecklist()
-    {
-
+            if (story_data.encounter_index != -1)
+			{
+				storyIndex = story_data.encounter_index - 1;
+			}
+			GetComponent<RLController>().Insiate(story_data);
+        } else
+		{
+			GetComponent<RLController>().Insiate(null);
+		}
     }
 
     public string[][] GiveMessages()

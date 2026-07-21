@@ -287,13 +287,14 @@ public class PlayerContoller : MonoBehaviour
     public void SavePlayerData()
     {
         PlayerData data = new PlayerData(this);
-        SaveSystem.SavePlayerData(data);
+        //SaveSystem.SavePlayerData(data);
     }
 
     public void LoadPlayerData()
     {
-        PlayerData data = SaveSystem.LoadPlayerData();
-
+        //PlayerData data = SaveSystem.LoadPlayerData();
+		PlayerData data = null;
+		
         if (data != null)
         {
             //Set health
@@ -358,7 +359,6 @@ public class PlayerContoller : MonoBehaviour
                 {
                     Buff target_buff = FindBuffById(weapon.buff_data[j].id, weapon.gameObject);
                     target_buff.used = weapon.buff_data[j].used;
-                    target_buff.timer = weapon.buff_data[j].timer;
                 }
             }
         }

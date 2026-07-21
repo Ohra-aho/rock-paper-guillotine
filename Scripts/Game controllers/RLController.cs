@@ -33,9 +33,9 @@ public class RLController : MonoBehaviour
 
 	public bool slaughterer = false;
 
-    public void Insiate()
+
+    public void Insiate(StoryData data)
     {
-        RL data = SaveSystem.LoadAchievements();
         if (data != null)
         {
             achievements.AddRange(data.achievements);
@@ -472,35 +472,12 @@ public class RLController : MonoBehaviour
             activated = true;
         }
     }
- 
-    public void SaveAchievements()
-    {
-		List<string> names = new List<string>(ascended_weapons.Keys);
-		List<int> tiers = new List<int>(ascended_weapons.Values);
-        SaveSystem.SaveAchievements(new RL(achievements.ToArray(), picks, names.ToArray(), tiers.ToArray()));
-    }
 
     public void AddAchievement(string name)
     {
         if(!achievements.Contains(name))
         {
             achievements.Add(name);
-        }
-    }
-
-    [System.Serializable]
-    public class RL
-    {
-        public string[] achievements;
-        public int picks;
-		public string[] ascended_1;
-		public int[] ascended_2;
-        public RL(string[] a, int p, string[] ascended_1, int[] ascended_2)
-        {
-            achievements = a;
-            picks = p;
-			this.ascended_1 = ascended_1;
-			this.ascended_2 = ascended_2;
         }
     }
 }

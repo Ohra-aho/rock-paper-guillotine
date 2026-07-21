@@ -43,7 +43,7 @@ public static class SaveSystem
     //Specific functions
 
     //Story Data
-    public static void SaveStoryData(StoryController story_controller, bool dead)
+    public static void SaveStoryData(StoryController story_controller, RLController rl_controller, bool dead)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = OpenFileStream(story_data, FileMode.Create);
@@ -52,7 +52,7 @@ public static class SaveSystem
             story_controller.storyIndex = -1;
         }
 
-        StoryData data = new StoryData(story_controller);
+        StoryData data = new StoryData(story_controller, rl_controller);
 
         formatter.Serialize(stream, data);
         stream.Close();
@@ -66,114 +66,6 @@ public static class SaveSystem
         if(stream != null)
         {
             StoryData data = formatter.Deserialize(stream) as StoryData;
-            stream.Close();
-            return data;
-        }
-        return null;
-    }
-
-    //Barks
-    public static void SaveBarks(Bark[] barks)
-    {
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream stream = OpenFileStream(bark_data, FileMode.Create);
-
-        BarkData[] data = new BarkData[10];
-
-        for (int i = 0; i < 10; i++)
-        {
-            if(barks[i] != null)
-            {
-                data[i] = new BarkData(barks[i]);
-            }
-        }
-
-        formatter.Serialize(stream, data);
-        stream.Close();
-    }
-
-    public static BarkData[] LoadBarks()
-    {
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream stream = OpenFileStream(bark_data, FileMode.Open);
-
-        BarkData[] data = new BarkData[10];
-
-        if (stream != null)
-        {
-            data = formatter.Deserialize(stream) as BarkData[];
-            stream.Close();
-            return data;
-        }
-        return null;
-    }
-
-    //Player weapons
-    public static void SavePlayerWeapons(WeaponData[] weapons, bool dead)
-    {
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream stream = OpenFileStream(player_weapon_data, FileMode.Create);
-
-        formatter.Serialize(stream, weapons);
-        stream.Close();
-    }
-
-    public static WeaponData[] LoadPlayerWeapons()
-    {
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream stream = OpenFileStream(player_weapon_data, FileMode.Open);
-
-        if(stream != null)
-        {
-            WeaponData[] data = formatter.Deserialize(stream) as WeaponData[];
-            stream.Close();
-            return data;
-        }
-        return null;
-    }
-
-    //Player data
-    public static void SavePlayerData(PlayerData player)
-    {
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream stream = OpenFileStream(player_data, FileMode.Create);
-
-        formatter.Serialize(stream, player);
-        stream.Close();
-    } 
-    
-    public static PlayerData LoadPlayerData()
-    {
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream stream = OpenFileStream(player_data, FileMode.Open);
-
-        if(stream != null)
-        {
-            PlayerData data = formatter.Deserialize(stream) as PlayerData;
-            stream.Close();
-            return data;
-        }
-        return null;
-    }
-
-    //Achievements
-    public static void SaveAchievements(RLController.RL rl)
-    {
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream stream = OpenFileStream(achievement_data, FileMode.Create);
-
-        formatter.Serialize(stream, rl);
-        stream.Close();
-    }
-
-    public static RLController.RL LoadAchievements()
-    {
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream stream = OpenFileStream(achievement_data, FileMode.Open);
-
-        if (stream != null)
-        {
-            RLController.RL data = formatter.Deserialize(stream) as RLController.RL;
             stream.Close();
             return data;
         }
@@ -204,6 +96,54 @@ public static class SaveSystem
         return null;
     }
 
+
+    //Player weapons
+    /*public static void SavePlayerWeapons(WeaponData[] weapons, bool dead)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = OpenFileStream(player_weapon_data, FileMode.Create);
+
+        formatter.Serialize(stream, weapons);
+        stream.Close();
+    }
+
+    public static WeaponData[] LoadPlayerWeapons()
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = OpenFileStream(player_weapon_data, FileMode.Open);
+
+        if(stream != null)
+        {
+            WeaponData[] data = formatter.Deserialize(stream) as WeaponData[];
+            stream.Close();
+            return data;
+        }
+        return null;
+    }*/
+
+    //Player data
+    /*public static void SavePlayerData(PlayerData player)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = OpenFileStream(player_data, FileMode.Create);
+
+        formatter.Serialize(stream, player);
+        stream.Close();
+    } 
+    
+    public static PlayerData LoadPlayerData()
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = OpenFileStream(player_data, FileMode.Open);
+
+        if(stream != null)
+        {
+            PlayerData data = formatter.Deserialize(stream) as PlayerData;
+            stream.Close();
+            return data;
+        }
+        return null;
+    }*/
 
     //Sound settings
     public static void SaveSoundSettings(SoundData data)

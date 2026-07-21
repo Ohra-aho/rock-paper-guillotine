@@ -24,13 +24,7 @@ public class WeaponData
         }
         if(weapon.GetComponent<Stacking>()) stacks = weapon.GetComponent<Stacking>().stacks;
 
-        buffs = ExtractBuffInfo(weapon);
-
-        if(weapon.gameObject.GetComponent<SelfDestruct>())
-        {
-            //self_destruct_used = weapon.gameObject.GetComponent<SelfDestruct>().used_ones;
-        }
-
+        //buffs = ExtractBuffInfo(weapon);
     }
 
     public BuffData[] ExtractBuffInfo(Weapon weapon)
@@ -44,7 +38,7 @@ public class WeaponData
             {
                 Debug.Log("Relevant buff found");
                 buff_data[i] = new BuffData(weapon.transform.GetChild(i).GetComponent<Buff>());
-            } else if(weapon.transform.GetChild(i).GetComponent<Buff>().timer > 0)
+            } else if(!weapon.transform.GetChild(i).GetComponent<Buff>().temporary)
             {
                 Debug.Log("Relevant buff found");
                 buff_data[i] = new BuffData(weapon.transform.GetChild(i).GetComponent<Buff>());

@@ -57,8 +57,7 @@ public class CameraNQuilliotine : MonoBehaviour
 
     public void DeathSave()
     {
-        SaveSystem.SaveStoryData(eventSystem.GetComponent<StoryController>(), true);
-        event_system.GetComponent<RLController>().SaveAchievements();
+        SaveSystem.SaveStoryData(eventSystem.GetComponent<StoryController>(), eventSystem.GetComponent<RLController>(), true);
         event_system.GetComponent<StoryCheckList>().SaveStoryCheckList();
         event_system.GetComponent<SoundSettings>().SaveSoundSettings();
 
