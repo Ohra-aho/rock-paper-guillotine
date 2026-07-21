@@ -57,12 +57,47 @@ public class CameraNQuilliotine : MonoBehaviour
 
     public void DeathSave()
     {
-        SaveSystem.SaveStoryData(eventSystem.GetComponent<StoryController>(), eventSystem.GetComponent<RLController>(), eventSystem.GetComponent<StoryCheckList>(), true);
+        SaveSystem.SaveStoryData(
+			eventSystem.GetComponent<StoryController>(), 
+			eventSystem.GetComponent<RLController>(), 
+			eventSystem.GetComponent<StoryCheckList>(),
+			new PlayThroughData(FindEncounter()),
+			true
+			);
         event_system.GetComponent<SoundSettings>().SaveSoundSettings();
 
         SaveSystem.DeleteFile(SaveSystem.player_weapon_data);
         SaveSystem.DeleteFile(SaveSystem.player_data);
     }
+
+	public void NormalSave()
+	{
+		SaveSystem.SaveStoryData(
+			eventSystem.GetComponent<StoryController>(), 
+			eventSystem.GetComponent<RLController>(), 
+			eventSystem.GetComponent<StoryCheckList>(),
+			new PlayThroughData(FindEncounter()),
+			false
+			);
+        event_system.GetComponent<SoundSettings>().SaveSoundSettings();
+	}
+
+	private Encounter FindEncounter()
+	{
+		Encounter temp = null;
+		GameObject SEH = GameObject.Find("Story Event Holder");
+		if(SEH.transform.childCount > 0)
+		{
+			if(SEH.transform.GetChild(0).GetComponent<Encounter>())
+			{
+				if(!SEH.transform.GetChild(0).gameObject.name.Contains("Boss"))
+				{
+					temp = SEH.transform.GetChild(0).GetComponent<Encounter>();
+				}
+			}
+		}
+		return temp;
+	}
 
     public void DeleteSaveFile()
     {

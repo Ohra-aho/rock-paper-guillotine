@@ -22,10 +22,14 @@ public class StoryData
 	public bool executioner_dead;
 	public int greeting_index;
 	public int end_counter;
-    public StoryData(StoryController story_controller, RLController rl_controller, StoryCheckList check_list)
+	//Playthrough
+	public string[] enemies;
+	public string tier;
+    public StoryData(StoryController story_controller, RLController rl_controller, StoryCheckList check_list, PlayThroughData play_through_data)
     {
         playthroughs = story_controller.playthroughts;
         encounter_index = story_controller.storyIndex;
+		Debug.Log(story_controller.storyIndex);
 		//Achievement data
 		achievements = rl_controller.achievements.ToArray();
 		picks = rl_controller.picks;
@@ -43,5 +47,8 @@ public class StoryData
         greeting_index = check_list.greeting_index;
         executioner_dead = check_list.executioner_dead;
         end_counter = check_list.end_counter;
+		//Playthrough
+		enemies = play_through_data.enemies;
+		tier = play_through_data.tier;
     }
 }

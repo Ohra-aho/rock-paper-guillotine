@@ -18331,14 +18331,13 @@ MonoBehaviour:
   story: {fileID: 0}
   playthroughts: 0
   storyIndex: -1
-  narrative_index: -1
   first_victory: {fileID: 3768069680275742937, guid: 079ee5d6e1960a54abf8ebb55de51ba4, type: 3}
   first_boss_intro: {fileID: 3768069680275742937, guid: 48c6dc499525cb44e911c62c470c45f8, type: 3}
   first_boss_victory: {fileID: 3768069680275742937, guid: 868c4a66e36bb3c428eb3e81c9ba05d0, type: 3}
   first_achievement: {fileID: 3768069680275742937, guid: 99006f26adc5acd49abd06638b7162b1, type: 3}
   first_achievement_pick: {fileID: 3768069680275742937, guid: 39c82e93799bfb144b2ce049b6338ea2, type: 3}
   executioner: 0
-  debug: 0
+  debug: 1
   museum_active: 0
   cellar: {fileID: 606367767}
   the_q: {fileID: 1891357473}
@@ -18367,6 +18366,24 @@ MonoBehaviour:
   man: {fileID: 234517212}
   light_changer: {fileID: 390990497}
   museum_light_changer: {fileID: 21300000, guid: 9727e4943224a2e489705e9c83b1eaee, type: 3}
+  story_data:
+    playthroughs: 0
+    encounter_index: 0
+    achievements: []
+    picks: 0
+    ascended_1: []
+    ascended_2: 
+    first_forfeit: 0
+    first_victory: 0
+    first_boss_met: 0
+    first_boss_beaten: 0
+    first_achievement: 0
+    first_achievement_pick: 0
+    executioner_dead: 0
+    greeting_index: 0
+    end_counter: 0
+    enemies: []
+    tier: 
 --- !u!114 &1066024792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18410,20 +18427,6 @@ MonoBehaviour:
   save_functions:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 286843533}
-        m_TargetAssemblyTypeName: BarkController, Assembly-CSharp
-        m_MethodName: SaveBarks
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  - m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 1366762621}
         m_TargetAssemblyTypeName: PlayerContoller, Assembly-CSharp
         m_MethodName: SavePlayerData
@@ -18438,37 +18441,23 @@ MonoBehaviour:
         m_CallState: 2
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1066024797}
-        m_TargetAssemblyTypeName: RLController, Assembly-CSharp
-        m_MethodName: SaveAchievements
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1066024798}
-        m_TargetAssemblyTypeName: StoryCheckList, Assembly-CSharp
-        m_MethodName: SaveStoryCheckList
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  - m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 1066024792}
         m_TargetAssemblyTypeName: SoundSettings, Assembly-CSharp
         m_MethodName: SaveSoundSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1891357477}
+        m_TargetAssemblyTypeName: CameraNQuilliotine, Assembly-CSharp
+        m_MethodName: NormalSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18536,9 +18525,6 @@ MonoBehaviour:
   executioner_dead: 0
   end_counter: 0
   greeting_index: 0
-  off_balance_explained: 0
-  unbeatable_explained: 0
-  useless_explained: 0
 --- !u!114 &1066024799
 MonoBehaviour:
   m_ObjectHideFlags: 0

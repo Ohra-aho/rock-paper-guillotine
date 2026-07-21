@@ -50,6 +50,8 @@ public class StoryController : MonoBehaviour
 	public GameObject light_changer;
 	public Sprite museum_light_changer;
 
+	public StoryData story_data;
+
 
 	
 
@@ -127,13 +129,14 @@ public class StoryController : MonoBehaviour
     }
 
     private void LoadStory() {
-        StoryData story_data = SaveSystem.LoadStoryData();
+        story_data = SaveSystem.LoadStoryData();
         if (story_data != null)
         {
             playthroughts = story_data.playthroughs;
+
             if (story_data.encounter_index != -1)
 			{
-				storyIndex = story_data.encounter_index - 1;
+				storyIndex = story_data.encounter_index-1;
 			}
 			GetComponent<RLController>().Insiate(story_data);
 	        GetComponent<StoryCheckList>().LoadStoryCheckList(story_data);

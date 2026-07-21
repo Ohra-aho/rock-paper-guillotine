@@ -40,7 +40,12 @@ public static class SaveSystem
     //Specific functions
 
     //Story Data
-    public static void SaveStoryData(StoryController story_controller, RLController rl_controller, StoryCheckList checklist, bool dead)
+    public static void SaveStoryData(
+		StoryController story_controller, 
+		RLController rl_controller, 
+		StoryCheckList checklist, 
+		PlayThroughData play_through_data, 
+		bool dead)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = OpenFileStream(story_data, FileMode.Create);
@@ -49,7 +54,7 @@ public static class SaveSystem
             story_controller.storyIndex = -1;
         }
 
-        StoryData data = new StoryData(story_controller, rl_controller, checklist);
+        StoryData data = new StoryData(story_controller, rl_controller, checklist, play_through_data);
 
         formatter.Serialize(stream, data);
         stream.Close();

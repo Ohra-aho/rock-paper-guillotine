@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
 
@@ -22,7 +23,41 @@ public class Encounter : MonoBehaviour
 
     public void MakeEnemyList()
     {
-        if(possible_enemies.Count > 1)
+		StoryData SD = GameObject.Find("EventSystem").GetComponent<StoryController>().story_data;
+
+		if(SD != null)
+		{
+			if(SD.enemies.Length > 0 && name == SD.tier)
+			{
+				for(int i = 0; i < SD.enemies.Length; i++)
+				{
+					if(FindSpecificEnemy(SD.enemies[i]) != null)
+					{
+						enemies.Add(FindSpecificEnemy(SD.enemies[i]));
+					}
+				}	
+			}
+			else if(possible_enemies.Count > 1)
+			{
+				for (int i = 0; i < amount; i++)
+				{
+					int index = Random.Range(0, possible_enemies.Count);
+					while (enemies.Contains(possible_enemies[index]))
+					{
+						index = Random.Range(0, possible_enemies.Count);
+					}
+					enemies.Add(possible_enemies[index]);
+				}
+			} 
+			else
+			{
+				for (int i = 0; i < amount; i++)
+				{
+					enemies.Add(possible_enemies[0]);
+				}
+			}
+		}
+        else if(possible_enemies.Count > 1)
         {
             for (int i = 0; i < amount; i++)
             {
@@ -43,6 +78,18 @@ public class Encounter : MonoBehaviour
         //AddSurprice();
     }
 
+	private GameObject FindSpecificEnemy(string name)
+	{
+		for(int i = 0; i < possible_enemies.Count; i++)
+		{
+			if(possible_enemies[i].name == name)
+			{
+				return possible_enemies[i];
+			}
+		}
+		return null;
+	}
+
     public void Victory()
     {
         enemies.RemoveAt(0);
@@ -50,6 +97,7 @@ public class Encounter : MonoBehaviour
         {
             if(immideate_over) GetComponent<StoryEvent>().over = true;
         }
+		GameObject.Find("EventSystem").GetComponent<SaveHub>().SaveAll();
     }
 
 	public void FirstVictory()
