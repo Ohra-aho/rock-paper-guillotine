@@ -19,7 +19,11 @@ public class InventoryMenu : MonoBehaviour
 
 	void Update()
 	{
-		if(MC.game_state != MainController.State.reward && MC.game_state != MainController.State.re_arming && MC.game_state != MainController.State.favourite_pick)
+		if(
+			MC.game_state != MainController.State.reward && 
+			MC.game_state != MainController.State.re_arming && 
+			MC.game_state != MainController.State.favourite_pick
+			)
 		{
 			MC.game_state = MainController.State.re_arming;
 		}

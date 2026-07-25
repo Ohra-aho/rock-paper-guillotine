@@ -6,11 +6,17 @@ using UnityEngine;
 public class BuffData
 {
     public string id;
-    public bool used;
+	public int damage_buff;
+	public int armor_buff;
+	public int effect_damage_buff;
+	public int toughness_buff;
 
     public BuffData(Buff buff)
     {
-        used = buff.used;
         id = buff.id;
+		damage_buff = buff.damage_buff;
+		armor_buff = buff.armor_buff;
+		effect_damage_buff = buff.effect_damage_buff;
+		toughness_buff = buff.toughness_buff;
     }
 }

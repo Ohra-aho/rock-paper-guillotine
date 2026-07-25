@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class SaveHub : MonoBehaviour
 {
     public List<UnityEvent> save_functions;
+	public List<UnityEvent> load_functions;
 
     public void SaveAll()
     {
@@ -14,4 +15,12 @@ public class SaveHub : MonoBehaviour
             save_functions[i].Invoke();
         }
     }
+
+	public void LoadAll()
+	{
+		for(int i = 0; i < load_functions.Count; i++)
+        {
+            load_functions[i].Invoke();
+        }
+	}
 }

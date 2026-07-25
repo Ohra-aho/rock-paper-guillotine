@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -13,7 +14,7 @@ public class WeaponData
 
     public WeaponData(Weapon weapon)
     {
-        name = weapon.name;
+        name = weapon.gameObject.name.Replace("(Clone)", "");
         switch(weapon.type)
         {
             case MainController.Choise.kivi: type = "kivi"; break;
@@ -24,7 +25,7 @@ public class WeaponData
         }
         if(weapon.GetComponent<Stacking>()) stacks = weapon.GetComponent<Stacking>().stacks;
 
-        //buffs = ExtractBuffInfo(weapon);
+        buffs = ExtractBuffInfo(weapon);
     }
 
     public BuffData[] ExtractBuffInfo(Weapon weapon)
@@ -34,11 +35,7 @@ public class WeaponData
 
         for (int i = 0; i < buff_amount; i++)
         {
-            if(weapon.transform.GetChild(i).GetComponent<Buff>().used)
-            {
-                Debug.Log("Relevant buff found");
-                buff_data[i] = new BuffData(weapon.transform.GetChild(i).GetComponent<Buff>());
-            } else if(!weapon.transform.GetChild(i).GetComponent<Buff>().temporary)
+            if(!weapon.transform.GetChild(i).GetComponent<Buff>().temporary)
             {
                 Debug.Log("Relevant buff found");
                 buff_data[i] = new BuffData(weapon.transform.GetChild(i).GetComponent<Buff>());

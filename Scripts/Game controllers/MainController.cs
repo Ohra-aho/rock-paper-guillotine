@@ -90,6 +90,7 @@ public class MainController : MonoBehaviour
 
         GetComponent<StoryController>().Inisiate();
         if (GetComponent<StoryCheckList>().executioner_dead) ResetImportantGameObjects();
+		GetComponent<SaveHub>().LoadAll();
     }
 
     private void Update()

@@ -47,7 +47,7 @@ public class DropDetector : MonoBehaviour
 
         weaponHolder.GetComponent<WeaponSprite>().displaySprite();
 
-        player.GetComponent<PlayerContoller>().DisplayChoises();
+        
     }
 
     public void DisplayLoadedWeapon(GameObject newWeapon)
@@ -64,7 +64,7 @@ public class DropDetector : MonoBehaviour
 
         weaponHolder.GetComponent<WeaponSprite>().displaySprite();
         GameObject player = GameObject.FindGameObjectWithTag("Player").gameObject;
-        player.GetComponent<PlayerContoller>().DisplayChoises();
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)

@@ -5,6 +5,7 @@ using TMPro;
 
 public class PlayerContoller : MonoBehaviour
 {
+	public GameObject buff;
     public MainController MC;
     private EnemyController currentEnemy;
     public HealthBar HB;
@@ -45,7 +46,8 @@ public class PlayerContoller : MonoBehaviour
             panel.transform.GetChild(1).GetComponent<SpriteRenderer>().sortingOrder = i;
         }
         InstanciateRealWeapons();
-        LoadPlayerData();
+		InstanciateEquippedWeapons();
+        //LoadPlayerData();
     }
 
     public void DisplayChoises()
@@ -108,17 +110,19 @@ public class PlayerContoller : MonoBehaviour
     public void InstanciateRealWeapons()
     {
         GetComponent<PlayerInventory>().AddAllWeapons();
-        TrueInventory.GetComponent<WeaponController>().LoadPlayerWeapons();
+        //TrueInventory.GetComponent<WeaponController>().LoadPlayerWeapons();
 
         for (int i = 0; i < GetComponent<PlayerInventory>().items.Count; i++)
         {
             GameObject weapon = Instantiate(GetComponent<PlayerInventory>().items[i], TrueInventory.transform);
             weapon.GetComponent<Weapon>().player = true;
+            weapon.GetComponent<Weapon>().player_owner = GetComponent<PlayerContoller>();
             if (weapon.GetComponent<BuffController>())
             {
                 weapon.GetComponent<BuffController>().Inisiate();
             }
             weapon.GetComponent<Weapon>().InisiateTypeEffects();
+			LoadBuffs(0, i, weapon);
         }
         GetComponent<PlayerInventory>().items.Clear();
         for (int i = 0; i < TrueInventory.transform.childCount; i++)
@@ -127,9 +131,45 @@ public class PlayerContoller : MonoBehaviour
         }
         for (int i = 0; i < weapons.Count; i++)
         {
-            Instantiate(weapons[i], TrueInventory.transform);
+			
+            GameObject new_weapon = Instantiate(weapons[i], TrueInventory.transform);
+			new_weapon.GetComponent<Weapon>().player = true;
+            new_weapon.GetComponent<Weapon>().player_owner = GetComponent<PlayerContoller>();
+			if(new_weapon.GetComponent<BuffController>()) new_weapon.GetComponent<BuffController>().Inisiate();
+			LoadBuffs(1, i, new_weapon);
+			WheelHolder.GetComponent<PlayerWheelHolder>().EquipWeapon(new_weapon);
         }
     }
+
+	public void LoadBuffs(int index_1, int index_2, GameObject weapon)
+	{
+		if(GetComponent<PlayerInventory>().loaded_weapons != null)
+		{
+			BuffData[] buffs = GetComponent<PlayerInventory>().loaded_weapons[index_1][index_2].buffs;
+			if(weapon.GetComponent<Stacking>()) weapon.GetComponent<Stacking>().stacks = GetComponent<PlayerInventory>().loaded_weapons[index_1][index_2].stacks;
+			if(buffs != null)
+			{
+				for(int i = 0; i < buffs.Length; i++)
+				{
+					Buff old_buff = Instantiate(buff, weapon.transform).GetComponent<Buff>();
+					old_buff.id = buffs[i].id;
+					old_buff.damage_buff = buffs[i].damage_buff;
+					old_buff.armor_buff = buffs[i].armor_buff;
+					old_buff.effect_damage_buff = buffs[i].effect_damage_buff;
+					old_buff.toughness_buff = buffs[i].toughness_buff;
+					old_buff.AddBuff();
+				}		
+			}
+		}
+	}
+
+	public void InstanciateEquippedWeapons()
+	{
+		for(int i = 0; i < weapons.Count; i++)
+		{
+			//WheelHolder.GetComponent<PlayerWheelHolder>().EquipWeapon(weapons[i]);
+		}
+	}
 
     public void ClearTrueWeaponHolder()
     {
@@ -309,39 +349,9 @@ public class PlayerContoller : MonoBehaviour
             PlayerWheels[unlocked_wheel].transform.SetAsFirstSibling();
             GameObject.Find("PlayerWeaponDetector").GetComponent<WeaponDetector>().weaponWheel = PlayerWheels[unlocked_wheel];
 
-            //Get equippend wapons from real inventory
-            for(int i = 0; i < data.equippend_weapons.Length; i++)
-            {
-                if(data.equippend_weapons[i] != null)
-                {
-                    GameObject weapon = FindWeaponFromIntentory(data.equippend_weapons[i]);
-                    
-                    if (weapon != null)
-                    {
-                        WeaponSprite ws = PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>();
-                        DropDetector dd = PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(1).GetComponent<DropDetector>();
-                        dd.DisplayLoadedWeapon(weapon);
-
-                        ws.weapon.GetComponent<Weapon>().player = true;
-                        if (ws.weapon.GetComponent<BuffController>())
-                        {
-                            ws.weapon.GetComponent<BuffController>().Inisiate();
-                        }
-
-                        if (!ws.weapon.GetComponent<HealthIncrease>()) ws.weapon.GetComponent<Weapon>().equip.Invoke();
-                        ws.weapon.GetComponent<Weapon>().player = true;
-
-
-                        RemoveWeaponByName(data.equippend_weapons[i]);
-                    }
-                }
-            }
-
-            LoadBuffData();
         }
         else
         {
-            //HB.DisplayHealthBar(maxHealth);
             HB.SetMaxHealth(maxHealth);
             HB.SetCurrentHealth(maxHealth);
             ChangeWheel();
@@ -358,7 +368,6 @@ public class PlayerContoller : MonoBehaviour
                 for(int j = 0; j < weapon.buff_data.Length; j++)
                 {
                     Buff target_buff = FindBuffById(weapon.buff_data[j].id, weapon.gameObject);
-                    target_buff.used = weapon.buff_data[j].used;
                 }
             }
         }

@@ -26,6 +26,15 @@ public class SelfDestruct : MonoBehaviour
             }
 
             if (toughness > 0) nessessary = false;
+			for(int i = 0; i < transform.childCount; i++)
+			{
+				if(transform.GetChild(i).GetComponent<Buff>().toughness_buff > 0)
+				{
+					nessessary = false;
+					transform.GetChild(i).GetComponent<Buff>().toughness_buff--;
+					break;
+				}
+			}
 
             if (nessessary)
             {

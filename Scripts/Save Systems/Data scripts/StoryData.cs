@@ -29,7 +29,6 @@ public class StoryData
     {
         playthroughs = story_controller.playthroughts;
         encounter_index = story_controller.storyIndex;
-		Debug.Log(story_controller.storyIndex);
 		//Achievement data
 		achievements = rl_controller.achievements.ToArray();
 		picks = rl_controller.picks;

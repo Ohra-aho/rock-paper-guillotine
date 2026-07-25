@@ -79,6 +79,21 @@ public class PlayerWheelHolder : MonoBehaviour
         detached = false;
     }
 
+	public void EquipWeapon(GameObject weapon)
+	{
+		GameObject wheel = transform.GetChild(0).gameObject;
+		for(int i = 0; i < wheel.transform.childCount; i++)
+		{
+			if(wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon == null)
+			{
+				wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon = weapon;
+				wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().displaySprite();
+				wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().equip.Invoke();
+				break;
+			}
+		}
+	}
+
     public void RemoveWeapon(GameObject weapon)
     {
         for(int i = 0; i < transform.GetChild(0).childCount; i++)

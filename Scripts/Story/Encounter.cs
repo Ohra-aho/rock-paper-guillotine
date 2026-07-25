@@ -97,7 +97,6 @@ public class Encounter : MonoBehaviour
         {
             if(immideate_over) GetComponent<StoryEvent>().over = true;
         }
-		GameObject.Find("EventSystem").GetComponent<SaveHub>().SaveAll();
     }
 
 	public void FirstVictory()

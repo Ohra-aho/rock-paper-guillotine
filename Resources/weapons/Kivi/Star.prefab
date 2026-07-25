@@ -94,7 +94,7 @@ MonoBehaviour:
   buff_data: []
   owner: {fileID: 0}
   player_owner: {fileID: 0}
-  player: 0
+  player: 1
   opponent: {fileID: 0}
   penetrating: 0
   draw_winner: 0
@@ -103,8 +103,6 @@ MonoBehaviour:
   og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Star
   description: Your max HP is capped at 4. +1 damage to all weapons.
   sprite: {fileID: 21300000, guid: 52253f2da442e654c9773289cad6c297, type: 3}

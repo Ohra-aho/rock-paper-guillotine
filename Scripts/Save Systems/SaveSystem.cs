@@ -76,7 +76,7 @@ public static class SaveSystem
 
 
     //Player weapons
-    /*public static void SavePlayerWeapons(WeaponData[] weapons, bool dead)
+    public static void SavePlayerWeapons(WeaponData[][] weapons)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = OpenFileStream(player_weapon_data, FileMode.Create);
@@ -85,19 +85,19 @@ public static class SaveSystem
         stream.Close();
     }
 
-    public static WeaponData[] LoadPlayerWeapons()
+    public static WeaponData[][] LoadPlayerWeapons()
     {
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = OpenFileStream(player_weapon_data, FileMode.Open);
 
         if(stream != null)
         {
-            WeaponData[] data = formatter.Deserialize(stream) as WeaponData[];
+            WeaponData[][] data = formatter.Deserialize(stream) as WeaponData[][];
             stream.Close();
             return data;
         }
         return null;
-    }*/
+    }
 
     //Player data
     /*public static void SavePlayerData(PlayerData player)

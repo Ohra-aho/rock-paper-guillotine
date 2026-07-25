@@ -9,7 +9,14 @@ public class PlayerInventory : MonoBehaviour
 
     public bool all_weapons = false;
 
-    public void AddAllWeapons()
+	public WeaponData[][] loaded_weapons;
+
+	void Awake()
+	{
+		//LoadWeapons();
+	}
+
+	public void AddAllWeapons()
     {
         if (all_weapons)
         {
@@ -93,4 +100,102 @@ public class PlayerInventory : MonoBehaviour
             }
         }
     }
+
+
+	//Save functions
+	public void SaveWeapons()
+	{
+		List<WeaponData> weapons = new List<WeaponData>();
+		List<WeaponData> equipped_weapons = new List<WeaponData>();
+		for(int i = 0; i < items.Count; i++)
+		{
+			weapons.Add(new WeaponData(items[i].GetComponent<Weapon>()));
+		}
+		List<Weapon> temp = GetComponent<PlayerContoller>().GetWeapons();
+		for(int i = 0; i < temp.Count; i++)
+		{
+			equipped_weapons.Add(new WeaponData(temp[i]));
+		}
+		WeaponData[][] weapons_to_save = new WeaponData[2][];
+		weapons_to_save[0] = weapons.ToArray();
+		weapons_to_save[1] = equipped_weapons.ToArray();
+		
+		SaveSystem.SavePlayerWeapons(weapons_to_save);
+	}
+
+	public void LoadWeapons()
+	{
+		loaded_weapons = SaveSystem.LoadPlayerWeapons();
+		if(loaded_weapons != null)
+		{
+			items.Clear();
+			for(int i = 0; i < loaded_weapons[0].Length; i++)
+			{
+				string folder = "";
+				switch(loaded_weapons[0][i].type)
+				{
+					case "kivi": folder += "Kivi"; break;
+					case "paperi": folder += "paperi"; break;
+					case "sakset": folder += "sakset"; break;
+					case "useless": folder += "hyödytön"; break;
+					case "voittamaton": folder += "voittamaton"; break;
+				}
+				switch(loaded_weapons[0][i].name)
+				{
+					case "Bleed": folder += "/Debuffs"; break;
+					case "Dept": folder += "/Debuffs"; break;
+					case "Poison": folder += "/Debuffs"; break;
+					case "Authority": folder += "/eldritch power"; break;
+					case "immortality": folder += "/eldritch power"; break;
+					case "Strength": folder += "/eldritch power"; break;
+					case "Mercy": folder += "/miracle"; break;
+					case "Sanctuary": folder += "/miracle"; break;
+					case "Smite": folder += "/miracle"; break;
+				}
+				folder += "/"+loaded_weapons[0][i].name;
+				GameObject weapon = Resources.Load<GameObject>("weapons/"+folder);
+				if(weapon != null)
+				{
+					items.Add(weapon);
+				} else
+				{
+					Debug.Log(loaded_weapons[0][i].name + " not found in: "+ folder);
+				}
+			}
+
+			for(int i = 0; i < loaded_weapons[1].Length; i++)
+			{
+				string folder = "";
+				switch(loaded_weapons[1][i].type)
+				{
+					case "kivi": folder += "Kivi"; break;
+					case "paperi": folder += "paperi"; break;
+					case "sakset": folder += "sakset"; break;
+					case "useless": folder += "hyödytön"; break;
+					case "voittamaton": folder += "voittamaton"; break;
+				}
+				switch(loaded_weapons[1][i].name)
+				{
+					case "Bleed": folder += "/Debuffs"; break;
+					case "Dept": folder += "/Debuffs"; break;
+					case "Poison": folder += "/Debuffs"; break;
+					case "Authority": folder += "/eldritch power"; break;
+					case "Immortality": folder += "/eldritch power"; break;
+					case "Strength": folder += "/eldritch power"; break;
+					case "Mercy": folder += "/miracle"; break;
+					case "Sanctuary": folder += "/miracle"; break;
+					case "Smite": folder += "/miracle"; break;
+				}
+				folder += "/"+loaded_weapons[1][i].name;
+				GameObject weapon = Resources.Load<GameObject>("weapons/"+folder);
+				if(weapon != null)
+				{
+					GetComponent<PlayerContoller>().weapons.Add(weapon);
+				} else
+				{
+					Debug.Log(loaded_weapons[1][i].name + " not found in: "+ folder);
+				}
+			}
+		}
+	}
 }

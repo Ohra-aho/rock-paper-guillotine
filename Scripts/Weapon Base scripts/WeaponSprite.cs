@@ -41,12 +41,14 @@ public class WeaponSprite : MonoBehaviour
                     transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = symbols[4];
                     break;
             }
+			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().DisplayChoises();
         } else
         {
             GetComponent<SpriteRenderer>().sprite = null;
             transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
             transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
             transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = null;
+			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().DisplayChoises();
         }
     }
 
@@ -81,7 +83,7 @@ public class WeaponSprite : MonoBehaviour
         }
         player.UnequipWeapon(weapon.GetComponent<Weapon>());
         weapon = null;
-        player.DisplayChoises();
+        //player.DisplayChoises();
         displaySprite();
         DestroyInfo();
         transform.parent.GetChild(1).GetComponent<DropDetector>().PlayAudio(6);

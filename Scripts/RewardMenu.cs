@@ -58,6 +58,7 @@ public class RewardMenu : MonoBehaviour
             MC.SetNewState(MainController.State.idle);
         }
         GameObject.Find("Reward reroll").GetComponent<RewardReroll>().reward_open = true;
+		GameObject.Find("EventSystem").GetComponent<SaveHub>().SaveAll();
     }
 
     public void EnableRewards()

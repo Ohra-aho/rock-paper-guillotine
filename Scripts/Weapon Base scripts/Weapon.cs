@@ -20,8 +20,6 @@ public class Weapon : MonoBehaviour
 	[HideInInspector] public MainController.Choise og_type;
     public int damage;
     public int armor;
-    [HideInInspector] public int real_damage;
-    [HideInInspector] public int real_armor;
     public string name;
     [TextArea] public string description;
     public Sprite sprite;
@@ -60,8 +58,6 @@ public class Weapon : MonoBehaviour
     public UnityEvent on_pick;
     public UnityEvent on_death;
 
-    private bool loop_stopper = false; //Helps counteract infinite loops 
-
     //Needed for achievements
     [HideInInspector] public bool used_this_game;
 
@@ -72,10 +68,7 @@ public class Weapon : MonoBehaviour
 
     private void Awake()
     {
-        real_armor = armor;
-        real_damage = damage;
 		og_type = type;
-        endPhase.AddListener(ToggleLoopStropper);
 		Ascend();
     }
 
@@ -234,11 +227,6 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public void ToggleLoopStropper()
-    {
-        loop_stopper = false;
-    } 
-
     public void CheckUp()
     {
         bool dead = false;
@@ -339,7 +327,7 @@ public class Weapon : MonoBehaviour
         return false;
     }
     
-    public GameObject? GetCertainBuff(string name)
+    public GameObject GetCertainBuff(string name)
     {
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -349,12 +337,5 @@ public class Weapon : MonoBehaviour
             }
         }
         return null;
-    }
-
-    //Could be useful
-    public void ResetStats()
-    {
-        armor = real_armor;
-        damage = real_damage;
     }
 }

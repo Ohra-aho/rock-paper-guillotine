@@ -102,10 +102,9 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Altar
   description: Whenever you take damage with any weapon, gains 1 point. Uses 5 points
     after use to give you one random "Eldritch power".
@@ -221,10 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0f9d1b39b7fbd41a2ddf9629b552f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powers:
-  - {fileID: 1944698211339908181, guid: 60283fdf5fc01854fb91fb5b7934a477, type: 3}
-  - {fileID: 1944698211339908181, guid: 40596934a9b747343ab7ddad3f9536f5, type: 3}
-  - {fileID: 1944698211339908181, guid: e3948a761d752404eb0760de3b735480, type: 3}
 --- !u!114 &-8037816972097706396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stacks: 0
+  stacks: 5
   stack_limit: 5
   LoadFunction:
     m_PersistentCalls:

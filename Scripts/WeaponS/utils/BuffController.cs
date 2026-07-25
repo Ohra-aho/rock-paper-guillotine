@@ -87,8 +87,10 @@ public class BuffController : MonoBehaviour
         {
             real_inventory = GameObject.FindGameObjectWithTag("RI");
             other_inventory = GameObject.FindGameObjectWithTag("RIE");
+
             if (!special_apply)
             {
+
                 GetComponent<Weapon>().equip.AddListener(Equip);
                 GetComponent<Weapon>().unEquip.AddListener(Unequip);
             }
@@ -121,6 +123,7 @@ public class BuffController : MonoBehaviour
 
     public void AddBuffs()
     {
+
         if (buff_on)
         {
             for (int i = 0; i < real_inventory.transform.childCount; i++)
