@@ -10774,6 +10774,7 @@ MonoBehaviour:
   dead: 0
   damage_taken: 0
   HP_gap: 15
+  base_health: 2
   warning_barks:
   - Your health is zero currently. If you start a new round, you lose.
   - Your health just dropped to nothing. You should reinstall that health buff.
@@ -18453,6 +18454,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1366762621}
+        m_TargetAssemblyTypeName: PlayerContoller, Assembly-CSharp
+        m_MethodName: SavePlayerData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   load_functions:
   - m_PersistentCalls:
       m_Calls:
@@ -24826,6 +24841,7 @@ MonoBehaviour:
   dead: 0
   damage_taken: 0
   HP_gap: 15
+  base_health: 2
   warning_barks: []
   low_health_barks: []
   high_damage_barks:
@@ -26868,8 +26884,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.72, y: 0}
-  m_SizeDelta: {x: 114.81, y: 25}
+  m_AnchoredPosition: {x: 2.4125, y: 0}
+  m_SizeDelta: {x: 152.55, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1385049649
 MonoBehaviour:
@@ -36857,8 +36873,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -418.3, y: 288.5}
-  m_SizeDelta: {x: 111.81, y: 32.1}
+  m_AnchoredPosition: {x: -395.52, y: 288.5}
+  m_SizeDelta: {x: 157.38, y: 32.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1677783653
 MonoBehaviour:

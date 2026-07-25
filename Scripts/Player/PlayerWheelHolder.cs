@@ -84,11 +84,16 @@ public class PlayerWheelHolder : MonoBehaviour
 		GameObject wheel = transform.GetChild(0).gameObject;
 		for(int i = 0; i < wheel.transform.childCount; i++)
 		{
+			
 			if(wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon == null)
 			{
 				wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon = weapon;
+				GameObject w = wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon;
+
 				wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().displaySprite();
-				wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().equip.Invoke();
+				if(!w.GetComponent<Weapon>().dont_load)
+				 	w.GetComponent<Weapon>().equip.Invoke();
+				if(w.GetComponent<Rot>()) w.GetComponent<Rot>().Use();
 				break;
 			}
 		}

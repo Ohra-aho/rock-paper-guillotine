@@ -18,24 +18,23 @@ public class Muuri : MonoBehaviour
     {
         int temp = 0;
         List<Weapon> weapons = player.GetWeapons();
+		
         for (int i = 0; i < weapons.Count; i++)
         {
-            if (weapons[i].GetComponent<Weapon>().type == MainController.Choise.kivi)
+            if (weapons[i].GetComponent<Weapon>().og_type == MainController.Choise.kivi)
             {
                 temp++;
             }
         }
-
-        if (temp != HP_bonus)
+        if (temp != GetComponent<HealthIncrease>().amount)
         {
-            HP_bonus = temp;
             if(CheckIfEquipped())
             {
                 Unequip();
-                GetComponent<HealthIncrease>().amount = HP_bonus;
+                GetComponent<HealthIncrease>().amount = temp;
                 Equip();
             }
-            GetComponent<HealthIncrease>().amount = HP_bonus;
+            GetComponent<HealthIncrease>().amount = temp;
         }
     }
 

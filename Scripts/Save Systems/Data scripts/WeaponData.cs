@@ -10,7 +10,7 @@ public class WeaponData
     public string type;
     public int stacks;
     public BuffData[] buffs;
-    public bool self_destruct_used;
+	public int health_increase;
 
     public WeaponData(Weapon weapon)
     {
@@ -24,6 +24,7 @@ public class WeaponData
             case MainController.Choise.voittamaton: type = "voittamaton"; break;
         }
         if(weapon.GetComponent<Stacking>()) stacks = weapon.GetComponent<Stacking>().stacks;
+		if(weapon.GetComponent<HealthIncrease>()) health_increase = weapon.GetComponent<HealthIncrease>().amount;
 
         buffs = ExtractBuffInfo(weapon);
     }

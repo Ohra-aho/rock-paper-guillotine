@@ -162,7 +162,7 @@ public class PlayerInventory : MonoBehaviour
 					Debug.Log(loaded_weapons[0][i].name + " not found in: "+ folder);
 				}
 			}
-
+			//Equipped weapons
 			for(int i = 0; i < loaded_weapons[1].Length; i++)
 			{
 				string folder = "";

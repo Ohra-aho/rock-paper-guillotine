@@ -201,6 +201,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - For the great old ones. 2
@@ -208,6 +211,7 @@ MonoBehaviour:
   - Eternity. A dreadful thing.
   executioner_comment: No. I won't give it to you.
   favourite: 
+  dont_load: 0
 --- !u!114 &6361541160200024083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stacks: 5
+  stacks: 0
   stack_limit: 5
   LoadFunction:
     m_PersistentCalls:

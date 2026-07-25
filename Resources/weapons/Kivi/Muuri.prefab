@@ -100,10 +100,9 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Wall
   description: +1 HP for each "rock" you have equipped.
   sprite: {fileID: 21300000, guid: dffd0dbfec56ad542ac5183998614c97, type: 3}
@@ -186,19 +185,7 @@ MonoBehaviour:
         m_CallState: 2
   constant:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2278583403661379804}
-        m_TargetAssemblyTypeName: Muuri, Assembly-CSharp
-        m_MethodName: CalculateHP
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDestruction:
     m_PersistentCalls:
       m_Calls:
@@ -217,6 +204,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -226,6 +219,21 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2278583403661379804}
+        m_TargetAssemblyTypeName: Muuri, Assembly-CSharp
+        m_MethodName: CalculateHP
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   used_this_game: 0
   pick_barks:
   - You know, HP won't help you win by itself. 17
@@ -233,7 +241,7 @@ MonoBehaviour:
   - That's right. Build a wall around your problems. 16
   executioner_comment: 111111111111111111111111111111111111
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 1
 --- !u!114 &2278583403661379804
 MonoBehaviour:
   m_ObjectHideFlags: 0

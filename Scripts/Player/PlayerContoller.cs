@@ -117,10 +117,7 @@ public class PlayerContoller : MonoBehaviour
             GameObject weapon = Instantiate(GetComponent<PlayerInventory>().items[i], TrueInventory.transform);
             weapon.GetComponent<Weapon>().player = true;
             weapon.GetComponent<Weapon>().player_owner = GetComponent<PlayerContoller>();
-            if (weapon.GetComponent<BuffController>())
-            {
-                weapon.GetComponent<BuffController>().Inisiate();
-            }
+            if (weapon.GetComponent<BuffController>()) weapon.GetComponent<BuffController>().Inisiate();
             weapon.GetComponent<Weapon>().InisiateTypeEffects();
 			LoadBuffs(0, i, weapon);
         }
@@ -131,10 +128,10 @@ public class PlayerContoller : MonoBehaviour
         }
         for (int i = 0; i < weapons.Count; i++)
         {
-			
             GameObject new_weapon = Instantiate(weapons[i], TrueInventory.transform);
 			new_weapon.GetComponent<Weapon>().player = true;
             new_weapon.GetComponent<Weapon>().player_owner = GetComponent<PlayerContoller>();
+			new_weapon.GetComponent<Weapon>().InisiateTypeEffects();
 			if(new_weapon.GetComponent<BuffController>()) new_weapon.GetComponent<BuffController>().Inisiate();
 			LoadBuffs(1, i, new_weapon);
 			WheelHolder.GetComponent<PlayerWheelHolder>().EquipWeapon(new_weapon);
@@ -151,14 +148,27 @@ public class PlayerContoller : MonoBehaviour
 			{
 				for(int i = 0; i < buffs.Length; i++)
 				{
-					Buff old_buff = Instantiate(buff, weapon.transform).GetComponent<Buff>();
-					old_buff.id = buffs[i].id;
-					old_buff.damage_buff = buffs[i].damage_buff;
-					old_buff.armor_buff = buffs[i].armor_buff;
-					old_buff.effect_damage_buff = buffs[i].effect_damage_buff;
-					old_buff.toughness_buff = buffs[i].toughness_buff;
-					old_buff.AddBuff();
+					if(!weapon.GetComponent<Weapon>().FindCertainBuff(buffs[i].id))
+					{
+						Buff old_buff = Instantiate(buff, weapon.transform).GetComponent<Buff>();
+						old_buff.id = buffs[i].id;
+						old_buff.damage_buff = buffs[i].damage_buff;
+						old_buff.armor_buff = buffs[i].armor_buff;
+						old_buff.effect_damage_buff = buffs[i].effect_damage_buff;
+						old_buff.toughness_buff = buffs[i].toughness_buff;
+						old_buff.AddBuff();	
+					}
 				}		
+			}
+
+			if (weapon.GetComponent<HealthIncrease>())
+			{
+				weapon.GetComponent<HealthIncrease>().amount = GetComponent<PlayerInventory>().loaded_weapons[index_1][index_2].health_increase;
+			}
+			if(weapon.GetComponent<Stacking>())
+			{
+				weapon.GetComponent<Stacking>().stacks = GetComponent<PlayerInventory>().loaded_weapons[index_1][index_2].stacks;
+				weapon.GetComponent<Stacking>().LoadFunction.Invoke();
 			}
 		}
 	}
@@ -208,6 +218,7 @@ public class PlayerContoller : MonoBehaviour
         maxHealth = unlocked_wheel + 1;
 		HB.removed_damage = 0;
         HB.IncreaseHealthBar(1, false);
+		HB.base_health++;
         HB.HealToFull();
     }
 
@@ -327,13 +338,12 @@ public class PlayerContoller : MonoBehaviour
     public void SavePlayerData()
     {
         PlayerData data = new PlayerData(this);
-        //SaveSystem.SavePlayerData(data);
+        SaveSystem.SavePlayerData(data);
     }
 
     public void LoadPlayerData()
     {
-        //PlayerData data = SaveSystem.LoadPlayerData();
-		PlayerData data = null;
+        PlayerData data = SaveSystem.LoadPlayerData();
 		
         if (data != null)
         {
@@ -342,6 +352,7 @@ public class PlayerContoller : MonoBehaviour
             maxHealth = data.max_health;
             HB.SetMaxHealth(data.max_health);
             HB.SetCurrentHealth(data.current_health);
+			HB.removed_damage= data.removed_damage;
 
             //Set correct wheel
             PlayerWheels[0].SetActive(false);

@@ -99,10 +99,9 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 1
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Bandages
   description: +1 HP. Buff remains if this weapon is destroyed.
   sprite: {fileID: 21300000, guid: 47a4a441b0018e4409e1f356f0eab32a, type: 3}
@@ -214,7 +213,7 @@ MonoBehaviour:
   - I hope that's just an early pick.
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 1
 --- !u!114 &2484647238378204995
 MonoBehaviour:
   m_ObjectHideFlags: 0

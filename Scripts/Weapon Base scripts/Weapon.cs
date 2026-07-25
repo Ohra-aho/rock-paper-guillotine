@@ -57,6 +57,7 @@ public class Weapon : MonoBehaviour
 
     public UnityEvent on_pick;
     public UnityEvent on_death;
+	public UnityEvent any_equip;
 
     //Needed for achievements
     [HideInInspector] public bool used_this_game;
@@ -65,6 +66,8 @@ public class Weapon : MonoBehaviour
     public List<string> pick_barks;
     public string executioner_comment;
 	public string favourite;
+
+	public bool dont_load = false;
 
     private void Awake()
     {

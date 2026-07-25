@@ -12,6 +12,7 @@ public class HealthBar : MonoBehaviour
     [HideInInspector] public bool damage_taken = false;
     public int HP_gap = 15;
     private int slots = 15;
+	public int base_health = 2;
     private int max_health = 2;
     private int current_health;
     public List<string> warning_barks;

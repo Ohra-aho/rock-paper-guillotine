@@ -257,13 +257,18 @@ public class MainController : MonoBehaviour
             GameObject.Find("Story Event Holder").transform.GetChild(0).GetComponent<StoryEvent>().Procceed();
         }
 
+		List<Weapon> equipped = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
+
+		for(int i = 0; i < equipped.Count; i++)
+		{
+			equipped[i].GetComponent<Weapon>().end_of_fight.Invoke();
+		}
+
         for(int i = 0; i < RI.transform.childCount; i++)
         {
             GameObject weapon = RI.transform.GetChild(i).gameObject;
 			if(weapon.GetComponent<Weapon>())
 			{
-				weapon.GetComponent<Weapon>().end_of_fight.Invoke();
-
 				for (int j = weapon.transform.childCount-1; j >= 0; j--)
 				{
 					if(weapon.transform.GetChild(j).GetComponent<Buff>().temporary || weapon.transform.GetChild(j).GetComponent<Buff>().timer > 0)

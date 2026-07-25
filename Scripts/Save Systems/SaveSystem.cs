@@ -100,7 +100,7 @@ public static class SaveSystem
     }
 
     //Player data
-    /*public static void SavePlayerData(PlayerData player)
+    public static void SavePlayerData(PlayerData player)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = OpenFileStream(player_data, FileMode.Create);
@@ -121,7 +121,7 @@ public static class SaveSystem
             return data;
         }
         return null;
-    }*/
+    }
 
     //Sound settings
     public static void SaveSoundSettings(SoundData data)

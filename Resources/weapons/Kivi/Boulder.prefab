@@ -99,10 +99,9 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Boulder
   description: +2 HP
   sprite: {fileID: 21300000, guid: a559c5ba4169cb44bb0f7c104b538393, type: 3}
@@ -207,6 +206,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -223,7 +228,7 @@ MonoBehaviour:
   - What rocks do best.
   executioner_comment: 111111111111111111111111
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 1
 --- !u!114 &-4730871935511348176
 MonoBehaviour:
   m_ObjectHideFlags: 0

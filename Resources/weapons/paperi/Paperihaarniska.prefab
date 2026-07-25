@@ -101,10 +101,9 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 1
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Paper armor
   description: After use, uses 1 point. When the last point is used, destroys itself.
     This weapons armor is equal to its points.
@@ -210,6 +209,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - That will keep you safe. For now.
@@ -217,7 +219,7 @@ MonoBehaviour:
   - Death by thousand cuts.
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 0
 --- !u!114 &8578841849468338333
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class Rot : MonoBehaviour
 		if(!healed)
 		{
 			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.DecreaseHealthBar(1, true);
-        	GetComponent<HealthIncrease>().amount--;	
+        	GetComponent<HealthIncrease>().amount--;
 		}
     }
 
@@ -31,10 +31,6 @@ public class Rot : MonoBehaviour
 
 	public void Unequip()
 	{
-		if(used)
-		{
-			used = false;
-			GetComponent<HealthIncrease>().DecreaseSetAmount(1);
-		}
+		GetComponent<HealthIncrease>().DecreaseSetAmount(1);	
 	}
 }

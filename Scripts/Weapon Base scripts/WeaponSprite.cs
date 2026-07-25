@@ -50,6 +50,7 @@ public class WeaponSprite : MonoBehaviour
             transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = null;
 			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().DisplayChoises();
         }
+		ActivateAnyEquips();
     }
 
     //Annoying, but nessessary
@@ -145,4 +146,16 @@ public class WeaponSprite : MonoBehaviour
     {
         if(visibleInfo != null) Destroy(visibleInfo);
     }
+
+	public void ActivateAnyEquips()
+	{
+		GameObject wheel = transform.parent.parent.gameObject;
+		for(int i = 0; i < wheel.transform.childCount-1; i++)
+		{
+			if(wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
+			{
+				wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().any_equip.Invoke();	
+			}
+		}
+	}
 }
