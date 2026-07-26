@@ -16,7 +16,9 @@ public class WeaponData
     public WeaponData(Weapon weapon)
     {
         name = weapon.gameObject.name.Replace("(Clone)", "");
-        switch(weapon.type)
+		MainController.Choise temp_type = weapon.type;
+		if(weapon.type != weapon.og_type) temp_type = weapon.og_type; 
+        switch(temp_type)
         {
             case MainController.Choise.kivi: type = "kivi"; break;
             case MainController.Choise.paperi: type = "paperi"; break;

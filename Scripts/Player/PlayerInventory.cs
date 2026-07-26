@@ -9,7 +9,7 @@ public class PlayerInventory : MonoBehaviour
 
     public bool all_weapons = false;
 
-	public WeaponData[][] loaded_weapons;
+	public WeaponData[][] loaded_weapons = null;
 
 	void Awake()
 	{
@@ -125,6 +125,7 @@ public class PlayerInventory : MonoBehaviour
 
 	public void LoadWeapons()
 	{
+		loaded_weapons = null;
 		loaded_weapons = SaveSystem.LoadPlayerWeapons();
 		if(loaded_weapons != null)
 		{

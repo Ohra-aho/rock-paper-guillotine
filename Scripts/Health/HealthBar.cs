@@ -12,7 +12,6 @@ public class HealthBar : MonoBehaviour
     [HideInInspector] public bool damage_taken = false;
     public int HP_gap = 15;
     private int slots = 15;
-	public int base_health = 2;
     private int max_health = 2;
     private int current_health;
     public List<string> warning_barks;
@@ -407,6 +406,7 @@ public class HealthBar : MonoBehaviour
 
 	public void UpdateHealthBar(bool in_view)
 	{
+		if(current_health > max_health) current_health = max_health; 
 		int x = max_health;
 		int y = current_health;
 		if (x > HP_gap) x = HP_gap;
@@ -495,9 +495,6 @@ public class HealthBar : MonoBehaviour
             if (transform.GetChild(i).GetComponent<Heart>())
                 if(transform.GetChild(i).GetComponent<Heart>().healthy)
                     transform.GetChild(i).GetComponent<Test>().PlayAnimation("Heal");
-                
-            
-        
     }
 
     public bool FullHealthBar()

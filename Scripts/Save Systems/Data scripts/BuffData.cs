@@ -19,6 +19,7 @@ public class BuffData
 		armor_buff = buff.armor_buff;
 		effect_damage_buff = buff.effect_damage_buff;
 		toughness_buff = buff.toughness_buff;
-		if(buff.special.GetInvocationList().Length > 0) special = true;
+		if(buff.special != null)
+			if(buff.special.GetInvocationList().Length > 0) special = true;
     }
 }

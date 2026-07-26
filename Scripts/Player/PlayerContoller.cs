@@ -214,7 +214,7 @@ public class PlayerContoller : MonoBehaviour
         return temp;
     }
 
-    public void ChangeWheel()
+    public void ChangeWheel(bool start)
     {
         DisableAllWheels();
         PlayerWheels[unlocked_wheel].SetActive(true);
@@ -223,9 +223,8 @@ public class PlayerContoller : MonoBehaviour
         maxHealth = unlocked_wheel + 1;
 		HB.removed_damage = 0;
         HB.IncreaseHealthBar(1, false);
-		HB.base_health++;
         HB.HealToFull();
-		MC.GetComponent<SaveHub>().SaveAll();
+		if(!start) MC.GetComponent<SaveHub>().SaveAll();
     }
 
     private void DisableAllWheels()
@@ -371,7 +370,7 @@ public class PlayerContoller : MonoBehaviour
         {
             HB.SetMaxHealth(maxHealth);
             HB.SetCurrentHealth(maxHealth);
-            ChangeWheel();
+            ChangeWheel(true);
         }
     }
 

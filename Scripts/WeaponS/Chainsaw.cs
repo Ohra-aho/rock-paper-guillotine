@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Chainsaw : MonoBehaviour
 {
-    public void UseFuel()
+	void Awake()
+	{
+		ChangeType();
+	}
+	public void UseFuel()
 	{
 		GetComponent<Stacking>().DecreaseStacks(1);
 	}

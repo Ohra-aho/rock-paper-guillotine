@@ -101,12 +101,11 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Black powder
-  description: Each time one of your weapons is destroyed, deals 2 damage.
+  description: Each time one of your weapons is destroyed, deals 1 damage.
   sprite: {fileID: 21300000, guid: 7ca4904f4e50f734c902e27e6447a8fb, type: 3}
   tiers: []
   tier: 0
@@ -170,6 +169,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -179,6 +184,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - Most people don't live long enough to see that shine.
@@ -186,7 +194,7 @@ MonoBehaviour:
   - Explosive entry but runs out of ammo fast. 17
   executioner_comment: 111111111111111111
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 0
 --- !u!114 &-7783867195882298360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,11 +214,12 @@ MonoBehaviour:
   toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
-  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
   each_turn: 0
+  damage_modifier: 0
+  heal_modifier: 0
   victory: 0
   special_apply: 0
   takeDamage: 0
@@ -237,6 +246,7 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
+  stackable: 0
 --- !u!114 &1820794659969030995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 2
+  amount: 1
   armor_piercing: 1
 --- !u!114 &8207124411275809834
 MonoBehaviour:

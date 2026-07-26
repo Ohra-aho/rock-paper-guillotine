@@ -59,7 +59,7 @@ public class Machine : MonoBehaviour
 
     public void ChangeGear()
     {
-        player.GetComponent<PlayerContoller>().ChangeWheel();
+        player.GetComponent<PlayerContoller>().ChangeWheel(false);
     }
 
 	public void SetIdle()

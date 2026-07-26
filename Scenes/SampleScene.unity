@@ -10774,7 +10774,6 @@ MonoBehaviour:
   dead: 0
   damage_taken: 0
   HP_gap: 15
-  base_health: 2
   warning_barks:
   - Your health is zero currently. If you start a new round, you lose.
   - Your health just dropped to nothing. You should reinstall that health buff.
@@ -24841,7 +24840,6 @@ MonoBehaviour:
   dead: 0
   damage_taken: 0
   HP_gap: 15
-  base_health: 2
   warning_barks: []
   low_health_barks: []
   high_damage_barks:
@@ -26664,8 +26662,8 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: ac12ceb07bb5ecf4183b4ae2792bff55, type: 3}
-  - {fileID: 1944698211339908181, guid: bade532ba40076345a0820c94b31c93e, type: 3}
+  - {fileID: 1944698211339908181, guid: 1af90779594abf84da388624e706913a, type: 3}
+  - {fileID: 1944698211339908181, guid: 8be8e93862fd0b14c87726d8c588169f, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
