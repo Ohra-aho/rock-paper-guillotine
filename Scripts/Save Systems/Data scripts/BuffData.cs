@@ -10,6 +10,7 @@ public class BuffData
 	public int armor_buff;
 	public int effect_damage_buff;
 	public int toughness_buff;
+	public bool special;
 
     public BuffData(Buff buff)
     {
@@ -18,5 +19,6 @@ public class BuffData
 		armor_buff = buff.armor_buff;
 		effect_damage_buff = buff.effect_damage_buff;
 		toughness_buff = buff.toughness_buff;
+		if(buff.special.GetInvocationList().Length > 0) special = true;
     }
 }

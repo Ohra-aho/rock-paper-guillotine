@@ -136,6 +136,7 @@ public class PlayerContoller : MonoBehaviour
 			LoadBuffs(1, i, new_weapon);
 			WheelHolder.GetComponent<PlayerWheelHolder>().EquipWeapon(new_weapon);
         }
+		WheelHolder.GetComponent<PlayerWheelHolder>().InvokeAllEquipped();
     }
 
 	public void LoadBuffs(int index_1, int index_2, GameObject weapon)
@@ -148,7 +149,7 @@ public class PlayerContoller : MonoBehaviour
 			{
 				for(int i = 0; i < buffs.Length; i++)
 				{
-					if(!weapon.GetComponent<Weapon>().FindCertainBuff(buffs[i].id))
+					if(!weapon.GetComponent<Weapon>().FindCertainBuff(buffs[i].id) && !buffs[i].special)
 					{
 						Buff old_buff = Instantiate(buff, weapon.transform).GetComponent<Buff>();
 						old_buff.id = buffs[i].id;

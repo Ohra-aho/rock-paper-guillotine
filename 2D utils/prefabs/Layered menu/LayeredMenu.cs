@@ -50,7 +50,7 @@ public class LayeredMenu : MonoBehaviour
     public void QuitGame()
     {
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
-        controller.GetComponent<SaveHub>().SaveAll();
+        //controller.GetComponent<SaveHub>().SaveAll();
         Application.Quit();
     }
 }

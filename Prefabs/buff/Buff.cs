@@ -82,20 +82,26 @@ public class Buff : MonoBehaviour
     {
 		if (effect_damage_buff != 0)
 		{
-			if (effect_damage_buff < 0 && -effect_damage_buff > transform.parent.GetComponent<EffectDamage>().amount)
+			if(transform.parent.GetComponent<EffectDamage>())
 			{
-				effect_damage_buff = -transform.parent.GetComponent<EffectDamage>().amount;
+				if (effect_damage_buff < 0 && -effect_damage_buff > transform.parent.GetComponent<EffectDamage>().amount)
+				{
+					effect_damage_buff = -transform.parent.GetComponent<EffectDamage>().amount;
+				}
+				transform.parent.GetComponent<EffectDamage>().amount += effect_damage_buff;
 			}
-			transform.parent.GetComponent<EffectDamage>().amount += effect_damage_buff;
 		}
 
 		if(toughness_buff != 0)
 		{
-			if (toughness_buff < 0 && -toughness_buff > transform.parent.GetComponent<SelfDestruct>().toughness)
+			if(transform.parent.GetComponent<SelfDestruct>())
 			{
-				toughness_buff = -transform.parent.GetComponent<SelfDestruct>().toughness;
+				if (toughness_buff < 0 && -toughness_buff > transform.parent.GetComponent<SelfDestruct>().toughness)
+				{
+					toughness_buff = -transform.parent.GetComponent<SelfDestruct>().toughness;
+				}
+				transform.parent.GetComponent<SelfDestruct>().toughness += toughness_buff;	
 			}
-			transform.parent.GetComponent<SelfDestruct>().toughness += toughness_buff;
 		}
 
 		GetOGs();
