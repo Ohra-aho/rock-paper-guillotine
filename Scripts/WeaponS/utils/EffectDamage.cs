@@ -12,10 +12,10 @@ public class EffectDamage : MonoBehaviour
         {
             weapon.EffectDamage(amount);
 			weapon.deal_effect_damage.Invoke();
-            
         }
         else
         {
+			Debug.Log(GetComponent<Weapon>().name);
             GetComponent<Weapon>().EffectDamage(amount);
 			GetComponent<Weapon>().deal_effect_damage.Invoke();
         }

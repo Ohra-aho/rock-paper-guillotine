@@ -15,5 +15,6 @@ public class Pyhäteksti : MonoBehaviour
     {
 		HealthBar HB = GameObject.Find("EnemyHealth").GetComponent<HealthBar>();
 		HB.TakeDamage(GetComponent<EffectDamage>().amount);
+		GetComponent<Weapon>().deal_effect_damage.Invoke();
     }
 }

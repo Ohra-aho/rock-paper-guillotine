@@ -265,6 +265,8 @@ public class HealthBar : MonoBehaviour
 			removed_damage -= amount;
 		}
 
+		if(max_health < current_health)  current_health = max_health;
+
         if (!FullHealthBar())
         {
             if (MC.game_state == MainController.State.in_battle && !CheckIfDead() && !GameObject.Find("EnemyHealth").GetComponent<HealthBar>().CheckIfDead()) {
@@ -308,6 +310,7 @@ public class HealthBar : MonoBehaviour
         max_health -= amount;
 
         if(current_health > max_health) current_health = max_health;
+		if(max_health < 0) max_health = 0; 
 
         if (max_health <= 0)
         {
