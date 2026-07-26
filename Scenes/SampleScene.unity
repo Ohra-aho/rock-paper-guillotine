@@ -26664,8 +26664,8 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: 6bae72fa9dc4df54c8419e1b8b032bf4, type: 3}
-  - {fileID: 1944698211339908181, guid: 79850675526f2004785715de57916c35, type: 3}
+  - {fileID: 1944698211339908181, guid: ac12ceb07bb5ecf4183b4ae2792bff55, type: 3}
+  - {fileID: 1944698211339908181, guid: bade532ba40076345a0820c94b31c93e, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
@@ -37655,8 +37655,8 @@ Transform:
   m_GameObject: {fileID: 1738067756}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0359, y: -0.0782, z: 20}
-  m_LocalScale: {x: 1.2151343, y: 1.0182872, z: 1}
+  m_LocalPosition: {x: 0.0359, y: -0.2118, z: 20}
+  m_LocalScale: {x: 1.2151343, y: 1.0449663, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 519420032}

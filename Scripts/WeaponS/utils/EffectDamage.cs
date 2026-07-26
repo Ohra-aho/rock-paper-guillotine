@@ -15,7 +15,6 @@ public class EffectDamage : MonoBehaviour
         }
         else
         {
-			Debug.Log(GetComponent<Weapon>().name);
             GetComponent<Weapon>().EffectDamage(amount);
 			GetComponent<Weapon>().deal_effect_damage.Invoke();
         }
@@ -27,7 +26,6 @@ public class EffectDamage : MonoBehaviour
         {
             weapon.SelfDamage(amount);
 			weapon.deal_effect_damage.Invoke();
-
         }
         else
         {
