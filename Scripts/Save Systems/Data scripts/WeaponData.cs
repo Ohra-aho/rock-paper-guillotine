@@ -11,6 +11,7 @@ public class WeaponData
     public int stacks;
     public BuffData[] buffs;
 	public int health_increase;
+	public bool copy;
 
     public WeaponData(Weapon weapon)
     {
@@ -27,6 +28,7 @@ public class WeaponData
 		if(weapon.GetComponent<HealthIncrease>()) health_increase = weapon.GetComponent<HealthIncrease>().amount;
 
         buffs = ExtractBuffInfo(weapon);
+		if(weapon.name.Contains("Copy")) copy = true;
     }
 
     public BuffData[] ExtractBuffInfo(Weapon weapon)

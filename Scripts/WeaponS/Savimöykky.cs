@@ -27,6 +27,7 @@ public class Savimöykky : MonoBehaviour
 	public void CopyWeapon(Weapon w)
 	{
 		GameObject copy = Instantiate(w.gameObject, GameObject.FindGameObjectWithTag("RI").transform);
+		copy.name.Replace("(Clone)", "");
 		copy.GetComponent<Weapon>().player = true;
 		if(!copy.GetComponent<Weapon>().name.Contains("(Copy)")) copy.GetComponent<Weapon>().name += " (Copy)";
 

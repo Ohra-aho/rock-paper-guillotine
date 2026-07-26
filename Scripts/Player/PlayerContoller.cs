@@ -170,6 +170,10 @@ public class PlayerContoller : MonoBehaviour
 				weapon.GetComponent<Stacking>().stacks = GetComponent<PlayerInventory>().loaded_weapons[index_1][index_2].stacks;
 				weapon.GetComponent<Stacking>().LoadFunction.Invoke();
 			}
+			if(GetComponent<PlayerInventory>().loaded_weapons[index_1][index_2].copy)
+			{
+				weapon.GetComponent<Weapon>().name += " (Copy)";
+			}
 		}
 	}
 
@@ -220,6 +224,7 @@ public class PlayerContoller : MonoBehaviour
         HB.IncreaseHealthBar(1, false);
 		HB.base_health++;
         HB.HealToFull();
+		MC.GetComponent<SaveHub>().SaveAll();
     }
 
     private void DisableAllWheels()
