@@ -54,7 +54,7 @@ public static class SaveSystem
             story_controller.storyIndex = -1;
         }
 
-        StoryData data = new StoryData(story_controller, rl_controller, checklist, play_through_data);
+        StoryData data = new StoryData(dead, story_controller, rl_controller, checklist, play_through_data);
 
         formatter.Serialize(stream, data);
         stream.Close();

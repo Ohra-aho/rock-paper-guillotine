@@ -33,15 +33,24 @@ public class InventoryMenu : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player").gameObject;
         List<GameObject> items = player.GetComponent<PlayerInventory>().items;
-
+		for(int i = items.Count-1; i >= 0; i--)
+		{
+			if(items[i] == null)
+			{
+				items.RemoveAt(i);
+			}
+		}
         for (int i = 0; i < items.Count; i++)
         {
-            if(items[i].GetComponent<Weapon>())
-            {
-                GameObject temp = Instantiate(WeaponPref, transform.GetChild(0).GetChild(1));
-                temp.GetComponent<ClaimedWeapon>().weapon = items[i];
-                temp.GetComponent<ClaimedWeapon>().DispalyWeapon();
-            }
+			if(items[i] != null)
+			{
+				if(items[i].GetComponent<Weapon>())
+				{
+					GameObject temp = Instantiate(WeaponPref, transform.GetChild(0).GetChild(1));
+					temp.GetComponent<ClaimedWeapon>().weapon = items[i];
+					temp.GetComponent<ClaimedWeapon>().DispalyWeapon();
+				}	
+			}
         }
     }
 

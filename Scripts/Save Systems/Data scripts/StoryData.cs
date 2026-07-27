@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [System.Serializable]
 public class StoryData
@@ -25,10 +26,11 @@ public class StoryData
 	//Playthrough
 	public string[] enemies;
 	public string tier;
-    public StoryData(StoryController story_controller, RLController rl_controller, StoryCheckList check_list, PlayThroughData play_through_data)
+    public StoryData(bool dead, StoryController story_controller, RLController rl_controller, StoryCheckList check_list, PlayThroughData play_through_data)
     {
         playthroughs = story_controller.playthroughts;
         encounter_index = story_controller.storyIndex;
+		if(dead) encounter_index = -1;
 		//Achievement data
 		achievements = rl_controller.achievements.ToArray();
 		picks = rl_controller.picks;
@@ -49,5 +51,9 @@ public class StoryData
 		//Playthrough
 		enemies = play_through_data.enemies;
 		tier = play_through_data.tier;
+		if(dead)  {
+			Array.Clear(enemies, 0, enemies.Length);
+			tier = "";
+		}
     }
 }
