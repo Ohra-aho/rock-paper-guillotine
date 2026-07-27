@@ -12,6 +12,7 @@ public class WeaponData
     public BuffData[] buffs;
 	public int health_increase;
 	public bool copy;
+	public string path;
 
     public WeaponData(Weapon weapon)
     {
