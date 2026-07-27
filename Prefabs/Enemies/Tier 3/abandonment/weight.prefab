@@ -100,13 +100,12 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
+  og_type: 0
   damage: 2
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Weight
-  description: If takes damage, gains 1 point and you get 1 Weakness. When has 3
-    points , dies and you get a price. If takes no damage loses 1 point.
+  description: If takes damage, gains 1 point and you get a Weakness. When has 3
+    points, dies and you get a price.
   sprite: {fileID: 21300000, guid: 57d2aeae63180dc46af23835030424fc, type: 3}
   tiers: []
   tier: 0
@@ -151,19 +150,7 @@ MonoBehaviour:
       m_Calls: []
   takeNoDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8951952148103464126}
-        m_TargetAssemblyTypeName: Anglerfish, Assembly-CSharp
-        m_MethodName: WeightTwo
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   win:
     m_PersistentCalls:
       m_Calls: []
@@ -194,6 +181,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -203,17 +196,14 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
+  dont_load: 0
 --- !u!114 &-3761719305772998615
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -33,16 +33,19 @@ public class Army : MonoBehaviour
 	{
 		if(!disabled)
 		{
-			List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
-			for(int i = 0; i < weapons.Count; i++)
+			GameObject old_buff = GetComponent<Weapon>().opponent.GetCertainBuff(GetComponent<Weapon>().name);
+			if(old_buff == null)
 			{
-				Buff new_buff = Instantiate(buff, weapons[i].transform).GetComponent<Buff>();
+				Buff new_buff = Instantiate(buff, GetComponent<Weapon>().opponent.transform).GetComponent<Buff>();
 				new_buff.id = GetComponent<Weapon>().name;
 				new_buff.temporary = true;
-				new_buff.timer = 2;
-				new_buff.damage_buff = -1;
-				new_buff.reminder = "-1 damage";
-				new_buff.AddBuff();
+				new_buff.timer = 3;
+				new_buff.damage_buff = -2;
+				new_buff.reminder = new_buff.damage_buff+" damage";
+				new_buff.AddBuff();	
+			} else
+			{
+				old_buff.GetComponent<Buff>().timer = 3;
 			}
 		}
 	}

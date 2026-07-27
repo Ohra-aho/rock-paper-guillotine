@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
+  - component: {fileID: 5351588252152018956}
   m_Layer: 5
   m_Name: pitchfork
   m_TagString: Untagged
@@ -97,12 +98,11 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 2
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Pitchfork
-  description: 
+  description: If draws, deals 1 damage.
   sprite: {fileID: 21300000, guid: 417891daf3bfb5b41a8181b37cc107e7, type: 3}
   tiers: []
   tier: 0
@@ -144,7 +144,19 @@ MonoBehaviour:
       m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5351588252152018956}
+        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
+        m_MethodName: DealDamage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3098424137161797902}
+          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -166,6 +178,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -175,14 +193,25 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
+  dont_load: 0
+--- !u!114 &5351588252152018956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 1
+  armor_piercing: 0

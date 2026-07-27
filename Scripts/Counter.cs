@@ -7,6 +7,8 @@ using TMPro;
 public class Counter : MonoBehaviour
 {
 	MainController MC;
+	public bool weakness;
+	public bool bleed;
 
 	void Awake()
 	{
@@ -16,37 +18,91 @@ public class Counter : MonoBehaviour
 	private void Update() {
 		if(MC.game_state == MainController.State.in_battle)
 		{
-			int x = GetPoisons();
-			if(x > 0)
+			if(!weakness && !bleed)
 			{
-				if(GetComponent<Image>().color.a != 1)
+				int x = GetPoisons();
+				if(x > 0)
 				{
-					GetComponent<Image>().color = new Color(1,1,1,1);
-					transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
-				}
-				transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Poison: "+x.ToString();
-			} else
+					if(GetComponent<Image>().color.a != 1)
+					{
+						GetComponent<Image>().color = new Color(1,1,1,1);
+						transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+					}
+					transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Poison: "+x.ToString();
+				} else
+				{
+					if(GetComponent<Image>().color.a != 0)
+					{
+						GetComponent<Image>().color = new Color(1,1,1,0);
+						transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Poison: "+0;
+						transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0,0,0,0);	
+					}
+				}	
+			} else if(weakness)
 			{
-				if(GetComponent<Image>().color.a != 0)
+				int x = GetWeakness();
+				if(x > 0)
 				{
-					GetComponent<Image>().color = new Color(1,1,1,0);
-					transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Poison: "+0;
-					transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0,0,0,0);	
+					if(GetComponent<Image>().color.a != 1)
+					{
+						GetComponent<Image>().color = new Color(1,1,1,1);
+						transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+					}
+					transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Weakness: "+x.ToString();
+				} else
+				{
+					if(GetComponent<Image>().color.a != 0)
+					{
+						GetComponent<Image>().color = new Color(1,1,1,0);
+						transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Weakness: "+0;
+						transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0,0,0,0);	
+					}
+				}	
+			} else if(bleed)
+			{
+				int x = GetBleed();
+				if(x > 0)
+				{
+					if(GetComponent<Image>().color.a != 1)
+					{
+						GetComponent<Image>().color = new Color(1,1,1,1);
+						transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+					}
+					transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Bleed: "+x.ToString();
+				} else
+				{
+					if(GetComponent<Image>().color.a != 0)
+					{
+						GetComponent<Image>().color = new Color(1,1,1,0);
+						transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Bleed: "+0;
+						transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0,0,0,0);	
+					}
 				}
 			}
 		}
 		else if(MC.game_state == MainController.State.re_arming || MC.game_state == MainController.State.reward)
 		{
-			HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
-			if(GetComponent<Image>().color.a != 1)
+			if(!weakness && !bleed)
 			{
-				GetComponent<Image>().color = new Color(1,1,1,1);
-				transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+				HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
+				if(GetComponent<Image>().color.a != 1)
+				{
+					GetComponent<Image>().color = new Color(1,1,1,1);
+					transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+				}
+				int current = HB.GiveCurrentHealth();
+				int max = HB.GiveMaxHealth();
+				if(max > HB.HP_gap) max = HB.HP_gap;
+				transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Health: "+current+"/"+max;	
+			} else
+			{
+				if(GetComponent<Image>().color.a != 0)
+				{
+					GetComponent<Image>().color = new Color(1,1,1,0);
+					transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "";
+					transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+				}
 			}
-			int current = HB.GiveCurrentHealth();
-			int max = HB.GiveMaxHealth();
-			if(max > HB.HP_gap) max = HB.HP_gap;
-			transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Health: "+current+"/"+max;
 		} else
 		{
 			if(GetComponent<Image>().color.a != 0)
@@ -65,6 +121,32 @@ public class Counter : MonoBehaviour
 		for(int i = 0; i < RI.transform.childCount; i++)
 		{
 			if(RI.transform.GetChild(i).GetComponent<Weapon>().name == "Poison")
+			{
+				amount++;
+			}
+		}
+		return amount;
+	}
+	private int GetWeakness()
+	{
+		GameObject RI = GameObject.FindGameObjectWithTag("RI");
+		int amount = 0;
+		for(int i = 0; i < RI.transform.childCount; i++)
+		{
+			if(RI.transform.GetChild(i).GetComponent<Weapon>().name == "Weakness")
+			{
+				amount++;
+			}
+		}
+		return amount;
+	}
+	private int GetBleed()
+	{
+		GameObject RI = GameObject.FindGameObjectWithTag("RI");
+		int amount = 0;
+		for(int i = 0; i < RI.transform.childCount; i++)
+		{
+			if(RI.transform.GetChild(i).GetComponent<Weapon>().name == "Bleed")
 			{
 				amount++;
 			}

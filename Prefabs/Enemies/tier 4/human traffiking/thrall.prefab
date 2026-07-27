@@ -100,11 +100,10 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
-  name: Utilize
+  name: Thrall
   description: When not equipped, at the start of each fight all weapons gain 1 point.
     After use, all weapons gain 1 point. Has a chance to turn against you.
   sprite: {fileID: 21300000, guid: 4d08ad8afa555bc46a10a73daa47681a, type: 3}
@@ -182,6 +181,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls:
@@ -203,17 +208,14 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
+  dont_load: 0
 --- !u!114 &-6209912774970049484
 MonoBehaviour:
   m_ObjectHideFlags: 0
