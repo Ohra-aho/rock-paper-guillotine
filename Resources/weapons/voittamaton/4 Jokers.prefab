@@ -102,10 +102,8 @@ MonoBehaviour:
   og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Four Jokers
-  description: After use, gives 3 Jokers to your inventory and self-destructs.
+  description: After use, gives you 3 Jokers and self-destructs.
   sprite: {fileID: 21300000, guid: 4452c24eb2e6f214593c6136b1169fe7, type: 3}
   tiers: []
   tier: 0
@@ -208,11 +206,15 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - The masters of deceit.
   executioner_comment: 
   favourite: 
+  dont_load: 0
 --- !u!114 &3603452539436064434
 MonoBehaviour:
   m_ObjectHideFlags: 0

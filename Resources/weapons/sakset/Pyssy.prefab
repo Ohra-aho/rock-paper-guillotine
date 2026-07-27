@@ -101,12 +101,11 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 0
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Gun
-  description: After use, uses one point to deal 1 damage.
+  description: After use, uses 1 point to deal 1 damage.
   sprite: {fileID: 21300000, guid: aac994b2a928a7e479d20610d52c1dae, type: 3}
   tiers:
   - {fileID: 21300000, guid: 97b5b00782b0b474fa59e2cb07562f1a, type: 3}
@@ -185,6 +184,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -194,12 +199,15 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - You brought a gun to a scissor fight? Just bad sportsmaship.
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 0
 --- !u!114 &5460494944857187336
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -120,7 +120,7 @@ MonoBehaviour:
   armor: 0
   name: Glacial erratic
   description: +1 HP. After use, +2 damage to all weapons until the end of the fight
-    and destroys itself.
+    and self-destructs.
   sprite: {fileID: 21300000, guid: ad6e9e11aa93f2a41b0802c24bc21b29, type: 3}
   tiers: []
   tier: 0
@@ -259,6 +259,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - Won't help you much, but it is satisfying.
@@ -347,6 +350,7 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
+  stackable: 0
 --- !u!114 &-1159269896838656302
 MonoBehaviour:
   m_ObjectHideFlags: 0

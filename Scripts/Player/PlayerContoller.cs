@@ -354,7 +354,6 @@ public class PlayerContoller : MonoBehaviour
         {
             //Set health
             unlocked_wheel = data.gear;
-            maxHealth = data.max_health;
             HB.SetMaxHealth(data.max_health);
             HB.SetCurrentHealth(data.current_health);
 			HB.removed_damage= data.removed_damage;

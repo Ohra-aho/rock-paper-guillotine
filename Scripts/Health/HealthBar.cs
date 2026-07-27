@@ -130,6 +130,7 @@ public class HealthBar : MonoBehaviour
     public void HealToFull()
     {
         current_health = max_health;
+		if(current_health > HP_gap) current_health = HP_gap;
         for (int i = transform.childCount - 1; i >= 0; i--)
         {
             if (transform.GetChild(i).GetComponent<Heart>())
@@ -433,9 +434,9 @@ public class HealthBar : MonoBehaviour
 
     public int GiveMaxHealth()
     {
-        if(max_health > 15)
+        if(max_health > HP_gap)
         {
-            return 15;
+            return HP_gap;
         }
         return max_health;
     }
@@ -451,6 +452,11 @@ public class HealthBar : MonoBehaviour
         }
         AddHeartSlots();
     }
+
+	public int GiveTrueMaxHealth()
+	{
+		return max_health;
+	}
 
     public void SetCurrentHealth(int amount)
     {

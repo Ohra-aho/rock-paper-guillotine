@@ -103,10 +103,8 @@ MonoBehaviour:
   og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Wallet
-  description: After use, gives all equipped weapons 2 points. Destroys itself.
+  description: After use, gives all equipped weapons 2 points. Self-destructs.
   sprite: {fileID: 21300000, guid: 143d49bf6572606418e239f98833fbb0, type: 3}
   tiers: []
   tier: 0
@@ -209,6 +207,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - A little bit more power.
@@ -216,6 +217,7 @@ MonoBehaviour:
   - What do you think the boatman even uses money for? 17
   executioner_comment: 11111111111111111111111
   favourite: 
+  dont_load: 0
 --- !u!114 &5405939345543289842
 MonoBehaviour:
   m_ObjectHideFlags: 0

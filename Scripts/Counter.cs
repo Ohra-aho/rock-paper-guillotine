@@ -45,6 +45,7 @@ public class Counter : MonoBehaviour
 			}
 			int current = HB.GiveCurrentHealth();
 			int max = HB.GiveMaxHealth();
+			if(max > HB.HP_gap) max = HB.HP_gap;
 			transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Health: "+current+"/"+max;
 		} else
 		{
@@ -52,7 +53,7 @@ public class Counter : MonoBehaviour
 			{
 				GetComponent<Image>().color = new Color(1,1,1,0);
 				transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "";
-				transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);	
+				transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
 			}
 		}
 	}

@@ -13,7 +13,7 @@ public class PlayerData
     public PlayerData(PlayerContoller player)
     {
         gear = player.unlocked_wheel;
-        max_health = player.HB.GiveMaxHealth();
+        max_health = player.HB.GiveTrueMaxHealth();
         current_health = player.HB.GiveCurrentHealth();
 		removed_damage = player.HB.removed_damage;
     }

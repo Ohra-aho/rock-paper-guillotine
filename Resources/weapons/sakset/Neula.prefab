@@ -99,12 +99,11 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Needle
-  description: If draws, heals 1.
+  description: If draws, heal 1.
   sprite: {fileID: 21300000, guid: f2ae555fbc4020244893c5a4cff6c76c, type: 3}
   tiers: []
   tier: 0
@@ -195,12 +194,15 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - Still can see it, can you.
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 0
 --- !u!114 &-4155978701443049850
 MonoBehaviour:
   m_ObjectHideFlags: 0
