@@ -43,6 +43,7 @@ public class HealthBar : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+		if(current_health < damage) damage = current_health;
         current_health -= damage;
         if (current_health < 0) current_health = 0;
 		if(damage > 0)  
@@ -146,13 +147,30 @@ public class HealthBar : MonoBehaviour
     public void InstaKill()
     {
         current_health = 0;
+		int healthy = 0;
+		for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).GetComponent<Heart>())
+            {
+                if (transform.GetChild(i).GetComponent<Heart>().healthy)
+                {
+                    healthy++;
+                }
+            }
+        }
         for (int i = 0; i < transform.childCount; i++)
         {
             if (transform.GetChild(i).GetComponent<Heart>())
             {
                 if (transform.GetChild(i).GetComponent<Heart>().healthy)
                 {
-                    transform.GetChild(i).GetComponent<Heart>().damage();
+					if(healthy >= 5)
+					{
+						transform.GetChild(i).GetComponent<Heart>().HeavyDamage();	
+					} else
+					{
+						transform.GetChild(i).GetComponent<Heart>().damage();	
+					} 
                 }
             }
         }

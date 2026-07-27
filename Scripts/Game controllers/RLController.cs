@@ -33,6 +33,8 @@ public class RLController : MonoBehaviour
 
 	public bool slaughterer = false;
 
+	private bool achievement_unlocked = false;
+
 
     public void Insiate(StoryData data)
     {
@@ -167,108 +169,136 @@ public class RLController : MonoBehaviour
     //+2 HP
     public void CHeckHPMaster()
     {
-        if(!achievements.Contains("Tough"))
-        {
-            HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
-            if (HB.GiveMaxHealth() >= 10)
-            {
-                AddAchievement("Tough");
-                Bark("Your survival was never in doubt. You have grown quite tough. Let's see what brings you down.");
-            }
-        }
+		if(!achievement_unlocked)
+		{
+			if(!achievements.Contains("Tough"))
+			{
+				HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
+				if (HB.GiveMaxHealth() >= 10)
+				{
+					AddAchievement("Tough");
+					Bark("Your survival was never in doubt. You have grown quite tough. Let's see what brings you down.");
+					achievement_unlocked = true;
+				}
+			}	
+		}
     }
 
     //If you have 15 weapons
     //Have an additional reward to choose from after each fight.
     public void CheckCollector()
     {
-        if(!achievements.Contains("Collector"))
-        {
-            if (RI.transform.childCount >= 12)
-            {
-                AddAchievement("Collector");
-                Bark("You have amassed a sizable collection of weapons. How many you plan to use? 7");
-            }
-        }
+        if(!achievement_unlocked)
+		{
+			if(!achievements.Contains("Collector"))
+			{
+				if (RI.transform.childCount >= 12)
+				{
+					AddAchievement("Collector");
+					Bark("You have amassed a sizable collection of weapons. How many you plan to use? 7");
+					achievement_unlocked = true;
+				}
+			}
+		}
     }
 
     //Deal 5 or more damage during a single round
     //+1 damage to all weapons but -2 to HP
     public void CheckForSlautherer()
     {
-        if(!achievements.Contains("Slaughterer"))
-        {
-			AddAchievement("Slaughterer");
-			Bark("That was a lot of damage. But can you pull that off again? 5");
-        }
+        if(!achievement_unlocked)
+		{
+			if(!achievements.Contains("Slaughterer"))
+			{
+				AddAchievement("Slaughterer");
+				Bark("That was a lot of damage. But can you pull that off again? 5");
+				achievement_unlocked = true;
+			}
+		}
     }
 
     //Take damage on the first turn 4 times during a single game.
     //All weapons gain +2 to armor during the first round
     public void CheckForSlow()
     {
-        if(!achievements.Contains("Slow"))
-        {
-			slow_counter++;
-			if (slow_counter >= 4)
+		if(!achievement_unlocked)
+		{
+			if(!achievements.Contains("Slow"))
 			{
-				AddAchievement("Slow");
-				Bark("That's the third time you have taken hit right away. Unlucky I guess. 17");
+				slow_counter++;
+				if (slow_counter >= 4)
+				{
+					AddAchievement("Slow");
+					Bark("That's the third time you have taken hit right away. Unlucky I guess. 17");
+					achievement_unlocked = true;
+				}
+				GetComponent<MainController>().first_turn = false;
 			}
-			GetComponent<MainController>().first_turn = false;
-        }
+		}
     }
 
     //Use 13 different weapons during a single game
     //Your starting weapons are selected at random from small selection
     public void CheckForExperimentor()
     {
-        if(!achievements.Contains("Experimentor"))
-        {
-            if (wheel_holder.GetComponent<PlayerWheelHolder>().used_weapons.Count >= 13)
-            {
-                AddAchievement("Experimentor");
-                Bark("You have been using a lot of different weapons. I like your style. 16");
-            }
-        }
+        if(!achievement_unlocked)
+		{
+			if(!achievements.Contains("Experimentor"))
+			{
+				if (wheel_holder.GetComponent<PlayerWheelHolder>().used_weapons.Count >= 13)
+				{
+					AddAchievement("Experimentor");
+					Bark("You have been using a lot of different weapons. I like your style. 16");
+					achievement_unlocked = true;
+				}
+			}
+		}
     }
 
     //Win a fight with at least 2 "useless" weapons equipped
     //+1 HP for each "useless" equipped
     public void CheckForMadman()
     {
-        if(!achievements.Contains("Madman"))
-        {
-            int amount = 0;
-            for(int i = 0; i < wheel_holder.transform.GetChild(0).transform.childCount-1; i++)
-            {
-                if(wheel_holder.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
-                {
-                    if (wheel_holder.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().type == MainController.Choise.useless)
-                    {
-                        amount++;
-                    }
-                }
-            }
-            if(amount >= 2)
-            {
-                AddAchievement("Madman");
-                Bark("You are one of the few who actually makes use of those \"useless\" weapons. Or maybe you just like losing. 17");
-            }
-        }
+        if(!achievement_unlocked)
+		{
+			if(!achievements.Contains("Madman"))
+			{
+				int amount = 0;
+				for(int i = 0; i < wheel_holder.transform.GetChild(0).transform.childCount-1; i++)
+				{
+					if(wheel_holder.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
+					{
+						if (wheel_holder.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().type == MainController.Choise.useless)
+						{
+							amount++;
+						}
+					}
+				}
+				if(amount >= 2)
+				{
+					AddAchievement("Madman");
+					Bark("You are one of the few who actually makes use of those \"useless\" weapons. Or maybe you just like losing. 17");
+					achievement_unlocked = true;
+				}
+			}
+		}
     }
 
     //Give up after defeating at least 5 enemies.
     //If you give up, the next person gets one of your equipped weapons.
     public void CheckForMartyr()
     {
-        if(!achievements.Contains("Martyr"))
-        {
-			if(martyr_counter >= 5)
+        if(!achievement_unlocked)
+		{
+			if(!achievements.Contains("Martyr"))
 			{
-				AddAchievement("Martyr");
+				if(martyr_counter >= 5)
+				{
+					AddAchievement("Martyr");
+					achievement_unlocked = true;
+				}
 			}
-        }
+		}
 		for(int i = 0; i < chosen_buffs.Count; i++)
 		{
 			if(chosen_buffs[i].GetComponent<Traditionalist>())
@@ -283,34 +313,38 @@ public class RLController : MonoBehaviour
     //Self destructing weapons can be used twice
     public void CheckForRiskTaker()
     {
-        if(!achievements.Contains("Risk taker"))
-        {
-            int amount = 0;
-            GameObject wheel = wheel_holder.transform.GetChild(0).gameObject;
-            for (int i = 0; i < wheel.transform.childCount - 1; i++)
-            {
-                GameObject weapon = wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon;
-                if (weapon != null)
-                {
-                    if(weapon.GetComponent<SelfDestruct>())
-                    {
-                        if(!weapon.GetComponent<SelfDestruct>().destroyed)
-                        {
-                            amount++;
-                            break;
-                        }
-                    } else {
-                        amount++;
-                        break;
-                    }
-                }
-            }
-            if(amount == 0)
-            {
-                AddAchievement("Risk taker");
-                Bark("Well that's beautiful. One more turn and it would have been over. Just beautiful. 15");
-            }
-        }
+        if(!achievement_unlocked)
+		{
+			if(!achievements.Contains("Risk taker"))
+			{
+				int amount = 0;
+				GameObject wheel = wheel_holder.transform.GetChild(0).gameObject;
+				for (int i = 0; i < wheel.transform.childCount - 1; i++)
+				{
+					GameObject weapon = wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon;
+					if (weapon != null)
+					{
+						if(weapon.GetComponent<SelfDestruct>())
+						{
+							if(!weapon.GetComponent<SelfDestruct>().destroyed)
+							{
+								amount++;
+								break;
+							}
+						} else {
+							amount++;
+							break;
+						}
+					}
+				}
+				if(amount == 0)
+				{
+					AddAchievement("Risk taker");
+					Bark("Well that's beautiful. One more turn and it would have been over. Just beautiful. 15");
+					achievement_unlocked = true;
+				}
+			}
+		}
     }
 
     //Own 4 rocks, 4 sicssors and 4 papers
@@ -320,70 +354,82 @@ public class RLController : MonoBehaviour
         int rocks = 0;
         int papers = 0;
         int scissors = 0;
-        if(!achievements.Contains("Neurotic"))
-        {
-            for(int i = 0; i < RI.transform.childCount; i++)
-            {
-                switch(RI.transform.GetChild(i).GetComponent<Weapon>().type)
-                {
-                    case MainController.Choise.kivi: rocks++; break;
-                    case MainController.Choise.paperi: papers++; break;
-                    case MainController.Choise.sakset: scissors++; break;
-                }
-            }
+        if(!achievement_unlocked)
+		{
+			if(!achievements.Contains("Neurotic"))
+			{
+				for(int i = 0; i < RI.transform.childCount; i++)
+				{
+					switch(RI.transform.GetChild(i).GetComponent<Weapon>().type)
+					{
+						case MainController.Choise.kivi: rocks++; break;
+						case MainController.Choise.paperi: papers++; break;
+						case MainController.Choise.sakset: scissors++; break;
+					}
+				}
 
-            if(rocks == 4 && papers == 4 && scissors == 4)
-            {
-                AddAchievement("Neurotic");
-                Bark("Perfectly balanced selection I guess. But can you select the correct combination? 5");
-            }
-        }
+				if(rocks == 4 && papers == 4 && scissors == 4)
+				{
+					AddAchievement("Neurotic");
+					Bark("Perfectly balanced selection I guess. But can you select the correct combination? 5");
+					achievement_unlocked = true;
+				}
+			}
+		}
     }
 
     //Win 4 fights with only effect damage dealing weapons equipped in a single game.
     //Effect damage pierces armor
     public void CheckForPlotter()
     {
-        if(!achievements.Contains("Plotter"))
-        {
-            GameObject wheel = wheel_holder.transform.GetChild(0).gameObject;
-			bool found = false;
-            for(int i = 0; i < wheel.transform.childCount-1; i++)
-            {
-                if(wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
-                {
-                    if (!wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<EffectDamage>())
-                    {
-						found = true;
-                        break;
-                    }
-                }
-            }
-			if(!found) plotter_counter++;
-            if(plotter_counter >= 4)
-            {
-                AddAchievement("Plotter");
-                Bark("It seems you are prepared to deal damage no matter what. Seems to be working. 1");
-            }
-        }
+		if(!achievement_unlocked)
+		{
+			if(!achievements.Contains("Plotter"))
+			{
+				GameObject wheel = wheel_holder.transform.GetChild(0).gameObject;
+				bool found = false;
+				for(int i = 0; i < wheel.transform.childCount-1; i++)
+				{
+					if(wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
+					{
+						if (!wheel.transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<EffectDamage>())
+						{
+							found = true;
+							break;
+						}
+					}
+				}
+				if(!found) plotter_counter++;
+				if(plotter_counter >= 4)
+				{
+					AddAchievement("Plotter");
+					Bark("It seems you are prepared to deal damage no matter what. Seems to be working. 1");
+					achievement_unlocked = true;
+				}
+			}	
+		}
     }
 
     //Win 3 fights with 1 HP during a single game
     //Heal 1 after each win
     public void CheckForSurvivor()
     {
-        if(!achievements.Contains("Survivor"))
-        {
-            if(player.HB.GiveCurrentHealth() == 1)
-            {
-                survivor_counter++;
-            }
-            if(survivor_counter == 3)
-            {
-                AddAchievement("Survivor");
-                Bark("I have tought for few times, that this is the time you die, but no. Maybe fear sharpens your wit.");
-            }
-        }
+		if(!achievement_unlocked)
+		{
+			if(!achievements.Contains("Survivor"))
+			{
+				if(player.HB.GiveCurrentHealth() == 1)
+				{
+					survivor_counter++;
+				}
+				if(survivor_counter == 3)
+				{
+					AddAchievement("Survivor");
+					Bark("I have tought for few times, that this is the time you die, but no. Maybe fear sharpens your wit.");
+					achievement_unlocked = true;
+				}
+			}
+		}
     }
 
     //Deal damage 5 times in a row.
@@ -391,76 +437,92 @@ public class RLController : MonoBehaviour
 	int relentless_count = 0;
     public void CheckForRelentless(bool damage_taken)
     {
-		if(damage_taken) relentless_count++;
-		else relentless_count = 0;
-        if(!achievements.Contains("Relentless"))
-        {
-			if (relentless_count >= 5)
+		if(!achievement_unlocked)
+		{
+			if(damage_taken) relentless_count++;
+			else relentless_count = 0;
+			if(!achievements.Contains("Relentless"))
 			{
-				AddAchievement("Relentless");
-				Bark("You just keep on beating them up. 15");
+				if (relentless_count >= 5)
+				{
+					AddAchievement("Relentless");
+					Bark("You just keep on beating them up. 15");
+					achievement_unlocked = true;
+				}
 			}
-        }
+		}
     }
 
     //Heal 3 times during a single fight
     //Whenever you heal, all of your weapons gain +1 armor for one turn.
     public void CheckForUnyielding()
     {
-        if(!achievements.Contains("Unyielding"))
-        {
-            unyielding_counter++;
-            if(unyielding_counter == 3)
-            {
-                AddAchievement("Unyielding");
-                Bark("You just go up and down like a yo-yo. Quit taking damage and you maybe don't need to heal so much. 16");
-            }
-        }
+		if(!achievement_unlocked)
+		{
+			if(!achievements.Contains("Unyielding"))
+			{
+				unyielding_counter++;
+				if(unyielding_counter == 3)
+				{
+					AddAchievement("Unyielding");
+					Bark("You just go up and down like a yo-yo. Quit taking damage and you maybe don't need to heal so much. 16");
+					achievement_unlocked = true;
+				}
+			}	
+		}
     }
 
     //After the first boss, own 6 weapons you have never brought to a fight
     //You can reroll rewards ones per encounter
     public void CheckForPicky()
     {
-        if(!achievements.Contains("Picky") && GetComponent<StoryController>().storyIndex > 2)
-        {
-			int amount = 0;
-			for(int i = 0; i < RI.transform.childCount; i++)
+		if(!achievement_unlocked)
+		{
+			if(!achievements.Contains("Picky") && GetComponent<StoryController>().storyIndex > 2)
 			{
-				if(!RI.transform.GetChild(i).GetComponent<Weapon>().used_this_game)
+				int amount = 0;
+				for(int i = 0; i < RI.transform.childCount; i++)
 				{
-					amount++;
+					if(!RI.transform.GetChild(i).GetComponent<Weapon>().used_this_game)
+					{
+						amount++;
+					}
 				}
-			}
-			if(amount >= 7)
-			{
-				AddAchievement("Picky");
-				Bark("Maybe I shold disable the reward mechanism. You are not using the weapons you pick anyway. 16");
-			}
-        }
+				if(amount >= 7)
+				{
+					AddAchievement("Picky");
+					Bark("Maybe I shold disable the reward mechanism. You are not using the weapons you pick anyway. 16");
+					achievement_unlocked = true;
+				}
+			}	
+		}
     }
 
     //Win a fight with at least 10 points on your equipped weapons.
     //All weapons gain 2 points when you pick them.
     public void CheckForHoarder()
     {
-        if(!achievements.Contains("Hoarder"))
-        {
-			List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
-			for(int i = 0; i < weapons.Count; i++)
+		if(!achievement_unlocked)
+		{
+			if(!achievements.Contains("Hoarder"))
 			{
-				if(weapons[i].GetComponent<Stacking>())
+				List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
+				for(int i = 0; i < weapons.Count; i++)
 				{
-					hoard_counter += weapons[i].GetComponent<Stacking>().stacks;
+					if(weapons[i].GetComponent<Stacking>())
+					{
+						hoard_counter += weapons[i].GetComponent<Stacking>().stacks;
+					}
 				}
-			}
-            if(hoard_counter >= 10)
-            {
-                AddAchievement("Hoarder");
-                Bark("You have collected quite a lot of points for your weapons. You just like seeing a number to go up don't you.");
-            }
-			hoard_counter = 0;
-        }
+				if(hoard_counter >= 10)
+				{
+					AddAchievement("Hoarder");
+					Bark("You have collected quite a lot of points for your weapons. You just like seeing a number to go up don't you.");
+					achievement_unlocked = true;
+				}
+				hoard_counter = 0;
+			}	
+		}
     }
 
 
