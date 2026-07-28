@@ -27,6 +27,7 @@ public class FWeapon : MonoBehaviour
         transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
         transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
 		GetComponent<SpriteRenderer>().sprite = tiers[weapon.GetComponent<Weapon>().GetAscension()];
+		if(GameObject.Find("EventSystem").GetComponent<StoryController>().museum_active) GetComponent<SpriteRenderer>().sprite = tiers[0];
         switch(weapon.GetComponent<Weapon>().type)
         {
             case MainController.Choise.kivi:
@@ -52,7 +53,7 @@ public class FWeapon : MonoBehaviour
         
         if(GameObject.Find("EventSystem").GetComponent<MainController>().buttons_active)
         {
-            //transform.parent.parent.GetComponent<NonUIScroll>().Activate(); //Crude but works
+            transform.parent.parent.GetComponent<NonUIScroll>().Activate(); //Crude but works
 
             visibleInfo = Instantiate(Info, GameObject.Find("Canvas").transform);
             visibleInfo.transform.position =
@@ -109,13 +110,13 @@ public class FWeapon : MonoBehaviour
     private void OnMouseDown()
     {
 		Pick();
-		DestroyInfo();
-		Destroy(this.gameObject);
+		if(transform.parent.GetComponent<FavouriteMenu>()) DestroyInfo();
+		if(transform.parent.GetComponent<FavouriteMenu>()) Destroy(this.gameObject);
     }
 
 	private void Pick()
 	{
 		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(weapon);
-		transform.parent.GetComponent<FavouriteMenu>().WeaponPicked();
+		if(transform.parent.GetComponent<FavouriteMenu>()) transform.parent.GetComponent<FavouriteMenu>().WeaponPicked();
 	}
 }

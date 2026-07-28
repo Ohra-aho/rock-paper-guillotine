@@ -169,7 +169,7 @@ public class RLController : MonoBehaviour
     //+2 HP
     public void CHeckHPMaster()
     {
-		if(!achievement_unlocked)
+		if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
 			if(!achievements.Contains("Tough"))
 			{
@@ -188,7 +188,7 @@ public class RLController : MonoBehaviour
     //Have an additional reward to choose from after each fight.
     public void CheckCollector()
     {
-        if(!achievement_unlocked)
+        if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
 			if(!achievements.Contains("Collector"))
 			{
@@ -206,7 +206,7 @@ public class RLController : MonoBehaviour
     //+1 damage to all weapons but -2 to HP
     public void CheckForSlautherer()
     {
-        if(!achievement_unlocked)
+        if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
 			if(!achievements.Contains("Slaughterer"))
 			{
@@ -221,7 +221,7 @@ public class RLController : MonoBehaviour
     //All weapons gain +2 to armor during the first round
     public void CheckForSlow()
     {
-		if(!achievement_unlocked)
+		if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
 			if(!achievements.Contains("Slow"))
 			{
@@ -241,7 +241,7 @@ public class RLController : MonoBehaviour
     //Your starting weapons are selected at random from small selection
     public void CheckForExperimentor()
     {
-        if(!achievement_unlocked)
+        if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
 			if(!achievements.Contains("Experimentor"))
 			{
@@ -259,7 +259,7 @@ public class RLController : MonoBehaviour
     //+1 HP for each "useless" equipped
     public void CheckForMadman()
     {
-        if(!achievement_unlocked)
+        if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
 			if(!achievements.Contains("Madman"))
 			{
@@ -288,7 +288,7 @@ public class RLController : MonoBehaviour
     //If you give up, the next person gets one of your equipped weapons.
     public void CheckForMartyr()
     {
-        if(!achievement_unlocked)
+        if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
 			if(!achievements.Contains("Martyr"))
 			{
@@ -313,7 +313,7 @@ public class RLController : MonoBehaviour
     //Self destructing weapons can be used twice
     public void CheckForRiskTaker()
     {
-        if(!achievement_unlocked)
+        if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
 			if(!achievements.Contains("Risk taker"))
 			{
@@ -354,7 +354,7 @@ public class RLController : MonoBehaviour
         int rocks = 0;
         int papers = 0;
         int scissors = 0;
-        if(!achievement_unlocked)
+        if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
 			if(!achievements.Contains("Neurotic"))
 			{
@@ -382,7 +382,7 @@ public class RLController : MonoBehaviour
     //Effect damage pierces armor
     public void CheckForPlotter()
     {
-		if(!achievement_unlocked)
+		if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
 			if(!achievements.Contains("Plotter"))
 			{
@@ -414,7 +414,7 @@ public class RLController : MonoBehaviour
     //Heal 1 after each win
     public void CheckForSurvivor()
     {
-		if(!achievement_unlocked)
+		if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
 			if(!achievements.Contains("Survivor"))
 			{
@@ -437,7 +437,7 @@ public class RLController : MonoBehaviour
 	int relentless_count = 0;
     public void CheckForRelentless(bool damage_taken)
     {
-		if(!achievement_unlocked)
+		if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
 			if(damage_taken) relentless_count++;
 			else relentless_count = 0;
@@ -457,7 +457,7 @@ public class RLController : MonoBehaviour
     //Whenever you heal, all of your weapons gain +1 armor for one turn.
     public void CheckForUnyielding()
     {
-		if(!achievement_unlocked)
+		if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
 			if(!achievements.Contains("Unyielding"))
 			{
@@ -476,7 +476,7 @@ public class RLController : MonoBehaviour
     //You can reroll rewards ones per encounter
     public void CheckForPicky()
     {
-		if(!achievement_unlocked)
+		if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
 			if(!achievements.Contains("Picky") && GetComponent<StoryController>().storyIndex > 2)
 			{
@@ -502,7 +502,7 @@ public class RLController : MonoBehaviour
     //All weapons gain 2 points when you pick them.
     public void CheckForHoarder()
     {
-		if(!achievement_unlocked)
+		if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
 			if(!achievements.Contains("Hoarder"))
 			{
@@ -524,7 +524,6 @@ public class RLController : MonoBehaviour
 			}	
 		}
     }
-
 
     public void ActivateChosen()
     {

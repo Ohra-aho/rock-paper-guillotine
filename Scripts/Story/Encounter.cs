@@ -25,7 +25,7 @@ public class Encounter : MonoBehaviour
     {
 		StoryData SD = GameObject.Find("EventSystem").GetComponent<StoryController>().story_data;
 
-		if(SD != null)
+		if(SD != null && SD.enemies != null && SD.tier != null)
 		{
 			if(SD.enemies.Length > 0 && name == SD.tier)
 			{

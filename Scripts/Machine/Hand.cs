@@ -19,6 +19,7 @@ public class Hand : MonoBehaviour
             {
                 weapon_sprite = collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().sprite;
 				transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = backs[collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().GetAscension()];
+				if(GameObject.Find("EventSystem").GetComponent<StoryController>().museum_active) transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = backs[0];
                 transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = weapon_sprite;
                 transform.GetChild(1).GetChild(1).GetComponent<SpriteRenderer>().sprite = weapon_sprite;
                 switch (collision.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().og_type)

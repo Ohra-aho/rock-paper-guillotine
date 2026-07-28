@@ -49,6 +49,7 @@ public class StoryController : MonoBehaviour
 	public GameObject man;
 	public GameObject light_changer;
 	public Sprite museum_light_changer;
+	public GameObject all_weapon_box;
 
 	public StoryData story_data;
 
@@ -83,9 +84,10 @@ public class StoryController : MonoBehaviour
 			}
 			start_button.GetComponent<StartButton>().ChangeToMuseum();
 			lamp.transform.position = new Vector2(lamp.transform.position.x, 9);
-			lamp.transform.GetChild(0).GetComponent<Light2D>().pointLightOuterRadius = 14;
+			lamp.transform.GetChild(0).GetComponent<Light2D>().pointLightOuterRadius = 16;
 			man.SetActive(false);
 			light_changer.GetComponent<SpriteRenderer>().sprite = museum_light_changer;
+			all_weapon_box.SetActive(true);
         }
         //executioner = true; ///////Debug
 
@@ -95,17 +97,17 @@ public class StoryController : MonoBehaviour
 		{
 			story = Instantiate(GetComponent<MainController>().playthroughts[4], transform);
 		}
+		/*else if (playthroughts == 0)
+        {
+	        //If its the first playthrough, set the tutorial
+	        story = Instantiate(GetComponent<MainController>().playthroughts[0], transform);
+        }*/
         else if(executioner)
 		{
 			//Set executioner game
 	        story = Instantiate(GetComponent<MainController>().playthroughts[2], transform);
 		}
-		else if (playthroughts == 0)
-        {
-	        //If its the first playthrough, set the tutorial
-	        story = Instantiate(GetComponent<MainController>().playthroughts[0], transform);
-        }
-        else if(GetComponent<StoryCheckList>().executioner_dead)
+        else if(museum_active)
 		{
 			//Set museum game
 	        story = Instantiate(GetComponent<MainController>().playthroughts[3], transform);

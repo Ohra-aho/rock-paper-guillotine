@@ -41,6 +41,7 @@ public class Revard : MonoBehaviour
 			transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = actualReward.GetComponent<Weapon>().sprite;
 			transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = actualReward.GetComponent<Weapon>().sprite;
 			GetComponent<SpriteRenderer>().sprite = tiers[actualReward.GetComponent<Weapon>().GetAscension()];
+			if(GameObject.Find("EventSystem").GetComponent<StoryController>().museum_active) GetComponent<SpriteRenderer>().sprite = tiers[0];
         }
     }
 

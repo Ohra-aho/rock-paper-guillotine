@@ -85,6 +85,7 @@ public class ClaimedWeapon : MonoBehaviour
         transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
         transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite = weapon.GetComponent<Weapon>().sprite;
 		GetComponent<SpriteRenderer>().sprite = tiers[weapon.GetComponent<Weapon>().GetAscension()];
+		if(GameObject.Find("EventSystem").GetComponent<StoryController>().museum_active) GetComponent<SpriteRenderer>().sprite = tiers[0];
         switch(weapon.GetComponent<Weapon>().og_type)
         {
             case MainController.Choise.kivi:
