@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -846545694552094145}
-  - component: {fileID: 8663816747810695998}
-  - component: {fileID: -3755804340632262322}
   m_Layer: 5
   m_Name: tear
   m_TagString: Untagged
@@ -100,13 +98,12 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Tear
-  description: If wins, opposing weapon is destroyed, you get a price and Onsulaught
-    gains 1 point.
+  description: Weapon used against this loses its effects until the end of the fight.
+    Stitch gains 1 point.
   sprite: {fileID: 21300000, guid: 5c3c93e87b52ce34f8c354bfdc6b9e16, type: 3}
   tiers: []
   tier: 0
@@ -118,7 +115,19 @@ MonoBehaviour:
       m_Calls: []
   choisePhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -846545694552094145}
+        m_TargetAssemblyTypeName: Howler, Assembly-CSharp
+        m_MethodName: Tear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   resultPhase:
     m_PersistentCalls:
       m_Calls: []
@@ -142,43 +151,7 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -846545694552094145}
-        m_TargetAssemblyTypeName: Howler, Assembly-CSharp
-        m_MethodName: Tear
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8663816747810695998}
-        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
-        m_MethodName: SpawnOnlyWeapon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: -3755804340632262322}
-        m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
-        m_MethodName: DestroyOpposingWeapon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   lose:
     m_PersistentCalls:
       m_Calls: []
@@ -206,6 +179,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -215,17 +194,14 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
+  dont_load: 0
 --- !u!114 &-846545694552094145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,31 +214,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de176d31cc1bf194892dd6021b4aa3c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8663816747810695998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawn_limit: 0
-  weapons:
-  - {fileID: 1944698211339908181, guid: 4de277fba9e4aa34f80f174bb83364e8, type: 3}
---- !u!114 &-3755804340632262322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b84c21e8388ac64da2a85039d59a1b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger_ones: 0
+  buff: {fileID: 0}
+  torn: {fileID: 1944698211339908181, guid: 6aa8d5e73a536574fa994a333972c4d7, type: 3}

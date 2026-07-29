@@ -255,13 +255,20 @@ public class MainController : MonoBehaviour
         if (game_state != State.dead)
         {
             GameObject.Find("Story Event Holder").transform.GetChild(0).GetComponent<StoryEvent>().Procceed();
+			SetNewState(State.reward);
         }
 
 		List<Weapon> equipped = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
+		List<GameObject> enemy_weapons = GameObject.Find("EnemyHolder").GetComponent<EnemyController>().weapons;
 
 		for(int i = 0; i < equipped.Count; i++)
 		{
 			equipped[i].GetComponent<Weapon>().end_of_fight.Invoke();
+		}
+
+		for(int i = 0; i < enemy_weapons.Count; i++)
+		{
+			enemy_weapons[i].GetComponent<Weapon>().end_of_fight.Invoke();
 		}
 
         for(int i = 0; i < RI.transform.childCount; i++)

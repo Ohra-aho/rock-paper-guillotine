@@ -137,7 +137,14 @@ public class Execution : MonoBehaviour
 		}
 
 		weapon_sprite.weapon = GetComponent<Execution>().judged;
-		if(!weapon_sprite.weapon.GetComponent<BuffController>().special_apply) weapon_sprite.weapon.GetComponent<BuffController>().Equip();
+		if(weapon_sprite.weapon.GetComponent<BuffController>())
+		{
+			if(!weapon_sprite.weapon.GetComponent<BuffController>().special_apply) 
+				weapon_sprite.weapon.GetComponent<BuffController>().Equip();
+		} else
+		{
+			weapon_sprite.weapon.GetComponent<Weapon>().equip.Invoke();
+		}
 		Destroy(gameObject);
 	}
 

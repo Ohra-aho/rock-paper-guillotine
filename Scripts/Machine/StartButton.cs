@@ -134,6 +134,7 @@ public class StartButton : MonoBehaviour
 
             machine.GetComponent<Test>().PlayAnimation("CloseMachine");
             isActive = true;
+			GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.TrueReconstructTwo();
             GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarUp();
             machine.GetComponent<Machine>().round_started = true;
 

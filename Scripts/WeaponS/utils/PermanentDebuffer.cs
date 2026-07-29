@@ -177,6 +177,22 @@ public class PermanentDebuffer : MonoBehaviour
 		}
     }
 
+	public void DecreseOpposingHealthTemporary(int amount)
+	{
+		if(HandleTrgger())
+		{
+        	GetComponent<Weapon>().opponent.player_owner.HB.GiveTemporaryHealth(-amount, true);
+		}
+	}
+
+	public void IncreaseOpposingHealthTemporary(int amount)
+	{
+		if(HandleTrgger())
+		{
+        	GetComponent<Weapon>().opponent.player_owner.HB.RemoveTemporaryHealth(-amount, true);
+		}
+	}
+
     public void MakeOpposingWeaponSelfDestructive(int turns)
     {
 		if(HandleTrgger())

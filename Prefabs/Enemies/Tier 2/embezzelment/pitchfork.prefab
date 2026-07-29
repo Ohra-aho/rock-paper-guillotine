@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 5351588252152018956}
+  - component: {fileID: -8919897362631143357}
   m_Layer: 5
   m_Name: pitchfork
   m_TagString: Untagged
@@ -102,7 +103,7 @@ MonoBehaviour:
   damage: 2
   armor: 0
   name: Pitchfork
-  description: If draws, deals 1 damage.
+  description: If draws, you get -1 HP.
   sprite: {fileID: 21300000, guid: 417891daf3bfb5b41a8181b37cc107e7, type: 3}
   tiers: []
   tier: 0
@@ -145,14 +146,14 @@ MonoBehaviour:
   draw:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5351588252152018956}
-        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
-        m_MethodName: DealDamage
-        m_Mode: 2
+      - m_Target: {fileID: -8919897362631143357}
+        m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
+        m_MethodName: DecreaseOpposingHealth
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 3098424137161797902}
-          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -215,3 +216,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 1
   armor_piercing: 0
+--- !u!114 &-8919897362631143357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b84c21e8388ac64da2a85039d59a1b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger_ones: 0

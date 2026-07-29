@@ -105,7 +105,7 @@ MonoBehaviour:
   armor: 0
   name: Weight
   description: If takes damage, gains 1 point and you get a Weakness. When has 3
-    points, dies and you get a price.
+    points, dies and you get a prize.
   sprite: {fileID: 21300000, guid: 57d2aeae63180dc46af23835030424fc, type: 3}
   tiers: []
   tier: 0

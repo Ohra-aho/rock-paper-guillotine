@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Realinventory : MonoBehaviour
 {
-    public GameObject? FindWeapon(string name)
+    public GameObject FindWeapon(string name)
 	{
 		for(int i = 0; i < transform.childCount; i++)
 		{

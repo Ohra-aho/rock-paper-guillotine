@@ -98,12 +98,12 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 1
+  og_type: 0
   damage: 2
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Collapse
-  description: If loses, dies.
+  description: "If loses, Onslaught becomes \u201Duseless\u201D until it is used
+    again."
   sprite: {fileID: 21300000, guid: c9fb98b50dfe4ff4cb8176b542cab6eb, type: 3}
   tiers: []
   tier: 0
@@ -179,6 +179,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -188,17 +194,14 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
+  dont_load: 0
 --- !u!114 &-4586833965777983632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,3 +214,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de176d31cc1bf194892dd6021b4aa3c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}

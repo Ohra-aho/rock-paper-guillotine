@@ -71,7 +71,6 @@ MonoBehaviour:
   - pair: 0000000001000000
   - pair: 0200000001000000
   - pair: 0000000002000000
-  - pair: 01000000
   - pair: 00000000
   advanced: 0
   victory_barks: []

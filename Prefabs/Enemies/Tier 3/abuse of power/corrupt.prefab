@@ -103,7 +103,7 @@ MonoBehaviour:
   damage: 2
   armor: 0
   name: Corrupt
-  description: If wins, dies and you get a price.
+  description: If wins, dies and you get a prize.
   sprite: {fileID: 21300000, guid: 18a5c100f2b3a634c824af6caae31794, type: 3}
   tiers: []
   tier: 0

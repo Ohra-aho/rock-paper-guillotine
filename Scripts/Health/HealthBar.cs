@@ -289,14 +289,15 @@ public class HealthBar : MonoBehaviour
         {
             if (MC.game_state == MainController.State.in_battle && !CheckIfDead() && !GameObject.Find("EnemyHealth").GetComponent<HealthBar>().CheckIfDead()) {
                 transform.parent.GetChild(4).GetComponent<Test>().PlayAnimation("Change health");
-            } else
+            } 
+			else
             {
                 int x = max_health;
                 int y = current_health;
                 if (x > HP_gap) x = HP_gap;
                 if (y > HP_gap) y = HP_gap;
-                DestroyHealthBar();
-                RecostructHealthBar(x, y, in_view);
+                //DestroyHealthBar();
+                //RecostructHealthBar(x, y, in_view);
             }
             
         }
@@ -311,6 +312,16 @@ public class HealthBar : MonoBehaviour
         DestroyHealthBar();
         RecostructHealthBar(x, y, true);
     }
+
+	public void TrueReconstructTwo()
+	{
+		int x = max_health;
+        int y = current_health;
+        if (x > HP_gap) x = HP_gap;
+        if (y > HP_gap) y = HP_gap;
+        DestroyHealthBar();
+        RecostructHealthBar(x, y, false);
+	}
 
     public void DecreaseHealthBar(int amount, bool in_view)
     {
@@ -330,7 +341,7 @@ public class HealthBar : MonoBehaviour
         if(current_health > max_health) current_health = max_health;
 		if(max_health < 0) max_health = 0; 
 
-        if (max_health <= 0)
+        if (GiveTrueMaxHealth() <= 0)
         {
             if(MC.game_state == MainController.State.in_battle) MC.Loose();//Lis�� jokin kommentti
             else
@@ -339,8 +350,8 @@ public class HealthBar : MonoBehaviour
                 int y = current_health;
                 if (x > HP_gap) x = HP_gap;
                 if (y > HP_gap) y = HP_gap;
-                DestroyHealthBar();
-                RecostructHealthBar(x, y, in_view);
+                //DestroyHealthBar();
+                //RecostructHealthBar(x, y, in_view);
             }
         }
         else if (max_health < 15)
@@ -356,8 +367,8 @@ public class HealthBar : MonoBehaviour
             }
             else if(MC.game_state != MainController.State.in_battle)
             {
-                DestroyHealthBar();
-                RecostructHealthBar(x, y, in_view);
+                //DestroyHealthBar();
+                //RecostructHealthBar(x, y, in_view);
             }
         }
     }
@@ -379,8 +390,8 @@ public class HealthBar : MonoBehaviour
 					int y = current_health;
 					if (x > HP_gap) x = HP_gap;
 					if (y > HP_gap) y = HP_gap;
-					DestroyHealthBar();
-					RecostructHealthBar(x, y, in_view);
+					//DestroyHealthBar();
+					//RecostructHealthBar(x, y, in_view);
 				}
 			}
 		}
@@ -388,6 +399,7 @@ public class HealthBar : MonoBehaviour
 
 	public void RemoveTemporaryHealth(int amount, bool in_view)
     {
+		Debug.Log("Health should be back");
         max_health -= amount;
         if(current_health > max_health) current_health = max_health;
 
@@ -400,8 +412,8 @@ public class HealthBar : MonoBehaviour
                 int y = current_health;
                 if (x > HP_gap) x = HP_gap;
                 if (y > HP_gap) y = HP_gap;
-                DestroyHealthBar();
-                RecostructHealthBar(x, y, in_view);
+                //DestroyHealthBar();
+                //RecostructHealthBar(x, y, in_view);
             }
         }
         else if (max_health < 15)
@@ -417,8 +429,8 @@ public class HealthBar : MonoBehaviour
             }
             else if(MC.game_state != MainController.State.in_battle)
             {
-                DestroyHealthBar();
-                RecostructHealthBar(x, y, in_view);
+                //DestroyHealthBar();
+                //RecostructHealthBar(x, y, in_view);
             }
         }
     }
@@ -430,8 +442,8 @@ public class HealthBar : MonoBehaviour
 		int y = current_health;
 		if (x > HP_gap) x = HP_gap;
 		if (y > HP_gap) y = HP_gap;
-		DestroyHealthBar();
-		RecostructHealthBar(x, y, in_view);
+		//DestroyHealthBar();
+		//RecostructHealthBar(x, y, in_view);
 	}
 
     public int GiveCurrentHealth()
@@ -447,6 +459,9 @@ public class HealthBar : MonoBehaviour
                 }
             }
         }
+		temp = current_health;
+		if(current_health > max_health) temp = max_health;
+		if(current_health > HP_gap) temp = current_health;
         return temp;
     }
 

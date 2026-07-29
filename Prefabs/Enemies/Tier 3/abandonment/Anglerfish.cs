@@ -5,19 +5,24 @@ using UnityEngine;
 public class Anglerfish : MonoBehaviour
 {
 	public GameObject buff;
+	bool used = false;
     public void Breath()
 	{
-		List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
-		for(int i = 0; i < weapons.Count; i++)
+		if(!used)
 		{
-			Buff new_buff = Instantiate(buff, weapons[i].transform).GetComponent<Buff>();
-			new_buff.id = GetComponent<Weapon>().name;
-			new_buff.damage_buff = -2;
-			new_buff.temporary = true;
-			new_buff.timer = 2;
-			new_buff.reminder = "-2 damage";
-			new_buff.AddBuff();
-		}
+			List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
+			for(int i = 0; i < weapons.Count; i++)
+			{
+				Buff new_buff = Instantiate(buff, weapons[i].transform).GetComponent<Buff>();
+				new_buff.id = GetComponent<Weapon>().name;
+				new_buff.damage_buff = -2;
+				new_buff.temporary = true;
+				new_buff.until_used = true;
+				new_buff.reminder = new_buff.damage_buff+" damage until used.";
+				new_buff.AddBuff();
+			}
+			used = true;
+		} 
 	}
 
 	public void Weight()
