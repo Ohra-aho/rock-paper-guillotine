@@ -98,12 +98,11 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
+  og_type: 0
   damage: 2
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Crush
-  description: If wins, destroys the opposing weapon.
+  description: If weapon used against this is used again, it self-desturcts.
   sprite: {fileID: 21300000, guid: b966ffc5295a6024b9351e6f623899a2, type: 3}
   tiers: []
   tier: 0
@@ -142,12 +141,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -7647009164761552739}
         m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
-        m_MethodName: DestroyOpposingWeapon
-        m_Mode: 1
+        m_MethodName: MakeOpposingWeaponSelfDestructive
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1000
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -179,6 +178,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -188,17 +193,14 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
+  dont_load: 0
 --- !u!114 &-7647009164761552739
 MonoBehaviour:
   m_ObjectHideFlags: 0

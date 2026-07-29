@@ -73,7 +73,13 @@ public class WeaponInfoRack : MonoBehaviour
 	{
 		for(int i = 0; i < transform.childCount; i++)
 		{
-			transform.GetChild(i).GetComponent<WeaponWard>().TrueTelegrpah();
+			if(transform.GetChild(i).GetComponent<WeaponWard>().weapon != null)
+			{
+				if(transform.GetChild(i).GetComponent<WeaponWard>().telegraphing)
+					transform.GetChild(i).GetComponent<WeaponWard>().telegraphing = false;
+					transform.GetChild(i).GetComponent<WeaponWard>().move = true;
+				transform.GetChild(i).GetComponent<WeaponWard>().TrueTelegrpah();
+			}
 		}
 	}
 

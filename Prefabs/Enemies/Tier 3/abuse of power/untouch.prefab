@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 6942761204180298069}
-  - component: {fileID: 4113890879008482397}
   - component: {fileID: -7893577190167113050}
+  - component: {fileID: 8147826379070674359}
   m_Layer: 5
   m_Name: untouch
   m_TagString: Untagged
@@ -101,11 +101,11 @@ MonoBehaviour:
   spammable: 0
   type: 1
   og_type: 0
-  damage: 2
-  armor: 3
+  damage: 1
+  armor: 2
   name: Untouch
-  description: "If wins, +1 armor to the opposing weapon and all enemy weapons become
-    \u201Dunbeatable\u201D for 2 turns. "
+  description: After use, +1 armor to all weapons for one turn. If wins, you get
+    a random miracle.
   sprite: {fileID: 21300000, guid: 0d14e870039d7744c8765daa498af496, type: 3}
   tiers: []
   tier: 0
@@ -123,7 +123,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7893577190167113050}
+        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
+        m_MethodName: Equip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -142,26 +154,14 @@ MonoBehaviour:
   win:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -7893577190167113050}
-        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
-        m_MethodName: Equip
+      - m_Target: {fileID: 8147826379070674359}
+        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
+        m_MethodName: SpawnRandomWeapon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4113890879008482397}
-        m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
-        m_MethodName: BuffOpposingWeaponArmor
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -228,19 +228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472e521bb8a394943949fcd2f8980dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4113890879008482397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b84c21e8388ac64da2a85039d59a1b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger_ones: 0
 --- !u!114 &-7893577190167113050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,3 +280,20 @@ MonoBehaviour:
   destructive: 0
   heal_disabler: 0
   stackable: 0
+--- !u!114 &8147826379070674359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn_limit: 0
+  weapons:
+  - {fileID: 1944698211339908181, guid: bf44e920d974a204589742366b914b99, type: 3}
+  - {fileID: 1944698211339908181, guid: 5b41f0edba9bf1e4e8fd39f7636b42ae, type: 3}
+  - {fileID: 1944698211339908181, guid: 9a70c67ed37840641afc7537eb6cbf38, type: 3}

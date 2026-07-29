@@ -30,7 +30,7 @@ public class PermanentDebuffer : MonoBehaviour
 		}
 	}
 
-	public GameObject? FindOwnBuff(string name)
+	public GameObject FindOwnBuff(string name)
 	{
 		Weapon opponent = GetComponent<Weapon>().opponent;
 		return opponent.GetCertainBuff(name);
@@ -181,7 +181,7 @@ public class PermanentDebuffer : MonoBehaviour
 	{
 		if(HandleTrgger())
 		{
-        	GetComponent<Weapon>().opponent.player_owner.HB.GiveTemporaryHealth(-amount, true);
+        	GetComponent<Weapon>().opponent.player_owner.HB.RemoveTemporaryHealth(amount, true);
 		}
 	}
 
@@ -189,7 +189,7 @@ public class PermanentDebuffer : MonoBehaviour
 	{
 		if(HandleTrgger())
 		{
-        	GetComponent<Weapon>().opponent.player_owner.HB.RemoveTemporaryHealth(-amount, true);
+			GetComponent<Weapon>().opponent.player_owner.HB.GiveTemporaryHealth(amount, true);
 		}
 	}
 

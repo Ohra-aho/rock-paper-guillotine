@@ -115,7 +115,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -7983463553697852181}
         m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
-        m_MethodName: IncreaseOpposingHealthTemporary
+        m_MethodName: IncreaseOpposingHealth
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -172,7 +172,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: -7983463553697852181}
         m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
-        m_MethodName: DecreseOpposingHealthTemporary
+        m_MethodName: DecreaseOpposingHealth
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

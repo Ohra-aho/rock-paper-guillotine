@@ -100,12 +100,12 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Undo
-  description: If wins, -1 HP and you get a random miracle.
+  description: 'After use, you get -1 HP until the end of the fight. Can''t bring
+    your HP below 1. If wins, you get a random miracle. '
   sprite: {fileID: 21300000, guid: f8b0ca86afd76ff44be7bcaf59a417a1, type: 3}
   tiers: []
   tier: 0
@@ -114,7 +114,19 @@ MonoBehaviour:
       m_Calls: []
   end_of_fight:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2786160817998487646}
+        m_TargetAssemblyTypeName: Raivo, Assembly-CSharp
+        m_MethodName: ResetUndo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -123,7 +135,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2786160817998487646}
+        m_TargetAssemblyTypeName: Raivo, Assembly-CSharp
+        m_MethodName: Undo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -142,18 +166,6 @@ MonoBehaviour:
   win:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4286222579009159444}
-        m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
-        m_MethodName: DecreaseOpposingHealth
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: -6463347446740967733}
         m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
         m_MethodName: SpawnRandomWeapon
@@ -193,6 +205,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -202,17 +220,14 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
+  dont_load: 0
 --- !u!114 &4286222579009159444
 MonoBehaviour:
   m_ObjectHideFlags: 0

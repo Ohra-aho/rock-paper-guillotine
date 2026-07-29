@@ -48,7 +48,7 @@ public class MustaRitari : MonoBehaviour
 		p_buff.GetComponent<Buff>().RemoveBuff();
 		b_buff.GetComponent<Buff>().RemoveBuff();
 
-		w_buff.GetComponent<Buff>().damage_buff = weaknesses*2;
+		w_buff.GetComponent<Buff>().damage_buff = weaknesses;
 		p_buff.GetComponent<Buff>().armor_buff = poisons;
 		if(bleeds > 0) b_buff.GetComponent<Buff>().draw_winner = true;
 		else b_buff.GetComponent<Buff>().draw_winner = false;

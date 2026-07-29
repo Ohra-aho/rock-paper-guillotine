@@ -99,14 +99,12 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  type: 0
-  damage: 2
+  type: 3
+  og_type: 0
+  damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Wake
-  description: After use, you get a Poison and enemy takes 1 damage for each empty
-    slot on your gear.
+  description: After use, enemy takes 1 damage for each empty slot on your gear.
   sprite: {fileID: 21300000, guid: 7183cc8b45d4e3f49b9d4081090e1567, type: 3}
   tiers: []
   tier: 0
@@ -194,6 +192,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -203,17 +207,14 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
+  dont_load: 0
 --- !u!114 &1934008209786845313
 MonoBehaviour:
   m_ObjectHideFlags: 0
