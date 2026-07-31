@@ -2,12 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class MenuLayer : MonoBehaviour
 {
 	SoundSettings SS;
+	public UnityEvent awake;
 	public void Awake()
+	{
+		awake.Invoke();
+	}
+
+	public void Main()
 	{
 		SS = GameObject.Find("EventSystem").GetComponent<SoundSettings>();
 		for(int i = 0; i < SS.soundTargets.Count; i++)

@@ -23,9 +23,9 @@ public class SliderController : MonoBehaviour
 	{
 		if(name != "Brightness")
 		{
-			transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = target.name;
+			transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = target.name;
 			transform.GetChild(1).GetComponent<Slider>().value = target.volume;
-			transform.GetChild(3).GetComponent<Toggle>().isOn = target.mute;
+			transform.GetChild(3).GetComponent<Toggle>().isOn = !target.mute;
 			transform.GetChild(3).GetComponent<Toggle>().onValueChanged.AddListener((bool b) => {MuteSound();});
 			DisplayValues(target.volume);
 		} else
@@ -51,11 +51,11 @@ public class SliderController : MonoBehaviour
 			{
 				target.volume = x;
 			}
-			transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = (target.volume*100).ToString("F0");
+			transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = (target.volume*100).ToString("F0");
 			GameObject.Find(settings).GetComponent<SoundSettings>().ChangeValues(target.name, target.mute, target.volume);	
 		} else
 		{
-			transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = (x*100).ToString("F0");
+			transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = (x*100).ToString("F0");
 			GameObject.Find(settings).GetComponent<SoundSettings>().brightness = x;
 		}
     }
