@@ -8,6 +8,7 @@ public class SoundSettings : MonoBehaviour
 
     public List<SoundTarget> soundTargets = new List<SoundTarget>();
     public bool pause = false;
+	public float brightness;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +18,9 @@ public class SoundSettings : MonoBehaviour
             LoadSoundSettings(data);
         } else
         {
+			soundTargets.Add(new SoundTarget("Master volume", false, 0.7f));
             soundTargets.Add(new SoundTarget("Music", false, 1));
-            soundTargets.Add(new SoundTarget("Ambience", false, 1));
-            soundTargets.Add(new SoundTarget("Sound Effect", false, 0.2f));
-            soundTargets.Add(new SoundTarget("Man", false, 1));
+            soundTargets.Add(new SoundTarget("Sound effects", false, 0.2f));
         }
     }
 
@@ -47,7 +47,6 @@ public class SoundSettings : MonoBehaviour
         soundTargets.Add(new SoundTarget("Music", data.mute_music, data.music));
         soundTargets.Add(new SoundTarget("Ambience", data.mute_ambience, data.ambience));
         soundTargets.Add(new SoundTarget("Sound Effect", data.mute_sound_effects, data.sound_effects));
-        soundTargets.Add(new SoundTarget("Man", data.mute_man, data.man));
     }
 }
 

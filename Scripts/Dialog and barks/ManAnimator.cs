@@ -57,7 +57,7 @@ public class ManAnimator : MonoBehaviour
 
     bool mute;
     float volume = 0f;
-    string type = "Man";
+    string type = "Sound effects";
 
     public void Upkeep()
     {
@@ -68,7 +68,7 @@ public class ManAnimator : MonoBehaviour
             if (soundTargets[i].name == type)
             {
                 mute = soundTargets[i].mute;
-                volume = soundTargets[i].volume;
+                volume = soundTargets[i].volume*3f;
             }
         }
         if (GetComponent<AudioSource>().mute != mute) GetComponent<AudioSource>().mute = mute;

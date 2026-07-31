@@ -104,6 +104,7 @@ public class CameraNQuilliotine : MonoBehaviour
         SaveSystem.DeleteFile(SaveSystem.story_data);
         SaveSystem.DeleteFile(SaveSystem.player_weapon_data);
         SaveSystem.DeleteFile(SaveSystem.player_data);
+		SaveSystem.DeleteFile(SaveSystem.sound_setting_data);
     }
 
     public void HeadFalls()

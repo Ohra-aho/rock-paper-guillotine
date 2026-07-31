@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class CHoisePanel : MonoBehaviour
 {
-    public string weapon_name;
+    public string weapon_name = "";
     public int index;
     [HideInInspector] public Sprite[] character_sheet;
     public GameObject character;
@@ -37,13 +37,13 @@ public class CHoisePanel : MonoBehaviour
         if (weapon == null)
         {
             weapon_name = "";
-            transform.GetChild(1).GetComponent<Test>().PlayAnimation("Hide");
+            transform.GetChild(1).GetComponent<Test>().PlayAnimation("SilentHide");
         } else
         {
             transform.GetChild(1).GetComponent<Test>().PlayAnimation("Reveal");
         }
 
-        if(weapon_name != null && weapon_name != "")
+        if(weapon_name.Length > 0)
         {
             GetComponent<NonUIButton>().interactable = true;
 
@@ -92,7 +92,7 @@ public class CHoisePanel : MonoBehaviour
                 }
             } else
             {
-                ClearName();
+                SilentClear();
             }
         }
     }
@@ -105,6 +105,15 @@ public class CHoisePanel : MonoBehaviour
         }
         else TrueClear();
     }
+
+	public void SilentClear()
+	{
+		if (MC.game_state != MainController.State.re_arming)
+        {
+            transform.GetChild(1).GetComponent<Test>().PlayAnimation("SilentHide");
+        }
+        else TrueClear();
+	}
 
     public void TrueClear()
     {

@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 5963ba2cf350c6b4bbea26da6aa1ef9a, type: 3}
   loop: 0
   ongoing: 0
@@ -658,7 +658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 315f643d8472fb341807ff7842b59025, type: 3}
   loop: 0
   ongoing: 0

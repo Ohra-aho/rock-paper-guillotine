@@ -109,7 +109,6 @@ public class WeaponWard : MonoBehaviour
 		{
 			move = false;
 			GetComponent<Test>().PlayAnimation("Reset telegraph");
-			Debug.Log(weapon.og_type);
 			if(weapon.type != weapon.og_type)
 			{
 				if(type_changed) icon_changer.GetComponent<Test>().PlayAnimation("TypeHide");

@@ -11,7 +11,7 @@ public class PauseController : MonoBehaviour
     public GameObject? pauseMenu;
     private GameObject? currentMenu;
 
-    MainController.State last_state;
+    public MainController.State last_state;
 
     public GameObject main_menu;
     public GameObject museum_menu;

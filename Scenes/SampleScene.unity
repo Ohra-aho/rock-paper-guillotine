@@ -470,7 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 4a313475d59e2944fb4c581fb215faf8, type: 3}
   loop: 0
   ongoing: 0
@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 58861ba7c0ff0cc4085b98b014bc861f, type: 3}
   loop: 0
   ongoing: 0
@@ -6684,7 +6684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: da7feca97e6537949a66d9909c9f43b9, type: 3}
   loop: 0
   ongoing: 0
@@ -7264,7 +7264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 317be5c5d8685ae4eb62f189ad2e34ef, type: 3}
   loop: 0
   ongoing: 0
@@ -7402,7 +7402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 62c53d922cb786a4dbf7997b8f2a60d7, type: 3}
   loop: 1
   ongoing: 0
@@ -10800,7 +10800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: af7586c150f39084a8cecf7925ca4cf9, type: 3}
   loop: 0
   ongoing: 0
@@ -10917,102 +10917,27 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: -1}
   m_Constraint: 1
   m_ConstraintCount: 5
---- !u!82 &370411303
-AudioSource:
+--- !u!114 &370411303
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370411299}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a892c2386086b2046aa32ca094095a5d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.5
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: -0.356
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: a892c2386086b2046aa32ca094095a5d, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &375725918
 GameObject:
   m_ObjectHideFlags: 0
@@ -11057,7 +10982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 58861ba7c0ff0cc4085b98b014bc861f, type: 3}
   loop: 0
   ongoing: 0
@@ -11681,7 +11606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 7bfed94648d400647939a43895648065, type: 3}
   loop: 0
   ongoing: 0
@@ -12958,7 +12883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 7ce88aa001fe38d41a54a6be00a1d95e, type: 3}
   loop: 0
   ongoing: 0
@@ -13771,7 +13696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: f9a70775fbd603f42880d2ed4a9fbb17, type: 3}
   loop: 0
   ongoing: 0
@@ -14036,7 +13961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: f56277c2c68cbaf4c9a31d6bf0b975b3, type: 3}
   loop: 0
   ongoing: 0
@@ -15701,7 +15626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: eeb121a21c166ba40930413f8ad9f51e, type: 3}
   loop: 0
   ongoing: 0
@@ -18570,7 +18495,7 @@ MonoBehaviour:
   first_achievement: {fileID: 3768069680275742937, guid: 99006f26adc5acd49abd06638b7162b1, type: 3}
   first_achievement_pick: {fileID: 3768069680275742937, guid: 39c82e93799bfb144b2ce049b6338ea2, type: 3}
   executioner: 0
-  debug: 0
+  debug: 1
   museum_active: 0
   cellar: {fileID: 606367767}
   the_q: {fileID: 1891357473}
@@ -18631,6 +18556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pause: 0
+  brightness: 0
 --- !u!114 &1066024794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18644,6 +18570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 5061135645696944559, guid: dd974eec2ced749478df23f9e2cc8ac3, type: 3}
+  last_state: 0
   main_menu: {fileID: 0}
   museum_menu: {fileID: 0}
 --- !u!114 &1066024795
@@ -19116,7 +19043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: d4835e308a6d1f144b58aa944ac34dc4, type: 3}
   loop: 0
   ongoing: 0
@@ -19260,7 +19187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 0d5affd0679305e44a1b095e7e23191a, type: 3}
   loop: 0
   ongoing: 0
@@ -24932,7 +24859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 3cfb2e2cd09fa2f42abfe8296522e2da, type: 3}
   loop: 0
   ongoing: 0
@@ -25111,102 +25038,27 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: -1}
   m_Constraint: 1
   m_ConstraintCount: 5
---- !u!82 &1238540701
-AudioSource:
+--- !u!114 &1238540701
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238540697}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a892c2386086b2046aa32ca094095a5d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.5
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0.339
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: a892c2386086b2046aa32ca094095a5d, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1250560723
 GameObject:
   m_ObjectHideFlags: 0
@@ -25889,7 +25741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 6bdce148afd2b00489ff49b708165897, type: 3}
   loop: 1
   ongoing: 0
@@ -26057,7 +25909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 7ce88aa001fe38d41a54a6be00a1d95e, type: 3}
   loop: 0
   ongoing: 0
@@ -26987,6 +26839,7 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
+  - {fileID: 1944698211339908181, guid: 02faeedc78bf44e408a7b9177f5fe424, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
@@ -27926,7 +27779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 7c7121b9640842d48b42a4371220c714, type: 3}
   loop: 0
   ongoing: 0
@@ -34839,7 +34692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: fb80d5c62956a9b418384a3581f35db6, type: 3}
   loop: 0
   ongoing: 0
@@ -37944,7 +37797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 66b4298201bfb22459f619f8d4192482, type: 3}
   loop: 0
   ongoing: 0
@@ -38336,7 +38189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 62c53d922cb786a4dbf7997b8f2a60d7, type: 3}
   loop: 0
   ongoing: 0
@@ -44205,7 +44058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 2d6b1b805458ac24b8e92461544550d5, type: 3}
   loop: 0
   ongoing: 0
@@ -51043,7 +50896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: c3ee762051101a94fb90b760cfdba453, type: 3}
   loop: 1
   ongoing: 0
