@@ -712,6 +712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 5061135645696944559, guid: dd974eec2ced749478df23f9e2cc8ac3, type: 3}
+  last_state: 0
   main_menu: {fileID: 425801847}
   museum_menu: {fileID: 1984909593}
 --- !u!114 &425175116
@@ -726,7 +727,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f1b421e16f5cb42bce3cd485777e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundTargets: []
   pause: 0
+  brightness: 0.1
+  light: {fileID: 0}
 --- !u!114 &425175117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,12 +784,9 @@ MonoBehaviour:
   first_boss_beaten: 0
   first_achievement: 0
   first_achievement_pick: 0
-  executioner_dead: 0
+  executioner_dead: 1
   end_counter: 0
   greeting_index: 0
-  off_balance_explained: 0
-  unbeatable_explained: 0
-  useless_explained: 0
 --- !u!1 &425801847
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,7 +31,7 @@ public class SoundSettings : MonoBehaviour
 
 	private void Update()
 	{
-		light.GetComponent<UnityEngine.Rendering.Universal.Light2D>().intensity = brightness / 10f;
+		if(light != null) light.GetComponent<UnityEngine.Rendering.Universal.Light2D>().intensity = brightness / 10f;
 	}
 
     //Changes values of sound targets
