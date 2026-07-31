@@ -991,6 +991,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4065127653034831267, guid: 64d9d3d316ac88b489c15d31f6d1aacc, type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065127653034831267, guid: 64d9d3d316ac88b489c15d31f6d1aacc, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1119,6 +1123,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2585986485983318970, guid: 64d9d3d316ac88b489c15d31f6d1aacc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2595444877137802880, guid: 64d9d3d316ac88b489c15d31f6d1aacc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1140,6 +1148,10 @@ PrefabInstance:
     - target: {fileID: 8128365289884718806, guid: 64d9d3d316ac88b489c15d31f6d1aacc, type: 3}
       propertyPath: m_Name
       value: Sound effects
+      objectReference: {fileID: 0}
+    - target: {fileID: 8176885610287136886, guid: 64d9d3d316ac88b489c15d31f6d1aacc, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1259,6 +1271,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Master volume
       objectReference: {fileID: 0}
+    - target: {fileID: 8176885610287136886, guid: 64d9d3d316ac88b489c15d31f6d1aacc, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1376,6 +1392,10 @@ PrefabInstance:
     - target: {fileID: 8128365289884718806, guid: 64d9d3d316ac88b489c15d31f6d1aacc, type: 3}
       propertyPath: m_Name
       value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 8176885610287136886, guid: 64d9d3d316ac88b489c15d31f6d1aacc, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

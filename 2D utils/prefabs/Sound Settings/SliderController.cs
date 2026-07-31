@@ -21,46 +21,41 @@ public class SliderController : MonoBehaviour
 
 	public void Inisiate()
 	{
-		if(target != null)
+		if(name != "Brightness")
 		{
 			transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = target.name;
 			transform.GetChild(1).GetComponent<Slider>().value = target.volume;
-			transform.GetChild(3).GetComponent<Toggle>().isOn = !target.mute;
+			transform.GetChild(3).GetComponent<Toggle>().isOn = target.mute;
+			transform.GetChild(3).GetComponent<Toggle>().onValueChanged.AddListener((bool b) => {MuteSound();});
+			DisplayValues(target.volume);
 		} else
 		{
 			transform.GetChild(1).GetComponent<Slider>().value = brightness;
+			DisplayValues(brightness);
 		}
-		if(on_change != null)
-		{
-			transform.GetChild(1).GetComponent<Slider>().onValueChanged.AddListener(
-				(float x) => {
-					on_change.Invoke();
-					DisplayValues(x);
-				}
-			);
-		}
+		
+		transform.GetChild(1).GetComponent<Slider>().onValueChanged.AddListener(
+			(float x) => {
+				on_change.Invoke();
+				DisplayValues(x);
+			}
+		);
+		
 	}
 
     private void DisplayValues(float x)
     {
-		if(target != null)
+		if(name != "Brightness")
 		{
 			if(target.volume != x)
 			{
 				target.volume = x;
 			}
-			if(target.mute)
-			{
-				if(transform.childCount > 3)
-				{
-					transform.GetChild(3).gameObject.GetComponent<Image>();
-				}
-			}
-			transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = target.volume.ToString("F2");
+			transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = (target.volume*100).ToString("F0");
 			GameObject.Find(settings).GetComponent<SoundSettings>().ChangeValues(target.name, target.mute, target.volume);	
 		} else
 		{
-			transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = x.ToString("F2");
+			transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = (x*100).ToString("F0");
 			GameObject.Find(settings).GetComponent<SoundSettings>().brightness = x;
 		}
     }

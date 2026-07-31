@@ -14343,7 +14343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 43f2343a06bc599419d6585f1d31b8c2, type: 3}
   loop: 0
   ongoing: 0
@@ -24718,7 +24718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 4f0a87a7ff8beaf48adb601e7fd8e879, type: 3}
   loop: 0
   ongoing: 0
@@ -35783,7 +35783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 457820f02f4659b4ab8bcbaf11c9ccac, type: 3}
   loop: 0
   ongoing: 0
@@ -37934,7 +37934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 0d3e0fbf0e619fc458440a0d2c4a0c09, type: 3}
   loop: 0
   ongoing: 0
@@ -51628,7 +51628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 644be499e80d9194bb4153eddccd93d4, type: 3}
   loop: 0
   ongoing: 0
@@ -52624,7 +52624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Sound Effect
+  type: Sound effects
   clip: {fileID: 8300000, guid: 89eb508d40142ec478cab772d3bada2c, type: 3}
   loop: 0
   ongoing: 0

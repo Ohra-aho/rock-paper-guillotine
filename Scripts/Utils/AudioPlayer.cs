@@ -52,8 +52,17 @@ public class AudioPlayer : MonoBehaviour
                 volume = soundTargets[i].volume;
             }
         }
-        if (GetComponent<AudioSource>().mute != mute) GetComponent<AudioSource>().mute = mute;
-        if (GetComponent<AudioSource>().volume != volume) GetComponent<AudioSource>().volume = volume * volume_modifier;
+		for(int i = 0; i < soundTargets.Count; i++)
+		{
+			if(soundTargets[i].name == "Master volume")
+			{
+				volume *= soundTargets[i].volume;
+				if(soundTargets[i].mute) mute = soundTargets[i].mute;
+				break;
+			}
+		}
+        GetComponent<AudioSource>().mute = mute;
+        GetComponent<AudioSource>().volume = volume * volume_modifier;
     }
 
     public void StopLoop()

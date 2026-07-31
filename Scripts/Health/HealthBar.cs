@@ -50,10 +50,10 @@ public class HealthBar : MonoBehaviour
 		{
 			if(damage >= 5)
 			{
-				GetComponent<AudioSource>().Play();
+				GetComponent<AudioPlayer>().PlayClip();
 			} else
 			{
-				GetComponent<AudioSource>().Play();
+				GetComponent<AudioPlayer>().PlayClip();
 			}
 		}
 
