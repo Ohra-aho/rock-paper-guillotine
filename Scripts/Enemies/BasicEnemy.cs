@@ -23,7 +23,6 @@ public class BasicEnemy : MonoBehaviour
     public class WeaponPair { public List<int> pair; }
     private List<int> current_pair = new List<int>();
 
-    //public List<int> off_balance_choises;
 
     public bool advanced = false;
 
@@ -33,15 +32,12 @@ public class BasicEnemy : MonoBehaviour
 
     private List<int> chosen_plan = new List<int>();
     private int planIndex = 0;
-    //private int off_balance_plan_index = 0;
     private int previous_pair = -1;
+	private int previous_weapon = -1;
 
-    [HideInInspector] public Weapon previous_weapon;
     [HideInInspector] public int weapon_streak = 0;
 
-    [HideInInspector] public bool off_balance;
     [HideInInspector] public bool nearDeath;
-    [HideInInspector] public bool off_balance_pattern_done;
     [HideInInspector] public bool commented = false;
 
     [HideInInspector] public HealthBar HB;
@@ -253,7 +249,19 @@ public class BasicEnemy : MonoBehaviour
 
     public int PickWeaponFromPair()
     {
-        return current_pair[Random.Range(0, current_pair.Count)];
+		int choise = current_pair[Random.Range(0, current_pair.Count)];
+		if(current_pair.Count > 1)
+		{
+			for(int i = 0; i < 3; i++)
+			{
+				if(choise != previous_weapon) break;
+				else if(choise == previous_weapon)
+					choise = current_pair[Random.Range(0, current_pair.Count)];
+					
+			}	
+		}
+		previous_weapon = choise;
+        return choise;
     }
 
     public bool CheckIfWeaponExists(int index)
@@ -267,24 +275,9 @@ public class BasicEnemy : MonoBehaviour
         return weapons[index] != null;
     }
 
-    private bool CheckIfWeaponHasBeenSpammed(int index)
-    {
-        if (weapons[index].GetComponent<Weapon>().spammable) return false;
-        return weapon_streak >= 2 && previous_weapon == weapons[index].GetComponent<Weapon>();
-    }
-
     public void ResetPlan()
     {
         planIndex = 0;
-    }
-
-    public void Balance()
-    {
-        if(off_balance && !off_balance_triggered)
-        {
-            off_balance = false;
-            GameObject.Find("light holder").GetComponent<Test>().PlayAnimation("balance");
-        }
     }
 
     public void ExecutionerComment()
