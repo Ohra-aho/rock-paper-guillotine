@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 6457531259151266902}
   - component: {fileID: -4497431760591203423}
+  - component: {fileID: 4786063971493240260}
   m_Layer: 5
   m_Name: Puolustusmanifesti
   m_TagString: Untagged
@@ -99,12 +100,11 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Defence manifest
-  description: +X damage where X is the total amount of armor on your equipped weapons.
+  description: After each turn, if you nor your enemy took damage, deal 1 damage.
   sprite: {fileID: 21300000, guid: 53a05d1d23e646042adb4a3512cfb85e, type: 3}
   tiers: []
   tier: 0
@@ -113,7 +113,19 @@ MonoBehaviour:
       m_Calls: []
   end_of_fight:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6457531259151266902}
+        m_TargetAssemblyTypeName: Puolustusmanifesti, Assembly-CSharp
+        m_MethodName: ResetFirsttrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -161,10 +173,19 @@ MonoBehaviour:
       m_Calls: []
   constant:
     m_PersistentCalls:
+      m_Calls: []
+  onDestruction:
+    m_PersistentCalls:
+      m_Calls: []
+  eachTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6457531259151266902}
         m_TargetAssemblyTypeName: Puolustusmanifesti, Assembly-CSharp
-        m_MethodName: CalculateDamage
+        m_MethodName: DealDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -174,10 +195,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onDestruction:
-    m_PersistentCalls:
-      m_Calls: []
-  eachTurn:
+  heal_modifier:
     m_PersistentCalls:
       m_Calls: []
   unequipped:
@@ -189,6 +207,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - Now just add lava to that.
@@ -196,7 +217,7 @@ MonoBehaviour:
   - Defence forces... What a joke.
   executioner_comment: 111111111111111111111
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 0
 --- !u!114 &6457531259151266902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,3 +242,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4786063971493240260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 1
+  armor_piercing: 0

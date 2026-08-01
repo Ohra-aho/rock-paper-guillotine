@@ -784,7 +784,7 @@ MonoBehaviour:
   first_boss_beaten: 0
   first_achievement: 0
   first_achievement_pick: 0
-  executioner_dead: 1
+  executioner_dead: 0
   end_counter: 0
   greeting_index: 0
 --- !u!1 &425801847

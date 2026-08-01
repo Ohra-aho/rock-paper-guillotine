@@ -4,27 +4,18 @@ using UnityEngine;
 
 public class Battery : MonoBehaviour
 {
-    public void GivePoints()
+	private void Awake() {
+		GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.GetComponent<Stacking>(); };
+		GetComponent<BuffController>().timer = 2;
+		GetComponent<BuffController>().temporary = true;
+		GetComponent<BuffController>().special_apply = true;
+		GetComponent<BuffController>().endPhase = true;
+		GetComponent<BuffController>().special = GivePoints;
+		GetComponent<BuffController>().reminder = "After use, gains 1 point.";
+	}
+
+    public void GivePoints(Weapon w)
     {
-        if(GetComponent<Stacking>().stacks > 0)
-        {
-            GetComponent<Stacking>().DecreaseStacks(1);
-
-            List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
-            List<Weapon> possible_weapons = new List<Weapon>();
-            for(int i = 0; i < weapons.Count; i++)
-            {
-                if(weapons[i].GetComponent<Stacking>() && weapons[i].GetComponent<Weapon>().name != GetComponent<Weapon>().name)
-                {
-                    possible_weapons.Add(weapons[i]);
-                }
-            }
-
-			if(possible_weapons.Count > 0)
-			{
-				int index = Random.Range(0, possible_weapons.Count);
-				possible_weapons[index].GetComponent<Stacking>().IncreaseStacks(2);
-			}
-        }
+		w.GetComponent<Stacking>().IncreaseStacks(1);
     }
 }

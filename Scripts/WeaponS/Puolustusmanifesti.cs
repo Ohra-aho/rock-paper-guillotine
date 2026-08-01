@@ -5,6 +5,25 @@ using UnityEngine;
 public class Puolustusmanifesti : MonoBehaviour
 {
     int armor_found = 0;
+	bool first_trigger = true;
+	public void DealDamage()
+	{
+		TableController TC = GameObject.Find("Table").GetComponent<TableController>();
+		if(!first_trigger)
+		{
+			if(TC.GiveEffectivePlayerDamage() == 0 && TC.GiveEffectiveEnemyDamage() == 0)
+			{
+				GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
+			}	
+		}
+		first_trigger = false;
+	}
+
+	public void ResetFirsttrigger()
+	{
+		first_trigger = true;
+	}
+
     public void CalculateDamage()
     {
         int damage = 0;

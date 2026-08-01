@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -2515683739492090602}
   - component: {fileID: -114064825214814029}
+  - component: {fileID: 8820864164635597234}
+  - component: {fileID: -466322237101860013}
   m_Layer: 5
   m_Name: Panssarilasi
   m_TagString: Untagged
@@ -101,11 +102,9 @@ MonoBehaviour:
   type: 1
   og_type: 0
   damage: 1
-  armor: 2
-  real_damage: 0
-  real_armor: 0
+  armor: 0
   name: Reinforced glass
-  description: If you take damage through this weapon, self-destructs.
+  description: Whenever you take damage, +1 armor to all weapons for one turn.
   sprite: {fileID: 21300000, guid: e2f98cf03d783634d8473cb57a398ae9, type: 3}
   tiers: []
   tier: 0
@@ -129,19 +128,7 @@ MonoBehaviour:
       m_Calls: []
   takeDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -2515683739492090602}
-        m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
-        m_MethodName: Destruct
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -196,6 +183,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - May your hope never shatter.
@@ -203,21 +193,7 @@ MonoBehaviour:
   - That will srug off most hits.
   executioner_comment: 
   favourite: 
---- !u!114 &-2515683739492090602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyed: 0
-  disabled: 0
-  toughness: 0
+  dont_load: 0
 --- !u!114 &-114064825214814029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,5 +204,69 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8820864164635597234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff: {fileID: 0}
+  damage_bonus: 0
+  armor_bonus: 0
+  effect_damage_bonus: 0
+  toughness_buff: 0
+  set_a_to_zero: 0
+  set_d_to_zero: 0
+  choisePhase: 0
+  resultPhase: 0
+  endPhase: 0
+  each_turn: 0
+  damage_modifier: 0
+  heal_modifier: 0
+  victory: 0
+  special_apply: 0
+  takeDamage: 0
+  takeNoDamage: 0
+  dealDamage: 0
+  deal_effect_damage: 0
+  draw: 0
+  win: 0
+  lose: 0
+  heal: 0
+  gain_points: 0
+  equip: 0
+  unEquip: 0
+  constant: 0
+  onDestruction: 0
+  awake: 0
+  on_death: 0
+  temporary: 0
+  timer: 0
+  penetrating: 0
+  draw_winner: 0
+  health_buff: 0
+  until_used: 0
+  reminder: 
+  destructive: 0
+  heal_disabler: 0
+  stackable: 0
+--- !u!114 &-466322237101860013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5571879653ca11a4097b47b51f0443a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
