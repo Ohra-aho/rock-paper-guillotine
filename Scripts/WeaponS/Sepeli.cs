@@ -6,7 +6,7 @@ public class Sepeli : MonoBehaviour
 {
     private void Awake()
     {
-        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.type == MainController.Choise.sakset; };
+        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
 		GetComponent<BuffController>().temporary = true;
 		GetComponent<BuffController>().timer = 2;
 		GetComponent<BuffController>().special_apply = true;
