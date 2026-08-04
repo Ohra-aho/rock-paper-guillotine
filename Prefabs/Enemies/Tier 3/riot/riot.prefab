@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Musta ritari
   image: {fileID: 21300000, guid: aa2b54f3a10ae5545b712b2ba885ed54, type: 3}
-  maxHealth: 8
+  maxHealth: 7
   weapons:
   - {fileID: 1944698211339908181, guid: 2e04ba3db4132ca4ca7824a0bf544098, type: 3}
   - {fileID: 1944698211339908181, guid: 4546b519c47eae14284966594b2daa27, type: 3}
@@ -76,11 +76,8 @@ MonoBehaviour:
   victory_barks: []
   executioner_comment: 
   victory_message: {fileID: 0}
-  previous_weapon: {fileID: 0}
   weapon_streak: 0
-  off_balance: 0
   nearDeath: 0
-  off_balance_pattern_done: 0
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0

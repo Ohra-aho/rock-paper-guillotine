@@ -9,13 +9,19 @@ public class MustaRitari : MonoBehaviour
 	int weaknesses = 0;
 	int poisons = 0;
 	int bleeds = 0;
+
     public void Beacon()
 	{
-		GetComponent<Weapon>().opponent.type = MainController.Choise.voittamaton;
-		GetComponent<Weapon>().opponent.AddComponent<SelfDestruct>();
-		GetComponent<Weapon>().opponent.endPhase.AddListener(GetComponent<Weapon>().opponent.GetComponent<SelfDestruct>().Destruct);
-		Buff reminding_buff = Instantiate(buff, GetComponent<Weapon>().opponent.transform).GetComponent<Buff>();
-		reminding_buff.reminder = "After use, destroys itself.";
+		if(!GetComponent<Weapon>().opponent.FindCertainBuff(GetComponent<Weapon>().name))
+		{
+			Buff new_buff = Instantiate(buff, GetComponent<Weapon>().opponent.transform).GetComponent<Buff>();
+			new_buff.type_change = MainController.Choise.voittamaton;
+			new_buff.destructive = true;
+			new_buff.temporary = true;
+			new_buff.until_used = true;
+			new_buff.reminder = "After use, self-destructs.";
+			new_buff.AddBuff();
+		}
 	}
 
 	public void Trample()
