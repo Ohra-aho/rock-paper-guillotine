@@ -119,21 +119,27 @@ public class Execution : MonoBehaviour
 
 		for(int i = 0; i < PWH.transform.GetChild(0).childCount-1; i++)
 		{
-			if(PWH.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>() == GetComponent<Weapon>())
+			if(PWH.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
 			{
-				weapon_sprite = PWH.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>();
-				break;
+				if(PWH.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>() == GetComponent<Weapon>())
+				{
+					weapon_sprite = PWH.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>();
+					break;
+				}	
 			}
 		}
 
 		GameObject choise_panel = GameObject.Find("ChoisePanel");
 		for(int i = 0; i < choise_panel.transform.childCount; i++)
 		{
-			if(choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon == GetComponent<Weapon>())
+			if(choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon != null)
 			{
-				choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon = GetComponent<Execution>().judged.GetComponent<Weapon>();
-				break;
-			}
+				if(choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon == GetComponent<Weapon>())
+				{
+					choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon = GetComponent<Execution>().judged.GetComponent<Weapon>();
+					break;
+				}
+			}	
 		}
 
 		weapon_sprite.weapon = GetComponent<Execution>().judged;

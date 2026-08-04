@@ -64,6 +64,7 @@ public class Howler : MonoBehaviour
 		dummy_weapon.GetComponent<Weapon>().player_owner = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
 		dummy_weapon.GetComponent<Weapon>().description = "Resets at the end of the fight.";
 		player.chosenWeapon = dummy_weapon;
+
 		GameObject.Find("EventSystem").GetComponent<MainController>().playerChoise = dummy_weapon.GetComponent<Weapon>();
 		if(GetComponent<Weapon>().opponent.GetComponent<BuffController>())
 		{
@@ -78,19 +79,25 @@ public class Howler : MonoBehaviour
 
 		for(int i = 0; i < PWH.transform.GetChild(0).childCount-1; i++)
 		{
-			if(PWH.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>() == GetComponent<Weapon>().opponent)
+			if(PWH.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
 			{
-				weapon_sprite = PWH.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>();
-				break;
+				if(PWH.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>() == GetComponent<Weapon>().opponent)
+				{
+					weapon_sprite = PWH.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>();
+					break;
+				}	
 			}
 		}
 
 		GameObject choise_panel = GameObject.Find("ChoisePanel");
 		for(int i = 0; i < choise_panel.transform.childCount; i++)
 		{
-			if(choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon == GetComponent<Weapon>().opponent)
+			if(choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon != null)
 			{
-				choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon = dummy_weapon.GetComponent<Weapon>();
+				if(choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon == GetComponent<Weapon>().opponent)
+				{
+					choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon = dummy_weapon.GetComponent<Weapon>();
+				}
 			}
 		}
 
