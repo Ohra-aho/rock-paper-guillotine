@@ -64,8 +64,9 @@ public class EldritchPower : MonoBehaviour
             Buff newBuff = Instantiate(buff, to_buff.gameObject.transform).GetComponent<Buff>();
             newBuff.type_change = MainController.Choise.voittamaton;
             newBuff.temporary = true;
-            newBuff.timer = 2;
+            newBuff.until_used = true;
             newBuff.id = this.GetComponent<Weapon>().name;
+			newBuff.reminder = "Made \"unbeatable\" until used.";
             newBuff.AddBuff();
         }
 

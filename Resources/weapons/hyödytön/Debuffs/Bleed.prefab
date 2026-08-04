@@ -103,11 +103,9 @@ MonoBehaviour:
   og_type: 0
   damage: 0
   armor: 1
-  real_damage: 0
-  real_armor: 0
   name: Bleed
-  description: When not equipped, deals 1 damage at the start of each fight. After
-    use, self-destructs.
+  description: When not equipped, deals 1 damage at the start of each fight. Does
+    not stack. After use, self-destructs.
   sprite: {fileID: 21300000, guid: f5bd5e115d80b994c871af145fb22d40, type: 3}
   tiers: []
   tier: 0
@@ -191,23 +189,14 @@ MonoBehaviour:
       m_Calls: []
   unequipped:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -2837925835377614634}
-        m_TargetAssemblyTypeName: Bleed, Assembly-CSharp
-        m_MethodName: TakeDamage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   on_pick:
     m_PersistentCalls:
       m_Calls: []
   on_death:
+    m_PersistentCalls:
+      m_Calls: []
+  any_equip:
     m_PersistentCalls:
       m_Calls: []
   used_this_game: 0
@@ -215,6 +204,7 @@ MonoBehaviour:
   - This should not be here.
   executioner_comment: 
   favourite: 
+  dont_load: 0
 --- !u!114 &-5376515112420613057
 MonoBehaviour:
   m_ObjectHideFlags: 0

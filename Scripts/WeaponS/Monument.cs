@@ -7,7 +7,6 @@ public class Monument : MonoBehaviour
     public void TriggerAllEndTurnEffects()
     {
         List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
-		bool destroy = false;
         for(int i = 0; i < weapons.Count; i++)
         {
             if(weapons[i].name != GetComponent<Weapon>().name && weapons[i].name != GetComponent<Weapon>().name+" (Copy)")
@@ -16,7 +15,6 @@ public class Monument : MonoBehaviour
 				{
 					if (!weapons[i].GetComponent<SelfDestruct>().disabled)
 					{
-						destroy = true;
 						weapons[i].GetComponent<SelfDestruct>().disabled = true;
 						weapons[i].endPhase.Invoke();
 						weapons[i].GetComponent<SelfDestruct>().disabled = false;
@@ -32,6 +30,11 @@ public class Monument : MonoBehaviour
 				}
             }
         }
-		if(destroy) GetComponent<SelfDestruct>().Destruct(); 
     }
+
+	public void PreventHealing()
+	{
+		TableController TC = GameObject.Find("Table").GetComponent<TableController>();
+		TC.player_healing = 0;
+	}
 }

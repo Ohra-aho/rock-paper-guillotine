@@ -265,12 +265,21 @@ public class PlayerContoller : MonoBehaviour
 
     private void ActivateUnequippedEffects()
     {
+		bool bleed_damage = false;
         List<Weapon> equipped_weapons = GetWeapons();
         for (int i = 0; i < RI.transform.childCount; i++)
         {
 			if(!equipped_weapons.Contains(RI.transform.GetChild(i).GetComponent<Weapon>()))
 			{
-				RI.transform.GetChild(i).GetComponent<Weapon>().unequipped.Invoke();
+				//Prevents bleed damage from stacking
+				if(RI.transform.GetChild(i).GetComponent<Weapon>().name.Contains("Bleed"))
+				{
+					RI.transform.GetChild(i).GetComponent<Bleed>().TakeDamage(!bleed_damage);
+					bleed_damage = true;	
+				} else
+				{
+					RI.transform.GetChild(i).GetComponent<Weapon>().unequipped.Invoke();
+				}
 			}
         }
 

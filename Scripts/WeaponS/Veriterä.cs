@@ -22,6 +22,8 @@ public class Veriterä : MonoBehaviour
 		{
 			Buff own_buff = Instantiate(GetComponent<BuffController>().buff, transform).GetComponent<Buff>();
 			own_buff.damage_buff = 1;
+			own_buff.temporary = true;
+			own_buff.timer = 1000;
 			own_buff.id = GetComponent<Weapon>().name;
 		}
 	}	

@@ -141,7 +141,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6664521549205570113}
         m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
-        m_MethodName: Unequip
+        m_MethodName: Equip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

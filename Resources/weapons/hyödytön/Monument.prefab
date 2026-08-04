@@ -103,11 +103,9 @@ MonoBehaviour:
   og_type: 0
   damage: 0
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Monument
-  description: After use, triggers "after use" effects of all equipped weapons. Self-destruction
-    effects of those weapons will be applied to this weapon.
+  description: After use, triggers "after use" effects of all equipped weapons. You
+    can't receive healing while using this weapon.
   sprite: {fileID: 21300000, guid: 43b482c4520ef354fbeff698bbca6dc3, type: 3}
   tiers: []
   tier: 0
@@ -188,7 +186,19 @@ MonoBehaviour:
       m_Calls: []
   heal_modifier:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -3416217034105915706}
+        m_TargetAssemblyTypeName: Monument, Assembly-CSharp
+        m_MethodName: PreventHealing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -198,6 +208,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - Will you manage to break the game with that?
@@ -205,6 +218,7 @@ MonoBehaviour:
   - Oh o... 11
   executioner_comment: 
   favourite: 
+  dont_load: 0
 --- !u!114 &-3416217034105915706
 MonoBehaviour:
   m_ObjectHideFlags: 0
