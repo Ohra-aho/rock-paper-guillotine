@@ -75,7 +75,6 @@ public class TableController : MonoBehaviour
         ActivateEachTurnEffects(player_weapons);
         ActivateEachTurnEffects(enemy_weapons);
 
-
         if(GiveEffectivePlayerDamage() <= 0) MC.playerChoise.takeNoDamage.Invoke();
         if(GiveEffectiveEnemyDamage() <= 0) MC.enemyChoise.takeNoDamage.Invoke();
 
@@ -120,6 +119,9 @@ public class TableController : MonoBehaviour
 		for(int i = 0; i < weapons.Count; i++)
         {
 			weapons[i].heal_modifier.Invoke();
+		}
+		for(int i = 0; i < weapons.Count; i++)
+        {
 			weapons[i].damage_modifier.Invoke();
 		}
 	}

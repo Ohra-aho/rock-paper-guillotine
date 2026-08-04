@@ -5,26 +5,24 @@ using UnityEngine;
 public class LawBook : MonoBehaviour
 {
     bool used = false;
-
-    private void Awake()
-    {
-        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
-        GetComponent<BuffController>().endPhase = true;
-        //GetComponent<BuffController>().on_death = true;
-        GetComponent<BuffController>().special = DefyDeath;
-    }
+	public GameObject buff;
 
     public void DefyDeath(Weapon w)
     {
-        if (!used && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.CheckIfDead())
+        if (!GetComponent<Weapon>().FindCertainBuff(GetComponent<Weapon>().name) && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.CheckIfDead())
         {
 			TableController TC = GameObject.Find("Table").GetComponent<TableController>();
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.dead = false;
 			TC.player_damage = 0;
 			TC.player_direct_damage = 0;
-			GetComponent<Healing>().Heal();
+			TC.player_healing = 3;
             used = true;
-			GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name).GetComponent<Buff>().reminder = "Won't save you anymore.";
+			if(GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name) == null)
+			{
+				Buff new_buff = Instantiate(buff, transform).GetComponent<Buff>();
+				new_buff.reminder = "Won't save you anymore.";
+				new_buff.id = GetComponent<Weapon>().name;
+			}
         }
     }
 }
