@@ -6,11 +6,6 @@ public class Bleed : MonoBehaviour
 {
     public GameObject buff;
 
-	void OnDestroy()
-	{
-		if(GetComponent<Weapon>().name == "Weakness") RemoveBuffs();
-	}
-
 	public void TakeDamage()
     {
 		HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;

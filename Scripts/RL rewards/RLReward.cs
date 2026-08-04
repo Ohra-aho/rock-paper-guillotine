@@ -48,14 +48,15 @@ public class RLReward : MonoBehaviour
     }
 
     public void ChangeSprite()
-    {
-        chosen = !chosen;
-        if(chosen /*&& CheckIfCanBePicked()*/)
+    {	
+        if(!chosen && CheckIfCanBePicked())
         {
+			chosen = true;
             GetComponent<SpriteRenderer>().sprite = image_2;
             GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs.Add(this.gameObject);
-        } else if(!chosen)
+        } else if(chosen)
         {
+			chosen = false;
             GetComponent<SpriteRenderer>().sprite = image_1;
             GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs.Remove(this.gameObject);
         }

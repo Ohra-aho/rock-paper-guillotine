@@ -35,6 +35,10 @@ public class Beetle : MonoBehaviour
 
 		for(int i = to_destroy.Count-1; i >= 0; i--)
 		{
+			if(to_destroy[i].GetComponent<Weapon>().name == "Weakness")
+			{
+				to_destroy[i].GetComponent<Bleed>().RemoveBuffs();
+			}
 			Destroy(to_destroy[i]);
 		}
 

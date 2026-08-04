@@ -18,7 +18,7 @@ public class PlayerInventory : MonoBehaviour
 
 	public void AddAllWeapons()
     {
-        if (all_weapons)
+        /*if (all_weapons)
         {
             GameObject[] temp = Resources.LoadAll<GameObject>("weapons/Kivi");
             GameObject[] temp1 = Resources.LoadAll<GameObject>("weapons/paperi");
@@ -27,7 +27,7 @@ public class PlayerInventory : MonoBehaviour
             items.AddRange(temp);
             items.AddRange(temp1);
             items.AddRange(temp2);
-        }
+        }*/
     }
 
     public void AddItem(GameObject newItem)
