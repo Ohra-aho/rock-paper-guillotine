@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RLController : MonoBehaviour
@@ -60,18 +61,55 @@ public class RLController : MonoBehaviour
 
         ActivateAchievements();
 		RemoveMartyrWeapons();
+		ActivateLoadedBuffs();
     }
 
     public void ApplyBuffs()
     {
         for(int i = 0; i < chosen_buffs.Count; i++)
         {
+			MC.GetComponent<StoryController>().picked_achievements.Add(chosen_buffs[i].GetComponent<RLReward>().name);
             if(chosen_buffs[i].GetComponent<RLReward>().buffing != null)
             {
                 chosen_buffs[i].GetComponent<RLReward>().buffing.Invoke();
             }
         }
     }
+
+	public void ActivateLoadedBuffs()
+	{
+		for(int i = 0; i < achievements.Count; i++)
+        {
+            switch(achievements[i])
+            {
+                case "Tough": LoadBuff(background.transform.GetChild(0).GetComponent<RLReward>()); break;
+                case "Collector": LoadBuff(background.transform.GetChild(1).GetComponent<RLReward>()); break;
+                case "Slaughterer": LoadBuff(background.transform.GetChild(2).GetComponent<RLReward>()); break;
+                case "Slow": LoadBuff(background.transform.GetChild(3).GetComponent<RLReward>()); break;
+                case "Experimentor": LoadBuff(background.transform.GetChild(4).GetComponent<RLReward>()); break;
+                case "Madman": LoadBuff(background.transform.GetChild(5).GetComponent<RLReward>()); break;
+                case "Martyr": LoadBuff(background.transform.GetChild(6).GetComponent<RLReward>());  break;
+                case "Risk taker": LoadBuff(background.transform.GetChild(7).GetComponent<RLReward>());  break;
+                case "Neurotic": LoadBuff(background.transform.GetChild(8).GetComponent<RLReward>());  break;
+                case "Plotter": LoadBuff(background.transform.GetChild(9).GetComponent<RLReward>());  break;
+                case "Survivor": LoadBuff(background.transform.GetChild(10).GetComponent<RLReward>());  break;
+                case "Relentless": LoadBuff(background.transform.GetChild(11).GetComponent<RLReward>());  break;
+                case "Unyielding": LoadBuff(background.transform.GetChild(12).GetComponent<RLReward>());  break;
+                case "Picky": LoadBuff(background.transform.GetChild(13).GetComponent<RLReward>());  break;
+                case "Hoarder": LoadBuff(background.transform.GetChild(14).GetComponent<RLReward>());  break;
+				case "Winner": LoadBuff(background.transform.GetChild(15).GetComponent<RLReward>());  break;
+			}
+		}
+	}
+
+	private void LoadBuff(RLReward rlr)
+	{
+		if(!rlr.dont_load)
+		{
+			rlr.activate.Invoke();
+			rlr.buffing.Invoke();
+		}
+	}
 
     public void ActivateAchievements()
     {

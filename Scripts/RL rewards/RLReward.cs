@@ -20,8 +20,9 @@ public class RLReward : MonoBehaviour
     public Sprite image_2;
 
 	MainController MC;
-
     GameObject info;
+
+	public bool dont_load;
 
     private void Awake()
     {

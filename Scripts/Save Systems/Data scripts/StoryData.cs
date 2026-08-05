@@ -28,6 +28,7 @@ public class StoryData
 	public string tier;
 	//Achievement
 	public bool achievements_picked;
+	public string[] picked_achievements; 
     public StoryData(bool dead, StoryController story_controller, RLController rl_controller, StoryCheckList check_list, PlayThroughData play_through_data)
     {
         playthroughs = story_controller.playthroughts;
@@ -58,5 +59,6 @@ public class StoryData
 			tier = "";
 		}
 		achievements_picked = story_controller.achievements_picked;
+		picked_achievements = story_controller.picked_achievements.ToArray();
     }
 }

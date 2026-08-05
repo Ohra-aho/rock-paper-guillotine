@@ -12,7 +12,8 @@ public class StoryController : MonoBehaviour
     //For save system
     [HideInInspector] public int playthroughts = 0;
     [HideInInspector] public int storyIndex = -1;
-	public bool achievements_picked = false;
+	[HideInInspector] public bool achievements_picked = false;
+	[HideInInspector] public List<string> picked_achievements = new List<string>();
 
     //Tutorial messages
     public GameObject first_victory;
@@ -160,6 +161,7 @@ public class StoryController : MonoBehaviour
 				storyIndex = story_data.encounter_index-1;
 			}
 			achievements_picked = story_data.achievements_picked;
+			picked_achievements.AddRange(story_data.picked_achievements);
 			GetComponent<RLController>().Insiate(story_data);
 	        GetComponent<StoryCheckList>().LoadStoryCheckList(story_data);
         } else

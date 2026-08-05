@@ -7118,6 +7118,7 @@ MonoBehaviour:
   hoverTint: 0.5
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!1 &141479407
 GameObject:
   m_ObjectHideFlags: 0
@@ -7540,6 +7541,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 72f8e22bd122ac34687093f522cd5a7b, type: 3}
   image_2: {fileID: 21300000, guid: ac139786a84bc38488c54f21ec9e0f23, type: 3}
+  dont_load: 0
 --- !u!114 &174536672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7576,6 +7578,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &174536673
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8829,6 +8832,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 145bee684e20fe64bbecf69dc03bf49e, type: 3}
   image_2: {fileID: 21300000, guid: 8510f069fac0aef4ebbc4d5bfcf0d05a, type: 3}
+  dont_load: 0
 --- !u!114 &243905399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8865,6 +8869,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &243905400
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9102,6 +9107,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: c6bb03aa3fb9b56419e52a91d60920f0, type: 3}
   image_2: {fileID: 21300000, guid: 970850b3eec7ef34b9fd2aa14a6d56b3, type: 3}
+  dont_load: 0
 --- !u!114 &272713727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9138,6 +9144,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &272713728
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9301,6 +9308,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: ff02181f1a963df42952a28e1e33d4b4, type: 3}
   image_2: {fileID: 21300000, guid: b3c63b9a48e688c4cae55fdc00a03ca2, type: 3}
+  dont_load: 0
 --- !u!114 &280003055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9337,6 +9345,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &280003056
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9642,6 +9651,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: fd856393c44c3204e8d66c3b61668785, type: 3}
   image_2: {fileID: 21300000, guid: f063354cf0d910b43900c2c770465745, type: 3}
+  dont_load: 0
 --- !u!114 &292334036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9678,6 +9688,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 1
 --- !u!212 &292334037
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10237,6 +10248,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: c4133ae43ee962e4595f2dbe468915b8, type: 3}
   image_2: {fileID: 21300000, guid: a7ba1aca39c4e3c4c897433fbb1be114, type: 3}
+  dont_load: 0
 --- !u!114 &321403544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10273,6 +10285,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &321403545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10656,6 +10669,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 2e48b39c841f1bb46b45b1c898627c3d, type: 3}
   image_2: {fileID: 21300000, guid: 91b9f1b210b9d49478fb73948cd6c7ef, type: 3}
+  dont_load: 0
 --- !u!114 &361386579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10692,6 +10706,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &361386580
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11297,6 +11312,7 @@ MonoBehaviour:
   hoverTint: 0.5
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!114 &401144639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11469,6 +11485,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: ff02181f1a963df42952a28e1e33d4b4, type: 3}
   image_2: {fileID: 21300000, guid: b3c63b9a48e688c4cae55fdc00a03ca2, type: 3}
+  dont_load: 0
 --- !u!114 &420572229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11505,6 +11522,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &420572230
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11713,6 +11731,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 23cc2eeb8c71eeb478b7fa2da1a8705d, type: 3}
   image_2: {fileID: 21300000, guid: 472e1098304297d4fa4a7e96d5d916f4, type: 3}
+  dont_load: 0
 --- !u!114 &484853836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11749,6 +11768,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &484853837
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14086,6 +14106,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: ab6168ba5e91a5749928b2407f990efa, type: 3}
   image_2: {fileID: 21300000, guid: dae74bfcaef93db4f8c2c4c000c7c00b, type: 3}
+  dont_load: 0
 --- !u!114 &710834407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14122,6 +14143,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &710834408
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14426,6 +14448,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 1660bae4be1840f468adcd97a573c15a, type: 3}
   image_2: {fileID: 21300000, guid: e369769c891615b42bcfacad3db79a2e, type: 3}
+  dont_load: 0
 --- !u!114 &726509592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14462,6 +14485,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &726509593
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15177,6 +15201,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 1660bae4be1840f468adcd97a573c15a, type: 3}
   image_2: {fileID: 21300000, guid: e369769c891615b42bcfacad3db79a2e, type: 3}
+  dont_load: 0
 --- !u!114 &742436648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15213,6 +15238,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &742436649
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16283,6 +16309,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: c6bb03aa3fb9b56419e52a91d60920f0, type: 3}
   image_2: {fileID: 21300000, guid: 970850b3eec7ef34b9fd2aa14a6d56b3, type: 3}
+  dont_load: 0
 --- !u!114 &839711886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16319,6 +16346,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &839711887
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16518,6 +16546,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 751bb1c32db35a74abcb703c9074344f, type: 3}
   image_2: {fileID: 21300000, guid: 1eb9971465c12ae4d93110afd65aee41, type: 3}
+  dont_load: 0
 --- !u!114 &894558211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16554,6 +16583,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &894558212
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17144,6 +17174,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 72f8e22bd122ac34687093f522cd5a7b, type: 3}
   image_2: {fileID: 21300000, guid: ac139786a84bc38488c54f21ec9e0f23, type: 3}
+  dont_load: 1
 --- !u!114 &960617512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17180,6 +17211,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &960617513
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18252,6 +18284,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: ab6168ba5e91a5749928b2407f990efa, type: 3}
   image_2: {fileID: 21300000, guid: dae74bfcaef93db4f8c2c4c000c7c00b, type: 3}
+  dont_load: 0
 --- !u!114 &1065204958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18288,6 +18321,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1065204959
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18490,6 +18524,7 @@ MonoBehaviour:
   playthroughts: 0
   storyIndex: -1
   achievements_picked: 0
+  picked_achievements: []
   first_victory: {fileID: 3768069680275742937, guid: 079ee5d6e1960a54abf8ebb55de51ba4, type: 3}
   first_boss_intro: {fileID: 3768069680275742937, guid: 48c6dc499525cb44e911c62c470c45f8, type: 3}
   first_boss_victory: {fileID: 3768069680275742937, guid: 868c4a66e36bb3c428eb3e81c9ba05d0, type: 3}
@@ -18545,6 +18580,7 @@ MonoBehaviour:
     enemies: []
     tier: 
     achievements_picked: 0
+    picked_achievements: []
 --- !u!114 &1066024792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18810,6 +18846,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 751bb1c32db35a74abcb703c9074344f, type: 3}
   image_2: {fileID: 21300000, guid: 1eb9971465c12ae4d93110afd65aee41, type: 3}
+  dont_load: 0
 --- !u!114 &1106932226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18846,6 +18883,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1106932227
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24258,6 +24296,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 751bb1c32db35a74abcb703c9074344f, type: 3}
   image_2: {fileID: 21300000, guid: 1eb9971465c12ae4d93110afd65aee41, type: 3}
+  dont_load: 0
 --- !u!114 &1170335964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24294,6 +24333,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1170335965
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24590,6 +24630,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 145bee684e20fe64bbecf69dc03bf49e, type: 3}
   image_2: {fileID: 21300000, guid: 8510f069fac0aef4ebbc4d5bfcf0d05a, type: 3}
+  dont_load: 0
 --- !u!114 &1193551604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24626,6 +24667,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1193551605
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25613,6 +25655,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 23cc2eeb8c71eeb478b7fa2da1a8705d, type: 3}
   image_2: {fileID: 21300000, guid: 472e1098304297d4fa4a7e96d5d916f4, type: 3}
+  dont_load: 0
 --- !u!114 &1279963721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25649,6 +25692,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1279963722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26020,6 +26064,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: c4133ae43ee962e4595f2dbe468915b8, type: 3}
   image_2: {fileID: 21300000, guid: a7ba1aca39c4e3c4c897433fbb1be114, type: 3}
+  dont_load: 0
 --- !u!114 &1298052911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26056,6 +26101,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1298052912
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26205,6 +26251,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 2e48b39c841f1bb46b45b1c898627c3d, type: 3}
   image_2: {fileID: 21300000, guid: 91b9f1b210b9d49478fb73948cd6c7ef, type: 3}
+  dont_load: 0
 --- !u!114 &1300552748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26241,6 +26288,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1300552749
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27282,6 +27330,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: fd856393c44c3204e8d66c3b61668785, type: 3}
   image_2: {fileID: 21300000, guid: f063354cf0d910b43900c2c770465745, type: 3}
+  dont_load: 0
 --- !u!114 &1391024147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27318,6 +27367,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1391024148
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34286,6 +34336,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 40c9161fe2a0a3443a917f93ef48e7f7, type: 3}
   image_2: {fileID: 21300000, guid: 10d5f31464e23c244aa1e5c44de4c090, type: 3}
+  dont_load: 0
 --- !u!114 &1508218629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34322,6 +34373,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1508218630
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35246,6 +35298,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 751bb1c32db35a74abcb703c9074344f, type: 3}
   image_2: {fileID: 21300000, guid: 1eb9971465c12ae4d93110afd65aee41, type: 3}
+  dont_load: 0
 --- !u!114 &1587115120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35282,6 +35335,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1587115121
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35579,6 +35633,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 8adfdf232a80e3e4593531f34e567d1e, type: 3}
   image_2: {fileID: 21300000, guid: 20088d6ef771e764fb5444949855c6bb, type: 3}
+  dont_load: 0
 --- !u!114 &1599763130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35615,6 +35670,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1599763131
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35954,6 +36010,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: a52273ee9123c6c41b4bbfe42451fcc1, type: 3}
   image_2: {fileID: 21300000, guid: 2f2b44e8911c6df4b997a8587fab8204, type: 3}
+  dont_load: 0
 --- !u!114 &1627605543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36002,6 +36059,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1627605545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37086,6 +37144,7 @@ MonoBehaviour:
   hoverTint: 0.8
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1676908626
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37668,6 +37727,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 49d5f94e58f2ddb42b805adef84b1dbc, type: 3}
   image_2: {fileID: 21300000, guid: 20c764b163a783a46a6889cc40ce22cc, type: 3}
+  dont_load: 0
 --- !u!114 &1698637735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37704,6 +37764,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1698637736
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43334,6 +43395,7 @@ MonoBehaviour:
   hoverTint: 0.8
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1795998292
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43796,6 +43858,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: a52273ee9123c6c41b4bbfe42451fcc1, type: 3}
   image_2: {fileID: 21300000, guid: 2f2b44e8911c6df4b997a8587fab8204, type: 3}
+  dont_load: 1
 --- !u!114 &1816700569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43844,6 +43907,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1816700571
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -44168,6 +44232,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 49d5f94e58f2ddb42b805adef84b1dbc, type: 3}
   image_2: {fileID: 21300000, guid: 20c764b163a783a46a6889cc40ce22cc, type: 3}
+  dont_load: 0
 --- !u!114 &1821548316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44204,6 +44269,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1821548317
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -50010,6 +50076,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!1 &1898151749
 GameObject:
   m_ObjectHideFlags: 0
@@ -50755,6 +50822,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 40c9161fe2a0a3443a917f93ef48e7f7, type: 3}
   image_2: {fileID: 21300000, guid: 10d5f31464e23c244aa1e5c44de4c090, type: 3}
+  dont_load: 0
 --- !u!114 &1977854763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50791,6 +50859,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &1977854764
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -51270,6 +51339,7 @@ MonoBehaviour:
   hoverTint: 0.5
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &2018902157
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -51486,6 +51556,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 8adfdf232a80e3e4593531f34e567d1e, type: 3}
   image_2: {fileID: 21300000, guid: 20088d6ef771e764fb5444949855c6bb, type: 3}
+  dont_load: 0
 --- !u!114 &2052326888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51522,6 +51593,7 @@ MonoBehaviour:
   hoverTint: 0.9
   interactable: 1
   individual_interactable: 1
+  manual: 0
 --- !u!212 &2052326889
 SpriteRenderer:
   m_ObjectHideFlags: 0
