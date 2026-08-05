@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using Unity.VisualScripting;
 
 public class RLReward : MonoBehaviour
 {
@@ -18,23 +19,31 @@ public class RLReward : MonoBehaviour
     public Sprite image_1;
     public Sprite image_2;
 
+	MainController MC;
+
     GameObject info;
 
     private void Awake()
     {
-        info = GameObject.Find("Canvas").transform.GetChild(15).gameObject;
+        
+    }
+
+	public void Inisiate()
+	{
+		info = GameObject.Find("Canvas").transform.GetChild(15).gameObject;
         GetComponent<NonUIButton>().over.AddListener(ShowInfo);
         GetComponent<NonUIButton>().exit.AddListener(HideInfo);
-    }
+		MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+		GetComponent<NonUIButton>().Inisiate();
+		if(GameObject.Find("EventSystem").GetComponent<StoryController>().achievements_picked)
+		{
+			DisableReward();
+		}
+	}
 
     public void DisableReward()
     {
         Destroy(GetComponent<BoxCollider2D>());
-    }
-
-    public void EnableReward()
-    {
-        this.gameObject.AddComponent<BoxCollider2D>();
     }
 
     public bool CheckIfCanBePicked()
@@ -64,7 +73,7 @@ public class RLReward : MonoBehaviour
 
     public void ShowInfo()
     {
-        if(GameObject.Find("EventSystem").GetComponent<RLController>().picks > 0)
+        if(GameObject.Find("EventSystem").GetComponent<RLController>().picks > 0 && MC.game_state != MainController.State.re_arming)
         {
             info.SetActive(true);
             info.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = name;

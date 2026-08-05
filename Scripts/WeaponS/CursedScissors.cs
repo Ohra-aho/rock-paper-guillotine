@@ -8,9 +8,7 @@ public class CursedScissors : MonoBehaviour
     string[] debuff_names = {
 		"Poison",
 		"Weakness",
-		"Bleed",
-		"#XG5J\"$P",
-		"Handle"
+		"Bleed"
 	};
 	int damage_buff = 0;
 

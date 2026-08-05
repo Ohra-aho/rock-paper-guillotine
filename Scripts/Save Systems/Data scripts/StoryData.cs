@@ -26,6 +26,8 @@ public class StoryData
 	//Playthrough
 	public string[] enemies;
 	public string tier;
+	//Achievement
+	public bool achievements_picked;
     public StoryData(bool dead, StoryController story_controller, RLController rl_controller, StoryCheckList check_list, PlayThroughData play_through_data)
     {
         playthroughs = story_controller.playthroughts;
@@ -55,5 +57,6 @@ public class StoryData
 			Array.Clear(enemies, 0, enemies.Length);
 			tier = "";
 		}
+		achievements_picked = story_controller.achievements_picked;
     }
 }

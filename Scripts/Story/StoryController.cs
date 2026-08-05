@@ -10,8 +10,9 @@ public class StoryController : MonoBehaviour
     public GameObject story;
 
     //For save system
-    /*[HideInInspector]*/ public int playthroughts = 0;
+    [HideInInspector] public int playthroughts = 0;
     [HideInInspector] public int storyIndex = -1;
+	public bool achievements_picked = false;
 
     //Tutorial messages
     public GameObject first_victory;
@@ -88,7 +89,25 @@ public class StoryController : MonoBehaviour
 			man.SetActive(false);
 			light_changer.GetComponent<SpriteRenderer>().sprite = museum_light_changer;
 			all_weapon_box.SetActive(true);
-        }
+
+			for(int i = 0; i < museum_background.transform.childCount-1; i++)
+			{
+				if(museum_background.transform.GetChild(i).gameObject.activeSelf)
+				{
+					museum_background.transform.GetChild(i).gameObject.GetComponent<RLReward>().Inisiate();
+				}
+			}
+        } else
+		{
+			GameObject background = main_background;
+			for(int i = 0; i < background.transform.childCount-1; i++)
+			{
+				if(background.transform.GetChild(i).gameObject.activeInHierarchy)
+				{
+					background.transform.GetChild(i).gameObject.GetComponent<RLReward>().Inisiate();
+				}
+			}
+		}
         //executioner = true; ///////Debug
 
         //Set base for the playthrough (at this point there is just one)
@@ -140,6 +159,7 @@ public class StoryController : MonoBehaviour
 			{
 				storyIndex = story_data.encounter_index-1;
 			}
+			achievements_picked = story_data.achievements_picked;
 			GetComponent<RLController>().Insiate(story_data);
 	        GetComponent<StoryCheckList>().LoadStoryCheckList(story_data);
         } else

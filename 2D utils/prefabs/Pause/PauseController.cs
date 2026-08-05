@@ -40,8 +40,11 @@ public class PauseController : MonoBehaviour
 
     public void Pause()
     {
-        last_state = GetComponent<MainController>().game_state;
-        GetComponent<MainController>().SetNewState(MainController.State.pause);
+		if(GetComponent<MainController>())
+		{
+			last_state = GetComponent<MainController>().game_state;
+        	GetComponent<MainController>().SetNewState(MainController.State.pause);	
+		}
         Time.timeScale = 0f;
         paused = true;
         if(pauseMenu != null)
@@ -52,7 +55,10 @@ public class PauseController : MonoBehaviour
 
     public void Resume()
     {
-        GetComponent<MainController>().SetNewState(last_state);
+		if(GetComponent<MainController>())
+		{
+        	GetComponent<MainController>().SetNewState(last_state);
+		}
         Time.timeScale = 1f;
         paused = false;
         if(currentMenu != null)

@@ -57,6 +57,7 @@ public class CameraNQuilliotine : MonoBehaviour
 
     public void DeathSave()
     {
+		eventSystem.GetComponent<StoryController>().achievements_picked = false;
         SaveSystem.SaveStoryData(
 			eventSystem.GetComponent<StoryController>(), 
 			eventSystem.GetComponent<RLController>(), 

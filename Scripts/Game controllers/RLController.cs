@@ -174,7 +174,7 @@ public class RLController : MonoBehaviour
 			if(!achievements.Contains("Tough"))
 			{
 				HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
-				if (HB.GiveMaxHealth() >= 10)
+				if (HB.GiveTrueMaxHealth() >= 10)
 				{
 					AddAchievement("Tough");
 					Bark("Your survival was never in doubt. You have grown quite tough. Let's see what brings you down.");

@@ -7097,18 +7097,6 @@ MonoBehaviour:
   press:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 138571110}
-        m_TargetAssemblyTypeName: PlayerWheelHolder, Assembly-CSharp
-        m_MethodName: DisableAchievements
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1039625553}
         m_TargetAssemblyTypeName: InventoryButton, Assembly-CSharp
         m_MethodName: Press
@@ -11279,6 +11267,18 @@ MonoBehaviour:
       - m_Target: {fileID: 138571110}
         m_TargetAssemblyTypeName: PlayerWheelHolder, Assembly-CSharp
         m_MethodName: MarkUsedWeapons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 138571110}
+        m_TargetAssemblyTypeName: PlayerWheelHolder, Assembly-CSharp
+        m_MethodName: DisableAchievements
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17429,8 +17429,8 @@ Transform:
   m_LocalScale: {x: 1, y: 0.9977, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 292334033}
   - {fileID: 1816700567}
+  - {fileID: 292334033}
   - {fileID: 280003052}
   - {fileID: 2052326886}
   - {fileID: 960617509}
@@ -18489,6 +18489,7 @@ MonoBehaviour:
   story: {fileID: 0}
   playthroughts: 0
   storyIndex: -1
+  achievements_picked: 0
   first_victory: {fileID: 3768069680275742937, guid: 079ee5d6e1960a54abf8ebb55de51ba4, type: 3}
   first_boss_intro: {fileID: 3768069680275742937, guid: 48c6dc499525cb44e911c62c470c45f8, type: 3}
   first_boss_victory: {fileID: 3768069680275742937, guid: 868c4a66e36bb3c428eb3e81c9ba05d0, type: 3}
@@ -18543,6 +18544,7 @@ MonoBehaviour:
     end_counter: 0
     enemies: []
     tier: 
+    achievements_picked: 0
 --- !u!114 &1066024792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35087,8 +35089,8 @@ Transform:
   m_LocalScale: {x: 1, y: 0.9977, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1391024144}
   - {fileID: 1627605541}
+  - {fileID: 1391024144}
   - {fileID: 420572226}
   - {fileID: 1599763127}
   - {fileID: 174536669}

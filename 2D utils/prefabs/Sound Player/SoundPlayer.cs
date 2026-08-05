@@ -51,10 +51,22 @@ public class SoundPlayer : MonoBehaviour
             {
                 mute = soundTargets[i].mute;
                 volume = soundTargets[i].volume;
+				break;
             }
         }
-        if (GetComponent<AudioSource>().mute != mute) GetComponent<AudioSource>().mute = mute;
-        if (GetComponent<AudioSource>().volume != volume) GetComponent<AudioSource>().volume = volume;
+		for(int i = 0; i < soundTargets.Count; i++)
+		{
+			if(soundTargets[i].name == "Master volume")
+			{
+				if(soundTargets[i].mute)
+				{
+					mute = soundTargets[i].mute;
+				}
+				volume *= soundTargets[i].volume;
+			}
+		}
+        GetComponent<AudioSource>().mute = mute;
+        GetComponent<AudioSource>().volume = volume;
     }
 
     //Changes public values

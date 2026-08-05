@@ -147,6 +147,8 @@ public class StartButton : MonoBehaviour
             MC.GetComponent<RLController>().ActivateChosen();
             DisplayEmptyGearBark();
 
+			MC.GetComponent<StoryController>().achievements_picked = true;
+
         } 
     }
 

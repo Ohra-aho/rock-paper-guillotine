@@ -12,13 +12,24 @@ public class NonUIButton : MonoBehaviour
     public bool interactable = true;
     public bool individual_interactable = true;
     private MainController MC;
+	public bool manual = false;
 
     private void Start()
     {
-        gameObject.AddComponent<BoxCollider2D>();
+		if(!manual)
+		{
+			gameObject.AddComponent<BoxCollider2D>();
+			individual_interactable = true;
+			MC = GameObject.Find("EventSystem").GetComponent<MainController>();	
+		}
+    }
+
+	public void Inisiate()
+	{
+		gameObject.AddComponent<BoxCollider2D>();
         individual_interactable = true;
         MC = GameObject.Find("EventSystem").GetComponent<MainController>();
-    }
+	}
 
     private void OnMouseDown()
     {
