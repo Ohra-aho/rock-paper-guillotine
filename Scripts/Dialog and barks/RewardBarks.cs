@@ -45,7 +45,7 @@ public class RewardBarks : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            if (transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward.GetComponent<Weapon>().type == type)
+            if (transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward.GetComponent<Weapon>().GiveEffectiveType() == type)
             {
                 return true;
             }
@@ -66,7 +66,7 @@ public class RewardBarks : MonoBehaviour
                 }
             } else
             {
-                if (temp.type == reward_bark.GetComponent<RewardBark>().triggering_type)
+                if (temp.GiveEffectiveType() == reward_bark.GetComponent<RewardBark>().triggering_type)
                 {
                     transform.GetChild(i).GetChild(0).GetComponent<NonUIButton>().press.AddListener(reward_bark.GetComponent<RewardBark>().Activate);
                 }

@@ -32,7 +32,7 @@ public class WeaponInfo : MonoBehaviour
         }
         transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = weapon.description;
 
-        switch (weapon.type)
+        switch (weapon.GiveEffectiveType())
         {
             case MainController.Choise.kivi:
                 transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = icons[0];

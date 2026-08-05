@@ -20,6 +20,8 @@ public class Rot : MonoBehaviour
 		{
 			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.DecreaseHealthBar(1, true);
         	GetComponent<HealthIncrease>().amount--;
+			GetComponent<Weapon>().description 
+				= "+"+GetComponent<HealthIncrease>().amount+" HP. If you don't heal during a fight, you get -1 HP at the end of it. Whenever unequipped, -1 HP.";
 		}
     }
 

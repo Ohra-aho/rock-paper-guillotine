@@ -17,7 +17,7 @@ public class MeteoriSade : MonoBehaviour
         damage = 0;
         for(int i = 0; i < RI.transform.childCount; i++)
         {
-            if(RI.transform.GetChild(i).GetComponent<Weapon>().type == MainController.Choise.kivi)
+            if(RI.transform.GetChild(i).GetComponent<Weapon>().GiveEffectiveType() == MainController.Choise.kivi)
             {
                 damage++;
             }

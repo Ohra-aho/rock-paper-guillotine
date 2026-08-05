@@ -101,7 +101,7 @@ public class PlayerContoller : MonoBehaviour
 
             ChoisePhase();
 
-            MC.enemyChoise = currentEnemy.EnemyChoise(weapon.type);
+            MC.enemyChoise = currentEnemy.EnemyChoise(weapon.GiveEffectiveType());
 
             MC.Resolve();
         }

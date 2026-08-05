@@ -100,10 +100,9 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 3
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Chainsaw
   description: 'After use, uses 1 point. Is "unbeatable" while has points. '
   sprite: {fileID: 21300000, guid: cd0b556c8992f6a4f8b263c3ad9c7031, type: 3}
@@ -181,6 +180,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -190,11 +195,14 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 0
 --- !u!114 &-6138680244644044405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +219,19 @@ MonoBehaviour:
   stack_limit: 0
   LoadFunction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4400253625413529330}
+        m_TargetAssemblyTypeName: Chainsaw, Assembly-CSharp
+        m_MethodName: ChangeType
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   before_stacking:
     m_PersistentCalls:
       m_Calls: []
@@ -242,6 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcccc86c068272249bf73a443ab19dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff: {fileID: 810763803538858438, guid: c28dfd92411732c4bb8a69c06bbf1fd6, type: 3}
 --- !u!114 &-6915939716870333846
 MonoBehaviour:
   m_ObjectHideFlags: 0

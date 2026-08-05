@@ -160,7 +160,10 @@ public class Execution : MonoBehaviour
 		new_buff.type_change = MainController.Choise.voittamaton;
 		new_buff.endPhase = true;
 		new_buff.until_used = true;
-		new_buff.special = (Weapon w) => { w.opponent.type = MainController.Choise.voittamaton; };
+		new_buff.special = (Weapon w) => { 
+			Buff extra_buff = Instantiate(GetComponent<BuffController>().buff, w.opponent.transform).GetComponent<Buff>();
+			extra_buff.type_change = MainController.Choise.voittamaton;
+		};
 		new_buff.AddBuff();
 	}
 
@@ -169,7 +172,8 @@ public class Execution : MonoBehaviour
 		GetComponent<Stacking>().IncreaseStacks(1);
 		if(GetComponent<Stacking>().stacks == 10)
 		{
-			GetComponent<Weapon>().type = MainController.Choise.voittamaton;
+			Buff extra_buff = Instantiate(GetComponent<BuffController>().buff, transform).GetComponent<Buff>();
+			extra_buff.type_change = MainController.Choise.voittamaton;
 		}
 	}
 }

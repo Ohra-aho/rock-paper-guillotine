@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 8723207103683505287}
   - component: {fileID: -6545948779322140261}
+  - component: {fileID: -1657977725080917919}
   m_Layer: 5
   m_Name: The quillotine
   m_TagString: Untagged
@@ -99,10 +100,9 @@ MonoBehaviour:
   draw_winner: 1
   spammable: 0
   type: 2
+  og_type: 0
   damage: 10
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Guillotine
   description: At the end of each turn, gains 1 point. Is "unbeatable" while has
     10 or more points. Wins draws.
@@ -181,6 +181,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -190,17 +196,14 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
+  dont_load: 0
 --- !u!114 &8723207103683505287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,3 +240,55 @@ MonoBehaviour:
   after_stacking:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-1657977725080917919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff: {fileID: 0}
+  damage_bonus: 0
+  armor_bonus: 0
+  effect_damage_bonus: 0
+  toughness_buff: 0
+  set_a_to_zero: 0
+  set_d_to_zero: 0
+  choisePhase: 0
+  resultPhase: 0
+  endPhase: 0
+  each_turn: 0
+  damage_modifier: 0
+  heal_modifier: 0
+  victory: 0
+  special_apply: 0
+  takeDamage: 0
+  takeNoDamage: 0
+  dealDamage: 0
+  deal_effect_damage: 0
+  draw: 0
+  win: 0
+  lose: 0
+  heal: 0
+  gain_points: 0
+  equip: 0
+  unEquip: 0
+  constant: 0
+  onDestruction: 0
+  awake: 0
+  on_death: 0
+  temporary: 0
+  timer: 0
+  penetrating: 0
+  draw_winner: 0
+  health_buff: 0
+  until_used: 0
+  reminder: 
+  destructive: 0
+  heal_disabler: 0
+  stackable: 0

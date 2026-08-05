@@ -6,7 +6,7 @@ public class Kynä : MonoBehaviour
 {
     private void Awake()
     {
-        GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return weapon.type == MainController.Choise.paperi; };
+        GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return weapon.GiveEffectiveType() == MainController.Choise.paperi; };
 		GetComponent<BuffController>().draw = true;
 		GetComponent<BuffController>().special = Extend;
     }

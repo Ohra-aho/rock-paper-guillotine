@@ -19,18 +19,38 @@ public class Rage : MonoBehaviour
 
 	public void SetType()
 	{
+		Debug.Log(GetComponent<Stacking>().stacks);
 		if(GetComponent<Stacking>().stacks >= 3)
         {
-            GetComponent<Weapon>().type = MainController.Choise.voittamaton;
+			if(!GetComponent<Weapon>().FindCertainBuff(GetComponent<Weapon>().name + "_2"))
+			{
+				Buff new_buff = Instantiate(GetComponent<BuffController>().buff, transform).GetComponent<Buff>();
+				new_buff.id = GetComponent<Weapon>().name + "_2";
+				new_buff.type_change = MainController.Choise.voittamaton;
+				new_buff.AddBuff();
+			} else
+			{
+				GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name + "_2").GetComponent<Buff>().type_change = MainController.Choise.voittamaton;
+			}
         }
 	}
 
     public void UseStaks()
     {
-        if(GetComponent<Weapon>().type == MainController.Choise.voittamaton) GetComponent<Stacking>().DecreaseStacks(1);
+        if(
+			GetComponent<Weapon>().GiveEffectiveType() == MainController.Choise.voittamaton && 
+			GameObject.Find("EventSystem").GetComponent<MainController>().won != false
+		)
+		{
+			GetComponent<Stacking>().DecreaseStacks(1);	
+		}
+		
         if (GetComponent<Stacking>().stacks < 3)
         {
-            GetComponent<Weapon>().type = MainController.Choise.sakset;
+			if(GetComponent<Weapon>().FindCertainBuff(GetComponent<Weapon>().name + "_2"))
+			{
+				Destroy(GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name + "_2"));
+			}
         }
     }
 }

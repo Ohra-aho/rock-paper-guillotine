@@ -51,7 +51,7 @@ public class EldritchPower : MonoBehaviour
 
         for (int i = 0; i < weapons.Count; i++)
         {
-            if(weapons[i].type != MainController.Choise.voittamaton)
+            if(weapons[i].GiveEffectiveType() != MainController.Choise.voittamaton)
             {
                 buffable_weapons.Add(weapons[i]);
             }

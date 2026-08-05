@@ -8,7 +8,7 @@ public class Santapaperi : MonoBehaviour
 
     public void Awake()
     {
-        GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return weapon.type == MainController.Choise.kivi; };
+        GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return weapon.GiveEffectiveType() == MainController.Choise.kivi; };
 		GetComponent<BuffController>().heal = true;
 		GetComponent<BuffController>().special = BuffDamage;
 		GetComponent<BuffController>().reminder = "On heal, +1 damage until the end of the fight.";

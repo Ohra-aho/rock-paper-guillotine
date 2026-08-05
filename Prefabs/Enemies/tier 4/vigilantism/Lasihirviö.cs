@@ -36,7 +36,7 @@ public class Lasihirviö : MonoBehaviour
 
 	public void StrikePassive()
 	{
-		if(GetComponent<Weapon>().opponent.type == MainController.Choise.sakset)
+		if(GetComponent<Weapon>().opponent.GiveEffectiveType() == MainController.Choise.sakset)
 		{
 			List<Weapon> weapons = GetComponent<Weapon>().opponent.player_owner.GetComponent<PlayerContoller>().GetWeapons();
 			for(int i = 0; i < weapons.Count; i++)

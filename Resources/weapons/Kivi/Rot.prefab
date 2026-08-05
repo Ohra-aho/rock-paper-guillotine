@@ -357,3 +357,4 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
+  stackable: 0

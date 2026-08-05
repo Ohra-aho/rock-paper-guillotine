@@ -14,7 +14,7 @@ public class Doll : MonoBehaviour
 
 	public void RandomNewType()
 	{
-		MainController.Choise type = GetComponent<Weapon>().opponent.type;
+		MainController.Choise type = GetComponent<Weapon>().opponent.GiveEffectiveType();
 
 		GameObject existing_buff = GetComponent<Weapon>().opponent.GetCertainBuff(GetComponent<Weapon>().name);
 		int prev_type = 1;

@@ -128,10 +128,10 @@ public class MainController : MonoBehaviour
     public void CompareChoises()
     {
         SetWeaponOpponents();
-        switch(playerChoise.type)
+        switch(playerChoise.GiveEffectiveType())
         {
             case Choise.kivi:
-                switch(enemyChoise.type)
+                switch(enemyChoise.GiveEffectiveType())
                 {
                     case Choise.kivi: won = ChechDrawWinners(playerChoise, enemyChoise); break;
                     case Choise.paperi: won = false; break;
@@ -141,7 +141,7 @@ public class MainController : MonoBehaviour
                 }
                 break;
             case Choise.paperi:
-                switch (enemyChoise.type)
+                switch (enemyChoise.GiveEffectiveType())
                 {
                     case Choise.kivi: won = true; break;
                     case Choise.paperi: won = ChechDrawWinners(playerChoise, enemyChoise); break;
@@ -151,7 +151,7 @@ public class MainController : MonoBehaviour
                 }
                 break;
             case Choise.sakset:
-                switch (enemyChoise.type)
+                switch (enemyChoise.GiveEffectiveType())
                 {
                     case Choise.kivi: won = false; break;
                     case Choise.paperi: won = true; break;
@@ -161,7 +161,7 @@ public class MainController : MonoBehaviour
                 }
                 break;
             case Choise.voittamaton:
-                if(enemyChoise.type != Choise.voittamaton)
+                if(enemyChoise.GiveEffectiveType() != Choise.voittamaton)
                 {
                     won = true;
                 } else
@@ -170,9 +170,9 @@ public class MainController : MonoBehaviour
                 }
                 break;
             case Choise.useless:
-                if (enemyChoise.type != Choise.useless)
+                if (enemyChoise.GiveEffectiveType() != Choise.useless)
                 {
-					if(enemyChoise.type == Choise.voittamaton && playerChoise.name == "Promise")
+					if(enemyChoise.GiveEffectiveType() == Choise.voittamaton && playerChoise.name == "Promise")
 					{
 						won = true;
 					} else

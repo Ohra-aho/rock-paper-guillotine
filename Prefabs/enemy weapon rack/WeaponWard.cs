@@ -42,7 +42,7 @@ public class WeaponWard : MonoBehaviour
 			if(!telegraphing) 
 			{
 				GetComponent<Test>().PlayAnimation("CardInfoReveal");
-				if(weapon.type != weapon.og_type)
+				if(weapon.GiveEffectiveType() != weapon.og_type)
 				{
 					ChangeTypeChangerIcon();
 					icon_changer.GetComponent<Test>().PlayAnimation("TypeReveal");
@@ -62,7 +62,7 @@ public class WeaponWard : MonoBehaviour
 			if(!telegraphing)
 			{
 				GetComponent<Test>().PlayAnimation("CardInfoHide");
-				if(weapon.type != weapon.og_type)
+				if(weapon.GiveEffectiveType() != weapon.og_type)
 				{
 					if(type_changed) icon_changer.GetComponent<Test>().PlayAnimation("TypeHide");
 					type_changed = false;
@@ -99,7 +99,7 @@ public class WeaponWard : MonoBehaviour
 		{
 			move = false;
 			GetComponent<Test>().PlayAnimation("Telegraph");
-			if(weapon.type != weapon.og_type)
+			if(weapon.GiveEffectiveType() != weapon.og_type)
 			{
 				ChangeTypeChangerIcon();
 				icon_changer.GetComponent<Test>().PlayAnimation("TypeReveal");
@@ -109,7 +109,7 @@ public class WeaponWard : MonoBehaviour
 		{
 			move = false;
 			GetComponent<Test>().PlayAnimation("Reset telegraph");
-			if(weapon.type != weapon.og_type)
+			if(weapon.GiveEffectiveType() != weapon.og_type)
 			{
 				if(type_changed) icon_changer.GetComponent<Test>().PlayAnimation("TypeHide");
 				type_changed = false;
@@ -168,7 +168,7 @@ public class WeaponWard : MonoBehaviour
 
 	private void ChangeTypeChangerIcon()
 	{
-		switch(weapon.type)
+		switch(weapon.GiveEffectiveType())
 		{
 			case MainController.Choise.kivi:
 				new_icon.GetComponent<SpriteRenderer>().sprite = icons[0];

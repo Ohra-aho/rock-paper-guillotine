@@ -308,7 +308,7 @@ public class RLController : MonoBehaviour
 				{
 					if(wheel_holder.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
 					{
-						if (wheel_holder.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().type == MainController.Choise.useless)
+						if (wheel_holder.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().GiveEffectiveType() == MainController.Choise.useless)
 						{
 							amount++;
 						}
