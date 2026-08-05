@@ -42,7 +42,7 @@ public class DragNDrop : MonoBehaviour
         // Calculate the offset between the mouse position and the object's position
         if(draggable)
         {
-            if (MC.buttons_active && !drag_begin)
+            if (!drag_begin)
             {
                 if (GetComponent<Hover>())
                 {
@@ -66,7 +66,7 @@ public class DragNDrop : MonoBehaviour
     {
         if(draggable)
         {
-            if (MC.buttons_active && drag_begin)
+            if (drag_begin)
             {
                 // Update the object's position to follow the mouse, adjusted by the offset
                 transform.position = GetMouseWorldPosition() + offset;
@@ -78,7 +78,7 @@ public class DragNDrop : MonoBehaviour
     {
         if(draggable)
         {
-            if (MC.buttons_active && drag_begin)
+            if (drag_begin)
             {
                 if (GetComponent<Hover>())
                 {

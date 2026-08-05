@@ -68,7 +68,7 @@ public class Buff : MonoBehaviour
     public bool desruction_buffer;
 
     public MainController.Choise og_type;
-    public MainController.Choise? type_change;
+    public MainController.Choise? type_change = null;
 
     private bool healing_disabled = false;
 
@@ -148,7 +148,7 @@ public class Buff : MonoBehaviour
 			transform.parent.GetComponent<Weapon>().eachTurn.AddListener(() => special(weapon));
 
 		if (type_change != null)
-			transform.parent.GetComponent<Weapon>().type = type_change ?? og_type;   
+			//transform.parent.GetComponent<Weapon>().type = type_change ?? og_type;  
 		if (penetrating)
 			transform.parent.GetComponent<Weapon>().penetrating = true;
 		if (draw_winner)
@@ -264,7 +264,7 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().eachTurn.RemoveListener(() => special(weapon));
 
         if (type_change != null)
-            transform.parent.GetComponent<Weapon>().type = og_type;
+            //transform.parent.GetComponent<Weapon>().type = og_type;
         if (penetrating)
             transform.parent.GetComponent<Weapon>().penetrating = og_pen;
         if (draw_winner)

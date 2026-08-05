@@ -109,8 +109,8 @@ public class ClaimedWeapon : MonoBehaviour
     public void DisplayInfo()
     {
         
-        if(GameObject.Find("EventSystem").GetComponent<MainController>().buttons_active)
-        {
+        //if(GameObject.Find("EventSystem").GetComponent<MainController>().buttons_active)
+        //{
             transform.parent.parent.GetComponent<NonUIScroll>().Activate(); //Crude but works
 
             visibleInfo = Instantiate(Info, GameObject.Find("Canvas").transform);
@@ -154,7 +154,7 @@ public class ClaimedWeapon : MonoBehaviour
 					}
 				}
 			}
-        }
+        //}
 
     }
 

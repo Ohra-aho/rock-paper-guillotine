@@ -50,53 +50,49 @@ public class FWeapon : MonoBehaviour
 
     public void DisplayInfo()
     {
-        
-        if(GameObject.Find("EventSystem").GetComponent<MainController>().buttons_active)
-        {
-            transform.parent.parent.GetComponent<NonUIScroll>().Activate(); //Crude but works
+		transform.parent.parent.GetComponent<NonUIScroll>().Activate(); //Crude but works
 
-            visibleInfo = Instantiate(Info, GameObject.Find("Canvas").transform);
-            visibleInfo.transform.position =
-                Camera.main.ScreenToWorldPoint(
-                    new Vector3(
-                        Input.mousePosition.x + 100,
-                        Input.mousePosition.y,
-                        Camera.main.nearClipPlane
-                    )
-                );
+		visibleInfo = Instantiate(Info, GameObject.Find("Canvas").transform);
+		visibleInfo.transform.position =
+			Camera.main.ScreenToWorldPoint(
+				new Vector3(
+					Input.mousePosition.x + 100,
+					Input.mousePosition.y,
+					Camera.main.nearClipPlane
+				)
+			);
 
-            //Display actual info into the popup
+		//Display actual info into the popup
 
-            visibleInfo.transform.GetChild(0)
-                .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().name;
+		visibleInfo.transform.GetChild(0)
+			.GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().name;
 
-            visibleInfo.transform.GetChild(1).GetChild(0)
-                .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().GiveEffectiveDamage().ToString();
-            visibleInfo.transform.GetChild(1).GetChild(1)
-                .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().GiveEffectiveArmor().ToString();
-            if(weapon.GetComponent<Stacking>())
-            {
-                visibleInfo.transform.GetChild(1).GetChild(2).gameObject.SetActive(true);
-                visibleInfo.GetComponent<RectTransform>().GetChild(1).localScale = new Vector2(0.9f, 0.9f);
-                visibleInfo.transform.GetChild(1).GetChild(2)
-                    .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Stacking>().stacks.ToString();
-            }
+		visibleInfo.transform.GetChild(1).GetChild(0)
+			.GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().GiveEffectiveDamage().ToString();
+		visibleInfo.transform.GetChild(1).GetChild(1)
+			.GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().GiveEffectiveArmor().ToString();
+		if(weapon.GetComponent<Stacking>())
+		{
+			visibleInfo.transform.GetChild(1).GetChild(2).gameObject.SetActive(true);
+			visibleInfo.GetComponent<RectTransform>().GetChild(1).localScale = new Vector2(0.9f, 0.9f);
+			visibleInfo.transform.GetChild(1).GetChild(2)
+				.GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Stacking>().stacks.ToString();
+		}
 
-            visibleInfo.transform.GetChild(2)
-                .GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().description;
-			
-			if(weapon.transform.childCount > 0)
+		visibleInfo.transform.GetChild(2)
+			.GetComponent<TextMeshProUGUI>().text = weapon.GetComponent<Weapon>().description;
+		
+		if(weapon.transform.childCount > 0)
+		{
+			for(int i = 0; i < weapon.transform.childCount; i++)
 			{
-				for(int i = 0; i < weapon.transform.childCount; i++)
+				if(weapon.transform.GetChild(0).GetComponent<Buff>().reminder != "")
 				{
-					if(weapon.transform.GetChild(0).GetComponent<Buff>().reminder != "")
-					{
-						GameObject new_reminder =  Instantiate(reminder, visibleInfo.transform.GetChild(4));
-						new_reminder.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.transform.GetChild(0).GetComponent<Buff>().reminder;
-					}
+					GameObject new_reminder =  Instantiate(reminder, visibleInfo.transform.GetChild(4));
+					new_reminder.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.transform.GetChild(0).GetComponent<Buff>().reminder;
 				}
 			}
-        }
+		}
 
     }
 

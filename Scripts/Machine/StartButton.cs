@@ -134,6 +134,10 @@ public class StartButton : MonoBehaviour
 
             machine.GetComponent<Test>().PlayAnimation("CloseMachine");
             isActive = true;
+			
+            DisableAchievements();
+            MC.GetComponent<RLController>().ActivateChosen();
+
 			GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.TrueReconstructTwo();
             GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarUp();
             machine.GetComponent<Machine>().round_started = true;
@@ -143,8 +147,6 @@ public class StartButton : MonoBehaviour
             PWH.AdvanceExperimentor();
             MC.GetComponent<RLController>().CheckForExperimentor();
 
-            DisableAchievements();
-            MC.GetComponent<RLController>().ActivateChosen();
             DisplayEmptyGearBark();
 
 			MC.GetComponent<StoryController>().achievements_picked = true;
@@ -154,7 +156,7 @@ public class StartButton : MonoBehaviour
 
     public void Deactivate()
     {
-		if(!GameObject.Find("EnemyHolder").GetComponent<EnemyController>().transform.GetChild(0).gameObject.name.Contains("dummy"))
+		if(!GameObject.Find("EnemyHolder").GetComponent<EnemyController>().transform.GetChild(0).gameObject.name.Contains("the dummy"))
 		{
 			MC.GetComponent<RLController>().CheckForMartyr();
 			DisplayForfeitBark(!MC.GetComponent<StoryCheckList>().first_forfeit);
@@ -173,10 +175,6 @@ public class StartButton : MonoBehaviour
     {
         GameObject[] achievements = GameObject.FindGameObjectsWithTag("Achievement");
 		MC.GetComponent<RLController>().game_started = true;
-        /*for (int i = 0; i < achievements.Length; i++)
-        {
-            achievements[i].GetComponent<RLReward>().DisableReward();
-        }*/
     }
 
     public void EndRound()

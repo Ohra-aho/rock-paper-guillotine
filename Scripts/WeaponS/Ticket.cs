@@ -18,7 +18,7 @@ public class Ticket : MonoBehaviour
 
 	public void ActivateBaseEffect(Weapon w)
 	{
-		switch(w.type)
+		switch(w.GiveEffectiveType())
 		{
 			case MainController.Choise.kivi:
 				w.GetComponent<TypeEffects>().ActivateRock();

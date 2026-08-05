@@ -7131,6 +7131,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 050000000400000002000000
 --- !u!1 &141479407
 GameObject:
   m_ObjectHideFlags: 0
@@ -7591,6 +7592,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &174536673
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8882,6 +8884,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &243905400
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9157,6 +9160,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &272713728
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9358,6 +9362,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &280003056
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9701,6 +9706,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 1
+  usable_states: 
 --- !u!212 &292334037
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10298,6 +10304,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &321403545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10719,6 +10726,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &361386580
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11325,6 +11333,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 0500000001000000
 --- !u!114 &401144639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11535,6 +11544,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &420572230
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11781,6 +11791,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &484853837
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14156,6 +14167,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &710834408
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14498,6 +14510,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &726509593
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15251,6 +15264,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &742436649
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16359,6 +16373,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &839711887
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16596,6 +16611,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &894558212
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17224,6 +17240,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &960617513
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18334,6 +18351,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1065204959
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18461,7 +18479,6 @@ MonoBehaviour:
   - {fileID: 4163066812587896230, guid: 30f2cc8a86e48c343bf5132f70b1ea52, type: 3}
   - {fileID: 4163066812587896230, guid: 45797e3894bd11c44be3900ed4574bb8, type: 3}
   - {fileID: 4163066812587896230, guid: 0db93014473a88d4a884a2acf424b7dd, type: 3}
-  buttons_active: 0
   reward_tier: 1
   rewards_disabled: 0
   victory_barks: []
@@ -18912,6 +18929,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1106932227
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24362,6 +24380,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1170335965
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24696,6 +24715,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1193551605
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25721,6 +25741,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1279963722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26013,7 +26034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1298052908
 Transform:
   m_ObjectHideFlags: 0
@@ -26130,6 +26151,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1298052912
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26317,6 +26339,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1300552749
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27396,6 +27419,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1391024148
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34402,6 +34426,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1508218630
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35364,6 +35389,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1587115121
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35699,6 +35725,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1599763131
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36088,6 +36115,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1627605545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37173,6 +37201,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 010000000a0000000800000007000000060000000500000004000000030000000200000008000000
 --- !u!212 &1676908626
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37793,6 +37822,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1698637736
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43424,6 +43454,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1795998292
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43936,6 +43967,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1816700571
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -44298,6 +44330,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1821548317
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -50105,6 +50138,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 010000000200000003000000040000000500000006000000080000000a000000
 --- !u!1 &1898151749
 GameObject:
   m_ObjectHideFlags: 0
@@ -50816,37 +50850,13 @@ MonoBehaviour:
   description: At the start of each fight, deal 1 damage.
   buffing:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1977854765}
-        m_TargetAssemblyTypeName: Relentless, Assembly-CSharp
-        m_MethodName: ApplyBuff
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory_effect:
     m_PersistentCalls:
       m_Calls: []
   activate:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1977854765}
-        m_TargetAssemblyTypeName: Relentless, Assembly-CSharp
-        m_MethodName: Chosen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   chosen: 0
   image_1: {fileID: 21300000, guid: 40c9161fe2a0a3443a917f93ef48e7f7, type: 3}
   image_2: {fileID: 21300000, guid: 10d5f31464e23c244aa1e5c44de4c090, type: 3}
@@ -50888,6 +50898,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &1977854764
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -51368,6 +51379,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 02000000
 --- !u!212 &2018902157
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -51622,6 +51634,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
+  usable_states: 
 --- !u!212 &2052326889
 SpriteRenderer:
   m_ObjectHideFlags: 0

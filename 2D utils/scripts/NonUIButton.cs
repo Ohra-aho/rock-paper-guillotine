@@ -14,6 +14,8 @@ public class NonUIButton : MonoBehaviour
     private MainController MC;
 	public bool manual = false;
 
+	public List<MainController.State> usable_states;
+
     private void Start()
     {
 		if(!manual)
@@ -33,37 +35,48 @@ public class NonUIButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
-        if (press != null && interactable)
-        {
-            press.Invoke();
-        }
-        else if (!individual_interactable)
-        {
-            Debug.Log("Uninteractable");
-        }
+        if(usable_states.Contains(MC.game_state) || usable_states.Contains(MainController.State.any))
+		{
+			if (press != null && interactable)
+			{
+				press.Invoke();
+			}
+			else if (!individual_interactable)
+			{
+				Debug.Log("Uninteractable");
+			}	
+		}
         
     }
 
     private void OnMouseOver()
     {
-        if (over != null && interactable)
-        {
-            over.Invoke();
-            GetComponent<SpriteRenderer>().color = new Color(hoverTint, hoverTint, hoverTint);
-        }
-        else
-        {
-            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
-        }
+		if(usable_states.Contains(MC.game_state) || usable_states.Contains(MainController.State.any))
+		{
+			if (over != null && interactable)
+			{
+				over.Invoke();
+				GetComponent<SpriteRenderer>().color = new Color(hoverTint, hoverTint, hoverTint);
+			}
+			else
+			{
+				GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
+			}
+		}
     }
 
     private void OnMouseExit()
     {
-        if (exit != null)
-        {
-            exit.Invoke();
-            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
-        }
+		if(usable_states.Contains(MC.game_state) || usable_states.Contains(MainController.State.any))
+		{
+			if (exit != null)
+			{
+				exit.Invoke();
+				GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
+			}
+		} else
+		{
+			GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
+		}
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,8 +38,6 @@ public class MainController : MonoBehaviour
 
     public List<GameObject> playthroughts;
 
-    public bool buttons_active = true;
-
     public int reward_tier = 1;
     public bool rewards_disabled = false;
 
@@ -66,6 +65,7 @@ public class MainController : MonoBehaviour
         useless
     }
 
+	[Serializable]
     public enum State
     {
         any,
@@ -379,7 +379,7 @@ public class MainController : MonoBehaviour
 
     public string GiveRandomBark(List<string> barks)
     {
-        int index = Random.Range(0, barks.Count);
+        int index = UnityEngine.Random.Range(0, barks.Count);
         return barks[index];
     }
 
@@ -391,7 +391,7 @@ public class MainController : MonoBehaviour
         }
         else if(victory_barks.Count > 0)
         {
-            int chance = Random.Range(1, 4); //1, 4
+            int chance = UnityEngine.Random.Range(1, 4); //1, 4
             if (chance == 1)
             {
                 BC.ActivateInstantBark(GiveRandomBark(victory_barks));

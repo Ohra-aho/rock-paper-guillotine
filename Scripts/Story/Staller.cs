@@ -26,12 +26,10 @@ public class Staller : MonoBehaviour
     public void DisableButtons()
     {
         MC.SetNewState(MainController.State.stalling);
-        GameObject.Find("EventSystem").GetComponent<MainController>().buttons_active = false;
     }
 
     public void EnableButtons()
     {
         MC.SetNewState(MainController.State.idle);
-        GameObject.Find("EventSystem").GetComponent<MainController>().buttons_active = true;
     }
 }

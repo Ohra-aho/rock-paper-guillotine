@@ -21,7 +21,6 @@ public class LayeredMenu : MonoBehaviour
 
         } else
         {
-            controller.GetComponent<MainController>().buttons_active = false;
             GameObject.Find("StartButton").GetComponent<StartButton>().deactivated = true;
             GameObject.Find("man").GetComponent<ManAnimator>().paused = true;
         }
@@ -41,7 +40,6 @@ public class LayeredMenu : MonoBehaviour
         }
         else
         {
-            controller.GetComponent<MainController>().buttons_active = true;
             GameObject.Find("StartButton").GetComponent<StartButton>().deactivated = false;
             GameObject.Find("man").GetComponent<ManAnimator>().paused = false;
         }

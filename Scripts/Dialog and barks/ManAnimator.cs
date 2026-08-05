@@ -121,7 +121,6 @@ public class ManAnimator : MonoBehaviour
                         dialog_box.GetComponent<DialogBox>().StartAnimation(1);
                         ChangeSprite(man_sheet[6]);
 
-                        controller.buttons_active = true;
                         for (int i = 0; i < event_holder.transform.childCount; i++)
                         {
                             if(event_holder.transform.GetChild(i).GetComponent<Message>())

@@ -177,7 +177,6 @@ public class Message : MonoBehaviour
     public void DisableButtons()
     {
         MainController MC = GameObject.Find("EventSystem").GetComponent<MainController>();
-        MC.buttons_active = false;
         MC.SetNewState(MainController.State.dialog);
     }
 

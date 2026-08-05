@@ -289,6 +289,10 @@ public class PlayerContoller : MonoBehaviour
 			{
 				MC.GetComponent<RLController>().chosen_buffs[i].GetComponent<Relentless>().DealDamage();
 			}
+			if(MC.GetComponent<RLController>().chosen_buffs[i].GetComponent<Unyielding>())
+			{
+				MC.GetComponent<RLController>().chosen_buffs[i].GetComponent<Unyielding>().ApplyBuff();
+			}
 		}
     }
 

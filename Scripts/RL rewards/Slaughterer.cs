@@ -9,6 +9,7 @@ public class Slaughterer : MonoBehaviour
 
     public void Chosen()
     {
+		Debug.Log("QUEEEEE");
         ApplyBuff();
         DecreaseHealth();
     }

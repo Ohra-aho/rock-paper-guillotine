@@ -113,7 +113,7 @@ public class Weapon : MonoBehaviour
 			player_owner = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
 			if(GetComponent<TypeEffects>())
 			{
-				switch (type)
+				switch (GiveEffectiveType())
 				{
 					case MainController.Choise.kivi:
 						GetComponent<TypeEffects>().InisiateRock();
@@ -163,6 +163,22 @@ public class Weapon : MonoBehaviour
         if (effective_armor < 0) effective_armor = 0;
         return effective_armor;
     }
+
+	public MainController.Choise GiveEffectiveType()
+	{
+		MainController.Choise type = og_type;
+		if(transform.childCount > 0)
+		{
+			for(int i = 0; i < transform.childCount; i++)
+			{
+				if(transform.GetChild(i).GetComponent<Buff>().type_change != null)
+				{
+					type = transform.GetChild(i).GetComponent<Buff>().type_change ?? type;
+				}
+			}
+		}
+		return type;
+	}
 
     public void TakeDamage(int amount)
     {

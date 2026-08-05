@@ -54,6 +54,7 @@ public class MenuLayer : MonoBehaviour
 
 	public void Resume()
     {
+		SaveSystem.SaveSoundSettings(new SoundData(SS.soundTargets, SS.brightness));
         SS.GetComponent<PauseController>().Resume();
     }
 }

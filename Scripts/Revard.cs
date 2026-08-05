@@ -47,83 +47,80 @@ public class Revard : MonoBehaviour
 
     public void Chosen()
     {
-        if(MC.buttons_active)
-        {
-            transform.parent.position = new Vector3(transform.parent.position.x, transform.parent.position.y - 0.2f, transform.parent.position.z);
+		transform.parent.position = new Vector3(transform.parent.position.x, transform.parent.position.y - 0.2f, transform.parent.position.z);
 
-            player.GetComponent<PlayerInventory>().AddItem(actualReward);
-            //Get rid of info
-            if (visibleInfo != null) DestroyInfo();
+		player.GetComponent<PlayerInventory>().AddItem(actualReward);
+		//Get rid of info
+		if (visibleInfo != null) DestroyInfo();
 
-            transform.parent.parent.GetComponent<Test>().UnPauseAnimation();
-            Destroy(gameObject);
-            GameObject.Find("Roope").GetComponent<Test>().UnPauseAnimation();
-            GameObject re_re = GameObject.Find("Reward reroll");
-            re_re.GetComponent<RewardReroll>().reward_open = false;
-            re_re.GetComponent<Test>().PlayAudio(0);
-            ActivatePickBark();
-        }
+		transform.parent.parent.GetComponent<Test>().UnPauseAnimation();
+		Destroy(gameObject);
+		GameObject.Find("Roope").GetComponent<Test>().UnPauseAnimation();
+		GameObject re_re = GameObject.Find("Reward reroll");
+		re_re.GetComponent<RewardReroll>().reward_open = false;
+		re_re.GetComponent<Test>().PlayAudio(0);
+		ActivatePickBark();
     }
 
     public void DisplayInfo()
     {
-        if (MC.buttons_active)
-        {
-            visibleInfo = Instantiate(Info, GameObject.Find("Canvas").transform);
-            visibleInfo.transform.position =
-                Camera.main.ScreenToWorldPoint(
-                    new Vector3(
-                        Input.mousePosition.x + 100,
-                        Input.mousePosition.y,
-                        Camera.main.nearClipPlane
-                    )
-                );
+        if(!disabled && MC.game_state == MainController.State.reward)
+		{
+			visibleInfo = Instantiate(Info, GameObject.Find("Canvas").transform);
+			visibleInfo.transform.position =
+				Camera.main.ScreenToWorldPoint(
+					new Vector3(
+						Input.mousePosition.x + 100,
+						Input.mousePosition.y,
+						Camera.main.nearClipPlane
+					)
+				);
 
-            //Display actual info into the popup
-            if (actualReward.GetComponent<Weapon>())
-            {
-                visibleInfo.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(68, 26);
-                visibleInfo.transform.GetChild(0).GetComponent<RectTransform>().localPosition = new Vector2(-11f, 57.3f);
+			//Display actual info into the popup
+			if (actualReward.GetComponent<Weapon>())
+			{
+				visibleInfo.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(68, 26);
+				visibleInfo.transform.GetChild(0).GetComponent<RectTransform>().localPosition = new Vector2(-11f, 57.3f);
 
-                visibleInfo.transform.GetChild(0)
-                    .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().name;
-                visibleInfo.transform.GetChild(1).GetChild(0)
-                    .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().damage.ToString();
-                visibleInfo.transform.GetChild(1).GetChild(1)
-                    .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().armor.ToString();
+				visibleInfo.transform.GetChild(0)
+					.GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().name;
+				visibleInfo.transform.GetChild(1).GetChild(0)
+					.GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().damage.ToString();
+				visibleInfo.transform.GetChild(1).GetChild(1)
+					.GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().armor.ToString();
 
-                if (actualReward.GetComponent<Stacking>())
-                {
-                    visibleInfo.transform.GetChild(1).GetChild(2).gameObject.SetActive(true);
-                    visibleInfo.GetComponent<RectTransform>().GetChild(1).localScale = new Vector2(0.9f, 0.9f);
-                    visibleInfo.transform.GetChild(1).GetChild(2)
-                        .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Stacking>().stacks.ToString();
-                }
+				if (actualReward.GetComponent<Stacking>())
+				{
+					visibleInfo.transform.GetChild(1).GetChild(2).gameObject.SetActive(true);
+					visibleInfo.GetComponent<RectTransform>().GetChild(1).localScale = new Vector2(0.9f, 0.9f);
+					visibleInfo.transform.GetChild(1).GetChild(2)
+						.GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Stacking>().stacks.ToString();
+				}
 
-                visibleInfo.transform.GetChild(2)
-                    .GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().description;
+				visibleInfo.transform.GetChild(2)
+					.GetComponent<TextMeshProUGUI>().text = actualReward.GetComponent<Weapon>().description;
 
-                visibleInfo.transform.GetChild(3).gameObject.SetActive(true);
-                switch(actualReward.GetComponent<Weapon>().type)
-                {
-                    case MainController.Choise.kivi:
-                        visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[0];
-                        break;
-                    case MainController.Choise.paperi:
-                        visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[1];
-                        break;
-                    case MainController.Choise.sakset:
-                        visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[2];
-                        break;
-                    case MainController.Choise.useless:
-                        visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[3];
-                        break;
-                    case MainController.Choise.voittamaton:
-                        visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[4];
-                        break;
-                }                
-            }
-        }
+				visibleInfo.transform.GetChild(3).gameObject.SetActive(true);
+				switch(actualReward.GetComponent<Weapon>().type)
+				{
+					case MainController.Choise.kivi:
+						visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[0];
+						break;
+					case MainController.Choise.paperi:
+						visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[1];
+						break;
+					case MainController.Choise.sakset:
+						visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[2];
+						break;
+					case MainController.Choise.useless:
+						visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[3];
+						break;
+					case MainController.Choise.voittamaton:
+						visibleInfo.transform.GetChild(3).GetComponent<Image>().sprite = symbols[4];
+						break;
+				}                
+			}	
+		}
     }
 
     private void DestroyAllInfo()
