@@ -7109,6 +7109,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 138571110}
+        m_TargetAssemblyTypeName: PlayerWheelHolder, Assembly-CSharp
+        m_MethodName: ToggleAchievementsActive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -18449,7 +18461,7 @@ MonoBehaviour:
   - {fileID: 4163066812587896230, guid: 30f2cc8a86e48c343bf5132f70b1ea52, type: 3}
   - {fileID: 4163066812587896230, guid: 45797e3894bd11c44be3900ed4574bb8, type: 3}
   - {fileID: 4163066812587896230, guid: 0db93014473a88d4a884a2acf424b7dd, type: 3}
-  buttons_active: 1
+  buttons_active: 0
   reward_tier: 1
   rewards_disabled: 0
   victory_barks: []
@@ -18697,6 +18709,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1066024790}
+        m_TargetAssemblyTypeName: StoryController, Assembly-CSharp
+        m_MethodName: LoadStory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1066024796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18734,6 +18760,8 @@ MonoBehaviour:
   hoard_counter: 0
   bark: {fileID: 1228160335464627313, guid: 8968d1d70c0424a4e9aa70a7fb12b030, type: 3}
   slaughterer: 0
+  achievements_active: 0
+  game_started: 0
 --- !u!114 &1066024798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25985,7 +26013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1298052908
 Transform:
   m_ObjectHideFlags: 0

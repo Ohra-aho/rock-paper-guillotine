@@ -154,25 +154,29 @@ public class StartButton : MonoBehaviour
 
     public void Deactivate()
     {
-        MC.GetComponent<RLController>().CheckForMartyr();
-        DisplayForfeitBark(!MC.GetComponent<StoryCheckList>().first_forfeit);
-        if(!museum) GetComponent<SpriteRenderer>().sprite = inactive;
-		else GetComponent<SpriteRenderer>().sprite = museum_1;
+		if(!GameObject.Find("EnemyHolder").GetComponent<EnemyController>().transform.GetChild(0).gameObject.name.Contains("dummy"))
+		{
+			MC.GetComponent<RLController>().CheckForMartyr();
+			DisplayForfeitBark(!MC.GetComponent<StoryCheckList>().first_forfeit);
+			if(!museum) GetComponent<SpriteRenderer>().sprite = inactive;
+			else GetComponent<SpriteRenderer>().sprite = museum_1;
 
-        machine.GetComponent<Test>().PlayAnimation("OpenMachine");
-        GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarDown();
-        GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.PowerHealthBarDown();
-        GameObject.Find("EventSystem").GetComponent<MainController>().GiveUp();
-        isActive = false;
+			machine.GetComponent<Test>().PlayAnimation("OpenMachine");
+			GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarDown();
+			GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.PowerHealthBarDown();
+			GameObject.Find("EventSystem").GetComponent<MainController>().GiveUp();
+			isActive = false;	
+		}
     }
 
     private void DisableAchievements()
     {
         GameObject[] achievements = GameObject.FindGameObjectsWithTag("Achievement");
-        for (int i = 0; i < achievements.Length; i++)
+		MC.GetComponent<RLController>().game_started = true;
+        /*for (int i = 0; i < achievements.Length; i++)
         {
             achievements[i].GetComponent<RLReward>().DisableReward();
-        }
+        }*/
     }
 
     public void EndRound()

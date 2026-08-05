@@ -60,7 +60,25 @@ public class StoryController : MonoBehaviour
 
     public void Inisiate()
     {
-        LoadStory();
+        //LoadStory();
+		if (story_data != null)
+        {
+            playthroughts = story_data.playthroughs;
+
+            if (story_data.encounter_index != -1)
+			{
+				storyIndex = story_data.encounter_index-1;
+			}
+			GetComponent<RLController>().game_started = story_data.achievements_picked;
+			picked_achievements.AddRange(story_data.picked_achievements);
+			GetComponent<RLController>().Insiate(story_data);
+	        GetComponent<StoryCheckList>().LoadStoryCheckList(story_data);
+        } else
+		{
+			GetComponent<RLController>().Insiate(null);
+	        GetComponent<StoryCheckList>().LoadStoryCheckList(null);
+		}
+		
         if(GetComponent<StoryCheckList>().greeting_index >= messages.Length) 
         {
             executioner = true;
@@ -117,11 +135,11 @@ public class StoryController : MonoBehaviour
 		{
 			story = Instantiate(GetComponent<MainController>().playthroughts[4], transform);
 		}
-		/*else if (playthroughts == 0)
+		else if (playthroughts == 0)
         {
 	        //If its the first playthrough, set the tutorial
 	        story = Instantiate(GetComponent<MainController>().playthroughts[0], transform);
-        }*/
+        }
         else if(executioner)
 		{
 			//Set executioner game
@@ -150,25 +168,8 @@ public class StoryController : MonoBehaviour
         } 
     }
 
-    private void LoadStory() {
+    public void LoadStory() {
         story_data = SaveSystem.LoadStoryData();
-        if (story_data != null)
-        {
-            playthroughts = story_data.playthroughs;
-
-            if (story_data.encounter_index != -1)
-			{
-				storyIndex = story_data.encounter_index-1;
-			}
-			achievements_picked = story_data.achievements_picked;
-			picked_achievements.AddRange(story_data.picked_achievements);
-			GetComponent<RLController>().Insiate(story_data);
-	        GetComponent<StoryCheckList>().LoadStoryCheckList(story_data);
-        } else
-		{
-			GetComponent<RLController>().Insiate(null);
-	        GetComponent<StoryCheckList>().LoadStoryCheckList(null);
-		}
     }
 
     public string[][] GiveMessages()

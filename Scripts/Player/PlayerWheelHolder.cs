@@ -45,6 +45,11 @@ public class PlayerWheelHolder : MonoBehaviour
         }
     }
 
+	public void ToggleAchievementsActive()
+	{
+		MC.GetComponent<RLController>().achievements_active = !MC.GetComponent<RLController>().achievements_active;
+	}
+
     public void DisableAchievements()
     {
         GameObject[] achievements = GameObject.FindGameObjectsWithTag("Achievement");

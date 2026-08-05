@@ -36,6 +36,8 @@ public class RLController : MonoBehaviour
 
 	private bool achievement_unlocked = false;
 
+	[HideInInspector] public bool achievements_active = false;
+	[HideInInspector] public bool game_started = false;
 
     public void Insiate(StoryData data)
     {
@@ -78,9 +80,9 @@ public class RLController : MonoBehaviour
 
 	public void ActivateLoadedBuffs()
 	{
-		for(int i = 0; i < achievements.Count; i++)
+		for(int i = 0; i < GetComponent<StoryController>().picked_achievements.Count; i++)
         {
-            switch(achievements[i])
+            switch(GetComponent<StoryController>().picked_achievements[i])
             {
                 case "Tough": LoadBuff(background.transform.GetChild(0).GetComponent<RLReward>()); break;
                 case "Collector": LoadBuff(background.transform.GetChild(1).GetComponent<RLReward>()); break;
@@ -106,13 +108,13 @@ public class RLController : MonoBehaviour
 	{
 		if(!rlr.dont_load)
 		{
-			rlr.activate.Invoke();
-			rlr.buffing.Invoke();
+			rlr.Load();
 		}
 	}
 
     public void ActivateAchievements()
     {
+		achievements_active = !GetComponent<StoryController>().achievements_picked;
         for(int i = 0; i < achievements.Count; i++)
         {
             switch(achievements[i])

@@ -69,8 +69,8 @@ MonoBehaviour:
   plan_2: 000000000100000002000000
   weapon_pairs:
   - pair: 01000000
-  - pair: 01000000
-  - pair: 01000000
+  - pair: 00000000
+  - pair: 00000000
   advanced: 0
   victory_barks: []
   executioner_comment: Don't look at me like that.

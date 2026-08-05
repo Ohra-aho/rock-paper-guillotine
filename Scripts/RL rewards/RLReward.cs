@@ -29,6 +29,23 @@ public class RLReward : MonoBehaviour
         
     }
 
+	void Update()
+	{
+		bool active = GameObject.Find("EventSystem").GetComponent<RLController>().achievements_active;
+		bool force_deactive = GameObject.Find("EventSystem").GetComponent<RLController>().game_started;
+		if(force_deactive)
+		{
+			active = false;
+		}
+		if(active)
+		{
+			EnableReward();
+		} else 
+		{
+			DisableReward();
+		}
+	}
+
 	public void Inisiate()
 	{
 		info = GameObject.Find("Canvas").transform.GetChild(15).gameObject;
@@ -36,19 +53,21 @@ public class RLReward : MonoBehaviour
         GetComponent<NonUIButton>().exit.AddListener(HideInfo);
 		MC = GameObject.Find("EventSystem").GetComponent<MainController>();
 		GetComponent<NonUIButton>().Inisiate();
-		if(GameObject.Find("EventSystem").GetComponent<StoryController>().achievements_picked)
-		{
-			DisableReward();
-		}
 	}
 
     public void DisableReward()
     {
-        Destroy(GetComponent<BoxCollider2D>());
+        if(GetComponent<BoxCollider2D>()) Destroy(GetComponent<BoxCollider2D>());
     }
+
+	public void EnableReward()
+	{
+		if(!GetComponent<BoxCollider2D>()) gameObject.AddComponent<BoxCollider2D>();
+	}
 
     public bool CheckIfCanBePicked()
     {
+		return true;
         RLController rlc = GameObject.Find("EventSystem").GetComponent<RLController>();
         if (rlc.chosen_buffs.Count < rlc.picks)
         {
@@ -86,5 +105,13 @@ public class RLReward : MonoBehaviour
     {
         info.SetActive(false);
     }
+
+	public void Load()
+	{
+		Debug.Log(name);
+		activate.Invoke();
+		buffing.Invoke();
+		GetComponent<SpriteRenderer>().sprite = image_2;
+	}
 
 }

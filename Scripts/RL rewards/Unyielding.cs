@@ -17,7 +17,6 @@ public class Unyielding : MonoBehaviour
         GameObject RI = GameObject.FindGameObjectWithTag("RI");
         for (int i = 0; i < RI.transform.childCount; i++)
         {
-            
 			GameObject weapon = RI.transform.GetChild(i).gameObject;
 			if(!FindOwnBuff(weapon.GetComponent<Weapon>()))
 			{

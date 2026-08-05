@@ -88,9 +88,10 @@ public class MainController : MonoBehaviour
         BC = GameObject.Find("BarkHolder").GetComponent<BarkController>();
         RI = GameObject.FindGameObjectWithTag("RI");
 
+		GetComponent<SaveHub>().LoadAll();
+
         GetComponent<StoryController>().Inisiate();
         if (GetComponent<StoryCheckList>().executioner_dead) ResetImportantGameObjects();
-		GetComponent<SaveHub>().LoadAll();
     }
 
     private void Update()
