@@ -16,12 +16,19 @@ public class Wanderer : MonoBehaviour
 			new_buff.timer = 2;
 			new_buff.endPhase = true;
 			new_buff.special = (Weapon w) => { 
-				new_buff.RemoveBuff();
-				new_buff.damage_buff = 1; 
-				new_buff.temporary = false;
-				new_buff.timer = 0; 
-				new_buff.endPhase = false;
-				new_buff.AddBuff();
+				if(w.FindCertainBuff("Spoils_damage"))
+				{
+					Buff old_buff = w.GetCertainBuff("Spoils_damage").GetComponent<Buff>();
+					old_buff.damage_buff++;
+				} else
+				{
+					Buff buff_two = Instantiate(new_buff.gameObject, w.transform).GetComponent<Buff>();
+					buff_two.temporary = false;
+					buff_two.timer = 0;
+					buff_two.damage_buff = 1;
+					buff_two.endPhase = false;
+					buff_two.id = "Spoils_damage";
+				}
 			};
 			new_buff.AddBuff();
 		}
@@ -38,12 +45,19 @@ public class Wanderer : MonoBehaviour
 			new_buff.timer = 2;
 			new_buff.endPhase = true;
 			new_buff.special = (Weapon w) => { 
-				new_buff.RemoveBuff();
-				new_buff.armor_buff = 1;
-				new_buff.temporary = false;
-				new_buff.timer = 0; 
-				new_buff.endPhase = false;
-				new_buff.AddBuff();
+				if(w.FindCertainBuff("Spoils_armor"))
+				{
+					Buff old_buff = w.GetCertainBuff("Spoils_damage").GetComponent<Buff>();
+					old_buff.armor_buff++;
+				} else
+				{
+					Buff buff_two = Instantiate(new_buff.gameObject, w.transform).GetComponent<Buff>();
+					buff_two.temporary = false;
+					buff_two.timer = 0;
+					buff_two.armor_buff = 1;
+					buff_two.endPhase = false;
+					buff_two.id = "Spoils_armor";
+				}
 			};
 			new_buff.AddBuff();
 		}

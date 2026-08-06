@@ -17,9 +17,18 @@ public class Anvil : MonoBehaviour
 			new_buff.endPhase = true;
 			new_buff.special = (Weapon w) =>
 			{
-				new_buff.temporary = false;
-				new_buff.timer = 0;
-				new_buff.damage_buff = 1;	
+				if(w.FindCertainBuff("Anvil_2"))
+				{
+					Buff old_buff = w.GetCertainBuff("Anvil_2").GetComponent<Buff>();
+					old_buff.damage_buff++;
+				} else
+				{
+					Buff buff_two = Instantiate(new_buff.gameObject, w.transform).GetComponent<Buff>();
+					buff_two.temporary = false;
+					buff_two.timer = 0;
+					buff_two.damage_buff = 1;
+					buff_two.id = "Anvil_2";
+				}
 			};
 			new_buff.id = GetComponent<Weapon>().name;
 			new_buff.AddBuff();

@@ -67,7 +67,11 @@ public class WeaponInfo : MonoBehaviour
 				{
 					GameObject new_reminder = Instantiate(reminder, reminders.transform);
 					new_reminder.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = weapon.transform.GetChild(i).GetComponent<Buff>().reminder;
-					if(weapon.transform.GetChild(i).GetComponent<Buff>().temporary && weapon.transform.GetChild(i).GetComponent<Buff>().timer < 100)
+					if(
+						weapon.transform.GetChild(i).GetComponent<Buff>().temporary && 
+						weapon.transform.GetChild(i).GetComponent<Buff>().timer < 100 && 
+						!weapon.transform.GetChild(i).GetComponent<Buff>().until_used
+					)
 					{
 						new_reminder.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Turns: " + weapon.transform.GetChild(i).GetComponent<Buff>().timer;
 					}

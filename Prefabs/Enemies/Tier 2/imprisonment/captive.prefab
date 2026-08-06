@@ -102,7 +102,7 @@ MonoBehaviour:
   damage: 1
   armor: 1
   name: Captive
-  description: If loses, you get a prize.
+  description: If loses, you get a prize. Triggers once.
   sprite: {fileID: 21300000, guid: 1e73ee6599b9a264784abcdc7e0fb015, type: 3}
   tiers: []
   tier: 0
