@@ -26,4 +26,20 @@ public class WheelController : MonoBehaviour
             MC.SetNewState(MainController.State.idle);
         }
     }
+
+	public void HighLight()
+	{
+		for(int i = 0; i < transform.childCount-1; i++)
+		{
+			transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().HighLight();
+		}
+	}
+
+	public void EndHighLight()
+	{
+		for(int i = 0; i < transform.childCount-1; i++)
+		{
+			transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().EndHighLight();
+		}
+	}
 }

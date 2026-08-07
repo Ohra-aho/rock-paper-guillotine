@@ -11,6 +11,7 @@ public class ManAnimator : MonoBehaviour
     public GameObject bark_box;
     public MainController controller;
     List<Frame> current_frames;
+	public List<Sprite> damage_reactions;
     Frame current_bark;
     int current_frame = 0;
 

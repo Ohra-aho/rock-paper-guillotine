@@ -9,12 +9,31 @@ public class WeaponSprite : MonoBehaviour
 {
     public List<Sprite> symbols;
 	public List<Sprite> tiers;
+	public Sprite highlight;
     public GameObject weapon;
     public int id;
 
     private GameObject visibleInfo;
     public GameObject Info;
 	public GameObject reminder;
+
+	public void HighLight()
+	{
+		if(weapon == null)
+		{
+			GetComponent<SpriteRenderer>().sprite = highlight;
+			GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 0.5f);
+		}
+	}
+
+	public void EndHighLight()
+	{
+		if(weapon == null)
+		{
+			GetComponent<SpriteRenderer>().sprite = null;
+			GetComponent<SpriteRenderer>().color = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 1f);
+		}
+	}
 
     public void displaySprite()
     {

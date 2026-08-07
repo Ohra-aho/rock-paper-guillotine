@@ -15,6 +15,7 @@ public class DragNDrop : MonoBehaviour
 
     public UnityEvent onBeginDrag;
     public UnityEvent onEndDrag;
+	public UnityEvent onDrag;
 
     private bool over = false;
     private GameObject objectOver;
@@ -69,6 +70,7 @@ public class DragNDrop : MonoBehaviour
             if (drag_begin)
             {
                 // Update the object's position to follow the mouse, adjusted by the offset
+				onDrag.Invoke();
                 transform.position = GetMouseWorldPosition() + offset;
             }
         }

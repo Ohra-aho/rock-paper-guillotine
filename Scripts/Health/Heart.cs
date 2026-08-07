@@ -68,4 +68,22 @@ public class Heart : MonoBehaviour
         transform.GetChild(0).GetComponent<Light2D>().intensity = 2;
         healthy = true;
     }
+
+	public void HeavyDamageMan()
+	{
+		GameObject man = GameObject.Find("man");
+		bool left = false;
+		if(transform.parent.name == "PlayerHealth")
+		{
+			left = true;
+		}
+		if(left) man.GetComponent<SpriteRenderer>().sprite = man.GetComponent<ManAnimator>().damage_reactions[0];
+		else man.GetComponent<SpriteRenderer>().sprite = man.GetComponent<ManAnimator>().damage_reactions[1];
+	}
+
+	public void HeavyDamageManEnd()
+	{
+		GameObject man = GameObject.Find("man");
+		man.GetComponent<SpriteRenderer>().sprite = man.GetComponent<ManAnimator>().man_sheet[6];
+	}
 }

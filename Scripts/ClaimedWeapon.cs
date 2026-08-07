@@ -22,6 +22,8 @@ public class ClaimedWeapon : MonoBehaviour
 
     public bool disabled;
 
+	float highlight_timer = 0.3f;
+
 	[HideInInspector] public MainController MC;
 
     private void Awake()
@@ -53,7 +55,17 @@ public class ClaimedWeapon : MonoBehaviour
 		transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
 		transform.GetChild(1).GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.None;
         FixSorting1();
+		highlight_timer = 0.3f;
     }
+
+	public void OnDrag()
+	{
+		if(highlight_timer > 0) highlight_timer -= Time.deltaTime;
+		if(highlight_timer <= 0)
+		{
+			GameObject.Find("PlayerWheelHolder").transform.GetChild(0).GetComponent<WheelController>().HighLight();	
+		}
+	}
 
     public void OnEndDrag()
     {
@@ -62,6 +74,7 @@ public class ClaimedWeapon : MonoBehaviour
 		transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
 		transform.GetChild(1).GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
         FixSorting2();
+		GameObject.Find("PlayerWheelHolder").transform.GetChild(0).GetComponent<WheelController>().EndHighLight();
     }
 
     public void FixSorting1()

@@ -26,16 +26,20 @@ public class Counter : MonoBehaviour
 					if(GetComponent<Image>().color.a != 1)
 					{
 						GetComponent<Image>().color = new Color(1,1,1,1);
-						transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+						transform.GetChild(2).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
 					}
-					transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Poison: "+x.ToString();
+					transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Poison: "+x.ToString();
+					transform.GetChild(1).gameObject.SetActive(true);
+					transform.GetChild(0).gameObject.SetActive(false);
 				} else
 				{
 					if(GetComponent<Image>().color.a != 0)
 					{
 						GetComponent<Image>().color = new Color(1,1,1,0);
-						transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Poison: "+0;
-						transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0,0,0,0);	
+						transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Poison: "+0;
+						transform.GetChild(2).GetComponent<TextMeshProUGUI>().color = new Color(0,0,0,0);
+						transform.GetChild(1).gameObject.SetActive(false);
+						transform.GetChild(0).gameObject.SetActive(false);	
 					}
 				}	
 			} else if(weakness)
@@ -46,16 +50,18 @@ public class Counter : MonoBehaviour
 					if(GetComponent<Image>().color.a != 1)
 					{
 						GetComponent<Image>().color = new Color(1,1,1,1);
-						transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+						transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
 					}
-					transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Weakness: "+x.ToString();
+					transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Weakness: "+x.ToString();
+					transform.GetChild(0).gameObject.SetActive(true);
 				} else
 				{
 					if(GetComponent<Image>().color.a != 0)
 					{
 						GetComponent<Image>().color = new Color(1,1,1,0);
-						transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Weakness: "+0;
-						transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0,0,0,0);	
+						transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Weakness: "+0;
+						transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(0,0,0,0);	
+						transform.GetChild(0).gameObject.SetActive(false);
 					}
 				}	
 			} else if(bleed)
@@ -66,16 +72,18 @@ public class Counter : MonoBehaviour
 					if(GetComponent<Image>().color.a != 1)
 					{
 						GetComponent<Image>().color = new Color(1,1,1,1);
-						transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+						transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+						transform.GetChild(0).gameObject.SetActive(true);
 					}
-					transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Bleed: "+x.ToString();
+					transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Bleed: "+x.ToString();
 				} else
 				{
 					if(GetComponent<Image>().color.a != 0)
 					{
 						GetComponent<Image>().color = new Color(1,1,1,0);
-						transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Bleed: "+0;
-						transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0,0,0,0);	
+						transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Bleed: "+0;
+						transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(0,0,0,0);	
+						transform.GetChild(0).gameObject.SetActive(false);
 					}
 				}
 			}
@@ -88,19 +96,22 @@ public class Counter : MonoBehaviour
 				if(GetComponent<Image>().color.a != 1)
 				{
 					GetComponent<Image>().color = new Color(1,1,1,1);
-					transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+					transform.GetChild(2).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+					transform.GetChild(0).gameObject.SetActive(true);
 				}
 				int current = HB.GiveCurrentHealth();
 				int max = HB.GiveMaxHealth();
 				if(max > HB.HP_gap) max = HB.HP_gap;
-				transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Health: "+current+"/"+max;	
+				transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Health: "+current+"/"+max;	
+
 			} else
 			{
 				if(GetComponent<Image>().color.a != 0)
 				{
 					GetComponent<Image>().color = new Color(1,1,1,0);
-					transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "";
-					transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+					transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
+					transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+					transform.GetChild(0).gameObject.SetActive(true);
 				}
 			}
 		} else
@@ -108,8 +119,9 @@ public class Counter : MonoBehaviour
 			if(GetComponent<Image>().color.a != 0)
 			{
 				GetComponent<Image>().color = new Color(1,1,1,0);
-				transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "";
-				transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+				transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "";
+				transform.GetChild(2).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+				transform.GetChild(0).gameObject.SetActive(false);
 			}
 		}
 	}
