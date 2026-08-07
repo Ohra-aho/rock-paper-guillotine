@@ -8755,7 +8755,7 @@ MonoBehaviour:
   m_Intensity: 0
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 9d49786a00000000e5372d11f527860af1b5b115c1c53b52a9dde1a7
+  m_ApplyToSortingLayers: 9d49786a00000000e5372d11f527860ac1c53b52a9dde1a7
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -19176,7 +19176,6 @@ Transform:
   - {fileID: 1362538241}
   - {fileID: 1964653603}
   - {fileID: 202451836}
-  - {fileID: 1598244851}
   m_Father: {fileID: 1812507807}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1123036502
@@ -35558,11 +35557,11 @@ Transform:
   m_GameObject: {fileID: 1598244850}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -1, w: 0.00035112794}
-  m_LocalPosition: {x: 0.09, y: 4.88, z: 0}
-  m_LocalScale: {x: 1, y: 1.0932999, z: 1}
+  m_LocalPosition: {x: 0.0899996, y: 4.88, z: 0}
+  m_LocalScale: {x: 1, y: 1.0932997, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1123036501}
+  m_Father: {fileID: 1964653603}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -179.96}
 --- !u!114 &1598244852
 MonoBehaviour:
@@ -38507,7 +38506,7 @@ MonoBehaviour:
   m_Intensity: 0
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 9d49786a00000000e5372d11f527860af1b5b115c1c53b52a9dde1a7
+  m_ApplyToSortingLayers: 9d49786a00000000e5372d11f527860ac1c53b52a9dde1a7
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -50758,6 +50757,7 @@ Transform:
   m_Children:
   - {fileID: 238816295}
   - {fileID: 1776659740}
+  - {fileID: 1598244851}
   m_Father: {fileID: 1123036501}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1964653604

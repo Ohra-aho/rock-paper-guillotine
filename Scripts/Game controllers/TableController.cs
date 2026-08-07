@@ -168,19 +168,21 @@ public class TableController : MonoBehaviour
 					enemy.GetComponent<EnemyController>().HB.TakeDamage(true_damage + enemy_direct_damage);
 					if(MC.enemyChoise != null) MC.enemyChoise.takeDamage.Invoke();
 					if(MC.playerChoise != null) MC.playerChoise.dealDamage.Invoke();
-
+					enemy.GetComponent<EnemyController>().PlayDamageAnimation(false);
 					//Achievements
-					if(enemy_damage + enemy_direct_damage >= 5) MC.GetComponent<RLController>().CheckForSlautherer(); 	 
+					if(true_damage + enemy_direct_damage >= 5) MC.GetComponent<RLController>().CheckForSlautherer(); 	 
 					MC.GetComponent<RLController>().CheckForRelentless(true);
 				}
             }
            	enemy_damage = 0;
 			enemy_direct_damage = 0;
+
 			enemy.GetComponent<EnemyController>().HB.dead = enemy.GetComponent<EnemyController>().HB.CheckIfDead();
+			if(enemy.GetComponent<EnemyController>().HB.dead) enemy.GetComponent<EnemyController>().PlayDamageAnimation(true);
         }
 		else
 		{
-			MC.GetComponent<RLController>().CheckForRelentless(false);
+			MC.GetComponent<RLController>().CheckForRelentless(true);
 		}
     }
 

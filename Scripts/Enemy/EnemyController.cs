@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -293,4 +294,23 @@ public class EnemyController : MonoBehaviour
         }
         return temp;
     }
+
+	public void PlayDamageAnimation(bool dead)
+	{
+		int max_health = HB.GiveTrueMaxHealth();
+		int current_health = HB.GiveCurrentHealth();
+		if(!dead)
+		{
+			if(current_health > max_health / 3)
+			{
+				transform.parent.GetChild(4).GetComponent<Test>().PlayAnimation("light damage");
+			} else if(current_health <= max_health / 3)
+			{
+				transform.parent.GetChild(4).GetComponent<Test>().PlayAnimation("heavy damage");
+			}	
+		} else
+		{
+			transform.parent.GetChild(4).GetComponent<Test>().PlayAnimation("death");
+		}
+	}
 }
