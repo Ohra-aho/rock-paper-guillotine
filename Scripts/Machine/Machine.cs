@@ -36,6 +36,7 @@ public class Machine : MonoBehaviour
             GameObject enemy = GameObject.FindGameObjectWithTag("EnemyHolder");
             player.GetComponent<PlayerContoller>().ActivateFirstTurnEffects();
             enemy.GetComponent<EnemyController>().ActivateFirstTurnEffects();
+			player.GetComponent<PlayerContoller>().DisplayBuffs();
 
             RLController RLC = GameObject.Find("EventSystem").GetComponent<RLController>();
             for(int i = 0; i < RLC.chosen_buffs.Count; i++)

@@ -100,10 +100,9 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 1
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Access code
   description: After use, all weapons pierce armor for 2 turns.
   sprite: {fileID: 21300000, guid: a6c59c3d8536df7449719431d4d61225, type: 3}
@@ -196,6 +195,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - I know that armor can be frustrating.
@@ -203,7 +205,7 @@ MonoBehaviour:
   - Little bit more freedom.
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 0
 --- !u!114 &3410846685529990821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,11 +249,12 @@ MonoBehaviour:
   toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
-  always_on: 0
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
   each_turn: 0
+  damage_modifier: 0
+  heal_modifier: 0
   victory: 0
   special_apply: 0
   takeDamage: 0
@@ -278,3 +281,4 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
+  stackable: 0

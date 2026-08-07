@@ -16,6 +16,7 @@ public class Hat : MonoBehaviour
         new_buff.GetComponent<Buff>().damage_buff = 1;
         new_buff.GetComponent<Buff>().temporary = true;
         new_buff.GetComponent<Buff>().timer = 1000;
+        new_buff.GetComponent<Buff>().visible_buff = true;
         new_buff.GetComponent<Buff>().AddBuff();
     }
 

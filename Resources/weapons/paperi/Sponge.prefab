@@ -99,10 +99,9 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 1
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Sponge
   description: At the start of each fight, heal 1.
   sprite: {fileID: 21300000, guid: f7b96ec387b33c54f976fe4dbacef557, type: 3}
@@ -195,12 +194,15 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - At least you won't need to fight for the heals anymore.
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 0
 --- !u!114 &-1696805691321598520
 MonoBehaviour:
   m_ObjectHideFlags: 0

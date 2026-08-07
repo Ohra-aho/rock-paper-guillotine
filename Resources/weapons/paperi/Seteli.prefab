@@ -99,10 +99,9 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 1
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Bill
   description: At the start of each fight, one random weapon gains 1 point.
   sprite: {fileID: 21300000, guid: ba18a203de1d47f4094e14ff0720dee4, type: 3}
@@ -180,6 +179,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -189,6 +194,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - Pocket change. That's all that is.
@@ -196,7 +204,7 @@ MonoBehaviour:
   - And they say crime doesn't pay. 16
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 0
 --- !u!114 &-773870869169075467
 MonoBehaviour:
   m_ObjectHideFlags: 0

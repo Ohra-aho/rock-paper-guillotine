@@ -100,10 +100,9 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 1
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Peace treaty
   description: After each turn, if you nor your enemy took damage, heal 1.
   sprite: {fileID: 21300000, guid: ec1095485a0b0ec4ebe2420568709a2d, type: 3}
@@ -199,6 +198,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - The very definition of stalling.
@@ -206,7 +208,7 @@ MonoBehaviour:
   - What is a peace treaty without a little extortion. 16
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 0
 --- !u!114 &5239540486493636854
 MonoBehaviour:
   m_ObjectHideFlags: 0

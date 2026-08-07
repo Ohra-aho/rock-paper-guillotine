@@ -98,10 +98,9 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 1
+  og_type: 0
   damage: 1
   armor: 1
-  real_damage: 0
-  real_armor: 0
   name: Shield
   description: 
   sprite: {fileID: 21300000, guid: 3aa0362b8909aa641baccf6fb00e845e, type: 3}
@@ -167,6 +166,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -176,6 +181,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - Good in the early game, but it won't help you that far.
@@ -183,7 +191,7 @@ MonoBehaviour:
   - Reliable upgrade.
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 0
 --- !u!114 &-2176633443183752022
 MonoBehaviour:
   m_ObjectHideFlags: 0

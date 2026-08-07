@@ -8,6 +8,9 @@ public class Buff : MonoBehaviour
     public Weapon weapon;
     public string id;
 
+	public bool visible_buff;
+	public bool visible_debuff;
+
     public int damage_buff;
     public int armor_buff;
     public int effect_damage_buff;

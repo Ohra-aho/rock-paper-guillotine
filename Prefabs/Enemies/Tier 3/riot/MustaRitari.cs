@@ -20,6 +20,7 @@ public class MustaRitari : MonoBehaviour
 			new_buff.temporary = true;
 			new_buff.until_used = true;
 			new_buff.reminder = "After use, self-destructs.";
+			new_buff.visible_debuff = true;
 			new_buff.AddBuff();
 		}
 	}

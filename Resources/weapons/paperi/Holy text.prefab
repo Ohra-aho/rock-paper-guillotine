@@ -131,6 +131,7 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
+  stackable: 0
 --- !u!114 &1415664320520306304
 MonoBehaviour:
   m_ObjectHideFlags: 0

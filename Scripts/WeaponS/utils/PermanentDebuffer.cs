@@ -132,6 +132,7 @@ public class PermanentDebuffer : MonoBehaviour
 				new_buff.temporary = true;
 				new_buff.timer = turns;
 				new_buff.reminder = "Made \"useless\".";
+				new_buff.visible_debuff = true;
 				new_buff.AddBuff();	
 			}
 			
@@ -156,6 +157,7 @@ public class PermanentDebuffer : MonoBehaviour
 				new_buff.timer = 1000;
 				new_buff.until_used = true;
 				new_buff.reminder = "\"Useless\" until used again or until end of the fight.";
+				new_buff.visible_debuff = true;
 				new_buff.AddBuff();		
 			}
 		}
@@ -216,6 +218,7 @@ public class PermanentDebuffer : MonoBehaviour
 				{
 					new_buff.temporary = true;
 					new_buff.timer = turns;
+					new_buff.visible_debuff = true;
 				}
 				new_buff.AddBuff();		
 			}
@@ -268,6 +271,7 @@ public class PermanentDebuffer : MonoBehaviour
 				new_buff.temporary = true;
 				new_buff.timer = 1000;
 				new_buff.reminder = "-"+amount+" to damage until the end of the fight.";
+				new_buff.visible_debuff = true;
 				new_buff.AddBuff();		
 			}
 		}
@@ -292,6 +296,7 @@ public class PermanentDebuffer : MonoBehaviour
 				new_buff.temporary = true;
 				new_buff.timer = 1000;
 				new_buff.reminder = "-"+amount+" to armor until the end of the fight.";
+				new_buff.visible_debuff = true;
 				new_buff.AddBuff();		
 			}
 		}

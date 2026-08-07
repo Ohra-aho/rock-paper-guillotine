@@ -257,6 +257,7 @@ public class MainController : MonoBehaviour
         {
             GameObject.Find("Story Event Holder").transform.GetChild(0).GetComponent<StoryEvent>().Procceed();
 			SetNewState(State.reward);
+			player.GetComponent<PlayerContoller>().HideBuffing();
         }
 
 		List<Weapon> equipped = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();

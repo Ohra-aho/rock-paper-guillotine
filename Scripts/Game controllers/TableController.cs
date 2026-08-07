@@ -106,11 +106,12 @@ public class TableController : MonoBehaviour
 		{
 			enemy.transform.GetChild(0).GetComponent<BasicEnemy>().StikToPlan();
         	enemy.transform.GetChild(0).GetComponent<BasicEnemy>().TelegraphWeaponPair();
+	        player.GetComponent<PlayerContoller>().DisplayBuffs();
 		} else
 		{
 			GameObject.Find("enemy weapon rack").GetComponent<WeaponInfoRack>().TrueReset();
 		}
-        
+
         if (table != null) StopCoroutine(table);
     }
 

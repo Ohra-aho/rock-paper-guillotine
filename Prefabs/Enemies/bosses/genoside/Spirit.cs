@@ -64,6 +64,7 @@ public class Spirit : MonoBehaviour
 			new_buff.endPhase = true;
 			new_buff.temporary = true;
 			new_buff.timer = 2;
+			new_buff.visible_debuff = true;
 			new_buff.special = (Weapon w) =>
 			{
 				GameObject RIE = GameObject.FindGameObjectWithTag("RIE");

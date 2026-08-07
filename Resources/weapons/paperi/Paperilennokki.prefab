@@ -98,10 +98,9 @@ MonoBehaviour:
   draw_winner: 1
   spammable: 0
   type: 1
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Paper plane
   description: Wins draws
   sprite: {fileID: 21300000, guid: 824ed9c4c421ec34d8dbfaebda92c2b9, type: 3}
@@ -167,6 +166,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -176,6 +181,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - Not that flashy, but effective.
@@ -183,7 +191,7 @@ MonoBehaviour:
   - Propably the most well known origami in the world.
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 0
 --- !u!114 &-1078029112995628566
 MonoBehaviour:
   m_ObjectHideFlags: 0

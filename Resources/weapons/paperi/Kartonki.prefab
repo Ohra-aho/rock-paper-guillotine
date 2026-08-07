@@ -103,8 +103,6 @@ MonoBehaviour:
   og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Cardboard
   description: +1 armor to all weapons during the first turn of each fight.
   sprite: {fileID: 21300000, guid: e2e4f5645a1ff14439a64658fa206521, type: 3}
@@ -197,6 +195,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - Not too sure about yourself are you?
@@ -204,6 +205,7 @@ MonoBehaviour:
   - It's good to be prepared for surprises.
   executioner_comment: 
   favourite: 
+  dont_load: 0
 --- !u!114 &7867560462465972330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +257,7 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
+  stackable: 0
 --- !u!114 &-7857638574127435322
 MonoBehaviour:
   m_ObjectHideFlags: 0

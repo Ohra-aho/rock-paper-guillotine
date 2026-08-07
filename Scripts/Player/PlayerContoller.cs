@@ -313,6 +313,28 @@ public class PlayerContoller : MonoBehaviour
         HB.InstaKill();
     }
 
+	public void DisplayBuffs()
+	{
+		for(int i = 0; i < transform.childCount; i++)
+		{
+			if(transform.GetChild(i).GetComponent<CHoisePanel>().weapon != null)
+			{
+				transform.GetChild(i).GetComponent<CHoisePanel>().DisplayBuffing();
+			}
+		}
+	}
+
+	public void HideBuffing()
+	{
+		for(int i = 0; i < transform.childCount; i++)
+		{
+			if(transform.GetChild(i).GetComponent<CHoisePanel>().weapon != null)
+			{
+				transform.GetChild(i).GetComponent<CHoisePanel>().TurnOffBuffIndicator();
+			}
+		}
+	}
+
     //Equipping
     public void EquipWeapon(Weapon weapon)
     {

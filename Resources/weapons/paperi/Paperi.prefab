@@ -101,8 +101,6 @@ MonoBehaviour:
   og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Paper
   description: 
   sprite: {fileID: 21300000, guid: 4dd597b3198446c439ad1ee618ee26e1, type: 3}
@@ -183,10 +181,14 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
   favourite: 
+  dont_load: 0
 --- !u!114 &7178036616151508373
 MonoBehaviour:
   m_ObjectHideFlags: 0

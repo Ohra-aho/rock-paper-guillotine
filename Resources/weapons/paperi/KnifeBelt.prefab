@@ -102,8 +102,6 @@ MonoBehaviour:
   og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Knife belt
   description: At the start of each fight, gives you a "Throwing knife".
   sprite: {fileID: 21300000, guid: 09659e4f6945db145a71dcc8f9b14a54, type: 3}
@@ -196,6 +194,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - Didn't anyone tell you that you shouldn't play with knives? 5
@@ -203,6 +204,7 @@ MonoBehaviour:
   - You'd like to play a ninja or something?
   executioner_comment: 
   favourite: 
+  dont_load: 0
 --- !u!114 &6685880983201037068
 MonoBehaviour:
   m_ObjectHideFlags: 0

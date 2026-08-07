@@ -104,8 +104,6 @@ MonoBehaviour:
   og_type: 0
   damage: 0
   armor: 2
-  real_damage: 0
-  real_armor: 0
   name: Spawn
   description: Weather or not equipped, gains 1 point at the start of each fight.
     When gains the third point, if not equipped, uses all points to deal 3 damage
@@ -248,10 +246,14 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
   favourite: 
+  dont_load: 0
 --- !u!114 &533050514343274315
 MonoBehaviour:
   m_ObjectHideFlags: 0

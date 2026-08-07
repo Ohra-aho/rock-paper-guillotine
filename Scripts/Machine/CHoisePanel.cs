@@ -13,12 +13,17 @@ public class CHoisePanel : MonoBehaviour
     public GameObject character;
     public Weapon weapon;
     MainController MC;
+	
+	bool buff_on;
+	bool debuff_on;
 
     public List<Sprite> icons;
+	private GameObject lights;
 
     private void Awake()
     {
         MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+		lights = transform.GetChild(3).gameObject;
     }
 
     private void Update()
@@ -173,4 +178,59 @@ public class CHoisePanel : MonoBehaviour
             info.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "";
         }
     }
+
+
+	public void DisplayBuffing()
+	{
+		
+		bool buff_found = false;
+		bool debuff_found = false;
+
+		for(int i = 0; i < weapon.transform.childCount; i++)
+		{
+			if(weapon.transform.GetChild(i).GetComponent<Buff>().visible_buff)
+			{
+				buff_found = true;
+			}
+			if(weapon.transform.GetChild(i).GetComponent<Buff>().visible_debuff)
+			{
+				debuff_found = true;
+			}
+		}
+		
+		if(buff_found != buff_on || debuff_found != debuff_on)
+		{
+			TurnOffBuffIndicator();
+			if(buff_found && debuff_found)
+			{
+				lights.GetComponent<Test>().PlayAnimation("buff_and_debuff_on");
+			} else if(buff_found)
+			{
+				lights.GetComponent<Test>().PlayAnimation("buff_on");
+			} else if(debuff_found)
+			{
+				lights.GetComponent<Test>().PlayAnimation("debuff_on");
+			}
+			buff_on = buff_found;
+			debuff_on = debuff_found;	
+		}
+	}
+
+	public void TurnOffBuffIndicator()
+	{
+		if(buff_on && debuff_on)
+		{
+			debuff_on = false;
+			buff_on = false;
+			lights.GetComponent<Test>().PlayAnimation("buff_and_debuff_off");
+		} else if(buff_on)
+		{
+			buff_on = false;
+			lights.GetComponent<Test>().PlayAnimation("buff_off");
+		} else if(debuff_on)
+		{
+			debuff_on = false;
+			lights.GetComponent<Test>().PlayAnimation("debuff_off");
+		}
+	}
 }

@@ -103,8 +103,6 @@ MonoBehaviour:
   og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Blood blade
   description: Whenever you take damage, +1 damage until the end of the fight.
   sprite: {fileID: 21300000, guid: 057e79bf4fa033b438296bc6d58fe296, type: 3}
@@ -185,11 +183,15 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - Weapon for the desperate.
   executioner_comment: 
   favourite: 
+  dont_load: 0
 --- !u!114 &-1696649652281203580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,3 +267,4 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
+  stackable: 0

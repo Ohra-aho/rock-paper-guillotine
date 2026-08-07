@@ -14,7 +14,7 @@ public class Veriterä : MonoBehaviour
 
 	public void BuffThis(Weapon w)
 	{
-		GameObject old_buff = GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name);
+		GameObject old_buff = GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name+"_2");
 		if(old_buff != null)
 		{
 			old_buff.GetComponent<Buff>().damage_buff++;
@@ -24,7 +24,7 @@ public class Veriterä : MonoBehaviour
 			own_buff.damage_buff = 1;
 			own_buff.temporary = true;
 			own_buff.timer = 1000;
-			own_buff.id = GetComponent<Weapon>().name;
+			own_buff.id = GetComponent<Weapon>().name+"_2";
 		}
 	}	
 
