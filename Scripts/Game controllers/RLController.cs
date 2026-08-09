@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -39,6 +40,8 @@ public class RLController : MonoBehaviour
 	[HideInInspector] public bool achievements_active = false;
 	[HideInInspector] public bool game_started = false;
 
+	public GameObject achivementemt_counter;
+
     public void Insiate(StoryData data)
     {
         if (data != null)
@@ -61,10 +64,29 @@ public class RLController : MonoBehaviour
         wheel_holder = GameObject.Find("PlayerWheelHolder");
         MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
 
+		if(picks > 0)
+		{
+			achivementemt_counter.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(1,1,1,1);
+			achivementemt_counter.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Chosen memories: 0/"+picks;
+		} else
+		{
+			achivementemt_counter.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(1,1,1,0);
+		}
+
         ActivateAchievements();
 		RemoveMartyrWeapons();
 		ActivateLoadedBuffs();
     }
+
+	public void DisplayChosenMemories()
+	{
+		achivementemt_counter.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Chosen memories: "+ chosen_buffs.Count +"/"+picks;
+	}
+
+	public void HideAchievementCounter()
+	{
+		achivementemt_counter.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(1,1,1,0);
+	}
 
     public void ApplyBuffs()
     {

@@ -7593,7 +7593,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &174536673
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8888,7 +8888,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &243905400
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9164,7 +9164,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &272713728
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9366,7 +9366,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &280003056
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9710,7 +9710,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 1
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &292334037
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10308,7 +10308,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &321403545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10731,7 +10731,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &361386580
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11328,6 +11328,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1066024797}
+        m_TargetAssemblyTypeName: RLController, Assembly-CSharp
+        m_MethodName: HideAchievementCounter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -11549,7 +11561,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &420572230
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11796,7 +11808,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &484853837
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14248,7 +14260,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &710834408
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14591,7 +14603,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &726509593
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15345,7 +15357,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &742436649
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16454,7 +16466,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &839711887
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16842,7 +16854,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &894558212
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17471,7 +17483,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &960617513
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18657,7 +18669,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &1065204959
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19085,6 +19097,7 @@ MonoBehaviour:
   slaughterer: 0
   achievements_active: 0
   game_started: 0
+  achivementemt_counter: {fileID: 1943056424}
 --- !u!114 &1066024798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19235,7 +19248,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &1106932227
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24685,7 +24698,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &1170335965
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25020,7 +25033,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &1193551605
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26047,7 +26060,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &1279963722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26457,7 +26470,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &1298052912
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26645,7 +26658,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &1300552749
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27726,7 +27739,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &1391024148
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34733,7 +34746,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &1508218630
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35696,7 +35709,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &1587115121
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36032,7 +36045,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &1599763131
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36422,7 +36435,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &1627605545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38132,7 +38145,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &1698637736
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -44277,7 +44290,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &1816700571
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -44443,6 +44456,7 @@ RectTransform:
   - {fileID: 1677783652}
   - {fileID: 350395349}
   - {fileID: 1250560724}
+  - {fileID: 1943056425}
   - {fileID: 640640613}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44640,7 +44654,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &1821548317
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -44987,9 +45001,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1379648961
   m_SortingLayer: 5
-  m_SortingOrder: 12
+  m_SortingOrder: 21
   m_Sprite: {fileID: 21300000, guid: 71f447617b6161641bafa822a0da0cd4, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.016252995, a: 0}
+  m_Color: {r: 1, g: 0, b: 0.015686035, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -50816,6 +50830,82 @@ MeshRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 13
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1943056424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1943056425}
+  - component: {fileID: 1943056428}
+  - component: {fileID: 1943056427}
+  m_Layer: 5
+  m_Name: Available achievements
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1943056425
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943056424}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2087842720}
+  m_Father: {fileID: 1817942855}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 21, y: 200.05}
+  m_SizeDelta: {x: 157.38, y: 32.1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1943056427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943056424}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 410c9babe4b4d644b9d886b83160ca27, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1943056428
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943056424}
+  m_CullTransparentMesh: 1
 --- !u!1 &1952297963
 GameObject:
   m_ObjectHideFlags: 0
@@ -51209,7 +51299,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &1977854764
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -51945,7 +52035,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 
+  usable_states: 0500000002000000
 --- !u!212 &2052326889
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -52765,6 +52855,140 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 83fc2a79bceb4c249bcf68be3aa43d9a, type: 3}
   - {fileID: 21300000, guid: 8977aab7d46fd6b44856657c7c365274, type: 3}
   - {fileID: 21300000, guid: eff7c6c3752222d46a24cfff4f967015, type: 3}
+--- !u!1 &2087842719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2087842720}
+  - component: {fileID: 2087842722}
+  - component: {fileID: 2087842721}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2087842720
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087842719}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1943056425}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -20.5, y: 0}
+  m_SizeDelta: {x: 321.13, y: 25}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2087842721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087842719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Chosen memories: 3/3'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 18
+  m_fontSizeBase: 18
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 33
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &2087842722
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087842719}
+  m_CullTransparentMesh: 1
 --- !u!1 &2113757334
 GameObject:
   m_ObjectHideFlags: 0

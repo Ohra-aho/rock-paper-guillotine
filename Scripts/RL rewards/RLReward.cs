@@ -67,7 +67,7 @@ public class RLReward : MonoBehaviour
 
     public bool CheckIfCanBePicked()
     {
-		return true;
+		//return true;
         RLController rlc = GameObject.Find("EventSystem").GetComponent<RLController>();
         if (rlc.chosen_buffs.Count < rlc.picks)
         {
@@ -89,6 +89,7 @@ public class RLReward : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = image_1;
             GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs.Remove(this.gameObject);
         }
+		GameObject.Find("EventSystem").GetComponent<RLController>().DisplayChosenMemories();
     }
 
     public void ShowInfo()
