@@ -98,6 +98,7 @@ public class Counter : MonoBehaviour
 					GetComponent<Image>().color = new Color(1,1,1,1);
 					transform.GetChild(2).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
 					transform.GetChild(0).gameObject.SetActive(true);
+					transform.GetChild(1).gameObject.SetActive(false);
 				}
 				int current = HB.GiveCurrentHealth();
 				int max = HB.GiveMaxHealth();
@@ -111,18 +112,32 @@ public class Counter : MonoBehaviour
 					GetComponent<Image>().color = new Color(1,1,1,0);
 					transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
 					transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
-					transform.GetChild(0).gameObject.SetActive(true);
+					transform.GetChild(0).gameObject.SetActive(false);
 				}
 			}
 		} else
 		{
-			if(GetComponent<Image>().color.a != 0)
+			if(!weakness && !bleed)
 			{
-				GetComponent<Image>().color = new Color(1,1,1,0);
-				transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "";
-				transform.GetChild(2).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
-				transform.GetChild(0).gameObject.SetActive(false);
+				if(GetComponent<Image>().color.a != 0)
+				{
+					GetComponent<Image>().color = new Color(1,1,1,0);
+					transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "";
+					transform.GetChild(2).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+					transform.GetChild(0).gameObject.SetActive(false);
+					transform.GetChild(1).gameObject.SetActive(false);
+				}
+			} else
+			{
+				if(GetComponent<Image>().color.a != 0)
+				{
+					GetComponent<Image>().color = new Color(1,1,1,0);
+					transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
+					transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+					transform.GetChild(0).gameObject.SetActive(false);
+				}
 			}
+			
 		}
 	}
 

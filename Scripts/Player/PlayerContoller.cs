@@ -320,6 +320,9 @@ public class PlayerContoller : MonoBehaviour
 			if(transform.GetChild(i).GetComponent<CHoisePanel>().weapon != null)
 			{
 				transform.GetChild(i).GetComponent<CHoisePanel>().DisplayBuffing();
+			} else
+			{
+				transform.GetChild(i).GetComponent<CHoisePanel>().TurnOffBuffIndicator();
 			}
 		}
 	}
@@ -328,10 +331,7 @@ public class PlayerContoller : MonoBehaviour
 	{
 		for(int i = 0; i < transform.childCount; i++)
 		{
-			if(transform.GetChild(i).GetComponent<CHoisePanel>().weapon != null)
-			{
-				transform.GetChild(i).GetComponent<CHoisePanel>().TurnOffBuffIndicator();
-			}
+			transform.GetChild(i).GetComponent<CHoisePanel>().TurnOffBuffIndicator();
 		}
 	}
 

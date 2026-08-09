@@ -109,7 +109,8 @@ public class PlayerInventory : MonoBehaviour
 		List<WeaponData> equipped_weapons = new List<WeaponData>();
 		for(int i = 0; i < items.Count; i++)
 		{
-			weapons.Add(new WeaponData(items[i].GetComponent<Weapon>()));
+			if(items[i] != null)
+				weapons.Add(new WeaponData(items[i].GetComponent<Weapon>()));
 		}
 		List<Weapon> temp = GetComponent<PlayerContoller>().GetWeapons();
 		for(int i = 0; i < temp.Count; i++)

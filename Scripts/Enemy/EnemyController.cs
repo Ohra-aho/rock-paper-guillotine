@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -297,7 +296,7 @@ public class EnemyController : MonoBehaviour
 
 	public void PlayDamageAnimation(bool dead)
 	{
-		int max_health = HB.GiveTrueMaxHealth();
+		/*int max_health = HB.GiveTrueMaxHealth();
 		int current_health = HB.GiveCurrentHealth();
 		if(!dead)
 		{
@@ -311,6 +310,6 @@ public class EnemyController : MonoBehaviour
 		} else
 		{
 			transform.parent.GetChild(4).GetComponent<Test>().PlayAnimation("death");
-		}
+		}*/
 	}
 }

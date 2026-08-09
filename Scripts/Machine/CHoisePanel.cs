@@ -14,8 +14,8 @@ public class CHoisePanel : MonoBehaviour
     public Weapon weapon;
     MainController MC;
 	
-	bool buff_on;
-	bool debuff_on;
+	bool buff_on = false;
+	bool debuff_on = false;
 
     public List<Sprite> icons;
 	private GameObject lights;
@@ -197,10 +197,10 @@ public class CHoisePanel : MonoBehaviour
 				debuff_found = true;
 			}
 		}
-		
+
 		if(buff_found != buff_on || debuff_found != debuff_on)
 		{
-			TurnOffBuffIndicator();
+			//TurnOffBuffIndicator();
 			if(buff_found && debuff_found)
 			{
 				lights.GetComponent<Test>().PlayAnimation("buff_and_debuff_on");
@@ -210,6 +210,9 @@ public class CHoisePanel : MonoBehaviour
 			} else if(debuff_found)
 			{
 				lights.GetComponent<Test>().PlayAnimation("debuff_on");
+			} else
+			{
+				TurnOffBuffIndicator();
 			}
 			buff_on = buff_found;
 			debuff_on = debuff_found;	
@@ -220,16 +223,12 @@ public class CHoisePanel : MonoBehaviour
 	{
 		if(buff_on && debuff_on)
 		{
-			debuff_on = false;
-			buff_on = false;
 			lights.GetComponent<Test>().PlayAnimation("buff_and_debuff_off");
 		} else if(buff_on)
 		{
-			buff_on = false;
 			lights.GetComponent<Test>().PlayAnimation("buff_off");
 		} else if(debuff_on)
 		{
-			debuff_on = false;
 			lights.GetComponent<Test>().PlayAnimation("debuff_off");
 		}
 	}

@@ -60,6 +60,7 @@ public class Howler : MonoBehaviour
 		dummy_weapon.GetComponent<Weapon>().armor = GetComponent<Weapon>().opponent.armor;
 		dummy_weapon.GetComponent<Weapon>().name = GetComponent<Weapon>().opponent.name;
 		dummy_weapon.GetComponent<Weapon>().type = GetComponent<Weapon>().opponent.og_type;
+		dummy_weapon.GetComponent<Weapon>().og_type = GetComponent<Weapon>().opponent.og_type;
 		dummy_weapon.GetComponent<Weapon>().player = true;
 		dummy_weapon.GetComponent<Weapon>().player_owner = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
 		dummy_weapon.GetComponent<Weapon>().description = "Resets at the end of the fight.";
