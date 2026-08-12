@@ -10,7 +10,7 @@ public class Abomination : MonoBehaviour
 		{
 			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
 			GetComponent<BuffController>().armor_bonus = 3;
-			GetComponent<BuffController>().timer = 4;
+			GetComponent<BuffController>().until_used = true;
 			GetComponent<BuffController>().temporary = true;
 			GetComponent<BuffController>().special_apply = true;
 		}

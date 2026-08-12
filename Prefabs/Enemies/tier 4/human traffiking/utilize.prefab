@@ -101,14 +101,12 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 1
-  damage: 2
-  armor: 2
-  real_damage: 0
-  real_armor: 0
+  og_type: 0
+  damage: 1
+  armor: 0
   name: Utilize
-  description: "If wins, uses all points to give you 1 Thrall for each point used.
-    Otherwise all weapons become \u201Dunbeatable\u201D for amount of turns equal
-    to the amount of points used."
+  description: "After use, uses all points to give you 1 Thrall for each point used.
+    If has no points, all weapons become \u201Dunbeatable\u201D for one turn."
   sprite: {fileID: 21300000, guid: 4d08ad8afa555bc46a10a73daa47681a, type: 3}
   tiers: []
   tier: 0
@@ -126,7 +124,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943732860799206268}
+        m_TargetAssemblyTypeName: Demon, Assembly-CSharp
+        m_MethodName: Utilize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -144,49 +154,13 @@ MonoBehaviour:
       m_Calls: []
   win:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1943732860799206268}
-        m_TargetAssemblyTypeName: Demon, Assembly-CSharp
-        m_MethodName: Utilize
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   lose:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1943732860799206268}
-        m_TargetAssemblyTypeName: Demon, Assembly-CSharp
-        m_MethodName: UtilizeTwo
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   draw:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1943732860799206268}
-        m_TargetAssemblyTypeName: Demon, Assembly-CSharp
-        m_MethodName: UtilizeTwo
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   heal:
     m_PersistentCalls:
       m_Calls: []
@@ -208,6 +182,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -217,17 +197,14 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
+  dont_load: 0
 --- !u!114 &1943732860799206268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,11 +251,12 @@ MonoBehaviour:
   toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
-  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
   each_turn: 0
+  damage_modifier: 0
+  heal_modifier: 0
   victory: 0
   special_apply: 0
   takeDamage: 0
@@ -302,8 +280,10 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   until_used: 0
+  reminder: 
   destructive: 0
   heal_disabler: 0
+  stackable: 0
 --- !u!114 &-416344381773603521
 MonoBehaviour:
   m_ObjectHideFlags: 0
