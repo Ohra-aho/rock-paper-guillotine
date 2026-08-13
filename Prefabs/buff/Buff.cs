@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -74,6 +75,8 @@ public class Buff : MonoBehaviour
     public MainController.Choise? type_change = null;
 
     private bool healing_disabled = false;
+
+	[HideInInspector] public bool disabled = false;
 
     private void Awake()
     {
@@ -301,9 +304,9 @@ public class Buff : MonoBehaviour
             });
         }
 
-
-
         if (special_removal != null) special_removal(weapon);
+
+		disabled = true;
     }
 
     public void TickDown()

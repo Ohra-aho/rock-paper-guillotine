@@ -193,16 +193,16 @@ public class CHoisePanel : MonoBehaviour
 
 		for(int i = 0; i < weapon.transform.childCount; i++)
 		{
-			if(weapon.transform.GetChild(i).GetComponent<Buff>().visible_buff)
+			if(weapon.transform.GetChild(i).GetComponent<Buff>().visible_buff && !weapon.transform.GetChild(i).GetComponent<Buff>().disabled)
 			{
 				buff_found = true;
 			}
-			if(weapon.transform.GetChild(i).GetComponent<Buff>().visible_debuff)
+			if(weapon.transform.GetChild(i).GetComponent<Buff>().visible_debuff && !weapon.transform.GetChild(i).GetComponent<Buff>().disabled)
 			{
 				debuff_found = true;
 			}
 		}
-
+		
 		if(buff_found != buff_on || debuff_found != debuff_on)
 		{
 			if(buff_found && debuff_found)
