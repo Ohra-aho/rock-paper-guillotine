@@ -64,14 +64,14 @@ public class Message : MonoBehaviour
         
 		for (int i = 0; i < messages.Count; i++)
 		{
-			if(messages[i].Contains("[kill]"))
+			/*if(messages[i].Contains("[kill]"))
 			{
-				MC.game_state = MainController.State.dead;
-				GameObject.Find("man").GetComponent<SpriteRenderer>().sprite = GameObject.Find("man").GetComponent<ManAnimator>().man_sheet[20];
-				GameObject.Find("Machine").GetComponent<Machine>().EndTheGame();
+				//MC.game_state = MainController.State.dead;
+				//GameObject.Find("man").GetComponent<SpriteRenderer>().sprite = GameObject.Find("man").GetComponent<ManAnimator>().man_sheet[20];
+				//GameObject.Find("Machine").GetComponent<Machine>().EndTheGame();
 				break;
 			} else
-			{
+			{*/
 				try
 				{
 					string line = messages[i];
@@ -82,7 +82,7 @@ public class Message : MonoBehaviour
 				{
 					temp.Add(messages[i]);
 				}
-			}
+			//}
 		}
         
         if(temp.Count > 0)
@@ -167,11 +167,15 @@ public class Message : MonoBehaviour
 
     private void OnDestroy()
     {
-        MainController MC = GameObject.Find("EventSystem").GetComponent<MainController>();
-        if(MC != null)
-        {
-            MC.SetNewState(MainController.State.idle);
-        }
+		GameObject event_system = GameObject.Find("EventSystem");
+		if(event_system != null)
+		{
+			MainController MC = event_system.GetComponent<MainController>();
+			if(MC != null)
+			{
+				MC.SetNewState(MainController.State.idle);
+			}	
+		}
     }
 
     public void DisableButtons()

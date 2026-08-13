@@ -235,8 +235,17 @@ public class ManAnimator : MonoBehaviour
 
     private void PlayFrame(Frame frame)
     {
-        ChangeSprite(frame.sprite);
-        dialog_box.GetComponent<DialogBox>().StartTextAnimation(frame.text, null);
+		if(frame.text.Contains("[kill]"))
+		{
+			if(current_frames.Count > 1) dialog_box.GetComponent<DialogBox>().StartAnimation(1);
+			controller.game_state = MainController.State.dead;
+			GameObject.Find("man").GetComponent<SpriteRenderer>().sprite = GameObject.Find("man").GetComponent<ManAnimator>().man_sheet[20];
+			GameObject.Find("Machine").GetComponent<Machine>().EndTheGame();
+		} else
+		{
+			ChangeSprite(frame.sprite);
+        	dialog_box.GetComponent<DialogBox>().StartTextAnimation(frame.text, null);	
+		}
     }
 
     public void ManMessage(List<Frame> frames)
@@ -249,7 +258,7 @@ public class ManAnimator : MonoBehaviour
         }
         current_frames = frames;
         current_frame = 0;
-        dialog_box.GetComponent<DialogBox>().StartAnimation(0);
+        if(!current_frames[current_frame].text.Contains("[kill]")) dialog_box.GetComponent<DialogBox>().StartAnimation(0);
         PlayFrame(current_frames[current_frame]);
     }
 
