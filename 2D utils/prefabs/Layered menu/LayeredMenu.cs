@@ -22,7 +22,7 @@ public class LayeredMenu : MonoBehaviour
         } else
         {
             GameObject.Find("StartButton").GetComponent<StartButton>().deactivated = true;
-            GameObject.Find("man").GetComponent<ManAnimator>().paused = true;
+            if(GameObject.Find("man") != null) GameObject.Find("man").GetComponent<ManAnimator>().paused = true;
         }
         
 
@@ -41,14 +41,12 @@ public class LayeredMenu : MonoBehaviour
         else
         {
             GameObject.Find("StartButton").GetComponent<StartButton>().deactivated = false;
-            GameObject.Find("man").GetComponent<ManAnimator>().paused = false;
+            if(GameObject.Find("man") != null) GameObject.Find("man").GetComponent<ManAnimator>().paused = false;
         }
     }
 
     public void QuitGame()
     {
-        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
-        //controller.GetComponent<SaveHub>().SaveAll();
         Application.Quit();
     }
 }

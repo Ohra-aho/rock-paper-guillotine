@@ -18,7 +18,8 @@ public class StartingWeapons : MonoBehaviour
     public List<GameObject> GiveStartingWeapons()
     {
         List<GameObject> temp = new List<GameObject>();
-        int index = GetComponent<MainController>().GetComponent<StoryCheckList>().greeting_index;
+        int index = GetComponent<StoryCheckList>().greeting_index;
+		if(GetComponent<StoryController>().executioner) index = weapon_collections.Length-1; 
 
         if(index >= weapon_collections.Length)
         {

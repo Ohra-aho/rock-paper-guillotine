@@ -24,7 +24,6 @@ public class AllWeaponBox : MonoBehaviour
 		table_box = GameObject.Find("Weapon box");
 		table_box.SetActive(false);
 		SortInventory();
-		displayWeapons();
         transform.GetChild(0).GetComponent<NonUIScroll>().CalculateHeight();
         transform.GetChild(0).GetComponent<NonUIScroll>().CalculateStartAndEndPoint();
         transform.GetChild(0).GetComponent<NonUIScroll>().DetermineInitialLocation();

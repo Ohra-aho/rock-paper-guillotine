@@ -7,7 +7,8 @@ public class StartWeapons : MonoBehaviour
 	public GameObject death_barks;
 	void Awake()
 	{
-		if(!GameObject.Find("EventSystem").GetComponent<StoryController>().museum_active)
+		GameObject event_system = GameObject.Find("EventSystem");
+		if(!event_system.GetComponent<StoryController>().museum_active)
 		{
 			MainController MC = GameObject.Find("EventSystem").GetComponent<MainController>();
 			List<GameObject> starting_weapons = MC.GetComponent<StartingWeapons>().GiveStartingWeapons();
@@ -19,7 +20,7 @@ public class StartWeapons : MonoBehaviour
 					GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(starting_weapons[i]);
 				}
 			}
-			Instantiate(death_barks, GameObject.Find("EventSystem").transform);
+			Instantiate(death_barks, event_system.transform);
 			GetComponent<StoryEvent>().over = true;	
 		} else
 		{

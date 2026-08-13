@@ -32,13 +32,11 @@ public class Rules : MonoBehaviour
 	public void FolderPress()
 	{
 		MainController MC = GameObject.Find("EventSystem").GetComponent<MainController>();
-		if(MC.game_state != MainController.State.in_battle && MC.game_state != MainController.State.transition)
-		{
-			GameObject new_weapon_box = Instantiate(weapon_box, box_holder.transform);
-			new_weapon_box.GetComponent<AllWeaponBox>().Inisiate();
+		GameObject new_weapon_box = Instantiate(weapon_box, box_holder.transform);
+		new_weapon_box.GetComponent<AllWeaponBox>().Inisiate();
 
-			inventory_button.GetComponent<InventoryButton>().Press();
-		}
+		if(GameObject.FindGameObjectWithTag("Inventory") == null) inventory_button.GetComponent<InventoryButton>().Press();
+		
 	}
 
 }

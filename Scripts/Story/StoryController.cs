@@ -144,6 +144,8 @@ public class StoryController : MonoBehaviour
 		{
 			//Set executioner game
 	        story = Instantiate(GetComponent<MainController>().playthroughts[2], transform);
+			GameObject.Find("man").GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
+			GameObject.Find("man").transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
 		}
         else if(museum_active)
 		{
