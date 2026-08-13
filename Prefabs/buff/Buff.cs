@@ -100,14 +100,14 @@ public class Buff : MonoBehaviour
 
 		if(toughness_buff != 0)
 		{
-			if(transform.parent.GetComponent<SelfDestruct>())
+			/*if(transform.parent.GetComponent<SelfDestruct>())
 			{
 				if (toughness_buff < 0 && -toughness_buff > transform.parent.GetComponent<SelfDestruct>().toughness)
 				{
 					toughness_buff = -transform.parent.GetComponent<SelfDestruct>().toughness;
 				}
 				transform.parent.GetComponent<SelfDestruct>().toughness += toughness_buff;	
-			}
+			}*/
 		}
 
 		GetOGs();
@@ -223,11 +223,11 @@ public class Buff : MonoBehaviour
 
         if (toughness_buff != 0)
         {
-            if (toughness_buff > transform.parent.GetComponent<SelfDestruct>().toughness)
+            /*if (toughness_buff > transform.parent.GetComponent<SelfDestruct>().toughness)
             {
                 toughness_buff = transform.parent.GetComponent<SelfDestruct>().toughness;
             }
-            transform.parent.GetComponent<SelfDestruct>().toughness -= toughness_buff;
+            transform.parent.GetComponent<SelfDestruct>().toughness -= toughness_buff;*/
         }
 
         if (choisePhase)

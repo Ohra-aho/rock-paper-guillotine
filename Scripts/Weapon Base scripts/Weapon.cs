@@ -26,6 +26,8 @@ public class Weapon : MonoBehaviour
 	[HideInInspector] public List<Sprite> tiers = new List<Sprite>();
 	public int tier = 0;
 
+	[HideInInspector] public int toughness = 0; 
+
     public UnityEvent first_turn;
     public UnityEvent end_of_fight;
 
@@ -178,6 +180,18 @@ public class Weapon : MonoBehaviour
 			}
 		}
 		return type;
+	}
+
+	public int GetEffectiveToughness()
+	{
+		int effective_toughness = 0;
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            effective_toughness += transform.GetChild(i).GetComponent<Buff>().toughness_buff;
+        }
+        effective_toughness += toughness;
+        if (effective_toughness < 0) effective_toughness = 0;
+        return effective_toughness;
 	}
 
     public void TakeDamage(int amount)

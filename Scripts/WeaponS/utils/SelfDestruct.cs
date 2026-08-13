@@ -24,8 +24,7 @@ public class SelfDestruct : MonoBehaviour
                 if (GetComponent<Weapon>().owner.HB.CheckIfDead()) nessessary = false;
 				if (GetComponent<Weapon>().opponent.player_owner.HB.CheckIfDead()) nessessary = false;
             }
-
-            if (toughness > 0) nessessary = false;
+            if (GetComponent<Weapon>().GetEffectiveToughness() > 0) nessessary = false;
 			for(int i = 0; i < transform.childCount; i++)
 			{
 				if(transform.GetChild(i).GetComponent<Buff>().toughness_buff > 0)
@@ -53,7 +52,7 @@ public class SelfDestruct : MonoBehaviour
 					destroyed = true;
                 }
             }
-            toughness--;
+            GetComponent<Weapon>().toughness--;
         }
     }
 

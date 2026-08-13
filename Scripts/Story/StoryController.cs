@@ -186,8 +186,6 @@ public class StoryController : MonoBehaviour
 
     string[][] messages =
     {
-		new string[] {  "Yeah, let's just get this over with.", "[kill]" },
-        new string[] {  "[kill]" },
         new string[] { "I know how and when,", "but why...10", "I did not bother to figure that one out." },
         new string[] { "It is funny to think that in situations like this, everyone is still innocent.", "Well, until proven, I suppose. 7"},
         new string[] { "Was it worth it? 12" },
