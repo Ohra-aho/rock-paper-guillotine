@@ -63,8 +63,8 @@ public class RLController : MonoBehaviour
         RI = GameObject.FindGameObjectWithTag("RI");
         wheel_holder = GameObject.Find("PlayerWheelHolder");
         MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
-
-		if(picks > 0)
+		
+		if(picks > 0 && GetComponent<StoryController>().picked_achievements.Count == 0)
 		{
 			achivementemt_counter.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(1,1,1,1);
 			achivementemt_counter.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Chosen memories: 0/"+picks;

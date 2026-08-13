@@ -32,8 +32,12 @@ public class PermanentDebuffer : MonoBehaviour
 
 	public GameObject FindOwnBuff(string name)
 	{
-		Weapon opponent = GetComponent<Weapon>().opponent;
-		return opponent.GetCertainBuff(name);
+		if(GetComponent<Weapon>().opponent != null)
+		{
+			Weapon opponent = GetComponent<Weapon>().opponent;
+			return opponent.GetCertainBuff(name);	
+		}
+		return null;
 	}
 
     public void DebuffOpposingWeaponDamage(int amount)
@@ -47,10 +51,13 @@ public class PermanentDebuffer : MonoBehaviour
 			} else
 			{
 				Weapon opponent = GetComponent<Weapon>().opponent;
-				Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-				new_buff.damage_buff = -amount;
-				new_buff.id = GetComponent<Weapon>().name + "_debuff";
-				new_buff.AddBuff();	
+				if(opponent != null)
+				{
+					Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+					new_buff.damage_buff = -amount;
+					new_buff.id = GetComponent<Weapon>().name + "_debuff";
+					new_buff.AddBuff();		
+				}
 			}
 		}
     }
@@ -67,10 +74,13 @@ public class PermanentDebuffer : MonoBehaviour
 			else
 			{
 				Weapon opponent = GetComponent<Weapon>().opponent;
-				Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-				new_buff.armor_buff = -amount;
-				new_buff.id = GetComponent<Weapon>().name + "_debuff";
-				new_buff.AddBuff();		
+				if(opponent != null)
+				{
+					Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+					new_buff.armor_buff = -amount;
+					new_buff.id = GetComponent<Weapon>().name + "_debuff";
+					new_buff.AddBuff();		
+				}
 			}
 		}
     }
@@ -87,10 +97,13 @@ public class PermanentDebuffer : MonoBehaviour
 			else
 			{
 				Weapon opponent = GetComponent<Weapon>().opponent;
-				Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-				new_buff.armor_buff = amount;
-				new_buff.id = GetComponent<Weapon>().name + "_buff";
-				new_buff.AddBuff();	
+				if(opponent != null)
+				{
+					Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+					new_buff.armor_buff = amount;
+					new_buff.id = GetComponent<Weapon>().name + "_buff";
+					new_buff.AddBuff();		
+				}
 			}
 		}
     }
@@ -107,10 +120,13 @@ public class PermanentDebuffer : MonoBehaviour
 			else
 			{
 				Weapon opponent = GetComponent<Weapon>().opponent;
-				Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-				new_buff.damage_buff = amount;
-				new_buff.id = GetComponent<Weapon>().name + "_buff";
-				new_buff.AddBuff();		
+				if(opponent != null)
+				{
+					Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+					new_buff.damage_buff = amount;
+					new_buff.id = GetComponent<Weapon>().name + "_buff";
+					new_buff.AddBuff();		
+				}
 			}
 		}
     }
@@ -126,14 +142,17 @@ public class PermanentDebuffer : MonoBehaviour
 			} else
 			{
 				Weapon opponent = GetComponent<Weapon>().opponent;
-				Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-				new_buff.id = GetComponent<Weapon>().name + "_debuff";
-				new_buff.type_change = MainController.Choise.useless;
-				new_buff.temporary = true;
-				new_buff.timer = turns;
-				new_buff.reminder = "Made \"useless\".";
-				new_buff.visible_debuff = true;
-				new_buff.AddBuff();	
+				if(opponent != null)
+				{
+					Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+					new_buff.id = GetComponent<Weapon>().name + "_debuff";
+					new_buff.type_change = MainController.Choise.useless;
+					new_buff.temporary = true;
+					new_buff.timer = turns;
+					new_buff.reminder = "Made \"useless\".";
+					new_buff.visible_debuff = true;
+					new_buff.AddBuff();		
+				}
 			}
 			
 		}
@@ -150,15 +169,18 @@ public class PermanentDebuffer : MonoBehaviour
 			} else
 			{
 				Weapon opponent = GetComponent<Weapon>().opponent;
-				Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-				new_buff.id = GetComponent<Weapon>().name + "_debuff";
-				new_buff.type_change = MainController.Choise.useless;
-				new_buff.temporary = true;
-				new_buff.timer = 1000;
-				new_buff.until_used = true;
-				new_buff.reminder = "\"Useless\" until used again or until end of the fight.";
-				new_buff.visible_debuff = true;
-				new_buff.AddBuff();		
+				if(opponent != null)
+				{
+					Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+					new_buff.id = GetComponent<Weapon>().name + "_debuff";
+					new_buff.type_change = MainController.Choise.useless;
+					new_buff.temporary = true;
+					new_buff.timer = 1000;
+					new_buff.until_used = true;
+					new_buff.reminder = "\"Useless\" until used again or until end of the fight.";
+					new_buff.visible_debuff = true;
+					new_buff.AddBuff();		
+				}
 			}
 		}
     }
@@ -167,7 +189,8 @@ public class PermanentDebuffer : MonoBehaviour
     {
 		if(HandleTrgger())
 		{
-        	GetComponent<Weapon>().opponent.player_owner.HB.DecreaseHealthBar(amount, true);
+			if(GetComponent<Weapon>().opponent != null)
+        		GetComponent<Weapon>().opponent.player_owner.HB.DecreaseHealthBar(amount, true);
 		}
     }
 
@@ -175,7 +198,8 @@ public class PermanentDebuffer : MonoBehaviour
     {
 		if(HandleTrgger())
 		{
-        	GetComponent<Weapon>().opponent.player_owner.HB.IncreaseHealthBar(amount, true);
+			if(GetComponent<Weapon>().opponent != null)
+        		GetComponent<Weapon>().opponent.player_owner.HB.IncreaseHealthBar(amount, true);
 		}
     }
 
@@ -183,7 +207,8 @@ public class PermanentDebuffer : MonoBehaviour
 	{
 		if(HandleTrgger())
 		{
-        	GetComponent<Weapon>().opponent.player_owner.HB.RemoveTemporaryHealth(amount, true);
+			if(GetComponent<Weapon>().opponent != null)
+        		GetComponent<Weapon>().opponent.player_owner.HB.RemoveTemporaryHealth(amount, true);
 		}
 	}
 
@@ -191,7 +216,8 @@ public class PermanentDebuffer : MonoBehaviour
 	{
 		if(HandleTrgger())
 		{
-			GetComponent<Weapon>().opponent.player_owner.HB.GiveTemporaryHealth(amount, true);
+			if(GetComponent<Weapon>().opponent != null)
+				GetComponent<Weapon>().opponent.player_owner.HB.GiveTemporaryHealth(amount, true);
 		}
 	}
 
@@ -209,18 +235,21 @@ public class PermanentDebuffer : MonoBehaviour
 			} else
 			{
 				Weapon opponent = GetComponent<Weapon>().opponent;
-				Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-				new_buff.id = GetComponent<Weapon>().name + "_debuff";
-				new_buff.destructive = true;
-				new_buff.desruction_buffer = true;
-				new_buff.reminder = "After use, destroys itself.";
-				if(turns > 0)
+				if(opponent != null)
 				{
-					new_buff.temporary = true;
-					new_buff.timer = turns;
-					new_buff.visible_debuff = true;
+					Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+					new_buff.id = GetComponent<Weapon>().name + "_debuff";
+					new_buff.destructive = true;
+					new_buff.desruction_buffer = true;
+					new_buff.reminder = "After use, destroys itself.";
+					if(turns > 0)
+					{
+						new_buff.temporary = true;
+						new_buff.timer = turns;
+						new_buff.visible_debuff = true;
+					}
+					new_buff.AddBuff();		
 				}
-				new_buff.AddBuff();		
 			}
 		}
     }
@@ -236,10 +265,13 @@ public class PermanentDebuffer : MonoBehaviour
 			} else
 			{
 				Weapon opponent = GetComponent<Weapon>().opponent;
-				Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-				new_buff.id = GetComponent<Weapon>().name + "_debuff";
-				new_buff.type_change = MainController.Choise.useless;
-				new_buff.AddBuff();	
+				if(opponent != null)
+				{
+					Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+					new_buff.id = GetComponent<Weapon>().name + "_debuff";
+					new_buff.type_change = MainController.Choise.useless;
+					new_buff.AddBuff();		
+				}
 			}
 		}
     }
@@ -249,8 +281,11 @@ public class PermanentDebuffer : MonoBehaviour
 		if(HandleTrgger())
 		{
 			Weapon opponent = GetComponent<Weapon>().opponent;
-			opponent.AddComponent<SelfDestruct>();
-			opponent.GetComponent<SelfDestruct>().Destruct();	
+			if(opponent != null)
+			{
+				opponent.AddComponent<SelfDestruct>();
+				opponent.GetComponent<SelfDestruct>().Destruct();	
+			}
 		}
 	}
 
@@ -265,14 +300,17 @@ public class PermanentDebuffer : MonoBehaviour
 			} else
 			{
 				Weapon opponent = GetComponent<Weapon>().opponent;
-				Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-				new_buff.damage_buff = -amount;
-				new_buff.id = GetComponent<Weapon>().name + "_debuff";
-				new_buff.temporary = true;
-				new_buff.timer = 1000;
-				new_buff.reminder = "-"+amount+" to damage until the end of the fight.";
-				new_buff.visible_debuff = true;
-				new_buff.AddBuff();		
+				if(opponent != null)
+				{
+					Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+					new_buff.damage_buff = -amount;
+					new_buff.id = GetComponent<Weapon>().name + "_debuff";
+					new_buff.temporary = true;
+					new_buff.timer = 1000;
+					new_buff.reminder = "-"+amount+" to damage until the end of the fight.";
+					new_buff.visible_debuff = true;
+					new_buff.AddBuff();		
+				}
 			}
 		}
     }
@@ -290,14 +328,17 @@ public class PermanentDebuffer : MonoBehaviour
 			} else
 			{
 				Weapon opponent = GetComponent<Weapon>().opponent;
-				Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-				new_buff.armor_buff = -amount;
-				new_buff.id = GetComponent<Weapon>().name + "_debuff";
-				new_buff.temporary = true;
-				new_buff.timer = 1000;
-				new_buff.reminder = "-"+amount+" to armor until the end of the fight.";
-				new_buff.visible_debuff = true;
-				new_buff.AddBuff();		
+				if(opponent != null)
+				{
+					Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+					new_buff.armor_buff = -amount;
+					new_buff.id = GetComponent<Weapon>().name + "_debuff";
+					new_buff.temporary = true;
+					new_buff.timer = 1000;
+					new_buff.reminder = "-"+amount+" to armor until the end of the fight.";
+					new_buff.visible_debuff = true;
+					new_buff.AddBuff();		
+				}
 			}
 		}
     }
@@ -313,18 +354,21 @@ public class PermanentDebuffer : MonoBehaviour
 			} else
 			{
 				Weapon opponent = GetComponent<Weapon>().opponent;
-				Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
-				new_buff.id = GetComponent<Weapon>().name + "_debuff";
-				switch(type)
+				if(opponent != null)
 				{
-					case 1: new_buff.type_change = MainController.Choise.kivi; break;
-					case 2: new_buff.type_change = MainController.Choise.paperi; break;
-					case 3: new_buff.type_change = MainController.Choise.sakset; break;
-					case 4: new_buff.type_change = MainController.Choise.voittamaton; break;
-					case 5: new_buff.type_change = MainController.Choise.useless; break;
+					Buff new_buff = Instantiate(buff, opponent.transform).GetComponent<Buff>();
+					new_buff.id = GetComponent<Weapon>().name + "_debuff";
+					switch(type)
+					{
+						case 1: new_buff.type_change = MainController.Choise.kivi; break;
+						case 2: new_buff.type_change = MainController.Choise.paperi; break;
+						case 3: new_buff.type_change = MainController.Choise.sakset; break;
+						case 4: new_buff.type_change = MainController.Choise.voittamaton; break;
+						case 5: new_buff.type_change = MainController.Choise.useless; break;
+					}
+					
+					new_buff.AddBuff();		
 				}
-				
-				new_buff.AddBuff();		
 			}
 		}
 	}

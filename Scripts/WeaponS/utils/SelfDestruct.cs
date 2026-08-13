@@ -61,9 +61,9 @@ public class SelfDestruct : MonoBehaviour
     {
         if(GetComponent<Weapon>().player)
         {
+			GetComponent<Weapon>().player_owner.GetComponent<PlayerContoller>().DestructionHide(GetComponent<Weapon>().name);
             GameObject.Find("PlayerWheelHolder").GetComponent<PlayerWheelHolder>()
                 .RemoveWeapon(this.gameObject);
-			GetComponent<Weapon>().player_owner.GetComponent<PlayerContoller>().HideBuffing();
 
             //Check if player is left starnded
             MainController MC = GameObject.Find("EventSystem").GetComponent<MainController>();

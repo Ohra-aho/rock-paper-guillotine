@@ -100,7 +100,7 @@ MonoBehaviour:
   spammable: 0
   type: 1
   og_type: 0
-  damage: 1
+  damage: 5
   armor: 0
   name: Hat
   description: At the start of each fight, +1 damage to your weakest weapon until

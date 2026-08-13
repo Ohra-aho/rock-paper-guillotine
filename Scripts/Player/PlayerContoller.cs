@@ -335,6 +335,17 @@ public class PlayerContoller : MonoBehaviour
 		}
 	}
 
+	public void DestructionHide(string name)
+	{
+		for(int i = 0; i < transform.childCount; i++)
+		{
+			if(transform.GetChild(i).GetComponent<CHoisePanel>().weapon_name == name)
+			{
+				transform.GetChild(i).GetComponent<CHoisePanel>().TurnOffBuffIndicator();
+			}
+		}
+	}
+
     //Equipping
     public void EquipWeapon(Weapon weapon)
     {

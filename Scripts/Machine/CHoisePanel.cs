@@ -179,6 +179,11 @@ public class CHoisePanel : MonoBehaviour
         }
     }
 
+	public void ResetBuffing()
+	{
+		buff_on = false;
+		debuff_on = false;
+	}
 
 	public void DisplayBuffing()
 	{
@@ -200,7 +205,6 @@ public class CHoisePanel : MonoBehaviour
 
 		if(buff_found != buff_on || debuff_found != debuff_on)
 		{
-			//TurnOffBuffIndicator();
 			if(buff_found && debuff_found)
 			{
 				lights.GetComponent<Test>().PlayAnimation("buff_and_debuff_on");
@@ -231,5 +235,6 @@ public class CHoisePanel : MonoBehaviour
 		{
 			lights.GetComponent<Test>().PlayAnimation("debuff_off");
 		}
+		ResetBuffing();
 	}
 }
