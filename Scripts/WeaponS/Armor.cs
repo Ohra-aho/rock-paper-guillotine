@@ -12,5 +12,6 @@ public class Armor : MonoBehaviour
 		GetComponent<BuffController>().temporary = true;
 		GetComponent<BuffController>().timer = 1000;
 		GetComponent<BuffController>().reminder = "+"+GetComponent<BuffController>().armor_bonus+" armor until used.";
+		GetComponent<BuffController>().special_apply = true;
 	}
 }
