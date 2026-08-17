@@ -107,6 +107,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 2a3f8c3cc78346d4090fffc01e5318af, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
