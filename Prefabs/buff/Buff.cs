@@ -86,30 +86,6 @@ public class Buff : MonoBehaviour
 
     public void AddBuff()
     {
-		if (effect_damage_buff != 0)
-		{
-			if(transform.parent.GetComponent<EffectDamage>())
-			{
-				if (effect_damage_buff < 0 && -effect_damage_buff > transform.parent.GetComponent<EffectDamage>().amount)
-				{
-					effect_damage_buff = -transform.parent.GetComponent<EffectDamage>().amount;
-				}
-				transform.parent.GetComponent<EffectDamage>().amount += effect_damage_buff;
-			}
-		}
-
-		if(toughness_buff != 0)
-		{
-			/*if(transform.parent.GetComponent<SelfDestruct>())
-			{
-				if (toughness_buff < 0 && -toughness_buff > transform.parent.GetComponent<SelfDestruct>().toughness)
-				{
-					toughness_buff = -transform.parent.GetComponent<SelfDestruct>().toughness;
-				}
-				transform.parent.GetComponent<SelfDestruct>().toughness += toughness_buff;	
-			}*/
-		}
-
 		GetOGs();
 
 		if(choisePhase)
@@ -152,9 +128,6 @@ public class Buff : MonoBehaviour
 			transform.parent.GetComponent<Weapon>().on_death.AddListener(() => special(weapon));
 		if (each_turn)
 			transform.parent.GetComponent<Weapon>().eachTurn.AddListener(() => special(weapon));
-
-		if (type_change != null)
-			//transform.parent.GetComponent<Weapon>().type = type_change ?? og_type;  
 		if (penetrating)
 			transform.parent.GetComponent<Weapon>().penetrating = true;
 		if (draw_winner)
@@ -202,34 +175,6 @@ public class Buff : MonoBehaviour
 
     public void RemoveBuff()
     {
-        if (damage_buff != 0)
-        {
-            damage_buff = 0;
-        }
-
-        if (armor_buff != 0)
-        {
-            armor_buff = 0;
-        }
-
-        if (effect_damage_buff != 0)
-        {
-            if (transform.parent.GetComponent<EffectDamage>().amount < effect_damage_buff)
-            {
-                effect_damage_buff = transform.parent.GetComponent<EffectDamage>().amount;
-            }
-            transform.parent.GetComponent<EffectDamage>().amount -= effect_damage_buff;
-        }
-
-        if (toughness_buff != 0)
-        {
-            /*if (toughness_buff > transform.parent.GetComponent<SelfDestruct>().toughness)
-            {
-                toughness_buff = transform.parent.GetComponent<SelfDestruct>().toughness;
-            }
-            transform.parent.GetComponent<SelfDestruct>().toughness -= toughness_buff;*/
-        }
-
         if (choisePhase)
             transform.parent.GetComponent<Weapon>().choisePhase.RemoveListener(() => special(weapon));
         if (resultPhase)
@@ -268,9 +213,6 @@ public class Buff : MonoBehaviour
             transform.parent.GetComponent<Weapon>().on_death.RemoveListener(() => special(weapon));
 		if (each_turn)
             transform.parent.GetComponent<Weapon>().eachTurn.RemoveListener(() => special(weapon));
-
-        if (type_change != null)
-            //transform.parent.GetComponent<Weapon>().type = og_type;
         if (penetrating)
             transform.parent.GetComponent<Weapon>().penetrating = og_pen;
         if (draw_winner)

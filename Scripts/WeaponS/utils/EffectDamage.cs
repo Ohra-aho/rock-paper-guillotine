@@ -10,12 +10,12 @@ public class EffectDamage : MonoBehaviour
     {
         if (weapon != null)
         {
-            weapon.EffectDamage(amount);
+            weapon.EffectDamage(GetEffectiveDamage());
 			weapon.deal_effect_damage.Invoke();
         }
         else
         {
-            GetComponent<Weapon>().EffectDamage(amount);
+            GetComponent<Weapon>().EffectDamage(GetEffectiveDamage());
 			GetComponent<Weapon>().deal_effect_damage.Invoke();
         }
     }
@@ -24,32 +24,52 @@ public class EffectDamage : MonoBehaviour
     {
         if (weapon != null)
         {
-            weapon.SelfDamage(amount);
+            weapon.SelfDamage(GetEffectiveDamage());
 			weapon.deal_effect_damage.Invoke();
         }
         else
         {
-            GetComponent<Weapon>().SelfDamage(amount);
+            GetComponent<Weapon>().SelfDamage(GetEffectiveDamage());
 			GetComponent<Weapon>().deal_effect_damage.Invoke();
         }
     }
 
     public void DealSetDamage(int amount)
     {
-        GetComponent<Weapon>().EffectDamage(amount);
+        GetComponent<Weapon>().EffectDamage(amount + GetDamageBuff());
 		GetComponent<Weapon>().deal_effect_damage.Invoke();
     }
 
     public void SetSelfDamage(int amount)
     {
-        GetComponent<Weapon>().SelfDamage(amount);
+        GetComponent<Weapon>().SelfDamage(amount + GetDamageBuff());
     }
 
 	public void ForcedDamage()
 	{
 		if(GetComponent<Weapon>().player)
 		{
-			GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.TakeDamage(amount);
+			GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.TakeDamage(GetEffectiveDamage());
 		}
+	}
+
+	private int GetEffectiveDamage()
+	{
+		int true_amount = amount;
+		for(int i = 0; i < transform.childCount; i++)
+		{
+			true_amount += transform.GetChild(i).GetComponent<Buff>().effect_damage_buff;
+		}
+		return true_amount;
+	}
+
+	private int GetDamageBuff()
+	{
+		int true_amount = 0;
+		for(int i = 0; i < transform.childCount; i++)
+		{
+			true_amount += transform.GetChild(i).GetComponent<Buff>().effect_damage_buff;
+		}
+		return true_amount;
 	}
 }
