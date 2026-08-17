@@ -110,6 +110,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 3d913cf74e26e084d91f5967f4240b33, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -146,21 +147,9 @@ MonoBehaviour:
   lose:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -8896151032484018499}
-        m_TargetAssemblyTypeName: EffectDamage, Assembly-CSharp
-        m_MethodName: SelfDamage
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 3098424137161797902}
-          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: -7307347597741715534}
-        m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
-        m_MethodName: DestroyOpposingWeapon
+      - m_Target: {fileID: 273347010612288844}
+        m_TargetAssemblyTypeName: Howler, Assembly-CSharp
+        m_MethodName: Onslaught
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -242,6 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff: {fileID: 0}
+  torn: {fileID: 0}
 --- !u!114 &-6583751737755257012
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -35,6 +35,14 @@ public class Howler : MonoBehaviour
 		}
 	}
 
+	public void Onslaught()
+	{
+		GetComponent<EffectDamage>().SelfDamage(GetComponent<Weapon>());
+		TableController TC = GameObject.Find("Table").GetComponent<TableController>();
+		if(TC.enemy_damage + TC.enemy_direct_damage + GetComponent<Weapon>().opponent.damage < GetComponent<Weapon>().owner.HB.GiveCurrentHealth())
+			GetComponent<PermanentDebuffer>().DestroyOpposingWeapon();
+	}
+
 	public void Tear()
 	{
 		Judgement();

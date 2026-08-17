@@ -222,8 +222,11 @@ public class RLController : MonoBehaviour
 
     public void Bark(string script)
     {
-        GameObject bark_holder = GameObject.Find("BarkHolder");
-        bark_holder.GetComponent<BarkController>().ActivateInstantBark(script);
+		if(GetComponent<MainController>().game_state != MainController.State.dead)
+		{
+			GameObject bark_holder = GameObject.Find("BarkHolder");
+        	bark_holder.GetComponent<BarkController>().ActivateInstantBark(script);	
+		}
     }
 
 
