@@ -9,7 +9,6 @@ public class Slaughterer : MonoBehaviour
 
     public void Chosen()
     {
-		Debug.Log("QUEEEEE");
         ApplyBuff();
         DecreaseHealth();
     }
@@ -32,7 +31,8 @@ public class Slaughterer : MonoBehaviour
 
     private void DecreaseHealth()
     {
-        GameObject.Find("PlayerHealth").GetComponent<HealthBar>().DecreaseHealthBar(2, false);
+        if(GameObject.Find("EventSystem").GetComponent<StoryController>().storyIndex < 0)
+			GameObject.Find("PlayerHealth").GetComponent<HealthBar>().DecreaseHealthBar(2, false);
     }
 
     private bool FindOwnBuff(Weapon weapon)

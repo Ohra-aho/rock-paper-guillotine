@@ -9249,7 +9249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &280003052
 Transform:
   m_ObjectHideFlags: 0
@@ -27261,11 +27261,8 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: 8be8e93862fd0b14c87726d8c588169f, type: 3}
-  - {fileID: 1944698211339908181, guid: 0435221d04882c24b839f2aefe88702a, type: 3}
-  - {fileID: 1944698211339908181, guid: 43d70232744f01c419ebc48c2a6e60c1, type: 3}
-  - {fileID: 1944698211339908181, guid: 43d70232744f01c419ebc48c2a6e60c1, type: 3}
-  - {fileID: 1944698211339908181, guid: 43d70232744f01c419ebc48c2a6e60c1, type: 3}
+  - {fileID: 1944698211339908181, guid: 4d7ef4a2e17c78349947b9e5a0a223a4, type: 3}
+  - {fileID: 1944698211339908181, guid: 88f91e4d08a4c364e9a958121fc68618, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
