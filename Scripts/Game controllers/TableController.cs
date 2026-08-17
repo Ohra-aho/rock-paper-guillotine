@@ -183,7 +183,7 @@ public class TableController : MonoBehaviour
         }
 		else
 		{
-			MC.GetComponent<RLController>().CheckForRelentless(true);
+			MC.GetComponent<RLController>().CheckForRelentless(false);
 		}
     }
 
