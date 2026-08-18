@@ -9,6 +9,7 @@ public class Door : MonoBehaviour
 
     public void Interact()
     {
+		GetComponent<Button>().interactable = false;
         if(GameObject.Find("EventSystem").GetComponent<StoryCheckList>().executioner_dead)
         {
             transform.parent.parent.GetComponent<Test>().PlayAnimation("start_2");
