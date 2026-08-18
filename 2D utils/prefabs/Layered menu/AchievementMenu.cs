@@ -6,6 +6,7 @@ using TMPro;
 public class AchievementMenu : MonoBehaviour
 {
     public GameObject achievement_instructions;
+	RLController RLC;
 
     string[][] achievements =
     {
@@ -20,7 +21,7 @@ public class AchievementMenu : MonoBehaviour
         new string[] { "Neurotic", "Own 4 rocks, 4 sicssors and 4 papers."},
         new string[] { "Plotter", "Win 4 fights with only effect damage dealing weapons equipped in a single game." },
         new string[] { "Survivor", "Win 3 fights with 1 HP during a single game." },
-        new string[] { "Relentless", "Deal damage 5 times in a row." },
+        new string[] { "Relentless", "Deal damage 5 turns in a row." },
         new string[] { "Unyielding", "Heal 3 times during a one fight." },
         new string[] { "Picky", "After the first boss, own 7 weapons you have never brought to a fight." },
         new string[] { "Hoarder", "Win a fight with at least 10 points on your equipped weapons." },
@@ -28,6 +29,7 @@ public class AchievementMenu : MonoBehaviour
 
     private void Awake()
     {
+		RLC = GameObject.Find("EventSystem").GetComponent<RLController>();
         MakeInstructionList();
     }
 
@@ -38,6 +40,10 @@ public class AchievementMenu : MonoBehaviour
             GameObject new_instructions = Instantiate(achievement_instructions, transform.GetChild(1).GetChild(0));
             new_instructions.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = achievements[i][0];
             new_instructions.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = achievements[i][1];
+			if(RLC.achievements.Contains(achievements[i][0]))
+			{
+				new_instructions.transform.GetChild(2).gameObject.SetActive(false);
+			}
         }
         transform.GetChild(1).GetComponent<ScrollView>().AdjustScrollSize();
     }
