@@ -25,14 +25,15 @@ public class Message : MonoBehaviour
 
     private void Awake()
     {
-        if (GetComponent<End>())
+		GetComponent<StoryEvent>().eventFunction.Invoke();
+        /*if (GetComponent<End>())
         {
             GetComponent<End>().Inisiate();
         }
         if(lines.Count > 0)
         {
             Inisiate();
-        }  
+        }*/
     }
 
     public void Inisiate()
@@ -161,7 +162,7 @@ public class Message : MonoBehaviour
         }
 
         DisableButtons();
-        GetComponent<StoryEvent>().Procceed();
+        //GetComponent<StoryEvent>().Procceed();
 
     }
 
@@ -186,6 +187,15 @@ public class Message : MonoBehaviour
 
     public void PlayMessage()
     {
+		if (GetComponent<End>())
+        {
+            GetComponent<End>().Inisiate();
+        }
+        if(lines.Count > 0)
+        {
+            Inisiate();
+        }  
+
         man = GameObject.Find("man");
         if(man != null) man.GetComponent<ManAnimator>().ManMessage(frames);
         activated = true;

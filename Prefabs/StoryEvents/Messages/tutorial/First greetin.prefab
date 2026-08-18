@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7010574343782720544}
   - component: {fileID: -3775906259973895794}
   - component: {fileID: 1705922441453647033}
+  - component: {fileID: 6044379605813508946}
   m_Layer: 0
   m_Name: First greetin
   m_TagString: Untagged
@@ -53,7 +54,6 @@ MonoBehaviour:
   - Detach the gear and we can begin.
   sprite_frames: 0300000006000000070000000600000008000000
   activated: 0
-  executioner: 0
 --- !u!114 &1705922441453647033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,8 +70,8 @@ MonoBehaviour:
   eventFunction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -3775906259973895794}
-        m_TargetAssemblyTypeName: Message, Assembly-CSharp
+      - m_Target: {fileID: 6044379605813508946}
+        m_TargetAssemblyTypeName: Exeption, Assembly-CSharp
         m_MethodName: PlayMessage
         m_Mode: 1
         m_Arguments:
@@ -82,3 +82,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6044379605813508946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3768069680275742937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea701149f3ab094fb5ffc88832e611d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  new_lines:
+  - Ok. The last one was an idiot.
+  - I hope you are less of a dissapointment.
+  - Equip your weapons and pull the lever when you are ready.
+  new_sprites: 070000000600000008000000
+  bark: {fileID: 0}
+  bark_2: {fileID: 0}

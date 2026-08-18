@@ -135,8 +135,9 @@ public class StoryController : MonoBehaviour
 		{
 			story = Instantiate(GetComponent<MainController>().playthroughts[4], transform);
 		}
-		else if (playthroughts == 0)
+		else if (playthroughts == 0 || !GetComponent<StoryCheckList>().first_victory)
         {
+			//playthroughts = 0;
 	        //If its the first playthrough, set the tutorial
 	        story = Instantiate(GetComponent<MainController>().playthroughts[0], transform);
         }

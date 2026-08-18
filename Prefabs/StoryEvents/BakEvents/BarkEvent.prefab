@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5598639695040898605}
   - component: {fileID: 4741818311441130939}
-  - component: {fileID: -2821565031033686047}
+  - component: {fileID: 6178869101127057279}
   m_Layer: 0
   m_Name: BarkEvent
   m_TagString: Untagged
@@ -49,7 +49,7 @@ MonoBehaviour:
   eventFunction:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &-2821565031033686047
+--- !u!114 &6178869101127057279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,7 +58,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 503840598905201475}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f28386dfd48f43d4b9d79936b959ad4d, type: 3}
+  m_Script: {fileID: 11500000, guid: dea701149f3ab094fb5ffc88832e611d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  new_lines: []
+  new_sprites: 
   bark: {fileID: 1228160335464627313, guid: 9a8f10ee506f92644bfd3a851c96b0d7, type: 3}
+  bark_2: {fileID: 1228160335464627313, guid: 63c0b5d21b1ab4d47a2727fdc6c00a48, type: 3}
