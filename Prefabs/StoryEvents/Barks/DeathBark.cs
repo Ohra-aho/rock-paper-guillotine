@@ -23,13 +23,13 @@ public class DeathBark : MonoBehaviour
         GameObject new_bark = Instantiate(bark, GameObject.Find("BarkHolder").transform);
         switch(round)
         {
-            case <= 5:
+            case <= 4:
                 new_bark.GetComponent<Bark>().bark = barks_0[index];
                 break;
-            case < 18:
+            case < 11:
                 new_bark.GetComponent<Bark>().bark = barks_1[index];
                 break;
-            case >= 18:
+            case >= 11:
                 new_bark.GetComponent<Bark>().bark = barks_2[index];
                 break;
         }

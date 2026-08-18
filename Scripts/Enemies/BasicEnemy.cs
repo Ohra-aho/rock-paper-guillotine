@@ -28,7 +28,7 @@ public class BasicEnemy : MonoBehaviour
 
     public List<string> victory_barks;
     public string executioner_comment;
-    public GameObject victory_message;
+	public List<string> death_messages;
 
     private List<int> chosen_plan = new List<int>();
     private int planIndex = 0;
@@ -58,8 +58,6 @@ public class BasicEnemy : MonoBehaviour
 
         MainController MC = GameObject.Find("EventSystem").GetComponent<MainController>();
         MC.victory_barks = victory_barks;
-        if (victory_message != null) MC.victory_message = victory_message;
-        else MC.victory_message = null;
 
         HB = GameObject.Find("EnemyHealth").GetComponent<HealthBar>();
         GameObject.Find("light holder").GetComponent<Test>().PlayAnimation("balance");

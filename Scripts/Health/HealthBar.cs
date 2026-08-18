@@ -599,10 +599,14 @@ public class HealthBar : MonoBehaviour
             }
         } else if(GiveCurrentHealth() <= 0)
         {
-            GameObject death_bark = GameObject.Find("Death Barks(Clone)");
-			if(death_bark != null)
+			BasicEnemy enemy = GameObject.Find("EnemyHolder").transform.GetChild(0).GetComponent<BasicEnemy>();
+            if(enemy != null)
 			{
-				death_bark.GetComponent<DeathBark>().Bark();
+				if(enemy.death_messages.Count > 0)
+				{
+					int index = Random.Range(0, enemy.death_messages.Count);
+					Bark(enemy.death_messages[index]);	
+				}
 			}
         }
     }
