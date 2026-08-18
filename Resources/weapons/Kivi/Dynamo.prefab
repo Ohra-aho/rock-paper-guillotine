@@ -105,14 +105,13 @@ MonoBehaviour:
   og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Dynamo
   description: Whenever you deal effect damage, gains 1 point. After use, uses 1
-    point and heals 1.
+    point to heal 1.
   sprite: {fileID: 21300000, guid: 52d42ef59ae3d3d4db182afc22491d5f, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -200,6 +199,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - Slow, but can be effective.
@@ -207,6 +209,7 @@ MonoBehaviour:
   - Simple insurance policy.
   executioner_comment: 1111111111111111111111111
   favourite: 
+  dont_load: 0
 --- !u!114 &4076657417891745610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,6 +310,7 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
+  stackable: 0
 --- !u!114 &1128447834419944383
 MonoBehaviour:
   m_ObjectHideFlags: 0

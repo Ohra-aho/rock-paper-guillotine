@@ -125,7 +125,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7297550448490360099}
+        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
+        m_MethodName: SpawnOnlyWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -251,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawn_limit: 0
   weapons:
-  - {fileID: 1944698211339908181, guid: a47ba23783ff33d44ac4df8e5ce9a434, type: 3}
+  - {fileID: 1944698211339908181, guid: 60283fdf5fc01854fb91fb5b7934a477, type: 3}
 --- !u!114 &-6214254070887921508
 MonoBehaviour:
   m_ObjectHideFlags: 0

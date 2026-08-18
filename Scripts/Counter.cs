@@ -102,7 +102,7 @@ public class Counter : MonoBehaviour
 				}
 				int current = HB.GiveCurrentHealth();
 				int max = HB.GiveMaxHealth();
-				if(max > HB.HP_gap) max = HB.HP_gap;
+				Debug.Log(max);
 				transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Health: "+current+"/"+max;	
 
 			} else
