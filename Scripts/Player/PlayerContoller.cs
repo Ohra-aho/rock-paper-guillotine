@@ -145,6 +145,10 @@ public class PlayerContoller : MonoBehaviour
 		{
 			BuffData[] buffs = GetComponent<PlayerInventory>().loaded_weapons[index_1][index_2].buffs;
 			if(weapon.GetComponent<Stacking>()) weapon.GetComponent<Stacking>().stacks = GetComponent<PlayerInventory>().loaded_weapons[index_1][index_2].stacks;
+			weapon.GetComponent<Weapon>().token = GetComponent<PlayerInventory>().loaded_weapons[index_1][index_2].special_token;
+			if(weapon.GetComponent<Weapon>().load_special_token != null)
+				weapon.GetComponent<Weapon>().load_special_token.Invoke();
+
 			if(buffs != null)
 			{
 				for(int i = 0; i < buffs.Length; i++)

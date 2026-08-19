@@ -71,6 +71,14 @@ public class Weapon : MonoBehaviour
 
 	public bool dont_load = false;
 
+	public delegate int SpecialToken();
+    public SpecialToken special_token;
+
+	public delegate void LoadSpecialToken();
+	public LoadSpecialToken load_special_token;
+
+	public int token;
+
     private void Awake()
     {
 		og_type = type;

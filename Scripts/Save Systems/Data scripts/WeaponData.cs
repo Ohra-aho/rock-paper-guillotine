@@ -13,6 +13,7 @@ public class WeaponData
 	public int health_increase;
 	public bool copy;
 	public string path;
+	public int special_token;
 
     public WeaponData(Weapon weapon)
     {
@@ -32,6 +33,7 @@ public class WeaponData
 
         buffs = ExtractBuffInfo(weapon);
 		if(weapon.name.Contains("Copy")) copy = true;
+		if(weapon.special_token != null) special_token = weapon.special_token.Invoke();
     }
 
     public BuffData[] ExtractBuffInfo(Weapon weapon)

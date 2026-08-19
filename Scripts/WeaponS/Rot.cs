@@ -11,7 +11,15 @@ public class Rot : MonoBehaviour
 	{
 		GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
 		GetComponent<BuffController>().heal = true;
-		GetComponent<BuffController>().special = (Weapon w) => { healed = true; }; 
+		GetComponent<BuffController>().special = (Weapon w) => { healed = true; };
+
+		GetComponent<Weapon>().special_token = () => { return GetComponent<HealthIncrease>().amount; };
+		GetComponent<Weapon>().load_special_token = () =>
+		{
+			GetComponent<HealthIncrease>().amount = GetComponent<Weapon>().token;
+			GetComponent<Weapon>().description 
+				= "+"+GetComponent<HealthIncrease>().amount+" HP. If you don't heal during a fight, you get -1 HP at the end of it. Whenever unequipped, -1 HP.";
+		};
 	}
 
 	public void RotAway()
