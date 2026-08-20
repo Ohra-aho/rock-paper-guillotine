@@ -7482,6 +7482,7 @@ GameObject:
   - component: {fileID: 174536672}
   - component: {fileID: 174536671}
   - component: {fileID: 174536670}
+  - component: {fileID: 174536674}
   m_Layer: 0
   m_Name: Experimentor
   m_TagString: Achievement
@@ -7583,6 +7584,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812641959}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -7646,6 +7659,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &174536674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174536668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &174774748
 GameObject:
   m_ObjectHideFlags: 0
@@ -8802,6 +8836,7 @@ GameObject:
   - component: {fileID: 243905399}
   - component: {fileID: 243905398}
   - component: {fileID: 243905401}
+  - component: {fileID: 243905402}
   m_Layer: 0
   m_Name: Neurotic
   m_TagString: Achievement
@@ -8869,6 +8904,18 @@ MonoBehaviour:
       - m_Target: {fileID: 243905398}
         m_TargetAssemblyTypeName: RLReward, Assembly-CSharp
         m_MethodName: ChangeSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1812474703}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8953,6 +9000,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5b730a2c659d441ac7732c8ccc4d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &243905402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243905395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &262385043
 GameObject:
   m_ObjectHideFlags: 0
@@ -9054,6 +9122,7 @@ GameObject:
   - component: {fileID: 272713727}
   - component: {fileID: 272713726}
   - component: {fileID: 272713729}
+  - component: {fileID: 272713730}
   m_Layer: 0
   m_Name: Risk taker
   m_TagString: Achievement
@@ -9154,6 +9223,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812474703}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -9230,6 +9311,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff: {fileID: 810763803538858438, guid: c28dfd92411732c4bb8a69c06bbf1fd6, type: 3}
+--- !u!114 &272713730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272713724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &280003051
 GameObject:
   m_ObjectHideFlags: 0
@@ -9243,6 +9345,7 @@ GameObject:
   - component: {fileID: 280003055}
   - component: {fileID: 280003054}
   - component: {fileID: 280003053}
+  - component: {fileID: 280003057}
   m_Layer: 0
   m_Name: Slaughterer
   m_TagString: Achievement
@@ -9356,6 +9459,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812474703}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -9419,6 +9534,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &280003057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280003051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &282660334
 GameObject:
   m_ObjectHideFlags: 0
@@ -9612,6 +9748,7 @@ GameObject:
   - component: {fileID: 292334036}
   - component: {fileID: 292334034}
   - component: {fileID: 292334038}
+  - component: {fileID: 292334039}
   m_Layer: 0
   m_Name: Collector
   m_TagString: Achievement
@@ -9691,6 +9828,18 @@ MonoBehaviour:
       - m_Target: {fileID: 292334034}
         m_TargetAssemblyTypeName: RLReward, Assembly-CSharp
         m_MethodName: ChangeSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1812474703}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9810,6 +9959,27 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: bdeffedfb73abeb4182d38bada1c0962, type: 3}
   - {fileID: 1944698211339908181, guid: be992d7d1bd6a654e87c25dd02fb4f32, type: 3}
   - {fileID: 1944698211339908181, guid: d71bd63e2d365de4a97412d70cb428de, type: 3}
+--- !u!114 &292334039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292334032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &302570826
 GameObject:
   m_ObjectHideFlags: 0
@@ -10185,6 +10355,7 @@ GameObject:
   - component: {fileID: 321403544}
   - component: {fileID: 321403543}
   - component: {fileID: 321403542}
+  - component: {fileID: 321403546}
   m_Layer: 0
   m_Name: Unyielding
   m_TagString: Achievement
@@ -10298,6 +10469,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812641959}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -10361,6 +10544,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &321403546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321403540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &341141477
 GameObject:
   m_ObjectHideFlags: 0
@@ -10609,6 +10813,7 @@ GameObject:
   - component: {fileID: 361386579}
   - component: {fileID: 361386578}
   - component: {fileID: 361386577}
+  - component: {fileID: 361386581}
   m_Layer: 0
   m_Name: Plotter
   m_TagString: Achievement
@@ -10721,6 +10926,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812641959}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -10784,6 +11001,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &361386581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361386575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &362527778
 GameObject:
   m_ObjectHideFlags: 0
@@ -11483,6 +11721,7 @@ GameObject:
   - component: {fileID: 420572229}
   - component: {fileID: 420572228}
   - component: {fileID: 420572227}
+  - component: {fileID: 420572231}
   m_Layer: 0
   m_Name: Slaughterer
   m_TagString: Achievement
@@ -11596,6 +11835,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812641959}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -11659,6 +11910,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &420572231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420572225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &423497233 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1371170088414111626, guid: dfbe6fd131ff4f943ba3351f5a8a88d4, type: 3}
@@ -11730,6 +12002,7 @@ GameObject:
   - component: {fileID: 484853836}
   - component: {fileID: 484853835}
   - component: {fileID: 484853834}
+  - component: {fileID: 484853838}
   m_Layer: 0
   m_Name: Survivor
   m_TagString: Achievement
@@ -11843,6 +12116,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812474703}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -11906,6 +12191,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &484853838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484853832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &486049472
 GameObject:
   m_ObjectHideFlags: 0
@@ -14195,6 +14501,7 @@ GameObject:
   - component: {fileID: 710834407}
   - component: {fileID: 710834406}
   - component: {fileID: 710834405}
+  - component: {fileID: 710834409}
   m_Layer: 0
   m_Name: Picky
   m_TagString: Achievement
@@ -14295,6 +14602,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812641959}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -14358,6 +14677,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &710834409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710834403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &721216013
 GameObject:
   m_ObjectHideFlags: 0
@@ -14549,6 +14889,7 @@ GameObject:
   - component: {fileID: 726509592}
   - component: {fileID: 726509591}
   - component: {fileID: 726509590}
+  - component: {fileID: 726509594}
   m_Layer: 0
   m_Name: Martyr
   m_TagString: Achievement
@@ -14638,6 +14979,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812641959}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -14701,6 +15054,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &726509594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726509588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &731625934
 GameObject:
   m_ObjectHideFlags: 0
@@ -15315,6 +15689,7 @@ GameObject:
   - component: {fileID: 742436648}
   - component: {fileID: 742436647}
   - component: {fileID: 742436650}
+  - component: {fileID: 742436651}
   m_Layer: 0
   m_Name: Martyr
   m_TagString: Achievement
@@ -15383,6 +15758,18 @@ MonoBehaviour:
       - m_Target: {fileID: 742436647}
         m_TargetAssemblyTypeName: RLReward, Assembly-CSharp
         m_MethodName: ChangeSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1812474703}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15467,6 +15854,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a317d59d53453f64d864a213b9eb2560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &742436651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742436644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &747768331
 GameObject:
   m_ObjectHideFlags: 0
@@ -16388,6 +16796,7 @@ GameObject:
   - component: {fileID: 839711886}
   - component: {fileID: 839711885}
   - component: {fileID: 839711884}
+  - component: {fileID: 839711888}
   m_Layer: 0
   m_Name: Risk taker
   m_TagString: Achievement
@@ -16501,6 +16910,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812641959}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -16564,6 +16985,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &839711888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839711882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &842168853
 GameObject:
   m_ObjectHideFlags: 0
@@ -16801,6 +17243,7 @@ GameObject:
   - component: {fileID: 894558211}
   - component: {fileID: 894558210}
   - component: {fileID: 894558213}
+  - component: {fileID: 894558214}
   m_Layer: 0
   m_Name: Hoarder
   m_TagString: Achievement
@@ -16889,6 +17332,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812474703}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -16965,6 +17420,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff: {fileID: 0}
+--- !u!114 &894558214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894558207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &922596012
 GameObject:
   m_ObjectHideFlags: 0
@@ -17430,6 +17906,7 @@ GameObject:
   - component: {fileID: 960617512}
   - component: {fileID: 960617511}
   - component: {fileID: 960617514}
+  - component: {fileID: 960617515}
   m_Layer: 0
   m_Name: Experimentor
   m_TagString: Achievement
@@ -17518,6 +17995,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812474703}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -17594,6 +18083,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possible_weapons: []
+--- !u!114 &960617515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960617508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &967173487
 GameObject:
   m_ObjectHideFlags: 0
@@ -18616,6 +19126,7 @@ GameObject:
   - component: {fileID: 1065204958}
   - component: {fileID: 1065204957}
   - component: {fileID: 1065204960}
+  - component: {fileID: 1065204961}
   m_Layer: 0
   m_Name: Picky
   m_TagString: Achievement
@@ -18704,6 +19215,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812474703}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -18779,6 +19302,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 291f8e0ec115c574ba1913e3b5c8fc67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1065204961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065204954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1066024785
 GameObject:
   m_ObjectHideFlags: 0
@@ -19195,6 +19739,7 @@ GameObject:
   - component: {fileID: 1106932226}
   - component: {fileID: 1106932225}
   - component: {fileID: 1106932228}
+  - component: {fileID: 1106932229}
   m_Layer: 0
   m_Name: Victory
   m_TagString: Achievement
@@ -19283,6 +19828,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812474703}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -19359,6 +19916,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   favourites: {fileID: 3362841928607916811, guid: 6daabd37aae279642a4a7c0430a3b6ac, type: 3}
+--- !u!114 &1106932229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106932223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1107023816
 GameObject:
   m_ObjectHideFlags: 0
@@ -24632,6 +25210,7 @@ GameObject:
   - component: {fileID: 1170335964}
   - component: {fileID: 1170335963}
   - component: {fileID: 1170335962}
+  - component: {fileID: 1170335966}
   m_Layer: 0
   m_Name: Victory
   m_TagString: Achievement
@@ -24733,6 +25312,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812641959}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -24796,6 +25387,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1170335966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170335960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1192389944
 GameObject:
   m_ObjectHideFlags: 0
@@ -24980,6 +25592,7 @@ GameObject:
   - component: {fileID: 1193551604}
   - component: {fileID: 1193551603}
   - component: {fileID: 1193551602}
+  - component: {fileID: 1193551606}
   m_Layer: 0
   m_Name: Neurotic
   m_TagString: Achievement
@@ -25068,6 +25681,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812641959}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -25131,6 +25756,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1193551606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193551600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1193920104
 GameObject:
   m_ObjectHideFlags: 0
@@ -25982,6 +26628,7 @@ GameObject:
   - component: {fileID: 1279963721}
   - component: {fileID: 1279963720}
   - component: {fileID: 1279963719}
+  - component: {fileID: 1279963723}
   m_Layer: 0
   m_Name: Survivor
   m_TagString: Achievement
@@ -26095,6 +26742,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812641959}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -26158,6 +26817,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1279963723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279963717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1282433239
 GameObject:
   m_ObjectHideFlags: 0
@@ -26392,6 +27072,7 @@ GameObject:
   - component: {fileID: 1298052911}
   - component: {fileID: 1298052910}
   - component: {fileID: 1298052909}
+  - component: {fileID: 1298052913}
   m_Layer: 0
   m_Name: Unyielding
   m_TagString: Achievement
@@ -26505,6 +27186,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812474703}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -26568,6 +27261,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1298052913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298052907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1300552744
 GameObject:
   m_ObjectHideFlags: 0
@@ -26581,6 +27295,7 @@ GameObject:
   - component: {fileID: 1300552748}
   - component: {fileID: 1300552747}
   - component: {fileID: 1300552746}
+  - component: {fileID: 1300552750}
   m_Layer: 0
   m_Name: Plotter
   m_TagString: Achievement
@@ -26693,6 +27408,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812474703}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -26756,6 +27483,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1300552750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300552744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1314088976 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1371170088414111626, guid: d50a185013fb8f24e90a705f2170d6cd, type: 3}
@@ -27639,6 +28387,7 @@ GameObject:
   - component: {fileID: 1391024147}
   - component: {fileID: 1391024146}
   - component: {fileID: 1391024145}
+  - component: {fileID: 1391024149}
   m_Layer: 0
   m_Name: Collector
   m_TagString: Achievement
@@ -27774,6 +28523,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812641959}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -27837,6 +28598,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1391024149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391024143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1394424136
 GameObject:
   m_ObjectHideFlags: 0
@@ -34746,6 +35528,7 @@ GameObject:
   - component: {fileID: 1508218629}
   - component: {fileID: 1508218628}
   - component: {fileID: 1508218627}
+  - component: {fileID: 1508218631}
   m_Layer: 0
   m_Name: Relentless
   m_TagString: Achievement
@@ -34858,6 +35641,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812641959}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -34921,6 +35716,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1508218631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508218625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1516693822
 GameObject:
   m_ObjectHideFlags: 0
@@ -35720,6 +36536,7 @@ GameObject:
   - component: {fileID: 1587115120}
   - component: {fileID: 1587115119}
   - component: {fileID: 1587115118}
+  - component: {fileID: 1587115122}
   m_Layer: 0
   m_Name: Hoarder
   m_TagString: Achievement
@@ -35821,6 +36638,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812641959}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -35884,6 +36713,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1587115122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587115116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1589952158
 GameObject:
   m_ObjectHideFlags: 0
@@ -36068,6 +36918,7 @@ GameObject:
   - component: {fileID: 1599763130}
   - component: {fileID: 1599763129}
   - component: {fileID: 1599763128}
+  - component: {fileID: 1599763132}
   m_Layer: 0
   m_Name: Slow
   m_TagString: Achievement
@@ -36157,6 +37008,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812641959}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -36220,6 +37083,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1599763132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599763126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1612003181
 GameObject:
   m_ObjectHideFlags: 0
@@ -36523,6 +37407,7 @@ GameObject:
   - component: {fileID: 1627605544}
   - component: {fileID: 1627605543}
   - component: {fileID: 1627605542}
+  - component: {fileID: 1627605546}
   m_Layer: 0
   m_Name: HP_bonus
   m_TagString: Achievement
@@ -36623,6 +37508,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812641959}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -36686,6 +37583,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1627605546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627605540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1638907590
 GameObject:
   m_ObjectHideFlags: 0
@@ -38220,6 +39138,7 @@ GameObject:
   - component: {fileID: 1698637735}
   - component: {fileID: 1698637734}
   - component: {fileID: 1698637733}
+  - component: {fileID: 1698637737}
   m_Layer: 0
   m_Name: Madman
   m_TagString: Achievement
@@ -38333,6 +39252,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812474703}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -38396,6 +39327,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1698637737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698637731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1718529738
 GameObject:
   m_ObjectHideFlags: 0
@@ -44254,6 +45206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1812474701}
   - component: {fileID: 1812474702}
+  - component: {fileID: 1812474703}
   m_Layer: 0
   m_Name: shader
   m_TagString: Untagged
@@ -44328,6 +45281,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1812474703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812474700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 3
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1812507806
 GameObject:
   m_ObjectHideFlags: 0
@@ -44462,6 +45436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1812641957}
   - component: {fileID: 1812641958}
+  - component: {fileID: 1812641959}
   m_Layer: 0
   m_Name: shader
   m_TagString: Untagged
@@ -44536,6 +45511,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1812641959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812641956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 3
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1816700566
 GameObject:
   m_ObjectHideFlags: 0
@@ -44549,6 +45545,7 @@ GameObject:
   - component: {fileID: 1816700570}
   - component: {fileID: 1816700569}
   - component: {fileID: 1816700568}
+  - component: {fileID: 1816700572}
   m_Layer: 0
   m_Name: HP_bonus
   m_TagString: Achievement
@@ -44649,6 +45646,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812474703}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -44712,6 +45721,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1816700572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816700566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 3
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1817942851
 GameObject:
   m_ObjectHideFlags: 0
@@ -44900,6 +45930,7 @@ GameObject:
   - component: {fileID: 1821548316}
   - component: {fileID: 1821548315}
   - component: {fileID: 1821548314}
+  - component: {fileID: 1821548318}
   m_Layer: 0
   m_Name: Madman
   m_TagString: Achievement
@@ -45013,6 +46044,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1812641959}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   over:
     m_PersistentCalls:
       m_Calls: []
@@ -45076,6 +46119,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1821548318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821548312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1821691624
 GameObject:
   m_ObjectHideFlags: 0
@@ -51584,6 +52648,7 @@ GameObject:
   - component: {fileID: 1977854763}
   - component: {fileID: 1977854762}
   - component: {fileID: 1977854765}
+  - component: {fileID: 1977854766}
   m_Layer: 0
   m_Name: Relentless
   m_TagString: Achievement
@@ -51651,6 +52716,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1977854762}
         m_TargetAssemblyTypeName: RLReward, Assembly-CSharp
         m_MethodName: ChangeSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1812474703}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -51735,6 +52812,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971d084ef4f75b647b66bb7a05a88140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1977854766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977854760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &1980713559
 GameObject:
   m_ObjectHideFlags: 0
@@ -52320,6 +53418,7 @@ GameObject:
   - component: {fileID: 2052326888}
   - component: {fileID: 2052326887}
   - component: {fileID: 2052326890}
+  - component: {fileID: 2052326891}
   m_Layer: 0
   m_Name: Slow
   m_TagString: Achievement
@@ -52387,6 +53486,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2052326887}
         m_TargetAssemblyTypeName: RLReward, Assembly-CSharp
         m_MethodName: ChangeSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1812474703}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -52472,6 +53583,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+--- !u!114 &2052326891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052326885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 932bcb34ecfe5c745907d1e26dd400fc, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &2053160901
 GameObject:
   m_ObjectHideFlags: 0
