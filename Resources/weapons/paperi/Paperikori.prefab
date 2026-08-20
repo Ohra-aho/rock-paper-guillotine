@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -732074612584006314}
   - component: {fileID: -4969264796874221006}
-  - component: {fileID: -8284526969410483377}
   - component: {fileID: -1062775649915333102}
+  - component: {fileID: 656806432501980011}
+  - component: {fileID: 479891874877875989}
   m_Layer: 5
   m_Name: Paperikori
   m_TagString: Untagged
@@ -105,11 +106,12 @@ MonoBehaviour:
   damage: 1
   armor: 0
   name: Trashcan
-  description: Collects destroyed weapons. After use, gives you a copy of each collected
-    weapon and self-destructs.
+  description: Whenever one of your weapons is destroyed, this weapon uses 1 point
+    to return it to your inventory.
   sprite: {fileID: 21300000, guid: 066cbec547d40154a851a331c4ea74be, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -208,6 +210,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &-732074612584006314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,21 +275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82f6ccbbec18c7b4a9c520e6ece451e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-8284526969410483377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyed: 0
-  disabled: 0
-  toughness: 0
 --- !u!114 &-1062775649915333102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,3 +287,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &656806432501980011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn_limit: 0
+  weapons: []
+--- !u!114 &479891874877875989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stacks: 3
+  stack_limit: 0
+  LoadFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  before_stacking:
+    m_PersistentCalls:
+      m_Calls: []
+  after_stacking:
+    m_PersistentCalls:
+      m_Calls: []

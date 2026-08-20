@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TrashCan : MonoBehaviour
 {
-	List<GameObject> collection = new List<GameObject>();
     private void Awake()
     {
         GetComponent<BuffController>().special = AddWeapon;
@@ -14,16 +13,12 @@ public class TrashCan : MonoBehaviour
 
 	public void AddWeapon(Weapon w)
 	{
-		collection.Add(Instantiate(w.gameObject));
-	}
-
-	public void GiveWeaponsBack()
-	{
-		for(int i = 0; i < collection.Count; i++)
+		if(GetComponent<Stacking>().stacks > 0)
 		{
-			GetComponent<Weapon>().player_owner.GetComponent<PlayerInventory>().AddItem(collection[i]);
-			Destroy(collection[i]);
+			GetComponent<Stacking>().DecreaseStacks(1);
+			GetComponent<WeaponSpawner>().weapons.Add(Instantiate(w.gameObject));
+			GetComponent<WeaponSpawner>().SpawnOnlyWeapon();
+			GetComponent<WeaponSpawner>().weapons.Clear();
 		}
-		GetComponent<SelfDestruct>().Destruct();
 	}
 }
