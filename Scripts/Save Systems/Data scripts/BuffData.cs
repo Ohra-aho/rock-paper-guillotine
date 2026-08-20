@@ -11,6 +11,7 @@ public class BuffData
 	public int effect_damage_buff;
 	public int toughness_buff;
 	public bool special;
+	public string reminder;
 
     public BuffData(Buff buff)
     {
@@ -21,5 +22,6 @@ public class BuffData
 		toughness_buff = buff.toughness_buff;
 		if(buff.special != null)
 			if(buff.special.GetInvocationList().Length > 0) special = true;
+		reminder = buff.reminder;
     }
 }

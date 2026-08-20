@@ -104,10 +104,11 @@ MonoBehaviour:
   damage: 1
   armor: 0
   name: Challenge
-  description: +1 damage to all weapons. Including enemy weapons.
+  description: +1 damage to all weapons including enemy weapons.
   sprite: {fileID: 21300000, guid: a880ac797d7a1b04294ca994448f140c, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls:
@@ -219,6 +220,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &-2100047889804213751
 MonoBehaviour:
   m_ObjectHideFlags: 0

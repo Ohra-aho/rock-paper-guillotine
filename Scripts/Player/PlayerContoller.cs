@@ -161,6 +161,7 @@ public class PlayerContoller : MonoBehaviour
 						old_buff.armor_buff = buffs[i].armor_buff;
 						old_buff.effect_damage_buff = buffs[i].effect_damage_buff;
 						old_buff.toughness_buff = buffs[i].toughness_buff;
+						old_buff.reminder = buffs[i].reminder;
 						old_buff.AddBuff();	
 					}
 				}		

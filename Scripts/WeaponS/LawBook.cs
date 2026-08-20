@@ -7,6 +7,26 @@ public class LawBook : MonoBehaviour
     bool used = false;
 	public GameObject buff;
 
+	private void Awake() {
+		GetComponent<Weapon>().special_token = () =>
+		{
+			if(used)
+			{
+				return 1;
+			} else
+			{
+				return 0;
+			}
+		};
+		GetComponent<Weapon>().load_special_token = () =>
+		{
+			if(GetComponent<Weapon>().token > 0)
+			{
+				used = true;
+			}
+		};
+	}
+
     public void DefyDeath(Weapon w)
     {
         if (!GetComponent<Weapon>().FindCertainBuff(GetComponent<Weapon>().name) && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB.CheckIfDead())
@@ -25,4 +45,6 @@ public class LawBook : MonoBehaviour
 			}
         }
     }
+
+	
 }
