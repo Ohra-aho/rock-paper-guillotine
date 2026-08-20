@@ -306,7 +306,7 @@ public class Weapon : MonoBehaviour
                 hb.dead = false;
                 if (dead)
                 {
-                    if(opponent != null) opponent.victory.Invoke();
+                    //if(opponent != null) opponent.victory.Invoke();
                 }
             }
         }

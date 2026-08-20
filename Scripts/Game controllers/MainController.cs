@@ -263,6 +263,8 @@ public class MainController : MonoBehaviour
 		List<Weapon> equipped = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
 		List<GameObject> enemy_weapons = GameObject.Find("EnemyHolder").GetComponent<EnemyController>().weapons;
 
+		if(game_state != State.dead) playerChoise.victory.Invoke();
+
 		for(int i = 0; i < equipped.Count; i++)
 		{
 			equipped[i].GetComponent<Weapon>().end_of_fight.Invoke();
