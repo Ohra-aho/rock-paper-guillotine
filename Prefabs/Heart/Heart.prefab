@@ -290,6 +290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57d307c08c2644f4a80df167944e5a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heavy_damage: {fileID: 8300000, guid: ceedf1b3adb1e394bb08240d2f0e7afa, type: 3}
+  basic_damage: {fileID: 8300000, guid: a892c2386086b2046aa32ca094095a5d, type: 3}
   healthy: 1
 --- !u!114 &233024807323872742
 MonoBehaviour:

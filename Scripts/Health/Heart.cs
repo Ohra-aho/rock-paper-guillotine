@@ -6,7 +6,6 @@ using UnityEngine.Rendering.Universal;
 
 public class Heart : MonoBehaviour
 {
-
     public bool healthy = true;
 
     MainController MC;

@@ -83,4 +83,15 @@ public class WeaponInfoRack : MonoBehaviour
 		}
 	}
 
+	public void PlayAudioClip()
+	{
+		if(GetComponent<AudioSource>().isPlaying)
+		{
+			GetComponent<AudioSource>().Stop();
+		} else
+		{
+			GetComponent<AudioSource>().Play();
+		}
+	}
+
 }

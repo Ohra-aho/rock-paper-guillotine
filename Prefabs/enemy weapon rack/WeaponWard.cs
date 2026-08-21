@@ -41,6 +41,7 @@ public class WeaponWard : MonoBehaviour
 			DisplayWeapon();
 			if(!telegraphing) 
 			{
+				transform.GetChild(3).GetChild(0).GetComponent<AudioPlayer>().PlayClip();
 				GetComponent<Test>().PlayAnimation("CardInfoReveal");
 				if(weapon.GiveEffectiveType() != weapon.og_type)
 				{
@@ -51,6 +52,7 @@ public class WeaponWard : MonoBehaviour
 			}
 			else 
 			{
+				transform.GetChild(3).GetChild(0).GetComponent<AudioPlayer>().PlayClip();
 				GetComponent<Test>().PlayAnimation("InfoReveal");
 			}
 		}
@@ -98,6 +100,7 @@ public class WeaponWard : MonoBehaviour
 		if(telegraphing && move)
 		{
 			move = false;
+			transform.GetChild(3).GetChild(0).GetComponent<AudioPlayer>().PlayClip();
 			GetComponent<Test>().PlayAnimation("Telegraph");
 			if(weapon.GiveEffectiveType() != weapon.og_type)
 			{
@@ -108,6 +111,7 @@ public class WeaponWard : MonoBehaviour
 		} else if(move)
 		{
 			move = false;
+			transform.GetChild(3).GetChild(0).GetComponent<AudioPlayer>().PlayClip();
 			GetComponent<Test>().PlayAnimation("Reset telegraph");
 			if(weapon.GiveEffectiveType() != weapon.og_type)
 			{

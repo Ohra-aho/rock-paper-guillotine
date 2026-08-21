@@ -6752,6 +6752,7 @@ GameObject:
   - component: {fileID: 105275905}
   - component: {fileID: 105275904}
   - component: {fileID: 105275907}
+  - component: {fileID: 105275908}
   m_Layer: 7
   m_Name: enemy weapon rack
   m_TagString: Untagged
@@ -6886,6 +6887,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: {fileID: 0}
   open: 0
+--- !u!114 &105275908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105275902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: 07819c99758129842b5d330d5fb45e47, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 10
+  pitch: 1
+  stereo_pan: 0.5
 --- !u!1 &116891183
 GameObject:
   m_ObjectHideFlags: 0
@@ -11159,6 +11181,8 @@ MonoBehaviour:
   removed_damage: 0
   warning_given: 0
   low_health: 0
+  heavy_damage: {fileID: 8300000, guid: ceedf1b3adb1e394bb08240d2f0e7afa, type: 3}
+  basic_damage: {fileID: 8300000, guid: a892c2386086b2046aa32ca094095a5d, type: 3}
 --- !u!114 &370411302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11203,7 +11227,7 @@ MonoBehaviour:
   volume: 1
   volume_modifier: 1
   pitch: 1
-  stereo_pan: 0
+  stereo_pan: -0.5
 --- !u!1 &375725918
 GameObject:
   m_ObjectHideFlags: 0
@@ -19467,7 +19491,7 @@ MonoBehaviour:
   first_achievement: {fileID: 3768069680275742937, guid: 99006f26adc5acd49abd06638b7162b1, type: 3}
   first_achievement_pick: {fileID: 3768069680275742937, guid: 39c82e93799bfb144b2ce049b6338ea2, type: 3}
   executioner: 0
-  debug: 1
+  debug: 0
   museum_active: 0
   cellar: {fileID: 606367767}
   the_q: {fileID: 1891357473}
@@ -26117,6 +26141,8 @@ MonoBehaviour:
   removed_damage: 0
   warning_given: 0
   low_health: 0
+  heavy_damage: {fileID: 8300000, guid: ceedf1b3adb1e394bb08240d2f0e7afa, type: 3}
+  basic_damage: {fileID: 8300000, guid: a892c2386086b2046aa32ca094095a5d, type: 3}
 --- !u!114 &1238540700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26161,7 +26187,7 @@ MonoBehaviour:
   volume: 1
   volume_modifier: 1
   pitch: 1
-  stereo_pan: 0
+  stereo_pan: 0.5
 --- !u!1 &1250560723
 GameObject:
   m_ObjectHideFlags: 0
@@ -28054,7 +28080,6 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: 6b7fe6eb81891f04cbcefa1cb92711bf, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623

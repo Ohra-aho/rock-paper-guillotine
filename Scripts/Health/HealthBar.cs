@@ -26,6 +26,9 @@ public class HealthBar : MonoBehaviour
     [HideInInspector] public bool warning_given = false;
     [HideInInspector] public bool low_health = false;
 
+	public AudioClip heavy_damage;
+	public AudioClip basic_damage;
+
     private void Awake()
     {
         MC = GameObject.FindGameObjectWithTag("GameController").GetComponent<MainController>();
@@ -50,9 +53,11 @@ public class HealthBar : MonoBehaviour
 		{
 			if(damage >= 5)
 			{
+				GetComponent<AudioSource>().clip = heavy_damage;
 				GetComponent<AudioPlayer>().PlayClip();
 			} else
 			{
+				GetComponent<AudioSource>().clip = basic_damage;
 				GetComponent<AudioPlayer>().PlayClip();
 			}
 		}
