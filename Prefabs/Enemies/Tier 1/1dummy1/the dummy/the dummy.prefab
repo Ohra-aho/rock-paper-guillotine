@@ -59,27 +59,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Zombie
-  image: {fileID: 21300000, guid: 1dd9bc1b5f1f4fa49a03389b50acc81f, type: 3}
+  image: {fileID: 21300000, guid: a028f63475d12e84cb1f17443de3c423, type: 3}
   maxHealth: 3
   weapons:
-  - {fileID: 1944698211339908181, guid: 12529e89447752c43a73d5c0f3cd6062, type: 3}
-  - {fileID: 1944698211339908181, guid: d775991c7ddf20649aece642fa9a3b43, type: 3}
-  - {fileID: 1944698211339908181, guid: 618b7b69980b1ce43908d4faac838168, type: 3}
-  plan_1: 000000000100000002000000
-  plan_2: 000000000100000002000000
+  - {fileID: 1944698211339908181, guid: b66c3d863da9ad143adee5e110be4d0e, type: 3}
+  - {fileID: 1944698211339908181, guid: d9ba69d79a6b66b4ebeec7286c7b8493, type: 3}
+  - {fileID: 1944698211339908181, guid: f31772c3c763a6646a4a970c2276b0c6, type: 3}
+  plan_1: 00000000010000000200000003000000
+  plan_2: 00000000010000000200000003000000
   weapon_pairs:
   - pair: 00000000
   - pair: 01000000
   - pair: 0000000002000000
+  - pair: 0100000002000000
   advanced: 0
-  victory_barks: []
+  victory_barks:
+  - 
   executioner_comment: Don't look at me like that.
-  victory_message: {fileID: 0}
-  previous_weapon: {fileID: 0}
+  death_messages:
+  - You truly were an idiot.
+  - Why did I even try.
+  - Really?
   weapon_streak: 0
-  off_balance: 0
   nearDeath: 0
-  off_balance_pattern_done: 0
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0

@@ -75,9 +75,11 @@ MonoBehaviour:
   - pair: 0000000003000000
   - pair: 03000000
   advanced: 0
-  victory_barks: []
-  executioner_comment: One of the most diabolical creations of mine.
-  victory_message: {fileID: 0}
+  victory_barks:
+  - Fear wins every time.
+  executioner_comment: I never got around to redrawing you.
+  death_messages:
+  - Your travesty will be remembered.
   weapon_streak: 0
   nearDeath: 0
   commented: 0

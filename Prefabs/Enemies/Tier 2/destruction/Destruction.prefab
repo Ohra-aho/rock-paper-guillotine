@@ -72,14 +72,15 @@ MonoBehaviour:
   - pair: 0100000002000000
   - pair: 0000000002000000
   advanced: 0
-  victory_barks: []
-  executioner_comment: Should I just take it to the chin to bait the Raise?
-  victory_message: {fileID: 0}
-  previous_weapon: {fileID: 0}
+  victory_barks:
+  - Walls fall, but you won't.
+  - Through fire and destruction.
+  executioner_comment: Let's hope for lucky choises.
+  death_messages:
+  - You are not the first.
+  - Burt to ashes and ground to dust.
   weapon_streak: 0
-  off_balance: 0
   nearDeath: 0
-  off_balance_pattern_done: 0
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0

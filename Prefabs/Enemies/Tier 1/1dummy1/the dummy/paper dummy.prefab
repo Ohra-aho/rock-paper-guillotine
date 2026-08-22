@@ -104,9 +104,9 @@ MonoBehaviour:
   og_type: 0
   damage: 1
   armor: 0
-  name: Paper
-  description: 
-  sprite: {fileID: 21300000, guid: 4dd597b3198446c439ad1ee618ee26e1, type: 3}
+  name: Palm
+  description: This weapon is a "paper".
+  sprite: {fileID: 21300000, guid: ba31cc9918de14f4bbea9568b031ea86, type: 3}
   tiers: []
   tier: 0
   toughness: 0
@@ -193,6 +193,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &-3743861753717257825
 MonoBehaviour:
   m_ObjectHideFlags: 0

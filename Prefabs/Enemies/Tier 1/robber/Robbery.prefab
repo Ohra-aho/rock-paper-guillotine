@@ -127,13 +127,15 @@ MonoBehaviour:
   advanced: 0
   victory_barks:
   - At least you didn't embarass yourself.
+  - Did you get the spoils? 5
+  - Maybe death sentence is just punishment for stealing.
   executioner_comment: Hi old friend...
-  victory_message: {fileID: 0}
-  previous_weapon: {fileID: 0}
+  death_messages:
+  - How?
+  - That's not even supposed to kill you.
+  - It's going to be a short day after all.
   weapon_streak: 0
-  off_balance: 0
   nearDeath: 0
-  off_balance_pattern_done: 0
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0

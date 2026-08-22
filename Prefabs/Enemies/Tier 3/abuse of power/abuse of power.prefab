@@ -74,9 +74,13 @@ MonoBehaviour:
   - pair: 0100000002000000
   - pair: 02000000
   advanced: 0
-  victory_barks: []
+  victory_barks:
+  - Stay pure.
+  - Corrupted must die.
   executioner_comment: 
-  victory_message: {fileID: 0}
+  death_messages:
+  - You shall face the gaze.
+  - Evil undone.
   weapon_streak: 0
   nearDeath: 0
   commented: 0

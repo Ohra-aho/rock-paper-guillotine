@@ -73,9 +73,12 @@ MonoBehaviour:
   - pair: 0000000002000000
   - pair: 0100000002000000
   advanced: 0
-  victory_barks: []
-  executioner_comment: 
-  victory_message: {fileID: 0}
+  victory_barks:
+  - Fools hope.
+  - Violence always seems to be necessary for change.
+  executioner_comment: It will take a while until I get rid of all the debuffs.
+  death_messages:
+  - How many will it take?
   weapon_streak: 0
   nearDeath: 0
   commented: 0

@@ -75,14 +75,15 @@ MonoBehaviour:
   - pair: 0200000003000000
   - pair: 0000000003000000
   advanced: 0
-  victory_barks: []
-  executioner_comment: You were supposed to be a god.
-  victory_message: {fileID: 0}
-  previous_weapon: {fileID: 0}
+  victory_barks:
+  - You kept your identity.
+  - Horror falls.
+  executioner_comment: You were annoying to make. No I shall unmake you.
+  death_messages:
+  - Soon no-one wll remember you.
+  - Well, you won't need your face anyway.
   weapon_streak: 0
-  off_balance: 0
   nearDeath: 0
-  off_balance_pattern_done: 0
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0

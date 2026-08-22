@@ -73,15 +73,15 @@ MonoBehaviour:
   - pair: 0000000002000000
   - pair: 0000000001000000
   advanced: 0
-  victory_barks: []
-  executioner_comment: I think rock was the best to start with. 2 "fans" in a row.
-    Always at least 2.
-  victory_message: {fileID: 0}
-  previous_weapon: {fileID: 0}
+  victory_barks:
+  - Never trust an honest man.
+  - Got anything out of that?
+  executioner_comment: I could grind a little health here.
+  death_messages:
+  - You die to an enemy that basically helps you?
+  - I don't know how you managed that.
   weapon_streak: 0
-  off_balance: 0
   nearDeath: 0
-  off_balance_pattern_done: 0
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0

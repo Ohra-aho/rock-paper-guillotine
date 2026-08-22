@@ -75,14 +75,13 @@ MonoBehaviour:
   - pair: 0200000003000000
   - pair: 03000000
   advanced: 0
-  victory_barks: []
+  victory_barks:
+  - To those who think they know better.
   executioner_comment: Placeholder
-  victory_message: {fileID: 0}
-  previous_weapon: {fileID: 0}
+  death_messages:
+  - Another victim of self-righteousness.
   weapon_streak: 0
-  off_balance: 0
   nearDeath: 0
-  off_balance_pattern_done: 0
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0

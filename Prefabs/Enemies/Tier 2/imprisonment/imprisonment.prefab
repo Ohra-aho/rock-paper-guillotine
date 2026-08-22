@@ -72,14 +72,15 @@ MonoBehaviour:
   - pair: 0100000002000000
   - pair: 0000000002000000
   advanced: 0
-  victory_barks: []
-  executioner_comment: I know. Leave me alone!
-  victory_message: {fileID: 0}
-  previous_weapon: {fileID: 0}
+  victory_barks:
+  - Freedom to all! 16
+  - Hedgehog was actually an enemy in the early version.
+  executioner_comment: Let's get that Hedgehog.
+  death_messages:
+  - No life sentences here. 16
+  - Another one to the collection.
   weapon_streak: 0
-  off_balance: 0
   nearDeath: 0
-  off_balance_pattern_done: 0
   commented: 0
   HB: {fileID: 0}
   off_balance_triggered: 0

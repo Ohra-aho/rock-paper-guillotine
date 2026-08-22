@@ -75,9 +75,11 @@ MonoBehaviour:
   - pair: 0200000003000000
   - pair: 02000000
   advanced: 0
-  victory_barks: []
-  executioner_comment: Placeholder
-  victory_message: {fileID: 0}
+  victory_barks:
+  - You truly have become a monster.
+  executioner_comment: You were a wierd bedtime story.
+  death_messages:
+  - Good to know that it still does what it's supposed to.
   weapon_streak: 0
   nearDeath: 0
   commented: 0
