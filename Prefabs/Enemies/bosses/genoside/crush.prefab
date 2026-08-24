@@ -100,16 +100,16 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
+  og_type: 0
   damage: 2
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Grind
   description: Uses all points to heal equal to the amount of points used. If has
-    no points, +1 damage to Collect.
+    no points, weapon used againts this gains a random negative effect.
   sprite: {fileID: 21300000, guid: b7c714139ed1dd24cbc001f87d9289fe, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -182,6 +182,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -191,17 +197,15 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
+  dont_load: 0
+  token: 0
 --- !u!114 &-4340890615951967483
 MonoBehaviour:
   m_ObjectHideFlags: 0

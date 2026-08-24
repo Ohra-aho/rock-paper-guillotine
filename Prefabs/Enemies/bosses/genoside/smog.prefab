@@ -100,16 +100,16 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
-  damage: 2
+  og_type: 0
+  damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Smog
   description: After use, you get a Poison for each point on Grind. If Grind has
     no points, +3 armor to all weapons for one turn.
   sprite: {fileID: 21300000, guid: fe97ee598e8244d49a5ad693f3bd80c3, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -182,6 +182,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -191,17 +197,15 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
+  dont_load: 0
+  token: 0
 --- !u!114 &-4801655503642869997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,11 +253,12 @@ MonoBehaviour:
   toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
-  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
   each_turn: 0
+  damage_modifier: 0
+  heal_modifier: 0
   victory: 0
   special_apply: 0
   takeDamage: 0
@@ -277,5 +282,7 @@ MonoBehaviour:
   draw_winner: 0
   health_buff: 0
   until_used: 0
+  reminder: 
   destructive: 0
   heal_disabler: 0
+  stackable: 0

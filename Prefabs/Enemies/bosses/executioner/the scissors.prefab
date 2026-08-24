@@ -99,15 +99,15 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 2
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: The Scissors
   description: After use, deals 2 damage. If does not lose, +1 damage to all weapons.
-  sprite: {fileID: 21300000, guid: bfad6f89f7636184db7872a1c4922160, type: 3}
+  sprite: {fileID: 21300000, guid: a56278f126898b44189be783c511476a, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -204,6 +204,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -213,17 +219,15 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
+  dont_load: 0
+  token: 0
 --- !u!114 &728901231638690517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,3 +254,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e755f5ada360dac41b3a578ff0543888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  judged: {fileID: 0}
