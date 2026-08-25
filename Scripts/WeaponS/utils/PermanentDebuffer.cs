@@ -373,4 +373,17 @@ public class PermanentDebuffer : MonoBehaviour
 		}
 	}
 
+	public bool RemoveWeaponFromInvetory(string name)
+	{
+		GameObject RI = GameObject.FindGameObjectWithTag("RI");
+		for(int i = 0; i < RI.transform.childCount; i++)
+		{
+			if(RI.transform.GetChild(i).GetComponent<Weapon>().name == name)
+			{
+				DestroyImmediate(RI.transform.GetChild(i).gameObject);
+				return true;
+			}
+		}
+		return false;
+	}
 }

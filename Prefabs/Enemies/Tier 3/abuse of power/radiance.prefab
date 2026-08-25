@@ -96,7 +96,7 @@ MonoBehaviour:
   player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
-  penetrating: 0
+  penetrating: 1
   draw_winner: 0
   spammable: 0
   type: 1
@@ -105,10 +105,11 @@ MonoBehaviour:
   armor: 0
   name: Radiance
   description: If wins, gains 1 point. If loses or draws, deals 1 damage to both
-    for each point.
+    for each point. Pierces armor.
   sprite: {fileID: 21300000, guid: ec21bb2453241c941b6d34203b2325bf, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -228,6 +229,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &-5837791889633591848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stacks: 0
+  stacks: 1
   stack_limit: 0
   LoadFunction:
     m_PersistentCalls:

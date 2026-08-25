@@ -100,13 +100,14 @@ MonoBehaviour:
   type: 0
   og_type: 0
   damage: 2
-  armor: 1
+  armor: 2
   name: Constrict
-  description: 'If loses, -1 damage to Judicate. If draws, all weapon modifiers given
-    by the enemy become permanent. '
+  description: 'If loses, -1 damage to Vindicate. If draws, all weapon modifiers
+    given by the enemy become permanent. '
   sprite: {fileID: 21300000, guid: 35c22fddfdef8b94e8e720233d7f5986, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -214,6 +215,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &525898423352125643
 MonoBehaviour:
   m_ObjectHideFlags: 0

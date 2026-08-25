@@ -21,4 +21,13 @@ public class LurkerWeapons : MonoBehaviour
 			GetComponent<BuffController>().temporary = true;
 		}
 	}
+
+	public void Maws()
+	{
+		TableController TC = GameObject.Find("Table").GetComponent<TableController>();
+		if(TC.enemy_damage > 0 && TC.enemy_armor > 0)
+		{
+			GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
+		}
+	}
 }

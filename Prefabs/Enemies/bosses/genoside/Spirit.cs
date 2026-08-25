@@ -8,12 +8,12 @@ public class Spirit : MonoBehaviour
 
 	void Awake()
 	{
-		if(GetComponent<Weapon>().name == "Collect")
+		if(GetComponent<Weapon>().name == "Pulp")
 		{
 			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
-			GetComponent<BuffController>().damage_bonus = 2;
+			GetComponent<BuffController>().damage_bonus = 1;
 			GetComponent<BuffController>().temporary = true;
-			GetComponent<BuffController>().timer = 2;
+			GetComponent<BuffController>().timer = 3;
 			GetComponent<BuffController>().special_apply = true;
 		}
 		if(GetComponent<Weapon>().name == "Hunger")
@@ -24,14 +24,14 @@ public class Spirit : MonoBehaviour
 			GetComponent<BuffController>().timer = 2;
 			GetComponent<BuffController>().special_apply = true;
 		}
-		if(GetComponent<Weapon>().name == "Smog")
+		/*if(GetComponent<Weapon>().name == "Smog")
 		{
 			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
 			GetComponent<BuffController>().armor_bonus = 3;
 			GetComponent<BuffController>().temporary = true;
 			GetComponent<BuffController>().timer = 2;
 			GetComponent<BuffController>().special_apply = true;
-		}
+		}*/
 	}
 
 	public void Cacophony()
@@ -81,6 +81,21 @@ public class Spirit : MonoBehaviour
 		RIE.GetComponent<Realinventory>().FindWeapon("Grind").GetComponent<Stacking>().IncreaseStacks(2);	
 	}
 
+	public void CollectTwo()
+	{
+		Buff new_buff = Instantiate(buff, GetComponent<Weapon>().opponent.transform).GetComponent<Buff>();
+		new_buff.endPhase = true;
+		new_buff.temporary = true;
+		new_buff.timer = 1000;
+		new_buff.visible_debuff = true;
+		new_buff.special = (Weapon w) =>
+		{
+			GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
+		};
+		new_buff.reminder = "After use, you take 1 damage";
+		new_buff.AddBuff();
+	}
+
 	public void Grind()
 	{
 		if(GetComponent<Stacking>().stacks > 0)
@@ -121,16 +136,24 @@ public class Spirit : MonoBehaviour
 		}
 	}
 
-	public void Smog()
+	public void PulpTwo()
 	{
 		GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
-		int x = RIE.GetComponent<Realinventory>().FindWeapon("Grind").GetComponent<Stacking>().stacks;
-		if(x > 0)
-		{
-			GetComponent<WeaponSpawner>().SpawnMultipleWeapons(x);
-		} else
+		if(RIE.GetComponent<Realinventory>().FindWeapon("Grind").GetComponent<Stacking>().stacks == 0)
 		{
 			GetComponent<BuffController>().Equip();
 		}
+	}
+
+	public void Smog()
+	{
+		GameObject RIE = GameObject.FindGameObjectWithTag("RIE");
+		int x = RIE.GetComponent<Realinventory>().FindWeapon("Grind").GetComponent<Stacking>().stacks / 2;
+		if(x == 0) x = 1;
+		if(x > 0)
+		{
+			GetComponent<WeaponSpawner>().SpawnMultipleWeapons(x);
+		}
+		RIE.GetComponent<Realinventory>().FindWeapon("Grind").GetComponent<Stacking>().stacks = 0;
 	}
 }

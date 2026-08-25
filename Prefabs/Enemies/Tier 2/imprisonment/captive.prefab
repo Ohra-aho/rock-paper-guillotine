@@ -100,12 +100,13 @@ MonoBehaviour:
   type: 1
   og_type: 0
   damage: 1
-  armor: 1
+  armor: 0
   name: Captive
-  description: If loses, you get a prize. Triggers once.
+  description: If takes damage, you free a captive. Triggers once.
   sprite: {fileID: 21300000, guid: 1e73ee6599b9a264784abcdc7e0fb015, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -126,7 +127,19 @@ MonoBehaviour:
       m_Calls: []
   takeDamage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1194324506961993275}
+        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
+        m_MethodName: SpawnOnlyWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   dealDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -141,19 +154,7 @@ MonoBehaviour:
       m_Calls: []
   lose:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1194324506961993275}
-        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
-        m_MethodName: SpawnOnlyWeapon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -201,6 +202,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &1194324506961993275
 MonoBehaviour:
   m_ObjectHideFlags: 0

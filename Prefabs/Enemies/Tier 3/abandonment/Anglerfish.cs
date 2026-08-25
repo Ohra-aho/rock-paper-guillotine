@@ -8,7 +8,15 @@ public class Anglerfish : MonoBehaviour
 	bool used = false;
     public void Breath()
 	{
-		if(!used)
+		for(int i = 0; i < 3; i++)
+		{
+			bool removed = GetComponent<PermanentDebuffer>().RemoveWeaponFromInvetory("Weakness");
+			if(removed)
+			{
+				GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
+			}
+		}
+		/*if(!used)
 		{
 			List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
 			for(int i = 0; i < weapons.Count; i++)
@@ -22,7 +30,7 @@ public class Anglerfish : MonoBehaviour
 				new_buff.AddBuff();
 			}
 			used = true;
-		} 
+		} */
 	}
 
 	public void Weight()

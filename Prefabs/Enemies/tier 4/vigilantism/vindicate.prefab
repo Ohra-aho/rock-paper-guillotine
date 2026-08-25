@@ -99,13 +99,14 @@ MonoBehaviour:
   spammable: 0
   type: 3
   og_type: 0
-  damage: 3
+  damage: 2
   armor: 0
   name: Vindicate
   description: 
   sprite: {fileID: 21300000, guid: 6106aba921edb0348b1c31f3412b3ff3, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -189,6 +190,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &446476806023786655
 MonoBehaviour:
   m_ObjectHideFlags: 0

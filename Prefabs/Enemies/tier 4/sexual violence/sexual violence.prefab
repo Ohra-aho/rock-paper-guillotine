@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Reaper
   image: {fileID: 21300000, guid: d813c9a7d3d97154aab55a875738145b, type: 3}
-  maxHealth: 8
+  maxHealth: 6
   weapons:
   - {fileID: 1944698211339908181, guid: 29837efef47116a49ae0744e0aa29d4a, type: 3}
   - {fileID: 1944698211339908181, guid: ac34ab1a981cfaa48931a44c20f5df46, type: 3}

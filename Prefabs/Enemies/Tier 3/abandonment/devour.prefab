@@ -100,13 +100,14 @@ MonoBehaviour:
   spammable: 0
   type: 2
   og_type: 0
-  damage: 2
+  damage: 1
   armor: 0
   name: Devour
-  description: If draws, heals 3 and you get -1 HP until the end of the fight..
+  description: If draws, heals 3 and you get -1 HP until the end of the fight.
   sprite: {fileID: 21300000, guid: d1697d26284c792419d0a32c8798fe53, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -226,6 +227,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &-7983463553697852181
 MonoBehaviour:
   m_ObjectHideFlags: 0

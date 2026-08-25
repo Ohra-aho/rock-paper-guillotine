@@ -104,8 +104,8 @@ MonoBehaviour:
   damage: 1
   armor: 0
   name: Smog
-  description: After use, you get a Poison for each point on Grind. If Grind has
-    no points, +3 armor to all weapons for one turn.
+  description: If loses or draws, uses all points from Grind to give you 1 Poison
+    for each 2 points used.
   sprite: {fileID: 21300000, guid: fe97ee598e8244d49a5ad693f3bd80c3, type: 3}
   tiers: []
   tier: 0
@@ -124,19 +124,7 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -4801655503642869997}
-        m_TargetAssemblyTypeName: Spirit, Assembly-CSharp
-        m_MethodName: Smog
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -157,10 +145,34 @@ MonoBehaviour:
       m_Calls: []
   lose:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -4801655503642869997}
+        m_TargetAssemblyTypeName: Spirit, Assembly-CSharp
+        m_MethodName: Smog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   draw:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -4801655503642869997}
+        m_TargetAssemblyTypeName: Spirit, Assembly-CSharp
+        m_MethodName: Smog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   heal:
     m_PersistentCalls:
       m_Calls: []
