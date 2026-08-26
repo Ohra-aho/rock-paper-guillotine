@@ -40,7 +40,7 @@ public class Unyielding : MonoBehaviour
 			GameObject weapon = RI.transform.GetChild(i).gameObject;
 			GameObject new_buff = Instantiate(buff, weapon.transform);
 			new_buff.GetComponent<Buff>().id = name + "_buff";
-			new_buff.GetComponent<Buff>().armor_buff = 1;
+			new_buff.GetComponent<Buff>().damage_buff = 1;
 			new_buff.GetComponent<Buff>().temporary = true;
 			new_buff.GetComponent<Buff>().timer = 2;
 			new_buff.GetComponent<Buff>().AddBuff();

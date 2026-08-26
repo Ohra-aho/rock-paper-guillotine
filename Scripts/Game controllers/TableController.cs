@@ -154,6 +154,7 @@ public class TableController : MonoBehaviour
 
 					//Achievements
 					if(MC.first_turn) MC.GetComponent<RLController>().CheckForSlow();
+					if(!player.GetComponent<PlayerContoller>().HB.CheckIfDead()) MC.GetComponent<RLController>().CHeckForTough();
 				}
             }
         }

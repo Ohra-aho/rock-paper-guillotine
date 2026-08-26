@@ -10870,6 +10870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf063042a6151014bb13ac4c4f43d9c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff: {fileID: 0}
 --- !u!114 &361386578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17966,7 +17967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Experimentor
-  description: You get 2 random additional weapons at the start of the game.
+  description: You gain 3 random weapons after the first fight.
   buffing:
     m_PersistentCalls:
       m_Calls: []
@@ -19491,7 +19492,7 @@ MonoBehaviour:
   first_achievement: {fileID: 3768069680275742937, guid: 99006f26adc5acd49abd06638b7162b1, type: 3}
   first_achievement_pick: {fileID: 3768069680275742937, guid: 39c82e93799bfb144b2ce049b6338ea2, type: 3}
   executioner: 0
-  debug: 0
+  debug: 1
   museum_active: 0
   cellar: {fileID: 606367767}
   the_q: {fileID: 1891357473}
@@ -19706,6 +19707,7 @@ MonoBehaviour:
   previous_health: 0
   bosses_killed: 0
   hoard_counter: 0
+  tough_counter: 0
   bark: {fileID: 1228160335464627313, guid: 8968d1d70c0424a4e9aa70a7fb12b030, type: 3}
   slaughterer: 0
   achievements_active: 0
@@ -27147,7 +27149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Unyielding
-  description: Whenever you heal, all of your weapons gain +1 armor for one turn.
+  description: Whenever you heal, +1 damage to all weapons for one turn.
   buffing:
     m_PersistentCalls:
       m_Calls:
@@ -27328,7 +27330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1300552745
 Transform:
   m_ObjectHideFlags: 0
@@ -27356,6 +27358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf063042a6151014bb13ac4c4f43d9c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
 --- !u!114 &1300552747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27369,22 +27372,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Plotter
-  description: Effect damage pierces armor.
+  description: At the start of each fight, +1 effect dagame to all weapons until
+    used.
   buffing:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1300552746}
-        m_TargetAssemblyTypeName: Plotter, Assembly-CSharp
-        m_MethodName: ApplyBuff
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory_effect:
     m_PersistentCalls:
       m_Calls: []
@@ -28080,6 +28072,8 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
+  - {fileID: 1944698211339908181, guid: 67c6e0a030e2be7468a6aeead01f4fc2, type: 3}
+  - {fileID: 1944698211339908181, guid: ac12ceb07bb5ecf4183b4ae2792bff55, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
@@ -39212,7 +39206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Madman
-  description: +1 HP for each "useless" weapon equipped.
+  description: +2 HP for each "useless" weapon equipped.
   buffing:
     m_PersistentCalls:
       m_Calls:
@@ -39249,7 +39243,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 49d5f94e58f2ddb42b805adef84b1dbc, type: 3}
   image_2: {fileID: 21300000, guid: 20c764b163a783a46a6889cc40ce22cc, type: 3}
-  dont_load: 0
+  dont_load: 1
 --- !u!114 &1698637735
 MonoBehaviour:
   m_ObjectHideFlags: 0

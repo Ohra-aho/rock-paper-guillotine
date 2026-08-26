@@ -45,6 +45,11 @@ public class Machine : MonoBehaviour
                 {
                     RLC.chosen_buffs[i].GetComponent<Slow>().ApplyBuff();
                 }
+				if(RLC.chosen_buffs[i].GetComponent<Plotter>())
+				{
+					Debug.Log("QUE?");
+					RLC.chosen_buffs[i].GetComponent<Plotter>().ApplyBuff();
+				}
             }
 
 			TableController TC = GameObject.Find("Table").GetComponent<TableController>();

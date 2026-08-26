@@ -23,7 +23,7 @@ public class Experimentor : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         //Add new starting weapons
-        for(int i = 0; i < 2; i++)
+        for(int i = 0; i < 3; i++)
         {
             GameObject weapon = possible_weapons[Random.Range(0, possible_weapons.Count)];
             while (player.GetComponent<PlayerInventory>().items.Contains(weapon))

@@ -321,7 +321,6 @@ public class MainController : MonoBehaviour
         if(death_bark != null) death_bark.GetComponent<DeathBark>().IncreaseRounds();
 
         //Achievement checks
-        GetComponent<RLController>().CHeckHPMaster();
         GetComponent<RLController>().CheckForMadman();		
         GetComponent<RLController>().CheckForRiskTaker();
         GetComponent<RLController>().CheckForPlotter();

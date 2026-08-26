@@ -22,7 +22,7 @@ public class Madman : MonoBehaviour
             {
                 GameObject new_buff = Instantiate(buff, weapon.transform);
                 new_buff.GetComponent<Buff>().id = name;
-                new_buff.GetComponent<Buff>().health_buff = 1;
+                new_buff.GetComponent<Buff>().health_buff = 2;
                 new_buff.GetComponent<Buff>().AddBuff();
             }
         }

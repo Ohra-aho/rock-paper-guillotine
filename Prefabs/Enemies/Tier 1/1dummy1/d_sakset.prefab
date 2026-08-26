@@ -191,6 +191,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &-3554527361767116310
 MonoBehaviour:
   m_ObjectHideFlags: 0

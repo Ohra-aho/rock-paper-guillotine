@@ -30,6 +30,7 @@ public class RLController : MonoBehaviour
     [HideInInspector] public int previous_health = 0;
     [HideInInspector] public int bosses_killed = 0;
     public int hoard_counter = 0;
+	public int tough_counter = 0;
 
     public GameObject bark;
 
@@ -92,7 +93,6 @@ public class RLController : MonoBehaviour
     {
         for(int i = 0; i < chosen_buffs.Count; i++)
         {
-			MC.GetComponent<StoryController>().picked_achievements.Add(chosen_buffs[i].GetComponent<RLReward>().name);
             if(chosen_buffs[i].GetComponent<RLReward>().buffing != null)
             {
                 chosen_buffs[i].GetComponent<RLReward>().buffing.Invoke();
@@ -230,19 +230,19 @@ public class RLController : MonoBehaviour
     }
 
 
-    //Win an encounter with 10 or more max hp
+    //Take damage 10 times during a single game.
     //+2 HP
-    public void CHeckHPMaster()
+    public void CHeckForTough()
     {
 		if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
 			if(!achievements.Contains("Tough"))
 			{
-				HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
-				if (HB.GiveTrueMaxHealth() >= 10)
+				tough_counter++;
+				if (tough_counter >= 10)
 				{
 					AddAchievement("Tough");
-					Bark("Your survival was never in doubt. You have grown quite tough. Let's see what brings you down.");
+					Bark("You have taken a ton of damage during the game, but you are still standing. You are a tough one.");
 					achievement_unlocked = true;
 				}
 			}	
@@ -412,7 +412,7 @@ public class RLController : MonoBehaviour
 		}
     }
 
-    //Own 4 rocks, 4 sicssors and 4 papers
+    //Own 3 rocks, 3 sicssors and 3 papers
     //You get always 1 scissors, 1 paper and 1 rock as a reward
     public void CheckForNeurotic()
     {
@@ -433,7 +433,7 @@ public class RLController : MonoBehaviour
 					}
 				}
 
-				if(rocks == 4 && papers == 4 && scissors == 4)
+				if(rocks == 3 && papers == 3 && scissors == 3)
 				{
 					AddAchievement("Neurotic");
 					Bark("Perfectly balanced selection I guess. But can you select the correct combination? 5");
@@ -537,13 +537,13 @@ public class RLController : MonoBehaviour
 		}
     }
 
-    //After the first boss, own 6 weapons you have never brought to a fight
+    //After the first boss, own 7 weapons you have never brought to a fight
     //You can reroll rewards ones per encounter
     public void CheckForPicky()
     {
 		if(!achievement_unlocked && !GetComponent<StoryController>().museum_active)
 		{
-			if(!achievements.Contains("Picky") && GetComponent<StoryController>().storyIndex > 2)
+			if(!achievements.Contains("Picky"))
 			{
 				int amount = 0;
 				for(int i = 0; i < RI.transform.childCount; i++)
@@ -596,6 +596,7 @@ public class RLController : MonoBehaviour
         {
             for (int i = 0; i < chosen_buffs.Count; i++)
             {
+				MC.GetComponent<StoryController>().picked_achievements.Add(chosen_buffs[i].GetComponent<RLReward>().name);
                 chosen_buffs[i].GetComponent<RLReward>().activate.Invoke();
             }
             activated = true;

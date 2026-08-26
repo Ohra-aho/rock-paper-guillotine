@@ -153,16 +153,19 @@ public class PlayerContoller : MonoBehaviour
 			{
 				for(int i = 0; i < buffs.Length; i++)
 				{
-					if(!weapon.GetComponent<Weapon>().FindCertainBuff(buffs[i].id) && !buffs[i].special)
+					if(buffs[i] != null)
 					{
-						Buff old_buff = Instantiate(buff, weapon.transform).GetComponent<Buff>();
-						old_buff.id = buffs[i].id;
-						old_buff.damage_buff = buffs[i].damage_buff;
-						old_buff.armor_buff = buffs[i].armor_buff;
-						old_buff.effect_damage_buff = buffs[i].effect_damage_buff;
-						old_buff.toughness_buff = buffs[i].toughness_buff;
-						old_buff.reminder = buffs[i].reminder;
-						old_buff.AddBuff();	
+						if(!weapon.GetComponent<Weapon>().FindCertainBuff(buffs[i].id) && !buffs[i].special)
+						{
+							Buff old_buff = Instantiate(buff, weapon.transform).GetComponent<Buff>();
+							old_buff.id = buffs[i].id;
+							old_buff.damage_buff = buffs[i].damage_buff;
+							old_buff.armor_buff = buffs[i].armor_buff;
+							old_buff.effect_damage_buff = buffs[i].effect_damage_buff;
+							old_buff.toughness_buff = buffs[i].toughness_buff;
+							old_buff.reminder = buffs[i].reminder;
+							old_buff.AddBuff();	
+						}	
 					}
 				}		
 			}
