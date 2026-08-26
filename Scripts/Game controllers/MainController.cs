@@ -12,6 +12,8 @@ public class MainController : MonoBehaviour
     [HideInInspector] public bool victory = false;
     [HideInInspector] public bool endTriggered;
 	[HideInInspector] public bool collector;
+	[HideInInspector] public bool winner;
+
     public bool stop;
 
     public TableController TC;
@@ -28,6 +30,7 @@ public class MainController : MonoBehaviour
     public GameObject rewardmenuHolder;
     public GameObject rewardMenu;
     public GameObject rewardMenu2;
+    public GameObject rewardMenu3;
 
     public GameObject quilliotine;
     public GameObject story_event_holder;
@@ -263,7 +266,7 @@ public class MainController : MonoBehaviour
 		List<Weapon> equipped = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
 		List<GameObject> enemy_weapons = GameObject.Find("EnemyHolder").GetComponent<EnemyController>().weapons;
 
-		if(game_state != State.dead) playerChoise.victory.Invoke();
+		if(game_state != State.dead && playerChoise != null) playerChoise.victory.Invoke();
 
 		for(int i = 0; i < equipped.Count; i++)
 		{
@@ -290,6 +293,14 @@ public class MainController : MonoBehaviour
 				}	
 			}
         }
+
+		for(int i = 0; i < GetComponent<RLController>().chosen_buffs.Count; i++)
+		{
+			if(GetComponent<RLController>().chosen_buffs[i].GetComponent<Madman>())
+			{
+				GetComponent<RLController>().chosen_buffs[i].GetComponent<Madman>().RemoveBuff();
+			}
+		}
     }
 
     public void GiveUp()
@@ -367,10 +378,14 @@ public class MainController : MonoBehaviour
 
     public void SpawnRewardMenu()
     {
-		if(!collector)
+		Debug.Log(collector + " "+winner);
+		if(!collector && !winner)
 		{
         	Instantiate(rewardMenu, rewardmenuHolder.transform);
-		} else
+		} else if(collector && winner)
+		{
+			Instantiate(rewardMenu3, rewardmenuHolder.transform);
+		} else if(collector || winner)
 		{
 			Instantiate(rewardMenu2, rewardmenuHolder.transform);
 		}

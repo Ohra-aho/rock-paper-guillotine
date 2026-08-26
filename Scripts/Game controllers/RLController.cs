@@ -19,7 +19,7 @@ public class RLController : MonoBehaviour
     GameObject wheel_holder;
     MainController MC;
 
-    bool activated = false;
+    [HideInInspector] public bool activated = false;
 
     //Counters
     int slow_counter = 0;
@@ -128,10 +128,7 @@ public class RLController : MonoBehaviour
 
 	private void LoadBuff(RLReward rlr)
 	{
-		if(!rlr.dont_load)
-		{
-			rlr.Load();
-		}
+		rlr.Load();
 	}
 
     public void ActivateAchievements()
@@ -592,7 +589,7 @@ public class RLController : MonoBehaviour
 
     public void ActivateChosen()
     {
-        if(!activated)
+        if(!activated && !game_started)
         {
             for (int i = 0; i < chosen_buffs.Count; i++)
             {

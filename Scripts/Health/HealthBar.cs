@@ -393,7 +393,7 @@ public class HealthBar : MonoBehaviour
 
 	public void RemoveTemporaryHealth(int amount, bool in_view)
     {
-		Debug.Log(current_health);
+		
         max_health -= amount;
         if(current_health > max_health) current_health = max_health;
 

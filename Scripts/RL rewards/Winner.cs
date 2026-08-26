@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Winner : MonoBehaviour
 {
-	public GameObject favourites;
-    public void Buff()
-	{
-		GameObject temp = Instantiate(favourites, transform.parent);
-		temp.GetComponent<RectTransform>().position = new Vector2(0, 0);
-	}
+	public void Chosen()
+    {
+        GainRandomWeapon();   
+    }
+
+    private void GainRandomWeapon()
+    {
+        GameObject.Find("EventSystem").GetComponent<MainController>().winner = true;
+    }
 }

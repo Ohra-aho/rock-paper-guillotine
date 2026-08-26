@@ -9,34 +9,35 @@ public class Madman : MonoBehaviour
 
     public void Chosen()
     {
-        ApplyBuff();
+        //ApplyBuff();
     }
+
+	int amount = 0;
 
     public void ApplyBuff()
     {
-        GameObject RI = GameObject.FindGameObjectWithTag("RI");
-        for (int i = 0; i < RI.transform.childCount; i++)
-        {
-            GameObject weapon = RI.transform.GetChild(i).gameObject;
-            if (!FindOwnBuff(weapon.GetComponent<Weapon>()) && weapon.GetComponent<Weapon>().GiveEffectiveType() == MainController.Choise.useless)
-            {
-                GameObject new_buff = Instantiate(buff, weapon.transform);
-                new_buff.GetComponent<Buff>().id = name;
-                new_buff.GetComponent<Buff>().health_buff = 2;
-                new_buff.GetComponent<Buff>().AddBuff();
-            }
-        }
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+		List<Weapon> weapons = player.GetComponent<PlayerContoller>().GetWeapons();
+		amount = 0;
+
+		for(int i = 0; i < weapons.Count; i++)
+		{
+			if(weapons[i].GiveEffectiveType() == MainController.Choise.useless)
+			{
+				amount++;
+			}
+		}
+		
+		if(amount > 0)
+		{
+			player.GetComponent<PlayerContoller>().HB.GiveTemporaryHealth(amount * 2, true);
+		}
     }
 
-    private bool FindOwnBuff(Weapon weapon)
-    {
-        for (int i = 0; i < weapon.transform.childCount; i++)
-        {
-            if (weapon.transform.GetChild(i).GetComponent<Buff>().id == name)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
+	public void RemoveBuff()
+	{
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+		player.GetComponent<PlayerContoller>().HB.RemoveTemporaryHealth(amount * 2, true);
+		amount = 0;
+	}
 }

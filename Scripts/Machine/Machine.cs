@@ -47,8 +47,15 @@ public class Machine : MonoBehaviour
                 }
 				if(RLC.chosen_buffs[i].GetComponent<Plotter>())
 				{
-					Debug.Log("QUE?");
 					RLC.chosen_buffs[i].GetComponent<Plotter>().ApplyBuff();
+				}
+				if(RLC.chosen_buffs[i].GetComponent<Madman>())
+				{
+					RLC.chosen_buffs[i].GetComponent<Madman>().ApplyBuff();
+				}
+				if(RLC.chosen_buffs[i].GetComponent<Slaughterer>())
+				{
+					RLC.chosen_buffs[i].GetComponent<Slaughterer>().ApplyBuff();
 				}
             }
 

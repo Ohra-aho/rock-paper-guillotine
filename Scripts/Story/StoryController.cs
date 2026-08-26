@@ -60,7 +60,6 @@ public class StoryController : MonoBehaviour
 
     public void Inisiate()
     {
-        //LoadStory();
 		if (story_data != null)
         {
             playthroughts = story_data.playthroughs;
@@ -137,7 +136,6 @@ public class StoryController : MonoBehaviour
 		}
 		else if (playthroughts == 0 || !GetComponent<StoryCheckList>().first_victory)
         {
-			//playthroughts = 0;
 	        //If its the first playthrough, set the tutorial
 	        story = Instantiate(GetComponent<MainController>().playthroughts[0], transform);
         }

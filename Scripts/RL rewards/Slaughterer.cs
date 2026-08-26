@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Slaughterer : MonoBehaviour
@@ -9,7 +10,7 @@ public class Slaughterer : MonoBehaviour
 
     public void Chosen()
     {
-        ApplyBuff();
+        //ApplyBuff();
         DecreaseHealth();
     }
 
@@ -24,6 +25,8 @@ public class Slaughterer : MonoBehaviour
                 GameObject new_buff = Instantiate(buff, weapon.transform);
                 new_buff.GetComponent<Buff>().id = name;
                 new_buff.GetComponent<Buff>().damage_buff = 1;
+				new_buff.GetComponent<Buff>().temporary = true;
+				new_buff.GetComponent<Buff>().timer = 1000;
                 new_buff.GetComponent<Buff>().AddBuff();
             }
         }
@@ -31,8 +34,7 @@ public class Slaughterer : MonoBehaviour
 
     private void DecreaseHealth()
     {
-        if(GameObject.Find("EventSystem").GetComponent<StoryController>().storyIndex < 0)
-			GameObject.Find("PlayerHealth").GetComponent<HealthBar>().DecreaseHealthBar(2, false);
+		GameObject.Find("PlayerHealth").GetComponent<HealthBar>().DecreaseHealthBar(2, false);
     }
 
     private bool FindOwnBuff(Weapon weapon)

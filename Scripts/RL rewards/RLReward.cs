@@ -110,8 +110,8 @@ public class RLReward : MonoBehaviour
 	public void Load()
 	{
 		GameObject.Find("EventSystem").GetComponent<RLController>().chosen_buffs.Add(gameObject);
-		activate.Invoke();
-		buffing.Invoke();
+		if(!dont_load) activate.Invoke();
+		if(!dont_load) buffing.Invoke();
 		GetComponent<SpriteRenderer>().sprite = image_2;
 	}
 

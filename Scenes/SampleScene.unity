@@ -8865,7 +8865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &243905396
 Transform:
   m_ObjectHideFlags: 0
@@ -9151,7 +9151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &272713725
 Transform:
   m_ObjectHideFlags: 0
@@ -9374,7 +9374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &280003052
 Transform:
   m_ObjectHideFlags: 0
@@ -9453,7 +9453,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: ff02181f1a963df42952a28e1e33d4b4, type: 3}
   image_2: {fileID: 21300000, guid: b3c63b9a48e688c4cae55fdc00a03ca2, type: 3}
-  dont_load: 0
+  dont_load: 1
 --- !u!114 &280003055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9777,7 +9777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &292334033
 Transform:
   m_ObjectHideFlags: 0
@@ -11600,18 +11600,6 @@ MonoBehaviour:
   press:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 401144639}
-        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
-        m_MethodName: press
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 138571110}
         m_TargetAssemblyTypeName: PlayerWheelHolder, Assembly-CSharp
         m_MethodName: MarkUsedWeapons
@@ -11639,6 +11627,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1066024797}
         m_TargetAssemblyTypeName: RLController, Assembly-CSharp
         m_MethodName: HideAchievementCounter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 401144639}
+        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
+        m_MethodName: press
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12034,7 +12034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &484853833
 Transform:
   m_ObjectHideFlags: 0
@@ -15721,7 +15721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &742436645
 Transform:
   m_ObjectHideFlags: 0
@@ -17275,7 +17275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &894558208
 Transform:
   m_ObjectHideFlags: 0
@@ -17444,7 +17444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d77b6f957be67246b20254fddde8e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff: {fileID: 0}
+  buff: {fileID: 810763803538858438, guid: c28dfd92411732c4bb8a69c06bbf1fd6, type: 3}
 --- !u!114 &894558214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17938,7 +17938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &960617509
 Transform:
   m_ObjectHideFlags: 0
@@ -19158,7 +19158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1065204955
 Transform:
   m_ObjectHideFlags: 0
@@ -19391,6 +19391,7 @@ MonoBehaviour:
   victory: 0
   endTriggered: 0
   collector: 0
+  winner: 0
   stop: 0
   TC: {fileID: 967173491}
   playerChoise: {fileID: 0}
@@ -19402,6 +19403,7 @@ MonoBehaviour:
   rewardmenuHolder: {fileID: 1490422904}
   rewardMenu: {fileID: 2431177580254377231, guid: 1708befa56baac344b0cba57fa780508, type: 3}
   rewardMenu2: {fileID: 2431177580254377231, guid: ca0a0ea86f395a748a73a83c7dab546c, type: 3}
+  rewardMenu3: {fileID: 2431177580254377231, guid: cb4786c58fae20d46bc8fbc5e9539313, type: 3}
   quilliotine: {fileID: 1891357473}
   story_event_holder: {fileID: 710133546}
   firstRewardMenu: 0
@@ -19702,6 +19704,7 @@ MonoBehaviour:
   achievements: []
   picks: 0
   chosen_buffs: []
+  activated: 0
   unyielding_counter: 0
   martyr_counter: 0
   previous_health: 0
@@ -19772,7 +19775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1106932224
 Transform:
   m_ObjectHideFlags: 0
@@ -19801,7 +19804,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Winner
-  description: Pick up to 2 favourite weapons of previous players to start with.
+  description: You have an additional reward to choose from after each fight. This
+    reward will always be one of the favoured weapons.
   buffing:
     m_PersistentCalls:
       m_Calls: []
@@ -19918,7 +19922,7 @@ SpriteRenderer:
   m_SortingLayerID: 1786268061
   m_SortingLayer: -1
   m_SortingOrder: -9
-  m_Sprite: {fileID: 21300000, guid: 751bb1c32db35a74abcb703c9074344f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf0fb09631e5cd64eac2ebbae60e9f02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -19941,7 +19945,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994e54eacdd9e8547836a01e828a0746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  favourites: {fileID: 3362841928607916811, guid: 6daabd37aae279642a4a7c0430a3b6ac, type: 3}
 --- !u!114 &1106932229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25271,7 +25274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994e54eacdd9e8547836a01e828a0746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  favourites: {fileID: 3362841928607916811, guid: 6daabd37aae279642a4a7c0430a3b6ac, type: 3}
 --- !u!114 &1170335963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27107,7 +27109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1298052908
 Transform:
   m_ObjectHideFlags: 0
@@ -39164,7 +39166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1698637732
 Transform:
   m_ObjectHideFlags: 0
@@ -39206,22 +39208,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Madman
-  description: +2 HP for each "useless" weapon equipped.
+  description: At the start of each fight, you gain +2 HP until the end of the fight
+    for each "useless" weapon equipped.
   buffing:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1698637733}
-        m_TargetAssemblyTypeName: Madman, Assembly-CSharp
-        m_MethodName: ApplyBuff
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   victory_effect:
     m_PersistentCalls:
       m_Calls: []
@@ -39243,7 +39234,7 @@ MonoBehaviour:
   chosen: 0
   image_1: {fileID: 21300000, guid: 49d5f94e58f2ddb42b805adef84b1dbc, type: 3}
   image_2: {fileID: 21300000, guid: 20c764b163a783a46a6889cc40ce22cc, type: 3}
-  dont_load: 1
+  dont_load: 0
 --- !u!114 &1698637735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45571,7 +45562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1816700567
 Transform:
   m_ObjectHideFlags: 0
@@ -52674,7 +52665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1977854761
 Transform:
   m_ObjectHideFlags: 0
@@ -53268,7 +53259,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 02000000
+  usable_states: 0200000004000000
 --- !u!212 &2018902157
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53444,7 +53435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2052326886
 Transform:
   m_ObjectHideFlags: 0

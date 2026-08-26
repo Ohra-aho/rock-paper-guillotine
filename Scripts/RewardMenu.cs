@@ -30,7 +30,8 @@ public class RewardMenu : MonoBehaviour
 
         RemovePossibleRewards();
         if(transform.childCount == 3) makeRewardList();
-		else CollectorRewardList();
+		else if(transform.childCount == 4) CollectorRewardList();
+		else CollectorAndWinnerRewardList();
 
         //GetComponent<RewardBarks>().InstanciateRewardBarks();
         rope = GameObject.Find("Roope");
@@ -169,14 +170,62 @@ public class RewardMenu : MonoBehaviour
 	public void CollectorRewardList()
 	{
 		bool neurotic = false;
+		bool collector = false;
 		
         for (int i = 0; i < MC.GetComponent<RLController>().chosen_buffs.Count; i++)
         {
             if(MC.GetComponent<RLController>().chosen_buffs[i].GetComponent<Neurotic>())
-            {
                 neurotic = true;
-                break;
+			if(MC.GetComponent<RLController>().chosen_buffs[i].GetComponent<Collector>())
+                collector = true;
+        }
+
+		if(!neurotic)
+        {
+            //Get at least one random reward
+            rewards.Add(GetRandomReward());
+            rewards.Add(GetRandomReward());
+            //rewards.Add(GetRandomReward());
+
+            //Change to get at least one healing weapon
+            if (CheckIfPlayerIsHurt())
+            {
+                int heal_chance = Random.Range(1, 4);
+                if (heal_chance == 3) rewards.Add(SubChooseRandomWeapon(healing));
+                else  {
+					rewards.Add(GetRandomReward());
+				}
             }
+            else
+            {
+                rewards.Add(GetRandomReward());
+            }
+			if(collector) rewards.Add(GetRandomReward());
+			else AddFavouriteWeapon();
+        } else
+        {
+            rewards.Add(GetRandomRewardByType(MainController.Choise.kivi));
+            rewards.Add(GetRandomRewardByType(MainController.Choise.paperi));
+            rewards.Add(GetRandomRewardByType(MainController.Choise.sakset));
+            if(collector) rewards.Add(GetRandomReward());
+			else AddFavouriteWeapon();
+        }
+
+        for (int i = 0; i < rewards.Count; i++)
+        {
+            transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards[i];
+            transform.GetChild(i).GetChild(0).GetComponent<Revard>().Invoke();
+        }
+	}
+
+	public void CollectorAndWinnerRewardList()
+	{
+		bool neurotic = false;
+		
+        for (int i = 0; i < MC.GetComponent<RLController>().chosen_buffs.Count; i++)
+        {
+            if(MC.GetComponent<RLController>().chosen_buffs[i].GetComponent<Neurotic>())
+                neurotic = true;
         }
 
 		if(!neurotic)
@@ -197,18 +246,63 @@ public class RewardMenu : MonoBehaviour
             {
                 rewards.Add(GetRandomReward());
             }
+			AddFavouriteWeapon();
         } else
         {
             rewards.Add(GetRandomRewardByType(MainController.Choise.kivi));
             rewards.Add(GetRandomRewardByType(MainController.Choise.paperi));
             rewards.Add(GetRandomRewardByType(MainController.Choise.sakset));
             rewards.Add(GetRandomReward());
+			AddFavouriteWeapon();
         }
+
         for (int i = 0; i < rewards.Count; i++)
         {
             transform.GetChild(i).GetChild(0).GetComponent<Revard>().actualReward = rewards[i];
             transform.GetChild(i).GetChild(0).GetComponent<Revard>().Invoke();
         }
+	}
+
+	public void AddFavouriteWeapon()
+	{
+		bool winner = false;
+		
+        for (int i = 0; i < MC.GetComponent<RLController>().chosen_buffs.Count; i++)
+        {
+            if(MC.GetComponent<RLController>().chosen_buffs[i].GetComponent<Winner>())
+            {
+                winner = true;
+                break;
+            }
+        }
+
+		if(winner)
+		{
+			List<GameObject> favourites = new List<GameObject>();
+			
+			for(int i = 0; i < rewards1.Count; i++)
+			{
+				if(rewards1[i].GetComponent<Weapon>().GetAscension() > 0)
+					if(!rewards.Contains(rewards1[i]))
+						favourites.Add(rewards1[i]);
+			}
+
+			for(int i = 0; i < rewards2.Count; i++)
+			{
+				if(rewards2[i].GetComponent<Weapon>().GetAscension() > 0)
+					if(!rewards.Contains(rewards2[i]))
+						favourites.Add(rewards2[i]);
+			}
+
+			for(int i = 0; i < rewards3.Count; i++)
+			{
+				if(rewards3[i].GetComponent<Weapon>().GetAscension() > 0)
+					if(!rewards.Contains(rewards3[i]))
+						favourites.Add(rewards3[i]);
+			}
+
+			rewards.Add(favourites[Random.Range(0, favourites.Count)]);
+		}
 	}
 
     private bool CheckIfPlayerIsHurt()

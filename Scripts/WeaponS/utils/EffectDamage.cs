@@ -8,7 +8,6 @@ public class EffectDamage : MonoBehaviour
     public bool armor_piercing;
     public void DealDamage(Weapon weapon)
     {
-		Debug.Log("QUE");
         if (weapon != null)
         {
             weapon.EffectDamage(GetEffectiveDamage());
@@ -60,7 +59,6 @@ public class EffectDamage : MonoBehaviour
 		for(int i = 0; i < transform.childCount; i++)
 		{
 			true_amount += transform.GetChild(i).GetComponent<Buff>().effect_damage_buff;
-			Debug.Log(transform.GetChild(i).GetComponent<Buff>().effect_damage_buff);
 		}
 		return true_amount;
 	}

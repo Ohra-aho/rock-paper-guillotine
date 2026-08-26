@@ -136,7 +136,7 @@ public class StartButton : MonoBehaviour
             isActive = true;
 			
             DisableAchievements();
-            MC.GetComponent<RLController>().ActivateChosen();
+            //MC.GetComponent<RLController>().ActivateChosen();
 
 			GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.TrueReconstructTwo();
             GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarUp();
