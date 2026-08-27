@@ -9,6 +9,11 @@ public class Counter : MonoBehaviour
 	MainController MC;
 	public bool weakness;
 	public bool bleed;
+	public bool poison;
+
+	Color text_color = new Color(0f,0f,0f,1);
+	Color background_color = new Color(1,1,1,0.3f);
+	Color transparent = new Color(1,1,1,0);
 
 	void Awake()
 	{
@@ -18,27 +23,25 @@ public class Counter : MonoBehaviour
 	private void Update() {
 		if(MC.game_state == MainController.State.in_battle)
 		{
-			if(!weakness && !bleed)
+			if(poison)
 			{
 				int x = GetPoisons();
 				if(x > 0)
 				{
 					if(GetComponent<Image>().color.a != 1)
 					{
-						GetComponent<Image>().color = new Color(1,1,1,1);
-						transform.GetChild(2).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+						GetComponent<Image>().color = background_color;
+						transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = text_color;
 					}
-					transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Poison: "+x.ToString();
-					transform.GetChild(1).gameObject.SetActive(true);
-					transform.GetChild(0).gameObject.SetActive(false);
+					transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = x.ToString();
+					transform.GetChild(0).gameObject.SetActive(true);
 				} else
 				{
 					if(GetComponent<Image>().color.a != 0)
 					{
-						GetComponent<Image>().color = new Color(1,1,1,0);
-						transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Poison: "+0;
-						transform.GetChild(2).GetComponent<TextMeshProUGUI>().color = new Color(0,0,0,0);
-						transform.GetChild(1).gameObject.SetActive(false);
+						GetComponent<Image>().color = transparent;
+						transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = 0.ToString();
+						transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = transparent;
 						transform.GetChild(0).gameObject.SetActive(false);	
 					}
 				}	
@@ -49,18 +52,18 @@ public class Counter : MonoBehaviour
 				{
 					if(GetComponent<Image>().color.a != 1)
 					{
-						GetComponent<Image>().color = new Color(1,1,1,1);
-						transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+						GetComponent<Image>().color = background_color;
+						transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = text_color;
 					}
-					transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Weakness: "+x.ToString();
+					transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = x.ToString();
 					transform.GetChild(0).gameObject.SetActive(true);
 				} else
 				{
 					if(GetComponent<Image>().color.a != 0)
 					{
-						GetComponent<Image>().color = new Color(1,1,1,0);
-						transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Weakness: "+0;
-						transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(0,0,0,0);	
+						GetComponent<Image>().color = transparent;
+						transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = 0.ToString();
+						transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = transparent;	
 						transform.GetChild(0).gameObject.SetActive(false);
 					}
 				}	
@@ -71,18 +74,18 @@ public class Counter : MonoBehaviour
 				{
 					if(GetComponent<Image>().color.a != 1)
 					{
-						GetComponent<Image>().color = new Color(1,1,1,1);
-						transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+						GetComponent<Image>().color = background_color;
+						transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = text_color;
 						transform.GetChild(0).gameObject.SetActive(true);
 					}
-					transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Bleed: "+x.ToString();
+					transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = x.ToString();
 				} else
 				{
 					if(GetComponent<Image>().color.a != 0)
 					{
-						GetComponent<Image>().color = new Color(1,1,1,0);
-						transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Bleed: "+0;
-						transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(0,0,0,0);	
+						GetComponent<Image>().color = transparent;
+						transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = 0.ToString();
+						transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = transparent;	
 						transform.GetChild(0).gameObject.SetActive(false);
 					}
 				}
@@ -90,49 +93,47 @@ public class Counter : MonoBehaviour
 		}
 		else if(MC.game_state == MainController.State.re_arming || MC.game_state == MainController.State.reward)
 		{
-			if(!weakness && !bleed)
+			if(!weakness && !bleed && !poison)
 			{
 				HealthBar HB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().HB;
 				if(GetComponent<Image>().color.a != 1)
 				{
-					GetComponent<Image>().color = new Color(1,1,1,1);
-					transform.GetChild(2).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+					GetComponent<Image>().color = background_color;
+					transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = text_color;
 					transform.GetChild(0).gameObject.SetActive(true);
-					transform.GetChild(1).gameObject.SetActive(false);
 				}
 				int current = HB.GiveCurrentHealth();
 				int max = HB.GiveMaxHealth();
-				transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Health: "+current+"/"+max;	
+				transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = current+"/"+max;	
 
 			} else
 			{
 				if(GetComponent<Image>().color.a != 0)
 				{
-					GetComponent<Image>().color = new Color(1,1,1,0);
+					GetComponent<Image>().color = transparent;
 					transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
-					transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+					transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = text_color;
 					transform.GetChild(0).gameObject.SetActive(false);
 				}
 			}
 		} else
 		{
-			if(!weakness && !bleed)
+			if(!weakness && !bleed && !poison)
 			{
 				if(GetComponent<Image>().color.a != 0)
 				{
-					GetComponent<Image>().color = new Color(1,1,1,0);
-					transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "";
-					transform.GetChild(2).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+					GetComponent<Image>().color = transparent;
+					transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
+					transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = text_color;
 					transform.GetChild(0).gameObject.SetActive(false);
-					transform.GetChild(1).gameObject.SetActive(false);
 				}
 			} else
 			{
 				if(GetComponent<Image>().color.a != 0)
 				{
-					GetComponent<Image>().color = new Color(1,1,1,0);
+					GetComponent<Image>().color = transparent;
 					transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
-					transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(0.5f,0.5f,0.5f,1);
+					transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = text_color;
 					transform.GetChild(0).gameObject.SetActive(false);
 				}
 			}

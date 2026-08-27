@@ -54,25 +54,26 @@ public class PlayerContoller : MonoBehaviour
     {
         for(int i = 0; i < 6; i++)
         {
-            if(PlayerWheels[unlocked_wheel].transform.childCount-1 > i)
-            {
-                if (PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
-                {
-                    transform.GetChild(i).GetComponent<CHoisePanel>().weapon =
-                        PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0)
-                            .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>();
+			if(PlayerWheels[unlocked_wheel].transform.childCount-1 > i)
+			{
+				if (PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
+				{
+					transform.GetChild(i).GetComponent<CHoisePanel>().weapon =
+						PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0)
+							.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>();
 
-                    transform.GetChild(i).GetComponent<CHoisePanel>().weapon_name =
-                        PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0)
-                            .GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().name;
+					transform.GetChild(i).GetComponent<CHoisePanel>().weapon_name =
+						PlayerWheels[unlocked_wheel].transform.GetChild(i).GetChild(0)
+							.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>().name;
 
-                    transform.GetChild(i).GetComponent<CHoisePanel>().index = i;
-                } else
-                {
-                    transform.GetChild(i).GetComponent<CHoisePanel>().weapon = null;
-                }
-            }
-            transform.GetChild(i).GetComponent<CHoisePanel>().DisplayName();
+					transform.GetChild(i).GetComponent<CHoisePanel>().index = i;
+				} else
+				{
+					transform.GetChild(i).GetComponent<CHoisePanel>().weapon = null;
+				}
+			}
+			
+			transform.GetChild(i).GetComponent<CHoisePanel>().DisplayName();	
         }
     }
 
