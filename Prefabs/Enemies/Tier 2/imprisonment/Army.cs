@@ -53,35 +53,24 @@ public class Army : MonoBehaviour
 
 	public void Jar()
 	{
-		if(!disabled)
-		{
-			List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
-			int index = Random.Range(0, weapons.Count);
+		List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
+		int index = Random.Range(0, weapons.Count);
 
-			GameObject existing_buff = weapons[index].GetCertainBuff(GetComponent<Weapon>().name);
-			if(existing_buff != null)
-			{
-				existing_buff.GetComponent<Buff>().timer = 2;
-			}
-			else
-			{
-				Buff new_buff = Instantiate(buff, weapons[index].transform).GetComponent<Buff>();
-				new_buff.id = GetComponent<Weapon>().name;
-				new_buff.temporary = true;
-				new_buff.timer = 2;
-				new_buff.type_change = MainController.Choise.useless;
-				new_buff.reminder = "Made \"useless\"";
-				new_buff.visible_debuff = true;
-				new_buff.AddBuff();	
-			}
-		} else
+		GameObject existing_buff = weapons[index].GetCertainBuff(GetComponent<Weapon>().name);
+		if(existing_buff != null)
 		{
-			disable_counter--;
-			if(disable_counter <= 0)
-			{
-				disabled = false;
-				disable_counter = 0;
-			}
+			existing_buff.GetComponent<Buff>().timer = 2;
+		}
+		else
+		{
+			Buff new_buff = Instantiate(buff, weapons[index].transform).GetComponent<Buff>();
+			new_buff.id = GetComponent<Weapon>().name;
+			new_buff.temporary = true;
+			new_buff.timer = 2;
+			new_buff.type_change = MainController.Choise.useless;
+			new_buff.reminder = "Made \"useless\"";
+			new_buff.visible_debuff = true;
+			new_buff.AddBuff();	
 		}
 	}
 

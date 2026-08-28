@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuLayer : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class MenuLayer : MonoBehaviour
 	public void Awake()
 	{
 		awake.Invoke();
+		if(SceneManager.GetActiveScene().name != "SampleScene")
+		{
+			transform.GetChild(0).gameObject.SetActive(false);
+		}
 	}
 
 	public void Main()

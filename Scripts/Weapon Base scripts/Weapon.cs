@@ -283,7 +283,7 @@ public class Weapon : MonoBehaviour
 				Transform child = RIE.transform.GetChild(i);
 				if (child.childCount > 0)
 				{
-					for (int j = 0; j < child.childCount; j++)
+					for (int j = child.childCount-1; j >= 0; j--)
 					{
 						if (child.GetChild(j).GetComponent<Buff>())
 						{
@@ -304,10 +304,6 @@ public class Weapon : MonoBehaviour
                 GameObject.Find("EventSystem").GetComponent<MainController>().Win();
                 on_death.Invoke();
                 hb.dead = false;
-                if (dead)
-                {
-                    //if(opponent != null) opponent.victory.Invoke();
-                }
             }
         }
         else
@@ -323,7 +319,7 @@ public class Weapon : MonoBehaviour
 				GameObject weapon = weapons[i].gameObject;
 				if (weapon.transform.childCount > 0)
 				{
-					for(int j = 0; j < weapon.transform.childCount; j++)
+					for(int j = weapon.transform.childCount-1; j >= 0; j--)
 					{
 						if(weapon.transform.GetChild(j).GetComponent<Buff>().timer > 0)
 						{

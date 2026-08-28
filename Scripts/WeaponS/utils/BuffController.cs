@@ -145,7 +145,7 @@ public class BuffController : MonoBehaviour
 
     public void AddBuff(Transform weapon)
     {
-        if (!IfOwnBuffExists(weapon) || stackable)
+        if (!IfOwnBuffExists(weapon))
         {
             if (set_a_to_zero) armor_bonus = -weapon.GetComponent<Weapon>().armor;
             if (set_d_to_zero) damage_bonus = -weapon.GetComponent<Weapon>().damage;
@@ -189,8 +189,9 @@ public class BuffController : MonoBehaviour
             if (special != null) new_buff.GetComponent<Buff>().special = special;
             if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
             new_buff.GetComponent<Buff>().AddBuff();
-        } else if(IfOwnBuffExists(weapon) && !stackable)
+        } else if(IfOwnBuffExists(weapon))
         {
+			Debug.Log(GetComponent<Weapon>().name);
             Buff buff = FindBuffByName(GetComponent<Weapon>().name, weapon);
             if(timer != 0) buff.timer = timer;
         }

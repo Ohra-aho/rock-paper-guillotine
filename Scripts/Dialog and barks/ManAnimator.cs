@@ -72,8 +72,8 @@ public class ManAnimator : MonoBehaviour
                 volume = soundTargets[i].volume*3f;
             }
         }
-        if (GetComponent<AudioSource>().mute != mute) GetComponent<AudioSource>().mute = mute;
-        if (GetComponent<AudioSource>().volume != volume) GetComponent<AudioSource>().volume = volume;
+        GetComponent<AudioSource>().mute = mute;
+        GetComponent<AudioSource>().volume = volume;
     }
 
     private void HandleAudio()

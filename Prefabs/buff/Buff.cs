@@ -253,15 +253,12 @@ public class Buff : MonoBehaviour
 
     public void TickDown()
     {
-        if(temporary)
-        {
-            timer--;
-            if (timer <= 0)
-            {
-                RemoveBuff();
-                DestroyImmediate(this.gameObject);
-            }
-        }
+		timer--;
+		if (timer <= 0)
+		{
+			RemoveBuff();
+			DestroyImmediate(this.gameObject);
+		}
     }
 
     private void GetOGs()

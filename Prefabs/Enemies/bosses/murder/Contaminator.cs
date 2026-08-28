@@ -39,7 +39,7 @@ public class Contaminator : MonoBehaviour
 		{
         	GameObject.Find("EnemyHealth").GetComponent<HealthBar>().TakeDamage(GetComponent<EffectDamage>().amount);
         	GameObject.Find("PlayerHealth").GetComponent<HealthBar>().TakeDamage(GetComponent<EffectDamage>().amount);
-			GetComponent<Weapon>().CheckUp();
+			//GetComponent<Weapon>().CheckUp();
 			Destroy(gameObject);
 		}
 	}

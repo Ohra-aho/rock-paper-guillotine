@@ -40,7 +40,7 @@ public class AchievementMenu : MonoBehaviour
             GameObject new_instructions = Instantiate(achievement_instructions, transform.GetChild(1).GetChild(0));
             new_instructions.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = achievements[i][0];
             new_instructions.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = achievements[i][1];
-			if(RLC.achievements.Contains(achievements[i][0]))
+			if(!RLC.achievements.Contains(achievements[i][0]))
 			{
 				new_instructions.transform.GetChild(2).gameObject.SetActive(false);
 			}

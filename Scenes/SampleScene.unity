@@ -8470,7 +8470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 699, y: 295}
+  m_AnchoredPosition: {x: 459, y: 230.00003}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &218508160
@@ -13086,7 +13086,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -629, y: 288.87}
+  m_AnchoredPosition: {x: -514, y: 288.87}
   m_SizeDelta: {x: 45.5, y: 22.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &499914210
@@ -20188,7 +20188,7 @@ MonoBehaviour:
   - {fileID: 4163066812587896230, guid: 815fa85bc2b2f534faa2e5ae2c1c5333, type: 3}
   - {fileID: 4163066812587896230, guid: 30f2cc8a86e48c343bf5132f70b1ea52, type: 3}
   - {fileID: 4163066812587896230, guid: 45797e3894bd11c44be3900ed4574bb8, type: 3}
-  - {fileID: 4163066812587896230, guid: fa802269b2060944f992e1cc21631ab0, type: 3}
+  - {fileID: 4163066812587896230, guid: 0db93014473a88d4a884a2acf424b7dd, type: 3}
   reward_tier: 1
   rewards_disabled: 0
   victory_barks: []
@@ -20270,7 +20270,7 @@ MonoBehaviour:
   first_achievement: {fileID: 3768069680275742937, guid: 99006f26adc5acd49abd06638b7162b1, type: 3}
   first_achievement_pick: {fileID: 3768069680275742937, guid: 39c82e93799bfb144b2ce049b6338ea2, type: 3}
   executioner: 0
-  debug: 0
+  debug: 1
   museum_active: 0
   cellar: {fileID: 606367767}
   the_q: {fileID: 1891357473}
@@ -27574,7 +27574,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 699, y: 335}
+  m_AnchoredPosition: {x: 459, y: 270}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1278264921
@@ -28877,6 +28877,8 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
+  - {fileID: 1944698211339908181, guid: 82b5e02d4fe2dfb4f9ca629356005ded, type: 3}
+  - {fileID: 1944698211339908181, guid: be9c376a68c0d2742b63941d323a09f3, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
@@ -38901,7 +38903,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 010000000a0000000800000007000000060000000500000004000000030000000200000008000000
+  usable_states: 0100000005000000040000000300000008000000
 --- !u!212 &1676908626
 SpriteRenderer:
   m_ObjectHideFlags: 0

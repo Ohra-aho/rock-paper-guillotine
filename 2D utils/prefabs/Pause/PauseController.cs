@@ -19,11 +19,19 @@ public class PauseController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && GetComponent<MainController>().game_state != MainController.State.dead)
-        {
-            if(paused) Resume();
-            else Pause();
-        }
+		if(Input.GetKeyDown(KeyCode.Escape)) {
+			if(GetComponent<MainController>()) {
+				if(GetComponent<MainController>().game_state != MainController.State.dead)
+				{
+					if(paused) Resume();
+					else Pause();
+				}
+			} else
+			{
+				if(paused) Resume();
+				else Pause();
+			}	
+		}
     }
 
     private void Awake()

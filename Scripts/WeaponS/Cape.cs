@@ -11,6 +11,7 @@ public class Cape : MonoBehaviour
         GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name != this.GetComponent<Weapon>().name; };
         GetComponent<BuffController>().temporary = true;
         GetComponent<BuffController>().timer = 2;
+		GetComponent<BuffController>().stackable = false;
     }
 
     public void ApplyBuff()
