@@ -25,7 +25,7 @@ public class InventoryMenu : MonoBehaviour
 			MC.game_state != MainController.State.favourite_pick
 			)
 		{
-			MC.game_state = MainController.State.re_arming;
+			//MC.game_state = MainController.State.re_arming;
 		}
 	}
 

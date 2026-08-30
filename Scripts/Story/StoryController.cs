@@ -82,7 +82,11 @@ public class StoryController : MonoBehaviour
         {
             executioner = true;
             GameObject.Find("man").GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        } 
+        }
+
+		//executioner = true;
+		//GameObject.Find("man").GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        museum_active = true;
         if(museum_active)
         {
 			//Change scene to museum

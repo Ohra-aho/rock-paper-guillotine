@@ -81,7 +81,9 @@ public class MainController : MonoBehaviour
         dead,
         stalling,
         pause,
-		favourite_pick
+		favourite_pick,
+		all_pick
+
     }
 
     public State game_state = State.idle;

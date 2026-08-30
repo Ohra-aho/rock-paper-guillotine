@@ -32,6 +32,8 @@ public class AllWeaponBox : MonoBehaviour
 
 	public void Close()
 	{
+		GameObject.Find("Inventory").GetComponent<InventoryButton>().OpenDrawer();
+		GameObject.Find("EventSystem").GetComponent<MainController>().game_state = MainController.State.idle;
 		table_box.SetActive(true);
 		Destroy(this.gameObject);
 	}

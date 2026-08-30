@@ -297,7 +297,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -9104070691668345469}
         m_TargetAssemblyTypeName: AllWeaponBox, Assembly-CSharp
-        m_MethodName: ShowUseless
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -317,7 +317,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 0500000002000000
+  usable_states: 0b000000
 --- !u!1 &734501933701336678
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +592,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -9104070691668345469}
         m_TargetAssemblyTypeName: AllWeaponBox, Assembly-CSharp
-        m_MethodName: ShowUnbeatables
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -612,7 +612,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 0500000002000000
+  usable_states: 0b000000
 --- !u!1 &1340660969377411077
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,7 +716,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -9104070691668345469}
         m_TargetAssemblyTypeName: AllWeaponBox, Assembly-CSharp
-        m_MethodName: SortInventory
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -736,7 +736,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 0500000002000000
+  usable_states: 0b000000
 --- !u!1 &2924485296591961343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1684,7 +1684,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -9104070691668345469}
         m_TargetAssemblyTypeName: AllWeaponBox, Assembly-CSharp
-        m_MethodName: ShowRocks
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1704,7 +1704,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 0500000002000000
+  usable_states: 0b000000
 --- !u!1 &5312452320332320050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,7 +1828,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 0500000002000000
+  usable_states: 0b000000
 --- !u!1 &5392465275746391891
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,7 +1932,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -9104070691668345469}
         m_TargetAssemblyTypeName: AllWeaponBox, Assembly-CSharp
-        m_MethodName: ShowScissors
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1952,7 +1952,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 0500000002000000
+  usable_states: 0b000000
 --- !u!1 &6094261777882164591
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,7 +2143,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -9104070691668345469}
         m_TargetAssemblyTypeName: AllWeaponBox, Assembly-CSharp
-        m_MethodName: ShowPapers
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2163,7 +2163,7 @@ MonoBehaviour:
   interactable: 1
   individual_interactable: 1
   manual: 0
-  usable_states: 0500000002000000
+  usable_states: 0b000000
 --- !u!1 &6551349297797532310
 GameObject:
   m_ObjectHideFlags: 0

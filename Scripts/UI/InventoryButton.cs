@@ -31,6 +31,17 @@ public class InventoryButton : MonoBehaviour
             }
             open = !open;
         }
-        
     }
+
+	public void OpenDrawer()
+	{
+		if(!open)
+		{
+			PWH.OpenDrawer();
+		} else
+		{
+			PWH.CloseDrawer();
+		}
+		open = !open;
+	}
 }
