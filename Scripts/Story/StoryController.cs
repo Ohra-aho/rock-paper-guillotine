@@ -86,7 +86,7 @@ public class StoryController : MonoBehaviour
 
 		//executioner = true;
 		//GameObject.Find("man").GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        museum_active = true;
+        //museum_active = true;
         if(museum_active)
         {
 			//Change scene to museum
@@ -203,22 +203,22 @@ public class StoryController : MonoBehaviour
         //Abyssal twin 2
         new string[] { "Abyssal twins and only half left.", "Your sister did ok.", "Lets see if you can crack this last problem. 15" },
         new string[] { "Hello. 3", " I have read about your case. A bit boring, if you ask me.", "Still can't remember why you killed them? 5", "Well I doubt I will remember you either. 16" },
-        new string[] { "Smoke? ", "Well if you don't mind I will grab one.", "It has been a long day." }, //Tarvii erikoisen spriten
+        //new string[] { "Smoke? ", "Well if you don't mind I will grab one.", "It has been a long day." }, //Tarvii erikoisen spriten
 
         //Story 2
         new string[] { "Well, I guess this tracks. 10", "The building was empty, but I am paying for the repairs too you know." },
 
         new string[] { "Butcher of Narubaaz, welcome! 15", "It is rather ironic how differently we both do the same job. 16" },
-        new string[] { "Yeah, It is good that Dr Grainwel does his health inspections.", "Wouldn't want anyone to get sick would we. 16" },
-        new string[] { "Daddies? Sisters? Drugs under the sea?", "Not sure what you had, but please; give me the same dose. 17" },
-        new string[] { "YOU! 0",". . .", "Just pull the lever." },
+        new string[] { "Yeah, It is good that Dr Grainwel does his health inspections.", "Wouldn't want anyone to get sick, would we. 16" },
+        //new string[] { "Daddies? Sisters? Drugs under the sea?", "Not sure what you had, but please; give me the same dose. 17" },
+        new string[] { "YOU! 0",". . .", "Go to hell." },
         new string[] { "Hello. 3", "You know. I never got my money back.", " I will enjoy this. 16" },
 
         //Story 3
         new string[] { "You don't look that shady to me. But that might just be a boon in your line of work.", "Please, tell me. Are they planning something? 5", "I will take that secret to the grave, I promise. 16" },
 
         new string[] { "Could you explain to me:", "How do you even betray a country? 5", "It is a landmass in the end. Dirt. How do you betray dirt? 10" },
-        new string[] { "Word, five letters, keywords being finality and end of the road.", "Think, think, think..", "Why do they make these so hard..." }, //Newspaper
+        //new string[] { "Word, five letters, keywords being finality and end of the road.", "Think, think, think..", "Why do they make these so hard..." }, //Newspaper
         new string[] { "2 dead.", "And only because you didn't care enough." },
         new string[] { "I can think of a few who could laugh about this. 7", "Do you? 5", "Oh, okey." },
         new string[] { "Fun fact; The Ancients believed that best thing to do in your life is to die. 9", "And who are we to doupt their wisdom?" },
@@ -228,17 +228,17 @@ public class StoryController : MonoBehaviour
 
         new string[] { "Those corpses never walked in the end.", "Did they? 11" },
         new string[] { "I have seen a quite may people here.", "But never someone as disgusting as you.", "They were children. 0" },
-        new string[] { "You know, sometimes I thought it would be interesting to ask:", " How it felt? 5" },
+        new string[] { "You know, sometimes I thought it would be interesting to ask:", "How it felt? 5" },
         new string[] { "For the Gore Lord you said. 11", "Sad to see fellow brother of faith ending up here. 7", "But lets end this as it should; with blood. 14" },
         new string[] { "What are you so afraid of losing that you would do all those things just to end up here. 1" },
 
         //Story 5
         new string[] { "Did someone pay you or something?", "Because I can't imagine someone being that upset about tax policies." },
 
-        new string[] { "All these letters and I read them all.", "Did you think I have vote in this? That I could change anything or even want to?", "You should have been more careful with that car, that is all I am saying." },
+        //new string[] { "All these letters and I read them all.", "Did you think I have vote in this? That I could change anything or even want to?", "You should have been more careful with that car, that is all I am saying." },
         new string[] { "I can somewhat relate. 4", "Sometimes I get so angry at someone that I just kill them when they sit down.", "But I try to avoid that.", "It is never worth it. 4" },
         new string[] { "I am sorry. Truly I am. 19", "I didn't know it was your son.", "Although it has never made any difference with the others. They all had families. 7", "But I hope that the Eye in the sky sees fit to let you meet him again." },
-        new string[] { "Check. Mate. 14", "I always wanted to say that. 15" },
+        //new string[] { "Check. Mate. 14", "I always wanted to say that. 15" },
         new string[] { "You should have tried applying here. 17", "People here have called me insane as well." },
 
         //Story 6
@@ -271,7 +271,7 @@ public class StoryController : MonoBehaviour
 
         new string[] {  "Ok. This is refreshing.", "A basic barfight.", " I will drink to your memory, my firend. 12" },
         new string[] {  "..As dawn rises we shall envelope ourselves into dusk..", "Oh, sorry. I lost myself to your works.", "Let's make their value go up." }, //Runot
-        new string[] {  "It has been awhile.", "Let's see if you dragged some of our officals down with you.", "This might actually be somewhat effective assasination tactic. 10" },
+        new string[] {  "Well, another spy. It has been awile.", "Let's see if you dragged some of our officals down with you.", "This might actually be somewhat effective assasination tactic. 10" },
         
         //Story 10
         new string[] {  "Well this is a first.", "Did you paralyze them or something? 5", "Heh... I guess you should not give those coppers a reason.", "And it's not like I ever needed one." },
@@ -286,14 +286,14 @@ public class StoryController : MonoBehaviour
 
         new string[] {  "Should I just ask them to shoot people who assault them on the spot? 10", "This just feels really pointless." },
         new string[] {  "You should have picked a better motorcycle." },
-        new string[] {  "Sometimes I think what I will do when I retire.", "Maybe I will buy a small kabin in the middle of the woods. 10", "A peaceful life." },
+        //new string[] {  "Sometimes I think what I will do when I retire.", "Maybe I will buy a small kabin in the middle of the woods. 10", "A peaceful life." },
 
         //Story 12
         new string[] {  "Drug industrialist eh? 14", "Kind of a wierd accusation since you ran a bar. 10", "Some times I wanted to pay that place a visit. I heard it was a nice.", "Although I believe I�m not that popular among you people. 4" },
 
         new string[] {  "This again?", "Oh well. 7" },
         new string[] {  "I did not get home last night because of you. 21", "You know how uncomfortable beds here are." },
-        new string[] {  "Your ads, I got them.", "I understood the idea; kids sniffing glue, very fun.", "And you were allowed to go for so long. So, so long." },
+        //new string[] {  "Your ads, I got them.", "I understood the idea; kids sniffing glue, very fun.", "And you were allowed to go for so long. So, so long." },
         new string[] {  "So let me get this straight: 1", "A building was demolished on purpose to kill two people inside of it, who were spokespeople to the opposing party. That was made to look like an accident. 1", "This was also a calculated move to rise cost of building houses due to an expensive screenings of the current work force, so more money could be fonneled towards governments military projects. 1", "... 1", "I see. 1" },
         new string[] {  "I miss the murderers. Could you just drink the alcohol instead of throwing it all accross the streets? 19" },
 
@@ -303,10 +303,10 @@ public class StoryController : MonoBehaviour
         new string[] {  "Usually I have something to say to people who come here, but I don't even know who you are." },
         new string[] {  "How many there are after you? " },
         new string[] {  "Could you try to be quick? 17" },
-        new string[] {  "Just pull the lever. 21" },
+        new string[] {  "Just pull the lever twice. 21" },
         new string[] {  "...", "What? 17" },
         new string[] {  "..." },
-        new string[] {  "You know, I built this thing to mess with awful people.", "And you have killed others as well, and I think they are still fixing the crater on the street, but you are not like the usual folk here.", "You don�t hurt because you believe your life to be more precious than someone elses. 1", "You hurt because you believe your world would be better than someone elses. 1" },
+        //new string[] {  "You know, I built this thing to mess with awful people.", "And you have killed others as well, and I think they are still fixing the crater on the street, but you are not like the usual folk here.", "You don�t hurt because you believe your life to be more precious than someone elses. 1", "You hurt because you believe your world would be better than someone elses. 1" },
         new string[] {  "Yeah, let's just get this over with.", "[kill]" },
         new string[] {  "[kill]" },
         new string[] {  "[kill]" },
@@ -325,14 +325,14 @@ public class StoryController : MonoBehaviour
         new string[] {  "All that money and you chose to make more. 1", "Have you any idea how many innocent souls ended up to streets just because of that substance? 1" },
 
         //Story 14
-        new string[] {  "Did you find out if they got away? I have not seen them round here since. 5", " Maybe you will just take their place. This all would be rather pointless otherwise.", "And thanks a lot for giving me even more work from now on." },
+        new string[] {  "Did you find out if they got away? I have not seen them round here since. 5", "Maybe you will just take their place. This all would be rather pointless otherwise.", "And thanks a lot for giving me even more work from now on." },
 
         new string[] {  "I love the smell of burning flesh in the morning. 16" },
         new string[] {  "Commendable, but they will die tomorrow anyway.", "No, there isn't much I can do and I am technically an officer as well." },
         new string[] {  "Hi.", "I know... I know. 7" },
 
         //Story 15
-        new string[] {  "Ok. This kind of thing again?", "Everybody knows that we cell weapons. What the exact numbers have to do with anything? 5", "And it was a good article. 18" },
+        new string[] {  "Ok. This kind of thing again?", "Everybody knows that we cell weapons. What the exact numbers have to do with anything? 5", "And you wrote a good article. 18" },
 
         new string[] {  "You just had to drag me back from my holiday?", "Yeah, he had an affair, so what? Get a divorce like sane people." },
         new string[] {  "I kind of miss the nicknames people like you were given.", "But I also understand why that thing got banned. Some sick people might pursue them.", "What do you think of this 0337? 12" },
@@ -345,5 +345,5 @@ public class StoryController : MonoBehaviour
         new string[] {  "Go. 19", "Just get out. 19", "You will be shot yes, but what difference it makes?" }
     };
 
-    string[] executioner_message = { "Now, let's see how well I remember this.", "Or...", "Should I just..." };
+    string[] executioner_message = { "Now, let's see how well I remember this.", "Or...", "..." };
 }

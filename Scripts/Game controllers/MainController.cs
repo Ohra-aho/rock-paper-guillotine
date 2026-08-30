@@ -378,7 +378,6 @@ public class MainController : MonoBehaviour
 
     public void SpawnRewardMenu()
     {
-		Debug.Log(collector + " "+winner);
 		if(!collector && !winner)
 		{
         	Instantiate(rewardMenu, rewardmenuHolder.transform);

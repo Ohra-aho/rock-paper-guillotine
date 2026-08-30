@@ -8805,7 +8805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &234517213
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20323,7 +20323,7 @@ MonoBehaviour:
   first_achievement_pick: {fileID: 3768069680275742937, guid: 39c82e93799bfb144b2ce049b6338ea2, type: 3}
   executioner: 0
   debug: 0
-  museum_active: 1
+  museum_active: 0
   cellar: {fileID: 606367767}
   the_q: {fileID: 1891357473}
   main_background: {fileID: 990379401}
@@ -45333,7 +45333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1795998289
 Transform:
   m_ObjectHideFlags: 0
@@ -45343,7 +45343,7 @@ Transform:
   m_GameObject: {fileID: 1795998288}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.22, y: 2.29, z: 0}
+  m_LocalPosition: {x: 0.22, y: 2.07, z: 0}
   m_LocalScale: {x: 0.64003474, y: 0.8482237, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
