@@ -8805,7 +8805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &234517213
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14077,6 +14077,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &572727696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 572727697}
+  - component: {fileID: 572727698}
+  m_Layer: 9
+  m_Name: fake Hit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &572727697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572727696}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1638907591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &572727698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572727696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafee620d2b721a4e89ec64bdd59f2fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: Sound effects
+  clip: {fileID: 8300000, guid: ea9af6c9ae118eb4a999d25798c054ff, type: 3}
+  loop: 0
+  ongoing: 0
+  mute: 0
+  volume: 1
+  volume_modifier: 1
+  pitch: 1
+  stereo_pan: 0
 --- !u!1 &590252581
 GameObject:
   m_ObjectHideFlags: 0
@@ -20168,7 +20221,6 @@ MonoBehaviour:
   endTriggered: 0
   collector: 0
   winner: 0
-  stop: 0
   TC: {fileID: 967173491}
   playerChoise: {fileID: 0}
   enemyChoise: {fileID: 0}
@@ -20271,7 +20323,7 @@ MonoBehaviour:
   first_achievement_pick: {fileID: 3768069680275742937, guid: 39c82e93799bfb144b2ce049b6338ea2, type: 3}
   executioner: 0
   debug: 0
-  museum_active: 0
+  museum_active: 1
   cellar: {fileID: 606367767}
   the_q: {fileID: 1891357473}
   main_background: {fileID: 990379401}
@@ -37903,6 +37955,7 @@ Transform:
   - {fileID: 1820972700}
   - {fileID: 1123748456}
   - {fileID: 1108748533}
+  - {fileID: 572727697}
   m_Father: {fileID: 1891357474}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1638907592
@@ -45280,7 +45333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1795998289
 Transform:
   m_ObjectHideFlags: 0
@@ -45290,8 +45343,8 @@ Transform:
   m_GameObject: {fileID: 1795998288}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.37, y: 1.31, z: 0}
-  m_LocalScale: {x: 0.7644944, y: 0.86318904, z: 1}
+  m_LocalPosition: {x: 0.22, y: 2.29, z: 0}
+  m_LocalScale: {x: 0.64003474, y: 0.8482237, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1622991875}

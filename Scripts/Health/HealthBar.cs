@@ -73,7 +73,13 @@ public class HealthBar : MonoBehaviour
                     {
 						if(damage >= 5)
 						{
-							transform.GetChild(j).GetComponent<Heart>().HeavyDamage();
+							if(!MC.GetComponent<StoryController>().museum_active)
+							{
+								transform.GetChild(j).GetComponent<Heart>().HeavyDamage();
+							} else
+							{
+                        		transform.GetChild(j).GetComponent<Heart>().damage();
+							}
 						} else
 						{
                         	transform.GetChild(j).GetComponent<Heart>().damage();
@@ -90,15 +96,24 @@ public class HealthBar : MonoBehaviour
             {
                 if (GiveCurrentHealth() >= GiveMaxHealth() - GiveMaxHealth() / 3)
                 {
-                    Camera.main.GetComponent<Test>().PlayAnimation("Damage 1");
+					if(!MC.GetComponent<StoryController>().museum_active)
+					{
+                    	Camera.main.GetComponent<Test>().PlayAnimation("Damage 1");
+					}
                 }
                 else if (GiveCurrentHealth() <= GiveMaxHealth() / 2 && GiveCurrentHealth() > GiveMaxHealth() / 3)
                 {
-                    Camera.main.GetComponent<Test>().PlayAnimation("Damage 2");
+					if(!MC.GetComponent<StoryController>().museum_active)
+					{
+						Camera.main.GetComponent<Test>().PlayAnimation("Damage 2");	
+					}
                 }
                 else if (GiveCurrentHealth() <= GiveMaxHealth() / 3)
                 {
-                    Camera.main.GetComponent<Test>().PlayAnimation("Damage 3");
+					if(!MC.GetComponent<StoryController>().museum_active)
+					{
+						Camera.main.GetComponent<Test>().PlayAnimation("Damage 3");	
+					}
                 }
             }
 
@@ -107,7 +122,10 @@ public class HealthBar : MonoBehaviour
         {
             if (CheckIfAtZeroHP() && !MC.GetComponent<StoryController>().executioner)
             {
-                Camera.main.GetComponent<Test>().PlayAnimation("dead react");
+				if(!MC.GetComponent<StoryController>().museum_active)
+				{
+                	Camera.main.GetComponent<Test>().PlayAnimation("dead react");
+				}
             }
         }
         

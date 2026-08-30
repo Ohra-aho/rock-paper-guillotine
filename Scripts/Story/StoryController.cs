@@ -100,12 +100,12 @@ public class StoryController : MonoBehaviour
 			museum_background.SetActive(true);
 			player_wheel_holder.GetComponent<PlayerWheelHolder>().ChangeToMuseum();
 			enemy_wheel_holder.GetComponent<EnemyWheelHolder>().ChangeToMuseum();
+			start_button.GetComponent<StartButton>().ChangeToMuseum();
 
 			for(int i = 0; i < wheels.Count; i++)
 			{
 				wheels[i].GetComponent<SpriteRenderer>().sprite = museum_wheel;
 			}
-			start_button.GetComponent<StartButton>().ChangeToMuseum();
 			lamp.transform.position = new Vector2(lamp.transform.position.x, 9);
 			lamp.transform.GetChild(0).GetComponent<Light2D>().pointLightOuterRadius = 16;
 			man.SetActive(false);

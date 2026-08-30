@@ -162,7 +162,7 @@ public class StartButton : MonoBehaviour
 			DisplayForfeitBark(!MC.GetComponent<StoryCheckList>().first_forfeit);
 			if(!museum) GetComponent<SpriteRenderer>().sprite = inactive;
 			else GetComponent<SpriteRenderer>().sprite = museum_1;
-
+			
 			machine.GetComponent<Test>().PlayAnimation("OpenMachine");
 			GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarDown();
 			GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.PowerHealthBarDown();
@@ -173,13 +173,13 @@ public class StartButton : MonoBehaviour
 
     private void DisableAchievements()
     {
-        GameObject[] achievements = GameObject.FindGameObjectsWithTag("Achievement");
 		MC.GetComponent<RLController>().game_started = true;
     }
 
     public void EndRound()
     {
-        GetComponent<SpriteRenderer>().sprite = inactive;
+        if(!museum) GetComponent<SpriteRenderer>().sprite = inactive;
+		else GetComponent<SpriteRenderer>().sprite = museum_1;
         machine.GetComponent<Test>().PlayAnimation("OpenMachine");
         GameObject.Find("ChoisePanel").GetComponent<PlayerContoller>().HB.PowerHealthBarDown();
         GameObject.Find("EnemyHolder").GetComponent<EnemyController>().HB.PowerHealthBarDown();

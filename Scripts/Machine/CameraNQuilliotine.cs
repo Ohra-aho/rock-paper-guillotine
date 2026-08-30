@@ -50,11 +50,6 @@ public class CameraNQuilliotine : MonoBehaviour
         }
     }
 
-    public void DisableAllInteractavles()
-    {
-        eventSystem.GetComponent<MainController>().stop = true;
-    }
-
     public void DeathSave()
     {
 		eventSystem.GetComponent<StoryController>().achievements_picked = false;

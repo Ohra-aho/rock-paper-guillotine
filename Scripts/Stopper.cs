@@ -13,16 +13,6 @@ public class Stopper : MonoBehaviour
         mc = GameObject.Find("EventSystem").GetComponent<MainController>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(mc.stop != stop)
-        {
-            stop = mc.stop;
-            GoThroughAllChildren(this.gameObject, !stop);
-        }
-    }
-
     public void GoThroughAllChildren(GameObject target, bool stop)
     {
         StopInteractions(target, stop);

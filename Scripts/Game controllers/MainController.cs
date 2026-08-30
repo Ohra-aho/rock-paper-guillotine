@@ -14,8 +14,6 @@ public class MainController : MonoBehaviour
 	[HideInInspector] public bool collector;
 	[HideInInspector] public bool winner;
 
-    public bool stop;
-
     public TableController TC;
 
     public Weapon playerChoise;
