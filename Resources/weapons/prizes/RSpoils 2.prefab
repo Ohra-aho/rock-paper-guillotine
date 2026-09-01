@@ -104,7 +104,8 @@ MonoBehaviour:
   damage: 1
   armor: 0
   name: Spoils
-  description: +1 armor to the weapon used after this. Self-destructs.
+  description: After use, +1 armor to all weapons until the end of the fight and
+    self-destructs.
   sprite: {fileID: 21300000, guid: 8caa3dd0dfa420a47adc34b75f009e28, type: 3}
   tiers: []
   tier: 0
@@ -126,7 +127,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -6803283467070430486}
         m_TargetAssemblyTypeName: Wanderer, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ArmorSpoils
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

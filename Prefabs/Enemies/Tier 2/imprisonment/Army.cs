@@ -27,6 +27,20 @@ public class Army : MonoBehaviour
 			GetComponent<BuffController>().special_apply = true;
 			GetComponent<BuffController>().reminder = "Prevent first damage taken and deal 1 damage.";
 		}
+		if(GetComponent<Weapon>().name == "Turtle")
+		{
+			GetComponent<BuffController>().buff_requirement = (Weapon w) =>
+			{
+				switch(w.name)
+				{
+					case "Poison": return true;
+					case "Weakness": return true;
+					case "Bleed": return true;
+					default: return false;
+				}
+			};
+			GetComponent<BuffController>().type_change = MainController.Choise.voittamaton;
+		}
 	}
 
 	public void Chain()
@@ -93,6 +107,25 @@ public class Army : MonoBehaviour
 		{
 			disabled = false;
 			disable_counter = 0;
+		}
+	}
+
+
+	//Captives
+	public void Snake()
+	{
+		GameObject RI = GameObject.FindGameObjectWithTag("RI");
+		List<Weapon> weapons = GetComponent<Weapon>().player_owner.GetComponent<PlayerContoller>().GetWeapons();
+		for(int i = 0; i < RI.transform.childCount; i++)
+		{
+			if(!weapons.Contains(RI.transform.GetChild(i).GetComponent<Weapon>()))
+			{
+				if(RI.transform.GetChild(i).GetComponent<Weapon>().name == "Poison")
+				{
+					Destroy(RI.transform.GetChild(i).gameObject);
+					break;
+				}
+			}
 		}
 	}
 
