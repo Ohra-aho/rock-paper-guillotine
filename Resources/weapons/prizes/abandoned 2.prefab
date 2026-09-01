@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 3775377076240939114}
-  - component: {fileID: 3607783190786408579}
-  - component: {fileID: 2004720770553807827}
+  - component: {fileID: -5020577489463505278}
+  - component: {fileID: -3997331798148702016}
+  - component: {fileID: -5940882630351210130}
   m_Layer: 5
-  m_Name: coppuption
+  m_Name: abandoned 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,15 +99,14 @@ MonoBehaviour:
   penetrating: 0
   draw_winner: 0
   spammable: 0
-  type: 2
+  type: 0
   og_type: 0
   damage: 1
   armor: 0
-  name: Corruption
-  description: If not equipped, one of your weapons becomes useless at the start
-    of each fight until it is used. After use, next weapon used gains +1 damage,
-    but is returned to your inventory.
-  sprite: {fileID: 21300000, guid: b747a529ba261684b9b3b5eac8ddb063, type: 3}
+  name: Abandoned
+  description: After use, the next weapon used is destroyed and 2 debuffs are removed
+    from your inventory.
+  sprite: {fileID: 21300000, guid: 026997e2acceda9469980db2cc2f9e09, type: 3}
   tiers: []
   tier: 0
   toughness: 0
@@ -126,9 +125,9 @@ MonoBehaviour:
   endPhase:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3607783190786408579}
-        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
-        m_MethodName: Equip
+      - m_Target: {fileID: -5020577489463505278}
+        m_TargetAssemblyTypeName: AScript, Assembly-CSharp
+        m_MethodName: AppluEffects
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -191,19 +190,7 @@ MonoBehaviour:
       m_Calls: []
   unequipped:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3775377076240939114}
-        m_TargetAssemblyTypeName: CorruptionScript, Assembly-CSharp
-        m_MethodName: Unequipped
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   on_pick:
     m_PersistentCalls:
       m_Calls: []
@@ -219,7 +206,7 @@ MonoBehaviour:
   favourite: 
   dont_load: 0
   token: 0
---- !u!114 &3775377076240939114
+--- !u!114 &-5020577489463505278
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,10 +215,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac192ad34588ca24b80f066905f7c300, type: 3}
+  m_Script: {fileID: 11500000, guid: 3cef8cf0b5ca47343ad5914538ba9e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3607783190786408579
+  identity: 2
+--- !u!114 &-3997331798148702016
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -285,7 +273,7 @@ MonoBehaviour:
   stackable: 0
   visible_buff: 0
   visible_debuff: 0
---- !u!114 &2004720770553807827
+--- !u!114 &-5940882630351210130
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

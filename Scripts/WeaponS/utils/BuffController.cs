@@ -72,6 +72,9 @@ public class BuffController : MonoBehaviour
     [HideInInspector] public bool heal_disabler;
 
 	[HideInInspector] public bool stackable;
+	[HideInInspector] public bool visible_buff;
+	[HideInInspector] public bool visible_debuff;
+
 
 
     private void Awake()
@@ -186,6 +189,8 @@ public class BuffController : MonoBehaviour
             new_buff.on_death = on_death;
 			new_buff.each_turn = each_turn;
 			new_buff.reminder = reminder;
+			new_buff.visible_buff = visible_buff;
+			new_buff.visible_debuff = visible_debuff;
             if (special != null) new_buff.GetComponent<Buff>().special = special;
             if (special_removal != null) new_buff.GetComponent<Buff>().special_removal = special_removal;
             new_buff.GetComponent<Buff>().AddBuff();

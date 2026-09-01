@@ -6,13 +6,16 @@ public class CorruptionScript : MonoBehaviour
 {
 	void Awake()
 	{
-		GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
-		GetComponent<BuffController>().endPhase = true;
-		GetComponent<BuffController>().destructive = true;
-		GetComponent<BuffController>().temporary = true;
-		GetComponent<BuffController>().timer = 2;
-		GetComponent<BuffController>().special_apply = true;
-		GetComponent<BuffController>().special = Equipped;
+		if(GetComponent<BuffController>())
+		{
+			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+			GetComponent<BuffController>().endPhase = true;
+			GetComponent<BuffController>().destructive = true;
+			GetComponent<BuffController>().temporary = true;
+			GetComponent<BuffController>().timer = 2;
+			GetComponent<BuffController>().special_apply = true;
+			GetComponent<BuffController>().special = Equipped;	
+		}
 	}
 
 	public void Unequipped()
@@ -33,5 +36,17 @@ public class CorruptionScript : MonoBehaviour
 	{
 		w.damage++;
 		w.player_owner.GetComponent<PlayerInventory>().AddItem(Instantiate(w.gameObject));
+	}
+
+	public void GivePoints()
+	{
+		List<Weapon> weapons = GetComponent<Weapon>().player_owner.GetComponent<PlayerContoller>().GetWeapons();
+		for(int i = 0; i < weapons.Count; i++)
+		{
+			if(weapons[i].GetComponent<Stacking>())
+			{
+				weapons[i].GetComponent<Stacking>().IncreaseStacks(4);
+			}
+		}
 	}
 }

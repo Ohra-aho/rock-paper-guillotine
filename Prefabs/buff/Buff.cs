@@ -87,7 +87,6 @@ public class Buff : MonoBehaviour
     public void AddBuff()
     {
 		GetOGs();
-
 		if(choisePhase)
 			transform.parent.GetComponent<Weapon>().choisePhase.AddListener(() => special(weapon));
 		if (resultPhase)
