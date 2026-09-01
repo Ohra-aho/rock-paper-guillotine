@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -7219122627726181007}
-  - component: {fileID: 3194773754589895234}
-  - component: {fileID: -7038268233471279277}
+  - component: {fileID: 3775377076240939114}
+  - component: {fileID: 3607783190786408579}
+  - component: {fileID: 2004720770553807827}
   m_Layer: 5
-  m_Name: Hedgehog
+  m_Name: coppuption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,31 +100,20 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
-  name: Hedgehog
-  description: First time you would take damage during each fight, you instead deal
-    1 damage.
-  sprite: {fileID: 21300000, guid: 1e73ee6599b9a264784abcdc7e0fb015, type: 3}
+  name: Corruption
+  description: If not equipped, one of your weapons becomes useless at the start
+    of each fight until it is used. After use, next weapon used gains +1 damage,
+    but is returned to your inventory.
+  sprite: {fileID: 21300000, guid: b747a529ba261684b9b3b5eac8ddb063, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3194773754589895234}
-        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
-        m_MethodName: Equip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   end_of_fight:
     m_PersistentCalls:
       m_Calls: []
@@ -136,7 +125,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3607783190786408579}
+        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
+        m_MethodName: Equip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -190,19 +191,35 @@ MonoBehaviour:
       m_Calls: []
   unequipped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3775377076240939114}
+        m_TargetAssemblyTypeName: CorruptionScript, Assembly-CSharp
+        m_MethodName: Unequipped
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   on_pick:
     m_PersistentCalls:
       m_Calls: []
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
   favourite: 
-  damage_soft_cap: 7
---- !u!114 &-7219122627726181007
+  dont_load: 0
+  token: 0
+--- !u!114 &3775377076240939114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,11 +228,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d3097e08e9118b4d8bf02cb619d1f90, type: 3}
+  m_Script: {fileID: 11500000, guid: ac192ad34588ca24b80f066905f7c300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
---- !u!114 &3194773754589895234
+--- !u!114 &3607783190786408579
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -266,7 +282,8 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
---- !u!114 &-7038268233471279277
+  stackable: 0
+--- !u!114 &2004720770553807827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,8 +292,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
-  armor_piercing: 0

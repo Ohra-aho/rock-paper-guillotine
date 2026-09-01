@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: -6209912774970049484}
-  - component: {fileID: 6497418879105722007}
-  - component: {fileID: -5976946255838040648}
+  - component: {fileID: 6712856007102882056}
+  - component: {fileID: 7390600872356311219}
+  - component: {fileID: 3978319608980225538}
   m_Layer: 5
-  m_Name: thrall
+  m_Name: Spawn 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,14 +101,14 @@ MonoBehaviour:
   spammable: 0
   type: 2
   og_type: 0
-  damage: 1
+  damage: 2
   armor: 0
-  name: Thrall
-  description: When not equipped, at the start of each fight all weapons gain 1 point.
-    After use, all weapons gain 1 point. Has a chance to turn against you.
-  sprite: {fileID: 21300000, guid: 4d08ad8afa555bc46a10a73daa47681a, type: 3}
+  name: Spawn
+  description: If you kill with this weapon +2 HP and self-desturcts.
+  sprite: {fileID: 21300000, guid: a8f1db43881d207438428f5887bdaeb0, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -123,10 +123,13 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
+      m_Calls: []
+  victory:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -6209912774970049484}
-        m_TargetAssemblyTypeName: Thrulli, Assembly-CSharp
-        m_MethodName: Activate
+      - m_Target: {fileID: 6712856007102882056}
+        m_TargetAssemblyTypeName: HealthIncrease, Assembly-CSharp
+        m_MethodName: Increase
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -136,9 +139,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  victory:
-    m_PersistentCalls:
-      m_Calls: []
+      - m_Target: {fileID: 7390600872356311219}
+        m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
+        m_MethodName: Destruct
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   takeDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -189,19 +201,7 @@ MonoBehaviour:
       m_Calls: []
   unequipped:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -6209912774970049484}
-        m_TargetAssemblyTypeName: Thrulli, Assembly-CSharp
-        m_MethodName: ActivateUnequipped
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   on_pick:
     m_PersistentCalls:
       m_Calls: []
@@ -216,7 +216,8 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
---- !u!114 &-6209912774970049484
+  token: 0
+--- !u!114 &6712856007102882056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,24 +226,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944698211339908181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c52bbcca02da9a42a50161f9ba173d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6497418879105722007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Script: {fileID: 11500000, guid: b528c9add8506e74192aac87c7001b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 2
-  armor_piercing: 0
---- !u!114 &-5976946255838040648
+  in_view: 0
+--- !u!114 &7390600872356311219
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -257,3 +246,15 @@ MonoBehaviour:
   destroyed: 0
   disabled: 0
   toughness: 0
+--- !u!114 &3978319608980225538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
