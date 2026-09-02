@@ -250,7 +250,7 @@ public class BasicEnemy : MonoBehaviour
 		int choise = current_pair[Random.Range(0, current_pair.Count)];
 		if(current_pair.Count > 1)
 		{
-			for(int i = 0; i < 3; i++)
+			for(int i = 0; i < 2; i++)
 			{
 				if(choise != previous_weapon) break;
 				else if(choise == previous_weapon)

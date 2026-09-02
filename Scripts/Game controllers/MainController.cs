@@ -408,7 +408,7 @@ public class MainController : MonoBehaviour
         }
         else if(victory_barks.Count > 0)
         {
-            int chance = UnityEngine.Random.Range(1, 4); //1, 4
+            int chance = UnityEngine.Random.Range(1, 5); //1, 4
             if (chance == 1)
             {
                 BC.ActivateInstantBark(GiveRandomBark(victory_barks));
