@@ -11171,6 +11171,7 @@ MonoBehaviour:
   - This just got interesting.
   - Oh no.
   removed_damage: 0
+  temporary_health: 0
   warning_given: 0
   low_health: 0
   heavy_damage: {fileID: 8300000, guid: ceedf1b3adb1e394bb08240d2f0e7afa, type: 3}
@@ -27220,6 +27221,7 @@ MonoBehaviour:
   exe_high_damage_barks: []
   exe_low_health: []
   removed_damage: 0
+  temporary_health: 0
   warning_given: 0
   low_health: 0
   heavy_damage: {fileID: 8300000, guid: ceedf1b3adb1e394bb08240d2f0e7afa, type: 3}
@@ -28929,8 +28931,7 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: 8bee120dfac54634f9f08716443cafdf, type: 3}
-  - {fileID: 1944698211339908181, guid: d13bf3d6526630c4db5fb05ebdbbd059, type: 3}
+  - {fileID: 1944698211339908181, guid: d5833dd52d5b31e4391a413df1adc013, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623

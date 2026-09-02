@@ -37,7 +37,7 @@ public class Madman : MonoBehaviour
 	public void RemoveBuff()
 	{
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-		player.GetComponent<PlayerContoller>().HB.RemoveTemporaryHealth(amount * 2, true);
+		//player.GetComponent<PlayerContoller>().HB.RemoveTemporaryHealth(amount * 2);
 		amount = 0;
 	}
 }

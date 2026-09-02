@@ -22,6 +22,8 @@ public class HealthBar : MonoBehaviour
     public List<string> exe_low_health;
 	public int removed_damage = 0;
 
+	[HideInInspector] public int temporary_health; 
+
     //Bark stoppers
     [HideInInspector] public bool warning_given = false;
     [HideInInspector] public bool low_health = false;
@@ -393,6 +395,7 @@ public class HealthBar : MonoBehaviour
 		{
 			max_health += amount;
 			current_health += amount;
+			temporary_health += amount;
 
 			if (!FullHealthBar())
 			{
@@ -409,9 +412,9 @@ public class HealthBar : MonoBehaviour
 		}
     }
 
-	public void RemoveTemporaryHealth(int amount, bool in_view)
+	public void RemoveTemporaryHealth(int amount)
     {
-		
+		amount = temporary_health;
         max_health -= amount;
         if(current_health > max_health) current_health = max_health;
 
@@ -438,6 +441,7 @@ public class HealthBar : MonoBehaviour
                 transform.parent.GetChild(4).GetComponent<Test>().PlayAnimation("Change health");
             }
         }
+		temporary_health = 0;
     }
 
 	public void UpdateHealthBar(bool in_view)

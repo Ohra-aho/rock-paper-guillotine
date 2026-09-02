@@ -67,8 +67,8 @@ public class HealthIncrease : MonoBehaviour
 
 	public void RemoveTemporaryHealth()
 	{
-		HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
-        HB.RemoveTemporaryHealth(amount, in_view);
+		//HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
+        //HB.RemoveTemporaryHealth(amount);
 	}
 
 	public void GiveTemporaryHealth()

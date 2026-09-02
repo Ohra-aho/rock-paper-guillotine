@@ -194,6 +194,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &-915748003629455221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawn_limit: 0
   weapons:
-  - {fileID: 1944698211339908181, guid: 60283fdf5fc01854fb91fb5b7934a477, type: 3}
+  - {fileID: 1944698211339908181, guid: a8ba7335b1e424c4ba6e874713c2e99c, type: 3}
 --- !u!114 &-6214254070887921508
 MonoBehaviour:
   m_ObjectHideFlags: 0

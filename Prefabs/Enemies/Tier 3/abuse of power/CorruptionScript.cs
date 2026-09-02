@@ -45,7 +45,7 @@ public class CorruptionScript : MonoBehaviour
 		{
 			if(weapons[i].GetComponent<Stacking>())
 			{
-				weapons[i].GetComponent<Stacking>().IncreaseStacks(4);
+				weapons[i].GetComponent<Stacking>().IncreaseStacks(3);
 			}
 		}
 	}

@@ -207,8 +207,8 @@ public class PermanentDebuffer : MonoBehaviour
 	{
 		if(HandleTrgger())
 		{
-			if(GetComponent<Weapon>().opponent != null)
-        		GetComponent<Weapon>().opponent.player_owner.HB.RemoveTemporaryHealth(amount, true);
+			//if(GetComponent<Weapon>().opponent != null)
+        	//	GetComponent<Weapon>().opponent.player_owner.HB.RemoveTemporaryHealth(amount);
 		}
 	}
 
