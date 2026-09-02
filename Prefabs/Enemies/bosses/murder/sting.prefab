@@ -99,15 +99,15 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 2
+  og_type: 0
   damage: 3
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Sting
   description: If wins, dies and you get a Spawn.
   sprite: {fileID: 21300000, guid: 6a611286e073f8045bb7e3dfe62ca407, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -143,7 +143,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -2036526830350792608}
         m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
-        m_MethodName: SpawnOnlyWeapon
+        m_MethodName: SpawnRandomWeapon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -192,6 +192,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -201,17 +207,15 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
+  dont_load: 0
+  token: 0
 --- !u!114 &-2036526830350792608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +231,8 @@ MonoBehaviour:
   spawn_limit: 0
   weapons:
   - {fileID: 1944698211339908181, guid: 1427d7076aa5e8641b57fd6a1bd350fc, type: 3}
+  - {fileID: 1944698211339908181, guid: b36f0927ce287fd4e91b1af6a6385bdb, type: 3}
+  - {fileID: 1944698211339908181, guid: 07ee11e22e2205a4ab25183740f09ce8, type: 3}
 --- !u!114 &-9153943653925817904
 MonoBehaviour:
   m_ObjectHideFlags: 0

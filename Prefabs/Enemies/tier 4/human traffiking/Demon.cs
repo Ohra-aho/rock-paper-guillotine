@@ -26,7 +26,7 @@ public class Demon : MonoBehaviour
 			GetComponent<Stacking>().DecreaseStacks(amount);
 		} else
 		{
-			GetComponent<WeaponSpawner>().SpawnOnlyWeapon();
+			GetComponent<WeaponSpawner>().SpawnRandomWeapon();
 		}
 	}
 

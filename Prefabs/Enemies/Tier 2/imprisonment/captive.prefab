@@ -130,7 +130,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1194324506961993275}
         m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
-        m_MethodName: SpawnOnlyWeapon
+        m_MethodName: SpawnRandomWeapon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -218,3 +218,5 @@ MonoBehaviour:
   spawn_limit: 1
   weapons:
   - {fileID: 1944698211339908181, guid: d0b5de8d9824b7e46b28c799012012bc, type: 3}
+  - {fileID: 1944698211339908181, guid: b3d23055911616c4ca636d122ff0cea4, type: 3}
+  - {fileID: 1944698211339908181, guid: 231f2ce3ec962224bb03d5463729349d, type: 3}

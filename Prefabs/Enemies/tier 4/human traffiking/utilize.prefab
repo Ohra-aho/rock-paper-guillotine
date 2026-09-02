@@ -110,6 +110,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 4d08ad8afa555bc46a10a73daa47681a, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -205,6 +206,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &1943732860799206268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +234,8 @@ MonoBehaviour:
   spawn_limit: 0
   weapons:
   - {fileID: 1944698211339908181, guid: 6ae0411a1b68d984e85817c3f6145e60, type: 3}
+  - {fileID: 1944698211339908181, guid: 478065430e72df647be5156fc3bf8eb1, type: 3}
+  - {fileID: 1944698211339908181, guid: 82fe1b99f94b61d479662773789af51d, type: 3}
 --- !u!114 &817267033935479413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +288,8 @@ MonoBehaviour:
   destructive: 0
   heal_disabler: 0
   stackable: 0
+  visible_buff: 0
+  visible_debuff: 0
 --- !u!114 &-416344381773603521
 MonoBehaviour:
   m_ObjectHideFlags: 0

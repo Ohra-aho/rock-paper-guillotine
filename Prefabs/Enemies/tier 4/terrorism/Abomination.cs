@@ -17,7 +17,7 @@ public class Abomination : MonoBehaviour
 	}
 	public void Burst()
 	{
-		GetComponent<WeaponSpawner>().SpawnMultipleWeapons(3);
+		GetComponent<WeaponSpawner>().SpawnMultipleRandomWeapons(3);
 		GetComponent<Weapon>().owner.HB.InstaKill();
 	}
 

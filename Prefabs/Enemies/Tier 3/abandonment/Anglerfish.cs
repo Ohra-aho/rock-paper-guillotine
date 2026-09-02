@@ -39,7 +39,8 @@ public class Anglerfish : MonoBehaviour
 		GetComponent<WeaponSpawner>().SpawnSpecificWeapon(0);
 		if(GetComponent<Stacking>().stacks >= 3)
 		{
-			GetComponent<WeaponSpawner>().SpawnSpecificWeapon(1);
+			int x = Random.Range(1, 4);
+			GetComponent<WeaponSpawner>().SpawnSpecificWeapon(x);
 			GetComponent<Weapon>().owner.HB.InstaKill();
 		}
 	}

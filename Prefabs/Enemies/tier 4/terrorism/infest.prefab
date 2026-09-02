@@ -99,15 +99,15 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
+  og_type: 0
   damage: 2
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Infest
   description: If does not take damage, you get a Parasite.
   sprite: {fileID: 21300000, guid: f91d51b188f38794092856642003648a, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -140,7 +140,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8287697506024547334}
         m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
-        m_MethodName: SpawnOnlyWeapon
+        m_MethodName: SpawnRandomWeapon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -180,6 +180,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -189,17 +195,15 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
+  dont_load: 0
+  token: 0
 --- !u!114 &2856670220802805572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,3 +231,5 @@ MonoBehaviour:
   spawn_limit: 0
   weapons:
   - {fileID: 1944698211339908181, guid: a8ba7335b1e424c4ba6e874713c2e99c, type: 3}
+  - {fileID: 1944698211339908181, guid: f93e1dbe3277e474cb4207599d47a6e8, type: 3}
+  - {fileID: 1944698211339908181, guid: d5833dd52d5b31e4391a413df1adc013, type: 3}
