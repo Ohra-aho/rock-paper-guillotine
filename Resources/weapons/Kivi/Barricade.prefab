@@ -101,15 +101,16 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Barricade
-  description: If you lose a round with any weapon but take no damage, deals 2 damage.
+  description: Whenever you lose a turn with any weapon but take no damage, deals
+    2 damage.
   sprite: {fileID: 21300000, guid: 7f60d662ab3f62645acda05d6b0d2c19, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -170,6 +171,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -179,6 +186,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - I dare you to make that work without the Bunker.
@@ -186,7 +196,8 @@ MonoBehaviour:
   - May everything bounce off your impenetrable fortress.
   executioner_comment: 11111111111
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 0
+  token: 0
 --- !u!114 &8720878166752751734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,11 +243,12 @@ MonoBehaviour:
   toughness_buff: 0
   set_a_to_zero: 0
   set_d_to_zero: 0
-  always_on: 1
   choisePhase: 0
   resultPhase: 0
   endPhase: 0
   each_turn: 0
+  damage_modifier: 0
+  heal_modifier: 0
   victory: 0
   special_apply: 0
   takeDamage: 0
@@ -263,6 +275,9 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
+  stackable: 0
+  visible_buff: 0
+  visible_debuff: 0
 --- !u!114 &1074360141642218033
 MonoBehaviour:
   m_ObjectHideFlags: 0

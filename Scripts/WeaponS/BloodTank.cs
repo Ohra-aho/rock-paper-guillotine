@@ -14,7 +14,6 @@ public class BloodTank : MonoBehaviour
 			if(current_health_bonus < 3)
 			{
 				current_health_bonus++;
-				GetComponent<HealthIncrease>().amount = current_health_bonus;
 				GetComponent<HealthIncrease>().GiveSetTemporaryHealth(1);	
 			}
 		};
@@ -23,19 +22,5 @@ public class BloodTank : MonoBehaviour
 	public void ResetHealthBonus()
 	{
 		current_health_bonus = 0;
-		GetComponent<HealthIncrease>().amount = 0;
 	}
-
-    public void IncreaseStacks()
-    {
-        GetComponent<Stacking>().IncreaseStacks(1);
-        if(current_health_bonus < 15)
-        {
-            if (GetComponent<Stacking>().stacks >= 5)
-            {
-				GetComponent<Stacking>().stacks = 0;
-                GetComponent<HealthIncrease>().Increase();
-            }
-        }
-    }
 }

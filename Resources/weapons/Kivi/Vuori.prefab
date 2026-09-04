@@ -103,10 +103,11 @@ MonoBehaviour:
   damage: 1
   armor: 0
   name: Mountain
-  description: +4 HP
+  description: +3 HP
   sprite: {fileID: 21300000, guid: 8965124cc100b46408ec61bd1b357794, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -229,6 +230,7 @@ MonoBehaviour:
   executioner_comment: 11111111111111111111111
   favourite: 
   dont_load: 1
+  token: 0
 --- !u!114 &8317546583071739834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b528c9add8506e74192aac87c7001b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 4
+  amount: 3
   in_view: 0
 --- !u!114 &-9001256545332247908
 MonoBehaviour:

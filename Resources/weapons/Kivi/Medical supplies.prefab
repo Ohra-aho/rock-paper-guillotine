@@ -104,16 +104,15 @@ MonoBehaviour:
   og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Medical supplies
-  description: After use, heals 1, gives a copy of itself to your inventory and self-destructs.
+  description: After use, heals 1 and returns to your inventory.
   sprite: {fileID: 21300000, guid: 75ba41b273a153b41abad947d0d3128b, type: 3}
   tiers:
   - {fileID: 21300000, guid: 97b5b00782b0b474fa59e2cb07562f1a, type: 3}
   - {fileID: 21300000, guid: 3a240671df9813341b93bf5e6caeb7eb, type: 3}
   - {fileID: 21300000, guid: 4bfec1fcc837111449725ed56728ceac, type: 3}
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -225,6 +224,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - Now you will be a little harder to kill.
@@ -232,6 +234,8 @@ MonoBehaviour:
   - There actually is a box of bandages in the back room. Wierd regualtion.
   executioner_comment: 11111111111111111111111
   favourite: 
+  dont_load: 0
+  token: 0
 --- !u!114 &-3206155839901610199
 MonoBehaviour:
   m_ObjectHideFlags: 0

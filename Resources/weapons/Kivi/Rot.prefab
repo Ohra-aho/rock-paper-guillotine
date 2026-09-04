@@ -106,7 +106,7 @@ MonoBehaviour:
   armor: 0
   name: Rot
   description: +4 HP. If you don't heal during a fight, you get -1 HP at the end
-    of it. Whenever unequipped, -1 HP.
+    of it. -1 HP when picked.
   sprite: {fileID: 21300000, guid: 32316206308949541966fd2a728fcfb4, type: 3}
   tiers: []
   tier: 0
@@ -198,18 +198,6 @@ MonoBehaviour:
   unEquip:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -705646538289296385}
-        m_TargetAssemblyTypeName: HealthIncrease, Assembly-CSharp
-        m_MethodName: Decrease
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 4628298187469378980}
         m_TargetAssemblyTypeName: Rot, Assembly-CSharp
         m_MethodName: Unequip
@@ -254,7 +242,19 @@ MonoBehaviour:
       m_Calls: []
   on_pick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -705646538289296385}
+        m_TargetAssemblyTypeName: HealthIncrease, Assembly-CSharp
+        m_MethodName: DecreaseSetAmount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   on_death:
     m_PersistentCalls:
       m_Calls: []
@@ -360,3 +360,5 @@ MonoBehaviour:
   destructive: 0
   heal_disabler: 0
   stackable: 0
+  visible_buff: 0
+  visible_debuff: 0
