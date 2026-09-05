@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: -1078029112995628566}
+  - component: {fileID: 700621214857790383}
+  - component: {fileID: -817986702457442356}
+  - component: {fileID: -7194538684188236619}
   m_Layer: 5
   m_Name: Paperilennokki
   m_TagString: Untagged
@@ -95,17 +98,19 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
-  draw_winner: 1
+  draw_winner: 0
   spammable: 0
   type: 1
   og_type: 0
   damage: 1
   armor: 0
   name: Paper plane
-  description: Wins draws
+  description: After use, deals damage equal to the total amount of armor on all
+    of your weapons and self-destructs.
   sprite: {fileID: 21300000, guid: 824ed9c4c421ec34d8dbfaebda92c2b9, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -120,7 +125,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 700621214857790383}
+        m_TargetAssemblyTypeName: PaperPlane, Assembly-CSharp
+        m_MethodName: DealDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -192,6 +209,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &-1078029112995628566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,3 +222,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &700621214857790383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1906ec486f6ea74cafbbbc304dd2ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-817986702457442356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 0
+  armor_piercing: 0
+--- !u!114 &-7194538684188236619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ad2f991facad9459f1b8ead3851193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyed: 0
+  disabled: 0
+  toughness: 0

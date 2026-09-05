@@ -96,7 +96,7 @@ MonoBehaviour:
   player: 0
   opponent: {fileID: 0}
   penetrating: 0
-  draw_winner: 1
+  draw_winner: 0
   spammable: 0
   type: 2
   og_type: 0
