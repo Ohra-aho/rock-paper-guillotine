@@ -92,11 +92,6 @@ public class PlayerInventory : MonoBehaviour
                         equipped_weapons[i].GetComponent<BuffController>().Equip();
                     }
                 }
-
-                if (equipped_weapons[i].GetComponent<Laava>())
-                {
-                    equipped_weapons[i].GetComponent<Laava>().Equip();
-                }
             }
         }
     }

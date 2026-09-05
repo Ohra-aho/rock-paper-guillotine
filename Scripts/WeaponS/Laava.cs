@@ -4,86 +4,35 @@ using UnityEngine;
 
 public class Laava : MonoBehaviour
 {
-    private bool buff_on = false;
     [SerializeField] private GameObject buff;
     GameObject real_inventory;
 
     private void Awake()
     {
-        real_inventory = GameObject.FindGameObjectWithTag("RI");
-        GetComponent<Weapon>().equip.AddListener(Equip);
-        GetComponent<Weapon>().unEquip.AddListener(Unequip);
+        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+		GetComponent<BuffController>().heal = true;
+		GetComponent<BuffController>().special = AddBuffs;
     }
 
-    public void Equip()
+    public void AddBuffs(Weapon w)
     {
-        buff_on = true;
-        AddBuffs();
-    }
-
-    public void Unequip()
-    {
-        buff_on = false;
-        AddBuffs();
-    }
-
-    public void AddBuffs()
-    {
-        if (buff_on)
-        {
-            for (int i = 0; i < real_inventory.transform.childCount; i++)
-            {
-                Transform weapon = real_inventory.transform.GetChild(i);
-                AddBuff(weapon);
-            }
-        }
-        else
-        {
-            RemoveBuffs();
-        }
+		real_inventory = GameObject.FindGameObjectWithTag("RI");
+		for (int i = 0; i < real_inventory.transform.childCount; i++)
+		{
+			Transform weapon = real_inventory.transform.GetChild(i);
+			AddBuff(weapon);
+		} 
     }
 
     private void AddBuff(Transform weapon)
     {
         if (!IfOwnBuffExists(weapon))
         {
-            GameObject new_buff = Instantiate(buff, weapon);
-            new_buff.GetComponent<Buff>().id = GetComponent<Weapon>().name;
-            new_buff.GetComponent<Buff>().damage_buff = weapon.GetComponent<Weapon>().GiveEffectiveArmor();
-            new_buff.GetComponent<Buff>().armor_buff = -weapon.GetComponent<Weapon>().GiveEffectiveArmor();
-            new_buff.GetComponent<Buff>().AddBuff();
-        }
-    }
-
-    public void ReapplyBuffs()
-    {
-        GameObject RI = GameObject.FindGameObjectWithTag("RI");
-        for(int i = 0; i < RI.transform.childCount; i++)
-        {
-            GameObject buff = RI.transform.GetChild(i).GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name);
-            if(buff != null)
-            {
-                buff.GetComponent<Buff>().RemoveBuff();
-                buff.GetComponent<Buff>().damage_buff = RI.transform.GetChild(i).GetComponent<Weapon>().GiveEffectiveArmor();
-                buff.GetComponent<Buff>().armor_buff = -RI.transform.GetChild(i).GetComponent<Weapon>().GiveEffectiveArmor();
-            }
-        }
-    }
-
-    public void RemoveBuffs()
-    {
-        if (!buff_on)
-        {
-            for (int i = 0; i < real_inventory.transform.childCount; i++)
-            {
-                Transform weapon = real_inventory.transform.GetChild(i);
-                GameObject own_buff = FindOwnBuff(weapon);
-                if(own_buff != null)
-                {
-                    own_buff.GetComponent<Buff>().RemoveBuff();
-                    Destroy(own_buff);
-                }
-            }
+            GameObject new_buff = Instantiate(GetComponent<BuffController>().buff, weapon);
+            new_buff.GetComponent<Buff>().id = GetComponent<Weapon>().name+"_2";
+            new_buff.GetComponent<Buff>().damage_buff = 1;
+			new_buff.GetComponent<Buff>().temporary = true;
+			new_buff.GetComponent<Buff>().timer = 2;
         }
     }
 
@@ -92,7 +41,7 @@ public class Laava : MonoBehaviour
         bool found = false;
         for (int i = 0; i < weapon.childCount; i++)
         {
-            if (weapon.GetChild(i).GetComponent<Buff>().id == GetComponent<Weapon>().name)
+            if (weapon.GetChild(i).GetComponent<Buff>().id == GetComponent<Weapon>().name+"_2")
             {
                 found = true;
             }

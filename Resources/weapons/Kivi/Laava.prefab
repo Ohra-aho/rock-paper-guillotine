@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 6088703525507109606}
   - component: {fileID: 5898968810984755573}
+  - component: {fileID: 4155498865510082495}
   m_Layer: 5
   m_Name: Laava
   m_TagString: Untagged
@@ -99,33 +100,21 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 0
-  damage: 0
-  armor: 1
-  real_damage: 0
-  real_armor: 0
+  og_type: 0
+  damage: 1
+  armor: 0
   name: Lava
-  description: Armor of each weapon turns into damage.
+  description: 'Whenever you heal, +1 damage to all weapons for one turn. '
   sprite: {fileID: 21300000, guid: 1c24b98321bd4ff43973417afc4112d6, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
   end_of_fight:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6088703525507109606}
-        m_TargetAssemblyTypeName: Laava, Assembly-CSharp
-        m_MethodName: ReapplyBuffs
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   choisePhase:
     m_PersistentCalls:
       m_Calls: []
@@ -176,34 +165,10 @@ MonoBehaviour:
       m_Calls: []
   onDestruction:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6088703525507109606}
-        m_TargetAssemblyTypeName: Laava, Assembly-CSharp
-        m_MethodName: Unequip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   eachTurn:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6088703525507109606}
-        m_TargetAssemblyTypeName: Laava, Assembly-CSharp
-        m_MethodName: ReapplyBuffs
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   damage_modifier:
     m_PersistentCalls:
       m_Calls: []
@@ -219,6 +184,9 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - Abandon all caution and set all papers to a blaze.
@@ -227,7 +195,8 @@ MonoBehaviour:
     they don't need it.
   executioner_comment: 11111111111111111111111
   favourite: 
-  damage_soft_cap: 7
+  dont_load: 0
+  token: 0
 --- !u!114 &6088703525507109606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,3 +222,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4155498865510082495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003695b965ff8b74086792630d138716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buff: {fileID: 0}
+  damage_bonus: 0
+  armor_bonus: 0
+  effect_damage_bonus: 0
+  toughness_buff: 0
+  set_a_to_zero: 0
+  set_d_to_zero: 0
+  choisePhase: 0
+  resultPhase: 0
+  endPhase: 0
+  each_turn: 0
+  damage_modifier: 0
+  heal_modifier: 0
+  victory: 0
+  special_apply: 0
+  takeDamage: 0
+  takeNoDamage: 0
+  dealDamage: 0
+  deal_effect_damage: 0
+  draw: 0
+  win: 0
+  lose: 0
+  heal: 0
+  gain_points: 0
+  equip: 0
+  unEquip: 0
+  constant: 0
+  onDestruction: 0
+  awake: 0
+  on_death: 0
+  temporary: 0
+  timer: 0
+  penetrating: 0
+  draw_winner: 0
+  health_buff: 0
+  until_used: 0
+  reminder: 
+  destructive: 0
+  heal_disabler: 0
+  stackable: 0
+  visible_buff: 0
+  visible_debuff: 0
