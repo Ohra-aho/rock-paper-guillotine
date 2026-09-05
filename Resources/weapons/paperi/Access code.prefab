@@ -104,10 +104,12 @@ MonoBehaviour:
   damage: 1
   armor: 0
   name: Access code
-  description: After use, all weapons pierce armor for 2 turns.
+  description: After use, all weapons become "unbeatable" for one turn. The next
+    weapon used becomes "useless" for the rest of the fight.
   sprite: {fileID: 21300000, guid: a6c59c3d8536df7449719431d4d61225, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -206,6 +208,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &3410846685529990821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,3 +285,5 @@ MonoBehaviour:
   destructive: 0
   heal_disabler: 0
   stackable: 0
+  visible_buff: 0
+  visible_debuff: 0
