@@ -19,11 +19,6 @@ public class CrystalScissors : MonoBehaviour
 		if(GetComponent<Stacking>().stacks > 0)
 		{
 			GetComponent<Stacking>().DecreaseStacks(1);
-			//GetComponent<WeaponSpawner>().SpawnOnlyWeapon();
-			if(GetComponent<Stacking>().stacks == 0)
-			{
-				GetComponent<SelfDestruct>().Destruct();
-			}
 		}
     }
 
