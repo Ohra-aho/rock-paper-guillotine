@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Bunker : MonoBehaviour
 {
+	bool used = false;
 	void Awake()
 	{
 		GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name != GetComponent<Weapon>().name; };
 		GetComponent<BuffController>().special_apply = true;
 		GetComponent<BuffController>().temporary = true;
-		GetComponent<BuffController>().timer = 2;
+		GetComponent<BuffController>().timer = 3;
 		GetComponent<BuffController>().damage_modifier = true;
 		GetComponent<BuffController>().special = NegateDamage;
 		GetComponent<BuffController>().reminder = "Immune to damage.";
+		GetComponent<BuffController>().visible_buff = true;
 		GetComponent<BuffController>().stackable = true;
 	}
 
@@ -21,12 +23,26 @@ public class Bunker : MonoBehaviour
 		GameObject buff = w.GetCertainBuff(GetComponent<Weapon>().name);
 		if(buff != null)
 		{
-			if(buff.GetComponent<Buff>().timer < 2 && GameObject.Find("EventSystem").GetComponent<MainController>().playerChoise.name != GetComponent<Weapon>().name)
+			if(buff.GetComponent<Buff>().timer < 3 && GameObject.Find("EventSystem").GetComponent<MainController>().playerChoise.name != GetComponent<Weapon>().name)
 			{
 				TableController TC = GameObject.Find("Table").GetComponent<TableController>();
 				TC.player_damage = 0;
 				TC.player_direct_damage = 0;	
 			}	
 		}
+	}
+
+	public void Activate()
+	{
+		if(!used)
+		{
+			GetComponent<BuffController>().Equip();
+			used = true;
+		}
+	}
+
+	public void Reset()
+	{
+		used = false;
 	}
 }

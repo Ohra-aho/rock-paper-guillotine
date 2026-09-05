@@ -5,42 +5,17 @@ using UnityEngine;
 public class Shredder : MonoBehaviour
 {
 	bool used = false;
-    private void Awake()
-    {
-        GetComponent<BuffController>().special_apply = true;
-    }
-
-    public void AddBuff()
-	{
-		GameObject buff = GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name);
-		if(buff == null)
-		{
-			Buff new_buff = Instantiate(GetComponent<BuffController>().buff, transform).GetComponent<Buff>();
-			new_buff.id = GetComponent<Weapon>().name;
-			new_buff.damage_buff = 1;
-			new_buff.temporary = true;
-			new_buff.timer = 1000;
-			new_buff.AddBuff();	
-		} else
-		{
-			buff.GetComponent<Buff>().damage_buff += 1;
-		}
-	}
-
-	public void Use()
+	public void Enable()
 	{
 		used = true;
 	}
-
-	public void NotUsed()
+	public void Use()
 	{
-		if(!used)
+		if(used)
 		{
-			GameObject buff = GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name);
-			if(buff != null)
-			{
-				buff.GetComponent<Buff>().damage_buff -= 1;
-			}
+			TableController TC = GameObject.Find("Table").GetComponent<TableController>();
+			TC.enemy_damage = TC.enemy_damage * 2;
+			TC.enemy_direct_damage = TC.enemy_direct_damage * 2;	
 		}
 		used = false;
 	}

@@ -15,43 +15,48 @@ public class Stacking : MonoBehaviour
 
     public void IncreaseStacks(int amount)
     {
-        if (stack_limit > 0)
-        {
-            if (stacks < stack_limit)
-            {
-                if (before_stacking != null) before_stacking.Invoke();
-                stacks += amount;
-                GameObject RLC = GameObject.Find("EventSystem");
-                if (after_stacking != null) after_stacking.Invoke();
-            }
-            if (stacks > stack_limit)
-            {
-                stacks = stack_limit;
-            } else
-            {
-                GetComponent<Weapon>().gain_points.Invoke();
-            }
-        }
-        else
-        {
-            if (before_stacking != null) before_stacking.Invoke();
-            stacks += amount;
-            if (after_stacking != null) after_stacking.Invoke();
-            GetComponent<Weapon>().gain_points.Invoke();
-            GameObject RLC = GameObject.Find("EventSystem");
-        }
-
+		if(amount > 0)
+		{
+			if (stack_limit > 0)
+			{
+				if (stacks < stack_limit)
+				{
+					if (before_stacking != null) before_stacking.Invoke();
+					stacks += amount;
+					GameObject RLC = GameObject.Find("EventSystem");
+					if (after_stacking != null) after_stacking.Invoke();
+				}
+				if (stacks > stack_limit)
+				{
+					stacks = stack_limit;
+				} else
+				{
+					GetComponent<Weapon>().gain_points.Invoke();
+				}
+			}
+			else
+			{
+				if (before_stacking != null) before_stacking.Invoke();
+				stacks += amount;
+				if (after_stacking != null) after_stacking.Invoke();
+				GetComponent<Weapon>().gain_points.Invoke();
+				GameObject RLC = GameObject.Find("EventSystem");
+			}
+		}
     }
 
     public void DecreaseStacks(int amount)
     {
-        if (before_stacking != null) before_stacking.Invoke();
-        stacks -= amount;
-        if(stacks < 0)
-        {
-            stacks = 0;
-        }
-        if (after_stacking != null) after_stacking.Invoke();
+		if(amount > 0)
+		{
+			if (before_stacking != null) before_stacking.Invoke();
+			stacks -= amount;
+			if(stacks < 0)
+			{
+				stacks = 0;
+			}
+			if (after_stacking != null) after_stacking.Invoke();	
+		}
     }
 
     public int GiveAmountOfStackDividedBy(int x)

@@ -86,3 +86,4 @@ MonoBehaviour:
   heal_disabler: 0
   desruction_buffer: 0
   og_type: 0
+  disabled: 0

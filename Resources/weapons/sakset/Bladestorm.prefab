@@ -104,13 +104,12 @@ MonoBehaviour:
   og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Blade storm
-  description: 'All other weapons have: "After use, deals 2 damage and self-destructs".'
+  description: After use, all weapons deal 1 damage on draws for one turn.
   sprite: {fileID: 21300000, guid: 0bee03d3109a0ac4aa5def2ca8b69a5a, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -125,7 +124,19 @@ MonoBehaviour:
       m_Calls: []
   endPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -5332810274612760702}
+        m_TargetAssemblyTypeName: BuffController, Assembly-CSharp
+        m_MethodName: Equip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   victory:
     m_PersistentCalls:
       m_Calls: []
@@ -186,11 +197,16 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - You will run out of weapons with that one.
   executioner_comment: 
   favourite: 
+  dont_load: 0
+  token: 0
 --- !u!114 &-1488876996524214490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ed19e408128d44bbd9726dc2a5f77c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage_bonus: 2
 --- !u!114 &-5332810274612760702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +270,9 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
+  stackable: 0
+  visible_buff: 0
+  visible_debuff: 0
 --- !u!114 &-2824872158357557172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 2
+  amount: 1
   armor_piercing: 0
 --- !u!114 &-291357933955135909
 MonoBehaviour:

@@ -7,7 +7,8 @@ public class Handcerchife : MonoBehaviour
     public void IncreaseStack()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        GetComponent<Stacking>().IncreaseStacks(player.GetComponent<PlayerContoller>().HB.GiveMaxHealth() - player.GetComponent<PlayerContoller>().GiveCurrentHealth());
+		int amount = player.GetComponent<PlayerContoller>().HB.GiveMaxHealth() - player.GetComponent<PlayerContoller>().GiveCurrentHealth();
+		if(amount > 0) GetComponent<Stacking>().IncreaseStacks(amount);
         if(GetComponent<Stacking>().stacks >= 4)
         {
             GetComponent<Stacking>().stacks = 0;

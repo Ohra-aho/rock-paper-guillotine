@@ -5,33 +5,29 @@ using System;
 
 public class Kirja : MonoBehaviour
 {
-
-    GameObject ri;
-    int armor_bonus = 0;
-    PlayerContoller player;
-
+	bool used = false;
     private void Awake()
     {
         GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
 		GetComponent<BuffController>().temporary = true;
-		GetComponent<BuffController>().timer = 2;
-		GetComponent<BuffController>().draw = true;
-		GetComponent<BuffController>().special = ApplyBuff;
+		GetComponent<BuffController>().timer = 3;
+		GetComponent<BuffController>().armor_bonus = 1;
 		GetComponent<BuffController>().special_apply = true;
-		GetComponent<BuffController>().reminder = "If draws, +1 armor to all weapons for two turns.";
+		GetComponent<BuffController>().visible_buff = true;
+		GetComponent<BuffController>().reminder = "+1 armor.";
     }
 
-    public void ApplyBuff(Weapon w)
-    {
-        GameObject RI = GameObject.FindGameObjectWithTag("RI");
-		for(int i = 0; i < RI.transform.childCount; i++)
+	public void GiveBuffs()
+	{
+		if(!used)
 		{
-			Buff new_buff = Instantiate(GetComponent<BuffController>().buff, RI.transform.GetChild(i)).GetComponent<Buff>();
-			new_buff.armor_buff = 1;
-			new_buff.temporary = true;
-			new_buff.timer = 3;
-			new_buff.id = GetComponent<Weapon>().name + "_two";
-			new_buff.reminder = "+"+new_buff.armor_buff+" armor.";
+			used = true;
+			GetComponent<BuffController>().Equip();
 		}
-    }
+	}
+
+	public void Reset()
+	{
+		used = false;
+	}
 }
