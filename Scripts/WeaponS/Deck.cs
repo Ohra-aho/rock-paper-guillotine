@@ -9,17 +9,41 @@ public class Deck : MonoBehaviour
 
 	private void Awake()
 	{
-		GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+		/*GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
 		GetComponent<BuffController>().choisePhase = true;
 		GetComponent<BuffController>().temporary = true;
 		GetComponent<BuffController>().timer = 2;
-		GetComponent<BuffController>().special = GiveBuff;
-		GetComponent<BuffController>().special_apply = true;
+		GetComponent<BuffController>().special_apply = true;*/
 	}
 
-    public void GiveBuff(Weapon w)
+    public void GiveBuff()
     {
-        int index = Random.Range(0, 3);
+		Weapon w = GetRandomEquippedWeapon();
+		Weapon w_2 = GetRandomEquippedWeapon();
+		if(GetComponent<Weapon>().player_owner.GetComponent<PlayerContoller>().GetWeapons().Count > 2)
+		{
+			if(w_2 == w)
+			{
+				w_2 = GetRandomEquippedWeapon();
+			}
+		} else
+		{
+			w_2 = null;
+		}
+
+		if(w != null)
+		{
+			GiveBuffToWeapon(w);
+		}
+		if(w_2 != null)
+		{
+			GiveBuffToWeapon(w_2);
+		}
+    }
+
+	public void GiveBuffToWeapon(Weapon w)
+	{
+		int index = Random.Range(0, 3);
         while(index == previous_index)
         {
             index = Random.Range(0, 3);
@@ -30,9 +54,10 @@ public class Deck : MonoBehaviour
             case 0:
                 GameObject new_buff = Instantiate(buff, w.transform);
                 new_buff.GetComponent<Buff>().id = GetComponent<Weapon>().name + "_2";
-                new_buff.GetComponent<Buff>().damage_buff = 3;
+                new_buff.GetComponent<Buff>().damage_buff = 2;
                 new_buff.GetComponent<Buff>().temporary = true;
-                new_buff.GetComponent<Buff>().timer = 1;
+                new_buff.GetComponent<Buff>().timer = 2;
+				new_buff.GetComponent<Buff>().visible_buff = true;
                 new_buff.GetComponent<Buff>().AddBuff();
                 break;
             case 1:
@@ -40,7 +65,8 @@ public class Deck : MonoBehaviour
                 new_buff_2.GetComponent<Buff>().id = GetComponent<Weapon>().name + "_2";
                 new_buff_2.GetComponent<Buff>().type_change = MainController.Choise.voittamaton;
                 new_buff_2.GetComponent<Buff>().temporary = true;
-                new_buff_2.GetComponent<Buff>().timer = 1;
+                new_buff_2.GetComponent<Buff>().timer = 2;
+				new_buff_2.GetComponent<Buff>().visible_buff = true;
                 new_buff_2.GetComponent<Buff>().AddBuff();
                 break;
             case 2:
@@ -48,20 +74,27 @@ public class Deck : MonoBehaviour
                 new_buff_3.GetComponent<Buff>().id = GetComponent<Weapon>().name + "_2";
 				new_buff_3.GetComponent<Buff>().armor_buff = 2;
                 new_buff_3.GetComponent<Buff>().temporary = true;
-                new_buff_3.GetComponent<Buff>().timer = 1;
+                new_buff_3.GetComponent<Buff>().timer = 2;
+				new_buff_3.GetComponent<Buff>().visible_buff = true;
                 new_buff_3.GetComponent<Buff>().AddBuff();
                 break;
         }
-    }
+	}
 
     public Weapon GetRandomEquippedWeapon()
     {
         List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
-		int index = Random.Range(0, weapons.Count);
-		while(weapons[index].name == GetComponent<Weapon>().name)
+		if(weapons.Count > 1)
 		{
-			index = Random.Range(0, weapons.Count);
+			int index = Random.Range(0, weapons.Count);
+			while(weapons[index].name == GetComponent<Weapon>().name)
+			{
+				index = Random.Range(0, weapons.Count);
+			}
+			return weapons[index];	
+		} else
+		{
+			return null;
 		}
-        return weapons[index];
     }
 }

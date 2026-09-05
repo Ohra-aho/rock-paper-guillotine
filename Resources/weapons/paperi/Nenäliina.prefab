@@ -105,11 +105,12 @@ MonoBehaviour:
   damage: 1
   armor: 0
   name: Handkerchief
-  description: Gains points equal to life you have lost. When at 6 points, uses all
-    points to deal 2 damage.
+  description: Gains points equal to life you have lost. When at 4 points, uses all
+    points to deal 1 damage.
   sprite: {fileID: 21300000, guid: ebc339034e8db0a43b2176528217c537, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -208,6 +209,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &6873274728737089563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 2
+  amount: 1
   armor_piercing: 0
 --- !u!114 &4649406059305924212
 MonoBehaviour:
@@ -247,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stacks: 0
-  stack_limit: 6
+  stack_limit: 4
   LoadFunction:
     m_PersistentCalls:
       m_Calls: []
