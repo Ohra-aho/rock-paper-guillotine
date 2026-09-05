@@ -7,20 +7,11 @@ public class GladiatorMark : MonoBehaviour
     private void Awake()
     {
         GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
-    }
-
-    public void DealDamage(Weapon w)
-    {
-		TableController TC = GameObject.Find("Table").GetComponent<TableController>();
-		if(TC.GiveEffectivePlayerDamage() > 0)
+		GetComponent<BuffController>().draw = true;
+		GetComponent<BuffController>().special = (Weapon w) =>
 		{
-			TC.player_damage++;
-			GetComponent<Weapon>().deal_effect_damage.Invoke();
-		}
-		if(TC.GiveEffectiveEnemyDamage() > 0)
-		{
-			TC.enemy_damage++;
-			GetComponent<Weapon>().deal_effect_damage.Invoke();
-		}
+			GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
+			GetComponent<EffectDamage>().SelfDamage(GetComponent<Weapon>());
+		};
     }
 }

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
   - component: {fileID: 1074014957905367367}
-  - component: {fileID: 2546468356210806654}
   - component: {fileID: 7002291298598769699}
   - component: {fileID: 8361956543203300853}
   - component: {fileID: 3466812715204361676}
@@ -106,14 +105,14 @@ MonoBehaviour:
   damage: 1
   armor: 0
   name: Gladiator mark
-  description: Whever you take damage, take 1 additional damage. Whenever you deal
-    damage, deal 1 additional damage.
+  description: If you draw with any weapon, deals 1 damage to both.
   sprite: {fileID: 21300000, guid: cc839e77f95e47f4ca10331337029c30, type: 3}
   tiers:
   - {fileID: 21300000, guid: 97b5b00782b0b474fa59e2cb07562f1a, type: 3}
   - {fileID: 21300000, guid: 3a240671df9813341b93bf5e6caeb7eb, type: 3}
   - {fileID: 21300000, guid: 4bfec1fcc837111449725ed56728ceac, type: 3}
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -176,19 +175,7 @@ MonoBehaviour:
       m_Calls: []
   damage_modifier:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8361956543203300853}
-        m_TargetAssemblyTypeName: GladiatorMark, Assembly-CSharp
-        m_MethodName: DealDamage
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 3098424137161797902}
-          m_ObjectArgumentAssemblyTypeName: Weapon, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   heal_modifier:
     m_PersistentCalls:
       m_Calls: []
@@ -212,6 +199,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &1074014957905367367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,18 +214,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 1
   armor_piercing: 0
---- !u!114 &2546468356210806654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c5665f5f93a7f649bffbb97d7b763bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7002291298598769699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,6 +266,8 @@ MonoBehaviour:
   destructive: 0
   heal_disabler: 0
   stackable: 0
+  visible_buff: 0
+  visible_debuff: 0
 --- !u!114 &8361956543203300853
 MonoBehaviour:
   m_ObjectHideFlags: 0
