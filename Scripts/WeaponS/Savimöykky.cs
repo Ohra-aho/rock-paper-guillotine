@@ -17,10 +17,12 @@ public class Savimöykky : MonoBehaviour
 
 	public void Activate()
 	{
-		if(GetComponent<Stacking>().stacks >= 5)
+		if(!GetComponent<Weapon>().FindCertainBuff(GetComponent<Weapon>().name))
 		{
-			GetComponent<Stacking>().DecreaseStacks(5);
 			GetComponent<BuffController>().Equip();
+			Buff new_buff = Instantiate(GetComponent<BuffController>().buff, transform).GetComponent<Buff>();
+			new_buff.id = GetComponent<Weapon>().name;
+			new_buff.reminder = "Can't be used anymore.";
 		}
 	}
 
