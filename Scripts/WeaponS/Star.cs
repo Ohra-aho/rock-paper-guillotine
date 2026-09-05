@@ -6,24 +6,25 @@ public class Star : MonoBehaviour
 {
     int previous_HP_gap = 0;
 
-    private void Awake()
-    {
-        GetComponent<BuffController>().damage_bonus = 1;
-        GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
-    }
-
-    public void Equip()
-    {
-        HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
-        previous_HP_gap = HB.HP_gap;
-        HB.HP_gap = 4;
-        HB.DecreaseHealthBar(0, false);
-    }
-
-    public void Unequip()
-    {
-        HealthBar HB = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<HealthBar>();
-        HB.HP_gap = previous_HP_gap;
-        HB.IncreaseHealthBar(0, false);
-    }
+    public void Shine()
+	{
+		if(GetComponent<Stacking>().stacks > 0)
+		{
+			GetComponent<Stacking>().DecreaseStacks(1);
+			List<Weapon> weapons = GetComponent<Weapon>().player_owner.GetComponent<PlayerContoller>().GetWeapons();
+			for(int i = 0; i < weapons.Count; i++)
+			{
+				if(weapons[i] != GetComponent<Weapon>() && weapons[i].GetComponent<Stacking>())
+				{
+					weapons[i].GetComponent<Stacking>().IncreaseStacks(1);
+				}
+			}
+		}
+		if(GetComponent<Stacking>().stacks == 0)
+		{
+			GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
+			GetComponent<EffectDamage>().SelfDamage(GetComponent<Weapon>());
+			GetComponent<SelfDestruct>().Destruct();
+		}
+	}
 }
