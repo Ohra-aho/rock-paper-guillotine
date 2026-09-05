@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3637620753733424331}
   - component: {fileID: 8405579031819043326}
   - component: {fileID: 3098424137161797902}
-  - component: {fileID: 1690945544247164510}
   - component: {fileID: -569370770051615063}
   - component: {fileID: -1876900013584149539}
+  - component: {fileID: -2037152999913973588}
   m_Layer: 5
   m_Name: Bottle
   m_TagString: Untagged
@@ -104,11 +104,11 @@ MonoBehaviour:
   damage: 1
   armor: 0
   name: Bottle
-  description: If you take damage through this weapon, gives you a "Glass Shard"
-    and self-destructs.
+  description: If loses, gives you a "Glass Shard" and self-destructs.
   sprite: {fileID: 21300000, guid: e7241872e938d9844a1b94e794af2409, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -129,10 +129,25 @@ MonoBehaviour:
       m_Calls: []
   takeDamage:
     m_PersistentCalls:
+      m_Calls: []
+  dealDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  deal_effect_damage:
+    m_PersistentCalls:
+      m_Calls: []
+  takeNoDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1690945544247164510}
-        m_TargetAssemblyTypeName: Bottle, Assembly-CSharp
-        m_MethodName: GiveWeapon
+      - m_Target: {fileID: -2037152999913973588}
+        m_TargetAssemblyTypeName: WeaponSpawner, Assembly-CSharp
+        m_MethodName: SpawnOnlyWeapon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -154,21 +169,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  dealDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  deal_effect_damage:
-    m_PersistentCalls:
-      m_Calls: []
-  takeNoDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  win:
-    m_PersistentCalls:
-      m_Calls: []
-  lose:
-    m_PersistentCalls:
-      m_Calls: []
   draw:
     m_PersistentCalls:
       m_Calls: []
@@ -219,19 +219,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
---- !u!114 &1690945544247164510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944698211339908181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 358fa91fb641d71479c65299c981f03f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: {fileID: 1944698211339908181, guid: d868e998754a3fd4fa300becbbd4e4fa, type: 3}
+  token: 0
 --- !u!114 &-569370770051615063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,3 +247,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472fdb20cf00ec47ad02426ec4b4f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2037152999913973588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944698211339908181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a0aefa7bae8d54591f153a0e6ed2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn_limit: 0
+  weapons:
+  - {fileID: 1944698211339908181, guid: d868e998754a3fd4fa300becbbd4e4fa, type: 3}
