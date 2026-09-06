@@ -102,11 +102,11 @@ MonoBehaviour:
   damage: 2
   armor: 0
   name: Collapse
-  description: "If loses, Onslaught becomes \u201Duseless\u201D until it is used
-    again."
+  description: "If loses, Onslaught becomes \u201Duseless\u201D until used again."
   sprite: {fileID: 21300000, guid: c9fb98b50dfe4ff4cb8176b542cab6eb, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -202,6 +202,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &-4586833965777983632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,3 +216,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buff: {fileID: 810763803538858438, guid: cec5b576c4d00cc4796f048f8604ff81, type: 3}
+  torn: {fileID: 0}

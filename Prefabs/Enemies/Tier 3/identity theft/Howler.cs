@@ -64,54 +64,57 @@ public class Howler : MonoBehaviour
 		GameObject RI = GameObject.FindGameObjectWithTag("RI");
 		GameObject dummy_weapon = Instantiate(torn, RI.transform);
 		GetComponent<Weapon>().opponent = player.chosenWeapon.GetComponent<Weapon>();
-		dummy_weapon.GetComponent<Weapon>().damage = GetComponent<Weapon>().opponent.damage;
-		dummy_weapon.GetComponent<Weapon>().armor = GetComponent<Weapon>().opponent.armor;
-		dummy_weapon.GetComponent<Weapon>().name = GetComponent<Weapon>().opponent.name;
-		dummy_weapon.GetComponent<Weapon>().type = GetComponent<Weapon>().opponent.og_type;
-		dummy_weapon.GetComponent<Weapon>().og_type = GetComponent<Weapon>().opponent.og_type;
-		dummy_weapon.GetComponent<Weapon>().player = true;
-		dummy_weapon.GetComponent<Weapon>().player_owner = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
-		dummy_weapon.GetComponent<Weapon>().description = "Resets at the end of the fight.";
-		player.chosenWeapon = dummy_weapon;
+		if(!GetComponent<Weapon>().opponent.GetComponent<Execution>())
+		{
+			dummy_weapon.GetComponent<Weapon>().damage = GetComponent<Weapon>().opponent.damage;
+			dummy_weapon.GetComponent<Weapon>().armor = GetComponent<Weapon>().opponent.armor;
+			dummy_weapon.GetComponent<Weapon>().name = GetComponent<Weapon>().opponent.name;
+			dummy_weapon.GetComponent<Weapon>().type = GetComponent<Weapon>().opponent.og_type;
+			dummy_weapon.GetComponent<Weapon>().og_type = GetComponent<Weapon>().opponent.og_type;
+			dummy_weapon.GetComponent<Weapon>().player = true;
+			dummy_weapon.GetComponent<Weapon>().player_owner = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>();
+			dummy_weapon.GetComponent<Weapon>().description = "Resets at the end of the fight.";
+			player.chosenWeapon = dummy_weapon;
 
-		GameObject.Find("EventSystem").GetComponent<MainController>().playerChoise = dummy_weapon.GetComponent<Weapon>();
-		if(GetComponent<Weapon>().opponent.GetComponent<BuffController>())
-		{
-			if(!GetComponent<Weapon>().opponent.GetComponent<BuffController>().special_apply) 
-				GetComponent<Weapon>().opponent.GetComponent<BuffController>().Unequip();
-		} else
-		{
-			GetComponent<Weapon>().opponent.unEquip.Invoke();
-		}
-		GameObject PWH = GameObject.Find("PlayerWheelHolder");
-		WeaponSprite weapon_sprite = null;
-
-		for(int i = 0; i < PWH.transform.GetChild(0).childCount-1; i++)
-		{
-			if(PWH.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
+			GameObject.Find("EventSystem").GetComponent<MainController>().playerChoise = dummy_weapon.GetComponent<Weapon>();
+			if(GetComponent<Weapon>().opponent.GetComponent<BuffController>())
 			{
-				if(PWH.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>() == GetComponent<Weapon>().opponent)
-				{
-					weapon_sprite = PWH.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>();
-					break;
-				}	
+				if(!GetComponent<Weapon>().opponent.GetComponent<BuffController>().special_apply) 
+					GetComponent<Weapon>().opponent.GetComponent<BuffController>().Unequip();
+			} else
+			{
+				GetComponent<Weapon>().opponent.unEquip.Invoke();
 			}
-		}
+			GameObject PWH = GameObject.Find("PlayerWheelHolder");
+			WeaponSprite weapon_sprite = null;
 
-		GameObject choise_panel = GameObject.Find("ChoisePanel");
-		for(int i = 0; i < choise_panel.transform.childCount; i++)
-		{
-			if(choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon != null)
+			for(int i = 0; i < PWH.transform.GetChild(0).childCount-1; i++)
 			{
-				if(choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon == GetComponent<Weapon>().opponent)
+				if(PWH.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon != null)
 				{
-					choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon = dummy_weapon.GetComponent<Weapon>();
+					if(PWH.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>() == GetComponent<Weapon>().opponent)
+					{
+						weapon_sprite = PWH.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<WeaponSprite>();
+						break;
+					}	
 				}
 			}
-		}
 
-		dummy_weapon.GetComponent<Execution>().judged = weapon_sprite.weapon;
-		weapon_sprite.weapon = dummy_weapon;
+			GameObject choise_panel = GameObject.Find("ChoisePanel");
+			for(int i = 0; i < choise_panel.transform.childCount; i++)
+			{
+				if(choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon != null)
+				{
+					if(choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon == GetComponent<Weapon>().opponent)
+					{
+						choise_panel.transform.GetChild(i).GetComponent<CHoisePanel>().weapon = dummy_weapon.GetComponent<Weapon>();
+					}
+				}
+			}
+
+			dummy_weapon.GetComponent<Execution>().judged = weapon_sprite.weapon;
+			weapon_sprite.weapon = dummy_weapon;	
+		}
 	}
 
 	public void EndJudgement()

@@ -23,7 +23,7 @@ public class CorruptionScript : MonoBehaviour
 		List<Weapon> weapons = GetComponent<Weapon>().player_owner.GetWeapons();
 		int x = Random.Range(0, weapons.Count);
 		Buff new_buff = Instantiate(GetComponent<BuffController>().buff, weapons[x].transform).GetComponent<Buff>();
-		new_buff.id = GetComponent<Weapon>().name = "_debuff";
+		new_buff.id = GetComponent<Weapon>().name + "_debuff";
 		new_buff.type_change = MainController.Choise.useless;
 		new_buff.until_used = true;
 		new_buff.temporary = true;

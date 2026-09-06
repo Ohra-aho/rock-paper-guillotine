@@ -106,6 +106,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: edb089a267c93bd449f141ac41c83aef, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -144,7 +145,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7405846709104267237}
         m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
-        m_MethodName: DebuffOpposingWeaponDamage
+        m_MethodName: DebuffOpposingDamageTemporarily
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -159,7 +160,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7405846709104267237}
         m_TargetAssemblyTypeName: PermanentDebuffer, Assembly-CSharp
-        m_MethodName: DebuffOpposingWeaponDamage
+        m_MethodName: DebuffOpposingDamageTemporarily
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -213,6 +214,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &7405846709104267237
 MonoBehaviour:
   m_ObjectHideFlags: 0

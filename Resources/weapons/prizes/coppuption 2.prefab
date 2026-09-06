@@ -104,7 +104,7 @@ MonoBehaviour:
   damage: 1
   armor: 0
   name: Corruption
-  description: 'After use, -1 HP and all weapons gains 3 points. '
+  description: 'After use, -1 HP permanently and all weapons gains 3 points. '
   sprite: {fileID: 21300000, guid: b747a529ba261684b9b3b5eac8ddb063, type: 3}
   tiers: []
   tier: 0

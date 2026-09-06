@@ -102,11 +102,11 @@ MonoBehaviour:
   damage: 1
   armor: 0
   name: Tear
-  description: Weapon used against this loses its effects until the end of the fight.
-    Stitch gains 1 point.
+  description: Weapon used against this loses its effects. Stitch gains 1 point.
   sprite: {fileID: 21300000, guid: 5c3c93e87b52ce34f8c354bfdc6b9e16, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -202,6 +202,7 @@ MonoBehaviour:
   executioner_comment: 
   favourite: 
   dont_load: 0
+  token: 0
 --- !u!114 &-846545694552094145
 MonoBehaviour:
   m_ObjectHideFlags: 0

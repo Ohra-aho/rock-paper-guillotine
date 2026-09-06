@@ -16504,8 +16504,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -28931,12 +28931,6 @@ MonoBehaviour:
   - {fileID: 1944698211339908181, guid: ebf3e4fcc83193d4e9f5d0940b693605, type: 3}
   - {fileID: 1944698211339908181, guid: 405c03564d6157745a18644d35f52eb8, type: 3}
   - {fileID: 1944698211339908181, guid: 7ca9901d0f223e24eb783636c31ed2ef, type: 3}
-  - {fileID: 1944698211339908181, guid: 8be8e93862fd0b14c87726d8c588169f, type: 3}
-  - {fileID: 1944698211339908181, guid: 43d70232744f01c419ebc48c2a6e60c1, type: 3}
-  - {fileID: 1944698211339908181, guid: bb0177d58d0e7b6498827e7ef37db465, type: 3}
-  - {fileID: 1944698211339908181, guid: 754148e55473539499ec52bc16344300, type: 3}
-  - {fileID: 1944698211339908181, guid: a47ba23783ff33d44ac4df8e5ce9a434, type: 3}
-  - {fileID: 1944698211339908181, guid: 5d0cefdb2b7910f49b5c2224a588b775, type: 3}
   all: []
   all_weapons: 0
 --- !u!114 &1366762623
@@ -37067,7 +37061,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Name
+  m_text: Madman
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -37094,12 +37088,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.65
+  m_fontSize: 20
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 15
-  m_fontSizeMax: 30
+  m_fontSizeMin: 13
+  m_fontSizeMax: 20
   m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512

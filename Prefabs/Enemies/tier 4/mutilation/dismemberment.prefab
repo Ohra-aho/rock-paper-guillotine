@@ -103,7 +103,7 @@ MonoBehaviour:
   damage: 2
   armor: 0
   name: Dismemberment
-  description: If wins, you get a dismemeberment.
+  description: If wins, you get a Dismemeberment.
   sprite: {fileID: 21300000, guid: f5658f53adef6e74e8556bfdf3213e4d, type: 3}
   tiers: []
   tier: 0

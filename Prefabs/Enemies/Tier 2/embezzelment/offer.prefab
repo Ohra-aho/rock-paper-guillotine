@@ -99,15 +99,15 @@ MonoBehaviour:
   draw_winner: 0
   spammable: 0
   type: 1
+  og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Offer
-  description: If wins, you get +1 HP and 1 Poison.
+  description: If wins, you get +1 HP permanently and 1 Poison.
   sprite: {fileID: 21300000, guid: 308d2c5bbdd081b428955961eafed017, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -192,6 +192,12 @@ MonoBehaviour:
   eachTurn:
     m_PersistentCalls:
       m_Calls: []
+  damage_modifier:
+    m_PersistentCalls:
+      m_Calls: []
+  heal_modifier:
+    m_PersistentCalls:
+      m_Calls: []
   unequipped:
     m_PersistentCalls:
       m_Calls: []
@@ -201,17 +207,15 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
-  self_destructive: 0
-  healing: 0
-  health: 0
-  kivi_synegry: 0
-  paperi_synergy: 0
-  sakset_synergy: 0
-  points: 0
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks: []
   executioner_comment: 
-  damage_soft_cap: 7
+  favourite: 
+  dont_load: 0
+  token: 0
 --- !u!114 &214693629774608703
 MonoBehaviour:
   m_ObjectHideFlags: 0

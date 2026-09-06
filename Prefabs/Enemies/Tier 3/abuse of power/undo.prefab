@@ -104,8 +104,8 @@ MonoBehaviour:
   damage: 1
   armor: 0
   name: Undo
-  description: 'After use, you get -1 HP until the end of the fight. This can''t
-    bring your HP below 1. If wins, you get a random miracle. '
+  description: 'After use, you get -1 HP. This can''t bring your HP below 1. If wins,
+    you get a random miracle. '
   sprite: {fileID: 21300000, guid: f8b0ca86afd76ff44be7bcaf59a417a1, type: 3}
   tiers: []
   tier: 0

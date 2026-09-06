@@ -96,7 +96,7 @@ MonoBehaviour:
   player_owner: {fileID: 0}
   player: 0
   opponent: {fileID: 0}
-  penetrating: 0
+  penetrating: 1
   draw_winner: 0
   spammable: 0
   type: 1
@@ -105,7 +105,7 @@ MonoBehaviour:
   armor: 0
   name: Breath
   description: If wins or draws, removes all Weaknesses from your inventory and deals
-    1 damage for each Weakness removed.
+    1 damage for each Weakness removed. Pierces armor.
   sprite: {fileID: 21300000, guid: 49929c01a6abebb4aa0fb555aee99b1c, type: 3}
   tiers: []
   tier: 0

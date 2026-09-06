@@ -100,7 +100,7 @@ MonoBehaviour:
   spammable: 0
   type: 2
   og_type: 0
-  damage: 1
+  damage: 13
   armor: 0
   name: Sakset
   description: 
