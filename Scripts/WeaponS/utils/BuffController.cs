@@ -79,6 +79,8 @@ public class BuffController : MonoBehaviour
 
     private void Awake()
     {
+		real_inventory = GameObject.FindGameObjectWithTag("RI");
+		other_inventory = GameObject.FindGameObjectWithTag("RIE");
         Inisiate();
         if(buff == null)
         {
@@ -90,9 +92,6 @@ public class BuffController : MonoBehaviour
     {
         if (GetComponent<Weapon>().player)
         {
-            real_inventory = GameObject.FindGameObjectWithTag("RI");
-            other_inventory = GameObject.FindGameObjectWithTag("RIE");
-
             if (!special_apply)
             {
 
@@ -128,6 +127,7 @@ public class BuffController : MonoBehaviour
 
     public void AddBuffs()
     {
+		if(real_inventory == null) real_inventory = GameObject.FindGameObjectWithTag("RI");
 
         if (buff_on)
         {
@@ -196,7 +196,6 @@ public class BuffController : MonoBehaviour
             new_buff.GetComponent<Buff>().AddBuff();
         } else if(IfOwnBuffExists(weapon))
         {
-			Debug.Log(GetComponent<Weapon>().name);
             Buff buff = FindBuffByName(GetComponent<Weapon>().name, weapon);
             if(timer != 0) buff.timer = timer;
         }
@@ -204,6 +203,7 @@ public class BuffController : MonoBehaviour
 
     public void RemoveBuffs()
     {
+		if(real_inventory == null) real_inventory = GameObject.FindGameObjectWithTag("RI");
         if (!buff_on)
         {
             for (int i = 0; i < real_inventory.transform.childCount; i++)
