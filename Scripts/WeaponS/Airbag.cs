@@ -19,6 +19,10 @@ public class Airbag : MonoBehaviour
         {
 			GetComponent<Healing>().ForcedHeal();
 			GetComponent<Weapon>().heal.Invoke();
+			Buff own_buff = Instantiate(GetComponent<BuffController>().buff, transform).GetComponent<Buff>();
+			own_buff.temporary = true;
+			own_buff.timer = 1000;
+			own_buff.reminder = "Has already triggered.";
 			triggered = true;
         }
     }

@@ -103,7 +103,7 @@ MonoBehaviour:
   damage: 2
   armor: 0
   name: The Scissors
-  description: After use, deals 2 damage. If does not lose, +1 damage to all weapons.
+  description: After use, deals 1 damage. If does not lose, +1 damage to all weapons.
   sprite: {fileID: 21300000, guid: a56278f126898b44189be783c511476a, type: 3}
   tiers: []
   tier: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67a2ecf47bdb504495f59a790358c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 2
+  amount: 1
   armor_piercing: 0
 --- !u!114 &-3908416526507823151
 MonoBehaviour:

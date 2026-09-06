@@ -104,7 +104,7 @@ MonoBehaviour:
   damage: 1
   armor: 0
   name: The Paper
-  description: After use, all weapons gain +3 armor for one turn. If does not lose,
+  description: After use, all weapons gain +1 armor for one turn. If does not lose,
     +1 armor to two weapons with the least armor.
   sprite: {fileID: 21300000, guid: 6a5e2160997a690439cf85d1952e227d, type: 3}
   tiers: []
@@ -309,3 +309,5 @@ MonoBehaviour:
   destructive: 0
   heal_disabler: 0
   stackable: 0
+  visible_buff: 0
+  visible_debuff: 0
