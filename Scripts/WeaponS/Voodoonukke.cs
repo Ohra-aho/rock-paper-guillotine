@@ -18,6 +18,7 @@ public class Voodoonukke : MonoBehaviour
         {
             GameObject MC = GameObject.Find("EventSystem");
             MC.GetComponent<MainController>().enemy.GetComponent<EnemyController>().HB.TakeDamage(GetComponent<EffectDamage>().amount);
+			GetComponent<Weapon>().deal_effect_damage.Invoke();
         }
         else
         {
