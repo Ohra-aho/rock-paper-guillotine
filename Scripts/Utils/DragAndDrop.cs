@@ -20,7 +20,8 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         OGParent = transform.parent;
         Parent = transform.parent.parent.parent.parent.parent.gameObject;
         transform.SetParent(Parent.transform);
-        Parent.transform.GetChild(0).GetComponent<InventoryMenu>().removeWeapon(OGParent.transform.GetSiblingIndex());
+        //Parent.transform.GetChild(0).GetComponent<InventoryMenu>().removeWeapon(OGParent.transform.GetSiblingIndex());
+        Parent.transform.GetChild(0).GetComponent<InventoryMenu>().removeWeapon(GetComponent<ClaimedWeapon>().weapon);
         image = GetComponent<Image>();
         image.raycastTarget = false;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(

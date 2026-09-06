@@ -40,7 +40,7 @@ public class DropDetector : MonoBehaviour
 
         weaponHolder.GetComponent<WeaponSprite>().weapon = newWeapon;
         GameObject.Find("InventoryMenu(Clone)").GetComponent<InventoryMenu>()
-                .removeWeapon(index);
+                .removeWeapon(newWeapon);
 
         player.GetComponent<PlayerContoller>()
                 .EquipWeapon(weaponHolder.GetComponent<WeaponSprite>().weapon.GetComponent<Weapon>());

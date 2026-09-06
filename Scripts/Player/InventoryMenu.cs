@@ -7,8 +7,21 @@ public class InventoryMenu : MonoBehaviour
     [SerializeField] GameObject WeaponPref;
     // Start is called before the first frame update
 	MainController MC;
+
+	List<GameObject> weapons = new List<GameObject>();
+	private State current = State.all;
+	private enum State
+	{
+		rock,
+		paper,
+		scissors,
+		other,
+		all
+	}
+
 	void Awake()
 	{
+		weapons.AddRange(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().items);
 		displayWeapons();
         transform.GetChild(0).GetComponent<NonUIScroll>().CalculateHeight();
         transform.GetChild(0).GetComponent<NonUIScroll>().CalculateStartAndEndPoint();
@@ -32,7 +45,112 @@ public class InventoryMenu : MonoBehaviour
 	private void displayWeapons()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player").gameObject;
-        List<GameObject> items = player.GetComponent<PlayerInventory>().items;
+
+		List<GameObject> rocks = new List<GameObject>();
+		List<GameObject> papers = new List<GameObject>();
+		List<GameObject> scissors = new List<GameObject>();
+		List<GameObject> unbeatables = new List<GameObject>();
+		List<GameObject> useless = new List<GameObject>();
+		List<GameObject> debuffs = new List<GameObject>();
+
+		weapons.Clear();
+		weapons.AddRange(player.GetComponent<PlayerInventory>().items);
+
+		switch(current)
+		{
+			case State.all: 
+					
+					for(int i = 0; i < weapons.Count; i++)
+					{
+						switch(weapons[i].GetComponent<Weapon>().og_type)
+						{
+							case MainController.Choise.kivi: rocks.Add(weapons[i]); break;
+							case MainController.Choise.paperi: papers.Add(weapons[i]); break;
+							case MainController.Choise.sakset: scissors.Add(weapons[i]); break;
+							case MainController.Choise.voittamaton: unbeatables.Add(weapons[i]); break;
+							case MainController.Choise.useless: 
+								if(weapons[i].GetComponent<Weapon>().name != "Weakness" && weapons[i].GetComponent<Weapon>().name != "Poison" && weapons[i].GetComponent<Weapon>().name != "Bleed")
+								{
+									useless.Add(weapons[i]); 
+								} else
+								{
+									debuffs.Add(weapons[i]);
+								}
+							break;
+						}
+					}
+					
+					weapons.Clear();
+
+					weapons.AddRange(rocks);
+					weapons.AddRange(papers);
+					weapons.AddRange(scissors);
+					weapons.AddRange(unbeatables);
+					weapons.AddRange(useless);
+					weapons.AddRange(debuffs);
+				break;
+			case State.rock: 
+
+				for(int i = 0; i < weapons.Count; i++)
+				{
+					switch(weapons[i].GetComponent<Weapon>().og_type)
+					{
+						case MainController.Choise.kivi: rocks.Add(weapons[i]); break;
+					}
+				}
+				weapons.Clear();
+				weapons.AddRange(rocks);
+			break;
+			case State.paper:
+
+				for(int i = 0; i < weapons.Count; i++)
+				{
+					switch(weapons[i].GetComponent<Weapon>().og_type)
+					{
+						case MainController.Choise.paperi: rocks.Add(weapons[i]); break;
+					}
+				}
+				weapons.Clear();
+				weapons.AddRange(rocks);
+			break;
+			case State.scissors:
+
+				for(int i = 0; i < weapons.Count; i++)
+				{
+					switch(weapons[i].GetComponent<Weapon>().og_type)
+					{
+						case MainController.Choise.sakset: rocks.Add(weapons[i]); break;
+					}
+				}
+				weapons.Clear();
+				weapons.AddRange(rocks);
+			break;
+			case State.other:
+
+				for(int i = 0; i < weapons.Count; i++)
+				{
+					switch(weapons[i].GetComponent<Weapon>().og_type)
+					{
+						case MainController.Choise.voittamaton: unbeatables.Add(weapons[i]); break;
+						case MainController.Choise.useless: 
+							if(weapons[i].GetComponent<Weapon>().name != "Weakness" && weapons[i].GetComponent<Weapon>().name != "Poison" && weapons[i].GetComponent<Weapon>().name != "Bleed")
+							{
+								useless.Add(weapons[i]); 
+							} else
+							{
+								debuffs.Add(weapons[i]);
+							}
+						break;
+					}
+				}
+				weapons.Clear();
+
+				weapons.AddRange(unbeatables);
+				weapons.AddRange(useless);
+				weapons.AddRange(debuffs);
+			break;
+		}
+        List<GameObject> items = weapons;
 		for(int i = items.Count-1; i >= 0; i--)
 		{
 			if(items[i] == null)
@@ -58,17 +176,31 @@ public class InventoryMenu : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player").gameObject;
         player.GetComponent<PlayerInventory>().items.Add(weapon);
-        
+        weapons.Clear();
+		weapons.AddRange(player.GetComponent<PlayerInventory>().items);
         clearInventory();
         displayWeapons();
         transform.GetChild(0).GetComponent<NonUIScroll>().CalculateHeight();
         transform.GetChild(0).GetComponent<NonUIScroll>().CalculateStartAndEndPoint();
     }
 
-    public void removeWeapon(int weapon)
+    /*public void removeWeapon(int weapon)
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player").gameObject;
         player.GetComponent<PlayerInventory>().items.RemoveAt(weapon);
+		weapons.Clear();
+		weapons.AddRange(player.GetComponent<PlayerInventory>().items);
+        clearInventory();
+        displayWeapons();
+        transform.GetChild(0).GetComponent<NonUIScroll>().CalculateHeight();
+        transform.GetChild(0).GetComponent<NonUIScroll>().CalculateStartAndEndPoint();
+    }*/
+	public void removeWeapon(GameObject weapon)
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player").gameObject;
+        player.GetComponent<PlayerInventory>().items.Remove(weapon);
+		weapons.Clear();
+		weapons.AddRange(player.GetComponent<PlayerInventory>().items);
         clearInventory();
         displayWeapons();
         transform.GetChild(0).GetComponent<NonUIScroll>().CalculateHeight();
@@ -104,44 +236,31 @@ public class InventoryMenu : MonoBehaviour
 
 	public void SortInventory()
 	{
-        GameObject player = GameObject.FindGameObjectWithTag("Player").gameObject;
-        List<GameObject> items = player.GetComponent<PlayerInventory>().items;
+		current = State.all;
+		ReconstructInventory();
+	}
 
-		List<GameObject> rocks = new List<GameObject>();
-		List<GameObject> papers = new List<GameObject>();
-		List<GameObject> scissors = new List<GameObject>();
-		List<GameObject> unbeatables = new List<GameObject>();
-		List<GameObject> useless = new List<GameObject>();
-		List<GameObject> debuffs = new List<GameObject>();
+	public void ShowRocks()
+	{
+		current = State.rock;
+		ReconstructInventory();
+	}
+	public void ShowPapers()
+	{
+		current = State.paper;
+		ReconstructInventory();
+	}
+	public void ShowScissors()
+	{
+		current = State.scissors;
+		ReconstructInventory();
+	}
 
-		for(int i = 0; i < items.Count; i++)
-		{
-			switch(items[i].GetComponent<Weapon>().og_type)
-			{
-				case MainController.Choise.kivi: rocks.Add(items[i]); break;
-				case MainController.Choise.paperi: papers.Add(items[i]); break;
-				case MainController.Choise.sakset: scissors.Add(items[i]); break;
-				case MainController.Choise.voittamaton: unbeatables.Add(items[i]); break;
-				case MainController.Choise.useless: 
-					if(items[i].GetComponent<Weapon>().name != "Weakness" && items[i].GetComponent<Weapon>().name != "Poison" && items[i].GetComponent<Weapon>().name != "Bleed")
-					{
-						useless.Add(items[i]); 
-					} else
-					{
-						debuffs.Add(items[i]);
-					}
-				break;
-			}
-		}
-
-		player.GetComponent<PlayerInventory>().items.Clear();
-		player.GetComponent<PlayerInventory>().items.AddRange(rocks);
-		player.GetComponent<PlayerInventory>().items.AddRange(papers);
-		player.GetComponent<PlayerInventory>().items.AddRange(scissors);
-		player.GetComponent<PlayerInventory>().items.AddRange(unbeatables);
-		player.GetComponent<PlayerInventory>().items.AddRange(useless);
-		player.GetComponent<PlayerInventory>().items.AddRange(debuffs);
-
+	public void SortOther()
+	{
+		current = State.other;
 		ReconstructInventory();
 	}
 }
+
+
