@@ -18,7 +18,10 @@ public class RiskTaker : MonoBehaviour
         for(int i = 0; i < RI.transform.childCount; i++)
         {
             GameObject weapon = RI.transform.GetChild(i).gameObject;
-            if(!FindOwnBuff(weapon.GetComponent<Weapon>()) && weapon.GetComponent<SelfDestruct>())
+            if(!FindOwnBuff(weapon.GetComponent<Weapon>()) && weapon.GetComponent<SelfDestruct>() && 
+				weapon.GetComponent<Weapon>().name != "Weakness" && 
+				weapon.GetComponent<Weapon>().name != "Poison" && 
+				weapon.GetComponent<Weapon>().name != "Bleed")
             {
                 GameObject new_buff = Instantiate(buff, weapon.transform);
                 new_buff.GetComponent<Buff>().id = name;

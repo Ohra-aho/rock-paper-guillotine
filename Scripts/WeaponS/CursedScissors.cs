@@ -12,6 +12,8 @@ public class CursedScissors : MonoBehaviour
 	};
 	int damage_buff = 0;
 
+	GameObject RI;
+
 	void Awake()
 	{
 		Buff own_buff = Instantiate(buff, transform).GetComponent<Buff>();
@@ -21,17 +23,20 @@ public class CursedScissors : MonoBehaviour
 
 	public void CalculateDamage()
 	{
-		GameObject RI = GameObject.FindGameObjectWithTag("RI");
+		if(RI == null) RI = GameObject.FindGameObjectWithTag("RI");
 		GameObject own_buff = GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name);
-		damage_buff = 0;
-		for(int i = 0; i < RI.transform.childCount; i++)
+		if(own_buff != null)
 		{
-			if(RecognizeDebuff(RI.transform.GetChild(i).GetComponent<Weapon>()))
+			damage_buff = 0;
+			for(int i = 0; i < RI.transform.childCount; i++)
 			{
-				damage_buff++;
+				if(RecognizeDebuff(RI.transform.GetChild(i).GetComponent<Weapon>()))
+				{
+					damage_buff++;
+				}
 			}
+			own_buff.GetComponent<Buff>().damage_buff = damage_buff;
 		}
-		own_buff.GetComponent<Buff>().damage_buff = damage_buff;
 	}
 
 	public bool RecognizeDebuff(Weapon w)

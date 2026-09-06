@@ -79,8 +79,6 @@ public class BuffController : MonoBehaviour
 
     private void Awake()
     {
-		real_inventory = GameObject.FindGameObjectWithTag("RI");
-		other_inventory = GameObject.FindGameObjectWithTag("RIE");
         Inisiate();
         if(buff == null)
         {
@@ -92,6 +90,8 @@ public class BuffController : MonoBehaviour
     {
         if (GetComponent<Weapon>().player)
         {
+			real_inventory = GameObject.FindGameObjectWithTag("RI");
+            other_inventory = GameObject.FindGameObjectWithTag("RIE");
             if (!special_apply)
             {
 
@@ -114,6 +114,7 @@ public class BuffController : MonoBehaviour
             AddBuffs();
         } else if (!GameObject.FindGameObjectWithTag("EnemyHolder").GetComponent<EnemyController>().dead)
         {
+
             buff_on = true;
             AddBuffs();
         }
@@ -127,23 +128,24 @@ public class BuffController : MonoBehaviour
 
     public void AddBuffs()
     {
-		if(real_inventory == null) real_inventory = GameObject.FindGameObjectWithTag("RI");
-
-        if (buff_on)
-        {
-            for (int i = 0; i < real_inventory.transform.childCount; i++)
-            {
-                Transform weapon = real_inventory.transform.GetChild(i);
-                if (buff_requirement(weapon.GetComponent<Weapon>()))
-                {
-                    AddBuff(weapon);
-                }
-            }
-        }
-        else
-        {
-            RemoveBuffs();
-        }
+		if(real_inventory != null)
+		{
+			if (buff_on)
+			{
+				for (int i = 0; i < real_inventory.transform.childCount; i++)
+				{
+					Transform weapon = real_inventory.transform.GetChild(i);
+					if (buff_requirement(weapon.GetComponent<Weapon>()))
+					{
+						AddBuff(weapon);
+					}
+				}
+			}
+			else
+			{
+				RemoveBuffs();
+			}
+		}
     }
 
     public void AddBuff(Transform weapon)

@@ -106,6 +106,7 @@ public class Encounter : MonoBehaviour
 
     public void ChangeGear(int index)
     {
+		if(index > 3) index = 3;
         GameObject wheel_holder = GameObject.Find("RightSide").transform.GetChild(0).gameObject;
         if(wheel_holder.transform.GetChild(0).name == "Enemy Wheel")
         {
