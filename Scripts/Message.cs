@@ -14,26 +14,21 @@ public class Message : MonoBehaviour
     ManAnimator MA;
     MainController MC;
 
+	MainController.State prev_state;
+
     //public bool executioner = false;
-
-
     private void Update()
     {
-        if(MC == null) MC = GameObject.Find("EventSystem").GetComponent<MainController>();
+        //if(MC == null) MC = GameObject.Find("EventSystem").GetComponent<MainController>();
         if (MC.game_state != MainController.State.dialog) MC.game_state = MainController.State.dialog;
     }
 
     private void Awake()
     {
+		MC = GameObject.Find("EventSystem").GetComponent<MainController>();
 		GetComponent<StoryEvent>().eventFunction.Invoke();
-        /*if (GetComponent<End>())
-        {
-            GetComponent<End>().Inisiate();
-        }
-        if(lines.Count > 0)
-        {
-            Inisiate();
-        }*/
+		prev_state = MC.game_state;
+		MC.game_state = MainController.State.dialog;
     }
 
     public void Inisiate()
@@ -51,6 +46,7 @@ public class Message : MonoBehaviour
         }
         else
         {
+			MC.game_state = prev_state;
             GetComponent<StoryEvent>().over = true;
         }
     }
@@ -65,25 +61,16 @@ public class Message : MonoBehaviour
         
 		for (int i = 0; i < messages.Count; i++)
 		{
-			/*if(messages[i].Contains("[kill]"))
+			try
 			{
-				//MC.game_state = MainController.State.dead;
-				//GameObject.Find("man").GetComponent<SpriteRenderer>().sprite = GameObject.Find("man").GetComponent<ManAnimator>().man_sheet[20];
-				//GameObject.Find("Machine").GetComponent<Machine>().EndTheGame();
-				break;
-			} else
-			{*/
-				try
-				{
-					string line = messages[i];
-					int test = Int32.Parse(line[line.Length-1].ToString());
-					string number = GetNumber(line);
-					temp.Add(line.Substring(0, line.Length-number.Length));
-				} catch
-				{
-					temp.Add(messages[i]);
-				}
-			//}
+				string line = messages[i];
+				int test = Int32.Parse(line[line.Length-1].ToString());
+				string number = GetNumber(line);
+				temp.Add(line.Substring(0, line.Length-number.Length));
+			} catch
+			{
+				temp.Add(messages[i]);
+			}
 		}
         
         if(temp.Count > 0)
@@ -160,10 +147,6 @@ public class Message : MonoBehaviour
                 )
             );
         }
-
-        DisableButtons();
-        //GetComponent<StoryEvent>().Procceed();
-
     }
 
     private void OnDestroy()
@@ -174,7 +157,9 @@ public class Message : MonoBehaviour
 			MainController MC = event_system.GetComponent<MainController>();
 			if(MC != null)
 			{
-				MC.SetNewState(MainController.State.idle);
+				if(GameObject.FindGameObjectWithTag("Rewards") != null) MC.game_state = MainController.State.reward;
+				else if(GameObject.FindGameObjectWithTag("Inventory") != null) MC.game_state = MainController.State.re_arming;
+				else MC.SetNewState(MainController.State.idle);
 			}	
 		}
     }

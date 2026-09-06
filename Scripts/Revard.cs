@@ -64,7 +64,7 @@ public class Revard : MonoBehaviour
 
     public void DisplayInfo()
     {
-        if(!disabled && MC.game_state == MainController.State.reward)
+        if(!disabled && (MC.game_state == MainController.State.reward ||  MC.game_state == MainController.State.re_arming))
 		{
 			visibleInfo = Instantiate(Info, GameObject.Find("Canvas").transform);
 			visibleInfo.transform.position =
@@ -142,7 +142,7 @@ public class Revard : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!disabled && MC.game_state == MainController.State.reward) { 
+        if (!disabled && (MC.game_state == MainController.State.reward ||  MC.game_state == MainController.State.re_arming)) { 
             Chosen();
             transform.parent.parent.GetComponent<RewardMenu>().DisableRewards();
         }

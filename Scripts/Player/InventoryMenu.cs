@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InventoryMenu : MonoBehaviour
@@ -10,6 +11,7 @@ public class InventoryMenu : MonoBehaviour
 
 	List<GameObject> weapons = new List<GameObject>();
 	private State current = State.all;
+	private MainController.State prev_state = MainController.State.idle;
 	private enum State
 	{
 		rock,
@@ -28,17 +30,25 @@ public class InventoryMenu : MonoBehaviour
         transform.GetChild(0).GetComponent<NonUIScroll>().DetermineInitialLocation();
         transform.parent.GetComponent<Test>().PlayAnimation("OpenDrawer");
 		MC = GameObject.Find("EventSystem").GetComponent<MainController>();	
+		prev_state = MC.game_state;
+		MC.game_state = MainController.State.re_arming;
+		GameObject reward_menu = GameObject.FindGameObjectWithTag("Rewards");
+		if(reward_menu != null)
+		{
+			reward_menu.GetComponent<RewardMenu>().ChangePrevState(MainController.State.re_arming);
+		}
 	}
 
-	void Update()
+	private void OnDestroy()
 	{
-		if(
-			MC.game_state != MainController.State.reward && 
-			MC.game_state != MainController.State.re_arming && 
-			MC.game_state != MainController.State.favourite_pick
-			)
+		MC.game_state = prev_state;
+		GameObject reward_menu = GameObject.FindGameObjectWithTag("Rewards");
+		if(reward_menu != null)
 		{
-			//MC.game_state = MainController.State.re_arming;
+			reward_menu.GetComponent<RewardMenu>().ChangePrevState(MainController.State.idle);
+		} else
+		{
+			MC.game_state = MainController.State.idle;
 		}
 	}
 

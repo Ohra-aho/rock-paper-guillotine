@@ -17,6 +17,7 @@ public class RewardMenu : MonoBehaviour
     public GameObject real_inventory;
 
     MainController MC;
+	MainController.State prev_state = MainController.State.idle;
 
     //Might need some sort of connection to what player already has
 
@@ -42,25 +43,27 @@ public class RewardMenu : MonoBehaviour
         re_re.GetComponent<Test>().PlayAudio(1);
         re_re.GetComponent<Test>().PlayAudio(0);
 		re_re.GetComponent<RewardReroll>().reward_open = false;
-    }
+		MC.game_state = MainController.State.reward;
+		//prev_state = MC.game_state;
 
-    private void Update()
-    {
-        if (!MC.CompareState(MainController.State.reward))
-        {
-            MC.SetNewState(MainController.State.reward);
-        }
+		GameObject reward_menu = GameObject.FindGameObjectWithTag("Inventory");
+		if(reward_menu != null)
+		{
+			prev_state = MainController.State.re_arming;
+		}
     }
 
     private void OnDestroy()
     {
-        if (!MC.CompareState(MainController.State.idle))
-        {
-            MC.SetNewState(MainController.State.idle);
-        }
+        MC.game_state = prev_state;
         GameObject.Find("Reward reroll").GetComponent<RewardReroll>().reward_open = true;
 		GameObject.Find("EventSystem").GetComponent<SaveHub>().SaveAll();
     }
+
+	public void ChangePrevState(MainController.State state)
+	{
+		prev_state = state;
+	}
 
     public void EnableRewards()
     {

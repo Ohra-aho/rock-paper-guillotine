@@ -75,11 +75,6 @@ public class Machine : MonoBehaviour
         player.GetComponent<PlayerContoller>().ChangeWheel(false);
     }
 
-	public void SetIdle()
-	{
-		MC.GetComponent<MainController>().SetNewState(MainController.State.idle);
-	}
-
     public void CheckAnimation()
     {
         AnimatorStateInfo stateInfo = GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
@@ -104,10 +99,10 @@ public class Machine : MonoBehaviour
 
     public void ToggleInBattle()
     {
-        if(!MC.GetComponent<MainController>().CompareState(MainController.State.in_battle))
+        if(!MC.GetComponent<MainController>().CompareState(MainController.State.in_battle) && !MC.GetComponent<MainController>().CompareState(MainController.State.reward))
         {
             MC.GetComponent<MainController>().SetNewState(MainController.State.in_battle);
-        } else
+        } else if(!MC.GetComponent<MainController>().CompareState(MainController.State.reward))
         {
             MC.GetComponent<MainController>().SetNewState(MainController.State.transition);
         }
@@ -115,14 +110,19 @@ public class Machine : MonoBehaviour
 
     public void ToggleIdle()
     {
-        if(!MC.GetComponent<MainController>().CompareState(MainController.State.idle))
+        if(!MC.GetComponent<MainController>().CompareState(MainController.State.idle) && !MC.GetComponent<MainController>().CompareState(MainController.State.reward))
         {
             MC.GetComponent<MainController>().SetNewState(MainController.State.idle);
-        } else
+        } else if(!MC.GetComponent<MainController>().CompareState(MainController.State.reward))
         {
             MC.GetComponent<MainController>().SetNewState(MainController.State.transition);
         }
     }
+
+	public void SetIdle()
+	{
+		MC.GetComponent<MainController>().game_state = MainController.State.idle;
+	}
 
     public void EndTheGame()
     {
