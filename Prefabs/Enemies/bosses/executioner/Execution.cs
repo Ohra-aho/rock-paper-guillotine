@@ -9,7 +9,7 @@ public class Execution : MonoBehaviour
 	{
 		if(GetComponent<BuffController>())
 		{
-			GetComponent<BuffController>().armor_bonus = 3;
+			GetComponent<BuffController>().armor_bonus = 1;
 			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
 			GetComponent<BuffController>().temporary = true;
 			GetComponent<BuffController>().timer = 2;

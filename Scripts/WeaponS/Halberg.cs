@@ -13,7 +13,9 @@ public class Halberg : MonoBehaviour
 		{
 			if(GetComponent<Weapon>().FindCertainBuff(GetComponent<Weapon>().name))
 			{
-				GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name).GetComponent<Buff>().damage_buff++;
+				Buff old_buff = GetComponent<Weapon>().GetCertainBuff(GetComponent<Weapon>().name).GetComponent<Buff>();
+				old_buff.damage_buff++;
+				old_buff.reminder = "+"+old_buff.damage_buff+" damage until used.";
 			} else
 			{
 				Buff new_buff = Instantiate(buff, transform).GetComponent<Buff>();
@@ -24,6 +26,7 @@ public class Halberg : MonoBehaviour
 				new_buff.damage_buff = 1;
 				new_buff.visible_buff = true;
 				new_buff.reminder = "+"+new_buff.damage_buff+" damage until used.";
+				new_buff.AddBuff();
 			}
 		}
 	}
