@@ -41,6 +41,7 @@ public class InventoryMenu : MonoBehaviour
 
 	private void OnDestroy()
 	{
+		if(MC == null) MC = GameObject.Find("EventSystem").GetComponent<MainController>();
 		MC.game_state = prev_state;
 		GameObject reward_menu = GameObject.FindGameObjectWithTag("Rewards");
 		if(reward_menu != null)

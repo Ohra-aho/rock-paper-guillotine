@@ -5,11 +5,35 @@ using UnityEngine;
 public class Doll : MonoBehaviour
 {
 	public GameObject buff;
+
+	private void Awake()
+	{
+		if(GetComponent<BuffController>())
+		{
+			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return w.name != GetComponent<Weapon>().name; };
+			GetComponent<BuffController>().takeDamage = true;
+			GetComponent<BuffController>().special = TwistOne;
+		}
+	}
+
     public void Wake()
 	{
 		List<Weapon> weapons = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerContoller>().GetWeapons();
 		GetComponent<EffectDamage>().amount = 5 - weapons.Count;
 		GetComponent<EffectDamage>().SelfDamage(GetComponent<Weapon>());
+	}
+
+	public void TwistOne(Weapon w)
+	{
+		GetComponent<Stacking>().IncreaseStacks(1);
+	}
+	public void TwistTwo()
+	{
+		int amount = GetComponent<Stacking>().stacks / 2;
+		if(GetComponent<Stacking>().stacks % 2 > 0) amount++;
+		
+		GetComponent<EffectDamage>().DealSetDamage(amount);
+		GetComponent<Stacking>().stacks = 0;
 	}
 
 	public void RandomNewType()

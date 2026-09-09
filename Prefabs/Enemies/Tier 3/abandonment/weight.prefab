@@ -101,7 +101,7 @@ MonoBehaviour:
   spammable: 0
   type: 0
   og_type: 0
-  damage: 1
+  damage: 2
   armor: 0
   name: Weight
   description: If takes damage, gains 1 point and you get a Weakness. When has 3

@@ -8,13 +8,19 @@ public class Anglerfish : MonoBehaviour
 	bool used = false;
     public void Breath()
 	{
+		bool found = false;
 		for(int i = 0; i < 3; i++)
 		{
 			bool removed = GetComponent<PermanentDebuffer>().RemoveWeaponFromInvetory("Weakness");
 			if(removed)
 			{
 				GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
+				found = true;
 			}
+		}
+		if(!found)
+		{
+			GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
 		}
 		/*if(!used)
 		{

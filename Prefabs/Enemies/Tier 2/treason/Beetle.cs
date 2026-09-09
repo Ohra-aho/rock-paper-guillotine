@@ -50,5 +50,7 @@ public class Beetle : MonoBehaviour
 				RIE.transform.GetChild(i).GetComponent<Weapon>().damage += to_limit;	
 			}
 		}
+
+		GetComponent<Healing>().HealSetAmount(to_limit);
 	}
 }
