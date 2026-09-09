@@ -11,7 +11,6 @@ public class Santapaperi : MonoBehaviour
         GetComponent<BuffController>().buff_requirement = (Weapon weapon) => { return weapon.GiveEffectiveType() == MainController.Choise.kivi; };
 		GetComponent<BuffController>().heal = true;
 		GetComponent<BuffController>().special = BuffDamage;
-		GetComponent<BuffController>().reminder = "On heal, +1 damage until the end of the fight.";
     }
 
 	public void BuffDamage(Weapon w)
@@ -23,6 +22,7 @@ public class Santapaperi : MonoBehaviour
 			new_buff.damage_buff = 1;
 			new_buff.temporary = true;
 			new_buff.timer = 1000;
+			new_buff.visible_buff = true;
 		} else
 		{
 			buff.GetComponent<Buff>().damage_buff++;

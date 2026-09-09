@@ -6,6 +6,16 @@ public class Puolustusmanifesti : MonoBehaviour
 {
     int armor_found = 0;
 	bool first_trigger = true;
+
+	private void Awake()
+	{
+		GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
+		GetComponent<BuffController>().damage_bonus = 1;
+		GetComponent<BuffController>().temporary = true;
+		GetComponent<BuffController>().timer = 2;
+		GetComponent<BuffController>().special_apply = true;
+	}
+
 	public void DealDamage()
 	{
 		TableController TC = GameObject.Find("Table").GetComponent<TableController>();
@@ -13,7 +23,8 @@ public class Puolustusmanifesti : MonoBehaviour
 		{
 			if(TC.GiveEffectivePlayerDamage() == 0 && TC.GiveEffectiveEnemyDamage() == 0)
 			{
-				GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
+				//GetComponent<EffectDamage>().DealDamage(GetComponent<Weapon>());
+				GetComponent<BuffController>().Equip();
 			}	
 		}
 		first_trigger = false;

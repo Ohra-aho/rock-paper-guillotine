@@ -10,7 +10,7 @@ public class FanaticWeapons : MonoBehaviour
 		{
 			GetComponent<BuffController>().buff_requirement = (Weapon w) => { return true; };
 			GetComponent<BuffController>().special_apply = true;
-			GetComponent<BuffController>().damage_bonus = 1;
+			//GetComponent<BuffController>().damage_bonus = 1;
 			//GetComponent<BuffController>().temporary = true;
 			//GetComponent<BuffController>().timer = 2;
 		}
