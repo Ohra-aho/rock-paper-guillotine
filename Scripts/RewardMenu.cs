@@ -55,7 +55,6 @@ public class RewardMenu : MonoBehaviour
 
     private void OnDestroy()
     {
-        MC.game_state = prev_state;
         GameObject.Find("Reward reroll").GetComponent<RewardReroll>().reward_open = true;
 		GameObject.Find("EventSystem").GetComponent<SaveHub>().SaveAll();
     }
@@ -79,6 +78,12 @@ public class RewardMenu : MonoBehaviour
 
     public void EndThis()
     {
+		if(GameObject.FindGameObjectsWithTag("Rewards").Length > 1) {
+			MC.game_state = MainController.State.reward;
+		} else
+		{
+        	MC.game_state = prev_state;
+		}
 		if(transform.childCount == 3) {
 			Destroy(transform.GetChild(0).gameObject);
        		Destroy(transform.GetChild(1).gameObject);

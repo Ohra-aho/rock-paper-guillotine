@@ -14,12 +14,6 @@ public class RewardReroll : MonoBehaviour
         MC = GameObject.Find("EventSystem").GetComponent<MainController>();
     }
 
-    private void Update()
-    {
-        GetComponent<NonUIButton>().interactable = MC.game_state == MainController.State.reward && reward_open && unlocked && !used;
-		//GetComponent<NonUIButton>().interactable = true; // Debug
-    }
-
     public void Reroll()
     {
         GameObject[] reward_menus = GameObject.FindGameObjectsWithTag("Rewards");
@@ -29,6 +23,5 @@ public class RewardReroll : MonoBehaviour
         }
         MC.SpawnRewardMenu();
         used = true;
-		//used = false; //Debug
     }
 }

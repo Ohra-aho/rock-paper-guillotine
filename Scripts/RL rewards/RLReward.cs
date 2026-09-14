@@ -67,7 +67,7 @@ public class RLReward : MonoBehaviour
 
     public bool CheckIfCanBePicked()
     {
-		//return true;
+		return true;
         RLController rlc = GameObject.Find("EventSystem").GetComponent<RLController>();
         if (rlc.chosen_buffs.Count < rlc.picks)
         {
