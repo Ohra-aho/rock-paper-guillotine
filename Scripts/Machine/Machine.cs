@@ -155,6 +155,13 @@ public class Machine : MonoBehaviour
         if(smoke3) sparks[4].GetComponent<ParticleSystem>().Play();
         smoke3 = !smoke3;
     }
+    bool smoke4 = true;
+
+	public void ActivateSmoke4()
+    {
+        if(smoke4) sparks[5].GetComponent<ParticleSystem>().Play();
+        smoke4 = !smoke4;
+    }
 
     public void InvokeBossGearChange()
     {

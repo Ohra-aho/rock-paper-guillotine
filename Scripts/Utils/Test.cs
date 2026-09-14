@@ -89,6 +89,8 @@ public class Test : MonoBehaviour
     {
         if(state_requirement != MainController.State.any)
         {
+			Debug.Log(clip);
+
             if(MC.game_state == state_requirement)
             {
                 if (!reverse) transform.GetChild(LastIndex()).GetChild(clip).GetComponent<AudioPlayer>().PlayClip();
