@@ -102,13 +102,12 @@ MonoBehaviour:
   og_type: 0
   damage: 0
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Prosthesis
   description: After use, +1 HP and self-destructs.
   sprite: {fileID: 21300000, guid: 66a92a5151a97ee448a8fc33a2613b75, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -196,13 +195,18 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - How original pick. 18
-  - I just hope the machine won't give that to you like 4 times in a row.
+  - I just hope the machine won't give that to you 4 times in a row.
   - So you take one hit to be able to take another hit? 5
-  executioner_comment: 
-  favourite: 
+  executioner_comment: Not yet... I am not ready.
+  favourite: You liked it for the art or something. 17
+  dont_load: 0
+  token: 0
 --- !u!114 &3505358551842523247
 MonoBehaviour:
   m_ObjectHideFlags: 0

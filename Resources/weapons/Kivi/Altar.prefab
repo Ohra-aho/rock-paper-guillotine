@@ -114,6 +114,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3a240671df9813341b93bf5e6caeb7eb, type: 3}
   - {fileID: 21300000, guid: 4bfec1fcc837111449725ed56728ceac, type: 3}
   tier: 1
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -210,8 +211,9 @@ MonoBehaviour:
   - Great power for a reasonable price.
   - Eternity. A dreadful thing.
   executioner_comment: No. I won't give it to you.
-  favourite: 
+  favourite: IA! 2
   dont_load: 0
+  token: 0
 --- !u!114 &6361541160200024083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,6 +277,9 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
+  stackable: 0
+  visible_buff: 0
+  visible_debuff: 0
 --- !u!114 &2426040337145588873
 MonoBehaviour:
   m_ObjectHideFlags: 0

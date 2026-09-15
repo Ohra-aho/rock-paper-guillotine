@@ -108,6 +108,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: d370add584778464381ccb41b63d25bb, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -214,9 +215,11 @@ MonoBehaviour:
   pick_barks:
   - That might throw the balance off a bit. 4
   - 'That''s quite good. You only might die. '
-  executioner_comment: 
-  favourite: 
+  - What will you use that on? 5
+  executioner_comment: Perfect
+  favourite: Then why didn't you use that? 5
   dont_load: 0
+  token: 0
 --- !u!114 &5755444230686218645
 MonoBehaviour:
   m_ObjectHideFlags: 0

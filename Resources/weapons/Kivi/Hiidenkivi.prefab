@@ -226,11 +226,11 @@ MonoBehaviour:
       m_Calls: []
   used_this_game: 0
   pick_barks:
-  - Won't help you much, but it is satisfying.
-  - Health for a moment of glory.
-  - Toughness and offence. Good choise.
-  executioner_comment: 111111111111111111111
-  favourite: 
+  - Won't help you much, but it feels good.
+  - The second wind.
+  - Few more hits. That's all that gives you.
+  executioner_comment: I kind of relate to that rock.
+  favourite: The idea of a huge health bar is quite appealing yes.
   dont_load: 1
   token: 0
 --- !u!114 &2821382414112198119

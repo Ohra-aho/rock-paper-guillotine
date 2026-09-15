@@ -216,8 +216,9 @@ MonoBehaviour:
   - Do you want to just sit down and chat or something? 5
   - 'The most boring weapon if you ask me. '
   - If you spam that, I will cut this game short. 11
-  executioner_comment: 
-  favourite: 
+  - Could enable some of more risky combos. 17
+  executioner_comment: Nothing good here.
+  favourite: You are boring. 19
   dont_load: 0
   token: 0
 --- !u!114 &-4007470792357427102

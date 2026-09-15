@@ -103,14 +103,13 @@ MonoBehaviour:
   og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Adrenaline
   description: Whenever you take damage with any weapon, +1 damage to all weapons
     for one turn.
   sprite: {fileID: 21300000, guid: 03e302ebbd2114149b168eaeb1781204, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -186,13 +185,18 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - If you want to get hit, just say so. 17
-  - I have seen a couple of good comebacks with that.
+  - I have seen a couple of good comebacks with that. 10
   - That will hurt.
-  executioner_comment: My heart won't stand still.
-  favourite: 
+  executioner_comment: Why my heart won't stand still. I know how this goes.
+  favourite: Most people drop that rather early. I am impressed. 16
+  dont_load: 0
+  token: 0
 --- !u!114 &-2366777321143017962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +248,9 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
+  stackable: 0
+  visible_buff: 0
+  visible_debuff: 0
 --- !u!114 &-8080920715227008180
 MonoBehaviour:
   m_ObjectHideFlags: 0

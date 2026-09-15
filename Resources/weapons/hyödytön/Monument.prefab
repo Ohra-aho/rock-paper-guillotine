@@ -109,6 +109,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 43b482c4520ef354fbeff698bbca6dc3, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -216,9 +217,10 @@ MonoBehaviour:
   - Will you manage to break the game with that?
   - That took a little testing.
   - Oh o... 11
-  executioner_comment: 
-  favourite: 
+  executioner_comment: Let's humiliate this machine.
+  favourite: I think I could have guessed.
   dont_load: 0
+  token: 0
 --- !u!114 &-3416217034105915706
 MonoBehaviour:
   m_ObjectHideFlags: 0

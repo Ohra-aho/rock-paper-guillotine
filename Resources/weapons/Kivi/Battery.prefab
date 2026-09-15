@@ -108,6 +108,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 25531625da8681b4b87affc816d3db8c, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -203,9 +204,10 @@ MonoBehaviour:
   - Let's make those numbers go up. 9
   - Should I check the wiering of the machine again. 10
   - A hoarder?
-  executioner_comment: 
-  favourite: 
+  executioner_comment: Let's go infinite.
+  favourite: Solid choise. A bit basic, but solid.
   dont_load: 0
+  token: 0
 --- !u!114 &6461340947584673275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,3 +284,5 @@ MonoBehaviour:
   destructive: 0
   heal_disabler: 0
   stackable: 0
+  visible_buff: 0
+  visible_debuff: 0

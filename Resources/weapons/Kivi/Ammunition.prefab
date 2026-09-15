@@ -108,6 +108,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: f84f10fb5aa928940a535702a93abdaa, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls:
@@ -200,12 +201,13 @@ MonoBehaviour:
       m_Calls: []
   used_this_game: 0
   pick_barks:
-  - 'Going for quick kills? 5 '
+  - Going for quick kills? 5
   - Risk-takers choise.
   - It takes 2 to tango you know. 17
   executioner_comment: Maybe I could speedrun this.
-  favourite: 
+  favourite: Live fast. Die young.
   dont_load: 0
+  token: 0
 --- !u!114 &-7783867195882298360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +260,8 @@ MonoBehaviour:
   destructive: 0
   heal_disabler: 0
   stackable: 0
+  visible_buff: 0
+  visible_debuff: 0
 --- !u!114 &1874179476810424537
 MonoBehaviour:
   m_ObjectHideFlags: 0

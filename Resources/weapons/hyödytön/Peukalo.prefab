@@ -106,6 +106,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 9dde555204b4ca748b6cea9afc9e7f48, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -200,9 +201,12 @@ MonoBehaviour:
   pick_barks:
   - That's mostly useless don't you think?
   - Going for a grindbuild? 5
-  executioner_comment: 
-  favourite: 
+  - The Armband will make that insufferable. 19
+  - I am glad that no longer heals. 7
+  executioner_comment: I am better than that.
+  favourite: You really like to see numbers go up. No matter the cost.
   dont_load: 0
+  token: 0
 --- !u!114 &-6499246951867229765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,3 +259,5 @@ MonoBehaviour:
   destructive: 0
   heal_disabler: 0
   stackable: 0
+  visible_buff: 0
+  visible_debuff: 0

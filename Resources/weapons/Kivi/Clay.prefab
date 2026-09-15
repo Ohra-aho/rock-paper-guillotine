@@ -204,9 +204,9 @@ MonoBehaviour:
   pick_barks:
   - What will you use that with? 17
   - It was annoyng to make duplicates of each weapon. 19
-  - The picture depicts my skills at pottery. 17
-  executioner_comment: 1111111111111111111111111
-  favourite: 
+  - The picture depicts my skill at pottery. 17
+  executioner_comment: Less to think about.
+  favourite: 'I don''t believe you. '
   dont_load: 0
   token: 0
 --- !u!114 &3956481556211390759

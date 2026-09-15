@@ -204,11 +204,11 @@ MonoBehaviour:
       m_Calls: []
   used_this_game: 0
   pick_barks:
-  - Just want to get it over with? You know you can just pull the lever.
-  - True glass cannon. 18
-  - Shine bright but fast.
-  executioner_comment: 11111111111111111111111111
-  favourite: 
+  - Shine bright. 16
+  - Will you make the most of it?
+  - 'This is going to be stupid. '
+  executioner_comment: Always worth the health lost.
+  favourite: That was a somewhat common pick. 10
   dont_load: 0
   token: 0
 --- !u!114 &-5764463972135550294
@@ -247,8 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3924816686acc454586b80035f02343f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stacks: 10
-  stack_limit: 10
+  stacks: 8
+  stack_limit: 8
   LoadFunction:
     m_PersistentCalls:
       m_Calls: []

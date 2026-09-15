@@ -207,9 +207,10 @@ MonoBehaviour:
   - Slow, but can be effective.
   - No pain, no gain. 1
   - Simple insurance policy.
-  executioner_comment: 1111111111111111111111111
-  favourite: 
+  executioner_comment: Let's get that bad boy looping.
+  favourite: One of the best healing weapons in the game. Once it gets going.
   dont_load: 0
+  token: 0
 --- !u!114 &4076657417891745610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +312,8 @@ MonoBehaviour:
   destructive: 0
   heal_disabler: 0
   stackable: 0
+  visible_buff: 0
+  visible_debuff: 0
 --- !u!114 &1128447834419944383
 MonoBehaviour:
   m_ObjectHideFlags: 0
