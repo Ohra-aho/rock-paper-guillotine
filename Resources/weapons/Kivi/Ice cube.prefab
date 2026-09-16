@@ -105,8 +105,6 @@ MonoBehaviour:
   og_type: 0
   damage: 2
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Ice cube
   description: Loses 1 point after each turn when not used. Gains 1 point after use.
     If used at 0 points, self-destructs.
@@ -116,6 +114,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3a240671df9813341b93bf5e6caeb7eb, type: 3}
   - {fileID: 21300000, guid: 4bfec1fcc837111449725ed56728ceac, type: 3}
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -203,13 +202,18 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - Soon every problem will look like a scissors to you.
   - That will break fast. 17
   - Just bashing things to beath with rocks I see?
-  executioner_comment: 1111111111111111111
-  favourite: 
+  executioner_comment: Will do for now.
+  favourite: I am surprised that you got that to the end.
+  dont_load: 0
+  token: 0
 --- !u!114 &3127145727892044911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +303,9 @@ MonoBehaviour:
   reminder: 
   destructive: 0
   heal_disabler: 0
+  stackable: 0
+  visible_buff: 0
+  visible_debuff: 0
 --- !u!114 &-3007650200040234590
 MonoBehaviour:
   m_ObjectHideFlags: 0

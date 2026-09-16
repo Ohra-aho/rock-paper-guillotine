@@ -265,9 +265,10 @@ MonoBehaviour:
   - I look forward to see how hard you hit with that. 1
   - Just a couple more rocks. 17
   - That could be devastating. 4
-  executioner_comment: 11111111111111111111111111
-  favourite: 
+  executioner_comment: ---
+  favourite: No it's not, but if you say so.
   dont_load: 1
+  token: 0
 --- !u!114 &24049621770383846
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -189,12 +189,11 @@ MonoBehaviour:
       m_Calls: []
   used_this_game: 0
   pick_barks:
-  - Abandon all caution and set all papers to a blaze.
+  - Strike back! 14
   - Let's see if I forgot some combinations with that.
-  - At first armor was a thing that rocks did the most. But then I realized that
-    they don't need it.
-  executioner_comment: 11111111111111111111111
-  favourite: 
+  - I would be surprised if you managed to break that.
+  executioner_comment: Maybe I could try to loop that.
+  favourite: That turned armor to damage before. 9
   dont_load: 0
   token: 0
 --- !u!114 &6088703525507109606

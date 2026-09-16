@@ -216,9 +216,10 @@ MonoBehaviour:
   - Just delaying the inevitable. 16
   - If you ever actually need that, you are either a tank or in trouble. 16
   - Snatch survival from the jaws of death.
-  executioner_comment: 11111111111111111111111111
-  favourite: 
+  executioner_comment: Maybe the next fight will go better.
+  favourite: But you never needed that? 11
   dont_load: 0
+  token: 0
 --- !u!114 &8443349561577102891
 MonoBehaviour:
   m_ObjectHideFlags: 0

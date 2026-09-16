@@ -103,13 +103,12 @@ MonoBehaviour:
   og_type: 0
   damage: 1
   armor: 0
-  real_damage: 0
-  real_armor: 0
   name: Philosopher's stone
   description: Max HP is capped at 4, but heals all damage at the start of each fight.
   sprite: {fileID: 21300000, guid: b18143876b1de434f8c2c410e4363b74, type: 3}
   tiers: []
   tier: 2
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls:
@@ -233,13 +232,18 @@ MonoBehaviour:
   on_death:
     m_PersistentCalls:
       m_Calls: []
+  any_equip:
+    m_PersistentCalls:
+      m_Calls: []
   used_this_game: 0
   pick_barks:
   - Well, most things will kill you in couple of hits anyway. 4
   - Immortality, within your grasp. 17
   - Eternal life and endless riches. Sounds boring.
-  executioner_comment: 11111111111111111111111
-  favourite: 
+  executioner_comment: One fight at a time.
+  favourite: Not many take that to the late game.
+  dont_load: 0
+  token: 0
 --- !u!114 &-6065403328400625817
 MonoBehaviour:
   m_ObjectHideFlags: 0

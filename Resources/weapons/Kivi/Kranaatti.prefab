@@ -109,6 +109,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 9b13da2eaff71b648b3f743ad1110006, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -228,9 +229,10 @@ MonoBehaviour:
   - Going out in a blaze of glory? I like that.
   - Quite a few people have died from that. 9
   - I sometimes wonder is people actually get pushed away by those things. 7
-  executioner_comment: 1111111111111111111111
-  favourite: 
+  executioner_comment: Let's just get this over with.
+  favourite: Mans chosie. 15
   dont_load: 0
+  token: 0
 --- !u!114 &5755444230686218645
 MonoBehaviour:
   m_ObjectHideFlags: 0

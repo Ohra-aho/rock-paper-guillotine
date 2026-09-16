@@ -108,6 +108,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: dffd0dbfec56ad542ac5183998614c97, type: 3}
   tiers: []
   tier: 0
+  toughness: 0
   first_turn:
     m_PersistentCalls:
       m_Calls: []
@@ -239,9 +240,10 @@ MonoBehaviour:
   - You know, HP won't help you win by itself. 17
   - Just a couple more HP giving rocks and you will be near immortal.
   - That's right. Build a wall around your problems. 16
-  executioner_comment: 111111111111111111111111111111111111
-  favourite: 
+  executioner_comment: What if, I go all in with rocks?
+  favourite: Tank builds are somewhat popular.
   dont_load: 1
+  token: 0
 --- !u!114 &2278583403661379804
 MonoBehaviour:
   m_ObjectHideFlags: 0
